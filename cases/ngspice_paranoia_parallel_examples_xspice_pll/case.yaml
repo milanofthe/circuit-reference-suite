@@ -1,0 +1,23 @@
+id: ngspice_paranoia_parallel_examples_xspice_pll
+title: ngspice paranoia_parallel/examples/xspice/pll
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: paranoia_parallel/examples/xspice/pll
+files:
+- {path: f-p-det-d-sub.cir, sha256: 53b059f39ea08c4626cc793f6bffd91b3b88d125bbbedfe5588b870d45f9a62e}
+- {path: loop-filter-2.cir, sha256: 452089abe6e4b0667c4a31107ed78bcc292d11b8d6296c15536797b96da6f058}
+- {path: pll-xspice-fstep.cir, sha256: baa3124cefd2d7c2ddbb10ec759e623a6c41235f12f2ec5def1806ba1f9e0498}
+- {path: pll-xspice.cir, sha256: 9e7a541fe85a16fa5fc8cc40176115aff6797249db68a3c783a1464130578e8c}
+- {path: test-f-p-det.cir, sha256: 47a75c67618594ad4d48b3ca24046d7cc0a3200110c21f3333a0c01b058ef626}
+- {path: test_vco.cir, sha256: 0a23d68a93bdf0bbfe0db20632bdd394b5e3cf3e472d0901e553ff81ee79b543}
+- {path: vco_sub_new.cir, sha256: aa183b1749c63e2105269b301c1cd490a06522d68adbb49475dea8befb833d17}
+netlists:
+- {file: pll-xspice-fstep.cir, dialect: ngspice}
+- {file: pll-xspice.cir, dialect: ngspice}
+- {file: test-f-p-det.cir, dialect: ngspice}
+- {file: test_vco.cir, dialect: ngspice}

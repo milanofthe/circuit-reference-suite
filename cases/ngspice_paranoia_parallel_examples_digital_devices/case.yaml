@@ -1,0 +1,18 @@
+id: ngspice_paranoia_parallel_examples_digital_devices
+title: ngspice paranoia_parallel/examples/digital_devices
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: paranoia_parallel/examples/digital_devices
+files:
+- {path: behav-568.cir, sha256: 454f092f0993b4b5b5345d46c8da97740f7e60e5421cd9cfe17fda60dc38e12e}
+- {path: counter.cir, sha256: fb1b37cf77a8dad4fcc27ae6fc71d1d4692a04b5fc24ebc2b3605fdaaab9af6b}
+- {path: ex4.cir, sha256: 2bfdd0b460c064fa3b556cbe601cec48c521eac8f9e4bd943ebe45d24098157e}
+netlists:
+- {file: behav-568.cir, dialect: ngspice}
+- {file: counter.cir, dialect: ngspice}
+- {file: ex4.cir, dialect: ngspice}

@@ -1,0 +1,20 @@
+id: ngspice_examples_xspice_delta_sigma
+title: ngspice examples/xspice/delta-sigma
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/delta-sigma
+files:
+- {path: count-latch-dac.cir, sha256: 14ad8d815668c4c187508407d07e4c063615cb34f0631eee4117e17598a491e5}
+- {path: counter-test.cir, sha256: 4dab0488911165d3737398b392ff23ee998f12ea103a406a98e1709368f8da9d}
+- {path: delta-sigma-1.cir, sha256: 94ec027a819bc4a267f64fe998a8134ad1cdf6e92bc4a59ac02cfe0bb160313e}
+- {path: mod1-ct-test.cir, sha256: d2da3454b723d7cbff279aab72126be2061d00235d9e670f45d45dadcba0de9f}
+- {path: mod1-ct.cir, sha256: a0504dd047a043e7738cd3262409c95e01cec37cc1b3d7eccfa2310ca5e9bfb5}
+netlists:
+- {file: counter-test.cir, dialect: ngspice}
+- {file: delta-sigma-1.cir, dialect: ngspice}
+- {file: mod1-ct-test.cir, dialect: ngspice}

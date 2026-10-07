@@ -1,0 +1,16 @@
+id: ngspice_examples_xspice_verilator
+title: ngspice examples/xspice/verilator
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/verilator
+files:
+- {path: delay.cir, sha256: c3bc9a39a1e7a71f46464a3a3f71a2dea6e6c936e1fd5c97eb57f46a8d8e283c}
+- {path: pwm.cir, sha256: eee59e33e041742cd0855bc4a89f8b4100aa3d78b13f0eaff47211b073d093c5}
+netlists:
+- {file: delay.cir, dialect: ngspice}
+- {file: pwm.cir, dialect: ngspice}

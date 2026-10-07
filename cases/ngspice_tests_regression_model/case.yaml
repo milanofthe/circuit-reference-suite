@@ -1,0 +1,18 @@
+id: ngspice_tests_regression_model
+title: ngspice tests/regression/model
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/regression/model
+files:
+- {path: binning-1.cir, sha256: a255d905b57819f5a8f500362322bbb8039a742a8b4ed527eb4b07c256307e55}
+- {path: instance-defaults.cir, sha256: faac19b758646ba1780e116c2d8bcb7592ff593d3dd38a06e293a38c76b810dc}
+- {path: special-names-1.cir, sha256: 6a5563f0203019baf0ff0cce9da1e4546f7b5d6885f9d0350a47d8e2cb6c978a}
+netlists:
+- {file: binning-1.cir, dialect: ngspice}
+- {file: instance-defaults.cir, dialect: ngspice}
+- {file: special-names-1.cir, dialect: ngspice}

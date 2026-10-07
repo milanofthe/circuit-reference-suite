@@ -1,0 +1,24 @@
+id: ngspice_tests_polezero
+title: ngspice tests/polezero
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/polezero
+files:
+- {path: filt_bridge_t.cir, sha256: 7c906a37d5715825e5f690a3669719b969c276d144becfe8fa083a8342ba3423}
+- {path: filt_multistage.cir, sha256: ae0c6547bf1f2b47b1e2b33cfde09c595166083cc275dd50a0b1f4e4f1b27da8}
+- {path: filt_rc.cir, sha256: bceb4c1634640343edad6e107ca411451063aaaa92db45ea2bff66eb598bb573}
+- {path: pz2.cir, sha256: 905825567a0318950307bef7e1a39ae6e49821232d3703115ac17528036af6ed}
+- {path: pzt.cir, sha256: 40d48bc5c512b00923617df42a4bc15c310e09bfc76e10a23ee9041e8ba8d210}
+- {path: simplepz.cir, sha256: 23870ac940ee69a7cc220e2107ab3ccc903ce9f9c54e1089f06e2e4ab92a8531}
+netlists:
+- {file: filt_bridge_t.cir, dialect: ngspice}
+- {file: filt_multistage.cir, dialect: ngspice}
+- {file: filt_rc.cir, dialect: ngspice}
+- {file: pz2.cir, dialect: ngspice}
+- {file: pzt.cir, dialect: ngspice}
+- {file: simplepz.cir, dialect: ngspice}

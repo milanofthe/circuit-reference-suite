@@ -1,0 +1,29 @@
+id: ngspice_paranoia_parallel_examples_monte_carlo
+title: ngspice paranoia_parallel/examples/Monte_Carlo
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: paranoia_parallel/examples/Monte_Carlo
+files:
+- {path: MC_ring.sp, sha256: 61710d0cafe1fcf62a7e43da57e50694e552dfb0f10507d9e34d68bb676b8e4b}
+- {path: MC_ring_val.sp, sha256: 4f12f4baf882b1933123b2b0708c628a0c90a589faf86c6cf56d39d10f96d82c}
+- {path: MonteCarlo.sp, sha256: a95e6a7fada32525310a309ae78c64e149c8d94e4c21cfa6cf6742ec3282db11}
+- {path: OpWien.sp, sha256: 0182369631d349fd5b63efb84419d3a0dd453c02e6ae58653465119d78f3a844}
+- {path: OpWien_s.sp, sha256: 4c74766c70cff535f141edb749dab6300bcbafd8db65243f1eef3061ed01b860}
+- {path: names-test2.sp, sha256: 5da2a1c1de65b392353538fc3037466ea7c4f510c53e52b24e335efb8e9a11ba}
+- {path: rand_numb_test.cir, sha256: 15d5479502d67875e25bdc6608ec22639ee5952575b979dc3a86064e2464c759}
+netlists:
+- {file: MC_ring.sp, dialect: ngspice}
+- {file: MC_ring_val.sp, dialect: ngspice}
+- {file: MonteCarlo.sp, dialect: ngspice}
+- {file: OpWien.sp, dialect: ngspice}
+- {file: OpWien_s.sp, dialect: ngspice}
+- {file: names-test2.sp, dialect: ngspice}
+- {file: rand_numb_test.cir, dialect: ngspice}
+notes: |
+  Left out:
+  - `mc_ring_lib_complete_actual.cir`: needs D:\Spice_general\tests\lib-test\ts14\my_ts_usage.l, an absolute path outside the source

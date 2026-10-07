@@ -1,0 +1,17 @@
+id: ngspice_examples_klu_circuits_85_c2670
+title: ngspice examples/klu/Circuits/85/c2670
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/klu/Circuits
+files:
+- {path: 85/c2670/c2670.net, sha256: 7143ad08364b16bff2922be5bc389d930fca88096148088ceb5c4c3ae98dc7f7}
+- {path: 85/c2670/c2670_ann.net, sha256: 405702e2449f9e8ef639e09962ef85782a4a9277c0b0e29f9f5144b111a43679}
+- {path: technology/45nm_HP.pm, sha256: 6cd923780be8f9762bb4ab9d101ef21dd06b6d59024aa8c0e339cb2d09fb757c}
+netlists:
+- {file: 85/c2670/c2670.net, dialect: ngspice}
+- {file: 85/c2670/c2670_ann.net, dialect: ngspice}

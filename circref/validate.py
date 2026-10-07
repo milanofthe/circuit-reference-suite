@@ -1,7 +1,8 @@
 """Everything CI checks before a case or library is accepted."""
 from __future__ import annotations
 
-from .entry import (GENERATED, ROOT, Case, Entry, Library, load_library, sha256,
+from . import netlist
+from .entry import (GENERATED, ROOT, Case, Entry, Library, is_file, load_library, sha256,
                     validate_schema)
 
 
@@ -32,7 +33,17 @@ def check_library(lib: Library) -> list[str]:
     for target in (t for t in lib.resolve_table().values() if t is not None):
         if not (ROOT / target).is_file():
             errors.append(f"resolve: {target} does not exist")
-    return errors + check_files(lib, "library.yaml")
+    errors += check_files(lib, "library.yaml")
+    # Verilog-A sources must compile from what is committed, used by a case or not.
+    for f in lib.files():
+        path = lib.directory / f["path"]
+        if path.suffix.lower() not in netlist.VA_SUFFIXES or not path.exists():
+            continue
+        for ref in netlist.parse(path, "veriloga").refs:
+            target = lib.resolve_table().get(ref.target, ref.target)
+            if target is None or not is_file(path.parent / target):
+                errors.append(f"{f['path']}:{ref.line}: cannot resolve {ref.target!r}")
+    return errors
 
 
 def check_case(case: Case) -> list[str]:

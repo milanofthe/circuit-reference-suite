@@ -1,0 +1,36 @@
+id: ngspice_examples_measure
+title: ngspice examples/measure
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/measure
+files:
+- {path: buggy-meas-tran.sp, sha256: ae7a1ce254c18243b43afeca3f52b393b520e89a7e386e993f65aca77055b456}
+- {path: func_cap.sp, sha256: 4b4e2dfc21a5565a821a7ff1df93b14534cbc2acd4d98e560d1349ba9a67e958}
+- {path: inv-meas-tran-auto.sp, sha256: 81503daf5d7721cb2786ba794fb3f968035ce107dab0c94fc1e57234fc187a5d}
+- {path: inv-meas-tran-control.sp, sha256: feab0f409f0f99ded643e968583cac9d2ebf66b04dc9ad397e8e5b38a8beae22}
+- {path: inv-meas-tran.sp, sha256: 670c9d44446ca91fef555c546342e553a3adc2b6ba490e28258764b6aaa3ddb9}
+- {path: meas_expression.cir, sha256: e50fc817c51c23ee6672a5ef9b4506e3e8156d7b16e39046c97b9b9c9a494aa3}
+- {path: mos-meas-dc-control-file.sp, sha256: ad018ba51a6cfee3a5a9350859c0bb50416a82d1fa6b25af0af188efc9e160d3}
+- {path: mos-meas-dc-control.sp, sha256: 2b64ffd5e642e7f9dc85ec5f5ca348b126463dc612c7a0a0d76ff8e9106b09dc}
+- {path: mos-meas-dc.sp, sha256: acbf673415702a8fdbc42d9fb2bfe90f030644ca33306b32d17bf42e5baa20db}
+- {path: rc-meas-ac-control.sp, sha256: 94e9eb54ea9d56d8a81cf50dde33b49e77917b9d260a3064cc11fa082e601b4b}
+- {path: rc-meas-ac.sp, sha256: 896eb7c9cf78f0a3b5635842ac9e4b42312f9928e0eb4d9a60a49f00e4b8068c}
+- {path: simple-meas-tran.sp, sha256: d2848188854779bceb3d62c1ece58412e1e1404e2db6a97f6f5429af87b3ec5f}
+netlists:
+- {file: buggy-meas-tran.sp, dialect: ngspice}
+- {file: func_cap.sp, dialect: ngspice}
+- {file: inv-meas-tran-auto.sp, dialect: ngspice}
+- {file: inv-meas-tran-control.sp, dialect: ngspice}
+- {file: inv-meas-tran.sp, dialect: ngspice}
+- {file: meas_expression.cir, dialect: ngspice}
+- {file: mos-meas-dc-control-file.sp, dialect: ngspice}
+- {file: mos-meas-dc-control.sp, dialect: ngspice}
+- {file: mos-meas-dc.sp, dialect: ngspice}
+- {file: rc-meas-ac-control.sp, dialect: ngspice}
+- {file: rc-meas-ac.sp, dialect: ngspice}
+- {file: simple-meas-tran.sp, dialect: ngspice}

@@ -1,0 +1,16 @@
+id: openvaf_asmhemt
+title: ASM-HEMT GaN HEMT model
+source:
+  name: OpenVAF-reloaded
+  url: https://github.com/OpenVAF/OpenVAF-Reloaded
+  commit: 5ed9e63afe70ac95129a78af7b3732e7d431b1e5
+  root: integration_tests/ASMHEMT
+  license: ECL-2.0
+  authors: [Sourabh Khandelwal, IIT Kanpur]
+files:
+- {path: LICENSE.txt, sha256: 0de05f822e5d9d4e142e60cf3008f9055ffd80b16699886f974939dcced08bba}
+- {path: NOTICE.txt, sha256: 9716290dc64520ea377027aba6c09e888aa31e965564824dc0e3f19af3cf9c1f}
+- {path: asmhemt.va, sha256: 6ca94e4a4f365bb85645d569f060d4b4db95d6d381a11fc72f9e36ce9ff4117b}
+notes: |
+  Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+  model's own, stated in the license file or the header of the source.

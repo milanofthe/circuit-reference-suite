@@ -1,0 +1,21 @@
+id: openvaf_hisim2
+title: HiSIM2 MOSFET model
+source:
+  name: OpenVAF-reloaded
+  url: https://github.com/OpenVAF/OpenVAF-Reloaded
+  commit: 5ed9e63afe70ac95129a78af7b3732e7d431b1e5
+  root: integration_tests/HiSIM2
+  license: ECL-2.0
+  authors: [Hiroshima University, STARC]
+files:
+- {path: HSM2_analyticalPs0.inc, sha256: cb32396f6f0b2cbec6f23ac58850ab53e6512e133fb8add62fc78e2fb3fa08a3}
+- {path: HSM2_depmos.inc, sha256: acbc99d80f006d3746e37ac3f5d9f7ed003086aac7a87826fac542c88750b8c7}
+- {path: HSM2_depmos2.inc, sha256: 6e3b8a38ffa02473d3dd5c1af7fc472459390028522bea891d4d5a6ba37fe387}
+- {path: HSM2_depmos3.inc, sha256: 8805fc14b008564aedb871f39aff588faa3184b985766f127c0a18da8e76549e}
+- {path: HSM2_eval_aging.inc, sha256: e80a550191498a1df248082d4d0a2f24add9d02d8acf3390c6c6e3438a2eb4bc}
+- {path: HSM2_eval_newPT.inc, sha256: b6fd2d6b27ffeb42cc4763e26404e9e7631810f22014b6564fdb03c3d2a0efe9}
+- {path: HSM2_iterativePs0.inc, sha256: 44969bfda05ba8301c5d642e2e328ef3a52df39731f10b055b897486ef0f3a36}
+- {path: hisim2.va, sha256: 89096cedcb235131eb2d206899a6ba29b77eb1e9353050b1885d67f099f3c5a2}
+notes: |
+  Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+  model's own, stated in the license file or the header of the source.

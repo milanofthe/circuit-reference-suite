@@ -1,0 +1,15 @@
+id: ngspice_examples_klu_circuits_85_c7552
+title: ngspice examples/klu/Circuits/85/c7552
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/klu/Circuits
+files:
+- {path: 85/c7552/c7552.net, sha256: 88e9bd62f855002da197fdfe1bd07dc01d02560f36742358821ec8bc755b9802}
+- {path: technology/45nm_HP.pm, sha256: 6cd923780be8f9762bb4ab9d101ef21dd06b6d59024aa8c0e339cb2d09fb757c}
+netlists:
+- {file: 85/c7552/c7552.net, dialect: ngspice}

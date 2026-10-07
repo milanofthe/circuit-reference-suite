@@ -1,0 +1,36 @@
+id: ngspice_examples_cider_serial
+title: ngspice examples/cider/serial
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/cider/serial
+files:
+- {path: astable.cir, sha256: 8620812db6d63caa325136e1a84488528088528fe212b7a0738673068545184f}
+- {path: charge.cir, sha256: 1a71f97fa4c98b5c06ee54af9262d9089181f324d39bcb9af1ad5ff21904c974}
+- {path: colposc.cir, sha256: e86cec17c9f6472a3928a5a866815e34c3342181798655763ae5d68f434c3fb6}
+- {path: dbridge.cir, sha256: 43d86fde7f434bc485298d202979e0dc63b05d4925551a1b8bd564f46fda8f27}
+- {path: invchain.cir, sha256: 3f33e73f5317d89dfc6eed8db2f55f589e05c809d39e9a6934a062126fe1ed08}
+- {path: meclgate.cir, sha256: c4e620e14fc3e68d6d7efdd87888e5bb0beb5bcfc33ff15d9dd5d425e577abc7}
+- {path: nmosinv.cir, sha256: cd8f9f4d9b68dc99723554c8bf77efd33de73648211a46c68ca0b264ed1fe7fb}
+- {path: pass.cir, sha256: f353baa23171a153b38062062497e63415f98cf9b243ae754d545a6ee6dd2194}
+- {path: pullup.cir, sha256: c19c59a0afefd7a790ea7a05089001c4fef5d6449618229358bfdfd1d469f2af}
+- {path: recovery.cir, sha256: 0d392c33541ee8ab7c42f577a2e5ecad7e8cc7a1c2c425887b762b5d77505bf6}
+- {path: rtlinv.cir, sha256: ca518510a6d46de2da9b40040ebbc115c8a19c4270eb5d8cae9088fc785cd260}
+- {path: vco.cir, sha256: 52dd69f0a35bf1a06568253b904f496e1b8d1967a1f7de695f87af0093eae5ac}
+netlists:
+- {file: astable.cir, dialect: ngspice}
+- {file: charge.cir, dialect: ngspice}
+- {file: colposc.cir, dialect: ngspice}
+- {file: dbridge.cir, dialect: ngspice}
+- {file: invchain.cir, dialect: ngspice}
+- {file: meclgate.cir, dialect: ngspice}
+- {file: nmosinv.cir, dialect: ngspice}
+- {file: pass.cir, dialect: ngspice}
+- {file: pullup.cir, dialect: ngspice}
+- {file: recovery.cir, dialect: ngspice}
+- {file: rtlinv.cir, dialect: ngspice}
+- {file: vco.cir, dialect: ngspice}

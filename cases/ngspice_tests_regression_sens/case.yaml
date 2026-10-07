@@ -1,0 +1,20 @@
+id: ngspice_tests_regression_sens
+title: ngspice tests/regression/sens
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/regression/sens
+files:
+- {path: sens-ac-1.cir, sha256: ba0dfea87e9294803beb75aec52f70dc93985a54b35424e4eed150d97a7cf9d7}
+- {path: sens-ac-2.cir, sha256: fd8e885c2311b6c5d076c253571e44c8cd375480be4812883eb951fea7aa07c9}
+- {path: sens-dc-1.cir, sha256: 45289895c8658cdc34e5291bbbfdd7914babf50afbc11c0c82fd80a332de266d}
+- {path: sens-dc-2.cir, sha256: c0bfc2bd5cad9c10fb57d161a74a226ba682f3ca5dc05e0839f363a623368a56}
+netlists:
+- {file: sens-ac-1.cir, dialect: ngspice}
+- {file: sens-ac-2.cir, dialect: ngspice}
+- {file: sens-dc-1.cir, dialect: ngspice}
+- {file: sens-dc-2.cir, dialect: ngspice}

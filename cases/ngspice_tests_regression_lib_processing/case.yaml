@@ -1,0 +1,30 @@
+id: ngspice_tests_regression_lib_processing
+title: ngspice tests/regression/lib-processing
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/regression/lib-processing
+files:
+- {path: ex1.lib, sha256: a5c7e8764a51b0b03650f94738e4de36227db0170414777e12f6ec1fe35b9875}
+- {path: ex1a.cir, sha256: dcc53e24a57406cbbdfd82cbf26b439dbe0575ba2190418e9745fe67b8ca7f0c}
+- {path: ex1b.cir, sha256: 1398c716db36cbb1b52a1bb6c3e7010407f37ff3deb7716d05ccd13666104ab8}
+- {path: ex2.lib, sha256: 2435eb46ac80f2da4acc2b337128549e1e95d81444f35589014e3dc22cbf4536}
+- {path: ex2a.cir, sha256: e13e89c1efebcbb1cd30efe46f7ae7a82cf585898a928022afb7d8e3a2d4013a}
+- {path: ex3.lib, sha256: 12af5f31d3056c4a2bf5bb0590aa0077f4a99e161bbaa02bedf313e39f2d4788}
+- {path: ex3a.cir, sha256: 3f0d02bdf6a8f4cadf2b81714be2c5493121e00b8408fd71a218f60eac3cc0e5}
+- {path: extra3.lib, sha256: bb77ceb154ac0cb871209bdcf9585d3e2dc9bef026cdfeb46023f4515589a66b}
+- {path: scope-1.cir, sha256: 4f0189198669dcd2f775969165c88b345f743e7a892a0d45f12ce7698a287edc}
+- {path: scope-2.cir, sha256: 48dd7bdedac2c208298fe08e09f6d3852269967e30ded146e18a82a4f165f828}
+- {path: scope-3.cir, sha256: 2d6c4f225cc2f864015071ddfecd7eb52ce12a51975a6f0a20a2f2882bacda3a}
+netlists:
+- {file: ex1a.cir, dialect: ngspice}
+- {file: ex1b.cir, dialect: ngspice}
+- {file: ex2a.cir, dialect: ngspice}
+- {file: ex3a.cir, dialect: ngspice}
+- {file: scope-1.cir, dialect: ngspice}
+- {file: scope-2.cir, dialect: ngspice}
+- {file: scope-3.cir, dialect: ngspice}

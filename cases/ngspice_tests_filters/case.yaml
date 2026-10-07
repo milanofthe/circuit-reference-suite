@@ -1,0 +1,14 @@
+id: ngspice_tests_filters
+title: ngspice tests/filters
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/filters
+files:
+- {path: lowpass.cir, sha256: 295778205a961ed53cc98d7d48e13fe0ccb8f529f76b795f5f842ac6bd293791}
+netlists:
+- {file: lowpass.cir, dialect: ngspice}

@@ -1,0 +1,20 @@
+id: ngspice_examples_inductive_systems
+title: ngspice examples/inductive-systems
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/inductive-systems
+files:
+- {path: positive-definite-1.cir, sha256: b5f93a056088f86933a1d792acf6444ec81eddc631c26256dd295cac6773a790}
+- {path: positive-definite-2.cir, sha256: 23d68529d91010c5bcc974e6a113c552b4c3b94f3590f195e0dcbac6ded9d2f4}
+- {path: positive-definite-3.cir, sha256: 8d706b4791bbc03054b12aaa1acd79ee1fe5b8d73317dbb51492d5d57c620d22}
+- {path: positive-definite-4.cir, sha256: fab15150f49037fd4fbf8115ab7d6bc48036b17fe51abd975d060a9b59adca97}
+netlists:
+- {file: positive-definite-1.cir, dialect: ngspice}
+- {file: positive-definite-2.cir, dialect: ngspice}
+- {file: positive-definite-3.cir, dialect: ngspice}
+- {file: positive-definite-4.cir, dialect: ngspice}

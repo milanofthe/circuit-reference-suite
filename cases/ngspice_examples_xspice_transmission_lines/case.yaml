@@ -1,0 +1,22 @@
+id: ngspice_examples_xspice_transmission_lines
+title: ngspice examples/xspice/transmission_lines
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/transmission_lines
+files:
+- {path: cpline_ac.cir, sha256: 534d96329d92e6257cf63f3f03831aeb1442f5a8df80f7058a9eee7ad928b7e6}
+- {path: cpline_tran.cir, sha256: 24f580bfdf4cd84b2a9b59ed3444785c19815077047243158e05469c52dcbde5}
+- {path: cpmline_ac.cir, sha256: 684c6d1a2bb24b27e1a7dc81f8b3b453aa9b84f57b45225834ed4eeddca1795b}
+- {path: mlin.cir, sha256: ec539c7b6dc4c3da7a9b368ceb44c7760fceb0f68d4444a6d2d3e3ef3dee1089}
+- {path: mlin_tran.cir, sha256: a7c913e1dce881e49ebf46bc57403ff7e0a316beb6938f460c4b55eeb67c5e21}
+netlists:
+- {file: cpline_ac.cir, dialect: ngspice}
+- {file: cpline_tran.cir, dialect: ngspice}
+- {file: cpmline_ac.cir, dialect: ngspice}
+- {file: mlin.cir, dialect: ngspice}
+- {file: mlin_tran.cir, dialect: ngspice}

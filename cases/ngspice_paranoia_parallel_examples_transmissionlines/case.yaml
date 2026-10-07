@@ -1,0 +1,50 @@
+id: ngspice_paranoia_parallel_examples_transmissionlines
+title: ngspice paranoia_parallel/examples/TransmissionLines
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: paranoia_parallel/examples/TransmissionLines
+files:
+- {path: cpl1_4_line.sp, sha256: 27eaa2e386acd75b3ff6963e8f25bad60c55454da2d1cfac5cda100497460233}
+- {path: cpl2_2_line.sp, sha256: b80ef17b8976405a9eaa79ea9ef6a93ca4241b30dacc3c20000960ca0da08f38}
+- {path: cpl3_4_line.sp, sha256: 1380adc620ec165a120e72b21c557d98d6f96883a16a3fda229305f9252168c7}
+- {path: cpl4_txl_2_line.sp, sha256: 313ac8a5e5872323390a45f075dd24b24ce3f666531478282c9fc05a6adddfb4}
+- {path: cpl_ibm1.sp, sha256: 40cf9c891054c322b408d3a822058dbc69cf7f9c082292f33d7d7458ae98ca66}
+- {path: cpl_ibm2.sp, sha256: 32ca59e703a0e435cf50e6bf68231da55e46dd339e2317b36784108532b2d52f}
+- {path: cpl_ibm3.sp, sha256: d927a615df14975a4338061bb16446e142b5b9d72361d0b3d4cd1b071fbb7993}
+- {path: ltra1_1_line.sp, sha256: 268ffe38b355dc160e50a64fe2ba04fa94621b683e26d623bd0922d7aab70956}
+- {path: ltra1_4_line.sp, sha256: 1211ba156c255674fa274d9bf52e0e395bb308e5196b75aeb9a14cd4a14d35bb}
+- {path: ltra2_2_line.sp, sha256: 839d33b22400c8f3c12efb4b47690e1ab89df43e8512f01e06ac57b64ba876e8}
+- {path: ltra3_2_line.sp, sha256: 578a0754e87164573bfbd3c691c87a4efe11aa9e24a440172f76dcf3f650d9e9}
+- {path: ltra4_1_line.sp, sha256: 17c2e500a0e87c6b1d71d28ab3a9caf0312a1bf8b95966fa59c9a44ab04b12c3}
+- {path: ltra5_1_line.sp, sha256: ed05a013f199cf2fd3f989513b38dd7951ec4770ee077c4a257468826aaf8b3c}
+- {path: ltra6_2_line.sp, sha256: 7af919fcb066ff7a14afaebba3a8c2d72057750853fdcf89bda60f8c085bc1d2}
+- {path: ltra7_4_line.sp, sha256: bcd911f9d24d036fef10b336a89cad0e3f8588a194b88237c5808640e107fe23}
+- {path: txl1_1_line.sp, sha256: 29e838ea8abf28a8d2c7abcb10ee57b62bd49b5d1d1f6648eb77c1bce824ca6c}
+- {path: txl2_3_line.sp, sha256: c8c8815e44a5ee479be4af13cd1f09866dff12a4a2707789625aec36310ae0f7}
+- {path: txl3_1_line.sp, sha256: a678e87eb2a6a9b16e0ee6e6735f2119b405ef9d99bca319f93f8ea25057d664}
+- {path: txl4_1_line.sp, sha256: 24e502954b406e55fd3d7cd0e1003166ce413776972badedce0768973a53295e}
+netlists:
+- {file: cpl1_4_line.sp, dialect: ngspice}
+- {file: cpl2_2_line.sp, dialect: ngspice}
+- {file: cpl3_4_line.sp, dialect: ngspice}
+- {file: cpl4_txl_2_line.sp, dialect: ngspice}
+- {file: cpl_ibm1.sp, dialect: ngspice}
+- {file: cpl_ibm2.sp, dialect: ngspice}
+- {file: cpl_ibm3.sp, dialect: ngspice}
+- {file: ltra1_1_line.sp, dialect: ngspice}
+- {file: ltra1_4_line.sp, dialect: ngspice}
+- {file: ltra2_2_line.sp, dialect: ngspice}
+- {file: ltra3_2_line.sp, dialect: ngspice}
+- {file: ltra4_1_line.sp, dialect: ngspice}
+- {file: ltra5_1_line.sp, dialect: ngspice}
+- {file: ltra6_2_line.sp, dialect: ngspice}
+- {file: ltra7_4_line.sp, dialect: ngspice}
+- {file: txl1_1_line.sp, dialect: ngspice}
+- {file: txl2_3_line.sp, dialect: ngspice}
+- {file: txl3_1_line.sp, dialect: ngspice}
+- {file: txl4_1_line.sp, dialect: ngspice}

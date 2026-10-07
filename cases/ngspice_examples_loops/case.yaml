@@ -1,0 +1,20 @@
+id: ngspice_examples_loops
+title: ngspice examples/loops
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/loops
+files:
+- {path: instance-loop.cir, sha256: 6b38f6f9fe6cd67bd513da66606060507c629dd1a4516ddea0b772e09c2a113d}
+- {path: loop-instance.cir, sha256: 7dbec4d0a85fc3ae517b3250a0521264c3700afcf46468c1118fd66eb90eda6d}
+- {path: loop-model.cir, sha256: af16eb24765e9593c4f9e87033cbea2811b8de385f324d80d56c5ce0d7e39b6b}
+- {path: loop-param.cir, sha256: 8b7d6fc94bdfa8c6b23fa2c2160dce8acd6b30df2b9b66870a35f125d2e92c32}
+netlists:
+- {file: instance-loop.cir, dialect: ngspice}
+- {file: loop-instance.cir, dialect: ngspice}
+- {file: loop-model.cir, dialect: ngspice}
+- {file: loop-param.cir, dialect: ngspice}

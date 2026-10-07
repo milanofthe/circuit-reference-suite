@@ -1,0 +1,27 @@
+id: ngspice_tests_bsim3soidd
+title: ngspice tests/bsim3soidd
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/bsim3soidd
+files:
+- {path: RampVg2.cir, sha256: bdb8b690f5c252f26ad844be19480834c89842b91758f804b1910b10f0e0f18f}
+- {path: inv2.cir, sha256: ceb957e1270e49b7119cbc79f25b8e8b8785a2ffb4bb5222e48758072992345a}
+- {path: lib.h, sha256: f2ea7058236e8a9eaf3652de2885ea74eae9e143cd18341f7327c16c85ae747b}
+- {path: nmosdd.mod, sha256: af329217b0f0b54f3642ccd4acc6a2f2754150c45badb83242286e3248ec3d37}
+- {path: pmosdd.mod, sha256: a46d6dc89bba394f259e73feeaaa8abf9a0b95b583b77c285f18d2d1e5bdaa4d}
+- {path: ring51.cir, sha256: 9fc7edab906b3f1bbb1a5e972a52ccab33cfdea6a588f99219b746bcd4203979}
+- {path: t3.cir, sha256: a333818523fdbbb9a837e578b4c8e2af95c63e1e28fa984ec2387bfff437a393}
+- {path: t4.cir, sha256: c7cc9a46fcd3116165ff4539d93f260eb47c35bf667a871fb9c413a82ebaebf7}
+- {path: t5.cir, sha256: e2ae97d6e17c16932acf519f173d8209d7596484056d11ab1f555e8553e939f4}
+netlists:
+- {file: RampVg2.cir, dialect: ngspice}
+- {file: inv2.cir, dialect: ngspice}
+- {file: ring51.cir, dialect: ngspice}
+- {file: t3.cir, dialect: ngspice}
+- {file: t4.cir, dialect: ngspice}
+- {file: t5.cir, dialect: ngspice}

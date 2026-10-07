@@ -110,18 +110,27 @@ def library_readme(lib: Library) -> str:
 
 
 def cases_table(cases: list[Case]) -> str:
-    rows = [CASES_BEGIN, "", "| case | family | dialects | analyses | devices | libraries | "
-            "status | source | license |", "|---|---|---|---|---|---|---|---|---|"]
+    rows = [CASES_BEGIN, ""]
+    by_source: dict[str, list[Case]] = {}
     for c in cases:
-        graphs = list(c.graphs.values())
-        analyses = sorted({a for g in graphs for a in g.analyses})
-        devices = sorted({g.devices for g in graphs})
-        rows.append(f"| [{c.id}](cases/{c.id}) | {c.family} | "
-                    f"{', '.join(sorted({n.dialect for n in c.netlists()}))} | "
-                    f"{', '.join(analyses)} | {'/'.join(map(str, devices))} | "
-                    f"{', '.join(c.libraries()) or '-'} | {status_text(c)} | "
-                    f"{_source_link(c.source)} | {c.source['license']} |")
-    rows += ["", CASES_END]
+        by_source.setdefault(c.source["name"], []).append(c)
+    for name, group in sorted(by_source.items(), key=lambda kv: kv[0].lower()):
+        src = group[0].source
+        n = sum(len(c.netlists()) for c in group)
+        licenses = ", ".join(sorted({c.source["license"] for c in group}))
+        rows += [f"### {name}", "", f"[{src['url']}]({src['url']}) | {len(group)} cases, "
+                 f"{n} netlists | {licenses}", "",
+                 "| case | netlists | dialects | analyses | devices | libraries | status |",
+                 "|---|---|---|---|---|---|---|"]
+        for c in group:
+            graphs = list(c.graphs.values())
+            analyses = sorted({a for g in graphs for a in g.analyses})
+            rows.append(f"| [{c.id}](cases/{c.id}) | {len(graphs)} | "
+                        f"{', '.join(sorted({n.dialect for n in c.netlists()}))} | "
+                        f"{', '.join(analyses)} | {max(g.devices for g in graphs)} | "
+                        f"{', '.join(c.libraries()) or '-'} | {status_text(c)} |")
+        rows.append("")
+    rows += [CASES_END]
     return "\n".join(rows)
 
 

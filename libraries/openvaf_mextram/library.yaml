@@ -1,0 +1,29 @@
+id: openvaf_mextram
+title: Mextram 505 bipolar model
+source:
+  name: OpenVAF-reloaded
+  url: https://github.com/OpenVAF/OpenVAF-Reloaded
+  commit: 5ed9e63afe70ac95129a78af7b3732e7d431b1e5
+  root: integration_tests/MEXTRAM
+  license: LicenseRef-Mextram
+  authors: [NXP Semiconductors, Delft University of Technology, Auburn University]
+files:
+- {path: IP_disclaimer_license.txt, sha256: 8141832735ce63f2874ae9d9885bf6e089190ff024eb12562f5600666e71cc5e}
+- {path: VERSION, sha256: f276cb0721702baf90a223631e048fc8c26e92184cbfdd6662d7bc0439612def}
+- {path: bjt505.va, sha256: 000f9305a68693b760a13cd926fe23cf5ad851149b02a6d6f7dc22019b218694}
+- {path: bjtd505.va, sha256: a73754ab295190a1044dffda9c3d5e0335132611af51c143c1f1eb002d114722}
+- {path: bjtd505t.va, sha256: b98d3c146c33599cdf83f554621c4f7cf0b472dbf75cc6a02f1f910400cd7b1e}
+- {path: evaluate.inc, sha256: 2e51aae6b096ace331bf181207fac2a37b4543f5c115b780d6712e17e283e6cb}
+- {path: frontdef.inc, sha256: e78ae93e7be62cd0316f349d910235c6761bf9af020b81df114549f1498abc48}
+- {path: initialize.inc, sha256: de22a89cd9ba4a6c94ae492c78700d8b42881884c929e45db8e2b33ae52a8f00}
+- {path: mextram.va, sha256: 049dacdf44bf2e974e1ff4ff7dfa274e96f077b9deaaaf6c1e5227d7a89fd578}
+- {path: noise.inc, sha256: 5e41cce463218842a6872c09ad36a4d539d3aa6c28c3597885426fd2ab9bcb1a}
+- {path: op_print.inc, sha256: c679cbb004d2ae648b5fd24b8f97ef95fd879f1bfcf31fcae06be7181ab8db0d}
+- {path: opinfo.inc, sha256: 2850002936148c4a64267d57117662c996e200bfec3c5883a596bcd81df17d2d}
+- {path: opvars.inc, sha256: af5fb36599b42f359caa590ad66385c923e1d781b59f02ce4399017df6ebb95d}
+- {path: parameters.inc, sha256: e574b0dd7f17e7a144d474a567fb33269b9d946f433138ac44e3b5f2aaa56623}
+- {path: tscaling.inc, sha256: 36397f2d2cb5e1459ba5e6fac9323ca6d4f0839b71a1ad0c63c2243e38af1360}
+- {path: variables.inc, sha256: d1ae1b60429015b5b4b2b970ab31619d0000dd499e4fa35f97cb659baece3f4f}
+notes: |
+  Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+  model's own, stated in the license file or the header of the source.

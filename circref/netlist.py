@@ -1,10 +1,10 @@
 """Just enough netlist reading to check a case: what a file includes or loads, which
 analyses it runs, and which instances it places.
 
-Two syntax families. SPICE (ngspice, Xyce, HSPICE, gnucap's spice mode): dot cards,
-``+`` continuation. Spectre (Spectre, VACASK): keyword statements, ``(node ...)``
-lists, ``//`` comments. In both, the first line of a deck is its title. Verilog-A sources are only
-scanned for their ``include`` directives.
+Two syntax families. SPICE (ngspice, Xyce, HSPICE, PSpice, gnucap's spice mode, WRspice,
+JoSIM): dot cards, ``+`` continuation. Spectre (Spectre, VACASK): keyword statements,
+``(node ...)`` lists, ``//`` comments. In both, the first line of a deck is its title.
+Verilog-A sources are only scanned for their modules and ``include`` directives.
 """
 from __future__ import annotations
 
@@ -13,7 +13,8 @@ from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
-SPICE = ("ngspice", "xyce", "hspice", "spice3", "gnucap", "ltspice")
+SPICE = ("ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "wrspice",
+         "josim", "ltspice")
 SPECTRE = ("spectre", "vacask")
 VERILOGA = ("veriloga",)
 DIALECTS = SPICE + SPECTRE + VERILOGA
@@ -22,6 +23,9 @@ VA_SUFFIXES = (".va", ".vams", ".vh", ".vah", ".include", ".inc_va")
 # Supplied by every Verilog-A compiler, never part of a case.
 VA_STANDARD = ("disciplines.vams", "constants.vams", "discipline.h", "constants.h",
                "discipline.vams", "constant.vams")
+
+# Model types of ngspice N instances that are built in rather than loaded as OSDI.
+NGSPICE_N_BUILTIN = {"nport"}
 
 SPICE_ANALYSES = ("op", "dc", "ac", "tran", "noise", "tf", "pz", "sens", "disto", "four",
                   "pss", "hb", "sp", "step", "mpde", "sampling", "embeddedsampling", "lin")
@@ -32,7 +36,7 @@ SPECTRE_ANALYSES = ("op", "dc", "ac", "tran", "noise", "xf", "sp", "stb", "pss",
 
 @dataclass(frozen=True)
 class Ref:
-    kind: str           # "include" | "lib" | "osdi" | "va"
+    kind: str           # "include" | "lib" | "osdi" | "va" | "data"
     target: str         # the path exactly as written
     section: str | None
     line: int
@@ -45,6 +49,9 @@ class Parsed:
     # instance masters per subcircuit; "" is the top level
     instances: dict[str, Counter] = field(default_factory=dict)
     sections: dict[str, list[Ref]] = field(default_factory=dict)
+    models: dict[str, str] = field(default_factory=dict)        # .model name -> type
+    osdi_devices: set[str] = field(default_factory=set)         # model names of N instances
+    modules: set[str] = field(default_factory=set)              # Verilog-A modules defined
 
 
 def dialect_of(path: Path, inherited: str) -> str:
@@ -57,6 +64,16 @@ def _text(path: Path) -> str:
 
 def _unquote(s: str) -> str:
     return s.strip().strip("\"'")
+
+
+_FILE_PARAM = re.compile(r"""\bfile(?:name)?\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s()]+))""", re.I)
+
+
+def _data_refs(line: str, n: int) -> list[Ref]:
+    """Data files named by a model or instance parameter (nport, filesource, PWL). A bare
+    name or an expression is a parameter that holds the file name, not the file."""
+    names = (next(g for g in m.groups() if g) for m in _FILE_PARAM.finditer(line))
+    return [Ref("data", f, None, n) for f in names if "." in f and "{" not in f]
 
 
 def _master(tokens: list[str]) -> str | None:
@@ -89,7 +106,7 @@ def _spice_lines(text: str, deck: bool) -> list[tuple[int, str]]:
     return out
 
 
-def _spice(text: str, deck: bool) -> Parsed:
+def _spice(text: str, deck: bool, bare_commands: bool = False) -> Parsed:
     p = Parsed(instances={"": Counter()})
     stack = [""]
     section = None
@@ -117,6 +134,9 @@ def _spice(text: str, deck: bool) -> Parsed:
                 refs.append(Ref("lib", _unquote(tokens[1]), tokens[2].lower(), n))
         elif head == ".endl":
             section = None
+        elif head == ".model" and len(tokens) > 2:
+            p.models[tokens[1].lower()] = tokens[2].split("(")[0].lower()
+            refs += _data_refs(line, n)
         elif head == ".hdl" and len(tokens) > 1:
             refs.append(Ref("va", _unquote(tokens[1]), None, n))
         elif head == ".subckt" and len(tokens) > 1:
@@ -127,9 +147,14 @@ def _spice(text: str, deck: bool) -> Parsed:
                 stack.pop()
         elif head[0] == "." and head[1:] in SPICE_ANALYSES:
             p.analyses.append(head[1:])
+        elif bare_commands and head in SPICE_ANALYSES:
+            p.analyses.append(head)
         elif head[0].isalpha():
+            if head[0] == "n" and (model := _master(tokens)):
+                p.osdi_devices.add(model)
             master = _master(tokens) if head[0] == "x" else None
             p.instances[stack[-1]][f"x:{master}" if master else head[0]] += 1
+            refs += _data_refs(line, n)
     return p
 
 
@@ -198,6 +223,8 @@ def _spectre(text: str, deck: bool) -> Parsed:
                 stack.pop()
         elif head == "analysis" and len(tokens) > 2:
             p.analyses.append(tokens[2].lower())
+        elif head == "model":
+            refs += _data_refs(line, n)
         elif head in ("control", "endc", "embed") or head in _SPECTRE_SKIP:
             continue
         else:
@@ -207,6 +234,7 @@ def _spectre(text: str, deck: bool) -> Parsed:
                 p.analyses.append(master)
             elif master:
                 p.instances[stack[-1]][f"x:{master}"] += 1
+                refs += _data_refs(line, n)
     return p
 
 
@@ -215,6 +243,8 @@ def _spectre(text: str, deck: bool) -> Parsed:
 def _veriloga(text: str) -> Parsed:
     p = Parsed(instances={"": Counter()})
     for n, line in enumerate(text.splitlines(), 1):
+        if m := re.match(r"\s*module\s+(\w+)", line):
+            p.modules.add(m.group(1).lower())
         m = re.match(r'\s*`include\s+"([^"]+)"', line)
         if m and Path(m.group(1)).name not in VA_STANDARD:
             p.refs.append(Ref("va", m.group(1), None, n))
@@ -224,7 +254,7 @@ def _veriloga(text: str) -> Parsed:
 def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
     text = _text(path)
     if dialect in SPICE:
-        return _spice(text, deck)
+        return _spice(text, deck, dialect == "gnucap")
     if dialect in SPECTRE:
         return _spectre(text, deck)
     return _veriloga(text)

@@ -1,0 +1,17 @@
+id: ngspice_examples_klu_circuits_85_c3540
+title: ngspice examples/klu/Circuits/85/c3540
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/klu/Circuits
+files:
+- {path: 85/c3540/c3540.net, sha256: ca24e6343efba25e12afe8542737793235afdcded58067c8e2af8809e172eead}
+- {path: 85/c3540/c3540_ann.net, sha256: afd1ff35a0ee86779111124ff0d6d0ab335336324a9be76662768b436a11c73f}
+- {path: technology/45nm_HP.pm, sha256: 6cd923780be8f9762bb4ab9d101ef21dd06b6d59024aa8c0e339cb2d09fb757c}
+netlists:
+- {file: 85/c3540/c3540.net, dialect: ngspice}
+- {file: 85/c3540/c3540_ann.net, dialect: ngspice}

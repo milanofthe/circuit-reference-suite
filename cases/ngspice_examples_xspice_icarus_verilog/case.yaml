@@ -1,0 +1,16 @@
+id: ngspice_examples_xspice_icarus_verilog
+title: ngspice examples/xspice/icarus_verilog
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/icarus_verilog
+files:
+- {path: delay.cir, sha256: 4a5de34aac40ffa71dfb57f4e0e4453177375958b1ee1958e409afcc505958ee}
+- {path: pwm.cir, sha256: a93c823b4d48c4b4e0c3d8a06a2b2a829b8189dfa0a366968f54e529ecd92b46}
+netlists:
+- {file: delay.cir, dialect: ngspice}
+- {file: pwm.cir, dialect: ngspice}

@@ -1,0 +1,27 @@
+id: ngspice_examples_xspice_see
+title: ngspice examples/xspice/see
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/see
+files:
+- {path: repeat_loop_seegen.net, sha256: b24dea090db3819d812a8eab0bcd723b0a82aa9c2e9ff4e4f25c5a636b2169d6}
+- {path: seegen_cm1.cir, sha256: de698bd32257cf889e32c31b3ec2d41514dcc15e00f2b65f765750f6ba1e1ea1}
+- {path: set1.cir, sha256: 14dc4fcb36a3a7168f5123959adf61239cbc10df0e8412e866129d61a6570efa}
+netlists:
+- {file: repeat_loop_seegen.net, dialect: ngspice}
+- {file: seegen_cm1.cir, dialect: ngspice}
+- {file: set1.cir, dialect: ngspice}
+notes: |
+  Left out:
+  - `ihp_inverter_set.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_simple_sram_seegen.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_simple_sram_seegen_ctrl.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_simple_sram_seegen_subckt.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_simple_sram_seegen_subckt_vary.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_simple_sram_set.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source
+  - `ihp_two_inverters_set.net`: needs D:\Spice_general\IHP-Open-PDK\ihp-sg13g2\libs.tech\ngspice\models\cornerMOSlv.lib, an absolute path outside the source

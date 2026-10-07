@@ -1,0 +1,22 @@
+id: ngspice_examples_soi
+title: ngspice examples/soi
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/soi
+files:
+- {path: Inv_chain.sp, sha256: c894228e250096a716242896399384586851ce7aa8d91f71b53c3e6c5dcbff0a}
+- {path: bsim4soi/nmos4p0.mod, sha256: 4e888e3e65442a5b1d605a2bac75a068e6f1dc1c32ed0b9747296312b38d49c6}
+- {path: bsim4soi/pmos4p0.mod, sha256: baaad09a72ceef5c1245bc952e458ab6cf222412fe72efc57db78a6b190fa21b}
+- {path: inv_dc.sp, sha256: 16f106d808ad3696e3aece21b335fd798761b3c8cdf64d976bc8b75c3d5f4d7a}
+- {path: inv_tr.sp, sha256: 94629352f913dbdb514da8257ee687e46bf30deccab974fb9c3264cdb069ff29}
+- {path: ring51_40.sp, sha256: b1db2c0dfdaa966b9011e43cfb94e945eacf42f4b89d81544d9049196010394b}
+netlists:
+- {file: Inv_chain.sp, dialect: ngspice}
+- {file: inv_dc.sp, dialect: ngspice}
+- {file: inv_tr.sp, dialect: ngspice}
+- {file: ring51_40.sp, dialect: ngspice}

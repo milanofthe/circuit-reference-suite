@@ -1,0 +1,22 @@
+id: ngspice_tests_regression_parser
+title: ngspice tests/regression/parser
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/regression/parser
+files:
+- {path: bxpressn-1.cir, sha256: 260b7759810619e308f18661d5f5b9f66934bbb665a7afa0ec31b09ac6448085}
+- {path: minus-minus.cir, sha256: 777e1a3dfe4d78f963158ddf497aa7e4becb676ada599174fbf2e9b7c6927cc2}
+- {path: xpressn-1.cir, sha256: 3aab87a41769571c7f0fefb3a37c35a8db35ed279bfb49ffba71ede3279aaff2}
+- {path: xpressn-2.cir, sha256: c96aeb17a2c15f23f3038f14463fe1c1119eb45bd4187b755472855faa915f78}
+- {path: xpressn-3.cir, sha256: 2fef3bc62bf7f5abd58407cadf83084ac8081bf170728ae561e5835c32ab4f7f}
+netlists:
+- {file: bxpressn-1.cir, dialect: ngspice}
+- {file: minus-minus.cir, dialect: ngspice}
+- {file: xpressn-1.cir, dialect: ngspice}
+- {file: xpressn-2.cir, dialect: ngspice}
+- {file: xpressn-3.cir, dialect: ngspice}

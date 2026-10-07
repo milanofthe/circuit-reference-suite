@@ -1,0 +1,14 @@
+id: openvaf_bsimsoi
+title: BSIM-SOI model
+source:
+  name: OpenVAF-reloaded
+  url: https://github.com/OpenVAF/OpenVAF-Reloaded
+  commit: 5ed9e63afe70ac95129a78af7b3732e7d431b1e5
+  root: integration_tests/BSIMSOI
+  license: LicenseRef-BSIM
+  authors: ['University of California, Berkeley']
+files:
+- {path: bsimsoi.va, sha256: 756ea3693df2618adf09bfc7babaec697fb1b05a8fced8eab510877e396c3094}
+notes: |
+  Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+  model's own, stated in the license file or the header of the source.

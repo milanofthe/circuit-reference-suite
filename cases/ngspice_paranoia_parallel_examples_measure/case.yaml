@@ -1,0 +1,30 @@
+id: ngspice_paranoia_parallel_examples_measure
+title: ngspice paranoia_parallel/examples/measure
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: paranoia_parallel/examples/measure
+files:
+- {path: func_cap.sp, sha256: 8e539ab9917f200a2fcbe1d112189a2b98f10b151a6e9c2146491795ed7b275d}
+- {path: inv-meas-tran-auto.sp, sha256: 81503daf5d7721cb2786ba794fb3f968035ce107dab0c94fc1e57234fc187a5d}
+- {path: inv-meas-tran-control.sp, sha256: feab0f409f0f99ded643e968583cac9d2ebf66b04dc9ad397e8e5b38a8beae22}
+- {path: inv-meas-tran.sp, sha256: 7b1ace3cfe3bede565c22cc59b63425bee6f64fa60401e6a0bde4dec3b7addf6}
+- {path: mos-meas-dc-control.sp, sha256: 2b64ffd5e642e7f9dc85ec5f5ca348b126463dc612c7a0a0d76ff8e9106b09dc}
+- {path: mos-meas-dc.sp, sha256: 0a5c7698ae3cf75dce55c15d179b79dcda91627c960a0881120f8bf7979144ee}
+- {path: rc-meas-ac-control.sp, sha256: 94e9eb54ea9d56d8a81cf50dde33b49e77917b9d260a3064cc11fa082e601b4b}
+- {path: rc-meas-ac.sp, sha256: 83673e2b5ca9017df5707899e31b6dbe66d7e8e1ed3188e9d50a6a887e45837c}
+- {path: simple-meas-tran.sp, sha256: 2c52734cdbfedd8e1a7ddb58eba849be92f4a971d8ebffddf00b5869d4aa980b}
+netlists:
+- {file: func_cap.sp, dialect: ngspice}
+- {file: inv-meas-tran-auto.sp, dialect: ngspice}
+- {file: inv-meas-tran-control.sp, dialect: ngspice}
+- {file: inv-meas-tran.sp, dialect: ngspice}
+- {file: mos-meas-dc-control.sp, dialect: ngspice}
+- {file: mos-meas-dc.sp, dialect: ngspice}
+- {file: rc-meas-ac-control.sp, dialect: ngspice}
+- {file: rc-meas-ac.sp, dialect: ngspice}
+- {file: simple-meas-tran.sp, dialect: ngspice}

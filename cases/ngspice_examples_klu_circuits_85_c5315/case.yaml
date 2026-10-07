@@ -1,0 +1,17 @@
+id: ngspice_examples_klu_circuits_85_c5315
+title: ngspice examples/klu/Circuits/85/c5315
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/klu/Circuits
+files:
+- {path: 85/c5315/c5315.net, sha256: 1966c1700d5acc99b2f498d661f358613cfe8e027d60283b964b7a591359fbae}
+- {path: 85/c5315/c5315_ann.net, sha256: a7c6a41855f735d9dbe943e8778baaa5c4d6f128ed3cdca1ef2aaacbcf70584b}
+- {path: technology/45nm_HP.pm, sha256: 6cd923780be8f9762bb4ab9d101ef21dd06b6d59024aa8c0e339cb2d09fb757c}
+netlists:
+- {file: 85/c5315/c5315.net, dialect: ngspice}
+- {file: 85/c5315/c5315_ann.net, dialect: ngspice}

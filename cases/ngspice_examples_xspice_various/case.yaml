@@ -1,0 +1,39 @@
+id: ngspice_examples_xspice_various
+title: ngspice examples/xspice/various
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/xspice/various
+files:
+- {path: analog_models1_transient.sp, sha256: d91d0da40e1ed33d7c2eac02eb637eb6aae4abaa3137c1df0c2efd5f9d76d23f}
+- {path: astate.cir, sha256: f9659c35d66436b16c08d880452239cae563349c0e40b6d4dc97293339cb1421}
+- {path: astate_pulse.cir, sha256: bf794d27c4d6069777bf2199e0bdcdc9383b5ba3d0b2dfe391dff52e5ff5b5c1}
+- {path: filesource-test.sp, sha256: c896a4e1b89a2054bb06b7911dbb9632b8d86f63ab72f0e1681160d29235aa57}
+- {path: pwlts1.cir, sha256: 3fe8cf88d7106c4029262ddf158d5e917fa2c82a63bc14303581b636beb07619}
+- {path: ro_nand_digi.cir, sha256: 838c082eb4ce44b061d45cd989938fc0ddb7071f819f1e7f08cdea6ec62e95a4}
+- {path: simple-diode.cir, sha256: d28b6bd47dbaced43b1b8292e91188e85315ce64ad49dcb41d5371245ae550da}
+- {path: sine.m, sha256: 31ebcb734c5b9196fad8e4da073aed0020b4e79629e4d60f0456829b31f050c5}
+- {path: vswitch-test-lin.cir, sha256: ff70cd5da70ea132f4d3e81fa3ad0b751408be50014a81b244b684fbf0c47c9b}
+- {path: vswitch-test-log.cir, sha256: 9e81e53d59ce4987afb5b24078b6c8a2d08455b975447796725b6476f16118d8}
+- {path: x_fer.cir, sha256: deba88972ca3fa36754a85cb2a859fd34c30794b9647c3155450b6d0de59b913}
+- {path: xspice_c1.cir, sha256: 1b7254c87fc59192c552c117d6adcf56c87080151fc530a5525f9e1386477ba0}
+- {path: xspice_c2.cir, sha256: 37db6b9afb6e30693e63ff79119e5033faaa302df00051f4c8bb58aa129493b9}
+- {path: xspice_c3.cir, sha256: 481bf6b74dabefdb7f38863482892e4e19860db9d5fd5c1bd6e46a4a0f0f43f2}
+netlists:
+- {file: analog_models1_transient.sp, dialect: ngspice}
+- {file: astate.cir, dialect: ngspice}
+- {file: astate_pulse.cir, dialect: ngspice}
+- {file: filesource-test.sp, dialect: ngspice}
+- {file: pwlts1.cir, dialect: ngspice}
+- {file: ro_nand_digi.cir, dialect: ngspice}
+- {file: simple-diode.cir, dialect: ngspice}
+- {file: vswitch-test-lin.cir, dialect: ngspice}
+- {file: vswitch-test-log.cir, dialect: ngspice}
+- {file: x_fer.cir, dialect: ngspice}
+- {file: xspice_c1.cir, dialect: ngspice}
+- {file: xspice_c2.cir, dialect: ngspice}
+- {file: xspice_c3.cir, dialect: ngspice}

@@ -1,0 +1,40 @@
+id: ngspice_examples_digital_digital_devices
+title: ngspice examples/digital/digital_devices
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/digital/digital_devices
+files:
+- {path: 7490a.cir, sha256: c259e530829e28093bc4434af33dfa2f2b1fba1367e3f3cc45cc5a4c94d4eb23}
+- {path: 74f524.cir, sha256: 9f7f986262a37764c41866cc2364e7ccbc89d512b6af0607502880b5967c360e}
+- {path: behav-283-1.cir, sha256: b3edc0edd12192c2de6c3e45bec3b2f2ae8e65a7b44f3c28b8b54d625e3037d8}
+- {path: behav-283.cir, sha256: ade6bbb73c4cb5fc21c31ead87edebdf6f7e0771d2d4f02af316e0b43df94bee}
+- {path: behav-568.cir, sha256: 1b9748af3c068089b93eabb88891ad867d0b8e22b4d0115d06051af6ce02bf40}
+- {path: behav-tristate-pulse.cir, sha256: fe89949470e90d69c7aabb635563378087bbdd4a8ee7820bf0e239b13c6433d5}
+- {path: behav-tristate.cir, sha256: 2890a7b44ea6617de99f5038512a61deb31aa9470562f2647e45b83a78d49e2d}
+- {path: counter.cir, sha256: c73d673af22467c6877f8361dd5faff0fa64e09d493976f2544bf89441c723f9}
+- {path: decoder.cir, sha256: ae615e0e596ad666a776c1b5b6f9b5a2644c4e4ed2b39a026ac591cbc8cbfc79}
+- {path: encoder.cir, sha256: 840b2a577d279c98c640de17c95977fccf9f9dfd291168ca0b486dd69c427aa8}
+- {path: ex283.cir, sha256: 453085c9f5efc0943255f13660d5a27c08b6d3a2e6611564f8d5f43a9d06d530}
+- {path: ex4.cir, sha256: 4201d4d764fe6303a3ecf9ea8c7733583cdb74155180aa6be5d7e8af2017f78f}
+- {path: ex5.cir, sha256: f5c7e2c5d310220cee092f34ad8530e92a588bdacd124deebf8dfce1c6d4112e}
+- {path: xspice_c4.cir, sha256: 60e20a5870f9ba57abdbd4c958175e688e820f90692351d9063a40f11b1b8727}
+netlists:
+- {file: 7490a.cir, dialect: ngspice}
+- {file: 74f524.cir, dialect: ngspice}
+- {file: behav-283-1.cir, dialect: ngspice}
+- {file: behav-283.cir, dialect: ngspice}
+- {file: behav-568.cir, dialect: ngspice}
+- {file: behav-tristate-pulse.cir, dialect: ngspice}
+- {file: behav-tristate.cir, dialect: ngspice}
+- {file: counter.cir, dialect: ngspice}
+- {file: decoder.cir, dialect: ngspice}
+- {file: encoder.cir, dialect: ngspice}
+- {file: ex283.cir, dialect: ngspice}
+- {file: ex4.cir, dialect: ngspice}
+- {file: ex5.cir, dialect: ngspice}
+- {file: xspice_c4.cir, dialect: ngspice}

@@ -1,0 +1,24 @@
+id: ngspice_tests_vbic
+title: ngspice tests/vbic
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: tests/vbic
+files:
+- {path: CEamp.cir, sha256: 8d28414c3cf40642c39562cc444d0d964e615bcaaa462ea80a670835dd9df62f}
+- {path: FG.cir, sha256: 014827564faba608d4b3ff6f7a6224a5a11a7b31229ad264a91389f07f33a552}
+- {path: FO.cir, sha256: 461a4d68cc30530d6ceefb34cc4be09676f5aa5ca57ba65c7ec1c97fa2ccade6}
+- {path: diffamp.cir, sha256: 95e5b1ca2fad85b57d7712b0f15d44ac2949f47eb3d25101a533ed5861cc1731}
+- {path: noise_scale_test.cir, sha256: 2877ccad8bcb440258e65a8a817edfd8536029ae192b3049cb62f248a8a81286}
+- {path: temp.cir, sha256: 90b2c09659b151d734db34782f19bf02e646a206d640531164e057b1d0f60859}
+netlists:
+- {file: CEamp.cir, dialect: ngspice}
+- {file: FG.cir, dialect: ngspice}
+- {file: FO.cir, dialect: ngspice}
+- {file: diffamp.cir, dialect: ngspice}
+- {file: noise_scale_test.cir, dialect: ngspice}
+- {file: temp.cir, dialect: ngspice}

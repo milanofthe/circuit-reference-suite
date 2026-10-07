@@ -1,0 +1,37 @@
+id: ngspice_examples_cider_parallel
+title: ngspice examples/cider/parallel
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/cider/parallel
+files:
+- {path: BICMOS.LIB, sha256: 4efd35ea8889b14704ff08a0e101fdef82e108d139ac4b4d4b3740a2698a04b7}
+- {path: bicmpd.cir, sha256: 2d9413e76ca13667224f82d1d325094bdbd6a480085246e26c464a077d750159}
+- {path: bicmpu.cir, sha256: 3dca5673ed4862855e9e2a3aae1e87e898ba4d0fda3731ceed79cfb2cacc536c}
+- {path: clkfeed.cir, sha256: a12e8b218de7366c44df21cc6d283d29bbaed06766b1e4517db8394e5295615e}
+- {path: cmosamp.cir, sha256: 14b8e01a0dcddf5d09582c402e90b6284260dc16d5fa28cc20549d27ffb40954}
+- {path: eclinv.cir, sha256: 6d1bdfb818b9e34f395d724856e2ef0f122e79fd46a78330afe385e7f3d9ea33}
+- {path: ecpal.cir, sha256: fc9112fba667cf5c4632b84b1b68fdb6fa3864b3359a12e46c413b0aa663b8cc}
+- {path: gmamp.cir, sha256: 3c55c7c1095bcb80880c70b4b652bc2cc60fd0b06e1e29a03304ae3536bfbd66}
+- {path: latch.cir, sha256: b5e72c84516a7aa48185f1da9dc73fa8a556ce575a9a6a388ad64da3c338f81f}
+- {path: ppef.1d.cir, sha256: 8c71cf4b70cb5d257faf1ac998ade63295c975bbafc04762a6b849762b7f5851}
+- {path: ppef.2d.cir, sha256: 3e5007446f9bde0f3e58f857525e248e1cb794c661afe063e1f8e628871c01b1}
+- {path: ringosc.1u.cir, sha256: 520573a121b37551858d2a175882630a4a16e3f72006d8fa43e72b55cffa8268}
+- {path: ringosc.2u.cir, sha256: 0d309a115fc8f777e245692e14754cecb23c43d7600cccb58040f6b84c9b4b67}
+netlists:
+- {file: bicmpd.cir, dialect: ngspice}
+- {file: bicmpu.cir, dialect: ngspice}
+- {file: clkfeed.cir, dialect: ngspice}
+- {file: cmosamp.cir, dialect: ngspice}
+- {file: eclinv.cir, dialect: ngspice}
+- {file: ecpal.cir, dialect: ngspice}
+- {file: gmamp.cir, dialect: ngspice}
+- {file: latch.cir, dialect: ngspice}
+- {file: ppef.1d.cir, dialect: ngspice}
+- {file: ppef.2d.cir, dialect: ngspice}
+- {file: ringosc.1u.cir, dialect: ngspice}
+- {file: ringosc.2u.cir, dialect: ngspice}

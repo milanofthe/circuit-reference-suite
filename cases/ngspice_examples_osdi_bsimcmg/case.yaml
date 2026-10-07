@@ -1,0 +1,27 @@
+id: ngspice_examples_osdi_bsimcmg
+title: ngspice examples/osdi/bsimcmg
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/osdi/bsimcmg
+files:
+- {path: Modelcards/modelcard.nmos, sha256: 4c413f05f97d715cdb56b22f43daae9a9198fe72222b063e44a630415132daf7}
+- {path: Modelcards/modelcard.pmos, sha256: 0352db1bc7f6cbce486c3108558a6718a787b286325b7069103513180d80ef07}
+- {path: inverter_ro.sp, sha256: 3fe1e2cdcab460ed858bebc4b3ccadaeffb0682398a4180803433b81b499715f}
+- {path: inverter_transient.sp, sha256: 1a045e2aca31166d66106879e316032a2f04a4b2c8612fa51c45fa3d2a40893d}
+- {path: netlist_nmos.sp, sha256: 6423cbddc3a5ebd302a339e266921f7e43f392f8efebe579fcb5ba05f45b4980}
+- {path: netlist_pmos.sp, sha256: f1b5ac92eed39ffe7dfc34dede30960ce8d9d77e4dc014eea4a9d8254406dc4a}
+- {path: ringosc_17stg.sp, sha256: fffa1961af844cdf15eed1a4064eeb716322de66428a77e98061b5660ef23d40}
+- {path: simple_inverter_dc.sp, sha256: 6452272cb6cfc3d430da0b13f0f762b854a3575b2c5356661472a33656f7d671}
+netlists:
+- {file: inverter_ro.sp, dialect: ngspice}
+- {file: inverter_transient.sp, dialect: ngspice}
+- {file: netlist_nmos.sp, dialect: ngspice}
+- {file: netlist_pmos.sp, dialect: ngspice}
+- {file: ringosc_17stg.sp, dialect: ngspice}
+- {file: simple_inverter_dc.sp, dialect: ngspice}
+resolve: {bsimcmg_va: libraries/openvaf_bsimcmg/bsimcmg.va}

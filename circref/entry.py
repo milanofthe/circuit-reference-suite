@@ -11,10 +11,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import posixpath
 from collections import Counter
 from dataclasses import dataclass, field
-from functools import cached_property
+from functools import cached_property, lru_cache
 from pathlib import Path
 
 import yaml
@@ -152,6 +153,19 @@ def owner(path: Path) -> Entry | None:
     return None
 
 
+@lru_cache(maxsize=None)
+def _listdir(directory: Path) -> frozenset[str]:
+    return frozenset(os.listdir(directory))
+
+
+def is_file(path: Path) -> bool:
+    """Like Path.is_file, but case-sensitive on every platform, as on the CI runner."""
+    if not path.is_file():
+        return False
+    return all(part.name in _listdir(part.parent)
+               for part in [path, *path.parents] if part != ROOT and ROOT in part.parents)
+
+
 def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, bool, str | None]:
     entry = owner(origin)
     table = entry.resolve_table() if entry else {}
@@ -163,13 +177,13 @@ def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, 
         if mapped is None:
             return None, True, None
         path = ROOT / mapped
-        if not path.is_file():
+        if not is_file(path):
             return None, False, f"{where}: {ref.target!r} maps to missing {mapped}"
     else:
         if Path(ref.target).is_absolute() or ref.target.startswith(("~", "$")):
             return None, False, f"{where}: absolute path {ref.target!r} needs a resolve entry"
-        path = (origin.parent / ref.target).resolve()
-        if not path.is_file():
+        path = Path(os.path.normpath(origin.parent / ref.target))
+        if not is_file(path):
             return None, False, f"{where}: cannot resolve {ref.target!r}"
     if ref.kind == "osdi" and path.suffix.lower() not in netlist.VA_SUFFIXES:
         return None, False, f"{where}: {ref.target!r} must map to its Verilog-A source"
@@ -182,37 +196,64 @@ def walk(case: Case, nl: Netlist) -> Graph:
     g = Graph()
     start = case.directory / nl.file
     queue = [(start, nl.dialect, None, True)]
-    seen = set()
-    while queue:
-        path, dialect, section, deck = queue.pop(0)
-        if (path, section) in seen:
-            continue
-        seen.add((path, section))
-        g.files.add(path)
-        entry = owner(path)
-        if isinstance(entry, Library):
-            g.libraries.add(entry.id)
-        parsed = netlist.parse(path, dialect, deck)
-        if section is None:
-            refs = parsed.refs
-        elif section in parsed.sections:
-            refs = parsed.sections[section]
-        else:
-            g.edges.append(Edge(path, netlist.Ref("lib", path.name, section, 0), None, False,
-                                f"{path.relative_to(ROOT).as_posix()}: no section {section!r}"))
-            continue
-        if entry is case:
-            g.analyses += [a for a in parsed.analyses if a not in g.analyses]
-            for name, counts in parsed.instances.items():
-                g.subckts.setdefault(name, Counter()).update(counts)
-        for ref in refs:
-            target, missing, error = _resolve(path, ref, nl.resolve)
-            g.edges.append(Edge(path, ref, target, missing, error))
+    seen: set = set()
+    models: dict[str, str] = {}
+    osdi_devices: set[str] = set()
+    modules: set[str] = set()
+    asked: set[str] = set()
+    while True:
+        while queue:
+            path, dialect, section, deck = queue.pop(0)
+            if (path, section) in seen:
+                continue
+            seen.add((path, section))
+            g.files.add(path)
+            entry = owner(path)
+            if isinstance(entry, Library):
+                g.libraries.add(entry.id)
+            parsed = netlist.parse(path, dialect, deck)
+            models |= parsed.models
+            osdi_devices |= parsed.osdi_devices
+            modules |= parsed.modules
+            if section is None:
+                refs = parsed.refs
+            elif section in parsed.sections:
+                refs = parsed.sections[section]
+            else:
+                g.edges.append(Edge(path, netlist.Ref("lib", path.name, section, 0), None, False,
+                                    f"{path.relative_to(ROOT).as_posix()}: no section {section!r}"))
+                continue
+            if entry is case:
+                g.analyses += [a for a in parsed.analyses if a not in g.analyses]
+                for name, counts in parsed.instances.items():
+                    g.subckts.setdefault(name, Counter()).update(counts)
+            for ref in refs:
+                target, missing, error = _resolve(path, ref, nl.resolve)
+                g.edges.append(Edge(path, ref, target, missing, error))
+                if target is not None and ref.kind != "data":
+                    kind = "veriloga" if ref.kind in ("osdi", "va") else dialect
+                    queue.append((target, netlist.dialect_of(target, kind),
+                                  ref.section if ref.kind == "lib" else None, False))
+        # An OSDI device (ngspice N instance) needs a Verilog-A module of its model type.
+        # Simulators often load those from an init file the deck never names, so the
+        # resolve table maps the type itself onto the source.
+        needed = {models[m] for m in osdi_devices if m in models} - modules - asked
+        needed -= netlist.NGSPICE_N_BUILTIN
+        if not needed:
+            return g
+        for t in sorted(needed):
+            asked.add(t)
+            ref = netlist.Ref("osdi", t, None, 0)
+            table = {**case.resolve_table(), **nl.resolve}
+            if t not in table:
+                g.edges.append(Edge(start, ref, None, False,
+                                    f"{nl.file}: OSDI device type {t!r} has no Verilog-A module; "
+                                    f"map {t!r} in resolve"))
+                continue
+            target, missing, error = _resolve(start, ref, nl.resolve)
+            g.edges.append(Edge(start, ref, target, missing, error))
             if target is not None:
-                kind = "veriloga" if ref.kind in ("osdi", "va") else dialect
-                queue.append((target, netlist.dialect_of(target, kind),
-                              ref.section if ref.kind == "lib" else None, False))
-    return g
+                queue.append((target, "veriloga", None, False))
 
 
 # --------------------------------------------------------------------- loading

@@ -1,0 +1,14 @@
+id: ngspice_examples_cider_jfet
+title: ngspice examples/cider/jfet
+family: test
+source:
+  name: ngspice
+  url: https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/
+  license: BSD-3-Clause
+  authors: [The ngspice developers]
+  commit: 059066b532f7073fccf4173ef269309eafdc7f0c
+  root: examples/cider/jfet
+files:
+- {path: jfet.cir, sha256: 9dfbd6b1fcb65d4d3079b58895f10affedc6389bc28cdd40dc8b2d832b67b160}
+netlists:
+- {file: jfet.cir, dialect: ngspice}
