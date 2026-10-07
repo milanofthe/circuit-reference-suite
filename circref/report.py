@@ -4,6 +4,7 @@ them and fail when the committed copy is stale."""
 from __future__ import annotations
 
 import os
+import re
 
 from .entry import ROOT, Case, Library, load_library
 
@@ -35,6 +36,11 @@ def _source_link(src: dict) -> str:
     if "doi" in src:
         link += f" [doi](https://doi.org/{src['doi']})"
     return link
+
+
+def _anchor(heading: str) -> str:
+    """GitHub's anchor for a markdown heading."""
+    return re.sub(r"[^a-z0-9 _-]", "", heading.lower()).replace(" ", "-")
 
 
 def status_text(case: Case) -> str:
@@ -114,7 +120,20 @@ def cases_table(cases: list[Case]) -> str:
     by_source: dict[str, list[Case]] = {}
     for c in cases:
         by_source.setdefault(c.source["name"], []).append(c)
-    for name, group in sorted(by_source.items(), key=lambda kv: kv[0].lower()):
+    order = sorted(by_source.items(), key=lambda kv: kv[0].lower())
+    rows += ["| source | cases | netlists | dialects | complete | adapted | incomplete | license |",
+             "|---|---|---|---|---|---|---|---|"]
+    for name, group in order:
+        labels = [c.status()[0] for c in group]
+        rows.append(f"| [{name}](#{_anchor(name)}) | {len(group)} | "
+                    f"{sum(len(c.netlists()) for c in group)} | "
+                    f"{', '.join(sorted({n.dialect for c in group for n in c.netlists()}))} | "
+                    f"{labels.count('complete')} | {labels.count('adapted')} | "
+                    f"{labels.count('incomplete')} | "
+                    f"{', '.join(sorted({c.source['license'] for c in group}))} |")
+    rows.append(f"| total | {len(cases)} | {sum(len(c.netlists()) for c in cases)} | | | | | |")
+    rows.append("")
+    for name, group in order:
         src = group[0].source
         n = sum(len(c.netlists()) for c in group)
         licenses = ", ".join(sorted({c.source["license"] for c in group}))

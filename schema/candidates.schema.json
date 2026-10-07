@@ -14,8 +14,8 @@
       "has": {"type": "string"},
       "missing": {"type": "string"},
       "blocker": {
-        "enum": ["license", "models", "format", "not public"],
-        "description": "license: no or unclear license; models: needs device models that may not be redistributed; format: no netlist, only schematics or code; not public."
+        "enum": ["license", "models", "format", "not public", "pending"],
+        "description": "license: no or unclear license; models: needs device models that may not be redistributed; format: no netlist, only schematics or code; not public; pending: includable, not imported yet."
       }
     }
   }

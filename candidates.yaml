@@ -1,1 +1,200 @@
-[]
+# Public sources of circuits that are not (yet) cases.
+#
+# Each entry says what the source provides and the one thing that keeps it out of
+# the corpus. Rendered into the README by `python -m circref build`.
+
+- name: VA-Models
+  url: https://github.com/dwarning/VA-Models
+  license: none at the top level; per-model terms, mostly ECL-2.0
+  has: Compact models in Verilog-A with ngspice and Xyce test circuits for each (about 250 decks, 73 ngspice/Xyce pairs).
+  missing: A license for the test circuits; they carry no header and the repository has no license file.
+  blocker: license
+
+- name: qucs-test
+  url: https://github.com/Qucs/qucs-test
+  license: none stated
+  has: 74 qucsator test netlists.
+  missing: A license file; the repository states none.
+  blocker: license
+
+- name: vajax
+  url: https://github.com/ChipFlow/vajax
+  license: Apache-2.0 named in the README only
+  has: 7 benchmark netlists for a JAX-based simulator.
+  missing: A license file; one benchmark (mul64) also lacks its multiplier netlist.
+  blocker: license
+
+- name: gnucap-models
+  url: https://git.savannah.gnu.org/cgit/gnucap/gnucap-models.git
+  license: per directory, including a nonfree directory
+  has: About 350 decks exercising model plugins (SPICE3, ngspice, JSPICE3 ports).
+  missing: A license per file; the directories mix licenses.
+  blocker: license
+
+- name: RSpice
+  url: https://github.com/JaimeHW/RSpice
+  license: LicenseRef-RSpice-Personal-Use-1.1
+  has: Copies of the ngspice and Xyce test sets.
+  missing: An open license; the originals are cases here.
+  blocker: license
+
+- name: Berkeley KSPICE examples
+  url: https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/kspice.tar.Z
+  license: BSD-style, stated on the download page only
+  has: About 27 decks beyond SPICE3f5, among them lossy coupled transmission lines (TXL, CPL).
+  missing: A license inside the archive; the ibm1-3 decks have no stated origin.
+  blocker: license
+
+- name: Berkeley SPICE2 benchmark
+  url: https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/spice2.unix.tar.gz
+  license: BSD-style, stated on the download page only
+  has: The seven-circuit SPICE2 benchmark deck (benchmark.in).
+  missing: A license inside the archive.
+  blocker: license
+
+- name: BSIM4.8.0 benchmark decks
+  url: https://www.bsim.berkeley.edu/BSIM4/BSIM480.zip
+  license: BSIM terms of use on the BSIM website
+  has: 20 BSIM4 test circuits (ring oscillator, op-amp, one-shot, QA sweeps) with model cards.
+  missing: A license inside the archive.
+  blocker: license
+
+- name: IBM power grid benchmarks
+  url: https://web.ece.ucsb.edu/~lip/PGBenchmarks/ibmpgbench.html
+  license: none; the host page says all rights reserved
+  has: ibmpg1-8, static and transient power grid decks.
+  missing: A license.
+  blocker: license
+
+- name: THU power grid benchmarks
+  url: http://tiger.cs.tsinghua.edu.cn/PGBench/
+  license: all rights reserved
+  has: Power grids derived from a 65 nm chip.
+  missing: A license; the site is offline.
+  blocker: license
+
+- name: sky130-circuit-bench
+  url: https://github.com/yuxi120407/sky130-circuit-bench
+  license: none
+  has: About 990 ngspice circuits on SKY130.
+  missing: A license.
+  blocker: license
+
+- name: AutoCkt
+  url: https://github.com/ksettaluri6/AutoCkt
+  license: none
+  has: Op-amp sizing testbenches on PTM 45 nm.
+  missing: A license, and PTM model cards carry no redistribution terms.
+  blocker: license
+
+- name: Masala-CHAI
+  url: https://github.com/jitendra-bhandari/Masala-CHAI
+  license: none
+  has: Netlists extracted from textbook schematics.
+  missing: A license.
+  blocker: license
+
+- name: symbench spice-datasets
+  url: https://github.com/symbench/spice-datasets
+  license: GPL-3.0 asserted for the repository
+  has: LTspice and KiCad circuits.
+  missing: Rights to the content; the LTspice files are Linear Technology's, the KiCad files collected from other projects.
+  blocker: license
+
+- name: ALIGN-public
+  url: https://github.com/ALIGN-analoglayout/ALIGN-public
+  license: BSD-3-Clause
+  has: About 1150 analog netlists (HSPICE, Spectre, CDL), among them OTA testbenches.
+  missing: Device models; the sized netlists name foundry devices, the testbenches use stub models and a layout-extracted file not in the repository.
+  blocker: models
+
+- name: MAGICAL-CIRCUITS
+  url: https://github.com/magical-eda/MAGICAL-CIRCUITS
+  license: BSD-3-Clause
+  has: 45 Spectre netlists and Ocean scripts.
+  missing: TSMC 40 nm models and Cadence library files.
+  blocker: models
+
+- name: AICircuit
+  url: https://github.com/AvestimehrResearchGroup/AICircuit
+  license: MIT
+  has: 11 Spectre netlists of analog and RF blocks.
+  missing: Redistributable models; they use PTM 45 nm and Cadence rfLib.
+  blocker: models
+
+- name: AnalogGym, proprietary-PDK circuits
+  url: https://github.com/CODA-Team/AnalogGym
+  license: BSD-3-Clause
+  has: Spectre amplifiers, charge pump, PLL and sensing front end.
+  missing: TSMC N22, SMIC 40 nm, TSMC 180 BCD and gpdk045 models.
+  blocker: models
+
+- name: AnalogGenie
+  url: https://github.com/xz-group/AnalogGenie
+  license: MIT
+  has: 4152 analog topologies as Spectre netlists.
+  missing: Sizes, sources and analyses; nothing to simulate.
+  blocker: format
+
+- name: CktGNN Open Circuit Benchmark
+  url: https://github.com/zehao-dong/CktGNN
+  license: MIT
+  has: About 10000 op-amp topologies.
+  missing: Netlists; the circuits are stored as graph pickles.
+  blocker: format
+
+- name: sbgr-benchmark
+  url: https://github.com/Bashar-AlhajHamad/sbgr-benchmark
+  license: MIT
+  has: 7 SKY130 bandgap reference testbenches.
+  missing: Concrete decks; the files are templates filled in by a Python harness.
+  blocker: format
+
+- name: Lessons in Electric Circuits
+  url: https://www.ibiblio.org/kuphaldt/electricCircuits/
+  license: CC-BY-4.0
+  has: About 140 SPICE decks of textbook circuits.
+  missing: Netlist files; the decks are embedded in HTML pages.
+  blocker: format
+
+- name: Spice21
+  url: https://github.com/gabhijit/Spice21
+  license: BSD-3-Clause
+  has: Test circuits of the Spice21 simulator.
+  missing: Netlists; the circuits are built in Rust code.
+  blocker: format
+
+- name: Qucs-S examples
+  url: https://github.com/ra3xdh/qucs_s
+  license: GPL-2.0-or-later
+  has: About 250 example schematics.
+  missing: Netlists; Qucs-S writes them from the schematic when it runs a simulation.
+  blocker: format
+
+- name: Open PDK xschem testbenches
+  url: https://github.com/StefanSchippers/xschem_sky130
+  license: Apache-2.0
+  has: Testbench schematics for SKY130 (77), GF180MCU (58) and IHP SG13G2 (100, also for Xyce and Qucs-S).
+  missing: Netlists; xschem writes them from the schematics.
+  blocker: format
+
+- name: gnucap Verilog-AMS tests
+  url: https://git.savannah.gnu.org/cgit/gnucap/gnucap-modelgen-verilog.git
+  license: GPL-3.0-or-later
+  has: Model generator tests and the IHP SG13G2 gnucap testbenches.
+  missing: SPICE or Spectre decks; they are gnucap command scripts with Verilog-AMS structural netlists.
+  blocker: format
+
+- name: OpenFASOC LC-DCO
+  url: https://github.com/idea-fasoc/OpenFASOC
+  license: Apache-2.0
+  has: 23 ngspice and Xyce decks of an LC oscillator on SKY130.
+  missing: Nothing known; not imported yet.
+  blocker: pending
+
+- name: SRAM-PG
+  url: https://github.com/ShenShan123/SRAM-PG
+  license: Apache-2.0
+  has: SRAM power grids; the small ssram grids are plain SPICE.
+  missing: Nothing for the small grids; the large ones are 70-224 MB each.
+  blocker: pending
