@@ -1,0 +1,15 @@
+id: sky130_special_pfet_latch
+title: SKY130 special_pfet_latch model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/special_pfet_latch/tests
+files:
+- {path: sky130_fd_pr__special_pfet_latch__pfet_vth.spice, sha256: 122f8cf693897f21a9cd23060c2b51fbf0948915f59f185bb0c21e4bf3c26f83}
+netlists:
+- {file: sky130_fd_pr__special_pfet_latch__pfet_vth.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

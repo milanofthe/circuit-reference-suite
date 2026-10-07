@@ -11,6 +11,7 @@ from __future__ import annotations
 import re
 from collections import Counter
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 
 SPICE = ("ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "wrspice",
@@ -263,7 +264,9 @@ def _veriloga(text: str) -> Parsed:
     return p
 
 
+@lru_cache(maxsize=None)
 def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
+    """Parsed once per run; callers must not modify the result."""
     text = _text(path)
     if dialect in SPICE:
         return _spice(text, deck, dialect)

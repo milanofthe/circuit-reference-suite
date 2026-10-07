@@ -1,0 +1,15 @@
+id: sky130_res_generic_nd
+title: SKY130 res_generic_nd model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/res_generic_nd/tests
+files:
+- {path: sky130_fd_pr__res_generic_nd__resval_test.spice, sha256: 2c2779181c7855f1b2fcba36709565f41cd864a9cf3fc9325b0377053389b068}
+netlists:
+- {file: sky130_fd_pr__res_generic_nd__resval_test.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

@@ -1,0 +1,23 @@
+id: analoggym_hoilee_affc_pin_3
+title: AnalogGym amplifier HoiLee_AFFC_Pin_3, SKY130
+family: opamp
+source:
+  name: AnalogGym
+  url: https://github.com/CODA-Team/AnalogGym
+  commit: 0a9d1390ade361e2b4a2d33181e22367edbb8afc
+  license: BSD-3-Clause
+  authors: [CODA Team]
+  root: AnalogGym/Amplifier
+files:
+- {path: spice_netlist/HoiLee_AFFC_Pin_3, sha256: 1f8dabf2ee2c04f7edd6d45d6fb5fa9ce9d773dc0a82d56a133211586df0ee28}
+- {path: design_variables/HoiLee_AFFC_Pin_3, sha256: a05db27bea2139a8891eb61e814a9843b14f6a8d0c5f474b435c379f9bdb6d84}
+- {path: amp_spice_testbench/TB_Amplifier_ACDC.cir, sha256: 615ab66f4f19719542323a89bba1520088e8b202693d91768f3f22c49109f804}
+- {path: amp_spice_testbench/TB_Amplifier_Tran.cir, sha256: b2090da16dae015f99b03c52244446f3ce6bc9e693269f8565a534ddbcd95b3a}
+netlists:
+- {file: amp_spice_testbench/TB_Amplifier_ACDC.cir, dialect: ngspice}
+- {file: amp_spice_testbench/TB_Amplifier_Tran.cir, dialect: ngspice}
+resolve: {../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice}
+notes: |
+  AnalogGym's amplifier testbenches are written for `HoiLee_AFFC_Pin_3`; their comments
+  say to replace the circuit name for any other amplifier. The ACDC deck measures gain,
+  bandwidth, phase margin, CMRR and PSRR, the transient deck slew and settling.

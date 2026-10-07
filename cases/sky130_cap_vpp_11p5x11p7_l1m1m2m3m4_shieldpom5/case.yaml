@@ -1,0 +1,34 @@
+id: sky130_cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5
+title: SKY130 cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5 model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5__cap4termval_test.spice, sha256: 027e21a38179f3ced429deb2dd31a617feabaa49feb95a01960701d178fb1ef5}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice, sha256: 1b0f107e6c6af50b51daf949a884f6a19892cb2028f30b48f7dd302097b86830}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice, sha256: dcf2be3aa397e6f7194a3a21a84e170e450875461e8083e68b2f204bbf75df67}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice, sha256: 3146627c980cae7ff11d8822910594e5ab913c3b7b32f4110bbebf72285957d7}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice, sha256: 04c3249ae1cc3b14d0999cdd2b19bb638d8bbb6c762a5253f8277cdee67cbbb9}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice, sha256: df28a2ddacc40425a6f64233440c53ab70670b574a7b765c8513c4695861cc4f}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x__cap4termval_test.spice, sha256: d2a5ec411e883d5b598816a1eb1dd8e5f504f97e17906fe25f4ef51e7f5e86f6}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice, sha256: e318c6eb82b20d9560ebd3d84cdea447a6a07f2f0c34215d68d6690fd3bb9ab1}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice, ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice,
+  ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice,
+  ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice,
+  ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice,
+  ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice,
+  ../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice}

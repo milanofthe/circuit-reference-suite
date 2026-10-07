@@ -1,0 +1,25 @@
+id: analoggym_qu2017_azc_pin_3
+title: AnalogGym amplifier Qu2017_AZC_Pin_3, SKY130
+family: opamp
+source:
+  name: AnalogGym
+  url: https://github.com/CODA-Team/AnalogGym
+  commit: 0a9d1390ade361e2b4a2d33181e22367edbb8afc
+  license: BSD-3-Clause
+  authors: [CODA Team]
+  root: AnalogGym/Amplifier
+files:
+- {path: spice_netlist/Qu2017_AZC_Pin_3, sha256: 364c7b453ebd9d9f23324d17a60315b980e39f6e4bb7e4cde452badfbfaf98d7}
+- {path: design_variables/Qu2017_AZC_Pin_3, sha256: ba165169285e888ea96ee1744e45eb1bcf249f99c30ee94c5f54a32d3f29482a}
+- {path: amp_spice_testbench/Qu2017_AZC_Pin_3_ACDC.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_ACDC.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Qu2017_AZC_Pin_3`, as its comments instruct'}
+- {path: amp_spice_testbench/Qu2017_AZC_Pin_3_Tran.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_Tran.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Qu2017_AZC_Pin_3`, as its comments instruct'}
+netlists:
+- {file: amp_spice_testbench/Qu2017_AZC_Pin_3_ACDC.cir, dialect: ngspice}
+- {file: amp_spice_testbench/Qu2017_AZC_Pin_3_Tran.cir, dialect: ngspice}
+resolve: {../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice}
+notes: |
+  AnalogGym's amplifier testbenches are written for `HoiLee_AFFC_Pin_3`; their comments
+  say to replace the circuit name for any other amplifier. The ACDC deck measures gain,
+  bandwidth, phase margin, CMRR and PSRR, the transient deck slew and settling.

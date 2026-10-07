@@ -1,0 +1,24 @@
+id: sky130_cap_vpp_04p4x04p6_m1m2_noshield
+title: SKY130 cap_vpp_04p4x04p6_m1m2_noshield model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_04p4x04p6_m1m2_noshield/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield__capval_test.spice, sha256: 342d95c1b1f340b1884473dfe2985195dac8c4916d7ad87b2cbf914360f0a65b}
+- {path: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1nhv__capval_test.spice, sha256: aca821669bf790014f90c0cce48c4caadf4bbe06c9f5db2f01dba0987c1730b1}
+- {path: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1phv__capval_test.spice, sha256: b460bddb3262ff231e5e24d8e9c2438b053fc35a2778e4d50e32a2e6b09c1b1e}
+- {path: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o2__capval_test.spice, sha256: b74fd1c01b577366963d9bfd1b412a8d11c774e9cfcc52649da336c9c5f31041}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield__capval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1nhv__capval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1phv__capval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o2__capval_test.spice, dialect: ngspice}
+resolve: {../../../models/capacitors/sky130_fd_pr__model__cap_vpp.model.spice: libraries/sky130_fd_pr/models/capacitors/sky130_fd_pr__model__cap_vpp.model.spice,
+  ../../../models/r+c/res_typical__cap_typical.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice,
+  ../../../models/r+c/res_typical__cap_typical__lin.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice,
+  ../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

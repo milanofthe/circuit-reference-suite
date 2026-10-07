@@ -1,0 +1,17 @@
+id: sky130_cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4
+title: SKY130 cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4 model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice, sha256: c83d58cf34c651d28b26994a3e01f4a468f749e94882c29b3da17a2943dee3e4}
+- {path: sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice, sha256: 9ceb1fd4972ac09c75f9313adb4a3d7f88f6e2a405220e614c8a731f332df16a}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice, dialect: ngspice}
+- {file: sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice, ../sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4_top.spice: libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4_top.spice}

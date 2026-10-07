@@ -1,0 +1,17 @@
+id: sky130_rf_nfet_20v0_zvt_withptap
+title: SKY130 rf_nfet_20v0_zvt_withptap model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/rf_nfet_20v0_zvt_withptap/tests
+files:
+- {path: sky130_fd_pr__rf_nfet_20v0_zvt_withptap__nfet_vth.spice, sha256: c96148a7bc3a577746e8d27e6942efb64fd9482005936e07e2128feb77ddc159}
+netlists:
+- {file: sky130_fd_pr__rf_nfet_20v0_zvt_withptap__nfet_vth.spice, dialect: ngspice}
+resolve: {../../../models/corners/tt.spice: libraries/sky130_fd_pr/models/corners/tt.spice, ../../../models/r+c/res_typical__cap_typical.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice,
+  ../../../models/r+c/res_typical__cap_typical__lin.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice,
+  ../sky130_fd_pr__rf_nfet_20v0_zvt_withptap.spice: libraries/sky130_fd_pr/cells/rf_nfet_20v0_zvt_withptap/sky130_fd_pr__rf_nfet_20v0_zvt_withptap.spice}

@@ -1,0 +1,20 @@
+id: sky130_esd_rf_diode_pd2nw_11v0
+title: SKY130 esd_rf_diode_pd2nw_11v0 model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/esd_rf_diode_pd2nw_11v0/tests
+files:
+- {path: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_100__diode_vth.spice, sha256: a7ea099481dbdddd7ad67ac0cb91824971404a31b05ede3ed99152ce4178e290}
+- {path: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_200__diode_vth.spice, sha256: dcfec8df13d68f4d9085de14f94ecc9225846a023293a763f06c8ebdb0a933ea}
+- {path: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_300__diode_vth.spice, sha256: 29eed32a30631902c0a956d63d7ac7bdac302a033db824c939997a74636d49c7}
+netlists:
+- {file: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_100__diode_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_200__diode_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__esd_rf_diode_pd2nw_11v0_300__diode_vth.spice, dialect: ngspice}
+resolve: {../../../models/sky130_fd_pr__model__diode_pd2nw_11v0.model.spice: libraries/sky130_fd_pr/models/sky130_fd_pr__model__diode_pd2nw_11v0.model.spice,
+  ../../pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice: libraries/sky130_fd_pr/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice}

@@ -1,0 +1,15 @@
+id: sky130_special_nfet_pass_flash
+title: SKY130 special_nfet_pass_flash model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/special_nfet_pass_flash/tests
+files:
+- {path: sky130_fd_pr__special_nfet_pass_flash__nfet_vth.spice, sha256: d7972a5d91e8161926caaa8ea056a7c4269341e89b2cd13e2b11e5aef6cd0d6a}
+netlists:
+- {file: sky130_fd_pr__special_nfet_pass_flash__nfet_vth.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

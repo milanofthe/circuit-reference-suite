@@ -1,0 +1,36 @@
+id: sky130_rf_pfet_01v8_lvt
+title: SKY130 rf_pfet_01v8_lvt model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/rf_pfet_01v8_lvt/tests
+files:
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p35__pfet_vth.spice, sha256: eb6d771e178e9304079cbd00055bcbecee0cf612150c4281f0f03e3479ee0809}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p50__pfet_vth.spice, sha256: d0b761db76a8384786f55682ce7101d53082e37f8a2a56a1361e2748789d7368}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p35__pfet_vth.spice, sha256: d356160ccd3799174a42f35c4d3a8c41f96b25ac5e561ed7d926dd3f42d87f10}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p50__pfet_vth.spice, sha256: 5667ea83e185fc0cf207ba3c0ca0d565097cbb9710549ecc4f6ed2323eccc1a0}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p35__pfet_vth.spice, sha256: 93e6a83a3873a6898c492058134e642754be12aca7f44ea87df56e676e12f622}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p50__pfet_vth.spice, sha256: 28d7c55f036a7526921e06e561efce886362b70b6af90781471cd46940ff5f13}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p35__pfet_vth.spice, sha256: 3a5c49f93a7bf16e070c757b9f899321dba018aa5a4a052c29dc6431884af64b}
+- {path: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p50__pfet_vth.spice, sha256: 8217399e35c239bfae86872cc0af3752f6aee0fdf6af7ced845a4cf45ceee0cc}
+netlists:
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p35__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p50__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p35__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p50__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p35__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p50__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p35__pfet_vth.spice, dialect: ngspice}
+- {file: sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p50__pfet_vth.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice, ../sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p35.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p35.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p50.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p50.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p35.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p35.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p50.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p50.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p35.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p35.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p50.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p50.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p35.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p35.spice,
+  ../sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p50.spice: libraries/sky130_fd_pr/cells/rf_pfet_01v8_lvt/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p50.spice}

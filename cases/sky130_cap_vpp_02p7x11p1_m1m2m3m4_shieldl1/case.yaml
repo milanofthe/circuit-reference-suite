@@ -1,0 +1,15 @@
+id: sky130_cap_vpp_02p7x11p1_m1m2m3m4_shieldl1
+title: SKY130 cap_vpp_02p7x11p1_m1m2m3m4_shieldl1 model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_02p7x11p1_m1m2m3m4_shieldl1/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_02p7x11p1_m1m2m3m4_shieldl1_fingercap__capval_test.spice, sha256: 43b112f268a7a66e915cc52b40a7930b2a3864505e99bd4c36e92638d1db7ff1}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_02p7x11p1_m1m2m3m4_shieldl1_fingercap__capval_test.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

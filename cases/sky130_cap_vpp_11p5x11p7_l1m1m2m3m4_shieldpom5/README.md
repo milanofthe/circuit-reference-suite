@@ -1,0 +1,46 @@
+# SKY130 cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5 model checks
+
+device | ngspice | status: **complete**
+
+## Source
+
+- Authors: SkyWater Technology Foundry, Google
+- URL: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr (commit `16f93a795d87ea2b393fe5c74d32674e111e44a2`)
+- Path: `cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/tests`
+- License: Apache-2.0
+
+## Netlists
+
+| file | dialect | analyses | devices | libraries |
+|---|---|---|---|---|
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+
+## External references
+
+| in | as written | resolves to |
+|---|---|---|
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop__cap4termval_test.spice` | `../sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice` | [libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice](../../libraries/sky130_fd_pr/cells/cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice) |
+
+Generated by `python -m circref build`. Do not edit by hand.

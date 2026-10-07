@@ -1,0 +1,15 @@
+id: sky130_cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield
+title: SKY130 cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield__capval_test.spice, sha256: 1059e6b64766529bbb2472dd44775f66ecae37b62465aa1f52258e7bdd1c6427}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield__capval_test.spice, dialect: ngspice}
+resolve: {../../../models/sky130.lib.spice: libraries/sky130_fd_pr/models/sky130.lib.spice}

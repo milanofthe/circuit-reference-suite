@@ -1,0 +1,17 @@
+id: sky130_cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3
+title: SKY130 cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3 model checks
+family: device
+source:
+  name: sky130_fd_pr
+  url: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr
+  license: Apache-2.0
+  authors: [SkyWater Technology Foundry, Google]
+  commit: 16f93a795d87ea2b393fe5c74d32674e111e44a2
+  root: cells/cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3/tests
+files:
+- {path: sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3__cap4termval_test.spice, sha256: a4fa75aff16ae97e7eb41982f747efda2b0dc7780710e1472e1dd3b157f7c605}
+netlists:
+- {file: sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3__cap4termval_test.spice, dialect: ngspice}
+resolve: {../../../models/capacitors/sky130_fd_pr__model__cap_vpp.model.spice: libraries/sky130_fd_pr/models/capacitors/sky130_fd_pr__model__cap_vpp.model.spice,
+  ../../../models/r+c/res_typical__cap_typical.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice,
+  ../../../models/r+c/res_typical__cap_typical__lin.spice: libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice}

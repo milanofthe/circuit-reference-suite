@@ -1,0 +1,30 @@
+id: analoggym_ldo_folded_cascode
+title: AnalogGym low-dropout regulator ldo_folded_cascode, SKY130
+family: ldo
+source:
+  name: AnalogGym
+  url: https://github.com/CODA-Team/AnalogGym
+  commit: 0a9d1390ade361e2b4a2d33181e22367edbb8afc
+  license: BSD-3-Clause
+  authors: [CODA Team]
+  root: AnalogGym/Low Dropout Regulator
+files:
+- {path: ldo_spice_testbench/ldo_folded_cascode_acdc.cir, sha256: 69e57fafc5f3c05c3734362ee44573edde22b6f7582ed1f4cfac44f0b6cedefb}
+- {path: ldo_spice_testbench/ldo_folded_cascode_tran.cir, sha256: 171ad4dc0dc54c4fe68c7f1faf4756a2cdc54b79491043deb8d3bb2cf7009b34}
+- {path: design_variables/ldo_folded_cascode.txt, sha256: d1205723822a39897f6c8d64452d19624b0ed63232623b934581f11e19e4a6bc}
+- {path: spice_netlist/ldo_folded_cascode_vars.spice, sha256: c19425e32b049628ec22bc7004d3d179a590e318679747680ac5eefe25a67311}
+- {path: spice_netlist/ldo_folded_cascode_dev_params.spice, sha256: 3589707b27b15bc6306204ef8bdab4e53f2c670369ad08d8bbf3cb5fea1702ce}
+netlists:
+- {file: ldo_spice_testbench/ldo_folded_cascode_acdc.cir, dialect: ngspice}
+- {file: ldo_spice_testbench/ldo_folded_cascode_tran.cir, dialect: ngspice}
+resolve: {../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice,
+  ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice,
+  ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice: libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice,
+  ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice: libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice,
+  ../simulations/ldo_folded_cascode.txt: cases/analoggym_ldo_folded_cascode/design_variables/ldo_folded_cascode.txt,
+  ../simulations/ldo_folded_cascode_dev_params.spice: cases/analoggym_ldo_folded_cascode/spice_netlist/ldo_folded_cascode_dev_params.spice,
+  ../simulations/ldo_folded_cascode_vars.spice: cases/analoggym_ldo_folded_cascode/spice_netlist/ldo_folded_cascode_vars.spice}
+notes: |
+  The testbenches include their circuit from `../simulations/`, which upstream does
+  not have; `resolve` points those includes at the files in `design_variables/`
+  and `spice_netlist/` that hold them.

@@ -1,0 +1,25 @@
+id: analoggym_ramos_pfc_pin_3
+title: AnalogGym amplifier Ramos_PFC_Pin_3, SKY130
+family: opamp
+source:
+  name: AnalogGym
+  url: https://github.com/CODA-Team/AnalogGym
+  commit: 0a9d1390ade361e2b4a2d33181e22367edbb8afc
+  license: BSD-3-Clause
+  authors: [CODA Team]
+  root: AnalogGym/Amplifier
+files:
+- {path: spice_netlist/Ramos_PFC_Pin_3, sha256: f8eeee71b125c76d4d28597b09bff763a7b0bd6b85b2c4885513137723bad982}
+- {path: design_variables/Ramos_PFC_Pin_3, sha256: aa3d99fa1ff54e2a7a4c027e662d848c9e286bd7f0d9809a9946162e1351a865}
+- {path: amp_spice_testbench/Ramos_PFC_Pin_3_ACDC.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_ACDC.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Ramos_PFC_Pin_3`, as its comments instruct'}
+- {path: amp_spice_testbench/Ramos_PFC_Pin_3_Tran.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_Tran.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Ramos_PFC_Pin_3`, as its comments instruct'}
+netlists:
+- {file: amp_spice_testbench/Ramos_PFC_Pin_3_ACDC.cir, dialect: ngspice}
+- {file: amp_spice_testbench/Ramos_PFC_Pin_3_Tran.cir, dialect: ngspice}
+resolve: {../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice}
+notes: |
+  AnalogGym's amplifier testbenches are written for `HoiLee_AFFC_Pin_3`; their comments
+  say to replace the circuit name for any other amplifier. The ACDC deck measures gain,
+  bandwidth, phase margin, CMRR and PSRR, the transient deck slew and settling.

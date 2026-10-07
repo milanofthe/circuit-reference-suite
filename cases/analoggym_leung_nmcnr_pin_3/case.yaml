@@ -1,0 +1,25 @@
+id: analoggym_leung_nmcnr_pin_3
+title: AnalogGym amplifier Leung_NMCNR_Pin_3, SKY130
+family: opamp
+source:
+  name: AnalogGym
+  url: https://github.com/CODA-Team/AnalogGym
+  commit: 0a9d1390ade361e2b4a2d33181e22367edbb8afc
+  license: BSD-3-Clause
+  authors: [CODA Team]
+  root: AnalogGym/Amplifier
+files:
+- {path: spice_netlist/Leung_NMCNR_Pin_3, sha256: fa98dc34a1620368bcc51f754d23513f76cb034eeae6b07f8947fa9d6c13d193}
+- {path: design_variables/Leung_NMCNR_Pin_3, sha256: 491fe11a6ee684a531dfaa5d4afd1a203ad4bfdf2324fc5365b5f2a3f5ae4453}
+- {path: amp_spice_testbench/Leung_NMCNR_Pin_3_ACDC.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_ACDC.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Leung_NMCNR_Pin_3`, as its comments instruct'}
+- {path: amp_spice_testbench/Leung_NMCNR_Pin_3_Tran.cir, provenance: modified, how: '`amp_spice_testbench/TB_Amplifier_Tran.cir`
+    with `HoiLee_AFFC_Pin_3` replaced by `Leung_NMCNR_Pin_3`, as its comments instruct'}
+netlists:
+- {file: amp_spice_testbench/Leung_NMCNR_Pin_3_ACDC.cir, dialect: ngspice}
+- {file: amp_spice_testbench/Leung_NMCNR_Pin_3_Tran.cir, dialect: ngspice}
+resolve: {../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice: libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice}
+notes: |
+  AnalogGym's amplifier testbenches are written for `HoiLee_AFFC_Pin_3`; their comments
+  say to replace the circuit name for any other amplifier. The ACDC deck measures gain,
+  bandwidth, phase margin, CMRR and PSRR, the transient deck slew and settling.
