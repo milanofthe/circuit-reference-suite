@@ -16,6 +16,13 @@ reference solutions. License per case and library.
 
 | case | family | dialects | analyses | devices | libraries | status | source | license |
 |---|---|---|---|---|---|---|---|---|
+| [vacask_bjtring](cases/vacask_bjtring) | oscillator | ngspice, vacask, xyce | tran | 38 | vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_c6288_bsim3](cases/vacask_c6288_bsim3) | arithmetic | ngspice, vacask | tran | 10178 | vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_c6288_psp103](cases/vacask_c6288_psp103) | arithmetic | ngspice, vacask, xyce | tran | 10178 | vacask_psp103v4, vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_graetz](cases/vacask_graetz) | rectifier | gnucap, ngspice, vacask, xyce | tran | 9 | vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_jfetring](cases/vacask_jfetring) | oscillator | ngspice, vacask | tran | 31 | vacask_spice_va, vacask_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_mul](cases/vacask_mul) | rectifier | gnucap, ngspice, vacask, xyce | tran | 10 | vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_rc](cases/vacask_rc) | passive | gnucap, ngspice, vacask, xyce | tran | 3 | vacask_spice_va | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
 | [vacask_ring_psp103](cases/vacask_ring_psp103) | oscillator | ngspice, vacask, xyce | tran | 20 | vacask_psp103v4 | complete | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
 
 <!-- cases:end -->
@@ -31,6 +38,8 @@ the case differ.
 | library | content | files | source | license |
 |---|---|---|---|---|
 | [vacask_psp103v4](libraries/vacask_psp103v4) | PSP 103.4 MOSFET and JUNCAP 200.5 (Verilog-A) | 19 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | LicenseRef-PSP |
+| [vacask_spice_va](libraries/vacask_spice_va) | ngspice device models in Verilog-A, from Verilog-A Distiller | 40 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
+| [vacask_va](libraries/vacask_va) | VACASK basic devices in Verilog-A | 6 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
 
 <!-- libraries:end -->
 

@@ -1,0 +1,30 @@
+id: vacask_jfetring
+title: JFET ring oscillator
+family: oscillator
+source:
+  name: VACASK
+  url: https://codeberg.org/arpadbuermen/VACASK
+  commit: 29d99ad2df4d8262e64ba883849c2974b3f01cce
+  root: benchmark/vadistiller/jfetring
+  license: AGPL-3.0-or-later
+  authors: [Arpad Buermen]
+files:
+- {path: vacask/runme.sim, sha256: 063dfcd4e90d790ac951c25f269c92c50b7095c549140f53aded0d9b7c4741a7}
+- {path: ngspice/runme.sim, sha256: 58e6d378848a055bfe5fcecd57836d2ac1f63b6e53ce093d1addaffce68169e2}
+- {path: ngspiceva/runme.sim, sha256: 5d385f6ed9e807356ae5222031dd80301b4d3f38d02dd7357cc4d3eeefd61246}
+netlists:
+- file: vacask/runme.sim
+  dialect: vacask
+  resolve: {resistor.osdi: libraries/vacask_va/resistor.va, capacitor.osdi: libraries/vacask_va/capacitor.va}
+- {file: ngspice/runme.sim, dialect: ngspice}
+- file: ngspiceva/runme.sim
+  dialect: ngspice
+  note: ngspice with the Verilog-A models of the VACASK variant, loaded as OSDI.
+  resolve: {resistor.osdi: libraries/vacask_spice_va/resistor.va, capacitor.osdi: libraries/vacask_spice_va/capacitor.va}
+resolve: {spice/jfet1.osdi: libraries/vacask_spice_va/jfet1.va, jfet1.osdi: libraries/vacask_spice_va/jfet1.va}
+notes: |
+  From the Verilog-A Distiller benchmarks of VACASK (`benchmark/vadistiller`): the same
+  circuit with ngspice's built-in models, with the same models distilled to Verilog-A in
+  ngspice (OSDI) and in VACASK.
+  In VACASK, `resistor.osdi` and `capacitor.osdi` are its own basic devices; in
+  ngspice (OSDI) the distilled ones.

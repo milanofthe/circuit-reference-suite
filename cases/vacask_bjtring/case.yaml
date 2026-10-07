@@ -1,0 +1,28 @@
+id: vacask_bjtring
+title: Bipolar ring oscillator
+family: oscillator
+source:
+  name: VACASK
+  url: https://codeberg.org/arpadbuermen/VACASK
+  commit: 29d99ad2df4d8262e64ba883849c2974b3f01cce
+  root: benchmark/vadistiller/bjtring
+  license: AGPL-3.0-or-later
+  authors: [Arpad Buermen]
+files:
+- {path: vacask/runme.sim, sha256: 45193e54135459dce2c42f338eeb5dcd8b018377cf8f5999389301b41e168d3b}
+- {path: ngspice/runme.sim, sha256: 08ff0758c44e397dae226649150fb4ea2112657cffb056b590873c3c4c100d9d}
+- {path: ngspiceva/runme.sim, sha256: 59daaf810de315b322b60f46ffc0243a3fdd020d56f819a37641c4921335c32b}
+- {path: xyce/runme.sim, sha256: 3b326fc2e8babd3496f56c2b8554621341d2a8ecd377451363516d4ee0d39af9}
+netlists:
+- {file: vacask/runme.sim, dialect: vacask}
+- {file: ngspice/runme.sim, dialect: ngspice}
+- {file: ngspiceva/runme.sim, dialect: ngspice, note: 'ngspice with the Verilog-A models of the VACASK
+    variant, loaded as OSDI.'}
+- {file: xyce/runme.sim, dialect: xyce}
+resolve: {spice/resistor.osdi: libraries/vacask_spice_va/resistor.va, spice/capacitor.osdi: libraries/vacask_spice_va/capacitor.va,
+  spice/sn/bjt.osdi: libraries/vacask_spice_va/sn/bjt.va, bjt.osdi: libraries/vacask_spice_va/bjt.va,
+  resistor.osdi: libraries/vacask_spice_va/resistor.va, capacitor.osdi: libraries/vacask_spice_va/capacitor.va}
+notes: |
+  From the Verilog-A Distiller benchmarks of VACASK (`benchmark/vadistiller`): the same
+  circuit with ngspice's built-in models, with the same models distilled to Verilog-A in
+  ngspice (OSDI) and in VACASK.

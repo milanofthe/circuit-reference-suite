@@ -66,7 +66,7 @@ def _master(tokens: list[str]) -> str | None:
         if "=" in t or t.lower() in ("params:", "parameters:"):
             break
         bare.append(t)
-    return bare[-1].lower() if len(bare) >= 2 else None
+    return _unquote(bare[-1]).lower() if len(bare) >= 2 else None
 
 
 # ---------------------------------------------------------------- SPICE family

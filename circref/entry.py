@@ -72,6 +72,7 @@ class Netlist:
     file: str
     dialect: str
     note: str | None
+    resolve: dict                   # takes precedence over the case's table in this run
 
 
 @dataclass(frozen=True)
@@ -86,7 +87,7 @@ class Case(Entry):
         return self.raw.get("open_questions", [])
 
     def netlists(self) -> list[Netlist]:
-        return [Netlist(n["file"], n["dialect"], n.get("note"))
+        return [Netlist(n["file"], n["dialect"], n.get("note"), n.get("resolve", {}))
                 for n in self.raw["netlists"]]
 
     @cached_property
@@ -151,9 +152,11 @@ def owner(path: Path) -> Entry | None:
     return None
 
 
-def _resolve(origin: Path, ref: netlist.Ref) -> tuple[Path | None, bool, str | None]:
+def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, bool, str | None]:
     entry = owner(origin)
     table = entry.resolve_table() if entry else {}
+    if isinstance(entry, Case):
+        table = {**table, **local}
     where = f"{origin.relative_to(ROOT).as_posix()}:{ref.line}"
     if ref.target in table:
         mapped = table[ref.target]
@@ -203,7 +206,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
             for name, counts in parsed.instances.items():
                 g.subckts.setdefault(name, Counter()).update(counts)
         for ref in refs:
-            target, missing, error = _resolve(path, ref)
+            target, missing, error = _resolve(path, ref, nl.resolve)
             g.edges.append(Edge(path, ref, target, missing, error))
             if target is not None:
                 kind = "veriloga" if ref.kind in ("osdi", "va") else dialect

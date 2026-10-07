@@ -27,7 +27,8 @@
         "properties": {
           "file": {"type": "string"},
           "dialect": {"enum": ["ngspice", "xyce", "hspice", "spice3", "gnucap", "ltspice", "spectre", "vacask"]},
-          "note": {"type": "string"}
+          "note": {"type": "string"},
+          "resolve": {"$ref": "common.schema.json#/$defs/resolve"}
         }
       }
     },
