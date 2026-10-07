@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Definitions shared by cases and libraries",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
+    },
+    "source": {
+      "type": "object",
+      "required": ["name", "url", "license", "authors"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "description": "Short name of the upstream project, shown in tables."},
+        "url": {"type": "string"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "version": {"type": "string", "description": "Release or archive version, when the source is not a git repository."},
+        "root": {"type": "string", "description": "Upstream directory the committed files are relative to."},
+        "license": {"type": "string", "description": "SPDX identifier, or a short name with a link in notes."},
+        "authors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "doi": {"type": "string", "pattern": "^10[.]"},
+        "citation": {"type": "string"}
+      },
+      "anyOf": [{"required": ["commit"]}, {"required": ["version"]}]
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Upstream file, committed byte for byte.",
+            "required": ["path", "sha256"],
+            "additionalProperties": false,
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "upstream": {"type": "string", "description": "Upstream path when it is not source.root/path."}
+            }
+          },
+          {
+            "type": "object",
+            "description": "File made here or by a third party; says how.",
+            "required": ["path", "provenance", "how"],
+            "additionalProperties": false,
+            "properties": {
+              "path": {"type": "string"},
+              "provenance": {"enum": ["generated", "translated", "modified"]},
+              "how": {"type": "string"}
+            }
+          }
+        ]
+      }
+    },
+    "resolve": {
+      "type": "object",
+      "description": "Reference exactly as written in a file of this entry -> repository path, or null when the target may not be redistributed.",
+      "additionalProperties": {"type": ["string", "null"]}
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "library.schema.json",
+  "title": "Model library shared by cases",
+  "type": "object",
+  "required": ["id", "title", "source", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"$ref": "common.schema.json#/$defs/id"},
+    "title": {"type": "string"},
+    "source": {"$ref": "common.schema.json#/$defs/source"},
+    "files": {"$ref": "common.schema.json#/$defs/files"},
+    "subset": {"type": "string", "description": "What of upstream is left out, when not all of it is committed."},
+    "resolve": {"$ref": "common.schema.json#/$defs/resolve"},
+    "notes": {"type": "string"}
+  }
+}

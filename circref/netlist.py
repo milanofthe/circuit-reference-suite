@@ -1,0 +1,251 @@
+"""Just enough netlist reading to check a case: what a file includes or loads, which
+analyses it runs, and which instances it places.
+
+Two syntax families. SPICE (ngspice, Xyce, HSPICE, gnucap's spice mode): dot cards,
+``+`` continuation. Spectre (Spectre, VACASK): keyword statements, ``(node ...)``
+lists, ``//`` comments. In both, the first line of a deck is its title. Verilog-A sources are only
+scanned for their ``include`` directives.
+"""
+from __future__ import annotations
+
+import re
+from collections import Counter
+from dataclasses import dataclass, field
+from pathlib import Path
+
+SPICE = ("ngspice", "xyce", "hspice", "spice3", "gnucap", "ltspice")
+SPECTRE = ("spectre", "vacask")
+VERILOGA = ("veriloga",)
+DIALECTS = SPICE + SPECTRE + VERILOGA
+VA_SUFFIXES = (".va", ".vams", ".vh", ".vah", ".include", ".inc_va")
+
+# Supplied by every Verilog-A compiler, never part of a case.
+VA_STANDARD = ("disciplines.vams", "constants.vams", "discipline.h", "constants.h",
+               "discipline.vams", "constant.vams")
+
+SPICE_ANALYSES = ("op", "dc", "ac", "tran", "noise", "tf", "pz", "sens", "disto", "four",
+                  "pss", "hb", "sp", "step", "mpde", "sampling", "embeddedsampling", "lin")
+SPECTRE_ANALYSES = ("op", "dc", "ac", "tran", "noise", "xf", "sp", "stb", "pss", "pac",
+                    "pnoise", "pxf", "hb", "hbac", "hbnoise", "sweep", "montecarlo",
+                    "dcinc", "dcxf", "acxf", "tf")
+
+
+@dataclass(frozen=True)
+class Ref:
+    kind: str           # "include" | "lib" | "osdi" | "va"
+    target: str         # the path exactly as written
+    section: str | None
+    line: int
+
+
+@dataclass
+class Parsed:
+    refs: list[Ref] = field(default_factory=list)
+    analyses: list[str] = field(default_factory=list)
+    # instance masters per subcircuit; "" is the top level
+    instances: dict[str, Counter] = field(default_factory=dict)
+    sections: dict[str, list[Ref]] = field(default_factory=dict)
+
+
+def dialect_of(path: Path, inherited: str) -> str:
+    return "veriloga" if path.suffix.lower() in VA_SUFFIXES else inherited
+
+
+def _text(path: Path) -> str:
+    return path.read_bytes().decode("latin-1")
+
+
+def _unquote(s: str) -> str:
+    return s.strip().strip("\"'")
+
+
+def _master(tokens: list[str]) -> str | None:
+    """The last bare token before the first parameter assignment."""
+    bare = []
+    for t in tokens:
+        if "=" in t or t.lower() in ("params:", "parameters:"):
+            break
+        bare.append(t)
+    return bare[-1].lower() if len(bare) >= 2 else None
+
+
+# ---------------------------------------------------------------- SPICE family
+
+def _spice_lines(text: str, deck: bool) -> list[tuple[int, str]]:
+    out: list[tuple[int, str]] = []
+    for n, raw in enumerate(text.splitlines(), 1):
+        if deck and n == 1:
+            continue                                    # title
+        line = raw.strip()
+        if not line or line[0] == "*":
+            continue
+        line = re.split(r"\s;|^;|\s\$\s|\s\$$|\s//", line, maxsplit=1)[0].rstrip()
+        if not line:
+            continue
+        if line[0] == "+" and out:
+            out[-1] = (out[-1][0], out[-1][1] + " " + line[1:].strip())
+        else:
+            out.append((n, line))
+    return out
+
+
+def _spice(text: str, deck: bool) -> Parsed:
+    p = Parsed(instances={"": Counter()})
+    stack = [""]
+    section = None
+    control = False
+    for n, line in _spice_lines(text, deck):
+        tokens = line.split()
+        head = tokens[0].lower()
+        refs = p.sections.setdefault(section, []) if section else p.refs
+        if control:
+            if head == ".endc":
+                control = False
+            elif head in ("pre_osdi", "osdi") and len(tokens) > 1:
+                refs.append(Ref("osdi", _unquote(tokens[1]), None, n))
+            elif head in SPICE_ANALYSES:
+                p.analyses.append(head)
+            continue
+        if head == ".control":
+            control = True
+        elif head in (".include", ".inc", ".incl"):
+            refs.append(Ref("include", _unquote(line.split(None, 1)[1]), None, n))
+        elif head == ".lib":
+            if len(tokens) == 2:
+                section = tokens[1].lower()
+            elif len(tokens) >= 3:
+                refs.append(Ref("lib", _unquote(tokens[1]), tokens[2].lower(), n))
+        elif head == ".endl":
+            section = None
+        elif head == ".hdl" and len(tokens) > 1:
+            refs.append(Ref("va", _unquote(tokens[1]), None, n))
+        elif head == ".subckt" and len(tokens) > 1:
+            stack.append(tokens[1].lower())
+            p.instances.setdefault(stack[-1], Counter())
+        elif head == ".ends":
+            if len(stack) > 1:
+                stack.pop()
+        elif head[0] == "." and head[1:] in SPICE_ANALYSES:
+            p.analyses.append(head[1:])
+        elif head[0].isalpha():
+            master = _master(tokens) if head[0] == "x" else None
+            p.instances[stack[-1]][f"x:{master}" if master else head[0]] += 1
+    return p
+
+
+# ------------------------------------------------------------- Spectre family
+
+_SPECTRE_SKIP = ("model", "parameters", "options", "global", "ground", "save", "simulator",
+                 "library", "endlibrary", "endsection", "statistics", "real", "print",
+                 "postprocess", "var", "sweep", "alter", "altergroup", "ic", "nodeset",
+                 "set", "info", "inline")
+
+
+def _spectre_lines(text: str, deck: bool) -> list[tuple[int, str]]:
+    out: list[tuple[int, str]] = []
+    pending, depth, start = "", 0, 0
+    heredoc = None
+    for n, raw in enumerate(text.splitlines(), 1):
+        if deck and n == 1:
+            continue                                    # title
+        if heredoc:
+            if raw.strip() == heredoc:
+                heredoc = None
+            continue
+        line = raw.split("//", 1)[0].rstrip()
+        if not pending and line.lstrip().startswith("*"):
+            continue
+        m = re.search(r"<<<(\w+)\s*$", line)
+        if m:
+            heredoc, line = m.group(1), line[:m.start()]
+        cont = line.endswith("\\")
+        line = line.rstrip("\\")
+        if not pending:
+            start = n
+        pending = f"{pending} {line}".strip()
+        depth += line.count("(") - line.count(")")
+        if pending and not cont and depth <= 0:
+            out.append((start, pending))
+            pending, depth = "", 0
+    if pending:
+        out.append((start, pending))
+    return out
+
+
+def _spectre(text: str, deck: bool) -> Parsed:
+    p = Parsed(instances={"": Counter()})
+    stack = [""]
+    section = None
+    for n, line in _spectre_lines(text, deck):
+        tokens = line.replace("(", " ( ").replace(")", " ) ").split()
+        head = tokens[0].lower()
+        refs = p.sections.setdefault(section, []) if section else p.refs
+        if head in ("include", "ahdl_include", "load") and len(tokens) > 1:
+            kind = {"include": "include", "ahdl_include": "va", "load": "osdi"}[head]
+            sect = re.search(r"section\s*=\s*(\w+)", line)
+            refs.append(Ref("lib" if sect else kind, _unquote(tokens[1]),
+                            sect.group(1).lower() if sect else None, n))
+        elif head == "section" and len(tokens) > 1:
+            section = tokens[1].lower()
+        elif head == "endsection":
+            section = None
+        elif head in ("subckt", "inline") and len(tokens) > 1:
+            name = tokens[2] if head == "inline" else tokens[1]
+            stack.append(name.lower())
+            p.instances.setdefault(stack[-1], Counter())
+        elif head == "ends":
+            if len(stack) > 1:
+                stack.pop()
+        elif head == "analysis" and len(tokens) > 2:
+            p.analyses.append(tokens[2].lower())
+        elif head in ("control", "endc", "embed") or head in _SPECTRE_SKIP:
+            continue
+        else:
+            bare = [t for t in tokens if t not in ("(", ")")]
+            master = _master(bare)
+            if master in SPECTRE_ANALYSES:
+                p.analyses.append(master)
+            elif master:
+                p.instances[stack[-1]][f"x:{master}"] += 1
+    return p
+
+
+# ------------------------------------------------------------------ Verilog-A
+
+def _veriloga(text: str) -> Parsed:
+    p = Parsed(instances={"": Counter()})
+    for n, line in enumerate(text.splitlines(), 1):
+        m = re.match(r'\s*`include\s+"([^"]+)"', line)
+        if m and Path(m.group(1)).name not in VA_STANDARD:
+            p.refs.append(Ref("va", m.group(1), None, n))
+    return p
+
+
+def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
+    text = _text(path)
+    if dialect in SPICE:
+        return _spice(text, deck)
+    if dialect in SPECTRE:
+        return _spectre(text, deck)
+    return _veriloga(text)
+
+
+def flat_count(subckts: dict[str, Counter]) -> int:
+    """Instances once every subcircuit defined in ``subckts`` is expanded. A master
+    defined elsewhere (a PDK device, a compiled model) counts as one device."""
+    memo: dict[str, int] = {}
+
+    def count(name: str, seen: tuple[str, ...]) -> int:
+        if name in memo:
+            return memo[name]
+        total = 0
+        for key, k in subckts[name].items():
+            master = key[2:] if key.startswith("x:") else None
+            if master in subckts and master not in seen:
+                total += k * count(master, seen + (master,))
+            else:
+                total += k
+        memo[name] = total
+        return total
+
+    return count("", ("",))

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "case.schema.json",
+  "title": "Circuit case",
+  "type": "object",
+  "required": ["id", "title", "family", "source", "files", "netlists"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"$ref": "common.schema.json#/$defs/id"},
+    "title": {"type": "string"},
+    "family": {
+      "enum": ["amplifier", "opamp", "ota", "comparator", "ldo", "bandgap", "reference",
+               "oscillator", "mixer", "filter", "rectifier", "power", "logic", "arithmetic",
+               "memory", "converter", "pll", "interconnect", "power_grid", "device",
+               "passive", "behavioral", "test"],
+      "description": "What the circuit is. device: a single-device characterization deck; test: a regression deck exercising simulator features."
+    },
+    "source": {"$ref": "common.schema.json#/$defs/source"},
+    "files": {"$ref": "common.schema.json#/$defs/files"},
+    "netlists": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["file", "dialect"],
+        "additionalProperties": false,
+        "properties": {
+          "file": {"type": "string"},
+          "dialect": {"enum": ["ngspice", "xyce", "hspice", "spice3", "gnucap", "ltspice", "spectre", "vacask"]},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "resolve": {"$ref": "common.schema.json#/$defs/resolve"},
+    "open_questions": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

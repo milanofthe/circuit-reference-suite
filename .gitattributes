@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Upstream files are committed byte for byte, their hashes are checked.
+cases/** -text
+libraries/** -text

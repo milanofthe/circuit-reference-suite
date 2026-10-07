@@ -1,0 +1,20 @@
+[project]
+name = "circref"
+version = "0.1.0"
+description = "Tooling for the circuit reference suite: validate the corpus, generate its READMEs"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "pyyaml>=6.0",
+    "jsonschema>=4.17",
+]
+
+[project.scripts]
+circref = "circref.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["circref"]

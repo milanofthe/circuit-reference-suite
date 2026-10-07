@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidates.schema.json",
+  "title": "Candidate sources",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "url", "license", "has", "missing", "blocker"],
+    "additionalProperties": false,
+    "properties": {
+      "name": {"type": "string"},
+      "url": {"type": "string"},
+      "license": {"type": "string"},
+      "has": {"type": "string"},
+      "missing": {"type": "string"},
+      "blocker": {
+        "enum": ["license", "models", "format", "not public"],
+        "description": "license: no or unclear license; models: needs device models that may not be redistributed; format: no netlist, only schematics or code; not public."
+      }
+    }
+  }
+}
