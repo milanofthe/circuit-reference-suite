@@ -1,0 +1,14 @@
+id: ahkab_tests_series_resonance
+title: ahkab tests/series_resonance
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/series_resonance
+files:
+- {path: series_resonance.ckt, sha256: 6b687bc2f3cd7415af561f26e80669ce8df3e08be977958dbc6db1446f5f22d0}
+netlists:
+- {file: series_resonance.ckt, dialect: ahkab}

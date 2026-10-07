@@ -1,0 +1,14 @@
+id: cadnip_nyanspectrenetlistparser_jl_test_spice_examples
+title: Cadnip.jl NyanSpectreNetlistParser.jl/test/SPICE/examples
+family: test
+source:
+  name: Cadnip.jl
+  url: https://github.com/NyanCAD/Cadnip.jl
+  license: MIT
+  authors: [Pepijn de Vos, Cadnip and CedarSim contributors]
+  commit: 6748edaec3696b9c6d7fd45e19d7da54aad3f378
+  root: NyanSpectreNetlistParser.jl/test/SPICE/examples
+files:
+- {path: rc_ladder.cir, sha256: 25c47322fee492115261e6fffbc4277747a327fca8c97a850b58a04b18391ee3}
+netlists:
+- {file: rc_ladder.cir, dialect: cedarsim}

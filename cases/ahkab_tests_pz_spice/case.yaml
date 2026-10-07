@@ -1,0 +1,22 @@
+id: ahkab_tests_pz_spice
+title: ahkab tests/pz_spice
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/pz_spice
+files:
+- {path: pz_spice1.ckt, sha256: aeac811db67bc5d3ef5739d853277c3d2e2557141393804bde85c8a03810e4e9}
+- {path: pz_spice2.ckt, sha256: a6571d49f05f68f1d1509873e1afe681ed388b210f4ce35b353dd99726a65a55}
+- {path: pz_spice3.ckt, sha256: 2130ad31362649a4de1dea9f2f6d2ee74fa4f197ef45acdb4e4de1278dccbda1}
+- {path: pz_spice4.ckt, sha256: f8e8db0d6783fb2d27b08668b9542f7212d586d48c8c1c91194188a46ae502c7}
+- {path: pz_spice5.ckt, sha256: cb3b6ee6fbe670b300d51b556b651206a21c206a8be014bc0132e5d6a32fcb34}
+netlists:
+- {file: pz_spice1.ckt, dialect: ahkab}
+- {file: pz_spice2.ckt, dialect: ahkab}
+- {file: pz_spice3.ckt, dialect: ahkab}
+- {file: pz_spice4.ckt, dialect: ahkab}
+- {file: pz_spice5.ckt, dialect: ahkab}

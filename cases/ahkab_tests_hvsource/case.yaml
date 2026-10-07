@@ -1,0 +1,14 @@
+id: ahkab_tests_hvsource
+title: ahkab tests/hvsource
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/hvsource
+files:
+- {path: hvsource.ckt, sha256: e9c675ae1029b278422be65104ef1c10925d3506b7432274c9dce4c8c49d0765}
+netlists:
+- {file: hvsource.ckt, dialect: ahkab}

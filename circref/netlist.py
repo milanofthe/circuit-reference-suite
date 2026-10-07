@@ -4,7 +4,8 @@ analyses it runs, and which instances it places.
 Two syntax families. SPICE (ngspice, Xyce, HSPICE, PSpice, gnucap's spice mode, WRspice,
 JoSIM): dot cards, ``+`` continuation. Spectre (Spectre, VACASK): keyword statements,
 ``(node ...)`` lists, ``//`` comments. In both, the first line of a deck is its title.
-Verilog-A sources are only scanned for their modules and ``include`` directives.
+Qucsator netlists (``Type:Name nodes key="value"``) are read for instances and analyses,
+Verilog-A sources only for their modules and ``include`` directives.
 """
 from __future__ import annotations
 
@@ -15,10 +16,11 @@ from functools import lru_cache
 from pathlib import Path
 
 SPICE = ("ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "wrspice",
-         "josim", "ltspice")
+         "josim", "ltspice", "ahkab", "spicesharp", "cedarsim")
 SPECTRE = ("spectre", "vacask")
+QUCS = ("qucsator",)
 VERILOGA = ("veriloga",)
-DIALECTS = SPICE + SPECTRE + VERILOGA
+DIALECTS = SPICE + SPECTRE + QUCS + VERILOGA
 VA_SUFFIXES = (".va", ".vams", ".vh", ".vah", ".include", ".inc_va")
 
 # Supplied by every Verilog-A compiler, never part of a case.
@@ -255,6 +257,38 @@ def _spectre(text: str, deck: bool) -> Parsed:
     return p
 
 
+# ------------------------------------------------------------------- Qucsator
+
+_QUCS_ANALYSES = {"dc": "dc", "ac": "ac", "tr": "tran", "sp": "sp", "sw": "sweep", "hb": "hb",
+                  "noise": "noise"}
+
+
+def _qucs(text: str) -> Parsed:
+    p = Parsed(instances={"": Counter()})
+    stack = [""]
+    for n, raw in enumerate(text.splitlines(), 1):
+        line = raw.strip()
+        if not line or line[0] == "#":
+            continue
+        kind, _, name = line.split()[0].partition(":")
+        kind = kind.lower()
+        if kind == ".def":
+            if name.lower() == "end":
+                if len(stack) > 1:
+                    stack.pop()
+            else:
+                stack.append(name.lower())
+                p.instances.setdefault(stack[-1], Counter())
+        elif kind[0] == ".":
+            p.analyses.append(_QUCS_ANALYSES.get(kind[1:], kind[1:]))
+        elif kind == "sub" and (m := re.search(r'\bType="([^"]+)"', line)):
+            p.instances[stack[-1]][f"x:{m.group(1).lower()}"] += 1
+        elif kind != "eqn":
+            p.instances[stack[-1]][kind] += 1
+        p.refs += _data_refs(line, n)
+    return p
+
+
 # ------------------------------------------------------------------ Verilog-A
 
 def _veriloga(text: str) -> Parsed:
@@ -276,6 +310,8 @@ def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
         return _spice(text, deck, dialect)
     if dialect in SPECTRE:
         return _spectre(text, deck)
+    if dialect in QUCS:
+        return _qucs(text)
     return _veriloga(text)
 
 

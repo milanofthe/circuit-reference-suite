@@ -1,0 +1,18 @@
+id: qucsator_tests_basic_components_capacitor
+title: qucsator tests/basic/components/capacitor
+family: test
+source:
+  name: qucsator
+  url: https://github.com/Qucs/qucsator
+  license: GPL-2.0-or-later
+  authors: [Qucs team]
+  commit: e995f9acc71a8c7319286944e4a1692318b9dd80
+  root: tests/basic/components/capacitor
+files:
+- {path: capacitor@ac.net, sha256: f7b403f5441c87255e341b4f8aa6b862222f1af5b1a058364b7bc98de54fa61f}
+- {path: capacitor@dc.net, sha256: 65970e97d1193c30e66181034d50e93fcb63f762068898d030522014ebbd7c27}
+- {path: capacitor@tr.net, sha256: 162f1d42fee8f39c862ad4c733ca3ad996e598b3e2853aabd2ea01e7e4648a12}
+netlists:
+- {file: capacitor@ac.net, dialect: qucsator}
+- {file: capacitor@dc.net, dialect: qucsator}
+- {file: capacitor@tr.net, dialect: qucsator}

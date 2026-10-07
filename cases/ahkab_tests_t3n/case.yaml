@@ -1,0 +1,14 @@
+id: ahkab_tests_t3n
+title: ahkab tests/t3n
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/t3n
+files:
+- {path: t3n.ckt, sha256: 9b0605834a9a82dab590d13d8e57b80d9f9b8f880d1e7689bd8e29b1cd02df07}
+netlists:
+- {file: t3n.ckt, dialect: ahkab}

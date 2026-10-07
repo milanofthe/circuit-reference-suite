@@ -1,0 +1,14 @@
+id: ahkab_tests_ring3
+title: ahkab tests/ring3
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/ring3
+files:
+- {path: ring3.ckt, sha256: 300a3d7c7441224ce67bbed31f9ecd334e8dd79cf4bfbeca9e49dc673a09f9ef}
+netlists:
+- {file: ring3.ckt, dialect: ahkab}

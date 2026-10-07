@@ -1,0 +1,28 @@
+id: josim_test
+title: JoSIM test
+family: logic
+source:
+  name: JoSIM
+  url: https://github.com/JoeyDelp/JoSIM
+  license: MIT
+  authors: [Johannes Delport, Coenrad Fourie]
+  commit: 02a34ee5e7a3a6952b21ccc726fbf7a6d5e2b224
+  root: test
+files:
+- {path: ex_jtl_basic.cir, sha256: d68bba9693933b9ab1d90d78236d25a6987ca75951f549c20c2abbe82225e618}
+- {path: ex_jtl_param_times.cir, sha256: 6424e4fcd40b10d65be860752be81506d87d3c72f9e46aa0669c5b7c562fd166}
+- {path: ex_mitll_dff_wr.cir, sha256: ed54f6af30a8b543161ffe5b05d91bbdda16dbaf04be8d3b07d92f0eeee3c87d}
+- {path: ex_mitll_xor_wr.cir, sha256: 4938e555021bf0da72b9c731c238bee58c27949a4dc290e06ec3c01ab71d1d18}
+netlists:
+- {file: ex_jtl_basic.cir, dialect: josim}
+- {file: ex_jtl_param_times.cir, dialect: josim}
+- {file: ex_mitll_dff_wr.cir, dialect: josim}
+- {file: ex_mitll_xor_wr.cir, dialect: josim}
+notes: |
+  Left out:
+  - `ex_dcsfq_jtl_sink.cir`: uses subcircuit 2, defined nowhere
+  - `ex_gen_pp_ipht.cir`: uses subcircuit 1, defined nowhere
+  - `ex_jtl_string.cir`: uses subcircuit 10, defined nowhere
+  - `ex_ksa4bit.cir`: uses subcircuit 10, defined nowhere
+  - `ex_pi_DQFP_buffer_chan.cir`: uses subcircuit 0, defined nowhere
+  - `ex_pi_DQFP_inverter_chain.cir`: uses subcircuit 0, defined nowhere

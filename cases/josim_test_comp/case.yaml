@@ -1,0 +1,36 @@
+id: josim_test_comp
+title: JoSIM test/comp
+family: logic
+source:
+  name: JoSIM
+  url: https://github.com/JoeyDelp/JoSIM
+  license: MIT
+  authors: [Johannes Delport, Coenrad Fourie]
+  commit: 02a34ee5e7a3a6952b21ccc726fbf7a6d5e2b224
+  root: test/comp
+files:
+- {path: capacitor.cir, sha256: 601cbd8e909846729f1fa5de0b91b74e2023cf4847e842a6c4af05ff4e73da63}
+- {path: cccs.cir, sha256: 24573fa188dcd7a829e38d12862175192302240a6a757033586ba44b1cfd8b40}
+- {path: ccvs.cir, sha256: d0c1d6c96a52834adae9b0c35622e60484ac2f0c760f1b8504202684af0b06a4}
+- {path: inductor.cir, sha256: 40dbc83ee7fd1170585315672c5ab4bbb5a96a91d11d2be1db2a0fac72a65261}
+- {path: jj.cir, sha256: 51ee23f9ec1b70141dcc6293ec7239d10544747327fa744c1149c793f04464ac}
+- {path: mutual.cir, sha256: 667a28adb982061d04501812b0606cb5e0b22377a69eb7bcbdd64de1ffc598e4}
+- {path: ps.cir, sha256: 3e660592a2f69bbf15d9c1155f1471946c87b76289e76881b663bd9435659811}
+- {path: resistor.cir, sha256: 796ea3195afc17bad4725cb5d4dfed5c6e6f0f3b29b7b67f9fa7dd44fee5abd7}
+- {path: tx.cir, sha256: c0a5e75f3ccf04f9635187eea1672b3b377bde7c4e9589b5324b188fd53c7488}
+- {path: vccs.cir, sha256: 72ae9deb0dbd2d116ff039ecef605fa84f76541c1752c581269a0d1112fb09d8}
+- {path: vcvs.cir, sha256: 8710efa3fa4d8f6349d4915cd6561a1944e95c7dca2e26016fca6fdbbb66cda1}
+- {path: vs.cir, sha256: a8764d12b1b91219b9fe65264b552cb979bb64dbee3a037e5be9fb2a5718adf7}
+netlists:
+- {file: capacitor.cir, dialect: josim}
+- {file: cccs.cir, dialect: josim}
+- {file: ccvs.cir, dialect: josim}
+- {file: inductor.cir, dialect: josim}
+- {file: jj.cir, dialect: josim}
+- {file: mutual.cir, dialect: josim}
+- {file: ps.cir, dialect: josim}
+- {file: resistor.cir, dialect: josim}
+- {file: tx.cir, dialect: josim}
+- {file: vccs.cir, dialect: josim}
+- {file: vcvs.cir, dialect: josim}
+- {file: vs.cir, dialect: josim}

@@ -1,0 +1,14 @@
+id: qucsator_tests_basic_components_spfile
+title: qucsator tests/basic/components/spfile
+family: test
+source:
+  name: qucsator
+  url: https://github.com/Qucs/qucsator
+  license: GPL-2.0-or-later
+  authors: [Qucs team]
+  commit: e995f9acc71a8c7319286944e4a1692318b9dd80
+  root: tests/basic/components/spfile
+files:
+- {path: spfile@sp.net, sha256: b3db3b9e8d7d4efdc00ef25fd1510c62a04200e92a1cf12832cbd489bdab441c}
+netlists:
+- {file: spfile@sp.net, dialect: qucsator}

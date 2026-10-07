@@ -1,0 +1,54 @@
+id: wrspice_devlib_adms_examples_old_bsoi44_tests
+title: WRspice devlib/adms/examples.old/bsoi44/tests
+family: test
+source:
+  name: WRspice
+  url: https://github.com/wrcad/xictools
+  license: Apache-2.0
+  authors: [Whiteley Research]
+  commit: a51c6b6386ad923b9da4e66d11513dc2e0fe3997
+  root: wrspice/devlib/adms/examples.old/bsoi44/tests
+files:
+- {path: inv_dc.sp, sha256: e45fab20b455d67a10c4e80c3cd5f0bebcb6831ca94de7f0b14cd205cbe938c5}
+- {path: inv_tr.sp, sha256: 1da9253068d64b59aa0abd23dd1a8400eaf66bf784c7ab321fa597b2546fe1dc}
+- {path: nmos4p4.mod, sha256: 4facc98fe7aa731f6cfe562c88960f792029b0364e1ade21cf56d2730d2fb868}
+- {path: pmos4p4.mod, sha256: b3aa1d53acaa6fbe22c130ee3b3178a66137b6023f1271d11c3d1695a9902c46}
+- {path: r.sp, sha256: 890333f80d4362044000ef0128ddd6b9b3be213785d90edb14280700cd9b0d9a}
+- {path: ring51_42.sp, sha256: 31f2884097563cc25d36c49131ed493d39eb97c9c2415fa7e1c379bf5a7a3bcc}
+- {path: test1.sp, sha256: 6242f1e9f83f20165b877c9531baacd8208dcb61d59b1db3671e65209f890779}
+- {path: test15.sp, sha256: 0eef0e60e3cd63192c1c1fbdf0c1334f686c92556d8cf7d864d8afe6211712ce}
+- {path: test2.sp, sha256: 073e3312e4b9e97e19b897626c36c4b46cfe77fb019b70df109ffc381af5ceae}
+- {path: test25.sp, sha256: 2ab899c69878254757653d7965e264aebd356c4303bb6aa93d2a214e30d54299}
+- {path: test3.sp, sha256: 40bef6f90511d55b7bffb522bea05260aac8a70f5e26115a482784e42daaa537}
+- {path: test35.sp, sha256: ec6ea529b674d178881869f24b410dfda73efcfcefbb0f7e1058770bda371902}
+- {path: test4.sp, sha256: af558e5a292e3544e0000e3677876890a7a2ac1a977b25445e07925f72dce5ae}
+- {path: test45.sp, sha256: e04648b836c8fcdec1804d9e5cf05eb443c9a39d6c010527a10923144b10454d}
+- {path: test5.sp, sha256: 0cf19747b3a51fbb4ae2456817de5a5a5d6c0b037bbdd094a50c3fe62d6f0ccc}
+- {path: test55.sp, sha256: 3bc9fdb43cc8032a3f9d7cd4f2ceb603fdbe0a35bc11cbae428dc07af246f47c}
+- {path: test6.sp, sha256: d56e977c3d1bcbf1199a6693ea3bdd46ad71c0e9834da5e07ee3666cf81c449f}
+- {path: test65.sp, sha256: c558a7ded2ef447645edcc0b4d859dce69ecbb5d468032b0ac3e61beb5aaba4f}
+- {path: test7.sp, sha256: 46a8f5287244e353ec7834d61ba4e3d9af5f51a537c7cb6f25b1ff36dc20c13c}
+- {path: test75.sp, sha256: 03db87fdca8be3287892b06b1a7e3e9731024b54422a04e066810e1cfea0c1a8}
+- {path: test8.sp, sha256: b6f88c7890b69c26dca1d0ded1269964259c5be9222fec444acb2468cca85bb9}
+- {path: test85.sp, sha256: 30a63c325b9b2934ef03487374490d70f5f839720d354c0c1a0d0cc4de02a1e7}
+netlists:
+- {file: inv_dc.sp, dialect: wrspice}
+- {file: inv_tr.sp, dialect: wrspice}
+- {file: r.sp, dialect: wrspice}
+- {file: ring51_42.sp, dialect: wrspice}
+- {file: test1.sp, dialect: wrspice}
+- {file: test15.sp, dialect: wrspice}
+- {file: test2.sp, dialect: wrspice}
+- {file: test25.sp, dialect: wrspice}
+- {file: test3.sp, dialect: wrspice}
+- {file: test35.sp, dialect: wrspice}
+- {file: test4.sp, dialect: wrspice}
+- {file: test45.sp, dialect: wrspice}
+- {file: test5.sp, dialect: wrspice}
+- {file: test55.sp, dialect: wrspice}
+- {file: test6.sp, dialect: wrspice}
+- {file: test65.sp, dialect: wrspice}
+- {file: test7.sp, dialect: wrspice}
+- {file: test75.sp, dialect: wrspice}
+- {file: test8.sp, dialect: wrspice}
+- {file: test85.sp, dialect: wrspice}

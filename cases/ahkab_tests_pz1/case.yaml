@@ -1,0 +1,14 @@
+id: ahkab_tests_pz1
+title: ahkab tests/pz1
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/pz1
+files:
+- {path: pz1.ckt, sha256: 3a597bfe073b0d0219444b15559e6390a2aabe9ca8f1b9246db626efd8dda94c}
+netlists:
+- {file: pz1.ckt, dialect: ahkab}

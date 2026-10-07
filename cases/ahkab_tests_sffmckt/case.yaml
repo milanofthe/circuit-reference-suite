@@ -1,0 +1,14 @@
+id: ahkab_tests_sffmckt
+title: ahkab tests/sffmckt
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/sffmckt
+files:
+- {path: sffmckt.ckt, sha256: 12a49c45bf24a967a90edee8d89f999aab2ccce7ffd8bd6b672ee1e5308af3f4}
+netlists:
+- {file: sffmckt.ckt, dialect: ahkab}

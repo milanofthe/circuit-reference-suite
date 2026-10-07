@@ -1,0 +1,16 @@
+id: josim_test_param
+title: JoSIM test/param
+family: logic
+source:
+  name: JoSIM
+  url: https://github.com/JoeyDelp/JoSIM
+  license: MIT
+  authors: [Johannes Delport, Coenrad Fourie]
+  commit: 02a34ee5e7a3a6952b21ccc726fbf7a6d5e2b224
+  root: test/param
+files:
+- {path: test_param_nest.cir, sha256: d4b6ccbe2e08173f9d6354070d8863ace30fe287b40fe5647d7495b2bef8615d}
+- {path: test_param_undef.cir, sha256: 28b6352e86821eeaceb020633dfb1c99278c1041797ae24732831892278bd894}
+netlists:
+- {file: test_param_nest.cir, dialect: josim}
+- {file: test_param_undef.cir, dialect: josim}

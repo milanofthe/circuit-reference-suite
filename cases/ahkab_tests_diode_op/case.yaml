@@ -1,0 +1,14 @@
+id: ahkab_tests_diode_op
+title: ahkab tests/diode_op
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/diode_op
+files:
+- {path: diode_op.ckt, sha256: 1c7dbbf5941ce07f6806803f1c22df8165acde82d5dd66f9a9076da009e19b8e}
+netlists:
+- {file: diode_op.ckt, dialect: ahkab}

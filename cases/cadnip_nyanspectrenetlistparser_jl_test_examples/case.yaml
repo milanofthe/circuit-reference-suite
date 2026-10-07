@@ -1,0 +1,18 @@
+id: cadnip_nyanspectrenetlistparser_jl_test_examples
+title: Cadnip.jl NyanSpectreNetlistParser.jl/test/examples
+family: test
+source:
+  name: Cadnip.jl
+  url: https://github.com/NyanCAD/Cadnip.jl
+  license: MIT
+  authors: [Pepijn de Vos, Cadnip and CedarSim contributors]
+  commit: 6748edaec3696b9c6d7fd45e19d7da54aad3f378
+  root: NyanSpectreNetlistParser.jl/test/examples
+files:
+- {path: subckt_example.scs, sha256: c6015e93cc605562a4bae7fbf8977bff7ea757100a73ce4103f07a4b7a58d52d}
+netlists:
+- {file: subckt_example.scs, dialect: spectre}
+notes: |
+  Left out:
+  - `inv1x2.scs`: needs libs/spectre/7nm_TT.scs, not in the source tree
+  - `inverter_ring.scs`: needs q35d4h5.modsp, not in the source tree

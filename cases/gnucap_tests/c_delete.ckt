@@ -1,0 +1,41 @@
+' a test of the delete command
+V1 1 0 1
+R1 1 2 1
+R2 2 0 1
+R31 2 3 1
+R32 3 0 2
+L 3 4 5
+C1 4 0 5
+C2 4 5 5
+C3 5 0 2
+.option trace
+.print op v(nodes)
+.list
+.op
+.delete L
+.list
+.print op v(nodes)
+.op
+.delete R3*
+.list
+.print op v(nodes)
+.op
+.delete L*
+.list
+.print op v(nodes)
+.status notime
+.op
+.delete c*
+.list
+.print op v(nodes)
+.op
+.delete r2
+.list
+.print op v(nodes)
+.op
+.delete r*
+.list
+.print op v(nodes)
+.op
+.status notime
+.end

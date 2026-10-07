@@ -1,0 +1,14 @@
+id: spicesharpparser_circuits_cookbook_pure_spice_active_anti_al
+title: SpiceSharpParser circuits/cookbook/pure-spice/active-anti-alias-filter
+family: test
+source:
+  name: SpiceSharpParser
+  url: https://github.com/SpiceSharp/SpiceSharpParser
+  license: MIT
+  authors: [SpiceSharp contributors]
+  commit: 8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7
+  root: circuits/cookbook/pure-spice/active-anti-alias-filter
+files:
+- {path: active-anti-alias-filter.cir, sha256: 73a0815308cd164de18f2cd0c1edbd1bdc49ffceb0867a49d86ed88e586c28d5}
+netlists:
+- {file: active-anti-alias-filter.cir, dialect: spicesharp}

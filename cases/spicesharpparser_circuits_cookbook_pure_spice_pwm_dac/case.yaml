@@ -1,0 +1,14 @@
+id: spicesharpparser_circuits_cookbook_pure_spice_pwm_dac
+title: SpiceSharpParser circuits/cookbook/pure-spice/pwm-dac
+family: test
+source:
+  name: SpiceSharpParser
+  url: https://github.com/SpiceSharp/SpiceSharpParser
+  license: MIT
+  authors: [SpiceSharp contributors]
+  commit: 8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7
+  root: circuits/cookbook/pure-spice/pwm-dac
+files:
+- {path: pwm-dac.cir, sha256: cab6a0d71e1622e0b2ab8d2cf12fb53ec557ef7fdef1e98e43867ebee9d732c2}
+netlists:
+- {file: pwm-dac.cir, dialect: spicesharp}

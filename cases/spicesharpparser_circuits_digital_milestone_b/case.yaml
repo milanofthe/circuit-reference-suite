@@ -1,0 +1,14 @@
+id: spicesharpparser_circuits_digital_milestone_b
+title: SpiceSharpParser circuits/digital-milestone-b
+family: test
+source:
+  name: SpiceSharpParser
+  url: https://github.com/SpiceSharp/SpiceSharpParser
+  license: MIT
+  authors: [SpiceSharp contributors]
+  commit: 8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7
+files:
+- {path: circuits/digital-milestone-b/milestone-b-clocked-state.cir, sha256: 3628f9f9d3c1edba344be8995947e6cf5b0ecec063e8a5153d41a7fb2468cfd0}
+- {path: src/SpiceSharpParser.CustomComponents/Digital/Netlists/standard-digital.lib, sha256: 0f9f3ded6db1c4495d33c8943d41fe89365a4e5956017e9da3e767dc1dbee254}
+netlists:
+- {file: circuits/digital-milestone-b/milestone-b-clocked-state.cir, dialect: spicesharp}

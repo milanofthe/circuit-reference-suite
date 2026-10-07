@@ -1,0 +1,45 @@
+*** noise demo
+* WRspice has the ability to model noise in the time domain.  This
+* simple example illustrates thermal resistor noise in an RLC circuit. 
+* More complex cases can be used to model noise-induced errors, etc.
+* See the document MarkJefferyNoiseMemo.pdf in the docs area of the
+* distribution archive of wrcad.com for more info.
+
+* Below defines a function "noise" which encapsulates the thermal
+* noise equation and a call to the gauss "tran" function.  The noise
+* function is called in current sources that are added across
+* resistors in the circuit, as in the text that follows.  There are
+* two equivalent ways to define the function:
+
+* This one is active (recall that *@ is like .exec/.endc for one line).
+*@ define noise(R,T,B) gauss(sqrt(4*boltz*T*B/R), 0, 0.5/B, 0)
+* This is not a comment in WRspice, it acts like the three lines
+* below if they were uncommented.
+* .exec
+* define noise(R,T,B) gauss(sqrt(4*boltz*T*B/R), 0, 0.5/B, 0)
+* .endc
+*
+* This alternative way to specify the function is commented out,
+* comment the one above and uncomment this to try it out.
+* .param noise(R,T,B) gauss(sqrt(4*boltz*T*B/R), 0, 0.5/B, 0)
+
+* Above, R is the resistance, T is the temperature of the
+* resistor in Kelvin, and B is the bandwidth over which the noise
+* contributes.  The bandwidth is generally limited by circuit
+* impedances and parasitics, but we have to choose a frequency
+* high enough that this is the case.
+* See the documentation for "tgauss" for more information.
+
+r1 1 0 1.0
+c1 1 0 5p
+l1 1 0 1p
+
+ir1 1 0 noise(1.0, 4.2, 1THz)
+
+.meas tran foo from 57.7425p to 9.000013nn rms v(1) print
+
+.control
+tran .1p 10n
+plot v(1)
+plot combplot mag(fft(v(1)))
+.endc

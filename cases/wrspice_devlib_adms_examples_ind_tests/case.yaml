@@ -1,0 +1,14 @@
+id: wrspice_devlib_adms_examples_ind_tests
+title: WRspice devlib/adms/examples/ind/tests
+family: test
+source:
+  name: WRspice
+  url: https://github.com/wrcad/xictools
+  license: Apache-2.0
+  authors: [Whiteley Research]
+  commit: a51c6b6386ad923b9da4e66d11513dc2e0fe3997
+  root: wrspice/devlib/adms/examples/ind/tests
+files:
+- {path: test.sp, sha256: 837b0f7d903dce9954c9a004eadce379f3108bba1886fd45c409c735f8241fdf}
+netlists:
+- {file: test.sp, dialect: wrspice}

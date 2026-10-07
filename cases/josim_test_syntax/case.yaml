@@ -1,0 +1,18 @@
+id: josim_test_syntax
+title: JoSIM test/syntax
+family: logic
+source:
+  name: JoSIM
+  url: https://github.com/JoeyDelp/JoSIM
+  license: MIT
+  authors: [Johannes Delport, Coenrad Fourie]
+  commit: 02a34ee5e7a3a6952b21ccc726fbf7a6d5e2b224
+  root: test/syntax
+files:
+- {path: test_line_comment.cir, sha256: 2e6fa6172ee0346781ac62ec516ff1eb461296cab8ed2ea96fa8cf7012d13dc7}
+- {path: test_line_cont.cir, sha256: c008b05b8b40912685b99563b121a3d53aebbfc634c20a1cbbb29e9e846db7d6}
+- {path: test_output.cir, sha256: f9b6d14ca8b0f03b15f9bb1e7eadc28bca8023ecc00d903049e7165723ca61b8}
+netlists:
+- {file: test_line_comment.cir, dialect: josim}
+- {file: test_line_cont.cir, dialect: josim}
+- {file: test_output.cir, dialect: josim}

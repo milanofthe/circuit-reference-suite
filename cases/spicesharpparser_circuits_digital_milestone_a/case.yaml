@@ -1,0 +1,14 @@
+id: spicesharpparser_circuits_digital_milestone_a
+title: SpiceSharpParser circuits/digital-milestone-a
+family: test
+source:
+  name: SpiceSharpParser
+  url: https://github.com/SpiceSharp/SpiceSharpParser
+  license: MIT
+  authors: [SpiceSharp contributors]
+  commit: 8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7
+files:
+- {path: circuits/digital-milestone-a/milestone-a-routing.cir, sha256: 85bdf23d996e3dc8f0549eda9bd97ef14f252fafcfd88bd2ef35f2314cad0fbc}
+- {path: src/SpiceSharpParser.CustomComponents/Digital/Netlists/standard-digital.lib, sha256: 0f9f3ded6db1c4495d33c8943d41fe89365a4e5956017e9da3e767dc1dbee254}
+netlists:
+- {file: circuits/digital-milestone-a/milestone-a-routing.cir, dialect: spicesharp}

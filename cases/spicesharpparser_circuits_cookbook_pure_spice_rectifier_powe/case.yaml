@@ -1,0 +1,14 @@
+id: spicesharpparser_circuits_cookbook_pure_spice_rectifier_powe
+title: SpiceSharpParser circuits/cookbook/pure-spice/rectifier-power-supply
+family: test
+source:
+  name: SpiceSharpParser
+  url: https://github.com/SpiceSharp/SpiceSharpParser
+  license: MIT
+  authors: [SpiceSharp contributors]
+  commit: 8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7
+  root: circuits/cookbook/pure-spice/rectifier-power-supply
+files:
+- {path: rectifier-power-supply.cir, sha256: c926a8bce62e8db4a6771e33af5a7d398fedc81bc67f23d7ba4ab70c4f9c7406}
+netlists:
+- {file: rectifier-power-supply.cir, dialect: spicesharp}

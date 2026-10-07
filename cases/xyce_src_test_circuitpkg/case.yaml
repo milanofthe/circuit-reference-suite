@@ -1,0 +1,22 @@
+id: xyce_src_test_circuitpkg
+title: Xyce test/CircuitPKG
+family: test
+source:
+  name: Xyce
+  url: https://github.com/Xyce/Xyce
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 16889483a370b566a61198fb4bff49e60b75e895
+  root: test/CircuitPKG
+files:
+- {path: MultiPort.cir, sha256: 6b07a0ff6501cc228a23be911ef271813cd1386de86251e732bcf89380071711}
+- {path: MultiPort2.cir, sha256: 8e8efbebdcf094c458afdc96107d0543a3edbe727ca71cde5cb1666ca70d7ea8}
+- {path: TestNetlist1.cir, sha256: 2eb0917a1609339b5339f29c2392ad90800242b4c73da5dc9030df9ebeb4ac06}
+- {path: TestNetlist2.cir, sha256: 4205f6fb54ade16f6bc427d2ddd847ab8a74b1ef7c39d2080e4145c745e05d10}
+- {path: TestNetlist3.cir, sha256: 9f23d268b469e80edd3049e105ed1ff4bb15d9714ae752560aa8d359ceba92dd}
+netlists:
+- {file: MultiPort.cir, dialect: xyce}
+- {file: MultiPort2.cir, dialect: xyce}
+- {file: TestNetlist1.cir, dialect: xyce}
+- {file: TestNetlist2.cir, dialect: xyce}
+- {file: TestNetlist3.cir, dialect: xyce}

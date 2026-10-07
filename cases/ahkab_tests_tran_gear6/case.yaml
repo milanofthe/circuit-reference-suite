@@ -1,0 +1,14 @@
+id: ahkab_tests_tran_gear6
+title: ahkab tests/tran_gear6
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/tran_gear6
+files:
+- {path: tran_gear6.ckt, sha256: 1974b92f58344b953e481e579f63a374d722ca3a90bff1d3b305d2c35fb3d5d6}
+netlists:
+- {file: tran_gear6.ckt, dialect: ahkab}

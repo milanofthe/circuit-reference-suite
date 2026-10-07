@@ -1,0 +1,14 @@
+id: ahkab_tests_rout
+title: ahkab tests/rout
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/rout
+files:
+- {path: rout.ckt, sha256: 9d1fbd0c10d64473b7138573696f28fe82db4a462a385a23c5b5cd5bf59aa5a9}
+netlists:
+- {file: rout.ckt, dialect: ahkab}

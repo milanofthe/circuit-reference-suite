@@ -1,0 +1,14 @@
+id: ahkab_tests_t1off
+title: ahkab tests/t1off
+family: test
+source:
+  name: ahkab
+  url: https://github.com/ahkab/ahkab
+  license: GPL-2.0-only
+  authors: [Giuseppe Venturini, ahkab contributors]
+  commit: 1e8939194b689909b8184ce7eba478b485ff9e3a
+  root: tests/t1off
+files:
+- {path: t1off.ckt, sha256: fbc44027ee66a4a163595414d6d3680745cd10ca649148e5afa2090e3bc86361}
+netlists:
+- {file: t1off.ckt, dialect: ahkab}

@@ -1,0 +1,62 @@
+id: wrspice_examples
+title: WRspice examples
+family: test
+source:
+  name: WRspice
+  url: https://github.com/wrcad/xictools
+  license: Apache-2.0
+  authors: [Whiteley Research]
+  commit: a51c6b6386ad923b9da4e66d11513dc2e0fe3997
+  root: wrspice/examples
+files:
+- {path: bjtnoise.cir, sha256: a61f0cfd20102a2f88b664b072e68b982c337dca3a4591886f54e6af5a9651cf}
+- {path: diffpair.cir, sha256: bc7e41b96f09ebd57e5998e3637fec9fdc4adb0dd93c38b0ebef0db801454674}
+- {path: diodisto.cir, sha256: d7d51deccf8bc61d2f8b99d9086c231dd27b0d9caebeadbf80637cff08a2dc58}
+- {path: fftdemo.cir, sha256: a9a58d47ebac64d29981c0f737dcc3de6ee8d66976cb68685e59073c8a503b02}
+- {path: ltra_1.cir, sha256: f6d128ddeff62899a15b7af1d6b37f3ef7d8aaa0befa879c9e1206713afc7616}
+- {path: ltra_2.cir, sha256: 6c85bdd1be98b48ab811bf0feef75fa9d51a1f9b73ec343d4e47e0ee70b7e75f}
+- {path: ltra_3.cir, sha256: 144a5f7b978bfc6f638ea157b0bf4db2ca1ea371b192db9277579c6414d070db}
+- {path: mixdisto.cir, sha256: a98c38b3fd943f114f636dc46889d04c45965e8fc1d377f26ecd7ff2705be227}
+- {path: mos6inv.cir, sha256: 87afb7b07f742570587d93d0fc344d1a8ab5bea69f2ceb0026480ae9665b47a1}
+- {path: mosamp2.cir, sha256: fac18d275011a4555d1ab2ce99a7749d9759f256fdeb291b72f9858b0e8975a4}
+- {path: mosmem.cir, sha256: f5f459b7d90100abcdd098bb1a175153612ce1da6416579a6fc8c35d1d6155e0}
+- {path: noise.cir, sha256: 6ac60293a93229455c43a8136bdcb6625f562f1cf2a337b1146ab3b27c37d3eb}
+- {path: prbs.cir, sha256: fc7cbf9f70d2fe44f95eb28a0c1c3af5932ffa2529b2f7c19bb7dbd36977fe6b}
+- {path: precision.cir, sha256: 1e2a22dc455516ebf60bd5ca4516d51205d89def6d7d712bdb77764ef26f1ab7}
+- {path: pz2.cir, sha256: 6183ce1578e1537baafc2923683257ebd82d349d1beb2b9a0c953311c6cfa068}
+- {path: pzt.cir, sha256: 35f1eb8d1389114a76ac098c1215c177c09e469e0260d2db9ccce84ab725a987}
+- {path: rc.cir, sha256: bff3d58734b954db13eb89ed43a4669f7e522e45d497e0e2fbe64122851666f0}
+- {path: rca3040.cir, sha256: b216ea80f3c0d8e224fed6bab41bc4f5a5409b2c989e6c3195a736212e7f578b}
+- {path: resnoise.cir, sha256: 0bf66302e7065245720d3dc35d16b19d4bc0d3f3cd5f096d1513cea96a6eb4a4}
+- {path: rtlinv.cir, sha256: 81340b2ec6c03339165f0c5c2c752927344a16d25414c693ddd5c1868dade3ba}
+- {path: schmitt.cir, sha256: 849dc5a811fce0a7da19dfe6b922768abb17cdde29f4eb6980ced6d548a169f7}
+- {path: senstest.cir, sha256: ef3cee4930d81499dbb21ba6b73d9c68bc396e939f2c740236aa64876aec4050}
+- {path: simplepz.cir, sha256: 6fcb21f97f01325cd6da2793d34ac1955bc693caac00176a410dc40a95cbefa6}
+- {path: tab.cir, sha256: e2c21553941e12d513e016d915fcd7a139431ba5c60e493486502e3db5b5a7f8}
+- {path: trapcheck.cir, sha256: 4e15b2f5996cea60392f352b6c90fee9c58f06973c6d2238e0a3ce9e43e1b3bb}
+netlists:
+- {file: bjtnoise.cir, dialect: wrspice}
+- {file: diffpair.cir, dialect: wrspice}
+- {file: diodisto.cir, dialect: wrspice}
+- {file: fftdemo.cir, dialect: wrspice}
+- {file: ltra_1.cir, dialect: wrspice}
+- {file: ltra_2.cir, dialect: wrspice}
+- {file: ltra_3.cir, dialect: wrspice}
+- {file: mixdisto.cir, dialect: wrspice}
+- {file: mos6inv.cir, dialect: wrspice}
+- {file: mosamp2.cir, dialect: wrspice}
+- {file: mosmem.cir, dialect: wrspice}
+- {file: noise.cir, dialect: wrspice}
+- {file: prbs.cir, dialect: wrspice}
+- {file: precision.cir, dialect: wrspice}
+- {file: pz2.cir, dialect: wrspice}
+- {file: pzt.cir, dialect: wrspice}
+- {file: rc.cir, dialect: wrspice}
+- {file: rca3040.cir, dialect: wrspice}
+- {file: resnoise.cir, dialect: wrspice}
+- {file: rtlinv.cir, dialect: wrspice}
+- {file: schmitt.cir, dialect: wrspice}
+- {file: senstest.cir, dialect: wrspice}
+- {file: simplepz.cir, dialect: wrspice}
+- {file: tab.cir, dialect: wrspice}
+- {file: trapcheck.cir, dialect: wrspice}
