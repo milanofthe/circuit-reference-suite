@@ -11,13 +11,13 @@ arithmetic | ngspice, vacask, xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 10178 | [vacask_psp103v4](../../libraries/vacask_psp103v4), [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 10178 | [vacask_psp103v4](../../libraries/vacask_psp103v4) |
-| [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 10178 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 10178 | xl | no | veriloga | [vacask_psp103v4](../../libraries/vacask_psp103v4), [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 10178 | xl | no | specific (.control script, Verilog-A model) | [vacask_psp103v4](../../libraries/vacask_psp103v4) |
+| [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 10178 | xl | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

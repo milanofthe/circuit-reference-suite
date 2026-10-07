@@ -11,11 +11,11 @@ device | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap__capval_test.spice`](sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap__capval_test.spice) | ngspice | ac | 7 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap__capval_test.spice`](sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap__capval_test.spice) | ngspice | ac | 7 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

@@ -11,56 +11,56 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`InductorICBug.cir`](InductorICBug.cir) | xyce | tran | 5 | - |
-| [`MINDUCTORS.cir`](MINDUCTORS.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC.cir`](MINDUCTORS_IC.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC2.cir`](MINDUCTORS_IC2.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC2baseline.cir`](MINDUCTORS_IC2baseline.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC3.cir`](MINDUCTORS_IC3.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC3baseline.cir`](MINDUCTORS_IC3baseline.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC4.cir`](MINDUCTORS_IC4.cir) | xyce | tran | 6 | - |
-| [`MINDUCTORS_IC4baseline.cir`](MINDUCTORS_IC4baseline.cir) | xyce | tran | 6 | - |
-| [`NLAreaStep.cir`](NLAreaStep.cir) | xyce | step, tran | 6 | - |
-| [`NLAreaStep1.cir`](NLAreaStep1.cir) | xyce | tran | 6 | - |
-| [`NLAreaStep2.cir`](NLAreaStep2.cir) | xyce | tran | 6 | - |
-| [`NLAreaStep3.cir`](NLAreaStep3.cir) | xyce | tran | 6 | - |
-| [`NLAreaStepLv2.cir`](NLAreaStepLv2.cir) | xyce | step, tran | 6 | - |
-| [`NLAreaStepLv2_1.cir`](NLAreaStepLv2_1.cir) | xyce | tran | 6 | - |
-| [`NLAreaStepLv2_2.cir`](NLAreaStepLv2_2.cir) | xyce | tran | 6 | - |
-| [`NLAreaStepLv2_3.cir`](NLAreaStepLv2_3.cir) | xyce | tran | 6 | - |
-| [`NLGapStep.cir`](NLGapStep.cir) | xyce | step, tran | 6 | - |
-| [`NLGapStep1.cir`](NLGapStep1.cir) | xyce | tran | 6 | - |
-| [`NLGapStep2.cir`](NLGapStep2.cir) | xyce | tran | 6 | - |
-| [`NLGapStep3.cir`](NLGapStep3.cir) | xyce | tran | 6 | - |
-| [`NLGapStepLv2.cir`](NLGapStepLv2.cir) | xyce | step, tran | 6 | - |
-| [`NLGapStepLv2_1.cir`](NLGapStepLv2_1.cir) | xyce | tran | 6 | - |
-| [`NLGapStepLv2_2.cir`](NLGapStepLv2_2.cir) | xyce | tran | 6 | - |
-| [`NLGapStepLv2_3.cir`](NLGapStepLv2_3.cir) | xyce | tran | 6 | - |
-| [`NLPathStep.cir`](NLPathStep.cir) | xyce | step, tran | 6 | - |
-| [`NLPathStep1.cir`](NLPathStep1.cir) | xyce | tran | 6 | - |
-| [`NLPathStep2.cir`](NLPathStep2.cir) | xyce | tran | 6 | - |
-| [`NLPathStep3.cir`](NLPathStep3.cir) | xyce | tran | 6 | - |
-| [`NLPathStepLv2.cir`](NLPathStepLv2.cir) | xyce | step, tran | 6 | - |
-| [`NLPathStepLv2_1.cir`](NLPathStepLv2_1.cir) | xyce | tran | 6 | - |
-| [`NLPathStepLv2_2.cir`](NLPathStepLv2_2.cir) | xyce | tran | 6 | - |
-| [`NLPathStepLv2_3.cir`](NLPathStepLv2_3.cir) | xyce | tran | 6 | - |
-| [`NonLinInductor.cir`](NonLinInductor.cir) | xyce | tran | 6 | - |
-| [`NonLinInductor_ic.cir`](NonLinInductor_ic.cir) | xyce | tran | 6 | - |
-| [`PathToGroundWarning.cir`](PathToGroundWarning.cir) | xyce | tran | 12 | - |
-| [`cpldLMIs.cir`](cpldLMIs.cir) | xyce | tran | 9 | - |
-| [`cpldLMIs_ic.cir`](cpldLMIs_ic.cir) | xyce | tran | 9 | - |
-| [`mutIndPrint1.cir`](mutIndPrint1.cir) | xyce | tran | 6 | - |
-| [`mutIndPrint2.cir`](mutIndPrint2.cir) | xyce | tran | 6 | - |
-| [`mutIndStep.cir`](mutIndStep.cir) | xyce | step, tran | 6 | - |
-| [`nlMutIndPrint1.cir`](nlMutIndPrint1.cir) | xyce | tran | 6 | - |
-| [`nlMutIndPrint1_lvl2.cir`](nlMutIndPrint1_lvl2.cir) | xyce | tran | 6 | - |
-| [`nlMutIndPrint2.cir`](nlMutIndPrint2.cir) | xyce | tran | 6 | - |
-| [`nlMutIndPrint2_lvl2.cir`](nlMutIndPrint2_lvl2.cir) | xyce | tran | 6 | - |
-| [`nlMutIndStep.cir`](nlMutIndStep.cir) | xyce | step, tran | 6 | - |
-| [`nlMutIndStep_lvl2.cir`](nlMutIndStep_lvl2.cir) | xyce | step, tran | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`InductorICBug.cir`](InductorICBug.cir) | xyce | tran | 5 | tiny | yes | core | - |
+| [`MINDUCTORS.cir`](MINDUCTORS.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC.cir`](MINDUCTORS_IC.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC2.cir`](MINDUCTORS_IC2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC2baseline.cir`](MINDUCTORS_IC2baseline.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC3.cir`](MINDUCTORS_IC3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC3baseline.cir`](MINDUCTORS_IC3baseline.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC4.cir`](MINDUCTORS_IC4.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MINDUCTORS_IC4baseline.cir`](MINDUCTORS_IC4baseline.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStep.cir`](NLAreaStep.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLAreaStep1.cir`](NLAreaStep1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStep2.cir`](NLAreaStep2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStep3.cir`](NLAreaStep3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStepLv2.cir`](NLAreaStepLv2.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLAreaStepLv2_1.cir`](NLAreaStepLv2_1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStepLv2_2.cir`](NLAreaStepLv2_2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLAreaStepLv2_3.cir`](NLAreaStepLv2_3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStep.cir`](NLGapStep.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLGapStep1.cir`](NLGapStep1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStep2.cir`](NLGapStep2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStep3.cir`](NLGapStep3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStepLv2.cir`](NLGapStepLv2.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLGapStepLv2_1.cir`](NLGapStepLv2_1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStepLv2_2.cir`](NLGapStepLv2_2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLGapStepLv2_3.cir`](NLGapStepLv2_3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStep.cir`](NLPathStep.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLPathStep1.cir`](NLPathStep1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStep2.cir`](NLPathStep2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStep3.cir`](NLPathStep3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStepLv2.cir`](NLPathStepLv2.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`NLPathStepLv2_1.cir`](NLPathStepLv2_1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStepLv2_2.cir`](NLPathStepLv2_2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NLPathStepLv2_3.cir`](NLPathStepLv2_3.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NonLinInductor.cir`](NonLinInductor.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`NonLinInductor_ic.cir`](NonLinInductor_ic.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`PathToGroundWarning.cir`](PathToGroundWarning.cir) | xyce | tran | 12 | small | yes | core | - |
+| [`cpldLMIs.cir`](cpldLMIs.cir) | xyce | tran | 9 | tiny | yes | core | - |
+| [`cpldLMIs_ic.cir`](cpldLMIs_ic.cir) | xyce | tran | 9 | tiny | yes | core | - |
+| [`mutIndPrint1.cir`](mutIndPrint1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`mutIndPrint2.cir`](mutIndPrint2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`mutIndStep.cir`](mutIndStep.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`nlMutIndPrint1.cir`](nlMutIndPrint1.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`nlMutIndPrint1_lvl2.cir`](nlMutIndPrint1_lvl2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`nlMutIndPrint2.cir`](nlMutIndPrint2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`nlMutIndPrint2_lvl2.cir`](nlMutIndPrint2_lvl2.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`nlMutIndStep.cir`](nlMutIndStep.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
+| [`nlMutIndStep_lvl2.cir`](nlMutIndStep_lvl2.cir) | xyce | step, tran | 6 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

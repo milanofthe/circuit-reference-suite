@@ -11,14 +11,14 @@ opamp | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`simulations/AMP_NMCF_ACDC.cir`](simulations/AMP_NMCF_ACDC.cir) | ngspice | dc, ac, op | 152 | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/AMP_NMCF_Tran.cir`](simulations/AMP_NMCF_Tran.cir) | ngspice | tran, op | 31 | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/LDO_TB_ACDC.cir`](simulations/LDO_TB_ACDC.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 98 | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/LDO_TB_Tran.cir`](simulations/LDO_TB_Tran.cir) | ngspice | tran, op | 33 | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`simulations/AMP_NMCF_ACDC.cir`](simulations/AMP_NMCF_ACDC.cir) | ngspice | dc, ac, op | 152 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/AMP_NMCF_Tran.cir`](simulations/AMP_NMCF_Tran.cir) | ngspice | tran, op | 31 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/LDO_TB_ACDC.cir`](simulations/LDO_TB_ACDC.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 98 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/LDO_TB_Tran.cir`](simulations/LDO_TB_Tran.cir) | ngspice | tran, op | 33 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

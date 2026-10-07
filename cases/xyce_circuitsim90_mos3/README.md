@@ -11,20 +11,20 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`arom.cir`](arom.cir) | xyce | tran | 146 | - |
-| [`gm1.cir`](gm1.cir) | xyce | tran | 67 | - |
-| [`gm17.cir`](gm17.cir) | xyce | tran | 71 | - |
-| [`gm19.cir`](gm19.cir) | xyce | tran | 261 | - |
-| [`gm2.cir`](gm2.cir) | xyce | tran | 14 | - |
-| [`gm3.cir`](gm3.cir) | xyce | op, tran | 33 | - |
-| [`jge.cir`](jge.cir) | xyce | tran | 568 | - |
-| [`mike2.cir`](mike2.cir) | xyce | tran | 18 | - |
-| [`rich3.cir`](rich3.cir) | xyce | tran | 125 | - |
-| [`todd3.cir`](todd3.cir) | xyce | tran | 20 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`arom.cir`](arom.cir) | xyce | tran | 146 | medium | no | core | - |
+| [`gm1.cir`](gm1.cir) | xyce | tran | 67 | small | no | core | - |
+| [`gm17.cir`](gm17.cir) | xyce | tran | 71 | small | no | core | - |
+| [`gm19.cir`](gm19.cir) | xyce | tran | 261 | medium | no | core | - |
+| [`gm2.cir`](gm2.cir) | xyce | tran | 14 | small | no | core | - |
+| [`gm3.cir`](gm3.cir) | xyce | op, tran | 33 | small | no | core | - |
+| [`jge.cir`](jge.cir) | xyce | tran | 568 | medium | no | core | - |
+| [`mike2.cir`](mike2.cir) | xyce | tran | 18 | small | no | core | - |
+| [`rich3.cir`](rich3.cir) | xyce | tran | 125 | medium | no | core | - |
+| [`todd3.cir`](todd3.cir) | xyce | tran | 20 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

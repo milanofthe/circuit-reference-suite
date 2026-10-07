@@ -11,31 +11,31 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`VRC.sp`](VRC.sp) | xyce | tran | 3 | - |
-| [`VRC_withprint.sp`](VRC_withprint.sp) | xyce | tran | 3 | - |
-| [`diode_no_limiting_nogenext.cir`](diode_no_limiting_nogenext.cir) | xyce | tran | 4 | - |
-| [`diode_with_limiting_nogenext.cir`](diode_with_limiting_nogenext.cir) | xyce | tran | 4 | - |
-| [`genextDC.cir`](genextDC.cir) | xyce | dc | 2 | - |
-| [`genextLeadCurr.cir`](genextLeadCurr.cir) | xyce | tran | 7 | - |
-| [`genextLeadCurrWildcards.cir`](genextLeadCurrWildcards.cir) | xyce | tran | 7 | - |
-| [`netlist_good.txt`](netlist_good.txt) | xyce | tran | 6 | - |
-| [`python_diode_no_limiting.cir`](python_diode_no_limiting.cir) | xyce | tran | 4 | - |
-| [`python_diode_with_limiting.cir`](python_diode_with_limiting.cir) | xyce | tran | 4 | - |
-| [`python_gmls_diode_no_limiting.cir`](python_gmls_diode_no_limiting.cir) | xyce | tran | 4 | - |
-| [`python_gmls_diode_with_limiting.cir`](python_gmls_diode_with_limiting.cir) | xyce | tran | 4 | - |
-| [`python_gmls_rlc_series_vccs.cir`](python_gmls_rlc_series_vccs.cir) | xyce | tran | 5 | - |
-| [`python_rlc_series_vccs.cir`](python_rlc_series_vccs.cir) | xyce | tran | 5 | - |
-| [`python_tfdnn_diode_no_limiting.cir`](python_tfdnn_diode_no_limiting.cir) | xyce | tran | 4 | - |
-| [`python_tfdnn_rlc_series_vccs.cir`](python_tfdnn_rlc_series_vccs.cir) | xyce | tran | 5 | - |
-| [`rc_hb.cir`](rc_hb.cir) | xyce | hb | 3 | - |
-| [`rc_hb_nogenext.cir`](rc_hb_nogenext.cir) | xyce | hb | 3 | - |
-| [`rlc_series_vccs.cir`](rlc_series_vccs.cir) | xyce | tran | 5 | - |
-| [`rlc_series_vccs_AC.cir`](rlc_series_vccs_AC.cir) | xyce | ac | 5 | - |
-| [`rlc_series_vccs_AC_nogenext.cir`](rlc_series_vccs_AC_nogenext.cir) | xyce | ac | 7 | - |
-| [`rlc_series_vccs_nogenext.cir`](rlc_series_vccs_nogenext.cir) | xyce | tran | 7 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`VRC.sp`](VRC.sp) | xyce | tran | 3 | tiny | yes | core | - |
+| [`VRC_withprint.sp`](VRC_withprint.sp) | xyce | tran | 3 | tiny | yes | core | - |
+| [`diode_no_limiting_nogenext.cir`](diode_no_limiting_nogenext.cir) | xyce | tran | 4 | tiny | no | core | - |
+| [`diode_with_limiting_nogenext.cir`](diode_with_limiting_nogenext.cir) | xyce | tran | 4 | tiny | no | core | - |
+| [`genextDC.cir`](genextDC.cir) | xyce | dc | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`genextLeadCurr.cir`](genextLeadCurr.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`genextLeadCurrWildcards.cir`](genextLeadCurrWildcards.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`netlist_good.txt`](netlist_good.txt) | xyce | tran | 6 | tiny | no | core | - |
+| [`python_diode_no_limiting.cir`](python_diode_no_limiting.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_diode_with_limiting.cir`](python_diode_with_limiting.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_gmls_diode_no_limiting.cir`](python_gmls_diode_no_limiting.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_gmls_diode_with_limiting.cir`](python_gmls_diode_with_limiting.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_gmls_rlc_series_vccs.cir`](python_gmls_rlc_series_vccs.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_rlc_series_vccs.cir`](python_rlc_series_vccs.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_tfdnn_diode_no_limiting.cir`](python_tfdnn_diode_no_limiting.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`python_tfdnn_rlc_series_vccs.cir`](python_tfdnn_rlc_series_vccs.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rc_hb.cir`](rc_hb.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`rc_hb_nogenext.cir`](rc_hb_nogenext.cir) | xyce | hb | 3 | tiny | yes | specific (analysis hb) | - |
+| [`rlc_series_vccs.cir`](rlc_series_vccs.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rlc_series_vccs_AC.cir`](rlc_series_vccs_AC.cir) | xyce | ac | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rlc_series_vccs_AC_nogenext.cir`](rlc_series_vccs_AC_nogenext.cir) | xyce | ac | 7 | tiny | yes | core | - |
+| [`rlc_series_vccs_nogenext.cir`](rlc_series_vccs_nogenext.cir) | xyce | tran | 7 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

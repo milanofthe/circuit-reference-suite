@@ -11,11 +11,11 @@ device | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`run_npn_beta.spice`](run_npn_beta.spice) | xyce | dc, step | 3 | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`run_npn_beta.spice`](run_npn_beta.spice) | xyce | dc, step | 3 | tiny | no | core | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

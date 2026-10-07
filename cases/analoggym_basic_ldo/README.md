@@ -11,11 +11,11 @@ ldo | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ldo_spice_testbench/TB_LDO_ACDC.cir`](ldo_spice_testbench/TB_LDO_ACDC.cir) | ngspice | dc, dc, dc, ac, ac | 98 | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ldo_spice_testbench/TB_LDO_ACDC.cir`](ldo_spice_testbench/TB_LDO_ACDC.cir) | ngspice | dc, dc, dc, ac, ac | 98 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

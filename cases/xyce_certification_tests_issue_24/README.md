@@ -11,37 +11,37 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`issue631a.cir`](issue631a.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631a_Ref.cir`](issue631a_Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631a_devbal.cir`](issue631a_devbal.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631a_devbal_Ref.cir`](issue631a_devbal_Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631b.cir`](issue631b.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631b_Ref.cir`](issue631b_Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631b_devbal.cir`](issue631b_devbal.cir) | xyce | dc, sampling | 3 | - |
-| [`issue631b_devbal_Ref.cir`](issue631b_devbal_Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`localVariation1.cir`](localVariation1.cir) | xyce | dc, sampling | 4 | - |
-| [`localVariation1Ref.cir`](localVariation1Ref.cir) | xyce | dc, sampling | 4 | - |
-| [`localVariation2.cir`](localVariation2.cir) | xyce | dc, sampling | 4 | - |
-| [`localVariation2Ref.cir`](localVariation2Ref.cir) | xyce | dc, sampling | 4 | - |
-| [`localVariation3.cir`](localVariation3.cir) | xyce | dc, sampling | 3 | - |
-| [`localVariation3Ref.cir`](localVariation3Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`localVariation4.cir`](localVariation4.cir) | xyce | dc, sampling | 3 | - |
-| [`localVariation4Ref.cir`](localVariation4Ref.cir) | xyce | dc, sampling | 3 | - |
-| [`localVariation5.cir`](localVariation5.cir) | xyce | sampling, dc | 4 | - |
-| [`localVariation5Ref.cir`](localVariation5Ref.cir) | xyce | sampling, dc | 4 | - |
-| [`localVariation6.cir`](localVariation6.cir) | xyce | sampling, dc | 5 | - |
-| [`localVariation6Ref.cir`](localVariation6Ref.cir) | xyce | sampling, dc | 5 | - |
-| [`localVariation7.cir`](localVariation7.cir) | xyce | sampling, dc | 25 | - |
-| [`localVariation7Ref.cir`](localVariation7Ref.cir) | xyce | sampling, dc | 25 | - |
-| [`localVariation7Ref_devbal.cir`](localVariation7Ref_devbal.cir) | xyce | sampling, dc | 25 | - |
-| [`localVariation7_devbal.cir`](localVariation7_devbal.cir) | xyce | sampling, dc | 25 | - |
-| [`localVariation8.cir`](localVariation8.cir) | xyce | sampling, dc | 13 | - |
-| [`localVariation8Ref.cir`](localVariation8Ref.cir) | xyce | sampling, dc | 13 | - |
-| [`localVariation8Ref_devbal.cir`](localVariation8Ref_devbal.cir) | xyce | sampling, dc | 13 | - |
-| [`localVariation8_devbal.cir`](localVariation8_devbal.cir) | xyce | sampling, dc | 13 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`issue631a.cir`](issue631a.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631a_Ref.cir`](issue631a_Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631a_devbal.cir`](issue631a_devbal.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631a_devbal_Ref.cir`](issue631a_devbal_Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631b.cir`](issue631b.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631b_Ref.cir`](issue631b_Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631b_devbal.cir`](issue631b_devbal.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`issue631b_devbal_Ref.cir`](issue631b_devbal_Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation1.cir`](localVariation1.cir) | xyce | dc, sampling | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation1Ref.cir`](localVariation1Ref.cir) | xyce | dc, sampling | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation2.cir`](localVariation2.cir) | xyce | dc, sampling | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation2Ref.cir`](localVariation2Ref.cir) | xyce | dc, sampling | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation3.cir`](localVariation3.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation3Ref.cir`](localVariation3Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation4.cir`](localVariation4.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation4Ref.cir`](localVariation4Ref.cir) | xyce | dc, sampling | 3 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation5.cir`](localVariation5.cir) | xyce | sampling, dc | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation5Ref.cir`](localVariation5Ref.cir) | xyce | sampling, dc | 4 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation6.cir`](localVariation6.cir) | xyce | sampling, dc | 5 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation6Ref.cir`](localVariation6Ref.cir) | xyce | sampling, dc | 5 | tiny | yes | specific (analysis sampling) | - |
+| [`localVariation7.cir`](localVariation7.cir) | xyce | sampling, dc | 25 | small | no | specific (analysis sampling) | - |
+| [`localVariation7Ref.cir`](localVariation7Ref.cir) | xyce | sampling, dc | 25 | small | no | specific (analysis sampling) | - |
+| [`localVariation7Ref_devbal.cir`](localVariation7Ref_devbal.cir) | xyce | sampling, dc | 25 | small | no | specific (analysis sampling) | - |
+| [`localVariation7_devbal.cir`](localVariation7_devbal.cir) | xyce | sampling, dc | 25 | small | no | specific (analysis sampling) | - |
+| [`localVariation8.cir`](localVariation8.cir) | xyce | sampling, dc | 13 | small | no | specific (analysis sampling) | - |
+| [`localVariation8Ref.cir`](localVariation8Ref.cir) | xyce | sampling, dc | 13 | small | no | specific (analysis sampling) | - |
+| [`localVariation8Ref_devbal.cir`](localVariation8Ref_devbal.cir) | xyce | sampling, dc | 13 | small | no | specific (analysis sampling) | - |
+| [`localVariation8_devbal.cir`](localVariation8_devbal.cir) | xyce | sampling, dc | 13 | small | no | specific (analysis sampling) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

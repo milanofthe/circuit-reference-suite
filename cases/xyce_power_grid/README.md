@@ -11,37 +11,37 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`IEEE_14Bus_GenBusDevice_PQPFormat.cir`](IEEE_14Bus_GenBusDevice_PQPFormat.cir) | xyce | dc | 61 | - |
-| [`IEEE_14Bus_PQPFormat.cir`](IEEE_14Bus_PQPFormat.cir) | xyce | dc | 65 | - |
-| [`IEEE_14Bus_PQRFormat.cir`](IEEE_14Bus_PQRFormat.cir) | xyce | dc | 69 | - |
-| [`IEEE_14Bus_PSTransformer_PQPFormat.cir`](IEEE_14Bus_PSTransformer_PQPFormat.cir) | xyce | dc | 67 | - |
-| [`IEEE_30Bus_QLimit_PQPFormat.cir`](IEEE_30Bus_QLimit_PQPFormat.cir) | xyce | dc | 116 | - |
-| [`IEEE_57Bus_PQPFormat.cir`](IEEE_57Bus_PQPFormat.cir) | xyce | dc | 219 | - |
-| [`IEEE_57Bus_QLimit_PQPFormat.cir`](IEEE_57Bus_QLimit_PQPFormat.cir) | xyce | dc | 219 | - |
-| [`antiWindupLimiter.cir`](antiWindupLimiter.cir) | xyce | tran, step | 13 | - |
-| [`sixBus_OneGen_BusShunts_IVFormat.cir`](sixBus_OneGen_BusShunts_IVFormat.cir) | xyce | dc | 41 | - |
-| [`sixBus_OneGen_BusShunts_PQPFormat.cir`](sixBus_OneGen_BusShunts_PQPFormat.cir) | xyce | dc, step | 31 | - |
-| [`sixBus_OneGen_BusShunts_PQRFormat.cir`](sixBus_OneGen_BusShunts_PQRFormat.cir) | xyce | dc | 31 | - |
-| [`threeBus_GenBusDevice_PQPFormat.cir`](threeBus_GenBusDevice_PQPFormat.cir) | xyce | dc, step, step | 11 | - |
-| [`threeBus_TwoBranch_IVFormat.cir`](threeBus_TwoBranch_IVFormat.cir) | xyce | dc | 10 | - |
-| [`threeBus_TwoBranch_PQPFormat.cir`](threeBus_TwoBranch_PQPFormat.cir) | xyce | dc | 10 | - |
-| [`threeBus_TwoBranch_PQRFormat.cir`](threeBus_TwoBranch_PQRFormat.cir) | xyce | dc | 10 | - |
-| [`twoBus_OneBranch_IVFormat.cir`](twoBus_OneBranch_IVFormat.cir) | xyce | dc | 9 | - |
-| [`twoBus_OneBranch_PQPFormat.cir`](twoBus_OneBranch_PQPFormat.cir) | xyce | dc | 9 | - |
-| [`twoBus_OneBranch_PQRFormat.cir`](twoBus_OneBranch_PQRFormat.cir) | xyce | dc | 9 | - |
-| [`twoBus_PSTransformer_IVFormat.cir`](twoBus_PSTransformer_IVFormat.cir) | xyce | dc, step | 9 | - |
-| [`twoBus_PSTransformer_PQRFormat.cir`](twoBus_PSTransformer_PQRFormat.cir) | xyce | dc, step | 7 | - |
-| [`twoBus_TapChangingTransformers_IVFormat.cir`](twoBus_TapChangingTransformers_IVFormat.cir) | xyce | dc | 13 | - |
-| [`twoBus_TapChangingTransformers_PQRFormat.cir`](twoBus_TapChangingTransformers_PQRFormat.cir) | xyce | dc | 11 | - |
-| [`twoBus_TransformerBranch_IVFormat.cir`](twoBus_TransformerBranch_IVFormat.cir) | xyce | dc | 9 | - |
-| [`twoBus_TransformerBranch_PQPFormat.cir`](twoBus_TransformerBranch_PQPFormat.cir) | xyce | dc | 7 | - |
-| [`twoBus_TransformerBranch_PQRFormat.cir`](twoBus_TransformerBranch_PQRFormat.cir) | xyce | dc | 7 | - |
-| [`twoBus_TwoParallelBranch_IVFormat.cir`](twoBus_TwoParallelBranch_IVFormat.cir) | xyce | dc | 10 | - |
-| [`twoBus_TwoParallelBranch_PQPFormat.cir`](twoBus_TwoParallelBranch_PQPFormat.cir) | xyce | dc | 10 | - |
-| [`twoBus_TwoParallelBranch_PQRFormat.cir`](twoBus_TwoParallelBranch_PQRFormat.cir) | xyce | dc | 10 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`IEEE_14Bus_GenBusDevice_PQPFormat.cir`](IEEE_14Bus_GenBusDevice_PQPFormat.cir) | xyce | dc | 61 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_14Bus_PQPFormat.cir`](IEEE_14Bus_PQPFormat.cir) | xyce | dc | 65 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_14Bus_PQRFormat.cir`](IEEE_14Bus_PQRFormat.cir) | xyce | dc | 69 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_14Bus_PSTransformer_PQPFormat.cir`](IEEE_14Bus_PSTransformer_PQPFormat.cir) | xyce | dc | 67 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_30Bus_QLimit_PQPFormat.cir`](IEEE_30Bus_QLimit_PQPFormat.cir) | xyce | dc | 116 | medium | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_57Bus_PQPFormat.cir`](IEEE_57Bus_PQPFormat.cir) | xyce | dc | 219 | medium | no | specific (Xyce device (Y or digital U)) | - |
+| [`IEEE_57Bus_QLimit_PQPFormat.cir`](IEEE_57Bus_QLimit_PQPFormat.cir) | xyce | dc | 219 | medium | no | specific (Xyce device (Y or digital U)) | - |
+| [`antiWindupLimiter.cir`](antiWindupLimiter.cir) | xyce | tran, step | 13 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`sixBus_OneGen_BusShunts_IVFormat.cir`](sixBus_OneGen_BusShunts_IVFormat.cir) | xyce | dc | 41 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`sixBus_OneGen_BusShunts_PQPFormat.cir`](sixBus_OneGen_BusShunts_PQPFormat.cir) | xyce | dc, step | 31 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`sixBus_OneGen_BusShunts_PQRFormat.cir`](sixBus_OneGen_BusShunts_PQRFormat.cir) | xyce | dc | 31 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`threeBus_GenBusDevice_PQPFormat.cir`](threeBus_GenBusDevice_PQPFormat.cir) | xyce | dc, step, step | 11 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`threeBus_TwoBranch_IVFormat.cir`](threeBus_TwoBranch_IVFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`threeBus_TwoBranch_PQPFormat.cir`](threeBus_TwoBranch_PQPFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`threeBus_TwoBranch_PQRFormat.cir`](threeBus_TwoBranch_PQRFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_OneBranch_IVFormat.cir`](twoBus_OneBranch_IVFormat.cir) | xyce | dc | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_OneBranch_PQPFormat.cir`](twoBus_OneBranch_PQPFormat.cir) | xyce | dc | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_OneBranch_PQRFormat.cir`](twoBus_OneBranch_PQRFormat.cir) | xyce | dc | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_PSTransformer_IVFormat.cir`](twoBus_PSTransformer_IVFormat.cir) | xyce | dc, step | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_PSTransformer_PQRFormat.cir`](twoBus_PSTransformer_PQRFormat.cir) | xyce | dc, step | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TapChangingTransformers_IVFormat.cir`](twoBus_TapChangingTransformers_IVFormat.cir) | xyce | dc | 13 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TapChangingTransformers_PQRFormat.cir`](twoBus_TapChangingTransformers_PQRFormat.cir) | xyce | dc | 11 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TransformerBranch_IVFormat.cir`](twoBus_TransformerBranch_IVFormat.cir) | xyce | dc | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TransformerBranch_PQPFormat.cir`](twoBus_TransformerBranch_PQPFormat.cir) | xyce | dc | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TransformerBranch_PQRFormat.cir`](twoBus_TransformerBranch_PQRFormat.cir) | xyce | dc | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TwoParallelBranch_IVFormat.cir`](twoBus_TwoParallelBranch_IVFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TwoParallelBranch_PQPFormat.cir`](twoBus_TwoParallelBranch_PQPFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`twoBus_TwoParallelBranch_PQRFormat.cir`](twoBus_TwoParallelBranch_PQRFormat.cir) | xyce | dc | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

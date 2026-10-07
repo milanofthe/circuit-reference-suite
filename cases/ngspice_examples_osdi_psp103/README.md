@@ -11,17 +11,17 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`c7552_ann_psp.net`](c7552_ann_psp.net) | ngspice | tran | 97373 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`nmos_pmos_PSP.sp`](nmos_pmos_PSP.sp) | ngspice | dc, dc, dc, dc, dc, dc | 10 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`psp_inverter.sp`](psp_inverter.sp) | ngspice | tran, dc | 7 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`psp_out_nmos_nm.sp`](psp_out_nmos_nm.sp) | ngspice | dc, dc | 5 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`psp_out_pmos_nm.sp`](psp_out_pmos_nm.sp) | ngspice | dc, dc | 5 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`psp_ro.sp`](psp_ro.sp) | ngspice | tran | 23 | [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`psp_transfer.sp`](psp_transfer.sp) | ngspice | dc, dc | 5 | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`c7552_ann_psp.net`](c7552_ann_psp.net) | ngspice | tran | 97373 | xl | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`nmos_pmos_PSP.sp`](nmos_pmos_PSP.sp) | ngspice | dc, dc, dc, dc, dc, dc | 10 | small | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`psp_inverter.sp`](psp_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`psp_out_nmos_nm.sp`](psp_out_nmos_nm.sp) | ngspice | dc, dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`psp_out_pmos_nm.sp`](psp_out_pmos_nm.sp) | ngspice | dc, dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`psp_ro.sp`](psp_ro.sp) | ngspice | tran | 23 | small | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`psp_transfer.sp`](psp_transfer.sp) | ngspice | dc, dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

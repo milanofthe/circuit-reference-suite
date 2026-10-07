@@ -11,37 +11,37 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`IC_test.cir`](IC_test.cir) | xyce | tran, tran | 10 | - |
-| [`add_unit_test.cir`](add_unit_test.cir) | xyce | tran | 7 | - |
-| [`and4_unit_test.cir`](and4_unit_test.cir) | xyce | tran | 7 | - |
-| [`buf_unit_test.cir`](buf_unit_test.cir) | xyce | tran | 4 | - |
-| [`dig_count.cir`](dig_count.cir) | xyce | tran | 58 | - |
-| [`digintstate_default_jkff_tff_test.cir`](digintstate_default_jkff_tff_test.cir) | xyce | dc | 24 | - |
-| [`digintstate_default_test.cir`](digintstate_default_test.cir) | xyce | dc | 23 | - |
-| [`digintstate_invalid_test.cir`](digintstate_invalid_test.cir) | xyce | dc | 8 | - |
-| [`digintstate_one_jkff_tff_test.cir`](digintstate_one_jkff_tff_test.cir) | xyce | dc | 24 | - |
-| [`digintstate_one_test.cir`](digintstate_one_test.cir) | xyce | dc | 23 | - |
-| [`digintstate_three_jkff_tff_test.cir`](digintstate_three_jkff_tff_test.cir) | xyce | dc | 24 | - |
-| [`digintstate_three_test.cir`](digintstate_three_test.cir) | xyce | dc | 23 | - |
-| [`digintstate_two_jkff_tff_test.cir`](digintstate_two_jkff_tff_test.cir) | xyce | dc | 24 | - |
-| [`digintstate_two_test.cir`](digintstate_two_test.cir) | xyce | dc | 23 | - |
-| [`digintstate_zero_jkff_tff_test.cir`](digintstate_zero_jkff_tff_test.cir) | xyce | dc | 24 | - |
-| [`digintstate_zero_test.cir`](digintstate_zero_test.cir) | xyce | dc | 23 | - |
-| [`dltch_dc_test.cir`](dltch_dc_test.cir) | xyce | dc, dc, dc, dc | 8 | - |
-| [`dltch_enable_test.cir`](dltch_enable_test.cir) | xyce | tran | 8 | - |
-| [`dltch_preset_clear_test.cir`](dltch_preset_clear_test.cir) | xyce | tran | 8 | - |
-| [`inv_unit_test.cir`](inv_unit_test.cir) | xyce | tran | 8 | - |
-| [`jkff_preset_clear_test.cir`](jkff_preset_clear_test.cir) | xyce | tran | 9 | - |
-| [`jkff_unit_test.cir`](jkff_unit_test.cir) | xyce | tran | 9 | - |
-| [`nand4_unit_test.cir`](nand4_unit_test.cir) | xyce | tran | 7 | - |
-| [`nor4_unit_test.cir`](nor4_unit_test.cir) | xyce | tran | 7 | - |
-| [`nxor_unit_test.cir`](nxor_unit_test.cir) | xyce | tran | 5 | - |
-| [`or4_unit_test.cir`](or4_unit_test.cir) | xyce | tran | 7 | - |
-| [`tff_unit_test.cir`](tff_unit_test.cir) | xyce | tran | 6 | - |
-| [`xor_unit_test.cir`](xor_unit_test.cir) | xyce | tran | 5 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`IC_test.cir`](IC_test.cir) | xyce | tran, tran | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`add_unit_test.cir`](add_unit_test.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`and4_unit_test.cir`](and4_unit_test.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`buf_unit_test.cir`](buf_unit_test.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`dig_count.cir`](dig_count.cir) | xyce | tran | 58 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_default_jkff_tff_test.cir`](digintstate_default_jkff_tff_test.cir) | xyce | dc | 24 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_default_test.cir`](digintstate_default_test.cir) | xyce | dc | 23 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_invalid_test.cir`](digintstate_invalid_test.cir) | xyce | dc | 8 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_one_jkff_tff_test.cir`](digintstate_one_jkff_tff_test.cir) | xyce | dc | 24 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_one_test.cir`](digintstate_one_test.cir) | xyce | dc | 23 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_three_jkff_tff_test.cir`](digintstate_three_jkff_tff_test.cir) | xyce | dc | 24 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_three_test.cir`](digintstate_three_test.cir) | xyce | dc | 23 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_two_jkff_tff_test.cir`](digintstate_two_jkff_tff_test.cir) | xyce | dc | 24 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_two_test.cir`](digintstate_two_test.cir) | xyce | dc | 23 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_zero_jkff_tff_test.cir`](digintstate_zero_jkff_tff_test.cir) | xyce | dc | 24 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`digintstate_zero_test.cir`](digintstate_zero_test.cir) | xyce | dc | 23 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`dltch_dc_test.cir`](dltch_dc_test.cir) | xyce | dc, dc, dc, dc | 8 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`dltch_enable_test.cir`](dltch_enable_test.cir) | xyce | tran | 8 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`dltch_preset_clear_test.cir`](dltch_preset_clear_test.cir) | xyce | tran | 8 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`inv_unit_test.cir`](inv_unit_test.cir) | xyce | tran | 8 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`jkff_preset_clear_test.cir`](jkff_preset_clear_test.cir) | xyce | tran | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`jkff_unit_test.cir`](jkff_unit_test.cir) | xyce | tran | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`nand4_unit_test.cir`](nand4_unit_test.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`nor4_unit_test.cir`](nor4_unit_test.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`nxor_unit_test.cir`](nxor_unit_test.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`or4_unit_test.cir`](or4_unit_test.cir) | xyce | tran | 7 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`tff_unit_test.cir`](tff_unit_test.cir) | xyce | tran | 6 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`xor_unit_test.cir`](xor_unit_test.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

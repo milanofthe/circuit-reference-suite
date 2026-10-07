@@ -11,41 +11,41 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bjt_baseline.cir`](bjt_baseline.cir) | xyce | tran | 163 | - |
-| [`bjt_baseline2.cir`](bjt_baseline2.cir) | xyce | tran | 163 | - |
-| [`bjt_baseline3.cir`](bjt_baseline3.cir) | xyce | tran | 163 | - |
-| [`bjt_baseline4.cir`](bjt_baseline4.cir) | xyce | tran | 163 | - |
-| [`bjt_baseline5.cir`](bjt_baseline5.cir) | xyce | tran | 163 | - |
-| [`comp_baseline.cir`](comp_baseline.cir) | xyce | tran | 25 | - |
-| [`dcvolt_cap.cir`](dcvolt_cap.cir) | xyce | tran | 3 | - |
-| [`dcvolt_cap2.cir`](dcvolt_cap2.cir) | xyce | tran | 3 | - |
-| [`dcvolt_cap3.cir`](dcvolt_cap3.cir) | xyce | tran | 3 | - |
-| [`dcvolt_cap4.cir`](dcvolt_cap4.cir) | xyce | tran | 3 | - |
-| [`hussamp.cir`](hussamp.cir) | xyce | op, tran | 22 | - |
-| [`hussamp_par1.cir`](hussamp_par1.cir) | xyce | op, tran | 22 | - |
-| [`hussamp_par2.cir`](hussamp_par2.cir) | xyce | op, tran | 22 | - |
-| [`ic_baseline.cir`](ic_baseline.cir) | xyce | tran | 3 | - |
-| [`ic_bjt.cir`](ic_bjt.cir) | xyce | tran | 163 | - |
-| [`ic_bjt2.cir`](ic_bjt2.cir) | xyce | tran | 163 | - |
-| [`ic_cap.cir`](ic_cap.cir) | xyce | tran | 3 | - |
-| [`ic_cap2.cir`](ic_cap2.cir) | xyce | tran | 3 | - |
-| [`ic_cap3.cir`](ic_cap3.cir) | xyce | tran | 3 | - |
-| [`ic_cap4.cir`](ic_cap4.cir) | xyce | tran | 3 | - |
-| [`ic_comp.cir`](ic_comp.cir) | xyce | tran | 25 | - |
-| [`ic_gmin.cir`](ic_gmin.cir) | xyce | tran | 3 | - |
-| [`ic_gmin_bjt.cir`](ic_gmin_bjt.cir) | xyce | tran | 163 | - |
-| [`nodeset_bjt.cir`](nodeset_bjt.cir) | xyce | tran | 163 | - |
-| [`nodeset_bjt2.cir`](nodeset_bjt2.cir) | xyce | tran | 163 | - |
-| [`pierce.cir`](pierce.cir) | xyce | tran | 10 | - |
-| [`pierce2.cir`](pierce2.cir) | xyce | tran | 10 | - |
-| [`pierce_noop.cir`](pierce_noop.cir) | xyce | tran | 10 | - |
-| [`ring_osc_bsim3.cir`](ring_osc_bsim3.cir) | xyce | tran | 36 | - |
-| [`ring_osc_bsim3_ic.cir`](ring_osc_bsim3_ic.cir) | xyce | tran | 36 | - |
-| [`ring_osc_bsim4.cir`](ring_osc_bsim4.cir) | xyce | tran | 36 | - |
-| [`ring_osc_bsim4_ic.cir`](ring_osc_bsim4_ic.cir) | xyce | tran | 36 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bjt_baseline.cir`](bjt_baseline.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_baseline2.cir`](bjt_baseline2.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_baseline3.cir`](bjt_baseline3.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_baseline4.cir`](bjt_baseline4.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_baseline5.cir`](bjt_baseline5.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`comp_baseline.cir`](comp_baseline.cir) | xyce | tran | 25 | small | no | core | - |
+| [`dcvolt_cap.cir`](dcvolt_cap.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`dcvolt_cap2.cir`](dcvolt_cap2.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`dcvolt_cap3.cir`](dcvolt_cap3.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`dcvolt_cap4.cir`](dcvolt_cap4.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`hussamp.cir`](hussamp.cir) | xyce | op, tran | 22 | small | no | core | - |
+| [`hussamp_par1.cir`](hussamp_par1.cir) | xyce | op, tran | 22 | small | no | core | - |
+| [`hussamp_par2.cir`](hussamp_par2.cir) | xyce | op, tran | 22 | small | no | core | - |
+| [`ic_baseline.cir`](ic_baseline.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_bjt.cir`](ic_bjt.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`ic_bjt2.cir`](ic_bjt2.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`ic_cap.cir`](ic_cap.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_cap2.cir`](ic_cap2.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_cap3.cir`](ic_cap3.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_cap4.cir`](ic_cap4.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_comp.cir`](ic_comp.cir) | xyce | tran | 25 | small | no | core | - |
+| [`ic_gmin.cir`](ic_gmin.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ic_gmin_bjt.cir`](ic_gmin_bjt.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`nodeset_bjt.cir`](nodeset_bjt.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`nodeset_bjt2.cir`](nodeset_bjt2.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`pierce.cir`](pierce.cir) | xyce | tran | 10 | small | no | core | - |
+| [`pierce2.cir`](pierce2.cir) | xyce | tran | 10 | small | no | core | - |
+| [`pierce_noop.cir`](pierce_noop.cir) | xyce | tran | 10 | small | no | core | - |
+| [`ring_osc_bsim3.cir`](ring_osc_bsim3.cir) | xyce | tran | 36 | small | no | core | - |
+| [`ring_osc_bsim3_ic.cir`](ring_osc_bsim3_ic.cir) | xyce | tran | 36 | small | no | core | - |
+| [`ring_osc_bsim4.cir`](ring_osc_bsim4.cir) | xyce | tran | 36 | small | no | core | - |
+| [`ring_osc_bsim4_ic.cir`](ring_osc_bsim4_ic.cir) | xyce | tran | 36 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

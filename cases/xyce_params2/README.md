@@ -11,61 +11,61 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`Params_A0.cir`](Params_A0.cir) | xyce | dc | 2 | - |
-| [`Params_A1.cir`](Params_A1.cir) | xyce | dc | 2 | - |
-| [`Params_A2.cir`](Params_A2.cir) | xyce | dc | 2 | - |
-| [`Params_A3.cir`](Params_A3.cir) | xyce | dc | 2 | - |
-| [`Params_A4.cir`](Params_A4.cir) | xyce | dc | 2 | - |
-| [`Params_A5.cir`](Params_A5.cir) | xyce | dc | 2 | - |
-| [`Params_A5_hs.cir`](Params_A5_hs.cir) | xyce | dc | 2 | - |
-| [`Params_A6.cir`](Params_A6.cir) | xyce | dc | 2 | - |
-| [`Params_A6_hs.cir`](Params_A6_hs.cir) | xyce | dc | 2 | - |
-| [`Params_A7.cir`](Params_A7.cir) | xyce | dc | 2 | - |
-| [`Params_A7_hs.cir`](Params_A7_hs.cir) | xyce | dc | 2 | - |
-| [`Params_A8.cir`](Params_A8.cir) | xyce | dc | 2 | - |
-| [`Params_A8_hs.cir`](Params_A8_hs.cir) | xyce | dc | 2 | - |
-| [`Params_B0.cir`](Params_B0.cir) | xyce | dc | 3 | - |
-| [`Params_B1.cir`](Params_B1.cir) | xyce | dc | 3 | - |
-| [`Params_B2.cir`](Params_B2.cir) | xyce | dc | 3 | - |
-| [`Params_B3.cir`](Params_B3.cir) | xyce | dc | 3 | - |
-| [`Params_B4.cir`](Params_B4.cir) | xyce | dc | 3 | - |
-| [`Params_B5.cir`](Params_B5.cir) | xyce | dc | 3 | - |
-| [`Params_B5_hs.cir`](Params_B5_hs.cir) | xyce | dc | 3 | - |
-| [`Params_B6.cir`](Params_B6.cir) | xyce | dc | 3 | - |
-| [`Params_B6_hs.cir`](Params_B6_hs.cir) | xyce | dc | 3 | - |
-| [`Params_B7.cir`](Params_B7.cir) | xyce | dc | 3 | - |
-| [`Params_B7_hs.cir`](Params_B7_hs.cir) | xyce | dc | 3 | - |
-| [`Params_B8.cir`](Params_B8.cir) | xyce | dc | 3 | - |
-| [`Params_B8_hs.cir`](Params_B8_hs.cir) | xyce | dc | 3 | - |
-| [`Params_B9.cir`](Params_B9.cir) | xyce | dc | 3 | - |
-| [`Params_B9_hs.cir`](Params_B9_hs.cir) | xyce | dc | 3 | - |
-| [`Params_C0.cir`](Params_C0.cir) | xyce | dc | 2 | - |
-| [`Params_C1.cir`](Params_C1.cir) | xyce | dc | 2 | - |
-| [`Params_C2.cir`](Params_C2.cir) | xyce | dc | 2 | - |
-| [`Params_C3.cir`](Params_C3.cir) | xyce | dc | 2 | - |
-| [`Params_C3_hs.cir`](Params_C3_hs.cir) | xyce | dc | 2 | - |
-| [`Params_C4.cir`](Params_C4.cir) | xyce | dc | 2 | - |
-| [`Params_C4_hs.cir`](Params_C4_hs.cir) | xyce | dc | 2 | - |
-| [`Params_C5.cir`](Params_C5.cir) | xyce | dc | 2 | - |
-| [`Params_C5_hs.cir`](Params_C5_hs.cir) | xyce | dc | 2 | - |
-| [`Params_C6.cir`](Params_C6.cir) | xyce | dc | 2 | - |
-| [`Params_C7.cir`](Params_C7.cir) | xyce | dc | 2 | - |
-| [`Params_C8.cir`](Params_C8.cir) | xyce | dc | 2 | - |
-| [`Params_C9.cir`](Params_C9.cir) | xyce | dc | 2 | - |
-| [`Params_D0.cir`](Params_D0.cir) | xyce | dc | 6 | - |
-| [`Params_D1.cir`](Params_D1.cir) | xyce | dc | 6 | - |
-| [`Params_D2.cir`](Params_D2.cir) | xyce | dc | 6 | - |
-| [`Params_D3.cir`](Params_D3.cir) | xyce | dc | 6 | - |
-| [`Params_D3_hs.cir`](Params_D3_hs.cir) | xyce | dc | 6 | - |
-| [`Params_D4.cir`](Params_D4.cir) | xyce | dc | 6 | - |
-| [`Params_D4_hs.cir`](Params_D4_hs.cir) | xyce | dc | 6 | - |
-| [`Params_D5.cir`](Params_D5.cir) | xyce | dc | 6 | - |
-| [`Params_D5_hs.cir`](Params_D5_hs.cir) | xyce | dc | 6 | - |
-| [`Params_E1.cir`](Params_E1.cir) | xyce | dc | 3 | - |
-| [`Params_G1.cir`](Params_G1.cir) | xyce | dc | 7 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`Params_A0.cir`](Params_A0.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A1.cir`](Params_A1.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A2.cir`](Params_A2.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A3.cir`](Params_A3.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A4.cir`](Params_A4.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A5.cir`](Params_A5.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A5_hs.cir`](Params_A5_hs.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A6.cir`](Params_A6.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A6_hs.cir`](Params_A6_hs.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A7.cir`](Params_A7.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A7_hs.cir`](Params_A7_hs.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A8.cir`](Params_A8.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_A8_hs.cir`](Params_A8_hs.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`Params_B0.cir`](Params_B0.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B1.cir`](Params_B1.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B2.cir`](Params_B2.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B3.cir`](Params_B3.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B4.cir`](Params_B4.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B5.cir`](Params_B5.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B5_hs.cir`](Params_B5_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B6.cir`](Params_B6.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B6_hs.cir`](Params_B6_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B7.cir`](Params_B7.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B7_hs.cir`](Params_B7_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B8.cir`](Params_B8.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B8_hs.cir`](Params_B8_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B9.cir`](Params_B9.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_B9_hs.cir`](Params_B9_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_C0.cir`](Params_C0.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C1.cir`](Params_C1.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C2.cir`](Params_C2.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C3.cir`](Params_C3.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C3_hs.cir`](Params_C3_hs.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C4.cir`](Params_C4.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C4_hs.cir`](Params_C4_hs.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C5.cir`](Params_C5.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C5_hs.cir`](Params_C5_hs.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C6.cir`](Params_C6.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C7.cir`](Params_C7.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C8.cir`](Params_C8.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_C9.cir`](Params_C9.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`Params_D0.cir`](Params_D0.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D1.cir`](Params_D1.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D2.cir`](Params_D2.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D3.cir`](Params_D3.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D3_hs.cir`](Params_D3_hs.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D4.cir`](Params_D4.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D4_hs.cir`](Params_D4_hs.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D5.cir`](Params_D5.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_D5_hs.cir`](Params_D5_hs.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`Params_E1.cir`](Params_E1.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`Params_G1.cir`](Params_G1.cir) | xyce | dc | 7 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

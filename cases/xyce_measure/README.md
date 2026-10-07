@@ -11,72 +11,72 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`AverageTest.cir`](AverageTest.cir) | xyce | tran | 8 | - |
-| [`AverageTestInc.cir`](AverageTestInc.cir) | xyce | tran | 4 | - |
-| [`DefaultValOption.cir`](DefaultValOption.cir) | xyce | tran | 4 | - |
-| [`DerivativeATequalityTest.cir`](DerivativeATequalityTest.cir) | xyce | tran | 2 | - |
-| [`DerivativeMiscTest.cir`](DerivativeMiscTest.cir) | xyce | tran | 4 | - |
-| [`DerivativeTest.cir`](DerivativeTest.cir) | xyce | tran | 8 | - |
-| [`DerivativeVariableTest.cir`](DerivativeVariableTest.cir) | xyce | tran | 6 | - |
-| [`DuplicateMeasureNames.cir`](DuplicateMeasureNames.cir) | xyce | tran | 4 | - |
-| [`DutyTest.cir`](DutyTest.cir) | xyce | tran | 4 | - |
-| [`EquationEvalTest.cir`](EquationEvalTest.cir) | xyce | tran | 4 | - |
-| [`ErrorFuncTest.cir`](ErrorFuncTest.cir) | xyce | tran | 4 | - |
-| [`ErrorMessageTest.cir`](ErrorMessageTest.cir) | xyce | tran | 4 | - |
-| [`ErrorTest.cir`](ErrorTest.cir) | xyce | tran | 4 | - |
-| [`ErrorTestCurrentPowerExp.cir`](ErrorTestCurrentPowerExp.cir) | xyce | tran | 4 | - |
-| [`ExpressionSyntaxes.cir`](ExpressionSyntaxes.cir) | xyce | tran | 3 | - |
-| [`FindWhenTest.cir`](FindWhenTest.cir) | xyce | tran | 10 | - |
-| [`FindWhenTestInc.cir`](FindWhenTestInc.cir) | xyce | tran | 4 | - |
-| [`FindWhenVariableTest.cir`](FindWhenVariableTest.cir) | xyce | tran | 8 | - |
-| [`FourierTest.cir`](FourierTest.cir) | xyce | tran | 7 | - |
-| [`FourierTestFromToTD.cir`](FourierTestFromToTD.cir) | xyce | tran | 2 | - |
-| [`FourierTest_measfail_one.cir`](FourierTest_measfail_one.cir) | xyce | tran | 7 | - |
-| [`FourierTest_measfail_zero.cir`](FourierTest_measfail_zero.cir) | xyce | tran | 7 | - |
-| [`FreqTest.cir`](FreqTest.cir) | xyce | tran | 4 | - |
-| [`FreqTestFromTo.cir`](FreqTestFromTo.cir) | xyce | tran | 4 | - |
-| [`IntegralTest.cir`](IntegralTest.cir) | xyce | tran | 8 | - |
-| [`LeadCurrentAndPowerTest.cir`](LeadCurrentAndPowerTest.cir) | xyce | tran | 2 | - |
-| [`LeadCurrentNotOnPrintLineTest.cir`](LeadCurrentNotOnPrintLineTest.cir) | xyce | tran | 14 | - |
-| [`MaxDiffTest.cir`](MaxDiffTest.cir) | xyce | tran | 4 | - |
-| [`MaxTest.cir`](MaxTest.cir) | xyce | tran | 6 | - |
-| [`MeasdgtOption.cir`](MeasdgtOption.cir) | xyce | tran | 2 | - |
-| [`MeasfailOptionBogo.cir`](MeasfailOptionBogo.cir) | xyce | tran | 4 | - |
-| [`MeasfailOptionOne.cir`](MeasfailOptionOne.cir) | xyce | tran | 4 | - |
-| [`MeasfailOptionOneTrigTarg.cir`](MeasfailOptionOneTrigTarg.cir) | xyce | tran | 2 | - |
-| [`MeasfailOptionZero.cir`](MeasfailOptionZero.cir) | xyce | tran | 4 | - |
-| [`MeasfailOptionZeroTrigTarg.cir`](MeasfailOptionZeroTrigTarg.cir) | xyce | tran | 2 | - |
-| [`MeasoutOptionBogo.cir`](MeasoutOptionBogo.cir) | xyce | tran | 2 | - |
-| [`MeasoutOptionOne.cir`](MeasoutOptionOne.cir) | xyce | tran | 2 | - |
-| [`MeasoutOptionZero.cir`](MeasoutOptionZero.cir) | xyce | tran | 2 | - |
-| [`MeasprintOptionALL.cir`](MeasprintOptionALL.cir) | xyce | tran | 2 | - |
-| [`MeasprintOptionBOGO.cir`](MeasprintOptionBOGO.cir) | xyce | tran | 2 | - |
-| [`MeasprintOptionNONE.cir`](MeasprintOptionNONE.cir) | xyce | tran | 2 | - |
-| [`MeasprintOptionSTDOUT.cir`](MeasprintOptionSTDOUT.cir) | xyce | tran | 2 | - |
-| [`MinTest.cir`](MinTest.cir) | xyce | tran | 6 | - |
-| [`Off_TimeTest.cir`](Off_TimeTest.cir) | xyce | tran | 8 | - |
-| [`On_TimeTest.cir`](On_TimeTest.cir) | xyce | tran | 8 | - |
-| [`PPTest.cir`](PPTest.cir) | xyce | tran | 8 | - |
-| [`PrecisionTest.cir`](PrecisionTest.cir) | xyce | tran | 2 | - |
-| [`PrintOptionTest.cir`](PrintOptionTest.cir) | xyce | tran | 10 | - |
-| [`QualifierExp.cir`](QualifierExp.cir) | xyce | tran | 4 | - |
-| [`RFCEquality.cir`](RFCEquality.cir) | xyce | tran | 4 | - |
-| [`RFCEqualityTrigTarg.cir`](RFCEqualityTrigTarg.cir) | xyce | tran | 4 | - |
-| [`RMSTest.cir`](RMSTest.cir) | xyce | tran | 8 | - |
-| [`RiseFallCrossTest.cir`](RiseFallCrossTest.cir) | xyce | tran | 2 | - |
-| [`RiseFallDelay.cir`](RiseFallDelay.cir) | xyce | tran | 8 | - |
-| [`RiseFallDelayFT.cir`](RiseFallDelayFT.cir) | xyce | tran | 6 | - |
-| [`RiseFallDelayMisc.cir`](RiseFallDelayMisc.cir) | xyce | tran | 6 | - |
-| [`RiseFallDelayValSyntax.cir`](RiseFallDelayValSyntax.cir) | xyce | tran | 2 | - |
-| [`TrigTargTest.cir`](TrigTargTest.cir) | xyce | tran | 6 | - |
-| [`WhenInterpolationTest.cir`](WhenInterpolationTest.cir) | xyce | tran | 6 | - |
-| [`issue_221.cir`](issue_221.cir) | xyce | tran | 4 | - |
-| [`issue_221_measfail_one.cir`](issue_221_measfail_one.cir) | xyce | tran | 4 | - |
-| [`issue_221_measfail_zero.cir`](issue_221_measfail_zero.cir) | xyce | tran | 4 | - |
-| [`issue_277.cir`](issue_277.cir) | xyce | tran | 2 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`AverageTest.cir`](AverageTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`AverageTestInc.cir`](AverageTestInc.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`DefaultValOption.cir`](DefaultValOption.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`DerivativeATequalityTest.cir`](DerivativeATequalityTest.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`DerivativeMiscTest.cir`](DerivativeMiscTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`DerivativeTest.cir`](DerivativeTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`DerivativeVariableTest.cir`](DerivativeVariableTest.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`DuplicateMeasureNames.cir`](DuplicateMeasureNames.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`DutyTest.cir`](DutyTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`EquationEvalTest.cir`](EquationEvalTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ErrorFuncTest.cir`](ErrorFuncTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ErrorMessageTest.cir`](ErrorMessageTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ErrorTest.cir`](ErrorTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ErrorTestCurrentPowerExp.cir`](ErrorTestCurrentPowerExp.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ExpressionSyntaxes.cir`](ExpressionSyntaxes.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`FindWhenTest.cir`](FindWhenTest.cir) | xyce | tran | 10 | small | yes | core | - |
+| [`FindWhenTestInc.cir`](FindWhenTestInc.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`FindWhenVariableTest.cir`](FindWhenVariableTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`FourierTest.cir`](FourierTest.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`FourierTestFromToTD.cir`](FourierTestFromToTD.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`FourierTest_measfail_one.cir`](FourierTest_measfail_one.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`FourierTest_measfail_zero.cir`](FourierTest_measfail_zero.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`FreqTest.cir`](FreqTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`FreqTestFromTo.cir`](FreqTestFromTo.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`IntegralTest.cir`](IntegralTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`LeadCurrentAndPowerTest.cir`](LeadCurrentAndPowerTest.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`LeadCurrentNotOnPrintLineTest.cir`](LeadCurrentNotOnPrintLineTest.cir) | xyce | tran | 14 | small | yes | core | - |
+| [`MaxDiffTest.cir`](MaxDiffTest.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`MaxTest.cir`](MaxTest.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`MeasdgtOption.cir`](MeasdgtOption.cir) | xyce | tran | 2 | tiny | no | core | - |
+| [`MeasfailOptionBogo.cir`](MeasfailOptionBogo.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`MeasfailOptionOne.cir`](MeasfailOptionOne.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`MeasfailOptionOneTrigTarg.cir`](MeasfailOptionOneTrigTarg.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasfailOptionZero.cir`](MeasfailOptionZero.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`MeasfailOptionZeroTrigTarg.cir`](MeasfailOptionZeroTrigTarg.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasoutOptionBogo.cir`](MeasoutOptionBogo.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasoutOptionOne.cir`](MeasoutOptionOne.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasoutOptionZero.cir`](MeasoutOptionZero.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasprintOptionALL.cir`](MeasprintOptionALL.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasprintOptionBOGO.cir`](MeasprintOptionBOGO.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasprintOptionNONE.cir`](MeasprintOptionNONE.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MeasprintOptionSTDOUT.cir`](MeasprintOptionSTDOUT.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`MinTest.cir`](MinTest.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`Off_TimeTest.cir`](Off_TimeTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`On_TimeTest.cir`](On_TimeTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`PPTest.cir`](PPTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`PrecisionTest.cir`](PrecisionTest.cir) | xyce | tran | 2 | tiny | no | core | - |
+| [`PrintOptionTest.cir`](PrintOptionTest.cir) | xyce | tran | 10 | small | yes | core | - |
+| [`QualifierExp.cir`](QualifierExp.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`RFCEquality.cir`](RFCEquality.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`RFCEqualityTrigTarg.cir`](RFCEqualityTrigTarg.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`RMSTest.cir`](RMSTest.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`RiseFallCrossTest.cir`](RiseFallCrossTest.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`RiseFallDelay.cir`](RiseFallDelay.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`RiseFallDelayFT.cir`](RiseFallDelayFT.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`RiseFallDelayMisc.cir`](RiseFallDelayMisc.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`RiseFallDelayValSyntax.cir`](RiseFallDelayValSyntax.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`TrigTargTest.cir`](TrigTargTest.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`WhenInterpolationTest.cir`](WhenInterpolationTest.cir) | xyce | tran | 6 | tiny | no | core | - |
+| [`issue_221.cir`](issue_221.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`issue_221_measfail_one.cir`](issue_221_measfail_one.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`issue_221_measfail_zero.cir`](issue_221_measfail_zero.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`issue_277.cir`](issue_277.cir) | xyce | tran | 2 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

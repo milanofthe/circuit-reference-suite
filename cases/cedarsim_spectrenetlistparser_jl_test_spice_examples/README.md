@@ -11,11 +11,11 @@ test | cedarsim | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`rc_ladder.cir`](rc_ladder.cir) | cedarsim | tran | 5 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`rc_ladder.cir`](rc_ladder.cir) | cedarsim | tran | 5 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

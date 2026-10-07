@@ -11,12 +11,12 @@ device | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`tb_cap_cmomf_typ.sp`](tb_cap_cmomf_typ.sp) | ngspice | ac | 3 | [ihp_sg13g2](../../libraries/ihp_sg13g2) |
-| [`tb_cap_cmomi_typ.sp`](tb_cap_cmomi_typ.sp) | ngspice | ac | 3 | [ihp_sg13g2](../../libraries/ihp_sg13g2) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`tb_cap_cmomf_typ.sp`](tb_cap_cmomf_typ.sp) | ngspice | ac | 3 | tiny | no | specific (.control script, Verilog-A model) | [ihp_sg13g2](../../libraries/ihp_sg13g2) |
+| [`tb_cap_cmomi_typ.sp`](tb_cap_cmomi_typ.sp) | ngspice | ac | 3 | tiny | no | specific (.control script, Verilog-A model) | [ihp_sg13g2](../../libraries/ihp_sg13g2) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

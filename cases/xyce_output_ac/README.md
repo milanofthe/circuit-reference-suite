@@ -11,41 +11,41 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ac-csv.cir`](ac-csv.cir) | xyce | ac | 3 | - |
-| [`ac-gnuplot.cir`](ac-gnuplot.cir) | xyce | ac | 3 | - |
-| [`ac-phase-in-radians.cir`](ac-phase-in-radians.cir) | xyce | ac | 3 | - |
-| [`ac-prn-diff.cir`](ac-prn-diff.cir) | xyce | ac | 4 | - |
-| [`ac-prn.cir`](ac-prn.cir) | xyce | ac | 3 | - |
-| [`ac-probe.cir`](ac-probe.cir) | xyce | ac | 3 | - |
-| [`ac-raw-ascii.cir`](ac-raw-ascii.cir) | xyce | ac | 2 | - |
-| [`ac-raw-override-ascii.cir`](ac-raw-override-ascii.cir) | xyce | ac | 2 | - |
-| [`ac-raw-override.cir`](ac-raw-override.cir) | xyce | ac | 2 | - |
-| [`ac-raw.cir`](ac-raw.cir) | xyce | ac | 2 | - |
-| [`ac-step-gnuplot.cir`](ac-step-gnuplot.cir) | xyce | step, step, ac | 3 | - |
-| [`ac-step-prn.cir`](ac-step-prn.cir) | xyce | ac, step | 3 | - |
-| [`ac-step-probe.cir`](ac-step-probe.cir) | xyce | step, step, ac | 4 | - |
-| [`ac-step-raw-override-ascii.cir`](ac-step-raw-override-ascii.cir) | xyce | ac, step | 2 | - |
-| [`ac-step-raw-override-ascii2.cir`](ac-step-raw-override-ascii2.cir) | xyce | ac, step | 2 | - |
-| [`ac-step-raw-override.cir`](ac-step-raw-override.cir) | xyce | ac, step | 2 | - |
-| [`ac-step-tecplot.cir`](ac-step-tecplot.cir) | xyce | ac, step | 3 | - |
-| [`ac-stepnum-col.cir`](ac-stepnum-col.cir) | xyce | step, step, ac | 3 | - |
-| [`ac-tecplot.cir`](ac-tecplot.cir) | xyce | ac | 2 | - |
-| [`ac-touchstone-defaults-to-prn.cir`](ac-touchstone-defaults-to-prn.cir) | xyce | op, ac | 3 | - |
-| [`op-csv.cir`](op-csv.cir) | xyce | ac, op | 3 | - |
-| [`op-print-line-order.cir`](op-print-line-order.cir) | xyce | ac, op | 7 | - |
-| [`op-prn.cir`](op-prn.cir) | xyce | op, ac | 2 | - |
-| [`op-raw-ascii.cir`](op-raw-ascii.cir) | xyce | ac, op | 2 | - |
-| [`op-raw-override-ascii.cir`](op-raw-override-ascii.cir) | xyce | ac, op | 2 | - |
-| [`op-raw-override.cir`](op-raw-override.cir) | xyce | ac, op | 2 | - |
-| [`op-raw.cir`](op-raw.cir) | xyce | ac, op | 2 | - |
-| [`op-step-prn.cir`](op-step-prn.cir) | xyce | ac, step, op | 2 | - |
-| [`op-step-probe.cir`](op-step-probe.cir) | xyce | ac, step, op | 3 | - |
-| [`op-step-raw-override-ascii.cir`](op-step-raw-override-ascii.cir) | xyce | ac, step, op | 2 | - |
-| [`op-step-raw-override.cir`](op-step-raw-override.cir) | xyce | ac, step, op | 2 | - |
-| [`op-td-prn.cir`](op-td-prn.cir) | xyce | op, ac | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ac-csv.cir`](ac-csv.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`ac-gnuplot.cir`](ac-gnuplot.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`ac-phase-in-radians.cir`](ac-phase-in-radians.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`ac-prn-diff.cir`](ac-prn-diff.cir) | xyce | ac | 4 | tiny | yes | core | - |
+| [`ac-prn.cir`](ac-prn.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`ac-probe.cir`](ac-probe.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`ac-raw-ascii.cir`](ac-raw-ascii.cir) | xyce | ac | 2 | tiny | yes | core | - |
+| [`ac-raw-override-ascii.cir`](ac-raw-override-ascii.cir) | xyce | ac | 2 | tiny | yes | core | - |
+| [`ac-raw-override.cir`](ac-raw-override.cir) | xyce | ac | 2 | tiny | yes | core | - |
+| [`ac-raw.cir`](ac-raw.cir) | xyce | ac | 2 | tiny | yes | core | - |
+| [`ac-step-gnuplot.cir`](ac-step-gnuplot.cir) | xyce | step, step, ac | 3 | tiny | yes | core | - |
+| [`ac-step-prn.cir`](ac-step-prn.cir) | xyce | ac, step | 3 | tiny | yes | core | - |
+| [`ac-step-probe.cir`](ac-step-probe.cir) | xyce | step, step, ac | 4 | tiny | yes | core | - |
+| [`ac-step-raw-override-ascii.cir`](ac-step-raw-override-ascii.cir) | xyce | ac, step | 2 | tiny | yes | core | - |
+| [`ac-step-raw-override-ascii2.cir`](ac-step-raw-override-ascii2.cir) | xyce | ac, step | 2 | tiny | yes | core | - |
+| [`ac-step-raw-override.cir`](ac-step-raw-override.cir) | xyce | ac, step | 2 | tiny | yes | core | - |
+| [`ac-step-tecplot.cir`](ac-step-tecplot.cir) | xyce | ac, step | 3 | tiny | yes | core | - |
+| [`ac-stepnum-col.cir`](ac-stepnum-col.cir) | xyce | step, step, ac | 3 | tiny | yes | core | - |
+| [`ac-tecplot.cir`](ac-tecplot.cir) | xyce | ac | 2 | tiny | yes | core | - |
+| [`ac-touchstone-defaults-to-prn.cir`](ac-touchstone-defaults-to-prn.cir) | xyce | op, ac | 3 | tiny | yes | core | - |
+| [`op-csv.cir`](op-csv.cir) | xyce | ac, op | 3 | tiny | yes | core | - |
+| [`op-print-line-order.cir`](op-print-line-order.cir) | xyce | ac, op | 7 | tiny | yes | core | - |
+| [`op-prn.cir`](op-prn.cir) | xyce | op, ac | 2 | tiny | yes | core | - |
+| [`op-raw-ascii.cir`](op-raw-ascii.cir) | xyce | ac, op | 2 | tiny | yes | core | - |
+| [`op-raw-override-ascii.cir`](op-raw-override-ascii.cir) | xyce | ac, op | 2 | tiny | yes | core | - |
+| [`op-raw-override.cir`](op-raw-override.cir) | xyce | ac, op | 2 | tiny | yes | core | - |
+| [`op-raw.cir`](op-raw.cir) | xyce | ac, op | 2 | tiny | yes | core | - |
+| [`op-step-prn.cir`](op-step-prn.cir) | xyce | ac, step, op | 2 | tiny | yes | core | - |
+| [`op-step-probe.cir`](op-step-probe.cir) | xyce | ac, step, op | 3 | tiny | yes | core | - |
+| [`op-step-raw-override-ascii.cir`](op-step-raw-override-ascii.cir) | xyce | ac, step, op | 2 | tiny | yes | core | - |
+| [`op-step-raw-override.cir`](op-step-raw-override.cir) | xyce | ac, step, op | 2 | tiny | yes | core | - |
+| [`op-td-prn.cir`](op-td-prn.cir) | xyce | op, ac | 3 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

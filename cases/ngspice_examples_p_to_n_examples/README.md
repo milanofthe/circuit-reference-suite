@@ -11,15 +11,15 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`MOS1_out.cir`](MOS1_out.cir) | ngspice | dc | 9 | - |
-| [`aswitch-pswitch.cir`](aswitch-pswitch.cir) | ngspice | dc | 8 | - |
-| [`logic.cir`](logic.cir) | ngspice | tran | 3 | - |
-| [`switch-oscillators.cir`](switch-oscillators.cir) | ngspice | tran | 71 | - |
-| [`switch-oscillators_inc.cir`](switch-oscillators_inc.cir) | ngspice | tran | 93 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`MOS1_out.cir`](MOS1_out.cir) | ngspice | dc | 9 | tiny | no | specific (.control script) | - |
+| [`aswitch-pswitch.cir`](aswitch-pswitch.cir) | ngspice | dc | 8 | tiny | no | specific (.control script, XSPICE code model) | - |
+| [`logic.cir`](logic.cir) | ngspice | tran | 3 | tiny | no | specific (.control script) | - |
+| [`switch-oscillators.cir`](switch-oscillators.cir) | ngspice | tran | 71 | small | no | specific (.control script) | - |
+| [`switch-oscillators_inc.cir`](switch-oscillators_inc.cir) | ngspice | tran | 93 | small | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

@@ -11,14 +11,14 @@ passive | gnucap, ngspice, vacask, xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 3 | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 3 | - |
-| [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 3 | - |
-| [`gnucap/runme.sim`](gnucap/runme.sim) | gnucap | tran | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 3 | tiny | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 3 | tiny | yes | specific (.control script) | - |
+| [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 3 | tiny | yes | core | - |
+| [`gnucap/runme.sim`](gnucap/runme.sim) | gnucap | tran | 3 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

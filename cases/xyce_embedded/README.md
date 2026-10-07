@@ -11,34 +11,34 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`embedded_cmosInverter.cir`](embedded_cmosInverter.cir) | xyce | embeddedsampling, tran | 4 | - |
-| [`globalParamNormalLHS.cir`](globalParamNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`globalParamNormalMC.cir`](globalParamNormalMC.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`globalParamNormal_OP_MC.cir`](globalParamNormal_OP_MC.cir) | xyce | op, embeddedsampling | 3 | - |
-| [`globalParamUniformLHS.cir`](globalParamUniformLHS.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`globalParamUniformMC.cir`](globalParamUniformMC.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`mutIndNormal.cir`](mutIndNormal.cir) | xyce | tran, embeddedsampling | 6 | - |
-| [`normalParamNormalLHS.cir`](normalParamNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`normalParamNormalMC.cir`](normalParamNormalMC.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`normalParamNormal_OP_MC.cir`](normalParamNormal_OP_MC.cir) | xyce | op, embeddedsampling | 3 | - |
-| [`normalParamUniformLHS.cir`](normalParamUniformLHS.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`normalParamUniformMC.cir`](normalParamUniformMC.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`simpleGamma.cir`](simpleGamma.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`simpleNormal.cir`](simpleNormal.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`simpleNormalAC.cir`](simpleNormalAC.cir) | xyce | ac, embeddedsampling | 3 | - |
-| [`simpleNormalHB.cir`](simpleNormalHB.cir) | xyce | hb, embeddedsampling | 7 | - |
-| [`simpleNormalSeed.cir`](simpleNormalSeed.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`simpleUniform.cir`](simpleUniform.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`tran-sampling-measure.cir`](tran-sampling-measure.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`tran-sampling-measureLHS.cir`](tran-sampling-measureLHS.cir) | xyce | tran, embeddedsampling | 3 | - |
-| [`transLineStepDataGlobalPar.cir`](transLineStepDataGlobalPar.cir) | xyce | tran, sens, embeddedsampling | 11 | - |
-| [`truncatedNormalLHS.cir`](truncatedNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`truncatedNormalMC.cir`](truncatedNormalMC.cir) | xyce | dc, embeddedsampling | 3 | - |
-| [`twoParamsNormalCorrelated.cir`](twoParamsNormalCorrelated.cir) | xyce | dc, embeddedsampling | 4 | - |
-| [`twoParamsNormalCorrelatedLHS.cir`](twoParamsNormalCorrelatedLHS.cir) | xyce | dc, embeddedsampling | 4 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`embedded_cmosInverter.cir`](embedded_cmosInverter.cir) | xyce | embeddedsampling, tran | 4 | tiny | no | specific (analysis embeddedsampling) | - |
+| [`globalParamNormalLHS.cir`](globalParamNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`globalParamNormalMC.cir`](globalParamNormalMC.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`globalParamNormal_OP_MC.cir`](globalParamNormal_OP_MC.cir) | xyce | op, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`globalParamUniformLHS.cir`](globalParamUniformLHS.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`globalParamUniformMC.cir`](globalParamUniformMC.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`mutIndNormal.cir`](mutIndNormal.cir) | xyce | tran, embeddedsampling | 6 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`normalParamNormalLHS.cir`](normalParamNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`normalParamNormalMC.cir`](normalParamNormalMC.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`normalParamNormal_OP_MC.cir`](normalParamNormal_OP_MC.cir) | xyce | op, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`normalParamUniformLHS.cir`](normalParamUniformLHS.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`normalParamUniformMC.cir`](normalParamUniformMC.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`simpleGamma.cir`](simpleGamma.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`simpleNormal.cir`](simpleNormal.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`simpleNormalAC.cir`](simpleNormalAC.cir) | xyce | ac, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`simpleNormalHB.cir`](simpleNormalHB.cir) | xyce | hb, embeddedsampling | 7 | tiny | no | specific (analysis embeddedsampling, analysis hb) | - |
+| [`simpleNormalSeed.cir`](simpleNormalSeed.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`simpleUniform.cir`](simpleUniform.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`tran-sampling-measure.cir`](tran-sampling-measure.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`tran-sampling-measureLHS.cir`](tran-sampling-measureLHS.cir) | xyce | tran, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`transLineStepDataGlobalPar.cir`](transLineStepDataGlobalPar.cir) | xyce | tran, sens, embeddedsampling | 11 | small | yes | specific (analysis embeddedsampling, analysis sens) | - |
+| [`truncatedNormalLHS.cir`](truncatedNormalLHS.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`truncatedNormalMC.cir`](truncatedNormalMC.cir) | xyce | dc, embeddedsampling | 3 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`twoParamsNormalCorrelated.cir`](twoParamsNormalCorrelated.cir) | xyce | dc, embeddedsampling | 4 | tiny | yes | specific (analysis embeddedsampling) | - |
+| [`twoParamsNormalCorrelatedLHS.cir`](twoParamsNormalCorrelatedLHS.cir) | xyce | dc, embeddedsampling | 4 | tiny | yes | specific (analysis embeddedsampling) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

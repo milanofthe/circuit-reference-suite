@@ -11,17 +11,17 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`Tschebyschef-LP.cir`](Tschebyschef-LP.cir) | ngspice | sp | 7 | - |
-| [`file.cir`](file.cir) | ngspice | sp, ac | 20 | - |
-| [`filter.sp`](filter.sp) | ngspice | sp, ac | 34 | - |
-| [`sp1.cir`](sp1.cir) | ngspice | sp | 5 | - |
-| [`sp2.cir`](sp2.cir) | ngspice | sp | 5 | - |
-| [`sp3.cir`](sp3.cir) | ngspice | sp | 5 | - |
-| [`sp4.cir`](sp4.cir) | ngspice | sp | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`Tschebyschef-LP.cir`](Tschebyschef-LP.cir) | ngspice | sp | 7 | tiny | yes | specific (analysis sp, .control script) | - |
+| [`file.cir`](file.cir) | ngspice | sp, ac | 20 | small | no | specific (analysis sp, .control script, XSPICE code model) | - |
+| [`filter.sp`](filter.sp) | ngspice | sp, ac | 34 | small | no | specific (analysis sp, .control script) | - |
+| [`sp1.cir`](sp1.cir) | ngspice | sp | 5 | tiny | yes | specific (analysis sp, .control script) | - |
+| [`sp2.cir`](sp2.cir) | ngspice | sp | 5 | tiny | yes | specific (analysis sp, .control script) | - |
+| [`sp3.cir`](sp3.cir) | ngspice | sp | 5 | tiny | yes | specific (analysis sp, .control script) | - |
+| [`sp4.cir`](sp4.cir) | ngspice | sp | 6 | tiny | yes | specific (analysis sp, .control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

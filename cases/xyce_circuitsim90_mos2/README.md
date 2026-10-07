@@ -11,28 +11,28 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ab_ac.cir`](ab_ac.cir) | xyce | ac | 57 | - |
-| [`ab_integ.cir`](ab_integ.cir) | xyce | op, tran | 62 | - |
-| [`ab_opamp.cir`](ab_opamp.cir) | xyce | op, tran | 62 | - |
-| [`cram.cir`](cram.cir) | xyce | tran | 114 | - |
-| [`e1480.cir`](e1480.cir) | xyce | tran | 227 | - |
-| [`g1310.cir`](g1310.cir) | xyce | tran | 122 | - |
-| [`gm6.cir`](gm6.cir) | xyce | op, tran | 8 | - |
-| [`hussamp.cir`](hussamp.cir) | xyce | op, tran | 22 | - |
-| [`mosrect.cir`](mosrect.cir) | xyce | tran | 11 | - |
-| [`mux8.cir`](mux8.cir) | xyce | tran | 105 | - |
-| [`nand.cir`](nand.cir) | xyce | op, tran | 27 | - |
-| [`pump.cir`](pump.cir) | xyce | tran | 4 | - |
-| [`reg0.cir`](reg0.cir) | xyce | ac | 50 | - |
-| [`ring.cir`](ring.cir) | xyce | tran | 36 | - |
-| [`schmitfast.cir`](schmitfast.cir) | xyce | dc | 8 | - |
-| [`schmitslow.cir`](schmitslow.cir) | xyce | dc | 10 | - |
-| [`slowlatch.cir`](slowlatch.cir) | xyce | tran | 20 | - |
-| [`toronto.cir`](toronto.cir) | xyce | tran | 102 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ab_ac.cir`](ab_ac.cir) | xyce | ac | 57 | small | no | core | - |
+| [`ab_integ.cir`](ab_integ.cir) | xyce | op, tran | 62 | small | no | core | - |
+| [`ab_opamp.cir`](ab_opamp.cir) | xyce | op, tran | 62 | small | no | core | - |
+| [`cram.cir`](cram.cir) | xyce | tran | 114 | medium | no | core | - |
+| [`e1480.cir`](e1480.cir) | xyce | tran | 227 | medium | no | core | - |
+| [`g1310.cir`](g1310.cir) | xyce | tran | 122 | medium | no | core | - |
+| [`gm6.cir`](gm6.cir) | xyce | op, tran | 8 | tiny | no | core | - |
+| [`hussamp.cir`](hussamp.cir) | xyce | op, tran | 22 | small | no | core | - |
+| [`mosrect.cir`](mosrect.cir) | xyce | tran | 11 | small | no | core | - |
+| [`mux8.cir`](mux8.cir) | xyce | tran | 105 | medium | no | core | - |
+| [`nand.cir`](nand.cir) | xyce | op, tran | 27 | small | no | core | - |
+| [`pump.cir`](pump.cir) | xyce | tran | 4 | tiny | no | core | - |
+| [`reg0.cir`](reg0.cir) | xyce | ac | 50 | small | yes | core | - |
+| [`ring.cir`](ring.cir) | xyce | tran | 36 | small | no | core | - |
+| [`schmitfast.cir`](schmitfast.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`schmitslow.cir`](schmitslow.cir) | xyce | dc | 10 | small | no | core | - |
+| [`slowlatch.cir`](slowlatch.cir) | xyce | tran | 20 | small | no | core | - |
+| [`toronto.cir`](toronto.cir) | xyce | tran | 102 | medium | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

@@ -11,24 +11,24 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`add20.cir`](add20.cir) | xyce | tran | 5091 | - |
-| [`add32.cir`](add32.cir) | xyce | tran | 2850 | - |
-| [`chip2.cir`](chip2.cir) | xyce | tran | 40385 | - |
-| [`dac.cir`](dac.cir) | xyce | tran | 13928 | - |
-| [`fadd32.cir`](fadd32.cir) | xyce | tran | 330 | - |
-| [`mem_plus.cir`](mem_plus.cir) | xyce | tran | 21743 | - |
-| [`pc_frame.cir`](pc_frame.cir) | xyce | tran | 16102 | - |
-| [`pchip.cir`](pchip.cir) | xyce | tran | 1294 | - |
-| [`ram2k.cir`](ram2k.cir) | xyce | tran | 14059 | - |
-| [`smult20.cir`](smult20.cir) | xyce | tran | 46075 | - |
-| [`sqrt.cir`](sqrt.cir) | xyce | tran | 2219 | - |
-| [`sram.cir`](sram.cir) | xyce | tran | 1047 | - |
-| [`voter.cir`](voter.cir) | xyce | tran | 4727 | - |
-| [`voter25.cir`](voter25.cir) | xyce | tran | 82 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`add20.cir`](add20.cir) | xyce | tran | 5091 | large | no | core | - |
+| [`add32.cir`](add32.cir) | xyce | tran | 2850 | large | no | core | - |
+| [`chip2.cir`](chip2.cir) | xyce | tran | 40385 | xl | no | core | - |
+| [`dac.cir`](dac.cir) | xyce | tran | 13928 | xl | no | core | - |
+| [`fadd32.cir`](fadd32.cir) | xyce | tran | 330 | medium | no | core | - |
+| [`mem_plus.cir`](mem_plus.cir) | xyce | tran | 21743 | xl | no | core | - |
+| [`pc_frame.cir`](pc_frame.cir) | xyce | tran | 16102 | xl | no | core | - |
+| [`pchip.cir`](pchip.cir) | xyce | tran | 1294 | large | no | core | - |
+| [`ram2k.cir`](ram2k.cir) | xyce | tran | 14059 | xl | no | core | - |
+| [`smult20.cir`](smult20.cir) | xyce | tran | 46075 | xl | no | core | - |
+| [`sqrt.cir`](sqrt.cir) | xyce | tran | 2219 | large | no | core | - |
+| [`sram.cir`](sram.cir) | xyce | tran | 1047 | large | no | core | - |
+| [`voter.cir`](voter.cir) | xyce | tran | 4727 | large | no | core | - |
+| [`voter25.cir`](voter25.cir) | xyce | tran | 82 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

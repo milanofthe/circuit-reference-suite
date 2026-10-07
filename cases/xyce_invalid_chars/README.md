@@ -11,35 +11,35 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`colon_fails_device_name.cir`](colon_fails_device_name.cir) | xyce | dc | 3 | - |
-| [`colon_in_node_name.cir`](colon_in_node_name.cir) | xyce | dc | 14 | - |
-| [`colon_in_node_name2.cir`](colon_in_node_name2.cir) | xyce | dc | 14 | - |
-| [`comma_fails_device_name.cir`](comma_fails_device_name.cir) | xyce | dc | 6 | - |
-| [`comma_fails_node_name.cir`](comma_fails_node_name.cir) | xyce | dc | 6 | - |
-| [`double_quote_fails_device_name.cir`](double_quote_fails_device_name.cir) | xyce | dc | 6 | - |
-| [`double_quote_fails_node_name.cir`](double_quote_fails_node_name.cir) | xyce | dc | 6 | - |
-| [`equal_fails_device_name.cir`](equal_fails_device_name.cir) | xyce | dc | 6 | - |
-| [`equal_fails_node_name.cir`](equal_fails_node_name.cir) | xyce | dc | 6 | - |
-| [`left_curly_fails_device_name.cir`](left_curly_fails_device_name.cir) | xyce | dc | 7 | - |
-| [`left_curly_fails_node_name.cir`](left_curly_fails_node_name.cir) | xyce | dc | 7 | - |
-| [`parens_fail_device_name.cir`](parens_fail_device_name.cir) | xyce | dc | 10 | - |
-| [`parens_fail_node_name.cir`](parens_fail_node_name.cir) | xyce | dc | 10 | - |
-| [`period_fails_device_name.cir`](period_fails_device_name.cir) | xyce | dc | 3 | - |
-| [`period_fails_device_name2.cir`](period_fails_device_name2.cir) | xyce | dc | 3 | - |
-| [`period_in_node_name.cir`](period_in_node_name.cir) | xyce | dc | 14 | - |
-| [`right_curly_fails.cir`](right_curly_fails.cir) | xyce | dc | 6 | - |
-| [`semicolon_fails.cir`](semicolon_fails.cir) | xyce | dc | 7 | - |
-| [`single_quote_fails.cir`](single_quote_fails.cir) | xyce | dc | 6 | - |
-| [`valid_chars_ac_expressions.cir`](valid_chars_ac_expressions.cir) | xyce | ac | 3 | - |
-| [`valid_chars_device_node_names.cir`](valid_chars_device_node_names.cir) | xyce | dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc | 89 | - |
-| [`valid_chars_device_node_names2.cir`](valid_chars_device_node_names2.cir) | xyce | dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc | 89 | - |
-| [`valid_chars_expressions.cir`](valid_chars_expressions.cir) | xyce | dc | 177 | - |
-| [`valid_chars_func_names.cir`](valid_chars_func_names.cir) | xyce | dc | 7 | - |
-| [`valid_chars_noise_expressions.cir`](valid_chars_noise_expressions.cir) | xyce | noise | 6 | - |
-| [`valid_chars_ydevice_names.cir`](valid_chars_ydevice_names.cir) | xyce | tran | 85 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`colon_fails_device_name.cir`](colon_fails_device_name.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`colon_in_node_name.cir`](colon_in_node_name.cir) | xyce | dc | 14 | small | yes | core | - |
+| [`colon_in_node_name2.cir`](colon_in_node_name2.cir) | xyce | dc | 14 | small | yes | core | - |
+| [`comma_fails_device_name.cir`](comma_fails_device_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`comma_fails_node_name.cir`](comma_fails_node_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`double_quote_fails_device_name.cir`](double_quote_fails_device_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`double_quote_fails_node_name.cir`](double_quote_fails_node_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`equal_fails_device_name.cir`](equal_fails_device_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`equal_fails_node_name.cir`](equal_fails_node_name.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`left_curly_fails_device_name.cir`](left_curly_fails_device_name.cir) | xyce | dc | 7 | tiny | yes | core | - |
+| [`left_curly_fails_node_name.cir`](left_curly_fails_node_name.cir) | xyce | dc | 7 | tiny | yes | core | - |
+| [`parens_fail_device_name.cir`](parens_fail_device_name.cir) | xyce | dc | 10 | small | yes | core | - |
+| [`parens_fail_node_name.cir`](parens_fail_node_name.cir) | xyce | dc | 10 | small | yes | core | - |
+| [`period_fails_device_name.cir`](period_fails_device_name.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`period_fails_device_name2.cir`](period_fails_device_name2.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`period_in_node_name.cir`](period_in_node_name.cir) | xyce | dc | 14 | small | yes | core | - |
+| [`right_curly_fails.cir`](right_curly_fails.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`semicolon_fails.cir`](semicolon_fails.cir) | xyce | dc | 7 | tiny | yes | core | - |
+| [`single_quote_fails.cir`](single_quote_fails.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`valid_chars_ac_expressions.cir`](valid_chars_ac_expressions.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`valid_chars_device_node_names.cir`](valid_chars_device_node_names.cir) | xyce | dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc | 89 | small | yes | core | - |
+| [`valid_chars_device_node_names2.cir`](valid_chars_device_node_names2.cir) | xyce | dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc, dc | 89 | small | yes | core | - |
+| [`valid_chars_expressions.cir`](valid_chars_expressions.cir) | xyce | dc | 177 | medium | no | core | - |
+| [`valid_chars_func_names.cir`](valid_chars_func_names.cir) | xyce | dc | 7 | tiny | yes | core | - |
+| [`valid_chars_noise_expressions.cir`](valid_chars_noise_expressions.cir) | xyce | noise | 6 | tiny | yes | specific (analysis noise) | - |
+| [`valid_chars_ydevice_names.cir`](valid_chars_ydevice_names.cir) | xyce | tran | 85 | small | no | specific (Xyce device (Y or digital U)) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

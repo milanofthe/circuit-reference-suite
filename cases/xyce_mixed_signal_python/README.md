@@ -11,35 +11,35 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ADCLimitDataTest.cir`](ADCLimitDataTest.cir) | xyce | tran | 3 | - |
-| [`ADCStateHist.cir`](ADCStateHist.cir) | xyce | tran | 4 | - |
-| [`ADCStateShortHist.cir`](ADCStateShortHist.cir) | xyce | tran | 4 | - |
-| [`ADCStateTest.cir`](ADCStateTest.cir) | xyce | tran | 3 | - |
-| [`ADCVarHist.cir`](ADCVarHist.cir) | xyce | tran | 4 | - |
-| [`ADCVarShortHist.cir`](ADCVarShortHist.cir) | xyce | tran | 4 | - |
-| [`ADCtest.cir`](ADCtest.cir) | xyce | tran | 3 | - |
-| [`DCOPfailures.cir`](DCOPfailures.cir) | xyce | tran | 3 | - |
-| [`adjacentNodes.cir`](adjacentNodes.cir) | xyce | tran | 5 | - |
-| [`bug_1275_son.cir`](bug_1275_son.cir) | xyce | tran | 5 | - |
-| [`bug_1301_son.cir`](bug_1301_son.cir) | xyce | tran | 5 | - |
-| [`commandLine.cir`](commandLine.cir) | xyce | tran | 2 | - |
-| [`getDeviceReturnCodes.cir`](getDeviceReturnCodes.cir) | xyce | tran | 9 | - |
-| [`getDeviceReturnCodesSubckt.cir`](getDeviceReturnCodesSubckt.cir) | xyce | tran | 10 | - |
-| [`interfaceErrorMessages.cir`](interfaceErrorMessages.cir) | xyce | tran | 5 | - |
-| [`noADCtest.cir`](noADCtest.cir) | xyce | tran | 2 | - |
-| [`noRun.cir`](noRun.cir) | xyce | tran | 2 | - |
-| [`responseReturnCodes.cir`](responseReturnCodes.cir) | xyce | tran | 2 | - |
-| [`runACircuit.cir`](runACircuit.cir) | xyce | tran | 2 | - |
-| [`runACircuitInSteps.cir`](runACircuitInSteps.cir) | xyce | tran | 2 | - |
-| [`runACircuitWithBackwardStep.cir`](runACircuitWithBackwardStep.cir) | xyce | tran | 2 | - |
-| [`runACircuitWithNullStep.cir`](runACircuitWithNullStep.cir) | xyce | tran | 2 | - |
-| [`runCircuitWithBogoDAC.cir`](runCircuitWithBogoDAC.cir) | xyce | tran | 2 | - |
-| [`runCircuitWithDACs.cir`](runCircuitWithDACs.cir) | xyce | tran | 9 | - |
-| [`runMultipleSims1.cir`](runMultipleSims1.cir) | xyce | tran | 2 | - |
-| [`runMultipleSims2.cir`](runMultipleSims2.cir) | xyce | tran | 2 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ADCLimitDataTest.cir`](ADCLimitDataTest.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCStateHist.cir`](ADCStateHist.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCStateShortHist.cir`](ADCStateShortHist.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCStateTest.cir`](ADCStateTest.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCVarHist.cir`](ADCVarHist.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCVarShortHist.cir`](ADCVarShortHist.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ADCtest.cir`](ADCtest.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`DCOPfailures.cir`](DCOPfailures.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`adjacentNodes.cir`](adjacentNodes.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`bug_1275_son.cir`](bug_1275_son.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`bug_1301_son.cir`](bug_1301_son.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`commandLine.cir`](commandLine.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`getDeviceReturnCodes.cir`](getDeviceReturnCodes.cir) | xyce | tran | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`getDeviceReturnCodesSubckt.cir`](getDeviceReturnCodesSubckt.cir) | xyce | tran | 10 | small | no | specific (Xyce device (Y or digital U)) | - |
+| [`interfaceErrorMessages.cir`](interfaceErrorMessages.cir) | xyce | tran | 5 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`noADCtest.cir`](noADCtest.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`noRun.cir`](noRun.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`responseReturnCodes.cir`](responseReturnCodes.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runACircuit.cir`](runACircuit.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runACircuitInSteps.cir`](runACircuitInSteps.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runACircuitWithBackwardStep.cir`](runACircuitWithBackwardStep.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runACircuitWithNullStep.cir`](runACircuitWithNullStep.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runCircuitWithBogoDAC.cir`](runCircuitWithBogoDAC.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`runCircuitWithDACs.cir`](runCircuitWithDACs.cir) | xyce | tran | 9 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`runMultipleSims1.cir`](runMultipleSims1.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`runMultipleSims2.cir`](runMultipleSims2.cir) | xyce | tran | 2 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

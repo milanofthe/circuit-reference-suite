@@ -11,40 +11,40 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`100W.sp`](100W.sp) | ngspice | op, ac, tran, noise | 52 | - |
-| [`100W_wingspread.sp`](100W_wingspread.sp) | ngspice | op, dc | 19 | - |
-| [`IXTH80N20L-IXTH48P20P-quasisat.cir`](IXTH80N20L-IXTH48P20P-quasisat.cir) | ngspice | dc, dc, dc, dc | 8 | - |
-| [`IXTH80N20L-IXTH48P20P-quasisat.sp`](IXTH80N20L-IXTH48P20P-quasisat.sp) | ngspice | dc, dc, dc, dc | 8 | - |
-| [`IXTP6N100D2-cap.cir`](IXTP6N100D2-cap.cir) | ngspice | tran | 5 | - |
-| [`IXTP6N100D2-cap.sp`](IXTP6N100D2-cap.sp) | ngspice | tran | 4 | - |
-| [`IXTP6N100D2-n-weak-inv.cir`](IXTP6N100D2-n-weak-inv.cir) | ngspice | dc, dc | 6 | - |
-| [`IXTP6N100D2-n-weak-inv.sp`](IXTP6N100D2-n-weak-inv.sp) | ngspice | dc, dc | 6 | - |
-| [`VDMOS-DIO-AC.cir`](VDMOS-DIO-AC.cir) | ngspice | ac | 7 | - |
-| [`VDMOS-DIO.cir`](VDMOS-DIO.cir) | ngspice | tran | 7 | - |
-| [`VDMOS-DIO.sp`](VDMOS-DIO.sp) | ngspice | tran, ac | 7 | - |
-| [`crss_coss_ciss.sp`](crss_coss_ciss.sp) | ngspice | tran | 18 | - |
-| [`dcdc.sp`](dcdc.sp) | ngspice | tran | 17 | - |
-| [`inv_vdmos.cir`](inv_vdmos.cir) | ngspice | tran | 4 | - |
-| [`inv_vdmos.sp`](inv_vdmos.sp) | ngspice | dc, tran | 5 | - |
-| [`inv_vdmos_dc.cir`](inv_vdmos_dc.cir) | ngspice | dc | 5 | - |
-| [`mtriode_nch.sp`](mtriode_nch.sp) | ngspice | dc | 3 | - |
-| [`ro_11_vdmos.cir`](ro_11_vdmos.cir) | ngspice | tran | 28 | - |
-| [`ro_11_vdmos.sp`](ro_11_vdmos.sp) | ngspice | tran | 28 | - |
-| [`self-heating.sp`](self-heating.sp) | ngspice | dc | 4 | - |
-| [`soa_chk.sp`](soa_chk.sp) | ngspice | dc, dc | 8 | - |
-| [`theta_nch.sp`](theta_nch.sp) | ngspice | dc | 3 | - |
-| [`vdmos-out.cir`](vdmos-out.cir) | ngspice | dc, dc | 5 | - |
-| [`vdmos-out.sp`](vdmos-out.sp) | ngspice | dc, dc | 4 | - |
-| [`vdmos-out_ir.cir`](vdmos-out_ir.cir) | ngspice | dc | 5 | - |
-| [`vdmos-out_ir_mtr.cir`](vdmos-out_ir_mtr.cir) | ngspice | dc | 6 | - |
-| [`vdmos-out_ir_mtr.sp`](vdmos-out_ir_mtr.sp) | ngspice | dc | 6 | - |
-| [`vdmosp-out-mtr.cir`](vdmosp-out-mtr.cir) | ngspice | dc, dc, dc | 8 | - |
-| [`vdmosp-out-mtr.sp`](vdmosp-out-mtr.sp) | ngspice | dc, dc | 8 | - |
-| [`vdmosp-out.cir`](vdmosp-out.cir) | ngspice | dc | 5 | - |
-| [`vdmosp-out.sp`](vdmosp-out.sp) | ngspice | dc | 4 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`100W.sp`](100W.sp) | ngspice | op, ac, tran, noise | 52 | small | no | specific (analysis noise, .control script) | - |
+| [`100W_wingspread.sp`](100W_wingspread.sp) | ngspice | op, dc | 19 | small | no | specific (.control script) | - |
+| [`IXTH80N20L-IXTH48P20P-quasisat.cir`](IXTH80N20L-IXTH48P20P-quasisat.cir) | ngspice | dc, dc, dc, dc | 8 | tiny | no | specific (.control script) | - |
+| [`IXTH80N20L-IXTH48P20P-quasisat.sp`](IXTH80N20L-IXTH48P20P-quasisat.sp) | ngspice | dc, dc, dc, dc | 8 | tiny | no | specific (.control script) | - |
+| [`IXTP6N100D2-cap.cir`](IXTP6N100D2-cap.cir) | ngspice | tran | 5 | tiny | no | specific (.control script) | - |
+| [`IXTP6N100D2-cap.sp`](IXTP6N100D2-cap.sp) | ngspice | tran | 4 | tiny | no | specific (.control script) | - |
+| [`IXTP6N100D2-n-weak-inv.cir`](IXTP6N100D2-n-weak-inv.cir) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | - |
+| [`IXTP6N100D2-n-weak-inv.sp`](IXTP6N100D2-n-weak-inv.sp) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | - |
+| [`VDMOS-DIO-AC.cir`](VDMOS-DIO-AC.cir) | ngspice | ac | 7 | tiny | no | specific (.control script) | - |
+| [`VDMOS-DIO.cir`](VDMOS-DIO.cir) | ngspice | tran | 7 | tiny | no | specific (.control script) | - |
+| [`VDMOS-DIO.sp`](VDMOS-DIO.sp) | ngspice | tran, ac | 7 | tiny | no | specific (.control script) | - |
+| [`crss_coss_ciss.sp`](crss_coss_ciss.sp) | ngspice | tran | 18 | small | no | specific (.control script) | - |
+| [`dcdc.sp`](dcdc.sp) | ngspice | tran | 17 | small | no | specific (.control script) | - |
+| [`inv_vdmos.cir`](inv_vdmos.cir) | ngspice | tran | 4 | tiny | no | specific (.control script) | - |
+| [`inv_vdmos.sp`](inv_vdmos.sp) | ngspice | dc, tran | 5 | tiny | no | specific (.control script) | - |
+| [`inv_vdmos_dc.cir`](inv_vdmos_dc.cir) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
+| [`mtriode_nch.sp`](mtriode_nch.sp) | ngspice | dc | 3 | tiny | no | specific (.control script) | - |
+| [`ro_11_vdmos.cir`](ro_11_vdmos.cir) | ngspice | tran | 28 | small | no | specific (.control script) | - |
+| [`ro_11_vdmos.sp`](ro_11_vdmos.sp) | ngspice | tran | 28 | small | no | specific (.control script) | - |
+| [`self-heating.sp`](self-heating.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`soa_chk.sp`](soa_chk.sp) | ngspice | dc, dc | 8 | tiny | no | specific (.control script) | - |
+| [`theta_nch.sp`](theta_nch.sp) | ngspice | dc | 3 | tiny | no | specific (.control script) | - |
+| [`vdmos-out.cir`](vdmos-out.cir) | ngspice | dc, dc | 5 | tiny | no | specific (.control script) | - |
+| [`vdmos-out.sp`](vdmos-out.sp) | ngspice | dc, dc | 4 | tiny | no | specific (.control script) | - |
+| [`vdmos-out_ir.cir`](vdmos-out_ir.cir) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
+| [`vdmos-out_ir_mtr.cir`](vdmos-out_ir_mtr.cir) | ngspice | dc | 6 | tiny | no | specific (.control script) | - |
+| [`vdmos-out_ir_mtr.sp`](vdmos-out_ir_mtr.sp) | ngspice | dc | 6 | tiny | no | specific (.control script) | - |
+| [`vdmosp-out-mtr.cir`](vdmosp-out-mtr.cir) | ngspice | dc, dc, dc | 8 | tiny | no | specific (.control script) | - |
+| [`vdmosp-out-mtr.sp`](vdmosp-out-mtr.sp) | ngspice | dc, dc | 8 | tiny | no | specific (.control script) | - |
+| [`vdmosp-out.cir`](vdmosp-out.cir) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
+| [`vdmosp-out.sp`](vdmosp-out.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

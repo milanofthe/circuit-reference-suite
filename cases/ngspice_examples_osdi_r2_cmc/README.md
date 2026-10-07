@@ -11,11 +11,11 @@ test | ngspice | status: **incomplete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`res_r2_cmc.cir`](res_r2_cmc.cir) | ngspice | op | 2 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`res_r2_cmc.cir`](res_r2_cmc.cir) | ngspice | op | 2 | tiny | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

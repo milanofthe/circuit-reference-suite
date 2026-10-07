@@ -11,14 +11,14 @@ logic | josim | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ex_jtl_basic.cir`](ex_jtl_basic.cir) | josim | tran | 16 | - |
-| [`ex_jtl_param_times.cir`](ex_jtl_param_times.cir) | josim | tran | 16 | - |
-| [`ex_mitll_dff_wr.cir`](ex_mitll_dff_wr.cir) | josim | tran | 173 | - |
-| [`ex_mitll_xor_wr.cir`](ex_mitll_xor_wr.cir) | josim | tran | 245 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ex_jtl_basic.cir`](ex_jtl_basic.cir) | josim | tran | 16 | small | no | specific (Josephson junction) | - |
+| [`ex_jtl_param_times.cir`](ex_jtl_param_times.cir) | josim | tran | 16 | small | no | specific (Josephson junction) | - |
+| [`ex_mitll_dff_wr.cir`](ex_mitll_dff_wr.cir) | josim | tran | 173 | medium | no | specific (Josephson junction) | - |
+| [`ex_mitll_xor_wr.cir`](ex_mitll_xor_wr.cir) | josim | tran | 245 | medium | no | specific (Josephson junction) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

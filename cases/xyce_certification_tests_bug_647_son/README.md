@@ -11,46 +11,46 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`Synapse_lv3.cir`](Synapse_lv3.cir) | xyce | tran, step | 4 | - |
-| [`Synapse_lv3_modpar.cir`](Synapse_lv3_modpar.cir) | xyce | tran, step | 4 | - |
-| [`b3soi.cir`](b3soi.cir) | xyce | dc, step, step, step | 4 | - |
-| [`b3soi_modpar.cir`](b3soi_modpar.cir) | xyce | dc, step, step, step | 4 | - |
-| [`baselineLumpedLine.cir`](baselineLumpedLine.cir) | xyce | tran, step, step, step | 92 | - |
-| [`bjt.cir`](bjt.cir) | xyce | tran, step | 2 | - |
-| [`bjt_ambient.cir`](bjt_ambient.cir) | xyce | tran, step | 2 | - |
-| [`bsim3.cir`](bsim3.cir) | xyce | dc, step, step, step | 3 | - |
-| [`bsim3_modpar.cir`](bsim3_modpar.cir) | xyce | dc, step, step, step | 3 | - |
-| [`bsim4.cir`](bsim4.cir) | xyce | dc, step, step, step, step | 4 | - |
-| [`bsim4_modpar.cir`](bsim4_modpar.cir) | xyce | dc, step, step, step, step | 4 | - |
-| [`lumpedLine.cir`](lumpedLine.cir) | xyce | tran, step, step, step | 3 | - |
-| [`mesfet.cir`](mesfet.cir) | xyce | step, step, dc | 4 | - |
-| [`mos1.cir`](mos1.cir) | xyce | step, step, step, dc | 7 | - |
-| [`mos1_modpar.cir`](mos1_modpar.cir) | xyce | step, step, step, dc | 7 | - |
-| [`mos2.cir`](mos2.cir) | xyce | step, step, step, dc | 7 | - |
-| [`mos2_modpar.cir`](mos2_modpar.cir) | xyce | step, step, step, dc | 7 | - |
-| [`mos3.cir`](mos3.cir) | xyce | step, step, step, dc | 7 | - |
-| [`mos3_modpar.cir`](mos3_modpar.cir) | xyce | step, step, step, dc | 7 | - |
-| [`neuron_lv3.cir`](neuron_lv3.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv3_modpar.cir`](neuron_lv3_modpar.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv4.cir`](neuron_lv4.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv4_modpar.cir`](neuron_lv4_modpar.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv6.cir`](neuron_lv6.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv6_modpar.cir`](neuron_lv6_modpar.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv7.cir`](neuron_lv7.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv7_modpar.cir`](neuron_lv7_modpar.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv8.cir`](neuron_lv8.cir) | xyce | step, tran | 2 | - |
-| [`neuron_lv8_modpar.cir`](neuron_lv8_modpar.cir) | xyce | step, tran | 2 | - |
-| [`semic_resistor.cir`](semic_resistor.cir) | xyce | dc, step, step, step, step | 3 | - |
-| [`semic_resistor_modpar.cir`](semic_resistor_modpar.cir) | xyce | dc, step, step, step, step | 3 | - |
-| [`semicap.cir`](semicap.cir) | xyce | tran, step, step, step, step | 4 | - |
-| [`semicap_modpar.cir`](semicap_modpar.cir) | xyce | tran, step, step, step, step | 4 | - |
-| [`tempind.cir`](tempind.cir) | xyce | tran, step, step, step | 4 | - |
-| [`tempind_modpar.cir`](tempind_modpar.cir) | xyce | tran, step, step, step | 4 | - |
-| [`vdmos.cir`](vdmos.cir) | xyce | step, step, step, dc | 5 | - |
-| [`vdmos_modpar.cir`](vdmos_modpar.cir) | xyce | step, step, step, dc | 5 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`Synapse_lv3.cir`](Synapse_lv3.cir) | xyce | tran, step | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Synapse_lv3_modpar.cir`](Synapse_lv3_modpar.cir) | xyce | tran, step | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`b3soi.cir`](b3soi.cir) | xyce | dc, step, step, step | 4 | tiny | no | core | - |
+| [`b3soi_modpar.cir`](b3soi_modpar.cir) | xyce | dc, step, step, step | 4 | tiny | no | core | - |
+| [`baselineLumpedLine.cir`](baselineLumpedLine.cir) | xyce | tran, step, step, step | 92 | small | yes | core | - |
+| [`bjt.cir`](bjt.cir) | xyce | tran, step | 2 | tiny | no | core | - |
+| [`bjt_ambient.cir`](bjt_ambient.cir) | xyce | tran, step | 2 | tiny | no | core | - |
+| [`bsim3.cir`](bsim3.cir) | xyce | dc, step, step, step | 3 | tiny | no | core | - |
+| [`bsim3_modpar.cir`](bsim3_modpar.cir) | xyce | dc, step, step, step | 3 | tiny | no | core | - |
+| [`bsim4.cir`](bsim4.cir) | xyce | dc, step, step, step, step | 4 | tiny | no | core | - |
+| [`bsim4_modpar.cir`](bsim4_modpar.cir) | xyce | dc, step, step, step, step | 4 | tiny | no | core | - |
+| [`lumpedLine.cir`](lumpedLine.cir) | xyce | tran, step, step, step | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`mesfet.cir`](mesfet.cir) | xyce | step, step, dc | 4 | tiny | no | core | - |
+| [`mos1.cir`](mos1.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`mos1_modpar.cir`](mos1_modpar.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`mos2.cir`](mos2.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`mos2_modpar.cir`](mos2_modpar.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`mos3.cir`](mos3.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`mos3_modpar.cir`](mos3_modpar.cir) | xyce | step, step, step, dc | 7 | tiny | no | core | - |
+| [`neuron_lv3.cir`](neuron_lv3.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv3_modpar.cir`](neuron_lv3_modpar.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv4.cir`](neuron_lv4.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv4_modpar.cir`](neuron_lv4_modpar.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv6.cir`](neuron_lv6.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv6_modpar.cir`](neuron_lv6_modpar.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv7.cir`](neuron_lv7.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv7_modpar.cir`](neuron_lv7_modpar.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv8.cir`](neuron_lv8.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`neuron_lv8_modpar.cir`](neuron_lv8_modpar.cir) | xyce | step, tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`semic_resistor.cir`](semic_resistor.cir) | xyce | dc, step, step, step, step | 3 | tiny | yes | core | - |
+| [`semic_resistor_modpar.cir`](semic_resistor_modpar.cir) | xyce | dc, step, step, step, step | 3 | tiny | yes | core | - |
+| [`semicap.cir`](semicap.cir) | xyce | tran, step, step, step, step | 4 | tiny | yes | core | - |
+| [`semicap_modpar.cir`](semicap_modpar.cir) | xyce | tran, step, step, step, step | 4 | tiny | yes | core | - |
+| [`tempind.cir`](tempind.cir) | xyce | tran, step, step, step | 4 | tiny | no | core | - |
+| [`tempind_modpar.cir`](tempind_modpar.cir) | xyce | tran, step, step, step | 4 | tiny | no | core | - |
+| [`vdmos.cir`](vdmos.cir) | xyce | step, step, step, dc | 5 | tiny | no | core | - |
+| [`vdmos_modpar.cir`](vdmos_modpar.cir) | xyce | step, step, step, dc | 5 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

@@ -11,17 +11,17 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bsimbulk_inverter.sp`](bsimbulk_inverter.sp) | ngspice | tran, dc | 7 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`bsimbulk_inverter_batch.sp`](bsimbulk_inverter_batch.sp) | ngspice | tran, dc | 7 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`bsimbulk_ro.sp`](bsimbulk_ro.sp) | ngspice | tran | 23 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`c7552_ann_bsimbulk.net`](c7552_ann_bsimbulk.net) | ngspice | tran | 97373 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`netlist_mod_nmos.sp`](netlist_mod_nmos.sp) | ngspice | dc | 5 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`netlist_mod_pmos.sp`](netlist_mod_pmos.sp) | ngspice | dc | 5 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`nmos_pmos_BSIMBULK.sp`](nmos_pmos_BSIMBULK.sp) | ngspice | dc, dc, dc, dc, dc, dc | 10 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bsimbulk_inverter.sp`](bsimbulk_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`bsimbulk_inverter_batch.sp`](bsimbulk_inverter_batch.sp) | ngspice | tran, dc | 7 | tiny | no | veriloga | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`bsimbulk_ro.sp`](bsimbulk_ro.sp) | ngspice | tran | 23 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`c7552_ann_bsimbulk.net`](c7552_ann_bsimbulk.net) | ngspice | tran | 97373 | xl | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`netlist_mod_nmos.sp`](netlist_mod_nmos.sp) | ngspice | dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`netlist_mod_pmos.sp`](netlist_mod_pmos.sp) | ngspice | dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`nmos_pmos_BSIMBULK.sp`](nmos_pmos_BSIMBULK.sp) | ngspice | dc, dc, dc, dc, dc, dc | 10 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

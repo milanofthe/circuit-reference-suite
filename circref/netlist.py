@@ -65,6 +65,7 @@ class Parsed:
     osdi_devices: set[str] = field(default_factory=set)         # model names of N instances
     va_types: set[str] = field(default_factory=set)             # Xyce Y<type> plugin devices
     modules: set[str] = field(default_factory=set)              # Verilog-A modules defined
+    control: bool = False                                        # has an ngspice .control block
 
 
 def dialect_of(path: Path, inherited: str) -> str:
@@ -108,6 +109,9 @@ def _master(tokens: list[str]) -> str | None:
 
 # ---------------------------------------------------------------- SPICE family
 
+# A controlled source whose law is an expression, polynomial or table: nonlinear.
+_NONLINEAR_LAW = re.compile(r"\b(poly|value|table|vol|cur)\b|\bv\(|\bi\(", re.I)
+
 def _spice_lines(text: str, deck: bool) -> list[tuple[int, str]]:
     out: list[tuple[int, str]] = []
     for n, raw in enumerate(text.splitlines(), 1):
@@ -145,7 +149,7 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
                 p.analyses.append(head)
             continue
         if head == ".control":
-            control = True
+            control = p.control = True
         elif head in (".include", ".inc", ".incl"):
             refs.append(Ref("include", _unquote(line.split(None, 1)[1]), None, n))
         elif head == ".lib":
@@ -176,7 +180,10 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
             if head[0] == "y" and dialect == "xyce" and head[1:] not in XYCE_Y_BUILTIN:
                 p.va_types.add(head[1:])
             master = _master(tokens) if head[0] == "x" else None
-            p.instances[stack[-1]][f"x:{master}" if master else head[0]] += 1
+            key = f"x:{master}" if master else head[0]
+            if head[0] in "efgh" and _NONLINEAR_LAW.search(line):
+                key += "~"
+            p.instances[stack[-1]][key] += 1
             refs += _data_refs(line, n)
     return p
 
@@ -187,6 +194,12 @@ _SPECTRE_SKIP = ("model", "parameters", "options", "global", "ground", "save", "
                  "library", "endlibrary", "endsection", "statistics", "real", "print",
                  "postprocess", "var", "sweep", "alter", "altergroup", "ic", "nodeset",
                  "set", "info", "inline")
+
+
+# Statements that look like instances but control the run.
+_SPECTRE_CONTROL = {"options", "info", "set", "alter", "altergroup", "check", "checklimit",
+                    "ic", "nodeset", "save", "shell", "fourier", "paramtest", "print", "assert",
+                    "write"}
 
 
 def _spectre_lines(text: str, deck: bool) -> list[tuple[int, str]]:
@@ -211,7 +224,7 @@ def _spectre_lines(text: str, deck: bool) -> list[tuple[int, str]]:
         if not pending:
             start = n
         pending = f"{pending} {line}".strip()
-        depth += line.count("(") - line.count(")")
+        depth += line.count("(") + line.count("[") - line.count(")") - line.count("]")
         if pending and not cont and depth <= 0:
             out.append((start, pending))
             pending, depth = "", 0
@@ -247,6 +260,8 @@ def _spectre(text: str, deck: bool) -> Parsed:
         elif head == "analysis" and len(tokens) > 2:
             p.analyses.append(tokens[2].lower())
         elif head == "model":
+            if len(tokens) > 2:
+                p.models[tokens[1].lower()] = _unquote(tokens[2]).lower()
             refs += _data_refs(line, n)
         elif head in ("control", "endc", "embed") or head in _SPECTRE_SKIP:
             continue
@@ -255,6 +270,8 @@ def _spectre(text: str, deck: bool) -> Parsed:
             master = _master(bare)
             if master in SPECTRE_ANALYSES:
                 p.analyses.append(master)
+            elif master in _SPECTRE_CONTROL:
+                continue
             elif master:
                 p.instances[stack[-1]][f"x:{master}"] += 1
                 refs += _data_refs(line, n)
@@ -319,22 +336,28 @@ def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
     return _veriloga(text)
 
 
-def flat_count(subckts: dict[str, Counter]) -> int:
-    """Instances once every subcircuit defined in ``subckts`` is expanded. A master
-    defined elsewhere (a PDK device, a compiled model) counts as one device."""
-    memo: dict[str, int] = {}
+def flat_kinds(subckts: dict[str, Counter]) -> Counter:
+    """Leaf instances by kind once every subcircuit defined in ``subckts`` is expanded. A
+    master defined elsewhere (a PDK device, a compiled model) is one leaf ``x:<master>``."""
+    memo: dict[str, Counter] = {}
 
-    def count(name: str, seen: tuple[str, ...]) -> int:
+    def expand(name: str, seen: tuple[str, ...]) -> Counter:
         if name in memo:
             return memo[name]
-        total = 0
+        total: Counter = Counter()
         for key, k in subckts[name].items():
             master = key[2:] if key.startswith("x:") else None
             if master in subckts and master not in seen:
-                total += k * count(master, seen + (master,))
+                for kind, m in expand(master, seen + (master,)).items():
+                    total[kind] += k * m
             else:
-                total += k
+                total[key] += k
         memo[name] = total
         return total
 
-    return count("", ("",))
+    return expand("", ("",))
+
+
+def flat_count(subckts: dict[str, Counter]) -> int:
+    """Instances once every subcircuit defined in ``subckts`` is expanded."""
+    return sum(flat_kinds(subckts).values())

@@ -10,29 +10,29 @@ test | spice3 | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bjtnoise.cir`](bjtnoise.cir) | spice3 | noise | 6 | - |
-| [`bsim1tst.cir`](bsim1tst.cir) | spice3 | dc | 17 | - |
-| [`bsim2tst.cir`](bsim2tst.cir) | spice3 | dc | 17 | - |
-| [`diffpair.cir`](diffpair.cir) | spice3 | tran | 12 | - |
-| [`diodisto.cir`](diodisto.cir) | spice3 | disto | 4 | - |
-| [`ltra_1.cir`](ltra_1.cir) | spice3 | tran | 61 | - |
-| [`ltra_2.cir`](ltra_2.cir) | spice3 | tran | 389 | - |
-| [`ltra_3.cir`](ltra_3.cir) | spice3 | tran | 85 | - |
-| [`mos6inv.cir`](mos6inv.cir) | spice3 | tran | 98 | - |
-| [`mosamp2.cir`](mosamp2.cir) | spice3 | tran | 33 | - |
-| [`mosmem.cir`](mosmem.cir) | spice3 | tran | 16 | - |
-| [`pz2.cir`](pz2.cir) | spice3 | pz | 12 | - |
-| [`pzt.cir`](pzt.cir) | spice3 | pz | 9 | - |
-| [`rc.cir`](rc.cir) | spice3 | tran | 3 | - |
-| [`rca3040.cir`](rca3040.cir) | spice3 | ac, dc, tran | 26 | - |
-| [`resnoise.cir`](resnoise.cir) | spice3 | noise | 2 | - |
-| [`rtlinv.cir`](rtlinv.cir) | spice3 | dc, tran | 8 | - |
-| [`schmitt.cir`](schmitt.cir) | spice3 | tran | 15 | - |
-| [`simplepz.cir`](simplepz.cir) | spice3 | pz | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bjtnoise.cir`](bjtnoise.cir) | spice3 | noise | 6 | tiny | no | specific (analysis noise) | - |
+| [`bsim1tst.cir`](bsim1tst.cir) | spice3 | dc | 17 | small | no | core | - |
+| [`bsim2tst.cir`](bsim2tst.cir) | spice3 | dc | 17 | small | no | core | - |
+| [`diffpair.cir`](diffpair.cir) | spice3 | tran | 12 | small | no | core | - |
+| [`diodisto.cir`](diodisto.cir) | spice3 | disto | 4 | tiny | no | specific (analysis disto) | - |
+| [`ltra_1.cir`](ltra_1.cir) | spice3 | tran | 61 | small | no | core | - |
+| [`ltra_2.cir`](ltra_2.cir) | spice3 | tran | 389 | medium | no | core | - |
+| [`ltra_3.cir`](ltra_3.cir) | spice3 | tran | 85 | small | no | core | - |
+| [`mos6inv.cir`](mos6inv.cir) | spice3 | tran | 98 | small | no | core | - |
+| [`mosamp2.cir`](mosamp2.cir) | spice3 | tran | 33 | small | no | core | - |
+| [`mosmem.cir`](mosmem.cir) | spice3 | tran | 16 | small | no | core | - |
+| [`pz2.cir`](pz2.cir) | spice3 | pz | 12 | small | yes | specific (analysis pz) | - |
+| [`pzt.cir`](pzt.cir) | spice3 | pz | 9 | tiny | yes | specific (analysis pz) | - |
+| [`rc.cir`](rc.cir) | spice3 | tran | 3 | tiny | yes | core | - |
+| [`rca3040.cir`](rca3040.cir) | spice3 | ac, dc, tran | 26 | small | no | core | - |
+| [`resnoise.cir`](resnoise.cir) | spice3 | noise | 2 | tiny | yes | specific (analysis noise) | - |
+| [`rtlinv.cir`](rtlinv.cir) | spice3 | dc, tran | 8 | tiny | no | core | - |
+| [`schmitt.cir`](schmitt.cir) | spice3 | tran | 15 | small | no | core | - |
+| [`simplepz.cir`](simplepz.cir) | spice3 | pz | 3 | tiny | yes | specific (analysis pz) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

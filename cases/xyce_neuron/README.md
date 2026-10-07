@@ -11,36 +11,36 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`CG_Syn_TEST_1Pre_1Post_01.cir`](CG_Syn_TEST_1Pre_1Post_01.cir) | xyce | tran | 4 | - |
-| [`CS_Cable.cir`](CS_Cable.cir) | xyce | tran | 2 | - |
-| [`CS_Patch.cir`](CS_Patch.cir) | xyce | tran | 3 | - |
-| [`Cable_HH_Membrane.cir`](Cable_HH_Membrane.cir) | xyce | tran | 2 | - |
-| [`Cable_Passive_Membrane.cir`](Cable_Passive_Membrane.cir) | xyce | tran | 2 | - |
-| [`Cable_UserDefined.cir`](Cable_UserDefined.cir) | xyce | tran | 2 | - |
-| [`Default_Cable.cir`](Default_Cable.cir) | xyce | tran | 3 | - |
-| [`HH_Cable.cir`](HH_Cable.cir) | xyce | tran | 2 | - |
-| [`HH_Patch.cir`](HH_Patch.cir) | xyce | tran | 3 | - |
-| [`HHgating-level1.cir`](HHgating-level1.cir) | xyce | dc | 2 | - |
-| [`Neuron9.cir`](Neuron9.cir) | xyce | tran | 2 | - |
-| [`PointNeuron.cir`](PointNeuron.cir) | xyce | tran | 2 | - |
-| [`Synapse3Test.cir`](Synapse3Test.cir) | xyce | tran | 4 | - |
-| [`SynapseTest1.cir`](SynapseTest1.cir) | xyce | tran | 3 | - |
-| [`dlambda.cir`](dlambda.cir) | xyce | tran | 2 | - |
-| [`passivePatch-level1.cir`](passivePatch-level1.cir) | xyce | tran | 2 | - |
-| [`passivePatch-level6.cir`](passivePatch-level6.cir) | xyce | tran | 2 | - |
-| [`rallpack1-1000level1s.cir`](rallpack1-1000level1s.cir) | xyce | tran | 2002 | - |
-| [`rallpack1-ud.cir`](rallpack1-ud.cir) | xyce | tran | 2 | - |
-| [`rallpack1.cir`](rallpack1.cir) | xyce | tran | 2 | - |
-| [`rallpack2-level1neuron.cir`](rallpack2-level1neuron.cir) | xyce | tran | 3070 | - |
-| [`rallpack2.cir`](rallpack2.cir) | xyce | tran | 1024 | - |
-| [`rallpack3-1000level1s.cir`](rallpack3-1000level1s.cir) | xyce | tran | 2002 | - |
-| [`rallpack3.cir`](rallpack3.cir) | xyce | tran | 2 | - |
-| [`synapseDCOP-level4.cir`](synapseDCOP-level4.cir) | xyce | dc | 3 | - |
-| [`synapticCurrent-level3.cir`](synapticCurrent-level3.cir) | xyce | tran | 3 | - |
-| [`synapticCurrent-level4.cir`](synapticCurrent-level4.cir) | xyce | tran | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`CG_Syn_TEST_1Pre_1Post_01.cir`](CG_Syn_TEST_1Pre_1Post_01.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`CS_Cable.cir`](CS_Cable.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`CS_Patch.cir`](CS_Patch.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Cable_HH_Membrane.cir`](Cable_HH_Membrane.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Cable_Passive_Membrane.cir`](Cable_Passive_Membrane.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Cable_UserDefined.cir`](Cable_UserDefined.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Default_Cable.cir`](Default_Cable.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`HH_Cable.cir`](HH_Cable.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`HH_Patch.cir`](HH_Patch.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`HHgating-level1.cir`](HHgating-level1.cir) | xyce | dc | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Neuron9.cir`](Neuron9.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`PointNeuron.cir`](PointNeuron.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`Synapse3Test.cir`](Synapse3Test.cir) | xyce | tran | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`SynapseTest1.cir`](SynapseTest1.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`dlambda.cir`](dlambda.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`passivePatch-level1.cir`](passivePatch-level1.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`passivePatch-level6.cir`](passivePatch-level6.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack1-1000level1s.cir`](rallpack1-1000level1s.cir) | xyce | tran | 2002 | large | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack1-ud.cir`](rallpack1-ud.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack1.cir`](rallpack1.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack2-level1neuron.cir`](rallpack2-level1neuron.cir) | xyce | tran | 3070 | large | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack2.cir`](rallpack2.cir) | xyce | tran | 1024 | large | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack3-1000level1s.cir`](rallpack3-1000level1s.cir) | xyce | tran | 2002 | large | no | specific (Xyce device (Y or digital U)) | - |
+| [`rallpack3.cir`](rallpack3.cir) | xyce | tran | 2 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`synapseDCOP-level4.cir`](synapseDCOP-level4.cir) | xyce | dc | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`synapticCurrent-level3.cir`](synapticCurrent-level3.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`synapticCurrent-level4.cir`](synapticCurrent-level4.cir) | xyce | tran | 3 | tiny | no | specific (Xyce device (Y or digital U)) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

@@ -11,16 +11,16 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`colpitt_osc_pss_ctrl.cir`](colpitt_osc_pss_ctrl.cir) | ngspice | tran, pss | 9 | - |
-| [`compl_cross_quad_osc_pss_ctrl.cir`](compl_cross_quad_osc_pss_ctrl.cir) | ngspice | tran, pss | 17 | - |
-| [`hartley_osc_pss_ctrl.cir`](hartley_osc_pss_ctrl.cir) | ngspice | tran, pss | 7 | - |
-| [`ring_osc_pss_ctrl.cir`](ring_osc_pss_ctrl.cir) | ngspice | tran, pss | 11 | - |
-| [`vackar_osc_pss_ctrl.cir`](vackar_osc_pss_ctrl.cir) | ngspice | tran, pss | 9 | - |
-| [`vdp_osc_pss_ctrl.cir`](vdp_osc_pss_ctrl.cir) | ngspice | tran, pss | 7 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`colpitt_osc_pss_ctrl.cir`](colpitt_osc_pss_ctrl.cir) | ngspice | tran, pss | 9 | tiny | no | specific (analysis pss, .control script) | - |
+| [`compl_cross_quad_osc_pss_ctrl.cir`](compl_cross_quad_osc_pss_ctrl.cir) | ngspice | tran, pss | 17 | small | no | specific (analysis pss, .control script) | - |
+| [`hartley_osc_pss_ctrl.cir`](hartley_osc_pss_ctrl.cir) | ngspice | tran, pss | 7 | tiny | no | specific (analysis pss, .control script) | - |
+| [`ring_osc_pss_ctrl.cir`](ring_osc_pss_ctrl.cir) | ngspice | tran, pss | 11 | small | no | specific (analysis pss, .control script) | - |
+| [`vackar_osc_pss_ctrl.cir`](vackar_osc_pss_ctrl.cir) | ngspice | tran, pss | 9 | tiny | no | specific (analysis pss, .control script) | - |
+| [`vdp_osc_pss_ctrl.cir`](vdp_osc_pss_ctrl.cir) | ngspice | tran, pss | 7 | tiny | no | specific (analysis pss, .control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

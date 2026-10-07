@@ -11,17 +11,17 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`MC_ring.sp`](MC_ring.sp) | ngspice | tran | 58 | - |
-| [`MC_ring_val.sp`](MC_ring_val.sp) | ngspice | tran | 58 | - |
-| [`MonteCarlo.sp`](MonteCarlo.sp) | ngspice | ac | 9 | - |
-| [`OpWien.sp`](OpWien.sp) | ngspice | tran | 20 | - |
-| [`OpWien_s.sp`](OpWien_s.sp) | ngspice | tran | 20 | - |
-| [`names-test2.sp`](names-test2.sp) | ngspice | op, op | 2 | - |
-| [`rand_numb_test.cir`](rand_numb_test.cir) | ngspice | op | 1 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`MC_ring.sp`](MC_ring.sp) | ngspice | tran | 58 | small | no | specific (.control script) | - |
+| [`MC_ring_val.sp`](MC_ring_val.sp) | ngspice | tran | 58 | small | no | specific (.control script) | - |
+| [`MonteCarlo.sp`](MonteCarlo.sp) | ngspice | ac | 9 | tiny | yes | specific (.control script) | - |
+| [`OpWien.sp`](OpWien.sp) | ngspice | tran | 20 | small | no | specific (.control script) | - |
+| [`OpWien_s.sp`](OpWien_s.sp) | ngspice | tran | 20 | small | no | specific (.control script) | - |
+| [`names-test2.sp`](names-test2.sp) | ngspice | op, op | 2 | tiny | yes | specific (.control script) | - |
+| [`rand_numb_test.cir`](rand_numb_test.cir) | ngspice | op | 1 | tiny | yes | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

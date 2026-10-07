@@ -11,42 +11,42 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`aAsAmp.cir`](aAsAmp.cir) | xyce | dc | 3 | - |
-| [`aAsAtto.cir`](aAsAtto.cir) | xyce | dc | 3 | - |
-| [`bug_203.cir`](bug_203.cir) | xyce | dc | 7 | - |
-| [`bug_250.cir`](bug_250.cir) | xyce | dc | 5 | - |
-| [`hspiceMath.cir`](hspiceMath.cir) | xyce | dc | 6 | - |
-| [`meterUnit.cir`](meterUnit.cir) | xyce | dc | 7 | - |
-| [`nakedAlgebra.cir`](nakedAlgebra.cir) | xyce | tran | 2 | - |
-| [`nakedAlgebraBaseline.cir`](nakedAlgebraBaseline.cir) | xyce | tran | 2 | - |
-| [`nakedAlgebraGlobal.cir`](nakedAlgebraGlobal.cir) | xyce | tran | 2 | - |
-| [`nakedIf.cir`](nakedIf.cir) | xyce | dc | 12 | - |
-| [`nakedRandom.cir`](nakedRandom.cir) | xyce | dc | 10 | - |
-| [`nakedRandomGlobal.cir`](nakedRandomGlobal.cir) | xyce | dc | 10 | - |
-| [`nakedTernary.cir`](nakedTernary.cir) | xyce | dc | 12 | - |
-| [`paramFunc1.cir`](paramFunc1.cir) | xyce | dc | 3 | - |
-| [`paramFunc2.cir`](paramFunc2.cir) | xyce | dc | 3 | - |
-| [`paramFunc3.cir`](paramFunc3.cir) | xyce | dc | 3 | - |
-| [`paramFunc4.cir`](paramFunc4.cir) | xyce | dc | 3 | - |
-| [`paramFunc5.cir`](paramFunc5.cir) | xyce | dc | 3 | - |
-| [`paramFunc6.cir`](paramFunc6.cir) | xyce | dc | 3 | - |
-| [`random.cir`](random.cir) | xyce | dc | 14 | - |
-| [`scalingFactors.cir`](scalingFactors.cir) | xyce | tran | 6 | - |
-| [`separator1.cir`](separator1.cir) | xyce | dc | 2 | - |
-| [`separator1Ref.cir`](separator1Ref.cir) | xyce | dc | 2 | - |
-| [`separator2.cir`](separator2.cir) | xyce | dc | 3 | - |
-| [`separator2Ref.cir`](separator2Ref.cir) | xyce | dc | 3 | - |
-| [`separator3.cir`](separator3.cir) | xyce | dc | 9 | - |
-| [`separator3Ref.cir`](separator3Ref.cir) | xyce | dc | 9 | - |
-| [`separator4.cir`](separator4.cir) | xyce | dc, sens | 3 | - |
-| [`separator4Ref.cir`](separator4Ref.cir) | xyce | dc, sens | 3 | - |
-| [`separator5.cir`](separator5.cir) | xyce | dc | 6 | - |
-| [`separator5Ref.cir`](separator5Ref.cir) | xyce | dc | 6 | - |
-| [`separator6.cir`](separator6.cir) | xyce | dc | 6 | - |
-| [`separator6Ref.cir`](separator6Ref.cir) | xyce | dc | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`aAsAmp.cir`](aAsAmp.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`aAsAtto.cir`](aAsAtto.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`bug_203.cir`](bug_203.cir) | xyce | dc | 7 | tiny | no | core | - |
+| [`bug_250.cir`](bug_250.cir) | xyce | dc | 5 | tiny | no | core | - |
+| [`hspiceMath.cir`](hspiceMath.cir) | xyce | dc | 6 | tiny | yes | core | - |
+| [`meterUnit.cir`](meterUnit.cir) | xyce | dc | 7 | tiny | yes | core | - |
+| [`nakedAlgebra.cir`](nakedAlgebra.cir) | xyce | tran | 2 | tiny | no | core | - |
+| [`nakedAlgebraBaseline.cir`](nakedAlgebraBaseline.cir) | xyce | tran | 2 | tiny | no | core | - |
+| [`nakedAlgebraGlobal.cir`](nakedAlgebraGlobal.cir) | xyce | tran | 2 | tiny | no | core | - |
+| [`nakedIf.cir`](nakedIf.cir) | xyce | dc | 12 | small | yes | core | - |
+| [`nakedRandom.cir`](nakedRandom.cir) | xyce | dc | 10 | small | yes | core | - |
+| [`nakedRandomGlobal.cir`](nakedRandomGlobal.cir) | xyce | dc | 10 | small | yes | core | - |
+| [`nakedTernary.cir`](nakedTernary.cir) | xyce | dc | 12 | small | yes | core | - |
+| [`paramFunc1.cir`](paramFunc1.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`paramFunc2.cir`](paramFunc2.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`paramFunc3.cir`](paramFunc3.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`paramFunc4.cir`](paramFunc4.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`paramFunc5.cir`](paramFunc5.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`paramFunc6.cir`](paramFunc6.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`random.cir`](random.cir) | xyce | dc | 14 | small | yes | core | - |
+| [`scalingFactors.cir`](scalingFactors.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`separator1.cir`](separator1.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`separator1Ref.cir`](separator1Ref.cir) | xyce | dc | 2 | tiny | yes | core | - |
+| [`separator2.cir`](separator2.cir) | xyce | dc | 3 | tiny | no | core | - |
+| [`separator2Ref.cir`](separator2Ref.cir) | xyce | dc | 3 | tiny | no | core | - |
+| [`separator3.cir`](separator3.cir) | xyce | dc | 9 | tiny | no | core | - |
+| [`separator3Ref.cir`](separator3Ref.cir) | xyce | dc | 9 | tiny | no | core | - |
+| [`separator4.cir`](separator4.cir) | xyce | dc, sens | 3 | tiny | yes | specific (analysis sens) | - |
+| [`separator4Ref.cir`](separator4Ref.cir) | xyce | dc, sens | 3 | tiny | yes | specific (analysis sens) | - |
+| [`separator5.cir`](separator5.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`separator5Ref.cir`](separator5Ref.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`separator6.cir`](separator6.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`separator6Ref.cir`](separator6Ref.cir) | xyce | dc | 6 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

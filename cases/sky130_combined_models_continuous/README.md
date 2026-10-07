@@ -11,11 +11,11 @@ device | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`test.spice`](test.spice) | ngspice | op | 1 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`test.spice`](test.spice) | ngspice | op | 1 | tiny | no | core | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

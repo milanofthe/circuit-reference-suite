@@ -11,13 +11,13 @@ device | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice) | ngspice | tran | 4 | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
-| [`gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice) | ngspice | tran | 7 | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
-| [`gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice) | ngspice | tran | 12 | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice) | ngspice | tran | 4 | tiny | no | specific (.control script) | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
+| [`gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice) | ngspice | tran | 7 | tiny | no | specific (.control script) | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
+| [`gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice`](gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice) | ngspice | tran | 12 | small | no | specific (.control script) | [gf180mcu_fd_pr](../../libraries/gf180mcu_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

@@ -11,42 +11,42 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`op-prn.cir`](op-prn.cir) | xyce | tran, op | 2 | - |
-| [`op-raw-override-ascii.cir`](op-raw-override-ascii.cir) | xyce | tran, op | 2 | - |
-| [`op-raw-override.cir`](op-raw-override.cir) | xyce | tran, op | 2 | - |
-| [`tran-csv-snapshots.cir`](tran-csv-snapshots.cir) | xyce | tran | 3 | - |
-| [`tran-csv.cir`](tran-csv.cir) | xyce | tran | 3 | - |
-| [`tran-gnuplot.cir`](tran-gnuplot.cir) | xyce | tran | 3 | - |
-| [`tran-homotopy-prn-file.cir`](tran-homotopy-prn-file.cir) | xyce | tran | 2 | - |
-| [`tran-homotopy-prn.cir`](tran-homotopy-prn.cir) | xyce | tran | 2 | - |
-| [`tran-prn-comma.cir`](tran-prn-comma.cir) | xyce | tran | 2 | - |
-| [`tran-prn-filter.cir`](tran-prn-filter.cir) | xyce | tran | 2 | - |
-| [`tran-prn-noheaderfooter.cir`](tran-prn-noheaderfooter.cir) | xyce | tran | 2 | - |
-| [`tran-prn-noindex.cir`](tran-prn-noindex.cir) | xyce | tran | 2 | - |
-| [`tran-prn-precision.cir`](tran-prn-precision.cir) | xyce | tran | 2 | - |
-| [`tran-prn-timescalefactor.cir`](tran-prn-timescalefactor.cir) | xyce | tran | 2 | - |
-| [`tran-prn-width.cir`](tran-prn-width.cir) | xyce | tran | 2 | - |
-| [`tran-prn.cir`](tran-prn.cir) | xyce | tran | 2 | - |
-| [`tran-prn2.cir`](tran-prn2.cir) | xyce | tran | 2 | - |
-| [`tran-probe.cir`](tran-probe.cir) | xyce | tran | 2 | - |
-| [`tran-raw-ascii.cir`](tran-raw-ascii.cir) | xyce | tran | 2 | - |
-| [`tran-raw-override-ascii.cir`](tran-raw-override-ascii.cir) | xyce | tran | 2 | - |
-| [`tran-raw-override-noprint.cir`](tran-raw-override-noprint.cir) | xyce | tran | 2 | - |
-| [`tran-raw-override.cir`](tran-raw-override.cir) | xyce | tran | 2 | - |
-| [`tran-raw.cir`](tran-raw.cir) | xyce | tran | 2 | - |
-| [`tran-splot.cir`](tran-splot.cir) | xyce | tran | 3 | - |
-| [`tran-step-gnuplot.cir`](tran-step-gnuplot.cir) | xyce | step, step, tran | 3 | - |
-| [`tran-step-prn.cir`](tran-step-prn.cir) | xyce | tran, step | 2 | - |
-| [`tran-step-probe.cir`](tran-step-probe.cir) | xyce | tran, step, step | 4 | - |
-| [`tran-step-raw-override-ascii.cir`](tran-step-raw-override-ascii.cir) | xyce | tran, step | 2 | - |
-| [`tran-step-raw-override.cir`](tran-step-raw-override.cir) | xyce | tran, step | 2 | - |
-| [`tran-step-tecplot.cir`](tran-step-tecplot.cir) | xyce | tran, step | 2 | - |
-| [`tran-stepnum-col.cir`](tran-stepnum-col.cir) | xyce | step, step, tran | 3 | - |
-| [`tran-tecplot.cir`](tran-tecplot.cir) | xyce | tran | 2 | - |
-| [`tran-touchstone-defaults-to-prn.cir`](tran-touchstone-defaults-to-prn.cir) | xyce | tran | 2 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`op-prn.cir`](op-prn.cir) | xyce | tran, op | 2 | tiny | yes | core | - |
+| [`op-raw-override-ascii.cir`](op-raw-override-ascii.cir) | xyce | tran, op | 2 | tiny | yes | core | - |
+| [`op-raw-override.cir`](op-raw-override.cir) | xyce | tran, op | 2 | tiny | yes | core | - |
+| [`tran-csv-snapshots.cir`](tran-csv-snapshots.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`tran-csv.cir`](tran-csv.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`tran-gnuplot.cir`](tran-gnuplot.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`tran-homotopy-prn-file.cir`](tran-homotopy-prn-file.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-homotopy-prn.cir`](tran-homotopy-prn.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-comma.cir`](tran-prn-comma.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-filter.cir`](tran-prn-filter.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-noheaderfooter.cir`](tran-prn-noheaderfooter.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-noindex.cir`](tran-prn-noindex.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-precision.cir`](tran-prn-precision.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-timescalefactor.cir`](tran-prn-timescalefactor.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn-width.cir`](tran-prn-width.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn.cir`](tran-prn.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-prn2.cir`](tran-prn2.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-probe.cir`](tran-probe.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-raw-ascii.cir`](tran-raw-ascii.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-raw-override-ascii.cir`](tran-raw-override-ascii.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-raw-override-noprint.cir`](tran-raw-override-noprint.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-raw-override.cir`](tran-raw-override.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-raw.cir`](tran-raw.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-splot.cir`](tran-splot.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`tran-step-gnuplot.cir`](tran-step-gnuplot.cir) | xyce | step, step, tran | 3 | tiny | yes | core | - |
+| [`tran-step-prn.cir`](tran-step-prn.cir) | xyce | tran, step | 2 | tiny | yes | core | - |
+| [`tran-step-probe.cir`](tran-step-probe.cir) | xyce | tran, step, step | 4 | tiny | yes | core | - |
+| [`tran-step-raw-override-ascii.cir`](tran-step-raw-override-ascii.cir) | xyce | tran, step | 2 | tiny | yes | core | - |
+| [`tran-step-raw-override.cir`](tran-step-raw-override.cir) | xyce | tran, step | 2 | tiny | yes | core | - |
+| [`tran-step-tecplot.cir`](tran-step-tecplot.cir) | xyce | tran, step | 2 | tiny | yes | core | - |
+| [`tran-stepnum-col.cir`](tran-stepnum-col.cir) | xyce | step, step, tran | 3 | tiny | yes | core | - |
+| [`tran-tecplot.cir`](tran-tecplot.cir) | xyce | tran | 2 | tiny | yes | core | - |
+| [`tran-touchstone-defaults-to-prn.cir`](tran-touchstone-defaults-to-prn.cir) | xyce | tran | 2 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

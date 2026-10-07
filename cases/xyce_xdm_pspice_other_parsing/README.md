@@ -11,32 +11,32 @@ test | pspice, xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`ext_ascii_chars_comment_line.cir`](ext_ascii_chars_comment_line.cir) | xyce | tran | 3 | - |
-| [`ext_ascii_chars_comment_line.cir.pspice`](ext_ascii_chars_comment_line.cir.pspice) | pspice | tran | 3 | - |
-| [`ext_ascii_chars_noncomment_line.cir`](ext_ascii_chars_noncomment_line.cir) | xyce | tran | 4 | - |
-| [`ext_ascii_chars_noncomment_line.cir.pspice`](ext_ascii_chars_noncomment_line.cir.pspice) | pspice | tran | 4 | - |
-| [`file_slash_direction.cir`](file_slash_direction.cir) | xyce | tran | 12 | - |
-| [`multiline_options.cir`](multiline_options.cir) | xyce | tran | 3 | - |
-| [`multiline_options.cir.pspice`](multiline_options.cir.pspice) | pspice | tran | 3 | - |
-| [`options_itl4_itl1.cir`](options_itl4_itl1.cir) | xyce | tran | 3 | - |
-| [`options_itl4_itl1.cir.pspice`](options_itl4_itl1.cir.pspice) | pspice | tran | 3 | - |
-| [`probe_dc_lines.cir`](probe_dc_lines.cir) | xyce | dc | 5 | - |
-| [`probe_dc_lines.cir.pspice`](probe_dc_lines.cir.pspice) | pspice | dc | 5 | - |
-| [`probe_star_tran_line1.cir`](probe_star_tran_line1.cir) | xyce | tran | 3 | - |
-| [`probe_star_tran_line1.cir.pspice`](probe_star_tran_line1.cir.pspice) | pspice | tran | 3 | - |
-| [`probe_star_tran_line2.cir`](probe_star_tran_line2.cir) | xyce | tran | 3 | - |
-| [`probe_star_tran_line2.cir.pspice`](probe_star_tran_line2.cir.pspice) | pspice | tran | 3 | - |
-| [`probe_tran_line_subckt.cir`](probe_tran_line_subckt.cir) | xyce | tran | 4 | - |
-| [`probe_tran_line_subckt.cir.pspice`](probe_tran_line_subckt.cir.pspice) | pspice | tran | 4 | - |
-| [`probe_tran_lines.cir`](probe_tran_lines.cir) | xyce | tran | 3 | - |
-| [`probe_tran_lines.cir.pspice`](probe_tran_lines.cir.pspice) | pspice | tran | 3 | - |
-| [`unknown_device_parameter.cir`](unknown_device_parameter.cir) | xyce | tran | 9 | - |
-| [`unknown_device_parameter.cir.pspice`](unknown_device_parameter.cir.pspice) | pspice | tran | 9 | - |
-| [`unsupported_lines_options.cir`](unsupported_lines_options.cir) | xyce | tran | 3 | - |
-| [`unsupported_lines_options.cir.pspice`](unsupported_lines_options.cir.pspice) | pspice | tran | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`ext_ascii_chars_comment_line.cir`](ext_ascii_chars_comment_line.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ext_ascii_chars_comment_line.cir.pspice`](ext_ascii_chars_comment_line.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`ext_ascii_chars_noncomment_line.cir`](ext_ascii_chars_noncomment_line.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`ext_ascii_chars_noncomment_line.cir.pspice`](ext_ascii_chars_noncomment_line.cir.pspice) | pspice | tran | 4 | tiny | yes | core | - |
+| [`file_slash_direction.cir`](file_slash_direction.cir) | xyce | tran | 12 | small | yes | core | - |
+| [`multiline_options.cir`](multiline_options.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`multiline_options.cir.pspice`](multiline_options.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`options_itl4_itl1.cir`](options_itl4_itl1.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`options_itl4_itl1.cir.pspice`](options_itl4_itl1.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`probe_dc_lines.cir`](probe_dc_lines.cir) | xyce | dc | 5 | tiny | yes | core | - |
+| [`probe_dc_lines.cir.pspice`](probe_dc_lines.cir.pspice) | pspice | dc | 5 | tiny | yes | core | - |
+| [`probe_star_tran_line1.cir`](probe_star_tran_line1.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`probe_star_tran_line1.cir.pspice`](probe_star_tran_line1.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`probe_star_tran_line2.cir`](probe_star_tran_line2.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`probe_star_tran_line2.cir.pspice`](probe_star_tran_line2.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`probe_tran_line_subckt.cir`](probe_tran_line_subckt.cir) | xyce | tran | 4 | tiny | yes | core | - |
+| [`probe_tran_line_subckt.cir.pspice`](probe_tran_line_subckt.cir.pspice) | pspice | tran | 4 | tiny | yes | core | - |
+| [`probe_tran_lines.cir`](probe_tran_lines.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`probe_tran_lines.cir.pspice`](probe_tran_lines.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
+| [`unknown_device_parameter.cir`](unknown_device_parameter.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`unknown_device_parameter.cir.pspice`](unknown_device_parameter.cir.pspice) | pspice | tran | 9 | tiny | no | core | - |
+| [`unsupported_lines_options.cir`](unsupported_lines_options.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`unsupported_lines_options.cir.pspice`](unsupported_lines_options.cir.pspice) | pspice | tran | 3 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

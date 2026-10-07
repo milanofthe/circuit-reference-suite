@@ -11,17 +11,17 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bjt_baseline.cir`](bjt_baseline.cir) | xyce | tran | 163 | - |
-| [`bjt_default_baseline.cir`](bjt_default_baseline.cir) | xyce | tran | 163 | - |
-| [`bjt_default_save.cir`](bjt_default_save.cir) | xyce | dc | 123 | - |
-| [`bjt_no_save.cir`](bjt_no_save.cir) | xyce | dc | 123 | - |
-| [`bjt_save.cir`](bjt_save.cir) | xyce | dc | 123 | - |
-| [`bjt_sub_default_type_level_baseline.cir`](bjt_sub_default_type_level_baseline.cir) | xyce | tran | 163 | - |
-| [`bjt_sub_default_type_level_save.cir`](bjt_sub_default_type_level_save.cir) | xyce | dc | 123 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bjt_baseline.cir`](bjt_baseline.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_default_baseline.cir`](bjt_default_baseline.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_default_save.cir`](bjt_default_save.cir) | xyce | dc | 123 | medium | no | core | - |
+| [`bjt_no_save.cir`](bjt_no_save.cir) | xyce | dc | 123 | medium | no | core | - |
+| [`bjt_save.cir`](bjt_save.cir) | xyce | dc | 123 | medium | no | core | - |
+| [`bjt_sub_default_type_level_baseline.cir`](bjt_sub_default_type_level_baseline.cir) | xyce | tran | 163 | medium | no | core | - |
+| [`bjt_sub_default_type_level_save.cir`](bjt_sub_default_type_level_save.cir) | xyce | dc | 123 | medium | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

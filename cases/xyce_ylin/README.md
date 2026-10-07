@@ -11,39 +11,39 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`idealGain.cir`](idealGain.cir) | xyce | hb | 7 | - |
-| [`miscParsing-ts1.cir`](miscParsing-ts1.cir) | xyce | hb | 3 | - |
-| [`miscParsing.cir`](miscParsing.cir) | xyce | hb | 3 | - |
-| [`test_ylin1.cir`](test_ylin1.cir) | xyce | hb | 3 | - |
-| [`test_ylin2.cir`](test_ylin2.cir) | xyce | hb | 3 | - |
-| [`test_ylin5.cir`](test_ylin5.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-defaultOptions-ts1.cir`](ylin-2port-defaultOptions-ts1.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-defaultOptions.cir`](ylin-2port-defaultOptions.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-diffZ0-sparam-linAnalysis.cir`](ylin-2port-diffZ0-sparam-linAnalysis.cir) | xyce | lin, ac | 4 | - |
-| [`ylin-2port-diffZ0-sparam.cir`](ylin-2port-diffZ0-sparam.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-hbAnalysis.cir`](ylin-2port-hbAnalysis.cir) | xyce | hb | 4 | - |
-| [`ylin-2port-linAnalysis.cir`](ylin-2port-linAnalysis.cir) | xyce | lin, lin, lin, lin, lin, lin, lin, ac | 4 | - |
-| [`ylin-2port-sparam.cir`](ylin-2port-sparam.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-db.cir`](ylin-2port-yparam-db.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-freqMult.cir`](ylin-2port-yparam-freqMult.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-freqMultGHz.cir`](ylin-2port-yparam-freqMultGHz.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-freqMultMHz.cir`](ylin-2port-yparam-freqMultMHz.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-freqMultkHz.cir`](ylin-2port-yparam-freqMultkHz.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-ma.cir`](ylin-2port-yparam-ma.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-matrixFormat.cir`](ylin-2port-yparam-matrixFormat.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-matrixFormatLower.cir`](ylin-2port-yparam-matrixFormatLower.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-matrixFormatUpper.cir`](ylin-2port-yparam-matrixFormatUpper.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam-ts1.cir`](ylin-2port-yparam-ts1.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-yparam.cir`](ylin-2port-yparam.cir) | xyce | hb | 3 | - |
-| [`ylin-2port-zparam.cir`](ylin-2port-zparam.cir) | xyce | hb | 3 | - |
-| [`ylin-5port-hbAnalysis.cir`](ylin-5port-hbAnalysis.cir) | xyce | hb | 33 | - |
-| [`ylin-5port-linAnalysis.cir`](ylin-5port-linAnalysis.cir) | xyce | ac, lin, lin | 37 | - |
-| [`ylin-5port-yparam-cw.cir`](ylin-5port-yparam-cw.cir) | xyce | hb | 3 | - |
-| [`ylin-5port-yparam-ts1.cir`](ylin-5port-yparam-ts1.cir) | xyce | hb | 3 | - |
-| [`ylin-5port-yparam.cir`](ylin-5port-yparam.cir) | xyce | hb | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`idealGain.cir`](idealGain.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`miscParsing-ts1.cir`](miscParsing-ts1.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`miscParsing.cir`](miscParsing.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`test_ylin1.cir`](test_ylin1.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`test_ylin2.cir`](test_ylin2.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`test_ylin5.cir`](test_ylin5.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-defaultOptions-ts1.cir`](ylin-2port-defaultOptions-ts1.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-defaultOptions.cir`](ylin-2port-defaultOptions.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-diffZ0-sparam-linAnalysis.cir`](ylin-2port-diffZ0-sparam-linAnalysis.cir) | xyce | lin, ac | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ylin-2port-diffZ0-sparam.cir`](ylin-2port-diffZ0-sparam.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-hbAnalysis.cir`](ylin-2port-hbAnalysis.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-linAnalysis.cir`](ylin-2port-linAnalysis.cir) | xyce | lin, lin, lin, lin, lin, lin, lin, ac | 4 | tiny | no | specific (Xyce device (Y or digital U)) | - |
+| [`ylin-2port-sparam.cir`](ylin-2port-sparam.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-db.cir`](ylin-2port-yparam-db.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-freqMult.cir`](ylin-2port-yparam-freqMult.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-freqMultGHz.cir`](ylin-2port-yparam-freqMultGHz.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-freqMultMHz.cir`](ylin-2port-yparam-freqMultMHz.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-freqMultkHz.cir`](ylin-2port-yparam-freqMultkHz.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-ma.cir`](ylin-2port-yparam-ma.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-matrixFormat.cir`](ylin-2port-yparam-matrixFormat.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-matrixFormatLower.cir`](ylin-2port-yparam-matrixFormatLower.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-matrixFormatUpper.cir`](ylin-2port-yparam-matrixFormatUpper.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam-ts1.cir`](ylin-2port-yparam-ts1.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-yparam.cir`](ylin-2port-yparam.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-2port-zparam.cir`](ylin-2port-zparam.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-5port-hbAnalysis.cir`](ylin-5port-hbAnalysis.cir) | xyce | hb | 33 | small | yes | specific (analysis hb) | - |
+| [`ylin-5port-linAnalysis.cir`](ylin-5port-linAnalysis.cir) | xyce | ac, lin, lin | 37 | small | no | core | - |
+| [`ylin-5port-yparam-cw.cir`](ylin-5port-yparam-cw.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-5port-yparam-ts1.cir`](ylin-5port-yparam-ts1.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
+| [`ylin-5port-yparam.cir`](ylin-5port-yparam.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb, Xyce device (Y or digital U)) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

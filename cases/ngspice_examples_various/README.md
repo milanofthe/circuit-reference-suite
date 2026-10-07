@@ -11,28 +11,28 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`3d_loop.sp`](3d_loop.sp) | ngspice | dc | 2 | - |
-| [`FFT_Leakage.cir`](FFT_Leakage.cir) | ngspice | tran | 3 | - |
-| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 6 | - |
-| [`atanh.sp`](atanh.sp) | ngspice | ac | 7 | - |
-| [`bjt_ac_par.sp`](bjt_ac_par.sp) | ngspice | dc | 4 | - |
-| [`bjtnoise.cir`](bjtnoise.cir) | ngspice | noise | 6 | - |
-| [`cutout1.cir`](cutout1.cir) | ngspice | tran | 3 | - |
-| [`dc_loop.sp`](dc_loop.sp) | ngspice | dc | 2 | - |
-| [`diode_ac_par.sp`](diode_ac_par.sp) | ngspice | dc | 2 | - |
-| [`gain_stage.cir`](gain_stage.cir) | ngspice | ac | 5 | - |
-| [`integrate1.cir`](integrate1.cir) | ngspice | tran | 8 | - |
-| [`mtimeavg_test.cir`](mtimeavg_test.cir) | ngspice | tran | 1 | - |
-| [`param_sweep.cir`](param_sweep.cir) | ngspice | dc | 3 | - |
-| [`roessler-attractor.cir`](roessler-attractor.cir) | ngspice | tran | 6 | - |
-| [`tmp-noise-2.cir`](tmp-noise-2.cir) | ngspice | op, ac | 4 | - |
-| [`tmp-noise.cir`](tmp-noise.cir) | ngspice | op, noise, noise, ac | 6 | - |
-| [`transformers1.cir`](transformers1.cir) | ngspice | tran | 25 | - |
-| [`v-i-sources-am-ffm.cir`](v-i-sources-am-ffm.cir) | ngspice | tran | 14 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`3d_loop.sp`](3d_loop.sp) | ngspice | dc | 2 | tiny | yes | specific (.control script) | - |
+| [`FFT_Leakage.cir`](FFT_Leakage.cir) | ngspice | tran | 3 | tiny | no | specific (.control script) | - |
+| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 6 | tiny | yes | specific (.control script) | - |
+| [`atanh.sp`](atanh.sp) | ngspice | ac | 7 | tiny | yes | specific (.control script) | - |
+| [`bjt_ac_par.sp`](bjt_ac_par.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`bjtnoise.cir`](bjtnoise.cir) | ngspice | noise | 6 | tiny | no | specific (analysis noise, .control script) | - |
+| [`cutout1.cir`](cutout1.cir) | ngspice | tran | 3 | tiny | yes | specific (.control script) | - |
+| [`dc_loop.sp`](dc_loop.sp) | ngspice | dc | 2 | tiny | yes | specific (.control script) | - |
+| [`diode_ac_par.sp`](diode_ac_par.sp) | ngspice | dc | 2 | tiny | no | specific (.control script) | - |
+| [`gain_stage.cir`](gain_stage.cir) | ngspice | ac | 5 | tiny | no | specific (.control script) | - |
+| [`integrate1.cir`](integrate1.cir) | ngspice | tran | 8 | tiny | no | specific (.control script, XSPICE code model) | - |
+| [`mtimeavg_test.cir`](mtimeavg_test.cir) | ngspice | tran | 1 | tiny | yes | specific (.control script) | - |
+| [`param_sweep.cir`](param_sweep.cir) | ngspice | dc | 3 | tiny | yes | specific (.control script) | - |
+| [`roessler-attractor.cir`](roessler-attractor.cir) | ngspice | tran | 6 | tiny | no | specific (.control script) | - |
+| [`tmp-noise-2.cir`](tmp-noise-2.cir) | ngspice | op, ac | 4 | tiny | no | specific (.control script) | - |
+| [`tmp-noise.cir`](tmp-noise.cir) | ngspice | op, noise, noise, ac | 6 | tiny | yes | specific (analysis noise, .control script) | - |
+| [`transformers1.cir`](transformers1.cir) | ngspice | tran | 25 | small | no | specific (.control script, XSPICE code model) | - |
+| [`v-i-sources-am-ffm.cir`](v-i-sources-am-ffm.cir) | ngspice | tran | 14 | small | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

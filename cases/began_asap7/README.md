@@ -11,18 +11,18 @@ power_grid | spice3 | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`aes_irreg_grid.sp.gz`](aes_irreg_grid.sp.gz) | spice3 | op | 45869 | - |
-| [`aes_reg_grid.sp.gz`](aes_reg_grid.sp.gz) | spice3 | op | 43496 | - |
-| [`dynamic_node_irreg_grid.sp.gz`](dynamic_node_irreg_grid.sp.gz) | spice3 | op | 26682 | - |
-| [`dynamic_node_reg_grid.sp.gz`](dynamic_node_reg_grid.sp.gz) | spice3 | op | 25387 | - |
-| [`ibex_irreg_grid.sp.gz`](ibex_irreg_grid.sp.gz) | spice3 | op | 33111 | - |
-| [`ibex_reg_grid.sp.gz`](ibex_reg_grid.sp.gz) | spice3 | op | 32894 | - |
-| [`jpeg_irreg_grid.sp.gz`](jpeg_irreg_grid.sp.gz) | spice3 | op | 106935 | - |
-| [`jpeg_reg_grid.sp.gz`](jpeg_reg_grid.sp.gz) | spice3 | op | 96904 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`aes_irreg_grid.sp.gz`](aes_irreg_grid.sp.gz) | spice3 | op | 45869 | xl | yes | core | - |
+| [`aes_reg_grid.sp.gz`](aes_reg_grid.sp.gz) | spice3 | op | 43496 | xl | yes | core | - |
+| [`dynamic_node_irreg_grid.sp.gz`](dynamic_node_irreg_grid.sp.gz) | spice3 | op | 26682 | xl | yes | core | - |
+| [`dynamic_node_reg_grid.sp.gz`](dynamic_node_reg_grid.sp.gz) | spice3 | op | 25387 | xl | yes | core | - |
+| [`ibex_irreg_grid.sp.gz`](ibex_irreg_grid.sp.gz) | spice3 | op | 33111 | xl | yes | core | - |
+| [`ibex_reg_grid.sp.gz`](ibex_reg_grid.sp.gz) | spice3 | op | 32894 | xl | yes | core | - |
+| [`jpeg_irreg_grid.sp.gz`](jpeg_irreg_grid.sp.gz) | spice3 | op | 106935 | xl | yes | core | - |
+| [`jpeg_reg_grid.sp.gz`](jpeg_reg_grid.sp.gz) | spice3 | op | 96904 | xl | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

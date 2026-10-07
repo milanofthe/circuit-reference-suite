@@ -11,41 +11,41 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`DiodeClipper_2par.net`](DiodeClipper_2par.net) | xyce | tran | 11 | - |
-| [`DiodeClipper_2par_noise.net`](DiodeClipper_2par_noise.net) | xyce | noise | 11 | - |
-| [`DiodeClipper_m2.net`](DiodeClipper_m2.net) | xyce | tran | 9 | - |
-| [`DiodeClipper_m2_noise.net`](DiodeClipper_m2_noise.net) | xyce | noise | 9 | - |
-| [`bjt_ampSens_baseline.net`](bjt_ampSens_baseline.net) | xyce | dc, sens | 12 | - |
-| [`bjt_ampSens_m6.net`](bjt_ampSens_m6.net) | xyce | dc, sens | 7 | - |
-| [`bjt_diffpair_noise_baseline.net`](bjt_diffpair_noise_baseline.net) | xyce | noise | 20 | - |
-| [`bjt_diffpair_noise_m6.net`](bjt_diffpair_noise_m6.net) | xyce | noise | 10 | - |
-| [`bjt_diffpair_spiceMan_baseline.net`](bjt_diffpair_spiceMan_baseline.net) | xyce | tran | 20 | - |
-| [`bjt_diffpair_spiceMan_m6.net`](bjt_diffpair_spiceMan_m6.net) | xyce | tran | 10 | - |
-| [`capacitor.cir`](capacitor.cir) | xyce | tran, step | 10 | - |
-| [`capacitor_ic.cir`](capacitor_ic.cir) | xyce | tran | 6 | - |
-| [`diodeTranSens_2par.net`](diodeTranSens_2par.net) | xyce | sens, tran | 5 | - |
-| [`diodeTranSens_m2.net`](diodeTranSens_m2.net) | xyce | sens, tran | 4 | - |
-| [`dummyDiodeTranSens.net`](dummyDiodeTranSens.net) | xyce | tran | 4 | - |
-| [`gain-stage1_baseline.net`](gain-stage1_baseline.net) | xyce | noise | 10 | - |
-| [`gain-stage1_m6.net`](gain-stage1_m6.net) | xyce | noise | 5 | - |
-| [`gain-stage2_baseline.net`](gain-stage2_baseline.net) | xyce | noise | 10 | - |
-| [`gain-stage2_m6.net`](gain-stage2_m6.net) | xyce | noise | 5 | - |
-| [`gain-stage3_baseline.net`](gain-stage3_baseline.net) | xyce | noise | 10 | - |
-| [`gain-stage3_m6.net`](gain-stage3_m6.net) | xyce | noise | 5 | - |
-| [`gain-stage_b3_baseline.net`](gain-stage_b3_baseline.net) | xyce | noise | 10 | - |
-| [`gain-stage_b3_m6.net`](gain-stage_b3_m6.net) | xyce | noise | 5 | - |
-| [`inductor.cir`](inductor.cir) | xyce | step, step, tran | 18 | - |
-| [`inductor_ic.cir`](inductor_ic.cir) | xyce | tran | 12 | - |
-| [`lead_bjt_baseline.net`](lead_bjt_baseline.net) | xyce | tran | 9 | - |
-| [`lead_bjt_m6.net`](lead_bjt_m6.net) | xyce | tran | 4 | - |
-| [`resistor.cir`](resistor.cir) | xyce | step, step, step, dc | 13 | - |
-| [`semic_capacitor.cir`](semic_capacitor.cir) | xyce | tran, step | 10 | - |
-| [`semic_resistor.cir`](semic_resistor.cir) | xyce | step, step, step, dc | 6 | - |
-| [`soln_dep_capacitor.cir`](soln_dep_capacitor.cir) | xyce | tran, step | 12 | - |
-| [`thermal_resistor.cir`](thermal_resistor.cir) | xyce | step, step, step, dc | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`DiodeClipper_2par.net`](DiodeClipper_2par.net) | xyce | tran | 11 | small | no | core | - |
+| [`DiodeClipper_2par_noise.net`](DiodeClipper_2par_noise.net) | xyce | noise | 11 | small | no | specific (analysis noise) | - |
+| [`DiodeClipper_m2.net`](DiodeClipper_m2.net) | xyce | tran | 9 | tiny | no | core | - |
+| [`DiodeClipper_m2_noise.net`](DiodeClipper_m2_noise.net) | xyce | noise | 9 | tiny | no | specific (analysis noise) | - |
+| [`bjt_ampSens_baseline.net`](bjt_ampSens_baseline.net) | xyce | dc, sens | 12 | small | no | specific (analysis sens) | - |
+| [`bjt_ampSens_m6.net`](bjt_ampSens_m6.net) | xyce | dc, sens | 7 | tiny | no | specific (analysis sens) | - |
+| [`bjt_diffpair_noise_baseline.net`](bjt_diffpair_noise_baseline.net) | xyce | noise | 20 | small | no | specific (analysis noise) | - |
+| [`bjt_diffpair_noise_m6.net`](bjt_diffpair_noise_m6.net) | xyce | noise | 10 | small | no | specific (analysis noise) | - |
+| [`bjt_diffpair_spiceMan_baseline.net`](bjt_diffpair_spiceMan_baseline.net) | xyce | tran | 20 | small | no | core | - |
+| [`bjt_diffpair_spiceMan_m6.net`](bjt_diffpair_spiceMan_m6.net) | xyce | tran | 10 | small | no | core | - |
+| [`capacitor.cir`](capacitor.cir) | xyce | tran, step | 10 | small | yes | core | - |
+| [`capacitor_ic.cir`](capacitor_ic.cir) | xyce | tran | 6 | tiny | yes | core | - |
+| [`diodeTranSens_2par.net`](diodeTranSens_2par.net) | xyce | sens, tran | 5 | tiny | no | specific (analysis sens) | - |
+| [`diodeTranSens_m2.net`](diodeTranSens_m2.net) | xyce | sens, tran | 4 | tiny | no | specific (analysis sens) | - |
+| [`dummyDiodeTranSens.net`](dummyDiodeTranSens.net) | xyce | tran | 4 | tiny | no | core | - |
+| [`gain-stage1_baseline.net`](gain-stage1_baseline.net) | xyce | noise | 10 | small | no | specific (analysis noise) | - |
+| [`gain-stage1_m6.net`](gain-stage1_m6.net) | xyce | noise | 5 | tiny | no | specific (analysis noise) | - |
+| [`gain-stage2_baseline.net`](gain-stage2_baseline.net) | xyce | noise | 10 | small | no | specific (analysis noise) | - |
+| [`gain-stage2_m6.net`](gain-stage2_m6.net) | xyce | noise | 5 | tiny | no | specific (analysis noise) | - |
+| [`gain-stage3_baseline.net`](gain-stage3_baseline.net) | xyce | noise | 10 | small | no | specific (analysis noise) | - |
+| [`gain-stage3_m6.net`](gain-stage3_m6.net) | xyce | noise | 5 | tiny | no | specific (analysis noise) | - |
+| [`gain-stage_b3_baseline.net`](gain-stage_b3_baseline.net) | xyce | noise | 10 | small | no | specific (analysis noise) | - |
+| [`gain-stage_b3_m6.net`](gain-stage_b3_m6.net) | xyce | noise | 5 | tiny | no | specific (analysis noise) | - |
+| [`inductor.cir`](inductor.cir) | xyce | step, step, tran | 18 | small | yes | core | - |
+| [`inductor_ic.cir`](inductor_ic.cir) | xyce | tran | 12 | small | yes | core | - |
+| [`lead_bjt_baseline.net`](lead_bjt_baseline.net) | xyce | tran | 9 | tiny | no | core | - |
+| [`lead_bjt_m6.net`](lead_bjt_m6.net) | xyce | tran | 4 | tiny | no | core | - |
+| [`resistor.cir`](resistor.cir) | xyce | step, step, step, dc | 13 | small | yes | core | - |
+| [`semic_capacitor.cir`](semic_capacitor.cir) | xyce | tran, step | 10 | small | yes | core | - |
+| [`semic_resistor.cir`](semic_resistor.cir) | xyce | step, step, step, dc | 6 | tiny | yes | core | - |
+| [`soln_dep_capacitor.cir`](soln_dep_capacitor.cir) | xyce | tran, step | 12 | small | yes | core | - |
+| [`thermal_resistor.cir`](thermal_resistor.cir) | xyce | step, step, step, dc | 6 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

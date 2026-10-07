@@ -11,25 +11,25 @@ test | spicesharp | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`Example04.cir`](Example04.cir) | spicesharp | op | 3 | - |
-| [`Example04_nested.cir`](Example04_nested.cir) | spicesharp | op | 3 | - |
-| [`Example04_reversed.cir`](Example04_reversed.cir) | spicesharp | op | 3 | - |
-| [`Example05.cir`](Example05.cir) | spicesharp | op | 6 | - |
-| [`Example06.cir`](Example06.cir) | spicesharp | op | 2 | - |
-| [`Example08.cir`](Example08.cir) | spicesharp | tran | 3 | - |
-| [`Example09.cir`](Example09.cir) | spicesharp | tran, ac | 2 | - |
-| [`Example10.cir`](Example10.cir) | spicesharp | dc | 2 | - |
-| [`band-pass_1.cir`](band-pass_1.cir) | spicesharp | ac | 4 | - |
-| [`band-pass_2.cir`](band-pass_2.cir) | spicesharp | ac, step | 4 | - |
-| [`example01.cir`](example01.cir) | spicesharp | op | 13 | - |
-| [`example01_stringwriter.cir`](example01_stringwriter.cir) | spicesharp | op | 13 | - |
-| [`example01_without_params.cir`](example01_without_params.cir) | spicesharp | op | 13 | - |
-| [`example02.cir`](example02.cir) | spicesharp | op | 4 | - |
-| [`example03.cir`](example03.cir) | spicesharp | dc | 2 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`Example04.cir`](Example04.cir) | spicesharp | op | 3 | tiny | yes | core | - |
+| [`Example04_nested.cir`](Example04_nested.cir) | spicesharp | op | 3 | tiny | yes | core | - |
+| [`Example04_reversed.cir`](Example04_reversed.cir) | spicesharp | op | 3 | tiny | yes | core | - |
+| [`Example05.cir`](Example05.cir) | spicesharp | op | 6 | tiny | yes | core | - |
+| [`Example06.cir`](Example06.cir) | spicesharp | op | 2 | tiny | no | core | - |
+| [`Example08.cir`](Example08.cir) | spicesharp | tran | 3 | tiny | yes | core | - |
+| [`Example09.cir`](Example09.cir) | spicesharp | tran, ac | 2 | tiny | yes | core | - |
+| [`Example10.cir`](Example10.cir) | spicesharp | dc | 2 | tiny | no | core | - |
+| [`band-pass_1.cir`](band-pass_1.cir) | spicesharp | ac | 4 | tiny | yes | core | - |
+| [`band-pass_2.cir`](band-pass_2.cir) | spicesharp | ac, step | 4 | tiny | yes | core | - |
+| [`example01.cir`](example01.cir) | spicesharp | op | 13 | small | no | core | - |
+| [`example01_stringwriter.cir`](example01_stringwriter.cir) | spicesharp | op | 13 | small | no | core | - |
+| [`example01_without_params.cir`](example01_without_params.cir) | spicesharp | op | 13 | small | no | core | - |
+| [`example02.cir`](example02.cir) | spicesharp | op | 4 | tiny | yes | core | - |
+| [`example03.cir`](example03.cir) | spicesharp | dc | 2 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

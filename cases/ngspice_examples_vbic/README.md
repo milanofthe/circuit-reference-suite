@@ -11,15 +11,15 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`DFF_Y_ECL.sp`](DFF_Y_ECL.sp) | ngspice | tran | 26 | - |
-| [`npn_gum.sp`](npn_gum.sp) | ngspice | dc | 4 | - |
-| [`npn_out.sp`](npn_out.sp) | ngspice | dc | 4 | - |
-| [`vbic99_dc.sp`](vbic99_dc.sp) | ngspice | dc | 9 | - |
-| [`vbic99_tran.sp`](vbic99_tran.sp) | ngspice | op, tran | 5 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`DFF_Y_ECL.sp`](DFF_Y_ECL.sp) | ngspice | tran | 26 | small | no | specific (.control script) | - |
+| [`npn_gum.sp`](npn_gum.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`npn_out.sp`](npn_out.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`vbic99_dc.sp`](vbic99_dc.sp) | ngspice | dc | 9 | tiny | no | specific (.control script) | - |
+| [`vbic99_tran.sp`](vbic99_tran.sp) | ngspice | op, tran | 5 | tiny | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

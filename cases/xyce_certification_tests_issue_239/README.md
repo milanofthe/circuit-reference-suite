@@ -11,53 +11,53 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bsim3_test1.cir`](bsim3_test1.cir) | xyce | step, tran | 22 | - |
-| [`bsim3_test1Ref.cir`](bsim3_test1Ref.cir) | xyce | tran, step | 22 | - |
-| [`bsim3_test2.cir`](bsim3_test2.cir) | xyce | tran | 22 | - |
-| [`bsim3_test2Ref.cir`](bsim3_test2Ref.cir) | xyce | tran | 22 | - |
-| [`bsim3_test3.cir`](bsim3_test3.cir) | xyce | tran, sampling | 22 | - |
-| [`bsim3_test3Ref.cir`](bsim3_test3Ref.cir) | xyce | tran, sampling | 22 | - |
-| [`bsim3_test4.cir`](bsim3_test4.cir) | xyce | tran, sampling | 22 | - |
-| [`bsim3_test4Ref.cir`](bsim3_test4Ref.cir) | xyce | tran, sampling | 22 | - |
-| [`bsim4_test1.cir`](bsim4_test1.cir) | xyce | step, tran | 5 | - |
-| [`bsim4_test1Ref.cir`](bsim4_test1Ref.cir) | xyce | step, tran | 5 | - |
-| [`bsim4_test2.cir`](bsim4_test2.cir) | xyce | step, tran | 5 | - |
-| [`bsim4_test2Ref.cir`](bsim4_test2Ref.cir) | xyce | step, tran | 5 | - |
-| [`bsim4_test3.cir`](bsim4_test3.cir) | xyce | sampling, tran | 5 | - |
-| [`bsim4_test3Ref.cir`](bsim4_test3Ref.cir) | xyce | sampling, tran | 5 | - |
-| [`mos1_test1.cir`](mos1_test1.cir) | xyce | tran, step | 7 | - |
-| [`mos1_test1Ref.cir`](mos1_test1Ref.cir) | xyce | tran, step | 7 | - |
-| [`mos1_test2.cir`](mos1_test2.cir) | xyce | tran | 7 | - |
-| [`mos1_test2Ref.cir`](mos1_test2Ref.cir) | xyce | tran | 7 | - |
-| [`mos1_test3.cir`](mos1_test3.cir) | xyce | tran, sampling | 7 | - |
-| [`mos1_test3Ref.cir`](mos1_test3Ref.cir) | xyce | tran, sampling | 7 | - |
-| [`mos2_test1.cir`](mos2_test1.cir) | xyce | tran, step | 7 | - |
-| [`mos2_test1Ref.cir`](mos2_test1Ref.cir) | xyce | tran, step | 7 | - |
-| [`mos2_test2.cir`](mos2_test2.cir) | xyce | tran | 7 | - |
-| [`mos2_test2Ref.cir`](mos2_test2Ref.cir) | xyce | tran | 7 | - |
-| [`mos2_test3.cir`](mos2_test3.cir) | xyce | tran, sampling | 7 | - |
-| [`mos2_test3Ref.cir`](mos2_test3Ref.cir) | xyce | tran, sampling | 7 | - |
-| [`mos3_test1.cir`](mos3_test1.cir) | xyce | tran, step | 7 | - |
-| [`mos3_test1Ref.cir`](mos3_test1Ref.cir) | xyce | tran, step | 7 | - |
-| [`mos3_test2.cir`](mos3_test2.cir) | xyce | tran | 7 | - |
-| [`mos3_test2Ref.cir`](mos3_test2Ref.cir) | xyce | tran | 7 | - |
-| [`mos3_test3.cir`](mos3_test3.cir) | xyce | tran, sampling | 7 | - |
-| [`mos3_test3Ref.cir`](mos3_test3Ref.cir) | xyce | tran, sampling | 7 | - |
-| [`mos6_test1.cir`](mos6_test1.cir) | xyce | tran, step | 7 | - |
-| [`mos6_test1Ref.cir`](mos6_test1Ref.cir) | xyce | tran, step | 7 | - |
-| [`mos6_test2.cir`](mos6_test2.cir) | xyce | tran | 7 | - |
-| [`mos6_test2Ref.cir`](mos6_test2Ref.cir) | xyce | tran | 7 | - |
-| [`mos6_test3.cir`](mos6_test3.cir) | xyce | tran, sampling | 7 | - |
-| [`mos6_test3Ref.cir`](mos6_test3Ref.cir) | xyce | tran, sampling | 7 | - |
-| [`vdmos_test1.cir`](vdmos_test1.cir) | xyce | step, tran | 5 | - |
-| [`vdmos_test1Ref.cir`](vdmos_test1Ref.cir) | xyce | step, tran | 5 | - |
-| [`vdmos_test2.cir`](vdmos_test2.cir) | xyce | tran | 5 | - |
-| [`vdmos_test2Ref.cir`](vdmos_test2Ref.cir) | xyce | tran | 5 | - |
-| [`vdmos_test3.cir`](vdmos_test3.cir) | xyce | sampling, tran | 5 | - |
-| [`vdmos_test3Ref.cir`](vdmos_test3Ref.cir) | xyce | sampling, tran | 5 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bsim3_test1.cir`](bsim3_test1.cir) | xyce | step, tran | 22 | small | no | core | - |
+| [`bsim3_test1Ref.cir`](bsim3_test1Ref.cir) | xyce | tran, step | 22 | small | no | core | - |
+| [`bsim3_test2.cir`](bsim3_test2.cir) | xyce | tran | 22 | small | no | core | - |
+| [`bsim3_test2Ref.cir`](bsim3_test2Ref.cir) | xyce | tran | 22 | small | no | core | - |
+| [`bsim3_test3.cir`](bsim3_test3.cir) | xyce | tran, sampling | 22 | small | no | specific (analysis sampling) | - |
+| [`bsim3_test3Ref.cir`](bsim3_test3Ref.cir) | xyce | tran, sampling | 22 | small | no | specific (analysis sampling) | - |
+| [`bsim3_test4.cir`](bsim3_test4.cir) | xyce | tran, sampling | 22 | small | no | specific (analysis sampling) | - |
+| [`bsim3_test4Ref.cir`](bsim3_test4Ref.cir) | xyce | tran, sampling | 22 | small | no | specific (analysis sampling) | - |
+| [`bsim4_test1.cir`](bsim4_test1.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`bsim4_test1Ref.cir`](bsim4_test1Ref.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`bsim4_test2.cir`](bsim4_test2.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`bsim4_test2Ref.cir`](bsim4_test2Ref.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`bsim4_test3.cir`](bsim4_test3.cir) | xyce | sampling, tran | 5 | tiny | no | specific (analysis sampling) | - |
+| [`bsim4_test3Ref.cir`](bsim4_test3Ref.cir) | xyce | sampling, tran | 5 | tiny | no | specific (analysis sampling) | - |
+| [`mos1_test1.cir`](mos1_test1.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos1_test1Ref.cir`](mos1_test1Ref.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos1_test2.cir`](mos1_test2.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos1_test2Ref.cir`](mos1_test2Ref.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos1_test3.cir`](mos1_test3.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos1_test3Ref.cir`](mos1_test3Ref.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos2_test1.cir`](mos2_test1.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos2_test1Ref.cir`](mos2_test1Ref.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos2_test2.cir`](mos2_test2.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos2_test2Ref.cir`](mos2_test2Ref.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos2_test3.cir`](mos2_test3.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos2_test3Ref.cir`](mos2_test3Ref.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos3_test1.cir`](mos3_test1.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos3_test1Ref.cir`](mos3_test1Ref.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos3_test2.cir`](mos3_test2.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos3_test2Ref.cir`](mos3_test2Ref.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos3_test3.cir`](mos3_test3.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos3_test3Ref.cir`](mos3_test3Ref.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos6_test1.cir`](mos6_test1.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos6_test1Ref.cir`](mos6_test1Ref.cir) | xyce | tran, step | 7 | tiny | no | core | - |
+| [`mos6_test2.cir`](mos6_test2.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos6_test2Ref.cir`](mos6_test2Ref.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`mos6_test3.cir`](mos6_test3.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`mos6_test3Ref.cir`](mos6_test3Ref.cir) | xyce | tran, sampling | 7 | tiny | no | specific (analysis sampling) | - |
+| [`vdmos_test1.cir`](vdmos_test1.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`vdmos_test1Ref.cir`](vdmos_test1Ref.cir) | xyce | step, tran | 5 | tiny | no | core | - |
+| [`vdmos_test2.cir`](vdmos_test2.cir) | xyce | tran | 5 | tiny | no | core | - |
+| [`vdmos_test2Ref.cir`](vdmos_test2Ref.cir) | xyce | tran | 5 | tiny | no | core | - |
+| [`vdmos_test3.cir`](vdmos_test3.cir) | xyce | sampling, tran | 5 | tiny | no | specific (analysis sampling) | - |
+| [`vdmos_test3Ref.cir`](vdmos_test3Ref.cir) | xyce | sampling, tran | 5 | tiny | no | specific (analysis sampling) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

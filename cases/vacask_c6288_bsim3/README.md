@@ -11,15 +11,15 @@ arithmetic | ngspice, vacask | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 10178 | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 10178 | - |
-| [`ngspiceva/runme.sim`](ngspiceva/runme.sim) | ngspice | tran | 10178 | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`vacask/runme.sim`](vacask/runme.sim) | vacask | tran | 10178 | xl | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 10178 | xl | no | specific (.control script) | - |
+| [`ngspiceva/runme.sim`](ngspiceva/runme.sim) | ngspice | tran | 10178 | xl | no | specific (.control script, Verilog-A model) | [vacask_spice_va](../../libraries/vacask_spice_va) |
 
 - `ngspiceva/runme.sim`: ngspice with the Verilog-A models of the VACASK variant, loaded as OSDI.
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

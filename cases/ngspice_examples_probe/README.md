@@ -11,17 +11,17 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`Dual-NMOS-amp.cir`](Dual-NMOS-amp.cir) | ngspice | tran | 86 | - |
-| [`F5TurboV2-Probe.cir`](F5TurboV2-Probe.cir) | ngspice | tran | 50 | - |
-| [`ac-test.cir`](ac-test.cir) | ngspice | ac | 6 | - |
-| [`cntrl-sources.cir`](cntrl-sources.cir) | ngspice | tran | 12 | - |
-| [`mos-test.cir`](mos-test.cir) | ngspice | tran | 5 | - |
-| [`probe-i-dev.cir`](probe-i-dev.cir) | ngspice | dc | 13 | - |
-| [`switches-manual-p92.cir`](switches-manual-p92.cir) | ngspice | tran | 14 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`Dual-NMOS-amp.cir`](Dual-NMOS-amp.cir) | ngspice | tran | 86 | small | no | specific (.control script) | - |
+| [`F5TurboV2-Probe.cir`](F5TurboV2-Probe.cir) | ngspice | tran | 50 | small | no | specific (.control script) | - |
+| [`ac-test.cir`](ac-test.cir) | ngspice | ac | 6 | tiny | yes | specific (.control script) | - |
+| [`cntrl-sources.cir`](cntrl-sources.cir) | ngspice | tran | 12 | small | yes | specific (.control script) | - |
+| [`mos-test.cir`](mos-test.cir) | ngspice | tran | 5 | tiny | no | specific (.control script) | - |
+| [`probe-i-dev.cir`](probe-i-dev.cir) | ngspice | dc | 13 | small | no | specific (.control script) | - |
+| [`switches-manual-p92.cir`](switches-manual-p92.cir) | ngspice | tran | 14 | small | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

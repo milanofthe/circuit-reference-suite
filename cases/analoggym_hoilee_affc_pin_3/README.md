@@ -11,12 +11,12 @@ opamp | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`amp_spice_testbench/TB_Amplifier_ACDC.cir`](amp_spice_testbench/TB_Amplifier_ACDC.cir) | ngspice | dc, ac | 182 | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`amp_spice_testbench/TB_Amplifier_Tran.cir`](amp_spice_testbench/TB_Amplifier_Tran.cir) | ngspice | tran | 37 | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`amp_spice_testbench/TB_Amplifier_ACDC.cir`](amp_spice_testbench/TB_Amplifier_ACDC.cir) | ngspice | dc, ac | 182 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`amp_spice_testbench/TB_Amplifier_Tran.cir`](amp_spice_testbench/TB_Amplifier_Tran.cir) | ngspice | tran | 37 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

@@ -11,36 +11,36 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`asym_nmos_idvdh_dt.cir`](asym_nmos_idvdh_dt.cir) | xyce | step, dc | 19 | - |
-| [`asym_pmos_idvdh_dt.cir`](asym_pmos_idvdh_dt.cir) | xyce | step, dc | 19 | - |
-| [`invert_psp.cir`](invert_psp.cir) | xyce | tran | 7 | - |
-| [`invert_psp_testDTA0.cir`](invert_psp_testDTA0.cir) | xyce | tran | 7 | - |
-| [`invert_psp_testDTA1.cir`](invert_psp_testDTA1.cir) | xyce | tran | 7 | - |
-| [`invert_psp_testDTA2.cir`](invert_psp_testDTA2.cir) | xyce | tran | 7 | - |
-| [`psp_asym_nmos_idvg0.cir`](psp_asym_nmos_idvg0.cir) | xyce | dc, step | 9 | - |
-| [`psp_asym_pmos_idvg0.cir`](psp_asym_pmos_idvg0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvg0.cir`](psp_symm_nmos_idvg0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvg0_allsw0.cir`](psp_symm_nmos_idvg0_allsw0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvg0_swigate1.cir`](psp_symm_nmos_idvg0_swigate1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvg0_swimpact1.cir`](psp_symm_nmos_idvg0_swimpact1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvgh.cir`](psp_symm_nmos_idvgh.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvgh_allsw0.cir`](psp_symm_nmos_idvgh_allsw0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvgh_outvars.cir`](psp_symm_nmos_idvgh_outvars.cir) | xyce | dc, step | 10 | - |
-| [`psp_symm_nmos_idvgh_swigate1.cir`](psp_symm_nmos_idvgh_swigate1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_nmos_idvgh_swimpact1.cir`](psp_symm_nmos_idvgh_swimpact1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvg0.cir`](psp_symm_pmos_idvg0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvg0_allsw0.cir`](psp_symm_pmos_idvg0_allsw0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvg0_swigate1.cir`](psp_symm_pmos_idvg0_swigate1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvg0_swimpact1.cir`](psp_symm_pmos_idvg0_swimpact1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvgh.cir`](psp_symm_pmos_idvgh.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvgh_allsw0.cir`](psp_symm_pmos_idvgh_allsw0.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvgh_swigate1.cir`](psp_symm_pmos_idvgh_swigate1.cir) | xyce | dc, step | 9 | - |
-| [`psp_symm_pmos_idvgh_swimpact1.cir`](psp_symm_pmos_idvgh_swimpact1.cir) | xyce | dc, step | 9 | - |
-| [`sym_nmos_idvdh_dt.cir`](sym_nmos_idvdh_dt.cir) | xyce | step, dc | 19 | - |
-| [`sym_pmos_idvdh_dt.cir`](sym_pmos_idvdh_dt.cir) | xyce | step, dc | 19 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`asym_nmos_idvdh_dt.cir`](asym_nmos_idvdh_dt.cir) | xyce | step, dc | 19 | small | no | core | - |
+| [`asym_pmos_idvdh_dt.cir`](asym_pmos_idvdh_dt.cir) | xyce | step, dc | 19 | small | no | core | - |
+| [`invert_psp.cir`](invert_psp.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`invert_psp_testDTA0.cir`](invert_psp_testDTA0.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`invert_psp_testDTA1.cir`](invert_psp_testDTA1.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`invert_psp_testDTA2.cir`](invert_psp_testDTA2.cir) | xyce | tran | 7 | tiny | no | core | - |
+| [`psp_asym_nmos_idvg0.cir`](psp_asym_nmos_idvg0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_asym_pmos_idvg0.cir`](psp_asym_pmos_idvg0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvg0.cir`](psp_symm_nmos_idvg0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvg0_allsw0.cir`](psp_symm_nmos_idvg0_allsw0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvg0_swigate1.cir`](psp_symm_nmos_idvg0_swigate1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvg0_swimpact1.cir`](psp_symm_nmos_idvg0_swimpact1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvgh.cir`](psp_symm_nmos_idvgh.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvgh_allsw0.cir`](psp_symm_nmos_idvgh_allsw0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvgh_outvars.cir`](psp_symm_nmos_idvgh_outvars.cir) | xyce | dc, step | 10 | small | no | core | - |
+| [`psp_symm_nmos_idvgh_swigate1.cir`](psp_symm_nmos_idvgh_swigate1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_nmos_idvgh_swimpact1.cir`](psp_symm_nmos_idvgh_swimpact1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvg0.cir`](psp_symm_pmos_idvg0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvg0_allsw0.cir`](psp_symm_pmos_idvg0_allsw0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvg0_swigate1.cir`](psp_symm_pmos_idvg0_swigate1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvg0_swimpact1.cir`](psp_symm_pmos_idvg0_swimpact1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvgh.cir`](psp_symm_pmos_idvgh.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvgh_allsw0.cir`](psp_symm_pmos_idvgh_allsw0.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvgh_swigate1.cir`](psp_symm_pmos_idvgh_swigate1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`psp_symm_pmos_idvgh_swimpact1.cir`](psp_symm_pmos_idvgh_swimpact1.cir) | xyce | dc, step | 9 | tiny | no | core | - |
+| [`sym_nmos_idvdh_dt.cir`](sym_nmos_idvdh_dt.cir) | xyce | step, dc | 19 | small | no | core | - |
+| [`sym_pmos_idvdh_dt.cir`](sym_pmos_idvdh_dt.cir) | xyce | step, dc | 19 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

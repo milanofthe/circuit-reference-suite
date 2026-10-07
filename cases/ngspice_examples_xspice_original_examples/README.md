@@ -11,63 +11,63 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`analog_models1_ac.deck`](analog_models1_ac.deck) | ngspice | ac | 18 | - |
-| [`analog_models1_dc.deck`](analog_models1_dc.deck) | ngspice | op | 15 | - |
-| [`analog_models1_swept_dc.deck`](analog_models1_swept_dc.deck) | ngspice | dc | 15 | - |
-| [`analog_models1_transient.deck`](analog_models1_transient.deck) | ngspice | tran | 15 | - |
-| [`analog_models2_ac.deck`](analog_models2_ac.deck) | ngspice | ac | 15 | - |
-| [`analog_models2_dc.deck`](analog_models2_dc.deck) | ngspice | op | 13 | - |
-| [`analog_models2_swept_dc.deck`](analog_models2_swept_dc.deck) | ngspice | dc | 15 | - |
-| [`analog_models2_transient.deck`](analog_models2_transient.deck) | ngspice | tran | 15 | - |
-| [`analog_models3_ac.deck`](analog_models3_ac.deck) | ngspice | ac | 22 | - |
-| [`analog_models3_dc.deck`](analog_models3_dc.deck) | ngspice | op | 22 | - |
-| [`analog_models3_swept_dc.deck`](analog_models3_swept_dc.deck) | ngspice | dc | 22 | - |
-| [`analog_models3_transient.deck`](analog_models3_transient.deck) | ngspice | tran | 22 | - |
-| [`analog_models4_ac.deck`](analog_models4_ac.deck) | ngspice | ac | 18 | - |
-| [`analog_models4_dc.deck`](analog_models4_dc.deck) | ngspice | op | 18 | - |
-| [`analog_models4_swept_dc.deck`](analog_models4_swept_dc.deck) | ngspice | dc | 18 | - |
-| [`analog_models4_transient.deck`](analog_models4_transient.deck) | ngspice | tran | 21 | - |
-| [`arbitrary_phase.deck`](arbitrary_phase.deck) | ngspice | tran | 4 | - |
-| [`bad_io.deck`](bad_io.deck) | ngspice | tran | 5 | - |
-| [`bad_io_type.deck`](bad_io_type.deck) | ngspice | tran | 6 | - |
-| [`bad_name.deck`](bad_name.deck) | ngspice | tran | 4 | - |
-| [`bad_param.deck`](bad_param.deck) | ngspice | tran | 4 | - |
-| [`bad_param_type.deck`](bad_param_type.deck) | ngspice | tran | 4 | - |
-| [`diffpair.in`](diffpair.in) | ngspice | tran | 12 | - |
-| [`digital_invert.deck`](digital_invert.deck) | ngspice | tran | 9 | - |
-| [`digital_models.deck`](digital_models.deck) | ngspice | tran | 4 | - |
-| [`digital_models1.deck`](digital_models1.deck) | ngspice | tran | 13 | - |
-| [`digital_models2.deck`](digital_models2.deck) | ngspice | tran | 15 | - |
-| [`digital_models3.deck`](digital_models3.deck) | ngspice | tran | 14 | - |
-| [`digital_models4.deck`](digital_models4.deck) | ngspice | tran | 14 | - |
-| [`dot_model_ref.deck`](dot_model_ref.deck) | ngspice | tran | 6 | - |
-| [`hybrid_models1_dc.deck`](hybrid_models1_dc.deck) | ngspice | op | 8 | - |
-| [`hybrid_models1_transient.deck`](hybrid_models1_transient.deck) | ngspice | tran | 8 | - |
-| [`initial_conditions.deck`](initial_conditions.deck) | ngspice | tran | 4 | - |
-| [`io_ordering.deck`](io_ordering.deck) | ngspice | tran | 4 | - |
-| [`io_types.deck`](io_types.deck) | ngspice | tran | 10 | - |
-| [`long_names.deck`](long_names.deck) | ngspice | tran | 4 | - |
-| [`mixed_case.deck`](mixed_case.deck) | ngspice | tran | 4 | - |
-| [`mixed_io_size.deck`](mixed_io_size.deck) | ngspice | tran | 12 | - |
-| [`mixed_mode.deck`](mixed_mode.deck) | ngspice | tran | 33 | - |
-| [`mixed_ref.deck`](mixed_ref.deck) | ngspice | tran | 15 | - |
-| [`mosamp2.in`](mosamp2.in) | ngspice | tran | 33 | - |
-| [`mosmem.in`](mosmem.in) | ngspice | tran | 16 | - |
-| [`param_defaults.deck`](param_defaults.deck) | ngspice | op | 4 | - |
-| [`param_types.deck`](param_types.deck) | ngspice | op | 4 | - |
-| [`parsing.deck`](parsing.deck) | ngspice | tran | 4 | - |
-| [`polarity.deck`](polarity.deck) | ngspice | tran | 9 | - |
-| [`rca3040.in`](rca3040.in) | ngspice | ac, dc, tran | 26 | - |
-| [`rtlinv.in`](rtlinv.in) | ngspice | dc, tran | 8 | - |
-| [`schmitt.in`](schmitt.in) | ngspice | tran | 15 | - |
-| [`spice3.deck`](spice3.deck) | ngspice | tran | 8 | - |
-| [`suffixes.deck`](suffixes.deck) | ngspice | op | 4 | - |
-| [`supply_ramping.deck`](supply_ramping.deck) | ngspice | tran | 10 | - |
-| [`user_defined_nodes.deck`](user_defined_nodes.deck) | ngspice | tran | 8 | - |
-| [`xspice.deck`](xspice.deck) | ngspice | tran | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`analog_models1_ac.deck`](analog_models1_ac.deck) | ngspice | ac | 18 | small | no | specific (XSPICE code model) | - |
+| [`analog_models1_dc.deck`](analog_models1_dc.deck) | ngspice | op | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models1_swept_dc.deck`](analog_models1_swept_dc.deck) | ngspice | dc | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models1_transient.deck`](analog_models1_transient.deck) | ngspice | tran | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models2_ac.deck`](analog_models2_ac.deck) | ngspice | ac | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models2_dc.deck`](analog_models2_dc.deck) | ngspice | op | 13 | small | no | specific (XSPICE code model) | - |
+| [`analog_models2_swept_dc.deck`](analog_models2_swept_dc.deck) | ngspice | dc | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models2_transient.deck`](analog_models2_transient.deck) | ngspice | tran | 15 | small | no | specific (XSPICE code model) | - |
+| [`analog_models3_ac.deck`](analog_models3_ac.deck) | ngspice | ac | 22 | small | no | specific (XSPICE code model) | - |
+| [`analog_models3_dc.deck`](analog_models3_dc.deck) | ngspice | op | 22 | small | no | specific (XSPICE code model) | - |
+| [`analog_models3_swept_dc.deck`](analog_models3_swept_dc.deck) | ngspice | dc | 22 | small | no | specific (XSPICE code model) | - |
+| [`analog_models3_transient.deck`](analog_models3_transient.deck) | ngspice | tran | 22 | small | no | specific (XSPICE code model) | - |
+| [`analog_models4_ac.deck`](analog_models4_ac.deck) | ngspice | ac | 18 | small | no | specific (XSPICE code model) | - |
+| [`analog_models4_dc.deck`](analog_models4_dc.deck) | ngspice | op | 18 | small | no | specific (XSPICE code model) | - |
+| [`analog_models4_swept_dc.deck`](analog_models4_swept_dc.deck) | ngspice | dc | 18 | small | no | specific (XSPICE code model) | - |
+| [`analog_models4_transient.deck`](analog_models4_transient.deck) | ngspice | tran | 21 | small | no | specific (XSPICE code model) | - |
+| [`arbitrary_phase.deck`](arbitrary_phase.deck) | ngspice | tran | 4 | tiny | yes | core | - |
+| [`bad_io.deck`](bad_io.deck) | ngspice | tran | 5 | tiny | no | specific (XSPICE code model) | - |
+| [`bad_io_type.deck`](bad_io_type.deck) | ngspice | tran | 6 | tiny | no | specific (XSPICE code model) | - |
+| [`bad_name.deck`](bad_name.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`bad_param.deck`](bad_param.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`bad_param_type.deck`](bad_param_type.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`diffpair.in`](diffpair.in) | ngspice | tran | 12 | small | no | core | - |
+| [`digital_invert.deck`](digital_invert.deck) | ngspice | tran | 9 | tiny | no | specific (XSPICE code model) | - |
+| [`digital_models.deck`](digital_models.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`digital_models1.deck`](digital_models1.deck) | ngspice | tran | 13 | small | no | specific (XSPICE code model) | - |
+| [`digital_models2.deck`](digital_models2.deck) | ngspice | tran | 15 | small | no | specific (XSPICE code model) | - |
+| [`digital_models3.deck`](digital_models3.deck) | ngspice | tran | 14 | small | no | specific (XSPICE code model) | - |
+| [`digital_models4.deck`](digital_models4.deck) | ngspice | tran | 14 | small | no | specific (XSPICE code model) | - |
+| [`dot_model_ref.deck`](dot_model_ref.deck) | ngspice | tran | 6 | tiny | no | specific (XSPICE code model) | - |
+| [`hybrid_models1_dc.deck`](hybrid_models1_dc.deck) | ngspice | op | 8 | tiny | no | specific (XSPICE code model) | - |
+| [`hybrid_models1_transient.deck`](hybrid_models1_transient.deck) | ngspice | tran | 8 | tiny | no | specific (XSPICE code model) | - |
+| [`initial_conditions.deck`](initial_conditions.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`io_ordering.deck`](io_ordering.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`io_types.deck`](io_types.deck) | ngspice | tran | 10 | small | no | specific (XSPICE code model) | - |
+| [`long_names.deck`](long_names.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`mixed_case.deck`](mixed_case.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`mixed_io_size.deck`](mixed_io_size.deck) | ngspice | tran | 12 | small | no | specific (XSPICE code model) | - |
+| [`mixed_mode.deck`](mixed_mode.deck) | ngspice | tran | 33 | small | no | specific (XSPICE code model) | - |
+| [`mixed_ref.deck`](mixed_ref.deck) | ngspice | tran | 15 | small | no | specific (XSPICE code model) | - |
+| [`mosamp2.in`](mosamp2.in) | ngspice | tran | 33 | small | no | core | - |
+| [`mosmem.in`](mosmem.in) | ngspice | tran | 16 | small | no | core | - |
+| [`param_defaults.deck`](param_defaults.deck) | ngspice | op | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`param_types.deck`](param_types.deck) | ngspice | op | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`parsing.deck`](parsing.deck) | ngspice | tran | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`polarity.deck`](polarity.deck) | ngspice | tran | 9 | tiny | no | specific (XSPICE code model) | - |
+| [`rca3040.in`](rca3040.in) | ngspice | ac, dc, tran | 26 | small | no | core | - |
+| [`rtlinv.in`](rtlinv.in) | ngspice | dc, tran | 8 | tiny | no | core | - |
+| [`schmitt.in`](schmitt.in) | ngspice | tran | 15 | small | no | core | - |
+| [`spice3.deck`](spice3.deck) | ngspice | tran | 8 | tiny | no | core | - |
+| [`suffixes.deck`](suffixes.deck) | ngspice | op | 4 | tiny | no | specific (XSPICE code model) | - |
+| [`supply_ramping.deck`](supply_ramping.deck) | ngspice | tran | 10 | small | no | specific (XSPICE code model) | - |
+| [`user_defined_nodes.deck`](user_defined_nodes.deck) | ngspice | tran | 8 | tiny | no | specific (XSPICE code model) | - |
+| [`xspice.deck`](xspice.deck) | ngspice | tran | 6 | tiny | no | specific (XSPICE code model) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

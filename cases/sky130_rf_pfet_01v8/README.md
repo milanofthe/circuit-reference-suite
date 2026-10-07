@@ -11,72 +11,72 @@ device | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF02W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF02W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF04W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF04W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF06W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF06W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF06W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF06W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF08W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF08W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aF08W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF08W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM02__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_bM04__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_hcM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_hcM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_hcM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_hcM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_mcM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_mcM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__rf_pfet_01v8_mcM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_mcM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF02W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF02W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF04W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF04W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF06W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF06W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF06W2p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W2p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF06W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF06W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF08W0p84L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF08W0p84L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aF08W1p68L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aF08W1p68L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W3p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W3p00__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02W5p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02W5p00__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM02__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM02__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W1p65L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W3p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W3p00__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p18__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p18__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p25__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00L0p25__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04W5p00__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04W5p00__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_bM04__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_bM04__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_hcM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_hcM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_hcM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_hcM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_mcM04W3p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_mcM04W3p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__rf_pfet_01v8_mcM04W5p00L0p15__pfet_vth.spice`](sky130_fd_pr__rf_pfet_01v8_mcM04W5p00L0p15__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

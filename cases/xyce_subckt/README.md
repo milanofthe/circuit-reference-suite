@@ -11,50 +11,50 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`subckt_a0.cir`](subckt_a0.cir) | xyce | tran | 9 | - |
-| [`subckt_a1.cir`](subckt_a1.cir) | xyce | tran | 9 | - |
-| [`subckt_a1_dup.cir`](subckt_a1_dup.cir) | xyce | tran | 9 | - |
-| [`subckt_a2.cir`](subckt_a2.cir) | xyce | tran | 9 | - |
-| [`subckt_a2_dup.cir`](subckt_a2_dup.cir) | xyce | tran | 9 | - |
-| [`subckt_a3.cir`](subckt_a3.cir) | xyce | tran | 9 | - |
-| [`subckt_a3_hs.cir`](subckt_a3_hs.cir) | xyce | tran | 9 | - |
-| [`subckt_a4.cir`](subckt_a4.cir) | xyce | tran | 9 | - |
-| [`subckt_a4_ends_warning.cir`](subckt_a4_ends_warning.cir) | xyce | tran | 9 | - |
-| [`subckt_a4_hs.cir`](subckt_a4_hs.cir) | xyce | tran | 9 | - |
-| [`subckt_a5.cir`](subckt_a5.cir) | xyce | tran | 9 | - |
-| [`subckt_a5_hs.cir`](subckt_a5_hs.cir) | xyce | tran | 9 | - |
-| [`subckt_b0.cir`](subckt_b0.cir) | xyce | dc | 6 | - |
-| [`subckt_b1.cir`](subckt_b1.cir) | xyce | dc | 6 | - |
-| [`subckt_b2.cir`](subckt_b2.cir) | xyce | dc | 6 | - |
-| [`subckt_b2_hs.cir`](subckt_b2_hs.cir) | xyce | dc | 6 | - |
-| [`subckt_b3.cir`](subckt_b3.cir) | xyce | dc | 6 | - |
-| [`subckt_b3_hs.cir`](subckt_b3_hs.cir) | xyce | dc | 6 | - |
-| [`subckt_e0.cir`](subckt_e0.cir) | xyce | tran | 3 | - |
-| [`subckt_e1.cir`](subckt_e1.cir) | xyce | tran | 3 | - |
-| [`subckt_e2.cir`](subckt_e2.cir) | xyce | tran | 3 | - |
-| [`subckt_e3.cir`](subckt_e3.cir) | xyce | tran | 3 | - |
-| [`subckt_f0.cir`](subckt_f0.cir) | xyce | dc | 3 | - |
-| [`subckt_f1.cir`](subckt_f1.cir) | xyce | dc | 3 | - |
-| [`subckt_g0.cir`](subckt_g0.cir) | xyce | tran | 3 | - |
-| [`subckt_g1.cir`](subckt_g1.cir) | xyce | tran | 3 | - |
-| [`subckt_h0.cir`](subckt_h0.cir) | xyce | dc | 3 | - |
-| [`subckt_h0_hs.cir`](subckt_h0_hs.cir) | xyce | dc | 3 | - |
-| [`subckt_i1.cir`](subckt_i1.cir) | xyce | dc | 8 | - |
-| [`subckt_i2.cir`](subckt_i2.cir) | xyce | dc | 8 | - |
-| [`subckt_i3.cir`](subckt_i3.cir) | xyce | dc | 8 | - |
-| [`subckt_i3_hs.cir`](subckt_i3_hs.cir) | xyce | dc | 8 | - |
-| [`subckt_j1.cir`](subckt_j1.cir) | xyce | tran | 24 | - |
-| [`subckt_j1_dup.cir`](subckt_j1_dup.cir) | xyce | tran | 24 | - |
-| [`subckt_j1_hs.cir`](subckt_j1_hs.cir) | xyce | tran | 24 | - |
-| [`subckt_k0.cir`](subckt_k0.cir) | xyce | dc | 8 | - |
-| [`subckt_k1.cir`](subckt_k1.cir) | xyce | dc | 8 | - |
-| [`subckt_k2.cir`](subckt_k2.cir) | xyce | dc | 10 | - |
-| [`subckt_k3.cir`](subckt_k3.cir) | xyce | dc | 10 | - |
-| [`subckt_l0.cir`](subckt_l0.cir) | xyce | tran | 6 | - |
-| [`subckt_l1.cir`](subckt_l1.cir) | xyce | tran | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`subckt_a0.cir`](subckt_a0.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a1.cir`](subckt_a1.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a1_dup.cir`](subckt_a1_dup.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a2.cir`](subckt_a2.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a2_dup.cir`](subckt_a2_dup.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a3.cir`](subckt_a3.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a3_hs.cir`](subckt_a3_hs.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a4.cir`](subckt_a4.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a4_ends_warning.cir`](subckt_a4_ends_warning.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a4_hs.cir`](subckt_a4_hs.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a5.cir`](subckt_a5.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_a5_hs.cir`](subckt_a5_hs.cir) | xyce | tran | 9 | tiny | no | core | - |
+| [`subckt_b0.cir`](subckt_b0.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_b1.cir`](subckt_b1.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_b2.cir`](subckt_b2.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_b2_hs.cir`](subckt_b2_hs.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_b3.cir`](subckt_b3.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_b3_hs.cir`](subckt_b3_hs.cir) | xyce | dc | 6 | tiny | no | core | - |
+| [`subckt_e0.cir`](subckt_e0.cir) | xyce | tran | 3 | tiny | no | core | - |
+| [`subckt_e1.cir`](subckt_e1.cir) | xyce | tran | 3 | tiny | no | core | - |
+| [`subckt_e2.cir`](subckt_e2.cir) | xyce | tran | 3 | tiny | no | core | - |
+| [`subckt_e3.cir`](subckt_e3.cir) | xyce | tran | 3 | tiny | no | core | - |
+| [`subckt_f0.cir`](subckt_f0.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`subckt_f1.cir`](subckt_f1.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`subckt_g0.cir`](subckt_g0.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`subckt_g1.cir`](subckt_g1.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`subckt_h0.cir`](subckt_h0.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`subckt_h0_hs.cir`](subckt_h0_hs.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`subckt_i1.cir`](subckt_i1.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_i2.cir`](subckt_i2.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_i3.cir`](subckt_i3.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_i3_hs.cir`](subckt_i3_hs.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_j1.cir`](subckt_j1.cir) | xyce | tran | 24 | small | no | core | - |
+| [`subckt_j1_dup.cir`](subckt_j1_dup.cir) | xyce | tran | 24 | small | no | core | - |
+| [`subckt_j1_hs.cir`](subckt_j1_hs.cir) | xyce | tran | 24 | small | no | core | - |
+| [`subckt_k0.cir`](subckt_k0.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_k1.cir`](subckt_k1.cir) | xyce | dc | 8 | tiny | no | core | - |
+| [`subckt_k2.cir`](subckt_k2.cir) | xyce | dc | 10 | small | no | core | - |
+| [`subckt_k3.cir`](subckt_k3.cir) | xyce | dc | 10 | small | no | core | - |
+| [`subckt_l0.cir`](subckt_l0.cir) | xyce | tran | 6 | tiny | no | core | - |
+| [`subckt_l1.cir`](subckt_l1.cir) | xyce | tran | 6 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

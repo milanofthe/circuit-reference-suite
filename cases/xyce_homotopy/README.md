@@ -11,39 +11,39 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`arclengthSimple.cir`](arclengthSimple.cir) | xyce | dc | 2 | - |
-| [`continuation1.cir`](continuation1.cir) | xyce | tran | 45 | - |
-| [`continuation1_bsim3.cir`](continuation1_bsim3.cir) | xyce | tran | 45 | - |
-| [`continuation1_bsim4.cir`](continuation1_bsim4.cir) | xyce | tran | 45 | - |
-| [`continuation1_mos1.cir`](continuation1_mos1.cir) | xyce | tran | 45 | - |
-| [`continuation1_mos2.cir`](continuation1_mos2.cir) | xyce | tran | 45 | - |
-| [`continuation1_mos3.cir`](continuation1_mos3.cir) | xyce | tran | 45 | - |
-| [`continuation1_mos6.cir`](continuation1_mos6.cir) | xyce | tran | 45 | - |
-| [`continuation2.cir`](continuation2.cir) | xyce | tran | 45 | - |
-| [`continuation2_bsim3.cir`](continuation2_bsim3.cir) | xyce | tran | 45 | - |
-| [`continuation2_bsim4.cir`](continuation2_bsim4.cir) | xyce | tran | 45 | - |
-| [`continuation2_mos1.cir`](continuation2_mos1.cir) | xyce | tran | 45 | - |
-| [`continuation2_mos2.cir`](continuation2_mos2.cir) | xyce | tran | 45 | - |
-| [`continuation2_mos3.cir`](continuation2_mos3.cir) | xyce | tran | 45 | - |
-| [`continuation2_mos6.cir`](continuation2_mos6.cir) | xyce | tran | 45 | - |
-| [`continuation3.cir`](continuation3.cir) | xyce | tran | 45 | - |
-| [`continuation3_bsim3.cir`](continuation3_bsim3.cir) | xyce | tran | 45 | - |
-| [`continuation3_bsim4.cir`](continuation3_bsim4.cir) | xyce | tran | 45 | - |
-| [`continuation3_mos1.cir`](continuation3_mos1.cir) | xyce | tran | 45 | - |
-| [`continuation3_mos2.cir`](continuation3_mos2.cir) | xyce | tran | 45 | - |
-| [`continuation3_mos3.cir`](continuation3_mos3.cir) | xyce | tran | 45 | - |
-| [`continuation3_mos6.cir`](continuation3_mos6.cir) | xyce | tran | 45 | - |
-| [`continuation4.cir`](continuation4.cir) | xyce | tran | 45 | - |
-| [`continuation4_bsim3.cir`](continuation4_bsim3.cir) | xyce | tran | 45 | - |
-| [`continuation4_bsim4.cir`](continuation4_bsim4.cir) | xyce | tran | 45 | - |
-| [`continuation4_mos1.cir`](continuation4_mos1.cir) | xyce | tran | 45 | - |
-| [`continuation4_mos2.cir`](continuation4_mos2.cir) | xyce | tran | 45 | - |
-| [`continuation4_mos3.cir`](continuation4_mos3.cir) | xyce | tran | 45 | - |
-| [`continuation4_mos6.cir`](continuation4_mos6.cir) | xyce | tran | 45 | - |
-| [`schmidt.cir`](schmidt.cir) | xyce | dc | 8 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`arclengthSimple.cir`](arclengthSimple.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`continuation1.cir`](continuation1.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_bsim3.cir`](continuation1_bsim3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_bsim4.cir`](continuation1_bsim4.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_mos1.cir`](continuation1_mos1.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_mos2.cir`](continuation1_mos2.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_mos3.cir`](continuation1_mos3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation1_mos6.cir`](continuation1_mos6.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2.cir`](continuation2.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_bsim3.cir`](continuation2_bsim3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_bsim4.cir`](continuation2_bsim4.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_mos1.cir`](continuation2_mos1.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_mos2.cir`](continuation2_mos2.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_mos3.cir`](continuation2_mos3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation2_mos6.cir`](continuation2_mos6.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3.cir`](continuation3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_bsim3.cir`](continuation3_bsim3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_bsim4.cir`](continuation3_bsim4.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_mos1.cir`](continuation3_mos1.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_mos2.cir`](continuation3_mos2.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_mos3.cir`](continuation3_mos3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation3_mos6.cir`](continuation3_mos6.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4.cir`](continuation4.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_bsim3.cir`](continuation4_bsim3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_bsim4.cir`](continuation4_bsim4.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_mos1.cir`](continuation4_mos1.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_mos2.cir`](continuation4_mos2.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_mos3.cir`](continuation4_mos3.cir) | xyce | tran | 45 | small | no | core | - |
+| [`continuation4_mos6.cir`](continuation4_mos6.cir) | xyce | tran | 45 | small | no | core | - |
+| [`schmidt.cir`](schmidt.cir) | xyce | dc | 8 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

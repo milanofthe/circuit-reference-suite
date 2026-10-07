@@ -11,65 +11,65 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`HBT_IV.cir`](HBT_IV.cir) | xyce | dc | 4 | - |
-| [`acCf.cir`](acCf.cir) | xyce | ac | 17 | - |
-| [`acCf_3T.cir`](acCf_3T.cir) | xyce | ac | 13 | - |
-| [`acCf_3T_m.cir`](acCf_3T_m.cir) | xyce | ac | 13 | - |
-| [`acCf_3T_noFlip_P.cir`](acCf_3T_noFlip_P.cir) | xyce | ac | 13 | - |
-| [`acCf_m.cir`](acCf_m.cir) | xyce | ac | 17 | - |
-| [`acCf_noFlip_P.cir`](acCf_noFlip_P.cir) | xyce | ac | 17 | - |
-| [`acXf.cir`](acXf.cir) | xyce | ac | 17 | - |
-| [`acXf_3T.cir`](acXf_3T.cir) | xyce | ac | 13 | - |
-| [`acXf_3T_m.cir`](acXf_3T_m.cir) | xyce | ac | 13 | - |
-| [`acXf_3T_noFlip_P.cir`](acXf_3T_noFlip_P.cir) | xyce | ac | 13 | - |
-| [`acXf_m.cir`](acXf_m.cir) | xyce | ac | 17 | - |
-| [`acXf_noFlip_P.cir`](acXf_noFlip_P.cir) | xyce | ac | 17 | - |
-| [`dcFg.cir`](dcFg.cir) | xyce | dc | 18 | - |
-| [`dcFgHbt.cir`](dcFgHbt.cir) | xyce | dc | 18 | - |
-| [`dcFgHbt_3T.cir`](dcFgHbt_3T.cir) | xyce | dc | 14 | - |
-| [`dcFgHbt_3T_m.cir`](dcFgHbt_3T_m.cir) | xyce | dc | 14 | - |
-| [`dcFgHbt_3T_noFlip_P.cir`](dcFgHbt_3T_noFlip_P.cir) | xyce | dc | 14 | - |
-| [`dcFgHbt_m.cir`](dcFgHbt_m.cir) | xyce | dc | 18 | - |
-| [`dcFgHbt_noFlip_P.cir`](dcFgHbt_noFlip_P.cir) | xyce | dc | 18 | - |
-| [`dcFg_3T.cir`](dcFg_3T.cir) | xyce | dc | 14 | - |
-| [`dcFg_3T_m.cir`](dcFg_3T_m.cir) | xyce | dc | 14 | - |
-| [`dcFg_3T_noFlip_P.cir`](dcFg_3T_noFlip_P.cir) | xyce | dc | 14 | - |
-| [`dcFg_m.cir`](dcFg_m.cir) | xyce | dc | 18 | - |
-| [`dcFg_noFlip_P.cir`](dcFg_noFlip_P.cir) | xyce | dc | 18 | - |
-| [`dcFo.cir`](dcFo.cir) | xyce | dc, step | 17 | - |
-| [`dcFoEt.cir`](dcFoEt.cir) | xyce | dc, step | 17 | - |
-| [`dcFoEt_3T.cir`](dcFoEt_3T.cir) | xyce | dc, step | 13 | - |
-| [`dcFoEt_3T_m.cir`](dcFoEt_3T_m.cir) | xyce | dc, step | 13 | - |
-| [`dcFoEt_3T_noFlip_P.cir`](dcFoEt_3T_noFlip_P.cir) | xyce | dc, step | 13 | - |
-| [`dcFoEt_m.cir`](dcFoEt_m.cir) | xyce | dc, step | 17 | - |
-| [`dcFoEt_noFlip_P.cir`](dcFoEt_noFlip_P.cir) | xyce | dc, step | 17 | - |
-| [`dcFo_3T.cir`](dcFo_3T.cir) | xyce | dc, step | 13 | - |
-| [`dcFo_3T_m.cir`](dcFo_3T_m.cir) | xyce | dc, step | 13 | - |
-| [`dcFo_3T_noFlip_P.cir`](dcFo_3T_noFlip_P.cir) | xyce | dc, step | 13 | - |
-| [`dcFo_m.cir`](dcFo_m.cir) | xyce | dc, step | 17 | - |
-| [`dcFo_noFlip_P.cir`](dcFo_noFlip_P.cir) | xyce | dc, step | 17 | - |
-| [`dcRg.cir`](dcRg.cir) | xyce | dc | 18 | - |
-| [`dcRg_3T.cir`](dcRg_3T.cir) | xyce | dc | 14 | - |
-| [`dcRg_3T_m.cir`](dcRg_3T_m.cir) | xyce | dc | 14 | - |
-| [`dcRg_3T_noFlip_P.cir`](dcRg_3T_noFlip_P.cir) | xyce | dc | 14 | - |
-| [`dcRg_m.cir`](dcRg_m.cir) | xyce | dc | 18 | - |
-| [`dcRg_noFlip_P.cir`](dcRg_noFlip_P.cir) | xyce | dc | 18 | - |
-| [`dcRo.cir`](dcRo.cir) | xyce | dc, step | 17 | - |
-| [`dcRo_3T.cir`](dcRo_3T.cir) | xyce | dc, step | 13 | - |
-| [`dcRo_3T_m.cir`](dcRo_3T_m.cir) | xyce | dc, step | 13 | - |
-| [`dcRo_3T_noFlip_P.cir`](dcRo_3T_noFlip_P.cir) | xyce | dc, step | 13 | - |
-| [`dcRo_m.cir`](dcRo_m.cir) | xyce | dc, step | 17 | - |
-| [`dcRo_noFlip_P.cir`](dcRo_noFlip_P.cir) | xyce | dc, step | 17 | - |
-| [`dcTemp.cir`](dcTemp.cir) | xyce | dc, step | 18 | - |
-| [`dcTemp_3T.cir`](dcTemp_3T.cir) | xyce | dc, step | 14 | - |
-| [`dcTemp_3T_m.cir`](dcTemp_3T_m.cir) | xyce | dc, step | 14 | - |
-| [`dcTemp_3T_noFlip_P.cir`](dcTemp_3T_noFlip_P.cir) | xyce | dc, step | 14 | - |
-| [`dcTemp_m.cir`](dcTemp_m.cir) | xyce | dc, step | 18 | - |
-| [`dcTemp_noFlip_P.cir`](dcTemp_noFlip_P.cir) | xyce | dc, step | 18 | - |
-| [`vbic_3T_et_cf_TRANS.cir`](vbic_3T_et_cf_TRANS.cir) | xyce | tran | 6 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`HBT_IV.cir`](HBT_IV.cir) | xyce | dc | 4 | tiny | no | core | - |
+| [`acCf.cir`](acCf.cir) | xyce | ac | 17 | small | no | core | - |
+| [`acCf_3T.cir`](acCf_3T.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acCf_3T_m.cir`](acCf_3T_m.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acCf_3T_noFlip_P.cir`](acCf_3T_noFlip_P.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acCf_m.cir`](acCf_m.cir) | xyce | ac | 17 | small | no | core | - |
+| [`acCf_noFlip_P.cir`](acCf_noFlip_P.cir) | xyce | ac | 17 | small | no | core | - |
+| [`acXf.cir`](acXf.cir) | xyce | ac | 17 | small | no | core | - |
+| [`acXf_3T.cir`](acXf_3T.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acXf_3T_m.cir`](acXf_3T_m.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acXf_3T_noFlip_P.cir`](acXf_3T_noFlip_P.cir) | xyce | ac | 13 | small | no | core | - |
+| [`acXf_m.cir`](acXf_m.cir) | xyce | ac | 17 | small | no | core | - |
+| [`acXf_noFlip_P.cir`](acXf_noFlip_P.cir) | xyce | ac | 17 | small | no | core | - |
+| [`dcFg.cir`](dcFg.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFgHbt.cir`](dcFgHbt.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFgHbt_3T.cir`](dcFgHbt_3T.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFgHbt_3T_m.cir`](dcFgHbt_3T_m.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFgHbt_3T_noFlip_P.cir`](dcFgHbt_3T_noFlip_P.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFgHbt_m.cir`](dcFgHbt_m.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFgHbt_noFlip_P.cir`](dcFgHbt_noFlip_P.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFg_3T.cir`](dcFg_3T.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFg_3T_m.cir`](dcFg_3T_m.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFg_3T_noFlip_P.cir`](dcFg_3T_noFlip_P.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcFg_m.cir`](dcFg_m.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFg_noFlip_P.cir`](dcFg_noFlip_P.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcFo.cir`](dcFo.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcFoEt.cir`](dcFoEt.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcFoEt_3T.cir`](dcFoEt_3T.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFoEt_3T_m.cir`](dcFoEt_3T_m.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFoEt_3T_noFlip_P.cir`](dcFoEt_3T_noFlip_P.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFoEt_m.cir`](dcFoEt_m.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcFoEt_noFlip_P.cir`](dcFoEt_noFlip_P.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcFo_3T.cir`](dcFo_3T.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFo_3T_m.cir`](dcFo_3T_m.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFo_3T_noFlip_P.cir`](dcFo_3T_noFlip_P.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcFo_m.cir`](dcFo_m.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcFo_noFlip_P.cir`](dcFo_noFlip_P.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcRg.cir`](dcRg.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcRg_3T.cir`](dcRg_3T.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcRg_3T_m.cir`](dcRg_3T_m.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcRg_3T_noFlip_P.cir`](dcRg_3T_noFlip_P.cir) | xyce | dc | 14 | small | no | core | - |
+| [`dcRg_m.cir`](dcRg_m.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcRg_noFlip_P.cir`](dcRg_noFlip_P.cir) | xyce | dc | 18 | small | no | core | - |
+| [`dcRo.cir`](dcRo.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcRo_3T.cir`](dcRo_3T.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcRo_3T_m.cir`](dcRo_3T_m.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcRo_3T_noFlip_P.cir`](dcRo_3T_noFlip_P.cir) | xyce | dc, step | 13 | small | no | core | - |
+| [`dcRo_m.cir`](dcRo_m.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcRo_noFlip_P.cir`](dcRo_noFlip_P.cir) | xyce | dc, step | 17 | small | no | core | - |
+| [`dcTemp.cir`](dcTemp.cir) | xyce | dc, step | 18 | small | no | core | - |
+| [`dcTemp_3T.cir`](dcTemp_3T.cir) | xyce | dc, step | 14 | small | no | core | - |
+| [`dcTemp_3T_m.cir`](dcTemp_3T_m.cir) | xyce | dc, step | 14 | small | no | core | - |
+| [`dcTemp_3T_noFlip_P.cir`](dcTemp_3T_noFlip_P.cir) | xyce | dc, step | 14 | small | no | core | - |
+| [`dcTemp_m.cir`](dcTemp_m.cir) | xyce | dc, step | 18 | small | no | core | - |
+| [`dcTemp_noFlip_P.cir`](dcTemp_noFlip_P.cir) | xyce | dc, step | 18 | small | no | core | - |
+| [`vbic_3T_et_cf_TRANS.cir`](vbic_3T_et_cf_TRANS.cir) | xyce | tran | 6 | tiny | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

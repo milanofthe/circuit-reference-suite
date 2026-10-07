@@ -11,18 +11,18 @@ test | ngspice | status: **incomplete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`DFF_Y_ECL_HICUM.sp`](DFF_Y_ECL_HICUM.sp) | ngspice | tran | 27 | - |
-| [`DFF_Y_ECL_VBIC.sp`](DFF_Y_ECL_VBIC.sp) | ngspice | tran | 26 | - |
-| [`ECL-OR.cir`](ECL-OR.cir) | ngspice | tran | 16 | - |
-| [`ECL-RO-5.cir`](ECL-RO-5.cir) | ngspice | tran | 118 | - |
-| [`bip_subsmod.sp`](bip_subsmod.sp) | ngspice | dc | 4 | - |
-| [`hic0_gum.sp`](hic0_gum.sp) | ngspice | dc | 5 | - |
-| [`hic0_out.sp`](hic0_out.sp) | ngspice | dc | 5 | - |
-| [`vbic_out.sp`](vbic_out.sp) | ngspice | dc | 4 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`DFF_Y_ECL_HICUM.sp`](DFF_Y_ECL_HICUM.sp) | ngspice | tran | 27 | small | no | specific (.control script) | - |
+| [`DFF_Y_ECL_VBIC.sp`](DFF_Y_ECL_VBIC.sp) | ngspice | tran | 26 | small | no | specific (.control script) | - |
+| [`ECL-OR.cir`](ECL-OR.cir) | ngspice | tran | 16 | small | no | specific (.control script) | - |
+| [`ECL-RO-5.cir`](ECL-RO-5.cir) | ngspice | tran | 118 | medium | no | specific (.control script) | - |
+| [`bip_subsmod.sp`](bip_subsmod.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`hic0_gum.sp`](hic0_gum.sp) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
+| [`hic0_out.sp`](hic0_out.sp) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
+| [`vbic_out.sp`](vbic_out.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

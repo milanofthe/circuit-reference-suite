@@ -11,34 +11,34 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`circuit3.cir`](circuit3.cir) | xyce | hb | 5 | - |
-| [`common_emitter_hb.cir`](common_emitter_hb.cir) | xyce | hb, op | 10 | - |
-| [`common_emitter_hb_basker.cir`](common_emitter_hb_basker.cir) | xyce | hb, op | 10 | - |
-| [`common_emitter_hb_blockbasker.cir`](common_emitter_hb_blockbasker.cir) | xyce | hb, op | 10 | - |
-| [`gilbert_cell_hb.cir`](gilbert_cell_hb.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hb1.cir`](gilbert_cell_hb1.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbTdsamples.cir`](gilbert_cell_hbTdsamples.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbTran.cir`](gilbert_cell_hbTran.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbTran2.cir`](gilbert_cell_hbTran2.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbTran_copy1.cir`](gilbert_cell_hbTran_copy1.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbTran_copy2.cir`](gilbert_cell_hbTran_copy2.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbTran_copy3.cir`](gilbert_cell_hbTran_copy3.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbTran_tahb.cir`](gilbert_cell_hbTran_tahb.cir) | xyce | tran | 20 | - |
-| [`gilbert_cell_hbt.cir`](gilbert_cell_hbt.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbt1.cir`](gilbert_cell_hbt1.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbt_tahb.cir`](gilbert_cell_hbt_tahb.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbtbox.cir`](gilbert_cell_hbtbox.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_hbtdia.cir`](gilbert_cell_hbtdia.cir) | xyce | hb | 20 | - |
-| [`gilbert_cell_mpde.cir`](gilbert_cell_mpde.cir) | xyce | mpde | 20 | - |
-| [`invert_hb.cir`](invert_hb.cir) | xyce | hb | 7 | - |
-| [`invert_hb1.cir`](invert_hb1.cir) | xyce | hb | 7 | - |
-| [`invert_hb_accurate.cir`](invert_hb_accurate.cir) | xyce | hb | 7 | - |
-| [`invert_hb_accurate_nostartup.cir`](invert_hb_accurate_nostartup.cir) | xyce | hb | 7 | - |
-| [`invert_hb_corrected.cir`](invert_hb_corrected.cir) | xyce | hb | 7 | - |
-| [`invert_hb_lapack.cir`](invert_hb_lapack.cir) | xyce | hb | 7 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`circuit3.cir`](circuit3.cir) | xyce | hb | 5 | tiny | no | specific (analysis hb) | - |
+| [`common_emitter_hb.cir`](common_emitter_hb.cir) | xyce | hb, op | 10 | small | no | specific (analysis hb) | - |
+| [`common_emitter_hb_basker.cir`](common_emitter_hb_basker.cir) | xyce | hb, op | 10 | small | no | specific (analysis hb) | - |
+| [`common_emitter_hb_blockbasker.cir`](common_emitter_hb_blockbasker.cir) | xyce | hb, op | 10 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hb.cir`](gilbert_cell_hb.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hb1.cir`](gilbert_cell_hb1.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbTdsamples.cir`](gilbert_cell_hbTdsamples.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbTran.cir`](gilbert_cell_hbTran.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbTran2.cir`](gilbert_cell_hbTran2.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbTran_copy1.cir`](gilbert_cell_hbTran_copy1.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbTran_copy2.cir`](gilbert_cell_hbTran_copy2.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbTran_copy3.cir`](gilbert_cell_hbTran_copy3.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbTran_tahb.cir`](gilbert_cell_hbTran_tahb.cir) | xyce | tran | 20 | small | no | core | - |
+| [`gilbert_cell_hbt.cir`](gilbert_cell_hbt.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbt1.cir`](gilbert_cell_hbt1.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbt_tahb.cir`](gilbert_cell_hbt_tahb.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbtbox.cir`](gilbert_cell_hbtbox.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_hbtdia.cir`](gilbert_cell_hbtdia.cir) | xyce | hb | 20 | small | no | specific (analysis hb) | - |
+| [`gilbert_cell_mpde.cir`](gilbert_cell_mpde.cir) | xyce | mpde | 20 | small | no | specific (analysis mpde) | - |
+| [`invert_hb.cir`](invert_hb.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
+| [`invert_hb1.cir`](invert_hb1.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
+| [`invert_hb_accurate.cir`](invert_hb_accurate.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
+| [`invert_hb_accurate_nostartup.cir`](invert_hb_accurate_nostartup.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
+| [`invert_hb_corrected.cir`](invert_hb_corrected.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
+| [`invert_hb_lapack.cir`](invert_hb_lapack.cir) | xyce | hb | 7 | tiny | no | specific (analysis hb) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

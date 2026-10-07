@@ -11,16 +11,16 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`inverter_ro.sp`](inverter_ro.sp) | ngspice | tran | 14 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
-| [`inverter_transient.sp`](inverter_transient.sp) | ngspice | tran | 12 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
-| [`netlist_nmos.sp`](netlist_nmos.sp) | ngspice | dc | 5 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
-| [`netlist_pmos.sp`](netlist_pmos.sp) | ngspice | dc | 5 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
-| [`ringosc_17stg.sp`](ringosc_17stg.sp) | ngspice | tran | 35 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
-| [`simple_inverter_dc.sp`](simple_inverter_dc.sp) | ngspice | dc | 4 | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`inverter_ro.sp`](inverter_ro.sp) | ngspice | tran | 14 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| [`inverter_transient.sp`](inverter_transient.sp) | ngspice | tran | 12 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| [`netlist_nmos.sp`](netlist_nmos.sp) | ngspice | dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| [`netlist_pmos.sp`](netlist_pmos.sp) | ngspice | dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| [`ringosc_17stg.sp`](ringosc_17stg.sp) | ngspice | tran | 35 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
+| [`simple_inverter_dc.sp`](simple_inverter_dc.sp) | ngspice | dc | 4 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

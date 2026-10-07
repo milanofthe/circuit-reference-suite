@@ -11,14 +11,14 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`F5TurboV2thermal-ic-out.cir`](F5TurboV2thermal-ic-out.cir) | ngspice | tran, ac | 74 | - |
-| [`TLV6001-test.cir`](TLV6001-test.cir) | ngspice | ac | 201 | - |
-| [`TLV9002-test.cir`](TLV9002-test.cir) | ngspice | ac | 228 | - |
-| [`simple-tran.cir`](simple-tran.cir) | ngspice | tran | 3 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`F5TurboV2thermal-ic-out.cir`](F5TurboV2thermal-ic-out.cir) | ngspice | tran, ac | 74 | small | no | specific (.control script) | - |
+| [`TLV6001-test.cir`](TLV6001-test.cir) | ngspice | ac | 201 | medium | no | specific (.control script) | - |
+| [`TLV9002-test.cir`](TLV9002-test.cir) | ngspice | ac | 228 | medium | no | specific (.control script) | - |
+| [`simple-tran.cir`](simple-tran.cir) | ngspice | tran | 3 | tiny | yes | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

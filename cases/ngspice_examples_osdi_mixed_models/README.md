@@ -11,13 +11,13 @@ test | ngspice | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`bb-psp_ro.sp`](bb-psp_ro.sp) | ngspice | tran | 23 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk), [openvaf_psp103](../../libraries/openvaf_psp103) |
-| [`bsimbulk_inverter.sp`](bsimbulk_inverter.sp) | ngspice | tran, dc | 7 | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
-| [`psp_inverter.sp`](psp_inverter.sp) | ngspice | tran, dc | 7 | [openvaf_psp103](../../libraries/openvaf_psp103) |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`bb-psp_ro.sp`](bb-psp_ro.sp) | ngspice | tran | 23 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk), [openvaf_psp103](../../libraries/openvaf_psp103) |
+| [`bsimbulk_inverter.sp`](bsimbulk_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
+| [`psp_inverter.sp`](psp_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

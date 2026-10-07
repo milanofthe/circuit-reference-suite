@@ -11,35 +11,35 @@ test | xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`hb-csv.cir`](hb-csv.cir) | xyce | hb | 4 | - |
-| [`hb-fd-td-diff-formats.cir`](hb-fd-td-diff-formats.cir) | xyce | hb | 6 | - |
-| [`hb-fd-td-step-gnuplot.cir`](hb-fd-td-step-gnuplot.cir) | xyce | hb, step, step | 5 | - |
-| [`hb-files-fd-td.cir`](hb-files-fd-td.cir) | xyce | hb | 6 | - |
-| [`hb-files-fd.cir`](hb-files-fd.cir) | xyce | hb | 6 | - |
-| [`hb-files-td.cir`](hb-files-td.cir) | xyce | hb | 6 | - |
-| [`hb-files.cir`](hb-files.cir) | xyce | hb | 6 | - |
-| [`hb-gnuplot.cir`](hb-gnuplot.cir) | xyce | hb | 5 | - |
-| [`hb-prn-diff.cir`](hb-prn-diff.cir) | xyce | hb | 3 | - |
-| [`hb-prn-saveic-startup.cir`](hb-prn-saveic-startup.cir) | xyce | hb | 2 | - |
-| [`hb-prn.cir`](hb-prn.cir) | xyce | hb | 4 | - |
-| [`hb-probe-defaults-to-prn.cir`](hb-probe-defaults-to-prn.cir) | xyce | hb | 4 | - |
-| [`hb-probe-fallback-defaults-to-prn.cir`](hb-probe-fallback-defaults-to-prn.cir) | xyce | hb | 4 | - |
-| [`hb-raw-defaults-to-prn.cir`](hb-raw-defaults-to-prn.cir) | xyce | hb | 4 | - |
-| [`hb-raw-fallback-defaults-to-prn.cir`](hb-raw-fallback-defaults-to-prn.cir) | xyce | hb | 4 | - |
-| [`hb-step-csv.cir`](hb-step-csv.cir) | xyce | hb, step | 4 | - |
-| [`hb-step-gnuplot.cir`](hb-step-gnuplot.cir) | xyce | hb, step, step | 5 | - |
-| [`hb-step-prn.cir`](hb-step-prn.cir) | xyce | hb, step | 4 | - |
-| [`hb-step-tecplot.cir`](hb-step-tecplot.cir) | xyce | hb, step | 4 | - |
-| [`hb-td-prn.cir`](hb-td-prn.cir) | xyce | hb | 4 | - |
-| [`hb-tecplot.cir`](hb-tecplot.cir) | xyce | hb | 4 | - |
-| [`op-hb-ordering.cir`](op-hb-ordering.cir) | xyce | op, hb | 4 | - |
-| [`op-hb_fd-ordering.cir`](op-hb_fd-ordering.cir) | xyce | op, hb | 4 | - |
-| [`op-hb_ic-ordering.cir`](op-hb_ic-ordering.cir) | xyce | op, hb | 4 | - |
-| [`op-hb_startup-ordering.cir`](op-hb_startup-ordering.cir) | xyce | op, hb | 4 | - |
-| [`op-hb_td-ordering.cir`](op-hb_td-ordering.cir) | xyce | op, hb | 4 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`hb-csv.cir`](hb-csv.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-fd-td-diff-formats.cir`](hb-fd-td-diff-formats.cir) | xyce | hb | 6 | tiny | no | specific (analysis hb) | - |
+| [`hb-fd-td-step-gnuplot.cir`](hb-fd-td-step-gnuplot.cir) | xyce | hb, step, step | 5 | tiny | no | specific (analysis hb) | - |
+| [`hb-files-fd-td.cir`](hb-files-fd-td.cir) | xyce | hb | 6 | tiny | no | specific (analysis hb) | - |
+| [`hb-files-fd.cir`](hb-files-fd.cir) | xyce | hb | 6 | tiny | no | specific (analysis hb) | - |
+| [`hb-files-td.cir`](hb-files-td.cir) | xyce | hb | 6 | tiny | no | specific (analysis hb) | - |
+| [`hb-files.cir`](hb-files.cir) | xyce | hb | 6 | tiny | no | specific (analysis hb) | - |
+| [`hb-gnuplot.cir`](hb-gnuplot.cir) | xyce | hb | 5 | tiny | no | specific (analysis hb) | - |
+| [`hb-prn-diff.cir`](hb-prn-diff.cir) | xyce | hb | 3 | tiny | no | specific (analysis hb) | - |
+| [`hb-prn-saveic-startup.cir`](hb-prn-saveic-startup.cir) | xyce | hb | 2 | tiny | yes | specific (analysis hb) | - |
+| [`hb-prn.cir`](hb-prn.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-probe-defaults-to-prn.cir`](hb-probe-defaults-to-prn.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-probe-fallback-defaults-to-prn.cir`](hb-probe-fallback-defaults-to-prn.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-raw-defaults-to-prn.cir`](hb-raw-defaults-to-prn.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-raw-fallback-defaults-to-prn.cir`](hb-raw-fallback-defaults-to-prn.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-step-csv.cir`](hb-step-csv.cir) | xyce | hb, step | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-step-gnuplot.cir`](hb-step-gnuplot.cir) | xyce | hb, step, step | 5 | tiny | no | specific (analysis hb) | - |
+| [`hb-step-prn.cir`](hb-step-prn.cir) | xyce | hb, step | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-step-tecplot.cir`](hb-step-tecplot.cir) | xyce | hb, step | 4 | tiny | no | specific (analysis hb) | - |
+| [`hb-td-prn.cir`](hb-td-prn.cir) | xyce | hb | 4 | tiny | yes | specific (analysis hb) | - |
+| [`hb-tecplot.cir`](hb-tecplot.cir) | xyce | hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`op-hb-ordering.cir`](op-hb-ordering.cir) | xyce | op, hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`op-hb_fd-ordering.cir`](op-hb_fd-ordering.cir) | xyce | op, hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`op-hb_ic-ordering.cir`](op-hb_ic-ordering.cir) | xyce | op, hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`op-hb_startup-ordering.cir`](op-hb_startup-ordering.cir) | xyce | op, hb | 4 | tiny | no | specific (analysis hb) | - |
+| [`op-hb_td-ordering.cir`](op-hb_td-ordering.cir) | xyce | op, hb | 4 | tiny | no | specific (analysis hb) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

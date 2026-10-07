@@ -11,35 +11,35 @@ test | hspice, xyce | status: **complete**
 
 ## Netlists
 
-| file | dialect | analyses | devices | libraries |
-|---|---|---|---|---|
-| [`curly_braces_for_simple_function_calls.cir`](curly_braces_for_simple_function_calls.cir) | xyce | dc | 3 | - |
-| [`curly_braces_for_simple_function_calls.cir.hspice`](curly_braces_for_simple_function_calls.cir.hspice) | hspice | dc | 3 | - |
-| [`ext_ascii_chars_comment_line.cir`](ext_ascii_chars_comment_line.cir) | xyce | tran | 3 | - |
-| [`ext_ascii_chars_comment_line.cir.hspice`](ext_ascii_chars_comment_line.cir.hspice) | hspice | tran | 3 | - |
-| [`gnd_exclamation_point_node_symbol.cir`](gnd_exclamation_point_node_symbol.cir) | xyce | dc | 3 | - |
-| [`gnd_exclamation_point_node_symbol.cir.hspice`](gnd_exclamation_point_node_symbol.cir.hspice) | hspice | dc | 3 | - |
-| [`gnd_node_symbol.cir`](gnd_node_symbol.cir) | xyce | dc | 3 | - |
-| [`gnd_node_symbol.cir.hspice`](gnd_node_symbol.cir.hspice) | hspice | dc | 3 | - |
-| [`ground_node_symbol.cir`](ground_node_symbol.cir) | xyce | dc | 3 | - |
-| [`ground_node_symbol.cir.hspice`](ground_node_symbol.cir.hspice) | hspice | dc | 3 | - |
-| [`ground_node_synonym_in_subckt_instantiation.cir`](ground_node_synonym_in_subckt_instantiation.cir) | xyce | dc | 5 | - |
-| [`ground_node_synonym_in_subckt_instantiation.cir.hspice`](ground_node_synonym_in_subckt_instantiation.cir.hspice) | hspice | dc | 5 | - |
-| [`library_parsing.cir`](library_parsing.cir) | xyce | dc | 2 | - |
-| [`library_parsing.cir.hspice`](library_parsing.cir.hspice) | hspice | dc | 2 | - |
-| [`macro_statement.cir`](macro_statement.cir) | xyce | tran | 10 | - |
-| [`macro_statement.cir.hspice`](macro_statement.cir.hspice) | hspice | tran | 10 | - |
-| [`mixed_param_and_func.cir`](mixed_param_and_func.cir) | xyce | dc | 3 | - |
-| [`mixed_param_and_func.cir.hspice`](mixed_param_and_func.cir.hspice) | hspice | dc | 3 | - |
-| [`solution_dependent_resistors.cir`](solution_dependent_resistors.cir) | xyce | dc | 5 | - |
-| [`solution_dependent_resistors.cir.hspice`](solution_dependent_resistors.cir.hspice) | hspice | dc | 5 | - |
-| [`special_variables.cir`](special_variables.cir) | xyce | ac | 3 | - |
-| [`special_variables.cir.hspice`](special_variables.cir.hspice) | hspice | ac | 3 | - |
-| [`subcircuit_node_delineation.cir`](subcircuit_node_delineation.cir) | xyce | tran | 8 | - |
-| [`subcircuit_node_delineation.cir.hspice`](subcircuit_node_delineation.cir.hspice) | hspice | tran | 8 | - |
-| [`ternary_operator.cir`](ternary_operator.cir) | xyce | dc | 4 | - |
-| [`ternary_operator.cir.hspice`](ternary_operator.cir.hspice) | hspice | dc | 4 | - |
+| file | dialect | analyses | devices | size | linear | portability | libraries |
+|---|---|---|---|---|---|---|---|
+| [`curly_braces_for_simple_function_calls.cir`](curly_braces_for_simple_function_calls.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`curly_braces_for_simple_function_calls.cir.hspice`](curly_braces_for_simple_function_calls.cir.hspice) | hspice | dc | 3 | tiny | yes | core | - |
+| [`ext_ascii_chars_comment_line.cir`](ext_ascii_chars_comment_line.cir) | xyce | tran | 3 | tiny | yes | core | - |
+| [`ext_ascii_chars_comment_line.cir.hspice`](ext_ascii_chars_comment_line.cir.hspice) | hspice | tran | 3 | tiny | yes | core | - |
+| [`gnd_exclamation_point_node_symbol.cir`](gnd_exclamation_point_node_symbol.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`gnd_exclamation_point_node_symbol.cir.hspice`](gnd_exclamation_point_node_symbol.cir.hspice) | hspice | dc | 3 | tiny | yes | core | - |
+| [`gnd_node_symbol.cir`](gnd_node_symbol.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`gnd_node_symbol.cir.hspice`](gnd_node_symbol.cir.hspice) | hspice | dc | 3 | tiny | yes | core | - |
+| [`ground_node_symbol.cir`](ground_node_symbol.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`ground_node_symbol.cir.hspice`](ground_node_symbol.cir.hspice) | hspice | dc | 3 | tiny | yes | core | - |
+| [`ground_node_synonym_in_subckt_instantiation.cir`](ground_node_synonym_in_subckt_instantiation.cir) | xyce | dc | 5 | tiny | yes | core | - |
+| [`ground_node_synonym_in_subckt_instantiation.cir.hspice`](ground_node_synonym_in_subckt_instantiation.cir.hspice) | hspice | dc | 5 | tiny | yes | core | - |
+| [`library_parsing.cir`](library_parsing.cir) | xyce | dc | 2 | tiny | no | core | - |
+| [`library_parsing.cir.hspice`](library_parsing.cir.hspice) | hspice | dc | 2 | tiny | no | core | - |
+| [`macro_statement.cir`](macro_statement.cir) | xyce | tran | 10 | small | yes | core | - |
+| [`macro_statement.cir.hspice`](macro_statement.cir.hspice) | hspice | tran | 10 | small | yes | core | - |
+| [`mixed_param_and_func.cir`](mixed_param_and_func.cir) | xyce | dc | 3 | tiny | yes | core | - |
+| [`mixed_param_and_func.cir.hspice`](mixed_param_and_func.cir.hspice) | hspice | dc | 3 | tiny | yes | core | - |
+| [`solution_dependent_resistors.cir`](solution_dependent_resistors.cir) | xyce | dc | 5 | tiny | no | core | - |
+| [`solution_dependent_resistors.cir.hspice`](solution_dependent_resistors.cir.hspice) | hspice | dc | 5 | tiny | yes | core | - |
+| [`special_variables.cir`](special_variables.cir) | xyce | ac | 3 | tiny | yes | core | - |
+| [`special_variables.cir.hspice`](special_variables.cir.hspice) | hspice | ac | 3 | tiny | yes | core | - |
+| [`subcircuit_node_delineation.cir`](subcircuit_node_delineation.cir) | xyce | tran | 8 | tiny | yes | core | - |
+| [`subcircuit_node_delineation.cir.hspice`](subcircuit_node_delineation.cir.hspice) | hspice | tran | 8 | tiny | yes | core | - |
+| [`ternary_operator.cir`](ternary_operator.cir) | xyce | dc | 4 | tiny | yes | core | - |
+| [`ternary_operator.cir.hspice`](ternary_operator.cir.hspice) | hspice | dc | 4 | tiny | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
+Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
 Generated by `python -m circref build`. Do not edit by hand.

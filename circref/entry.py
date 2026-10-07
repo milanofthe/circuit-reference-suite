@@ -132,10 +132,18 @@ class Graph:
     subckts: dict[str, Counter] = field(default_factory=lambda: {"": Counter()})
     libraries: set[str] = field(default_factory=set)
     files: set[Path] = field(default_factory=set)
+    dialect: str = ""
+    models: dict[str, str] = field(default_factory=dict)        # every file, libraries too
+    control: bool = False
+    veriloga: bool = False
+
+    @property
+    def kinds(self) -> Counter:
+        return netlist.flat_kinds(self.subckts)
 
     @property
     def devices(self) -> int:
-        return netlist.flat_count(self.subckts)
+        return sum(self.kinds.values())
 
     def errors(self) -> list[str]:
         return [e.error for e in self.edges if e.error]
@@ -193,7 +201,7 @@ def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, 
 
 
 def walk(case: Case, nl: Netlist) -> Graph:
-    g = Graph()
+    g = Graph(dialect=nl.dialect)
     start = case.directory / nl.file
     queue = [(start, nl.dialect, None, True)]
     seen: set = set()
@@ -216,6 +224,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
                 g.libraries.add(entry.id)
             parsed = netlist.parse(path, dialect, deck)
             models |= parsed.models
+            g.veriloga |= dialect == "veriloga"
             osdi_devices |= parsed.osdi_devices
             va_types |= parsed.va_types
             defined |= set(parsed.instances) - {""}
@@ -230,6 +239,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
                                     f"{path.relative_to(ROOT).as_posix()}: no section {section!r}"))
                 continue
             if entry is case:
+                g.control |= parsed.control
                 g.analyses += [a for a in parsed.analyses if a not in g.analyses]
                 for name, counts in parsed.instances.items():
                     g.subckts.setdefault(name, Counter()).update(counts)
@@ -245,6 +255,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
         # resolve table maps the type itself onto the source.
         needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
+        g.models = models
         if not needed:
             undefined = sorted(used - defined) if nl.dialect in netlist.SPICE else []
             if undefined:
