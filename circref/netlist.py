@@ -9,6 +9,7 @@ Verilog-A sources only for their modules and ``include`` directives.
 """
 from __future__ import annotations
 
+import gzip
 import re
 from collections import Counter
 from dataclasses import dataclass, field
@@ -71,7 +72,10 @@ def dialect_of(path: Path, inherited: str) -> str:
 
 
 def _text(path: Path) -> str:
-    return path.read_bytes().decode("latin-1")
+    data = path.read_bytes()
+    if path.suffix.lower() == ".gz":                    # committed as upstream ships it
+        data = gzip.decompress(data)
+    return data.decode("latin-1")
 
 
 def _unquote(s: str) -> str:

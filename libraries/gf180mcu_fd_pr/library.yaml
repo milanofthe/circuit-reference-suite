@@ -1,0 +1,14 @@
+id: gf180mcu_fd_pr
+title: GlobalFoundries GF180MCU device models (ngspice, Xyce)
+source:
+  name: gf180mcu_fd_pr
+  url: https://github.com/fossi-foundation/gf180mcu-fd-pr
+  license: Apache-2.0
+  authors: [GlobalFoundries, Google]
+  commit: e11a8c98dfc905561d38813b1416e65a4b9280e9
+files:
+- {path: models/ngspice/design.spice, sha256: 7e222f050318388f37543a64fbd0be55cc15e4b93f57501a09f7c159c4c9e561}
+- {path: models/ngspice/sm141064.spice, sha256: 69a7ab877344a6d477fdd11440457f64e7ad88a624504a737a161da463de8bc8}
+- {path: models/xyce/design.spice, sha256: 173621af70f65ece0cef9c8d51f1ebdabaf762db5ef1592f86ab4fb0d50bbd0b}
+- {path: models/xyce/sm141064.spice, sha256: d3fba5094b1d5e841938b7eeb15645990caa166a47014dbac765639ad45821bb}
+subset: only the model files the cases here include

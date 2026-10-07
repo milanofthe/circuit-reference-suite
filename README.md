@@ -92,6 +92,14 @@ reference solutions. License per case and library.
 | [analoggym_tan_clia_pin_3](cases/analoggym_tan_clia_pin_3) | 2 | ngspice | ac, dc, tran | 162 | analoggym_sky130 | adapted (2) |
 | [analoggym_yan_az_pin_3](cases/analoggym_yan_az_pin_3) | 2 | ngspice | ac, dc, tran | 152 | analoggym_sky130 | adapted (2) |
 
+### BeGAN
+
+[https://github.com/UMN-EDA/BeGAN-benchmarks](https://github.com/UMN-EDA/BeGAN-benchmarks) | 1 cases, 8 netlists | BSD-3-Clause
+
+| case | netlists | dialects | analyses | devices | libraries | status |
+|---|---|---|---|---|---|---|
+| [began_asap7](cases/began_asap7) | 8 | spice3 | op | 106935 | - | complete |
+
 ### Cadnip.jl
 
 [https://github.com/NyanCAD/Cadnip.jl](https://github.com/NyanCAD/Cadnip.jl) | 3 cases, 3 netlists | MIT
@@ -110,6 +118,16 @@ reference solutions. License per case and library.
 |---|---|---|---|---|---|---|
 | [cedarsim_spectrenetlistparser_jl_test_examples](cases/cedarsim_spectrenetlistparser_jl_test_examples) | 1 | spectre | sp | 165 | - | complete |
 | [cedarsim_spectrenetlistparser_jl_test_spice_examples](cases/cedarsim_spectrenetlistparser_jl_test_spice_examples) | 1 | cedarsim | tran | 5 | - | complete |
+
+### gf180mcu_fd_pr
+
+[https://github.com/fossi-foundation/gf180mcu-fd-pr](https://github.com/fossi-foundation/gf180mcu-fd-pr) | 3 cases, 5 netlists | Apache-2.0
+
+| case | netlists | dialects | analyses | devices | libraries | status |
+|---|---|---|---|---|---|---|
+| [gf180mcu_ngspice_gf180mcu_fd_sc_mcu7t5v0](cases/gf180mcu_ngspice_gf180mcu_fd_sc_mcu7t5v0) | 3 | ngspice | tran | 12 | gf180mcu_fd_pr | complete |
+| [gf180mcu_xyce_bjt_beta](cases/gf180mcu_xyce_bjt_beta) | 1 | xyce | dc, step | 3 | gf180mcu_fd_pr | complete |
+| [gf180mcu_xyce_diode](cases/gf180mcu_xyce_diode) | 1 | xyce | dc, step | 2 | gf180mcu_fd_pr | complete |
 
 ### gnucap
 
@@ -407,6 +425,14 @@ reference solutions. License per case and library.
 | case | netlists | dialects | analyses | devices | libraries | status |
 |---|---|---|---|---|---|---|
 | [spice_ts_fixtures_circuits](cases/spice_ts_fixtures_circuits) | 4 | spice3 | op, tran | 3 | - | complete |
+
+### SPICE3f5
+
+[https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/spice3f5.tar.gz](https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/spice3f5.tar.gz) | 1 cases, 19 netlists | LicenseRef-UCB-Spice
+
+| case | netlists | dialects | analyses | devices | libraries | status |
+|---|---|---|---|---|---|---|
+| [spice3f5_examples](cases/spice3f5_examples) | 19 | spice3 | ac, dc, disto, noise, pz, tran | 389 | - | complete |
 
 ### SpiceSharpParser
 
@@ -1130,6 +1156,7 @@ the case are expanded; a device from a library or a compiled model counts once.
 | library | content | files | source | license |
 |---|---|---|---|---|
 | [analoggym_sky130](libraries/analoggym_sky130) | SkyWater SKY130 models as installed by open_pdks, typical corner | 170 | [AnalogGym](https://github.com/CODA-Team/AnalogGym) | Apache-2.0 |
+| [gf180mcu_fd_pr](libraries/gf180mcu_fd_pr) | GlobalFoundries GF180MCU device models (ngspice, Xyce) | 4 | [gf180mcu_fd_pr](https://github.com/fossi-foundation/gf180mcu-fd-pr) | Apache-2.0 |
 | [ihp_sg13g2](libraries/ihp_sg13g2) | IHP SG13G2 device models (ngspice) and their Verilog-A sources | 39 | [IHP-Open-PDK](https://github.com/IHP-GmbH/IHP-Open-PDK) | Apache-2.0 |
 | [openvaf_asmhemt](libraries/openvaf_asmhemt) | ASM-HEMT GaN HEMT model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
 | [openvaf_bsim6](libraries/openvaf_bsim6) | BSIM6 bulk MOSFET model | 1 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | LicenseRef-BSIM |
