@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_1774
+title: Xyce_Regression Certification_Tests/BUG_1774
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1774
+files:
+- {path: HBT_IV_step.cir, sha256: 7756c9d93a061082d104aa910fa23d3a75d9ad6ef8b2cd75ff5c63d6c2bc1009}
+netlists:
+- {file: HBT_IV_step.cir, dialect: xyce}

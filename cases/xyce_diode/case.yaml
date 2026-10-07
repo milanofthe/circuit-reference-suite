@@ -1,0 +1,32 @@
+id: xyce_diode
+title: Xyce_Regression DIODE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/DIODE
+files:
+- {path: Level2_Temp_Dep_Breakdown.cir, sha256: 9c52a577a2f0b0a7419160b6cd340894ed41ebc403023a3b3f1d809d171bee0e}
+- {path: Zener_5229.cir, sha256: aefc2180e4bb6a5b39e3f4105546f3c5ba22af3b74f003d2d4d3c55f45938e9e}
+- {path: diode.cir, sha256: 334e2dde43335851dc96f76ba5e78ef3e0b1de142cca073b3c70f83937637d8c}
+- {path: diode_with_sidewall.cir, sha256: fb7d40fe14305d830afa0c4477e68b2da541f428883cec677f4c8cb13906d658}
+- {path: diode_with_sidewall_fcs.cir, sha256: 7dfb595eacc8071425df3cdea35238e114e7f41c774625e349569a38a0c3fd60}
+- {path: diode_with_sidewall_mjsw.cir, sha256: 412a65ec4ff6660107a4c1e8e1bc49bff56bb6357f4c56cf40db4aae90112b59}
+- {path: diode_with_sidewall_nbv.cir, sha256: 835b5917349283838014b07082eac9075fbeba36d492b11776af3b2ecddd15b1}
+- {path: diode_with_sidewall_ns.cir, sha256: 52e718dc28c5fd15441c84091d2c1ddb8a3bb22172c75852a69e8f788ec15fc9}
+- {path: diode_with_sidewall_php.cir, sha256: 3c06bbd3bde127cbe659f376720587feb270b56811306eb709e527d2f6ef0f7e}
+- {path: diode_with_sidewall_temp.cir, sha256: fc7398f74d7726637ec379138a8893d8ca05b764c7fdac947934a81db414f907}
+netlists:
+- {file: Level2_Temp_Dep_Breakdown.cir, dialect: xyce}
+- {file: Zener_5229.cir, dialect: xyce}
+- {file: diode.cir, dialect: xyce}
+- {file: diode_with_sidewall.cir, dialect: xyce}
+- {file: diode_with_sidewall_fcs.cir, dialect: xyce}
+- {file: diode_with_sidewall_mjsw.cir, dialect: xyce}
+- {file: diode_with_sidewall_nbv.cir, dialect: xyce}
+- {file: diode_with_sidewall_ns.cir, dialect: xyce}
+- {file: diode_with_sidewall_php.cir, dialect: xyce}
+- {file: diode_with_sidewall_temp.cir, dialect: xyce}

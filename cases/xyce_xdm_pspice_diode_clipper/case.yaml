@@ -1,0 +1,16 @@
+id: xyce_xdm_pspice_diode_clipper
+title: Xyce_Regression XDM/PSPICE/DIODE_CLIPPER
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/PSPICE/DIODE_CLIPPER
+files:
+- {path: diodeClipper.cir, sha256: a1f4cfecabd7efa6f4a29b9727b00fee450be228d256ea24d92409ad538f9d8c}
+- {path: diodeClipper.cir.pspice, sha256: b8f8c17214316423d01bc11dd4edc2ad0fc98e15bb6d311e80e5459d05fe5987}
+netlists:
+- {file: diodeClipper.cir, dialect: xyce}
+- {file: diodeClipper.cir.pspice, dialect: pspice}

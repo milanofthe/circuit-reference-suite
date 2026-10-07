@@ -1,0 +1,58 @@
+id: xyce_measure_dc
+title: Xyce_Regression MEASURE_DC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MEASURE_DC
+files:
+- {path: AvgTest1DC.cir, sha256: 71764698898c2c14ceffd96f9c6b05a5527606e7c9713d716b41d53a40080cd4}
+- {path: AvgTest2DC.cir, sha256: 28ddd861d4b00fe88d462da28adb7f01f00ddff832bfbbc89500e05333f5347c}
+- {path: DerivTest1DC.cir, sha256: 1e9c93463103c3a38f1a4419980caa495d7ebe77912a6e520e9538dc2cd438ee}
+- {path: DotData.cir, sha256: 2402cee4da9640c46c501a4b6610fde3092fbe9f298924d0c73ba0e4d5b6824a}
+- {path: DotOpDotDC.cir, sha256: 24ce109cba8cc990d926633eb525d62e7db9ff0a68ec7f771871d60a1a415ab6}
+- {path: DotOpOnly.cir, sha256: f1f0c9d7640b42b667b64df2ad2f1c8293a5d6694c46aab37584c9f4ec1ac574}
+- {path: DoubleDCOP.cir, sha256: b4b8bc5c29f36dc786b2e348e08b01a32af7a313a99d9a7aea7adb1fed0ed380}
+- {path: EquationEvalTestDC.cir, sha256: 843357f49b30533406ca3b3290849792f17d7a91779847b90daae96b8eaec8cc}
+- {path: ErrorFuncTest1DC.cir, sha256: 5515c2b8e0f7035600476d881c8c72e1497a91b0b905f899abf12e649071bc4f}
+- {path: ErrorTest1DC.cir, sha256: 9a2b879e05d3d8dbab9f5d9c1f7a767f8cf4cbac736db62ac0af2f6b2c32b19b}
+- {path: ErrorTest2DC.cir, sha256: 27ec44800ec979719d9f37c1bd9e10cd6018f4d3060b76f1f66ad3be47a8ac42}
+- {path: FindWhenTest1DC.cir, sha256: 15f825f867a71c29855bbf2e9b8b88b16c4fcea6bd7e04addb83e9661af1dc59}
+- {path: FindWhenTest2DC.cir, sha256: d1f4377fce04a4ae2028011cb0b2424c95446f17b72e7ed370bef6d5073e6453}
+- {path: IntegTest1DC.cir, sha256: 51521719061c2b6691bea869c244941383b381aa5ddf90621b57fe49c7f98651}
+- {path: LeadCurrentAndPowerTestDC.cir, sha256: 9a7f01d26f73572de2cb27c9331ebfc096e95f1336441b35edc5657e4a233a89}
+- {path: MaxMinPPTest1DC.cir, sha256: e4230e89a088309a2ae38d5e63e4af75e74ac4e96e3dd2bb629765568cd4da48}
+- {path: MaxMinPPTest2DC.cir, sha256: f85cd71c0dde041ff5935f0c645e499662cae5bab82dc08fdbf7571d17b7a047}
+- {path: MeasfailOptionOne.cir, sha256: cfda671f546ef32d88437feabe165abf157e06c76c391089b828fe7d8203eca3}
+- {path: MeasfailOptionZero.cir, sha256: e8d03e5f3641f0b6f5382720716171321dbd75f49606cc961bab6287b1b17662}
+- {path: RMSTest1DC.cir, sha256: 1ba2a2a745cba7f64895acc4ed45c992b4f458862e2ce7b7e5b4984cc57e73ec}
+- {path: TrigTargTest1DC.cir, sha256: 10f32577866ecc8bd2877aab15f800cbb5fb76f2b78c1f258038265d27132bb2}
+- {path: TrigTargTest2DC.cir, sha256: c68d9657e723b4eafad3b0622515ff9b54b0da988d0588af69c4b36ea80466bb}
+- {path: oneSweepValue.cir, sha256: 3d1e75d3d23ef15fcfa37111495ed21fcf5f08eed4c3bed814f9a5d441b73706}
+netlists:
+- {file: AvgTest1DC.cir, dialect: xyce}
+- {file: AvgTest2DC.cir, dialect: xyce}
+- {file: DerivTest1DC.cir, dialect: xyce}
+- {file: DotData.cir, dialect: xyce}
+- {file: DotOpDotDC.cir, dialect: xyce}
+- {file: DotOpOnly.cir, dialect: xyce}
+- {file: DoubleDCOP.cir, dialect: xyce}
+- {file: EquationEvalTestDC.cir, dialect: xyce}
+- {file: ErrorFuncTest1DC.cir, dialect: xyce}
+- {file: ErrorTest1DC.cir, dialect: xyce}
+- {file: ErrorTest2DC.cir, dialect: xyce}
+- {file: FindWhenTest1DC.cir, dialect: xyce}
+- {file: FindWhenTest2DC.cir, dialect: xyce}
+- {file: IntegTest1DC.cir, dialect: xyce}
+- {file: LeadCurrentAndPowerTestDC.cir, dialect: xyce}
+- {file: MaxMinPPTest1DC.cir, dialect: xyce}
+- {file: MaxMinPPTest2DC.cir, dialect: xyce}
+- {file: MeasfailOptionOne.cir, dialect: xyce}
+- {file: MeasfailOptionZero.cir, dialect: xyce}
+- {file: RMSTest1DC.cir, dialect: xyce}
+- {file: TrigTargTest1DC.cir, dialect: xyce}
+- {file: TrigTargTest2DC.cir, dialect: xyce}
+- {file: oneSweepValue.cir, dialect: xyce}

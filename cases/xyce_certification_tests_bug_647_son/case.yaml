@@ -1,0 +1,86 @@
+id: xyce_certification_tests_bug_647_son
+title: Xyce_Regression Certification_Tests/BUG_647_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_647_SON
+files:
+- {path: Synapse_lv3.cir, sha256: 9b5d851857e904391cb1dea196a83188db635a8217c6506f33ef78b6806fff64}
+- {path: Synapse_lv3_modpar.cir, sha256: dc5121f34122c25d6fd71cfe514bf9a97172faa10d1055fc39d0e17bb237616b}
+- {path: b3soi.cir, sha256: c84ce74e518f5e12974bd0dc32004a4d4e02e7cda4f36d23587464771ae7bcc3}
+- {path: b3soi_modpar.cir, sha256: 7be20457c282272e91a999fb7a3f5e3ed2b65719569a663d4649a88cce9d0120}
+- {path: baselineLumpedLine.cir, sha256: 4afa6ce05e5a1425ca381c620914c7b0c7646d00d5af2b8bb7e5b2890036afe5}
+- {path: bjt.cir, sha256: 8864d3f0ab48a6fb301f707998c00a706b713c355b2d1bb59d4f4f3cbad79ed0}
+- {path: bjt_ambient.cir, sha256: 6e4c6a92d2ecd6732a8d23f8ce2725736bbeddf61064ec9b06782848738cf5b1}
+- {path: bsim3.cir, sha256: cc63e6393fc7c0a85339e7ac3e8983c3b7f74b06417e1a111783ef69ee816e29}
+- {path: bsim3_modpar.cir, sha256: 805fc8a19f6b6d2c84c51591ac83257582c999db489a2227c5df371b6d3e9796}
+- {path: bsim4.cir, sha256: 204c850c71ed47dfa079816bc271f7ae7bf53baeffca8831f1278cff9f95d67e}
+- {path: bsim4_modpar.cir, sha256: fc9b7115ac5c1a940038831a76a8ffb57791db0d27a225fcd66b0d572c6a7181}
+- {path: lumpedLine.cir, sha256: 23d9cc7f22b7bf2abe95a60cdd54bbb4f0a780dbb433fb6f838577d8f93a0f73}
+- {path: mesfet.cir, sha256: 44574f79662e054026a405f52f6396c4bb852ee226f4386586289f4fb7018ba0}
+- {path: mos1.cir, sha256: b648314bff405f9df771ffd3eadb1e0302dc0baf0e8d3fcd5673ce39b06f7746}
+- {path: mos1_modpar.cir, sha256: b1a21088d68301a71f44d96a2548de39008c30f07c3e2edcddfd32216ab8839d}
+- {path: mos2.cir, sha256: f1053e81c6ac43d910f4c93da04ab765f38d1ff41b2d4df0e4819692bcd66792}
+- {path: mos2_modpar.cir, sha256: e42ea28b2212b8d001e1d9323ae00b126844ea59e72f34f5b0d538373108ba15}
+- {path: mos3.cir, sha256: a471c76a7215620b11292059ec3724a41fbda7ba2f807e27a8685110a5124af9}
+- {path: mos3_modpar.cir, sha256: 9487f98019f5bc470bc7d4bf1f68234c8eb24ca4a04cc938852ad4538a094620}
+- {path: neuron_lv3.cir, sha256: ac819df4485d2de33d29730f987e6d51f96051cc3b4a57ac5fbcc35bf4f59433}
+- {path: neuron_lv3_modpar.cir, sha256: 9469f812a30da91557b5878fcfbe924302dc549fdfd0e65e93dd17ef3da5df28}
+- {path: neuron_lv4.cir, sha256: 407f4652abe4c576702d9f14c3e21b35caf8812c0be1a13bf35daa326567fc0d}
+- {path: neuron_lv4_modpar.cir, sha256: 381b969555279ed81cbeeeef4ec637cb5a4517a174e944c61651d6fca56a4949}
+- {path: neuron_lv6.cir, sha256: 61a198a91b4080ba73c9677c48826aa2d0c3215198e721cf325d346e5e77da6f}
+- {path: neuron_lv6_modpar.cir, sha256: 3678c80ed359c9947902a91afabae9bc9d899e22a2964bdd86203a14c3305f99}
+- {path: neuron_lv7.cir, sha256: a6da985e0f167490c384e99e3a1b4eb770eb2eeefd8ae683b16bfb1d154eaaf6}
+- {path: neuron_lv7_modpar.cir, sha256: 035e68b40cedf0dfb82fa6ba8151463ce097cf77907b948b5730b3fff6777255}
+- {path: neuron_lv8.cir, sha256: 4d9dc58d720d41831a72055a4e13b4b5fa38a5d188ed8b7111445550dd1f8638}
+- {path: neuron_lv8_modpar.cir, sha256: b17d93bf60f09fe791e972a5e570edc2d19cb9afc4c91dd0700dca0ce86f9acd}
+- {path: semic_resistor.cir, sha256: 905bcf1b2a609dbad953de0dcd3108acec3aae727e33b32bfe94b63356f632ad}
+- {path: semic_resistor_modpar.cir, sha256: a1f618acad61d7d6eb855e9d1eac5f9116443fbec38c40742c4ef342010a9dc9}
+- {path: semicap.cir, sha256: edf7b5f9b663f61765c28042ff180923246797010204340fd5c059a2b3e1411a}
+- {path: semicap_modpar.cir, sha256: 014e6992fed803b16e1fd3454bdbf3bfe23274b69dba7929fe00df64ca3f5b36}
+- {path: tempind.cir, sha256: 1c20a2419f8c24048d7308968cdad9f00393b8f855bd27798dd25aba1cbb47f1}
+- {path: tempind_modpar.cir, sha256: a4ba3c38d45d16ab9cbfe14c00ae8432633ffb5761d8acf31e3826a7f0681a3b}
+- {path: vdmos.cir, sha256: edddf80728394bd3f647aaa75fef9a1d9ce809308632354794c29a15d6171307}
+- {path: vdmos_modpar.cir, sha256: 7a869b77f95f98a734321aac30b8879292ef3c46fd6d9cb5c7fdbd5c25b2f554}
+netlists:
+- {file: Synapse_lv3.cir, dialect: xyce}
+- {file: Synapse_lv3_modpar.cir, dialect: xyce}
+- {file: b3soi.cir, dialect: xyce}
+- {file: b3soi_modpar.cir, dialect: xyce}
+- {file: baselineLumpedLine.cir, dialect: xyce}
+- {file: bjt.cir, dialect: xyce}
+- {file: bjt_ambient.cir, dialect: xyce}
+- {file: bsim3.cir, dialect: xyce}
+- {file: bsim3_modpar.cir, dialect: xyce}
+- {file: bsim4.cir, dialect: xyce}
+- {file: bsim4_modpar.cir, dialect: xyce}
+- {file: lumpedLine.cir, dialect: xyce}
+- {file: mesfet.cir, dialect: xyce}
+- {file: mos1.cir, dialect: xyce}
+- {file: mos1_modpar.cir, dialect: xyce}
+- {file: mos2.cir, dialect: xyce}
+- {file: mos2_modpar.cir, dialect: xyce}
+- {file: mos3.cir, dialect: xyce}
+- {file: mos3_modpar.cir, dialect: xyce}
+- {file: neuron_lv3.cir, dialect: xyce}
+- {file: neuron_lv3_modpar.cir, dialect: xyce}
+- {file: neuron_lv4.cir, dialect: xyce}
+- {file: neuron_lv4_modpar.cir, dialect: xyce}
+- {file: neuron_lv6.cir, dialect: xyce}
+- {file: neuron_lv6_modpar.cir, dialect: xyce}
+- {file: neuron_lv7.cir, dialect: xyce}
+- {file: neuron_lv7_modpar.cir, dialect: xyce}
+- {file: neuron_lv8.cir, dialect: xyce}
+- {file: neuron_lv8_modpar.cir, dialect: xyce}
+- {file: semic_resistor.cir, dialect: xyce}
+- {file: semic_resistor_modpar.cir, dialect: xyce}
+- {file: semicap.cir, dialect: xyce}
+- {file: semicap_modpar.cir, dialect: xyce}
+- {file: tempind.cir, dialect: xyce}
+- {file: tempind_modpar.cir, dialect: xyce}
+- {file: vdmos.cir, dialect: xyce}
+- {file: vdmos_modpar.cir, dialect: xyce}

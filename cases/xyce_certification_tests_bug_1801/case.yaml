@@ -1,0 +1,24 @@
+id: xyce_certification_tests_bug_1801
+title: Xyce_Regression Certification_Tests/BUG_1801
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1801
+files:
+- {path: bug_1801_A0.cir, sha256: d88c189c8c6f06a64df29c0621ad9aee1abfcd4e1a7a8186bc99a7d36015ab7a}
+- {path: bug_1801_A1.cir, sha256: db50cc0559bc526dd763338c2ce7e7603ff21f12cc29b49fd7a0acad69aac0d0}
+- {path: bug_1801_B0.cir, sha256: 60e62184122c20dae1bee2a890987e1d39bfcf8f2743156403fb7022143eee4b}
+- {path: bug_1801_B1.cir, sha256: 8dab4c2968234b37f69c27f6db0fd0af1999e0c4cc9e9eb630f7b7ab8a40d444}
+- {path: bug_1801_B2.cir, sha256: ff6bdaab91e6fa293732950e3e9e3181876ff3ae3c0cbd884134c1859edac55f}
+- {path: bug_1801_B3.cir, sha256: f30a74723313e3cfd667c66a87cb948ef727449492ff55163fa3dd63f6b4887c}
+netlists:
+- {file: bug_1801_A0.cir, dialect: xyce}
+- {file: bug_1801_A1.cir, dialect: xyce}
+- {file: bug_1801_B0.cir, dialect: xyce}
+- {file: bug_1801_B1.cir, dialect: xyce}
+- {file: bug_1801_B2.cir, dialect: xyce}
+- {file: bug_1801_B3.cir, dialect: xyce}

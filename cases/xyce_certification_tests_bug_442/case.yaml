@@ -1,0 +1,20 @@
+id: xyce_certification_tests_bug_442
+title: Xyce_Regression Certification_Tests/BUG_442
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_442
+files:
+- {path: bug_442_baseline.cir, sha256: ee266c41b800a063a39b9652a5c39077a458a304e4da2908786e06e54bc5f84b}
+- {path: bug_442_baseline_unpacked.cir, sha256: 333d00cb317ed0b3be4b5a09d9a4252650c3c34697b96e03ff44f3ff9f372dfe}
+- {path: bug_442_restarted.cir, sha256: ec043c518a8faa2dac6cf6b6677ab854d8ea25173586022494d4e554e4463115}
+- {path: bug_442_restarted_unpacked.cir, sha256: f62282385d6c209f76bcab4cfb3cf98ed07d09c86039358a60b55da9d77de49d}
+netlists:
+- {file: bug_442_baseline.cir, dialect: xyce}
+- {file: bug_442_baseline_unpacked.cir, dialect: xyce}
+- {file: bug_442_restarted.cir, dialect: xyce}
+- {file: bug_442_restarted_unpacked.cir, dialect: xyce}

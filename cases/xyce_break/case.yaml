@@ -1,0 +1,14 @@
+id: xyce_break
+title: Xyce_Regression BREAK
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BREAK
+files:
+- {path: break.cir, sha256: 8cd461fcc92c8d7f6b142874f8b10f3ba0963184de937bc53ab86a310a70ca52}
+netlists:
+- {file: break.cir, dialect: xyce}

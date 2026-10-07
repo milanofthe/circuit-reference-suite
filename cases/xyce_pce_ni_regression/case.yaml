@@ -1,0 +1,20 @@
+id: xyce_pce_ni_regression
+title: Xyce_Regression PCE/NI_REGRESSION
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PCE/NI_REGRESSION
+files:
+- {path: cmosInverter_regr.cir, sha256: 5b4a753559e66c0dbdea82b931a4b4cb90d5b4abe6706106acde18ec1e304bd5}
+- {path: embeddedNormalPCE.cir, sha256: b3fff8374ee00d4013dc4ce6f0e64f77b057c10e512ae83c996a3ff411cc6b29}
+- {path: simpleNormalPCE.cir, sha256: 8b903e001b23e3b6093c8333321a038fbebfdf35235d2c14f72f64c8006e1f4a}
+- {path: simpleUniformPCE.cir, sha256: 73dce27363942ef7eed42af405791b4ec4de82599c3f64089334108b6c132a4b}
+netlists:
+- {file: cmosInverter_regr.cir, dialect: xyce}
+- {file: embeddedNormalPCE.cir, dialect: xyce}
+- {file: simpleNormalPCE.cir, dialect: xyce}
+- {file: simpleUniformPCE.cir, dialect: xyce}

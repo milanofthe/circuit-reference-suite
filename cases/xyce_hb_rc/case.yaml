@@ -1,0 +1,30 @@
+id: xyce_hb_rc
+title: Xyce_Regression HB/RC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/HB/RC
+files:
+- {path: lcosc.cir, sha256: 12b62b8ccb404e38f7d97b2f186e3d2053148a0d96e00caf92e5cb14976c3a50}
+- {path: lcstart.cir, sha256: 8bd5083f14d7a7a57592f517ec38b4d1a65c06fb45af4947574b5d88730a014d}
+- {path: simpleRC-hb.cir, sha256: 7397a383a90b052d6b0b5e791a47eb5b700b371e0f189062bdebbbefe2e4b0c0}
+- {path: simpleRC-hb1.cir, sha256: 25d3e97a4f466449569d6913a9330f27a9d8f449f94df3df79c20607ddfb28c3}
+- {path: simpleRC-hb2.cir, sha256: 91919cf06f6c5237306cab5788fbac1174d67fa9b60dc22d89c4a0184122e29b}
+- {path: simpleRC-hbIC1.cir, sha256: 8167b2bf3c68f57c5fab6f56d039bb3cdfdde18d68960a76632cf61d9ba95d85}
+- {path: simpleRC-hbTdsamples.cir, sha256: 4cfe073661a1cef3000bf6bf93bdabd37d68316b6ed9f7d365fa2f5c551ef0af}
+- {path: simpleRC.cir, sha256: 422bfa144573d2a296369428757545fd27784850b0d79cc3d80f859687fb66b9}
+- {path: simpleRC2.cir, sha256: eff11dc3044d24615827016f9e2e0efd3973a7a55781deb058ebe21ac59fec87}
+netlists:
+- {file: lcosc.cir, dialect: xyce}
+- {file: lcstart.cir, dialect: xyce}
+- {file: simpleRC-hb.cir, dialect: xyce}
+- {file: simpleRC-hb1.cir, dialect: xyce}
+- {file: simpleRC-hb2.cir, dialect: xyce}
+- {file: simpleRC-hbIC1.cir, dialect: xyce}
+- {file: simpleRC-hbTdsamples.cir, dialect: xyce}
+- {file: simpleRC.cir, dialect: xyce}
+- {file: simpleRC2.cir, dialect: xyce}

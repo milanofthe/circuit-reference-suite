@@ -1,0 +1,14 @@
+id: xyce_erroption
+title: Xyce_Regression ERROPTION
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ERROPTION
+files:
+- {path: rc_osc.cir, sha256: 1695d9b4aa273cf554d73d808c0e4cb9e10cc1c9644123b4155973b5a6e46941}
+netlists:
+- {file: rc_osc.cir, dialect: xyce}

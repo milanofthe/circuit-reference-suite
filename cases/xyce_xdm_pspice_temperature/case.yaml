@@ -1,0 +1,16 @@
+id: xyce_xdm_pspice_temperature
+title: Xyce_Regression XDM/PSPICE/TEMPERATURE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/PSPICE/TEMPERATURE
+files:
+- {path: multiple_temperature_statement.cir, sha256: 3ba61e8b7290a88422abab8bd63f885ec5ae91d9d4ec88a9afb8cbdede580faa}
+- {path: multiple_temperature_statement.cir.pspice, sha256: 9816eef0c32daabf4d50b1843e9fcf056cef49e0b776a9e025b19a6b3389101f}
+netlists:
+- {file: multiple_temperature_statement.cir, dialect: xyce}
+- {file: multiple_temperature_statement.cir.pspice, dialect: pspice}

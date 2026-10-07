@@ -1,0 +1,72 @@
+id: xyce_ylin
+title: Xyce_Regression YLIN
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/YLIN
+files:
+- {path: idealGain.cir, sha256: 9477ed699c9ba6a39e9f401f3a291a053cf65f1a0900c5f5f60895d5f225f50b}
+- {path: miscParsing-ts1.cir, sha256: 38f646cb6069a399cb99fc749b7f3d48c2b4b22dba15e54618e879a100b8652a}
+- {path: miscParsing.cir, sha256: 9cd7cc66af158389818fb71914d068377961945fc23bb25f5315eadd80d515a8}
+- {path: test_ylin1.cir, sha256: 5465da6f2c7b5bf1991dba40554bc44b74194da322ba6c02a906aba4ae79ec12}
+- {path: test_ylin2.cir, sha256: 503d2f23da9e0c43a1a6c3d81f59514ca024e15561702fb626b26676cfabd1ac}
+- {path: test_ylin5.cir, sha256: ccf6fc71cf7fea509de573304a809959592080a1439402cabdee9caa9b2c028b}
+- {path: ylin-2port-defaultOptions-ts1.cir, sha256: 9495dbf2d0ea679c973110f3d4a0a3421f407068b5558b567c29d2c83f6de3e0}
+- {path: ylin-2port-defaultOptions.cir, sha256: c36323a7d2058f24c495c97bc4af748e3c6c133f68332ea43e27445e9b082ecc}
+- {path: ylin-2port-diffZ0-sparam-linAnalysis.cir, sha256: f7def450e1d967f624429c9dd829bcb8e67724508dfac8ed6d353cf7727f0296}
+- {path: ylin-2port-diffZ0-sparam.cir, sha256: 692946d8324c9d381e4ce277d5f123dc4e7c51bedd73943cd6751d6f9cb484dd}
+- {path: ylin-2port-hbAnalysis.cir, sha256: 6ff68dcc1009b65ad59e43121c40d59a7213360cb0f81ee983bb38f1c72cdeae}
+- {path: ylin-2port-linAnalysis.cir, sha256: e7a849e9b16d3e27d8e6522d8204a0317f1c7f5055aac342b230e5fbd6b2c076}
+- {path: ylin-2port-sparam.cir, sha256: f24eecbde8da1c3864dcf5fe5627ac2a7a2616b6fd3ee0315ca87968c360475c}
+- {path: ylin-2port-yparam-db.cir, sha256: 50bfd9a1b5e28631e94a4a1de5872a7b0daa018652cc572bee5084300de7289c}
+- {path: ylin-2port-yparam-freqMult.cir, sha256: d848e86b0e03d5eeb0352b19c66051e15c2e72c99b2157ff730b3713ca82240e}
+- {path: ylin-2port-yparam-freqMultGHz.cir, sha256: 12166d79fb10a505fc22100c11f3cbacd80c2f5ffffbd41444b083b6000d56e6}
+- {path: ylin-2port-yparam-freqMultMHz.cir, sha256: dddae9abc68fed93d80cdb38540b2d5404dde3e8005e52127e8d859d9f6bc99c}
+- {path: ylin-2port-yparam-freqMultkHz.cir, sha256: eb02430b4f1ec0e662c418b3335d1dea238aaa7aca00fa551a39f7d2be0b1875}
+- {path: ylin-2port-yparam-ma.cir, sha256: 43b9ce4d1e1b4269a9986cf7060829fd75f2fd2c111b635e988e8ef67061f27b}
+- {path: ylin-2port-yparam-matrixFormat.cir, sha256: fdab006ef90c69f1b05077a42d9eefafc57d568e10ffea306dddaef62b45ff32}
+- {path: ylin-2port-yparam-matrixFormatLower.cir, sha256: 6125078c57414d8f56cdfa7c391e4f1aa470de0c40cdc1c7b68521c36d7df51c}
+- {path: ylin-2port-yparam-matrixFormatUpper.cir, sha256: 696709fb233974021bdae2c48bdf0eb0905f4754084a40ab758ef2b6623e949c}
+- {path: ylin-2port-yparam-ts1.cir, sha256: 61196cd6b36bdf8ec59309a20e6a38d533566c4f6eed6fd7388ff8c4e0b5c65e}
+- {path: ylin-2port-yparam.cir, sha256: 718dc7c2a5f2f63d3020704dce96ddf4408684753b6f42f73a6c4e02df7cdee8}
+- {path: ylin-2port-zparam.cir, sha256: 39ba8372be39f70c86eee2a5ea163e5dcf3ced77c106948769de77f4b1603cd7}
+- {path: ylin-5port-hbAnalysis.cir, sha256: e45b378648d84a7ac35d6c752976f762899817dae7b27c85770fa46d649486ab}
+- {path: ylin-5port-linAnalysis.cir, sha256: a86018ffbca639b169122838e8d624ad49587b156094a3b8ac1c4843416c01e7}
+- {path: ylin-5port-yparam-cw.cir, sha256: 050b7d46749994c28fecf35a942f7862ff772309eb1118abdf0d34094c2cae1d}
+- {path: ylin-5port-yparam-ts1.cir, sha256: f294852985e710f0b1014089690e5c3c6d14394bc252283131fce87bc3ef2892}
+- {path: ylin-5port-yparam.cir, sha256: 780fc680871fc3be638c91caf122e14587486257102a52c0bf6d74ac67c3c291}
+netlists:
+- {file: idealGain.cir, dialect: xyce}
+- {file: miscParsing-ts1.cir, dialect: xyce}
+- {file: miscParsing.cir, dialect: xyce}
+- {file: test_ylin1.cir, dialect: xyce}
+- {file: test_ylin2.cir, dialect: xyce}
+- {file: test_ylin5.cir, dialect: xyce}
+- {file: ylin-2port-defaultOptions-ts1.cir, dialect: xyce}
+- {file: ylin-2port-defaultOptions.cir, dialect: xyce}
+- {file: ylin-2port-diffZ0-sparam-linAnalysis.cir, dialect: xyce}
+- {file: ylin-2port-diffZ0-sparam.cir, dialect: xyce}
+- {file: ylin-2port-hbAnalysis.cir, dialect: xyce}
+- {file: ylin-2port-linAnalysis.cir, dialect: xyce}
+- {file: ylin-2port-sparam.cir, dialect: xyce}
+- {file: ylin-2port-yparam-db.cir, dialect: xyce}
+- {file: ylin-2port-yparam-freqMult.cir, dialect: xyce}
+- {file: ylin-2port-yparam-freqMultGHz.cir, dialect: xyce}
+- {file: ylin-2port-yparam-freqMultMHz.cir, dialect: xyce}
+- {file: ylin-2port-yparam-freqMultkHz.cir, dialect: xyce}
+- {file: ylin-2port-yparam-ma.cir, dialect: xyce}
+- {file: ylin-2port-yparam-matrixFormat.cir, dialect: xyce}
+- {file: ylin-2port-yparam-matrixFormatLower.cir, dialect: xyce}
+- {file: ylin-2port-yparam-matrixFormatUpper.cir, dialect: xyce}
+- {file: ylin-2port-yparam-ts1.cir, dialect: xyce}
+- {file: ylin-2port-yparam.cir, dialect: xyce}
+- {file: ylin-2port-zparam.cir, dialect: xyce}
+- {file: ylin-5port-hbAnalysis.cir, dialect: xyce}
+- {file: ylin-5port-linAnalysis.cir, dialect: xyce}
+- {file: ylin-5port-yparam-cw.cir, dialect: xyce}
+- {file: ylin-5port-yparam-ts1.cir, dialect: xyce}
+- {file: ylin-5port-yparam.cir, dialect: xyce}

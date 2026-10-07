@@ -1,0 +1,44 @@
+id: xyce_certification_tests_bug_456
+title: Xyce_Regression Certification_Tests/BUG_456
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_456
+files:
+- {path: converter_baseline.cir, sha256: 51d3ad8bc50357787c85b3aa7490fc1372eac764bb08c48b424355fb7781169c}
+- {path: converter_baseline_output.cir, sha256: 05362200b248645bb0c339a4159785545a6a4f182cbcb160fc80b79e1df29f1c}
+- {path: converter_baseline_unpacked.cir, sha256: 1ee9edbe9f95d93fa6e74e5b7dbc13b96dc5172c6856b1042c8d5202e7b0c322}
+- {path: converter_restart.cir, sha256: f21c648fd343832c93bbc8baf2b16c67263c3afcd142a6cfdcbf54b312dd3367}
+- {path: converter_restart_output.cir, sha256: 47863fd6b05606af36c516192bf4a5c3f8fe201f645462aa1ad7dfd29a7fffbd}
+- {path: converter_restart_unpacked.cir, sha256: de9800a31b973bfa99cdd4d01557cd1cd5689937a612a1b1b27912d7884ae52b}
+- {path: emitter_baseline.cir, sha256: 3413fc815161030cc8bbe77c5173e3279312a53237b65518e5bb99d31fdad315}
+- {path: emitter_baseline_gear.cir, sha256: 406d95adb204aa2509315403a5e195ca1fedfc6b1a362c4a639c54bbed91957f}
+- {path: emitter_restart.cir, sha256: aababacf16a5367c9c733a225f0a012966a67a02e479ae0211573f7ada525dd0}
+- {path: emitter_restart_gear.cir, sha256: 9bc39d06d142d6efdfea6e9fd219f89d01be57c0fb600c09df55dd2079f03097}
+- {path: push_pull_xyce_baseline.cir, sha256: f449f6e84b4d860d48852d02ad1e0f789a5ed3ec0150acd927d20412037fabd9}
+- {path: push_pull_xyce_baseline_unpacked.cir, sha256: 56de641b4046e31c847660aa3f632d110fe37a80d1562275616d4af2852c6ad7}
+- {path: push_pull_xyce_restart.cir, sha256: bb4ea7d81e8f7616394847859d64c5f8d71f5df27f399e2caeddbee731ecee64}
+- {path: push_pull_xyce_restart_unpacked.cir, sha256: 8488c8037f079db4b3e6752386eb0c7a2e7b1ae012ad931bbcec9043c7ecb43c}
+- {path: simple_baseline.cir, sha256: f238060767c8fe25bb9b1957808e98720186160fbb2e0932fb730eaa034b23ca}
+- {path: simple_restart.cir, sha256: ca9cbe5454829105692253b725732dfd3e3bb8d866ba5039ec0752b3d6965264}
+netlists:
+- {file: converter_baseline.cir, dialect: xyce}
+- {file: converter_baseline_output.cir, dialect: xyce}
+- {file: converter_baseline_unpacked.cir, dialect: xyce}
+- {file: converter_restart.cir, dialect: xyce}
+- {file: converter_restart_output.cir, dialect: xyce}
+- {file: converter_restart_unpacked.cir, dialect: xyce}
+- {file: emitter_baseline.cir, dialect: xyce}
+- {file: emitter_baseline_gear.cir, dialect: xyce}
+- {file: emitter_restart.cir, dialect: xyce}
+- {file: emitter_restart_gear.cir, dialect: xyce}
+- {file: push_pull_xyce_baseline.cir, dialect: xyce}
+- {file: push_pull_xyce_baseline_unpacked.cir, dialect: xyce}
+- {file: push_pull_xyce_restart.cir, dialect: xyce}
+- {file: push_pull_xyce_restart_unpacked.cir, dialect: xyce}
+- {file: simple_baseline.cir, dialect: xyce}
+- {file: simple_restart.cir, dialect: xyce}

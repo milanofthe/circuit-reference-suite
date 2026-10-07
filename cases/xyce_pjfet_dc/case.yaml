@@ -1,0 +1,16 @@
+id: xyce_pjfet_dc
+title: Xyce_Regression PJFET_DC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PJFET_DC
+files:
+- {path: pjfet-2108.cir, sha256: 5c8ff49a0368429f5d0c71dbbb5a0f849789a0c9739677f75e6b467808979911}
+- {path: pjfet.cir, sha256: 7040ed1a4013f4bc884458bfa6dc9a79065ee504e0600f48f6cbea17ae35f129}
+netlists:
+- {file: pjfet-2108.cir, dialect: xyce}
+- {file: pjfet.cir, dialect: xyce}

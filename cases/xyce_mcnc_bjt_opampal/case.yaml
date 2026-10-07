@@ -1,0 +1,14 @@
+id: xyce_mcnc_bjt_opampal
+title: Xyce_Regression MCNC_BJT_OPAMPAL
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MCNC_BJT_OPAMPAL
+files:
+- {path: opampal.cir, sha256: 690904bc6bc2fc65367e1b13eed7625b647fa8d8131dff71687c558da2a9ca8b}
+netlists:
+- {file: opampal.cir, dialect: xyce}

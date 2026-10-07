@@ -1,0 +1,38 @@
+id: xyce_certification_tests_bug_28_son
+title: Xyce_Regression Certification_Tests/BUG_28_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_28_SON
+files:
+- {path: bug_28_son1.cir, sha256: 7f3e1f328cb2ae677b5430357e01777b3734dc85224e1cda91728045b9c1c756}
+- {path: bug_28_son2.cir, sha256: be164d879cda122a49362aff80471f8be462c5b84dbdefa6905655d9d36ca421}
+- {path: bug_28_son3.cir, sha256: 3d98e802801f3bac2446470e7e8e47ce4b10e9a1198f2e233573e5220c87d0df}
+- {path: bug_28_son3_globalp.cir, sha256: 1b34c062dcd8707d6010a32536ac31fc9b0f84ae46f66d2e263cc775ca75754b}
+- {path: bug_28_son3_noparams.cir, sha256: 457a5c211e4c3db59681fa6ddf4f74f7df02395767a77b7a191d23d7da25e1d4}
+- {path: bug_28_son4.cir, sha256: 7e67ac5261ff08692b294852f20a8a23125110d735038cbafde8933faeb7adcc}
+- {path: bug_28_son4_1.cir, sha256: d5d3012a77d7c6e8d030b7f2b36524de1bd4f4ba8d8c3da998158943df34778a}
+- {path: bug_28_son4_2.cir, sha256: 457c5c78ed68ac4ac5234e032ebb201f8d15a32c60972914f042158d045cb947}
+- {path: bug_28_son4_3.cir, sha256: ddf180a7bc1b791ddcec38d688143f06545d78d20013d1c4d3cabd54f90a4ace}
+- {path: bug_28_son5.cir, sha256: 547dad138de63437e7bcdf1edfb9cd46466fe9ca5b690c4053210169e3a36dfd}
+- {path: bug_28_son5_1.cir, sha256: 367d1a26d6e64d5fd76469b959d443ec0e63f5b7f36a95d0e82a245be222ea52}
+- {path: bug_28_son5_2.cir, sha256: 4de9c21ae72ba5246878a8376a321f3853c5798efa679126446ff3ddc5011245}
+- {path: bug_28_son5_3.cir, sha256: b05be10c7d4e8703849f8d4efed3fb8634d4a96d06f101d8fd77205797fe7323}
+netlists:
+- {file: bug_28_son1.cir, dialect: xyce}
+- {file: bug_28_son2.cir, dialect: xyce}
+- {file: bug_28_son3.cir, dialect: xyce}
+- {file: bug_28_son3_globalp.cir, dialect: xyce}
+- {file: bug_28_son3_noparams.cir, dialect: xyce}
+- {file: bug_28_son4.cir, dialect: xyce}
+- {file: bug_28_son4_1.cir, dialect: xyce}
+- {file: bug_28_son4_2.cir, dialect: xyce}
+- {file: bug_28_son4_3.cir, dialect: xyce}
+- {file: bug_28_son5.cir, dialect: xyce}
+- {file: bug_28_son5_1.cir, dialect: xyce}
+- {file: bug_28_son5_2.cir, dialect: xyce}
+- {file: bug_28_son5_3.cir, dialect: xyce}

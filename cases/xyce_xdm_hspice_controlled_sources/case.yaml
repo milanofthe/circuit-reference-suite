@@ -1,0 +1,24 @@
+id: xyce_xdm_hspice_controlled_sources
+title: Xyce_Regression XDM/HSPICE/CONTROLLED_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/HSPICE/CONTROLLED_SOURCES
+files:
+- {path: current_controlled_sources_w_extraneous_identifiers.cir, sha256: 665d9c2d797f291d27d94c8a4fd2f3cb5523086bf52df526393d028abab46a64}
+- {path: current_controlled_sources_w_extraneous_identifiers.cir.hspice, sha256: 87a64b28b898797a83e0b2efe761c1eb8e733525543fad50a22d1edb83253c15}
+- {path: f_sources.cir, sha256: 6ed67aac5a0ab8a03f8170feef31642a4aa4b969975bdb61b3520ac87f77f240}
+- {path: h_sources.cir, sha256: 1f3f4e866984f1abec67551929d1695a46f7e47616900913f78bca341dc3a69e}
+- {path: voltage_controlled_sources_w_extraneous_identifiers.cir, sha256: 85019f8cebfa9d91d7849dfcfa2b1a29fd89c680646162d76fe658f8cfa9b5af}
+- {path: voltage_controlled_sources_w_extraneous_identifiers.cir.hspice, sha256: cb1bd98b790be3c6bf87ef8fa793dde8a229a919b6043ff7edbb0a169a0a7713}
+netlists:
+- {file: current_controlled_sources_w_extraneous_identifiers.cir, dialect: xyce}
+- {file: current_controlled_sources_w_extraneous_identifiers.cir.hspice, dialect: hspice}
+- {file: f_sources.cir, dialect: xyce}
+- {file: h_sources.cir, dialect: xyce}
+- {file: voltage_controlled_sources_w_extraneous_identifiers.cir, dialect: xyce}
+- {file: voltage_controlled_sources_w_extraneous_identifiers.cir.hspice, dialect: hspice}

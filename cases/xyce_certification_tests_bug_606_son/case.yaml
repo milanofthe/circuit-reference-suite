@@ -1,0 +1,22 @@
+id: xyce_certification_tests_bug_606_son
+title: Xyce_Regression Certification_Tests/BUG_606_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_606_SON
+files:
+- {path: bug606son.cir, sha256: c37860c44dc0f0c905d486360436a6e6716eeba78aa97257e60047642e65ff66}
+- {path: global_params.cir, sha256: 37fca4e6dfd608260c778545a91b3ed335bb0d64c08949403edf827fe6c0730a}
+- {path: global_params_dev_options.cir, sha256: beb162c819ceecc59c499acfd5cfd7f30ca15a43e1064e11094f46b0b67faef8}
+- {path: global_params_step.cir, sha256: ff773840dd5e0d158e6eac0b6975670876245664a0d04c48e2cbd2ebac91de92}
+- {path: resistor.cir, sha256: 7dce09ab859b21fceb77f02a73484d7358a026c5d1538f99b2898f891f123417}
+netlists:
+- {file: bug606son.cir, dialect: xyce}
+- {file: global_params.cir, dialect: xyce}
+- {file: global_params_dev_options.cir, dialect: xyce}
+- {file: global_params_step.cir, dialect: xyce}
+- {file: resistor.cir, dialect: xyce}

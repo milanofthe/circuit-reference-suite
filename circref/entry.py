@@ -199,6 +199,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
     seen: set = set()
     models: dict[str, str] = {}
     osdi_devices: set[str] = set()
+    va_types: set[str] = set()
     modules: set[str] = set()
     asked: set[str] = set()
     while True:
@@ -214,6 +215,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
             parsed = netlist.parse(path, dialect, deck)
             models |= parsed.models
             osdi_devices |= parsed.osdi_devices
+            va_types |= parsed.va_types
             modules |= parsed.modules
             if section is None:
                 refs = parsed.refs
@@ -234,10 +236,10 @@ def walk(case: Case, nl: Netlist) -> Graph:
                     kind = "veriloga" if ref.kind in ("osdi", "va") else dialect
                     queue.append((target, netlist.dialect_of(target, kind),
                                   ref.section if ref.kind == "lib" else None, False))
-        # An OSDI device (ngspice N instance) needs a Verilog-A module of its model type.
+        # A Verilog-A device (ngspice N instance, Xyce Y plugin) needs a module of its type.
         # Simulators often load those from an init file the deck never names, so the
         # resolve table maps the type itself onto the source.
-        needed = {models[m] for m in osdi_devices if m in models} - modules - asked
+        needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
         if not needed:
             return g
@@ -247,7 +249,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
             table = {**case.resolve_table(), **nl.resolve}
             if t not in table:
                 g.edges.append(Edge(start, ref, None, False,
-                                    f"{nl.file}: OSDI device type {t!r} has no Verilog-A module; "
+                                    f"{nl.file}: device type {t!r} has no Verilog-A module; "
                                     f"map {t!r} in resolve"))
                 continue
             target, missing, error = _resolve(start, ref, nl.resolve)

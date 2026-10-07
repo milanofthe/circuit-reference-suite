@@ -1,0 +1,78 @@
+id: xyce_parser
+title: Xyce_Regression PARSER
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PARSER
+files:
+- {path: aAsAmp.cir, sha256: 609e858af4f3f13fd0822d66392c8c2c3703523f5312f900ef9afde2920fa0ed}
+- {path: aAsAtto.cir, sha256: a9bb40e726d115f744c0ba1a1d5ab80723cfa9ee3d4e064bad8d635c3d6e211b}
+- {path: bug_203.cir, sha256: af5d521888fd1e8e6fa84d1c6c7aad993837153998674eec3814ce852429eed8}
+- {path: bug_250.cir, sha256: 24bfd2d6249db4ab1b61cc31369a4df13cbb9a5c63a847f184fbf43b008feffd}
+- {path: hspiceMath.cir, sha256: 05d64a0c4b81bdb71766aab29a12a314dc44b2fb59c548ad8ee706774faeaa4c}
+- {path: meterUnit.cir, sha256: 1783e5470a18ce98bcbfca2c2bf92155c8d915374306b3fce1bc7e617b0e44cb}
+- {path: nakedAlgebra.cir, sha256: e6daae3bf2b516918b685bea331d2b457b395899bf0670585e0e8bddf9a98e98}
+- {path: nakedAlgebraBaseline.cir, sha256: 8ba6bd39c3cea1847726a0c37125b5b2cab64fe3202bdb2bd26153687d52ae37}
+- {path: nakedAlgebraGlobal.cir, sha256: fc4f49ce173ff555b82f3f7ae38993606adc7ab86ed1c78a93a3939d36c9160a}
+- {path: nakedIf.cir, sha256: d53099d9dbad45f3d3b0ae1af7fd4147b1a927ac76378f32eb22c35131d02c25}
+- {path: nakedRandom.cir, sha256: 5a11fc20c775a9c22d5fd0a71bf586017ca72ba5851ed696709604d5e8233a38}
+- {path: nakedRandomGlobal.cir, sha256: 2d9687c24c435a0381fddec4c26e9336b95e661109881b37d0720f5854c118f8}
+- {path: nakedTernary.cir, sha256: fe17a4d5ebae380379bf8703963b3c204c81cf0efba04debf0d166534d6b6249}
+- {path: paramFunc1.cir, sha256: 43b2080dc01b1599de6bca240647bd300d8b48e98f6419230b6907194f60f4a0}
+- {path: paramFunc2.cir, sha256: 8d96f91fde1097fd41bc5004750f00f3927f3c3d69d79aec758e2a8787edf3c8}
+- {path: paramFunc3.cir, sha256: 8b93d69cc4e9e08b7b1b2f95e685f73f73cc8c1f661071753b256a4b43499ba5}
+- {path: paramFunc4.cir, sha256: d959edcb44106510661bb3b70d187119a448bc5101e899de0e29d8da33590ee9}
+- {path: paramFunc5.cir, sha256: f6787fd953ae767f0ec347b518f03e88650c467079e96ec457d85279446727f5}
+- {path: paramFunc6.cir, sha256: 441efea3da71826abf8cfba23dad1cba92ab9eef81c412fea86fb5aae29faa5a}
+- {path: random.cir, sha256: b0e7c4afdbd473e291c9daa5719d3282b33e77e4e3bccb1fd337613bc2c12346}
+- {path: scalingFactors.cir, sha256: 322b1d1d5906a4146f50fd2145873e60e84d2ccb45e08e902739e485bff839bc}
+- {path: separator1.cir, sha256: a04986ad11e268fc28da2370bc3bd1ffd0efd869f135cfd5dacdaef0bf93f7de}
+- {path: separator1Ref.cir, sha256: 7bcbc67cb4decfed5eb9b97b336a5ac52cc9670621dad68840c38f709c3f9415}
+- {path: separator2.cir, sha256: 6583cab9a58507d37be3e8456a6e4027085ec2591055fce7c19bc67a0a23076b}
+- {path: separator2Ref.cir, sha256: 006c596fd182e44d34d537956cdcbac473b8b1c7837451da502afeb6c9f767ca}
+- {path: separator3.cir, sha256: 996c52626abb7bd8e33c0078c7c3a9aa0eb9a8ce58755e016b5fa92f0ac68786}
+- {path: separator3Ref.cir, sha256: 3bea3e3bbcc5868b13d6f47cc5a706e8fb8d3e5093a48772efc3179007ac4be1}
+- {path: separator4.cir, sha256: bb40ff28112408554fa18b3937948efcd04bb136fd59b163d435f5dcab8dfb5e}
+- {path: separator4Ref.cir, sha256: 70a921c030a7fb078e0b2ea4ae465c717aa89db5edcde81ec8a343bba8b88389}
+- {path: separator5.cir, sha256: 30982d2536a69c004319a32ea84f8d6f8fc5111ff345abf0016f9d15ac663a05}
+- {path: separator5Ref.cir, sha256: f12d113e38b026e95fe87ed1165189c85c25b553b6bb041f7d924eeec3bb7d92}
+- {path: separator6.cir, sha256: c7fa7e8ac302fcabe53883d4d8e4ed5ff2591f7b87f61c10808ad627c3c15c9b}
+- {path: separator6Ref.cir, sha256: d61776bb9cfb820f4ebbb5a58528a88a19f539738f931b2836b167dd2fa8f1cc}
+netlists:
+- {file: aAsAmp.cir, dialect: xyce}
+- {file: aAsAtto.cir, dialect: xyce}
+- {file: bug_203.cir, dialect: xyce}
+- {file: bug_250.cir, dialect: xyce}
+- {file: hspiceMath.cir, dialect: xyce}
+- {file: meterUnit.cir, dialect: xyce}
+- {file: nakedAlgebra.cir, dialect: xyce}
+- {file: nakedAlgebraBaseline.cir, dialect: xyce}
+- {file: nakedAlgebraGlobal.cir, dialect: xyce}
+- {file: nakedIf.cir, dialect: xyce}
+- {file: nakedRandom.cir, dialect: xyce}
+- {file: nakedRandomGlobal.cir, dialect: xyce}
+- {file: nakedTernary.cir, dialect: xyce}
+- {file: paramFunc1.cir, dialect: xyce}
+- {file: paramFunc2.cir, dialect: xyce}
+- {file: paramFunc3.cir, dialect: xyce}
+- {file: paramFunc4.cir, dialect: xyce}
+- {file: paramFunc5.cir, dialect: xyce}
+- {file: paramFunc6.cir, dialect: xyce}
+- {file: random.cir, dialect: xyce}
+- {file: scalingFactors.cir, dialect: xyce}
+- {file: separator1.cir, dialect: xyce}
+- {file: separator1Ref.cir, dialect: xyce}
+- {file: separator2.cir, dialect: xyce}
+- {file: separator2Ref.cir, dialect: xyce}
+- {file: separator3.cir, dialect: xyce}
+- {file: separator3Ref.cir, dialect: xyce}
+- {file: separator4.cir, dialect: xyce}
+- {file: separator4Ref.cir, dialect: xyce}
+- {file: separator5.cir, dialect: xyce}
+- {file: separator5Ref.cir, dialect: xyce}
+- {file: separator6.cir, dialect: xyce}
+- {file: separator6Ref.cir, dialect: xyce}

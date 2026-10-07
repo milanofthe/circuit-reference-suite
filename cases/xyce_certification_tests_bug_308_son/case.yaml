@@ -1,0 +1,18 @@
+id: xyce_certification_tests_bug_308_son
+title: Xyce_Regression Certification_Tests/BUG_308_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_308_SON
+files:
+- {path: comparator.cir, sha256: d8ccec35299ea45bc270f2975beceda66469ce5f3cd835d223282e157b58a90b}
+- {path: comparator0.cir, sha256: 882e71cfaabb794b4ce9ffe83b6791bb1a6198344939df0fae0a3a455bde22f9}
+- {path: comparator3.cir, sha256: ed7b2746a2209b76bc03453b706f862b110671886022206fab2ebc657d987afc}
+netlists:
+- {file: comparator.cir, dialect: xyce}
+- {file: comparator0.cir, dialect: xyce}
+- {file: comparator3.cir, dialect: xyce}

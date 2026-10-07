@@ -1,0 +1,18 @@
+id: xyce_certification_tests_issue_206
+title: Xyce_Regression Certification_Tests/ISSUE_206
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/ISSUE_206
+files:
+- {path: issue206.cir, sha256: be9f28a935513d67e966d12f07a8d8746a0b8df6aefa77b257e3d938f5e7c9b7}
+- {path: issue206binning1.cir, sha256: 4a95fb74d7ed4f0399e52aec46833bbbbe69827445293b58896bc8ea0919af68}
+- {path: issue206binning2.cir, sha256: ba0978723f6f692e1912964cf490b6060d4a2b4976e8b50935f514d7dd806db8}
+netlists:
+- {file: issue206.cir, dialect: xyce}
+- {file: issue206binning1.cir, dialect: xyce}
+- {file: issue206binning2.cir, dialect: xyce}

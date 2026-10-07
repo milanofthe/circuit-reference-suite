@@ -1,0 +1,49 @@
+id: xyce_multiplicity_factor_bsim4_noise
+title: Xyce_Regression MULTIPLICITY_FACTOR/BSIM4_noise
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MULTIPLICITY_FACTOR/BSIM4_noise
+files:
+- {path: bsim_4p61_noise1_baseline.net, sha256: 515766af8e9123fab8b47f85044ab54e8c55833a4f3119fd88e163f8ec13d587}
+- {path: bsim_4p61_noise1_m6.net, sha256: 3d3a7f99703d0ab7985ca276bbeb54c7c8635a4c1ef79fb64970791d3b83cae6}
+- {path: bsim_4p61_noise2_baseline.net, sha256: b0574485fc59f31daae813293a82def838d5150d3506c4b60546e1d724ccbb2c}
+- {path: bsim_4p61_noise2_m6.net, sha256: 1112a459e09e3103042d31714fb6dc59cb0f52b2abd33d2d342f7f3b2d87a96d}
+- {path: bsim_4p61_noise3_baseline.net, sha256: 1311170ca6d4c0279a25fbba69489a420ab1e9959d06b872fb64ea39c127daca}
+- {path: bsim_4p61_noise3_m6.net, sha256: e5566dfe1ada89f98061954eea4c1db3879cc2446edf7adb4045cd44565be842}
+- {path: bsim_4p61_noise4_baseline.net, sha256: 32bc664578671b17d67453d76ef3630a0585b9714b0e0cfc57f43e2d6a411892}
+- {path: bsim_4p61_noise4_m6.net, sha256: a1c65e434fbdf207fd58a40bf915d6db21de851d23d2c4cb36ebe3f293929cb5}
+- {path: bsim_4p70_noise1_baseline.net, sha256: 571b8d31e6914bea0df13086f5587a5eb7134d14e984abfa6166bd7c9ec8415b}
+- {path: bsim_4p70_noise1_m6.net, sha256: 8e5ef929849c29515a1d8b886dbf67230745a07f673246fa42780f6efc7bf48a}
+- {path: bsim_4p70_noise2_baseline.net, sha256: 03752b7e9454bf2be14d812bc83121277fe4efd813bf272d306831f1309084f7}
+- {path: bsim_4p70_noise2_m6.net, sha256: c6343ca59c040acacd32a233d3662b9fed7e6324cbcb3ffd361f73bfafda5247}
+- {path: bsim_4p70_noise3_baseline.net, sha256: 8dda180ee140db00ba7de73f1a6e75f2bdc651fd483fb45ba345a142825fa91a}
+- {path: bsim_4p70_noise3_m6.net, sha256: f48af9a163f1cc0dcc6d8cead525141323ac4465b41f498b9c1d496aa4ddc33d}
+- {path: bsim_4p70_noise4_baseline.net, sha256: fd7066063044f65bc56d133169c861c4271d305807d30f395c270eb7f243919e}
+- {path: bsim_4p70_noise4_m6.net, sha256: 0094e4db0c4bffee437947119f4fbc78a51458f95e5bfed87d975b28e247be02}
+- {path: gain-stage1-bsim4p7_baseline.net, sha256: f4f591c1ed867eb620b03716e08ed448ce51a021d1eb938e82717fed452870b5}
+- {path: gain-stage1-bsim4p7_m6.net, sha256: 22f404e0590b83f73b5d0216512b199b2665d75caaf304d2a766252291e15063}
+- {path: modelcard_bsim4p70_tnoimod2.nmos, sha256: 5ed3be7622e3a183944a90c1baea1bace5849353429b816dd04e1327782180f4}
+netlists:
+- {file: bsim_4p61_noise1_baseline.net, dialect: xyce}
+- {file: bsim_4p61_noise1_m6.net, dialect: xyce}
+- {file: bsim_4p61_noise2_baseline.net, dialect: xyce}
+- {file: bsim_4p61_noise2_m6.net, dialect: xyce}
+- {file: bsim_4p61_noise3_baseline.net, dialect: xyce}
+- {file: bsim_4p61_noise3_m6.net, dialect: xyce}
+- {file: bsim_4p61_noise4_baseline.net, dialect: xyce}
+- {file: bsim_4p61_noise4_m6.net, dialect: xyce}
+- {file: bsim_4p70_noise1_baseline.net, dialect: xyce}
+- {file: bsim_4p70_noise1_m6.net, dialect: xyce}
+- {file: bsim_4p70_noise2_baseline.net, dialect: xyce}
+- {file: bsim_4p70_noise2_m6.net, dialect: xyce}
+- {file: bsim_4p70_noise3_baseline.net, dialect: xyce}
+- {file: bsim_4p70_noise3_m6.net, dialect: xyce}
+- {file: bsim_4p70_noise4_baseline.net, dialect: xyce}
+- {file: bsim_4p70_noise4_m6.net, dialect: xyce}
+- {file: gain-stage1-bsim4p7_baseline.net, dialect: xyce}
+- {file: gain-stage1-bsim4p7_m6.net, dialect: xyce}

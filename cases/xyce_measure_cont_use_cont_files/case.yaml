@@ -1,0 +1,28 @@
+id: xyce_measure_cont_use_cont_files
+title: Xyce_Regression MEASURE_CONT/USE_CONT_FILES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MEASURE_CONT/USE_CONT_FILES
+files:
+- {path: AC.cir, sha256: c58376e85aa7b1fca309efda635df90b6de77f462e5ac2e2880fee397ed9c469}
+- {path: DC.cir, sha256: 6772568e58e41b933c3cceeb0438b13941b414b301694e16b9c61eadf49c6124}
+- {path: DuplicateMeasureNames.cir, sha256: 5409470d6b4fde8f838d515e2f529132b1b4fcfdaad52f698ae1cda57541da5f}
+- {path: Noise.cir, sha256: 820aca040108ad30f4da694a3fd534aad6338f6dc04ad9f1dd624338f5679292}
+- {path: Tran.cir, sha256: 8071ceaa5b09cafee18aeb43c19d343eda58bdb157be7304c0217a7bcf34aad1}
+- {path: TranStep.cir, sha256: f848aab1d2c18021b27029df124600a36ea154ccfc63ca9cba9b9c5727ff85e0}
+- {path: TranStep.s0.cir, sha256: 0c90ecab1d344a8bc2baca18acec851516a803fd602fdb4a39ad2d43c84d5a28}
+- {path: TranStep.s1.cir, sha256: 4328b95c2d15d6b28d6e25dc68b6b4c768a54af7063d508b6c2cd4a0db44546c}
+netlists:
+- {file: AC.cir, dialect: xyce}
+- {file: DC.cir, dialect: xyce}
+- {file: DuplicateMeasureNames.cir, dialect: xyce}
+- {file: Noise.cir, dialect: xyce}
+- {file: Tran.cir, dialect: xyce}
+- {file: TranStep.cir, dialect: xyce}
+- {file: TranStep.s0.cir, dialect: xyce}
+- {file: TranStep.s1.cir, dialect: xyce}

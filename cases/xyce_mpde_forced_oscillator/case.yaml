@@ -1,0 +1,14 @@
+id: xyce_mpde_forced_oscillator
+title: Xyce_Regression MPDE/FORCED_OSCILLATOR
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MPDE/FORCED_OSCILLATOR
+files:
+- {path: forced_oscillator.cir, sha256: 9d6cd8afe274e3a3723c74cb8566774fcb3c936ff4d79fa18ed0a31ee36c5356}
+netlists:
+- {file: forced_oscillator.cir, dialect: xyce}

@@ -1,0 +1,34 @@
+id: xyce_output_mpde
+title: Xyce_Regression Output/MPDE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Output/MPDE
+files:
+- {path: mpde-csv-fallback.cir, sha256: 69d1c515680209449e5af3d1fb3b68fcb1c8d9934185f189fd53d48bdc1cc62b}
+- {path: mpde-csv.cir, sha256: de9397d4a4c14b6d4afe2bfb87eebe63dfd12e7b44ec7554674b52783a337677}
+- {path: mpde-prn-fallback.cir, sha256: 24651a50ff0f5d4d5a84372dbce38e7a7952282a3b6afb67110b4ee4d585b0ce}
+- {path: mpde-prn.cir, sha256: 6277d75ba03adeb3d68cdd2e2d4260edf51e531266ba520fe68dc5910fe13b89}
+- {path: mpde-probe-defaults-to-prn.cir, sha256: 4c13efb7604aba0262a53e53b7aae985a99123efc67b75c3cb562ceefeac9e10}
+- {path: mpde-probe-fallback-defaults-to-prn.cir, sha256: 068c2edcaf9728b521784a3234f29238cb3aa2fd0fd8ef18aec04a5b2dd876c7}
+- {path: mpde-raw-defaults-to-prn.cir, sha256: 345ef6a3172dc3421edf8a78b1ca3ca12abad2b86bce383d2031cb51e0b53649}
+- {path: mpde-raw-fallback-defaults-to-prn.cir, sha256: b50d0a2c90c0e3f3665d38580401232008fde501e3f5165f5db3547b0119819a}
+- {path: mpde-raw-override-ascii.cir, sha256: b1dd777fc10bb529674f5e1ff2ec8da9107db828453ce132421219e6b93f7eb1}
+- {path: mpde-tecplot-fallback.cir, sha256: c6132c9a2a327db90f6f4052b46e49cc262c2eb1777798ce49a93b20dca3ba46}
+- {path: mpde-tecplot.cir, sha256: 7a7063191683e62f8eaa6b44082e269d09dce1a7e7a1b4a7871c40448e876e74}
+netlists:
+- {file: mpde-csv-fallback.cir, dialect: xyce}
+- {file: mpde-csv.cir, dialect: xyce}
+- {file: mpde-prn-fallback.cir, dialect: xyce}
+- {file: mpde-prn.cir, dialect: xyce}
+- {file: mpde-probe-defaults-to-prn.cir, dialect: xyce}
+- {file: mpde-probe-fallback-defaults-to-prn.cir, dialect: xyce}
+- {file: mpde-raw-defaults-to-prn.cir, dialect: xyce}
+- {file: mpde-raw-fallback-defaults-to-prn.cir, dialect: xyce}
+- {file: mpde-raw-override-ascii.cir, dialect: xyce}
+- {file: mpde-tecplot-fallback.cir, dialect: xyce}
+- {file: mpde-tecplot.cir, dialect: xyce}

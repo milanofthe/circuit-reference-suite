@@ -1,0 +1,26 @@
+id: xyce_delay
+title: Xyce_Regression DELAY
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/DELAY
+files:
+- {path: delay.cir, sha256: 6c195d2616b4084c36bbf84d68327285f163f8156b884a1a4d89c90020412dd1}
+- {path: delay_linear.cir, sha256: 1f378397a64714ad860453d2165fe6442c927ca70dc545be766ad080625c5b7f}
+- {path: delay_nobp.cir, sha256: f37e4587d48bfbd3d7cae3b1b5cfd3100ad9e9c15758184c9e822a240cb853f6}
+- {path: delay_noextrap.cir, sha256: 029ae7867279af61a48063b8290e81c2d7359721235688d765fc133d81b18c9e}
+- {path: delay_veryshort.cir, sha256: 9fea225ad72c56fce418b458ac5d4a1f05d4785ed069f12f1088823a0b08a943}
+- {path: delay_veryshort_nobp.cir, sha256: fb6b8e73018f597b2b72d2d4a73bbe96f61d079c13c8c7db24e3eec38095544d}
+- {path: testbp.cir, sha256: acdc17713c50858970fbd3ea820f44ae9fc48578d816688f71ad9c60c26eb89f}
+netlists:
+- {file: delay.cir, dialect: xyce}
+- {file: delay_linear.cir, dialect: xyce}
+- {file: delay_nobp.cir, dialect: xyce}
+- {file: delay_noextrap.cir, dialect: xyce}
+- {file: delay_veryshort.cir, dialect: xyce}
+- {file: delay_veryshort_nobp.cir, dialect: xyce}
+- {file: testbp.cir, dialect: xyce}

@@ -171,6 +171,642 @@ reference solutions. License per case and library.
 | [vacask_rc](cases/vacask_rc) | 4 | gnucap, ngspice, vacask, xyce | tran | 3 | vacask_spice_va | complete |
 | [vacask_ring_psp103](cases/vacask_ring_psp103) | 3 | ngspice, vacask, xyce | tran | 20 | vacask_psp103v4 | complete |
 
+### Xyce_Regression
+
+[https://github.com/Xyce/Xyce_Regression](https://github.com/Xyce/Xyce_Regression) | 629 cases, 3662 netlists | GPL-3.0-or-later
+
+| case | netlists | dialects | analyses | devices | libraries | status |
+|---|---|---|---|---|---|---|
+| [xyce_4049osc](cases/xyce_4049osc) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_abm](cases/xyce_abm) | 11 | xyce | dc, tran | 22 | - | complete |
+| [xyce_abm_abs](cases/xyce_abm_abs) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_abm_acos_asin](cases/xyce_abm_acos_asin) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_abm_atan_tan](cases/xyce_abm_atan_tan) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_abm_break](cases/xyce_abm_break) | 3 | xyce | tran | 6 | - | complete |
+| [xyce_abm_db](cases/xyce_abm_db) | 1 | xyce | ac | 3 | - | complete |
+| [xyce_abm_expln](cases/xyce_abm_expln) | 2 | xyce | dc, tran | 6 | - | complete |
+| [xyce_abm_freq](cases/xyce_abm_freq) | 8 | xyce | ac | 3 | - | complete |
+| [xyce_abm_func](cases/xyce_abm_func) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_abm_int_floor_ceil](cases/xyce_abm_int_floor_ceil) | 2 | xyce | dc, tran | 8 | - | complete |
+| [xyce_abm_log](cases/xyce_abm_log) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_abm_nint_fmod](cases/xyce_abm_nint_fmod) | 2 | xyce | dc, tran | 2 | - | complete |
+| [xyce_abm_pow](cases/xyce_abm_pow) | 3 | xyce | dc | 6 | - | complete |
+| [xyce_abm_sct](cases/xyce_abm_sct) | 1 | xyce | dc | 10 | - | complete |
+| [xyce_abm_splines](cases/xyce_abm_splines) | 27 | xyce | dc, tran | 4 | - | complete |
+| [xyce_abm_sqrt](cases/xyce_abm_sqrt) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_abm_time](cases/xyce_abm_time) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_acsens](cases/xyce_acsens) | 13 | xyce | ac, sens | 14 | - | complete |
+| [xyce_acsens_bsim3](cases/xyce_acsens_bsim3) | 11 | xyce | ac, sens | 45 | - | complete |
+| [xyce_actests](cases/xyce_actests) | 8 | xyce | ac | 50 | - | complete |
+| [xyce_actests_bsim3](cases/xyce_actests_bsim3) | 4 | xyce | ac, step | 15 | - | complete |
+| [xyce_actests_bsim3soi](cases/xyce_actests_bsim3soi) | 3 | xyce | ac | 5 | - | complete |
+| [xyce_actests_bsim4](cases/xyce_actests_bsim4) | 2 | xyce | ac | 15 | - | complete |
+| [xyce_actests_gminstepping](cases/xyce_actests_gminstepping) | 1 | xyce | ac | 14 | - | complete |
+| [xyce_actests_mos](cases/xyce_actests_mos) | 5 | xyce | ac | 15 | - | complete |
+| [xyce_actests_sandler16](cases/xyce_actests_sandler16) | 1 | xyce | ac | 41 | - | complete |
+| [xyce_actests_sandler7](cases/xyce_actests_sandler7) | 1 | xyce | ac | 108 | - | complete |
+| [xyce_actests_sandler8](cases/xyce_actests_sandler8) | 1 | xyce | ac | 103 | - | complete |
+| [xyce_actests_sandler9](cases/xyce_actests_sandler9) | 1 | xyce | ac | 69 | - | complete |
+| [xyce_agecap](cases/xyce_agecap) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_ampmod](cases/xyce_ampmod) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_b4soi](cases/xyce_b4soi) | 13 | xyce | dc, step, tran | 109 | - | complete |
+| [xyce_b4soi_450](cases/xyce_b4soi_450) | 13 | xyce | dc, tran | 109 | - | complete |
+| [xyce_b4soi_461](cases/xyce_b4soi_461) | 13 | xyce | dc, step, tran | 109 | - | complete |
+| [xyce_binaryops](cases/xyce_binaryops) | 1 | xyce | dc | 14 | - | complete |
+| [xyce_bjt_analytic](cases/xyce_bjt_analytic) | 2 | xyce | tran | 2 | - | complete |
+| [xyce_bjt_extnode](cases/xyce_bjt_extnode) | 8 | xyce | dc | 8 | - | complete |
+| [xyce_bjt_ic](cases/xyce_bjt_ic) | 2 | xyce | dc | 8 | - | complete |
+| [xyce_bjt_off](cases/xyce_bjt_off) | 1 | xyce | dc | 8 | - | complete |
+| [xyce_bjt_pspice_nk](cases/xyce_bjt_pspice_nk) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_break](cases/xyce_break) | 1 | xyce | tran | 5 | - | complete |
+| [xyce_bsim3_gm](cases/xyce_bsim3_gm) | 4 | xyce | dc | 3 | - | complete |
+| [xyce_bsim4](cases/xyce_bsim4) | 14 | xyce | dc | 4 | - | complete |
+| [xyce_bsim4_gm](cases/xyce_bsim4_gm) | 4 | xyce | dc | 4 | - | complete |
+| [xyce_bsim4_rbodymod1](cases/xyce_bsim4_rbodymod1) | 14 | xyce | dc | 4 | - | complete |
+| [xyce_bsim4_rbodymod2](cases/xyce_bsim4_rbodymod2) | 14 | xyce | dc | 4 | - | complete |
+| [xyce_bsim4_v4p7](cases/xyce_bsim4_v4p7) | 15 | xyce | dc, noise | 5 | - | complete |
+| [xyce_bsim4_v4p82](cases/xyce_bsim4_v4p82) | 14 | xyce | dc | 4 | - | complete |
+| [xyce_bsim4_versioning](cases/xyce_bsim4_versioning) | 3 | xyce | tran | 12 | - | complete |
+| [xyce_bsim6](cases/xyce_bsim6) | 10 | xyce | dc, tran | 35 | - | complete |
+| [xyce_bsimcmg](cases/xyce_bsimcmg) | 5 | xyce | ac, dc, tran | 12 | - | complete |
+| [xyce_bsimcmg_108](cases/xyce_bsimcmg_108) | 7 | xyce | ac, dc, tran | 14 | - | complete |
+| [xyce_bsimcmg_110](cases/xyce_bsimcmg_110) | 6 | xyce | ac, dc, tran | 12 | - | complete |
+| [xyce_bsimcmg_111](cases/xyce_bsimcmg_111) | 10 | xyce | ac, dc, tran | 12 | - | complete |
+| [xyce_bsimsoi3](cases/xyce_bsimsoi3) | 6 | xyce | dc, tran | 5 | - | complete |
+| [xyce_bsrc](cases/xyce_bsrc) | 13 | xyce | dc, tran | 11 | - | complete |
+| [xyce_bug_1301](cases/xyce_bug_1301) | 1 | xyce | tran | 902 | - | complete |
+| [xyce_bug_139](cases/xyce_bug_139) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_bug_174](cases/xyce_bug_174) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_bug_237](cases/xyce_bug_237) | 2 | xyce | tran | 11 | - | complete |
+| [xyce_bug_374](cases/xyce_bug_374) | 4 | xyce | dc, tran | 4 | - | complete |
+| [xyce_bug_458](cases/xyce_bug_458) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_capacitor](cases/xyce_capacitor) | 3 | xyce | tran | 3 | - | complete |
+| [xyce_cccs](cases/xyce_cccs) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_1007_son](cases/xyce_certification_tests_bug_1007_son) | 7 | xyce | step, tran | 27 | - | complete |
+| [xyce_certification_tests_bug_1011](cases/xyce_certification_tests_bug_1011) | 1 | xyce | dc | 28 | - | complete |
+| [xyce_certification_tests_bug_1012](cases/xyce_certification_tests_bug_1012) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1018_son](cases/xyce_certification_tests_bug_1018_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_1020_son](cases/xyce_certification_tests_bug_1020_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1035_son](cases/xyce_certification_tests_bug_1035_son) | 10 | xyce | ac | 11 | - | complete |
+| [xyce_certification_tests_bug_1038_son](cases/xyce_certification_tests_bug_1038_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_1040_son](cases/xyce_certification_tests_bug_1040_son) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1041_son](cases/xyce_certification_tests_bug_1041_son) | 40 | xyce | op, tran | 22 | - | complete |
+| [xyce_certification_tests_bug_1042_son](cases/xyce_certification_tests_bug_1042_son) | 2 | xyce | noise | 6 | - | complete |
+| [xyce_certification_tests_bug_1043_son](cases/xyce_certification_tests_bug_1043_son) | 3 | xyce | ac | 3 | - | complete |
+| [xyce_certification_tests_bug_1067_son](cases/xyce_certification_tests_bug_1067_son) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1085_son](cases/xyce_certification_tests_bug_1085_son) | 2 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_1113_son](cases/xyce_certification_tests_bug_1113_son) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_113](cases/xyce_certification_tests_bug_113) | 2 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_1131_son](cases/xyce_certification_tests_bug_1131_son) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_1144_son](cases/xyce_certification_tests_bug_1144_son) | 1 | xyce | dc, step | 2 | - | complete |
+| [xyce_certification_tests_bug_1145_son](cases/xyce_certification_tests_bug_1145_son) | 2 | xyce | step, tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1152](cases/xyce_certification_tests_bug_1152) | 3 | xyce | tran | 67 | - | complete |
+| [xyce_certification_tests_bug_1162_son](cases/xyce_certification_tests_bug_1162_son) | 4 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_1173_1176_son](cases/xyce_certification_tests_bug_1173_1176_son) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1178](cases/xyce_certification_tests_bug_1178) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_1190_son](cases/xyce_certification_tests_bug_1190_son) | 10 | xyce | dc, step, tran | 17 | - | complete |
+| [xyce_certification_tests_bug_1197_son](cases/xyce_certification_tests_bug_1197_son) | 1 | xyce | step, tran | 4 | - | complete |
+| [xyce_certification_tests_bug_120](cases/xyce_certification_tests_bug_120) | 2 | xyce | tran | 28 | - | complete |
+| [xyce_certification_tests_bug_1203_son](cases/xyce_certification_tests_bug_1203_son) | 3 | xyce | dc, step | 10 | - | complete |
+| [xyce_certification_tests_bug_1210_son](cases/xyce_certification_tests_bug_1210_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1211_son](cases/xyce_certification_tests_bug_1211_son) | 10 | xyce | ac, dc, tran | 32 | - | complete |
+| [xyce_certification_tests_bug_1212_son](cases/xyce_certification_tests_bug_1212_son) | 1 | xyce | ac | 9 | - | complete |
+| [xyce_certification_tests_bug_1222_son](cases/xyce_certification_tests_bug_1222_son) | 2 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_1238_son](cases/xyce_certification_tests_bug_1238_son) | 5 | xyce | ac, hb, noise, op | 6 | - | complete |
+| [xyce_certification_tests_bug_128](cases/xyce_certification_tests_bug_128) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1284](cases/xyce_certification_tests_bug_1284) | 3 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1296](cases/xyce_certification_tests_bug_1296) | 1 | xyce | mpde | 7 | - | complete |
+| [xyce_certification_tests_bug_1299_son](cases/xyce_certification_tests_bug_1299_son) | 7 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_1302](cases/xyce_certification_tests_bug_1302) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_1317_son](cases/xyce_certification_tests_bug_1317_son) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_certification_tests_bug_1322_son](cases/xyce_certification_tests_bug_1322_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_133](cases/xyce_certification_tests_bug_133) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_1353](cases/xyce_certification_tests_bug_1353) | 3 | xyce | dc, tran | 9 | - | complete |
+| [xyce_certification_tests_bug_1358](cases/xyce_certification_tests_bug_1358) | 2 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_1370](cases/xyce_certification_tests_bug_1370) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1376](cases/xyce_certification_tests_bug_1376) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1377](cases/xyce_certification_tests_bug_1377) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_138](cases/xyce_certification_tests_bug_138) | 2 | xyce | dc, tran | 44 | - | complete |
+| [xyce_certification_tests_bug_1398](cases/xyce_certification_tests_bug_1398) | 2 | xyce | tran | 28 | - | complete |
+| [xyce_certification_tests_bug_1416](cases/xyce_certification_tests_bug_1416) | 2 | xyce | dc, tran | 2 | - | complete |
+| [xyce_certification_tests_bug_141_son](cases/xyce_certification_tests_bug_141_son) | 4 | xyce | dc, tran | 50 | - | complete |
+| [xyce_certification_tests_bug_1430](cases/xyce_certification_tests_bug_1430) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1455](cases/xyce_certification_tests_bug_1455) | 2 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_1456](cases/xyce_certification_tests_bug_1456) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_certification_tests_bug_1460](cases/xyce_certification_tests_bug_1460) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_1558](cases/xyce_certification_tests_bug_1558) | 6 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_156_son](cases/xyce_certification_tests_bug_156_son) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_159](cases/xyce_certification_tests_bug_159) | 2 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_1602](cases/xyce_certification_tests_bug_1602) | 3 | xyce | dc, tran | 6 | - | complete |
+| [xyce_certification_tests_bug_1636](cases/xyce_certification_tests_bug_1636) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_1657](cases/xyce_certification_tests_bug_1657) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1661](cases/xyce_certification_tests_bug_1661) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1686](cases/xyce_certification_tests_bug_1686) | 2 | xyce | dc | 7 | - | complete |
+| [xyce_certification_tests_bug_1692](cases/xyce_certification_tests_bug_1692) | 5 | xyce | tran | 9 | - | complete |
+| [xyce_certification_tests_bug_1770](cases/xyce_certification_tests_bug_1770) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_1774](cases/xyce_certification_tests_bug_1774) | 1 | xyce | dc, step | 4 | - | complete |
+| [xyce_certification_tests_bug_1775](cases/xyce_certification_tests_bug_1775) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_1776](cases/xyce_certification_tests_bug_1776) | 1 | xyce | dc, step | 3 | - | complete |
+| [xyce_certification_tests_bug_1788](cases/xyce_certification_tests_bug_1788) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_certification_tests_bug_1794](cases/xyce_certification_tests_bug_1794) | 1 | xyce | tran | 1 | - | complete |
+| [xyce_certification_tests_bug_1797](cases/xyce_certification_tests_bug_1797) | 2 | xyce | tran | 21 | - | complete |
+| [xyce_certification_tests_bug_1801](cases/xyce_certification_tests_bug_1801) | 6 | xyce | dc, step | 2 | - | complete |
+| [xyce_certification_tests_bug_1803](cases/xyce_certification_tests_bug_1803) | 3 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_1806](cases/xyce_certification_tests_bug_1806) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_1807](cases/xyce_certification_tests_bug_1807) | 1 | xyce | dc | 8 | - | complete |
+| [xyce_certification_tests_bug_1822](cases/xyce_certification_tests_bug_1822) | 2 | xyce | dc, step, tran | 3 | - | complete |
+| [xyce_certification_tests_bug_1826](cases/xyce_certification_tests_bug_1826) | 2 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_1847](cases/xyce_certification_tests_bug_1847) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_1902](cases/xyce_certification_tests_bug_1902) | 2 | xyce | hb | 20003 | - | complete |
+| [xyce_certification_tests_bug_1922](cases/xyce_certification_tests_bug_1922) | 2 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_1946](cases/xyce_certification_tests_bug_1946) | 2 | xyce | tran | 11 | - | complete |
+| [xyce_certification_tests_bug_1957](cases/xyce_certification_tests_bug_1957) | 4 | xyce | tran | 21 | - | complete |
+| [xyce_certification_tests_bug_1962](cases/xyce_certification_tests_bug_1962) | 8 | xyce | four, sens, step, tran | 18 | - | complete |
+| [xyce_certification_tests_bug_2007](cases/xyce_certification_tests_bug_2007) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_201_son](cases/xyce_certification_tests_bug_201_son) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_2039](cases/xyce_certification_tests_bug_2039) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_206](cases/xyce_certification_tests_bug_206) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_21_son](cases/xyce_certification_tests_bug_21_son) | 2 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_225](cases/xyce_certification_tests_bug_225) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_229_son](cases/xyce_certification_tests_bug_229_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_22_son](cases/xyce_certification_tests_bug_22_son) | 1 | xyce | tran | 14 | - | complete |
+| [xyce_certification_tests_bug_243](cases/xyce_certification_tests_bug_243) | 1 | xyce | tran | 11 | - | complete |
+| [xyce_certification_tests_bug_246](cases/xyce_certification_tests_bug_246) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_250](cases/xyce_certification_tests_bug_250) | 1 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_254](cases/xyce_certification_tests_bug_254) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_256](cases/xyce_certification_tests_bug_256) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_260_son](cases/xyce_certification_tests_bug_260_son) | 1 | xyce | step, tran | 3 | - | complete |
+| [xyce_certification_tests_bug_263](cases/xyce_certification_tests_bug_263) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_264_son](cases/xyce_certification_tests_bug_264_son) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_269_son](cases/xyce_certification_tests_bug_269_son) | 2 | xyce | ac, op | 10 | - | complete |
+| [xyce_certification_tests_bug_271_son](cases/xyce_certification_tests_bug_271_son) | 1 | xyce | tran | 5 | - | complete |
+| [xyce_certification_tests_bug_272_son](cases/xyce_certification_tests_bug_272_son) | 2 | xyce | ac, op | 10 | - | complete |
+| [xyce_certification_tests_bug_276_son](cases/xyce_certification_tests_bug_276_son) | 1 | xyce | dc, step | 5 | - | complete |
+| [xyce_certification_tests_bug_277_son](cases/xyce_certification_tests_bug_277_son) | 3 | xyce | tran | 110 | - | complete |
+| [xyce_certification_tests_bug_289](cases/xyce_certification_tests_bug_289) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_28_son](cases/xyce_certification_tests_bug_28_son) | 13 | xyce | dc, step, tran | 17 | - | complete |
+| [xyce_certification_tests_bug_294_son](cases/xyce_certification_tests_bug_294_son) | 2 | xyce | dc, tran | 163 | - | complete |
+| [xyce_certification_tests_bug_302](cases/xyce_certification_tests_bug_302) | 8 | xyce | dc, tran | 3 | - | complete |
+| [xyce_certification_tests_bug_306_son](cases/xyce_certification_tests_bug_306_son) | 5 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_307](cases/xyce_certification_tests_bug_307) | 8 | xyce | dc, tran | 24 | - | complete |
+| [xyce_certification_tests_bug_308_son](cases/xyce_certification_tests_bug_308_son) | 3 | xyce | step, tran | 22 | - | complete |
+| [xyce_certification_tests_bug_311](cases/xyce_certification_tests_bug_311) | 2 | xyce | tran | 24 | - | complete |
+| [xyce_certification_tests_bug_318](cases/xyce_certification_tests_bug_318) | 2 | xyce | tran | 136 | - | complete |
+| [xyce_certification_tests_bug_320](cases/xyce_certification_tests_bug_320) | 1 | xyce | dc | 8 | - | complete |
+| [xyce_certification_tests_bug_325_son](cases/xyce_certification_tests_bug_325_son) | 2 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_332](cases/xyce_certification_tests_bug_332) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_333_son](cases/xyce_certification_tests_bug_333_son) | 4 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_338_son](cases/xyce_certification_tests_bug_338_son) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_340](cases/xyce_certification_tests_bug_340) | 1 | xyce | hb, step | 3 | - | complete |
+| [xyce_certification_tests_bug_343](cases/xyce_certification_tests_bug_343) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_347](cases/xyce_certification_tests_bug_347) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_352](cases/xyce_certification_tests_bug_352) | 2 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_359_son](cases/xyce_certification_tests_bug_359_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_360_son](cases/xyce_certification_tests_bug_360_son) | 1 | xyce | tran | 67 | - | complete |
+| [xyce_certification_tests_bug_372](cases/xyce_certification_tests_bug_372) | 14 | xyce | tran | 69 | - | complete |
+| [xyce_certification_tests_bug_379_son](cases/xyce_certification_tests_bug_379_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_37_son](cases/xyce_certification_tests_bug_37_son) | 1 | xyce | tran | 88 | - | complete |
+| [xyce_certification_tests_bug_381](cases/xyce_certification_tests_bug_381) | 13 | xyce | step, tran | 89 | - | complete |
+| [xyce_certification_tests_bug_386](cases/xyce_certification_tests_bug_386) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_387](cases/xyce_certification_tests_bug_387) | 1 | xyce | dc | 8 | - | complete |
+| [xyce_certification_tests_bug_389_son](cases/xyce_certification_tests_bug_389_son) | 2 | xyce | hb | 5 | - | complete |
+| [xyce_certification_tests_bug_38_son](cases/xyce_certification_tests_bug_38_son) | 2 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_397](cases/xyce_certification_tests_bug_397) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_39_son](cases/xyce_certification_tests_bug_39_son) | 4 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_401_son](cases/xyce_certification_tests_bug_401_son) | 1 | xyce | ac | 4 | - | complete |
+| [xyce_certification_tests_bug_402_son](cases/xyce_certification_tests_bug_402_son) | 2 | xyce | dc | 8 | - | complete |
+| [xyce_certification_tests_bug_407_son](cases/xyce_certification_tests_bug_407_son) | 3 | xyce | ac, dc, hb | 4 | - | complete |
+| [xyce_certification_tests_bug_40_son](cases/xyce_certification_tests_bug_40_son) | 1 | xyce | tran | 14 | - | complete |
+| [xyce_certification_tests_bug_412_son](cases/xyce_certification_tests_bug_412_son) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_427_son](cases/xyce_certification_tests_bug_427_son) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_428](cases/xyce_certification_tests_bug_428) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_42_son](cases/xyce_certification_tests_bug_42_son) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_438](cases/xyce_certification_tests_bug_438) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_439](cases/xyce_certification_tests_bug_439) | 1 | xyce | tran | 22 | - | complete |
+| [xyce_certification_tests_bug_440_son](cases/xyce_certification_tests_bug_440_son) | 3 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_442](cases/xyce_certification_tests_bug_442) | 4 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_456](cases/xyce_certification_tests_bug_456) | 16 | xyce | tran | 90 | - | complete |
+| [xyce_certification_tests_bug_457_son](cases/xyce_certification_tests_bug_457_son) | 1 | xyce | dc, step | 9 | - | complete |
+| [xyce_certification_tests_bug_460](cases/xyce_certification_tests_bug_460) | 2 | xyce | step, tran | 23 | - | complete |
+| [xyce_certification_tests_bug_461_son](cases/xyce_certification_tests_bug_461_son) | 8 | xyce | ac, op, tran | 10 | - | complete |
+| [xyce_certification_tests_bug_466_son](cases/xyce_certification_tests_bug_466_son) | 1 | xyce | step, tran | 3 | - | complete |
+| [xyce_certification_tests_bug_467_son](cases/xyce_certification_tests_bug_467_son) | 1 | xyce | tran | 6003 | - | complete |
+| [xyce_certification_tests_bug_468_son](cases/xyce_certification_tests_bug_468_son) | 1 | xyce | ac, op | 5 | - | complete |
+| [xyce_certification_tests_bug_46_son](cases/xyce_certification_tests_bug_46_son) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_477_son](cases/xyce_certification_tests_bug_477_son) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_479_son](cases/xyce_certification_tests_bug_479_son) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_48_son](cases/xyce_certification_tests_bug_48_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_496_son](cases/xyce_certification_tests_bug_496_son) | 1 | xyce | op, step | 4 | - | complete |
+| [xyce_certification_tests_bug_507_son](cases/xyce_certification_tests_bug_507_son) | 1 | xyce | dc | 47893 | - | complete |
+| [xyce_certification_tests_bug_518_son](cases/xyce_certification_tests_bug_518_son) | 1 | xyce | tran | 15 | - | complete |
+| [xyce_certification_tests_bug_519_son](cases/xyce_certification_tests_bug_519_son) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_520](cases/xyce_certification_tests_bug_520) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_524_son](cases/xyce_certification_tests_bug_524_son) | 3 | xyce | dc, tran | 6 | - | complete |
+| [xyce_certification_tests_bug_525_son](cases/xyce_certification_tests_bug_525_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_529_son](cases/xyce_certification_tests_bug_529_son) | 1 | xyce | step, tran | 4 | - | complete |
+| [xyce_certification_tests_bug_534_son](cases/xyce_certification_tests_bug_534_son) | 2 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_538_son](cases/xyce_certification_tests_bug_538_son) | 16 | xyce | ac, dc, hb, tran | 17 | - | complete |
+| [xyce_certification_tests_bug_546_son](cases/xyce_certification_tests_bug_546_son) | 3 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_547_son](cases/xyce_certification_tests_bug_547_son) | 1 | xyce | tran | 22 | - | complete |
+| [xyce_certification_tests_bug_54_son](cases/xyce_certification_tests_bug_54_son) | 4 | xyce | dc | 110 | - | complete |
+| [xyce_certification_tests_bug_568](cases/xyce_certification_tests_bug_568) | 1 | xyce | step, tran | 4 | - | complete |
+| [xyce_certification_tests_bug_569](cases/xyce_certification_tests_bug_569) | 1 | xyce | step | 26 | - | complete |
+| [xyce_certification_tests_bug_573](cases/xyce_certification_tests_bug_573) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_573_son](cases/xyce_certification_tests_bug_573_son) | 2 | xyce | hb, op | 10 | - | complete |
+| [xyce_certification_tests_bug_574](cases/xyce_certification_tests_bug_574) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_certification_tests_bug_575_son](cases/xyce_certification_tests_bug_575_son) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_577_son](cases/xyce_certification_tests_bug_577_son) | 1 | xyce | tran | 13 | - | complete |
+| [xyce_certification_tests_bug_584_son](cases/xyce_certification_tests_bug_584_son) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_bug_592_son](cases/xyce_certification_tests_bug_592_son) | 1 | xyce | sens, tran | 2 | - | complete |
+| [xyce_certification_tests_bug_601_son](cases/xyce_certification_tests_bug_601_son) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_certification_tests_bug_604_son](cases/xyce_certification_tests_bug_604_son) | 1 | xyce | op | 7 | - | complete |
+| [xyce_certification_tests_bug_606_son](cases/xyce_certification_tests_bug_606_son) | 5 | xyce | dc, op, step | 8 | - | complete |
+| [xyce_certification_tests_bug_61](cases/xyce_certification_tests_bug_61) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_616](cases/xyce_certification_tests_bug_616) | 1 | xyce | dc, step | 3 | - | complete |
+| [xyce_certification_tests_bug_629_son](cases/xyce_certification_tests_bug_629_son) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_636_son](cases/xyce_certification_tests_bug_636_son) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_645_son](cases/xyce_certification_tests_bug_645_son) | 7 | xyce | dc, sens, step | 3 | - | complete |
+| [xyce_certification_tests_bug_646_son](cases/xyce_certification_tests_bug_646_son) | 2 | xyce | ac, tran | 18 | - | complete |
+| [xyce_certification_tests_bug_647_son](cases/xyce_certification_tests_bug_647_son) | 37 | xyce | dc, step, tran | 92 | - | complete |
+| [xyce_certification_tests_bug_652_son](cases/xyce_certification_tests_bug_652_son) | 3 | xyce | hb | 6 | - | complete |
+| [xyce_certification_tests_bug_654](cases/xyce_certification_tests_bug_654) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_654_son](cases/xyce_certification_tests_bug_654_son) | 1 | xyce | dc, op, step | 6 | - | complete |
+| [xyce_certification_tests_bug_655_son](cases/xyce_certification_tests_bug_655_son) | 2 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_658](cases/xyce_certification_tests_bug_658) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_662](cases/xyce_certification_tests_bug_662) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_667_son](cases/xyce_certification_tests_bug_667_son) | 5 | xyce | tran | 15 | - | complete |
+| [xyce_certification_tests_bug_668](cases/xyce_certification_tests_bug_668) | 6 | xyce | tran | 18 | - | complete |
+| [xyce_certification_tests_bug_681_son](cases/xyce_certification_tests_bug_681_son) | 8 | xyce | dc, step | 4 | - | complete |
+| [xyce_certification_tests_bug_689](cases/xyce_certification_tests_bug_689) | 2 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_690](cases/xyce_certification_tests_bug_690) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_certification_tests_bug_692](cases/xyce_certification_tests_bug_692) | 1 | xyce | dc, step | 5 | - | complete |
+| [xyce_certification_tests_bug_695](cases/xyce_certification_tests_bug_695) | 1 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_700_son](cases/xyce_certification_tests_bug_700_son) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_701_son](cases/xyce_certification_tests_bug_701_son) | 6 | xyce | ac, hb, op | 4 | - | complete |
+| [xyce_certification_tests_bug_706_son](cases/xyce_certification_tests_bug_706_son) | 2 | xyce | tran | 6003 | - | complete |
+| [xyce_certification_tests_bug_710_son](cases/xyce_certification_tests_bug_710_son) | 2 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_715_son](cases/xyce_certification_tests_bug_715_son) | 1 | xyce | tran | 11 | - | complete |
+| [xyce_certification_tests_bug_718_son](cases/xyce_certification_tests_bug_718_son) | 1 | xyce | tran | 5 | - | complete |
+| [xyce_certification_tests_bug_742](cases/xyce_certification_tests_bug_742) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_746_son](cases/xyce_certification_tests_bug_746_son) | 11 | xyce | tran | 24 | - | complete |
+| [xyce_certification_tests_bug_754_son](cases/xyce_certification_tests_bug_754_son) | 17 | xyce | dc, step | 4 | - | complete |
+| [xyce_certification_tests_bug_767](cases/xyce_certification_tests_bug_767) | 2 | xyce | tran | 68 | - | complete |
+| [xyce_certification_tests_bug_769_son](cases/xyce_certification_tests_bug_769_son) | 1 | xyce | tran | 1 | - | complete |
+| [xyce_certification_tests_bug_775_son](cases/xyce_certification_tests_bug_775_son) | 1 | xyce | tran | 25 | - | complete |
+| [xyce_certification_tests_bug_784](cases/xyce_certification_tests_bug_784) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_790](cases/xyce_certification_tests_bug_790) | 2 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_791_son](cases/xyce_certification_tests_bug_791_son) | 2 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_792](cases/xyce_certification_tests_bug_792) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_certification_tests_bug_794_son](cases/xyce_certification_tests_bug_794_son) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_bug_795](cases/xyce_certification_tests_bug_795) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_805](cases/xyce_certification_tests_bug_805) | 3 | xyce | tran | 20 | - | complete |
+| [xyce_certification_tests_bug_805_son](cases/xyce_certification_tests_bug_805_son) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_certification_tests_bug_806_son](cases/xyce_certification_tests_bug_806_son) | 11 | xyce | dc, step, tran | 11 | - | complete |
+| [xyce_certification_tests_bug_807_son](cases/xyce_certification_tests_bug_807_son) | 2 | xyce | tran | 12 | - | complete |
+| [xyce_certification_tests_bug_812_son](cases/xyce_certification_tests_bug_812_son) | 1 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_813_son](cases/xyce_certification_tests_bug_813_son) | 1 | xyce | tran | 11 | - | complete |
+| [xyce_certification_tests_bug_822](cases/xyce_certification_tests_bug_822) | 2 | xyce | dc | 110 | - | complete |
+| [xyce_certification_tests_bug_828_son](cases/xyce_certification_tests_bug_828_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_834](cases/xyce_certification_tests_bug_834) | 2 | xyce | tran | 7 | - | complete |
+| [xyce_certification_tests_bug_836_son](cases/xyce_certification_tests_bug_836_son) | 3 | xyce | hb | 3 | - | complete |
+| [xyce_certification_tests_bug_846](cases/xyce_certification_tests_bug_846) | 1 | xyce | tran | 110 | - | complete |
+| [xyce_certification_tests_bug_848](cases/xyce_certification_tests_bug_848) | 1 | xyce | tran | 232 | - | complete |
+| [xyce_certification_tests_bug_849_son](cases/xyce_certification_tests_bug_849_son) | 1 | xyce | step, tran | 4 | - | complete |
+| [xyce_certification_tests_bug_85_son](cases/xyce_certification_tests_bug_85_son) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_bug_86_son](cases/xyce_certification_tests_bug_86_son) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_870_son](cases/xyce_certification_tests_bug_870_son) | 2 | xyce | dc | 5 | - | complete |
+| [xyce_certification_tests_bug_899](cases/xyce_certification_tests_bug_899) | 1 | xyce | tran | 17 | - | complete |
+| [xyce_certification_tests_bug_903_son](cases/xyce_certification_tests_bug_903_son) | 2 | xyce | ac, tran | 18 | - | complete |
+| [xyce_certification_tests_bug_907_son](cases/xyce_certification_tests_bug_907_son) | 2 | xyce | dc | 6 | - | complete |
+| [xyce_certification_tests_bug_913_son](cases/xyce_certification_tests_bug_913_son) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_bug_920_son](cases/xyce_certification_tests_bug_920_son) | 4 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_bug_927_son](cases/xyce_certification_tests_bug_927_son) | 2 | xyce | noise, op, step | 22 | - | complete |
+| [xyce_certification_tests_bug_963_son](cases/xyce_certification_tests_bug_963_son) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_certification_tests_bug_966_son](cases/xyce_certification_tests_bug_966_son) | 11 | xyce | sens, tran | 8 | - | complete |
+| [xyce_certification_tests_bug_967](cases/xyce_certification_tests_bug_967) | 1 | xyce | tran | 233 | - | complete |
+| [xyce_certification_tests_bug_971_son](cases/xyce_certification_tests_bug_971_son) | 1 | xyce | dc | 20 | - | complete |
+| [xyce_certification_tests_bug_981_son](cases/xyce_certification_tests_bug_981_son) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_bug_983_son](cases/xyce_certification_tests_bug_983_son) | 10 | xyce | dc, tran | 10 | - | complete |
+| [xyce_certification_tests_bug_986_son](cases/xyce_certification_tests_bug_986_son) | 2 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bug_988_son](cases/xyce_certification_tests_bug_988_son) | 2 | xyce | tran | 11 | - | complete |
+| [xyce_certification_tests_bug_991_son](cases/xyce_certification_tests_bug_991_son) | 4 | xyce | tran | 6 | - | complete |
+| [xyce_certification_tests_bugs_issue_54](cases/xyce_certification_tests_bugs_issue_54) | 2 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_issue_160](cases/xyce_certification_tests_issue_160) | 6 | xyce | tran | 10 | - | complete |
+| [xyce_certification_tests_issue_202](cases/xyce_certification_tests_issue_202) | 3 | xyce | dc | 2 | - | complete |
+| [xyce_certification_tests_issue_206](cases/xyce_certification_tests_issue_206) | 3 | xyce | dc, op | 4 | - | complete |
+| [xyce_certification_tests_issue_229](cases/xyce_certification_tests_issue_229) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_certification_tests_issue_235](cases/xyce_certification_tests_issue_235) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_issue_239](cases/xyce_certification_tests_issue_239) | 44 | xyce | sampling, step, tran | 22 | - | complete |
+| [xyce_certification_tests_issue_24](cases/xyce_certification_tests_issue_24) | 28 | xyce | dc, sampling | 25 | - | complete |
+| [xyce_certification_tests_issue_267](cases/xyce_certification_tests_issue_267) | 25 | xyce | dc, sens, tran | 9 | - | complete |
+| [xyce_certification_tests_issue_306](cases/xyce_certification_tests_issue_306) | 1 | xyce | sampling, tran | 105 | - | complete |
+| [xyce_certification_tests_issue_310](cases/xyce_certification_tests_issue_310) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_certification_tests_issue_328](cases/xyce_certification_tests_issue_328) | 3 | xyce | dc | 3 | - | complete |
+| [xyce_certification_tests_issue_340](cases/xyce_certification_tests_issue_340) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_certification_tests_issue_405](cases/xyce_certification_tests_issue_405) | 9 | xyce | dc, step | 3 | - | complete |
+| [xyce_certification_tests_issue_451](cases/xyce_certification_tests_issue_451) | 2 | xyce | op | 10 | - | complete |
+| [xyce_certification_tests_issue_492](cases/xyce_certification_tests_issue_492) | 25 | xyce | dc, sens, step, tran | 9 | - | complete |
+| [xyce_certification_tests_issue_494](cases/xyce_certification_tests_issue_494) | 25 | xyce | dc, sens, tran | 9 | - | complete |
+| [xyce_certification_tests_issue_536](cases/xyce_certification_tests_issue_536) | 8 | xyce | dc | 7 | - | complete |
+| [xyce_certification_tests_issue_543](cases/xyce_certification_tests_issue_543) | 2 | xyce | ac | 3 | - | complete |
+| [xyce_certification_tests_issue_565_566](cases/xyce_certification_tests_issue_565_566) | 2 | xyce | step, tran | 2 | - | complete |
+| [xyce_certification_tests_issue_575](cases/xyce_certification_tests_issue_575) | 2 | xyce | step, tran | 12 | - | complete |
+| [xyce_certification_tests_issue_609](cases/xyce_certification_tests_issue_609) | 4 | xyce | dc, step | 13 | - | complete |
+| [xyce_certification_tests_issue_634](cases/xyce_certification_tests_issue_634) | 1 | xyce | op, tran | 22 | - | complete |
+| [xyce_certification_tests_issue_740](cases/xyce_certification_tests_issue_740) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_certification_tests_mos1_invert_cascade](cases/xyce_certification_tests_mos1_invert_cascade) | 1 | xyce | tran | 35 | - | complete |
+| [xyce_certification_tests_trans_line](cases/xyce_certification_tests_trans_line) | 2 | xyce | tran | 15003 | - | complete |
+| [xyce_certification_tests_xyceaslibrary](cases/xyce_certification_tests_xyceaslibrary) | 2 | xyce | tran | 8 | - | complete |
+| [xyce_circuitsim90_bjt](cases/xyce_circuitsim90_bjt) | 1 | xyce | dc, op | 31 | - | complete |
+| [xyce_circuitsim90_mos2](cases/xyce_circuitsim90_mos2) | 18 | xyce | ac, dc, op, tran | 227 | - | complete |
+| [xyce_circuitsim90_mos2_large](cases/xyce_circuitsim90_mos2_large) | 14 | xyce | tran | 46075 | - | complete |
+| [xyce_circuitsim90_mos3](cases/xyce_circuitsim90_mos3) | 10 | xyce | op, tran | 568 | - | complete |
+| [xyce_comparator](cases/xyce_comparator) | 1 | xyce | tran | 22 | - | complete |
+| [xyce_complex_num](cases/xyce_complex_num) | 5 | xyce | ac, dc, hb | 4 | - | complete |
+| [xyce_connectivity](cases/xyce_connectivity) | 1 | xyce | tran | 141 | - | complete |
+| [xyce_dakota](cases/xyce_dakota) | 4 | xyce | dc, tran | 6 | - | complete |
+| [xyce_dakota_bb_opt_soi](cases/xyce_dakota_bb_opt_soi) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_dc_upgrade](cases/xyce_dc_upgrade) | 3 | xyce | dc | 3 | - | complete |
+| [xyce_delay](cases/xyce_delay) | 7 | xyce | tran | 6 | - | complete |
+| [xyce_diagnostic](cases/xyce_diagnostic) | 17 | xyce | dc, tran | 6003 | - | complete |
+| [xyce_digital](cases/xyce_digital) | 28 | xyce | dc, tran | 58 | - | complete |
+| [xyce_digital_dff](cases/xyce_digital_dff) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_diode](cases/xyce_diode) | 10 | xyce | dc, step, tran | 8 | - | complete |
+| [xyce_diode_analytic](cases/xyce_diode_analytic) | 3 | xyce | tran | 3 | - | complete |
+| [xyce_diode_cmc](cases/xyce_diode_cmc) | 4 | xyce | ac, dc, noise, tran | 9 | - | complete |
+| [xyce_dtemp](cases/xyce_dtemp) | 54 | xyce | dc, step, tran | 22 | - | complete |
+| [xyce_ekv26](cases/xyce_ekv26) | 3 | xyce | dc, tran | 5 | - | complete |
+| [xyce_embedded](cases/xyce_embedded) | 25 | xyce | ac, dc, embeddedsampling, hb, op, sens, tran | 11 | - | complete |
+| [xyce_embedded2](cases/xyce_embedded2) | 14 | xyce | dc, embeddedsampling, op, tran | 4 | - | complete |
+| [xyce_erroption](cases/xyce_erroption) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_expprint](cases/xyce_expprint) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_fft](cases/xyce_fft) | 8 | xyce | tran | 15 | - | complete |
+| [xyce_fft_step](cases/xyce_fft_step) | 10 | xyce | step, tran | 5 | - | complete |
+| [xyce_fourier](cases/xyce_fourier) | 11 | xyce | four, sens, step, tran | 20 | - | complete |
+| [xyce_gencoupapi](cases/xyce_gencoupapi) | 22 | xyce | ac, dc, hb, tran | 7 | - | complete |
+| [xyce_globalnode](cases/xyce_globalnode) | 4 | xyce | tran | 10 | - | complete |
+| [xyce_globalpar](cases/xyce_globalpar) | 4 | xyce | dc, step, tran | 8 | - | complete |
+| [xyce_gmin_stepping](cases/xyce_gmin_stepping) | 7 | xyce | step, tran | 403 | - | complete |
+| [xyce_ground_path](cases/xyce_ground_path) | 1 | xyce | tran | 14 | - | complete |
+| [xyce_gswitch](cases/xyce_gswitch) | 2 | xyce | tran | 6 | - | complete |
+| [xyce_hb](cases/xyce_hb) | 25 | xyce | hb, mpde, op, tran | 20 | - | complete |
+| [xyce_hb_rc](cases/xyce_hb_rc) | 9 | xyce | hb, tran | 7 | - | complete |
+| [xyce_hicum](cases/xyce_hicum) | 6 | xyce | ac, dc, noise, step, tran | 38 | - | complete |
+| [xyce_hicum_hicum_l0](cases/xyce_hicum_hicum_l0) | 5 | xyce | ac, dc, step, tran | 38 | - | complete |
+| [xyce_homotopy](cases/xyce_homotopy) | 30 | xyce | dc, tran | 45 | - | complete |
+| [xyce_ic_and_nodeset](cases/xyce_ic_and_nodeset) | 32 | xyce | op, tran | 163 | - | complete |
+| [xyce_iexp](cases/xyce_iexp) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_inductor](cases/xyce_inductor) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_init_conds](cases/xyce_init_conds) | 4 | xyce | tran | 36 | - | complete |
+| [xyce_invalid_chars](cases/xyce_invalid_chars) | 26 | xyce | ac, dc, noise, tran | 177 | - | complete |
+| [xyce_invert1](cases/xyce_invert1) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_ipat](cases/xyce_ipat) | 2 | xyce | step, tran | 28 | - | complete |
+| [xyce_ipulse](cases/xyce_ipulse) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_ipwl](cases/xyce_ipwl) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_isffm](cases/xyce_isffm) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_isin](cases/xyce_isin) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_iswitch](cases/xyce_iswitch) | 3 | xyce | dc, tran | 6 | - | complete |
+| [xyce_juncap200](cases/xyce_juncap200) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_l_utsoi](cases/xyce_l_utsoi) | 4 | xyce | dc, step | 19 | - | complete |
+| [xyce_lead_currents](cases/xyce_lead_currents) | 49 | xyce | ac, dc, noise, op, tran | 30 | - | complete |
+| [xyce_lib](cases/xyce_lib) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_load](cases/xyce_load) | 1 | xyce | dc | 39 | - | complete |
+| [xyce_ltra](cases/xyce_ltra) | 7 | xyce | tran | 85 | - | complete |
+| [xyce_lumpedline](cases/xyce_lumpedline) | 3 | xyce | dc, tran | 4322 | - | complete |
+| [xyce_max_time_step](cases/xyce_max_time_step) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_mcnc_bjt_latch](cases/xyce_mcnc_bjt_latch) | 1 | xyce | tran | 28 | - | complete |
+| [xyce_mcnc_bjt_opampal](cases/xyce_mcnc_bjt_opampal) | 1 | xyce | tran | 183 | - | complete |
+| [xyce_mcnc_bjt_rca](cases/xyce_mcnc_bjt_rca) | 1 | xyce | tran | 26 | - | complete |
+| [xyce_measure](cases/xyce_measure) | 63 | xyce | tran | 14 | - | complete |
+| [xyce_measure_ac](cases/xyce_measure_ac) | 12 | xyce | ac, lin | 33 | - | complete |
+| [xyce_measure_ac_step](cases/xyce_measure_ac_step) | 10 | xyce | ac, step | 10 | - | complete |
+| [xyce_measure_cont](cases/xyce_measure_cont) | 12 | xyce | ac, dc, noise, tran | 13 | - | complete |
+| [xyce_measure_cont_step](cases/xyce_measure_cont_step) | 18 | xyce | ac, dc, noise, step, tran | 13 | - | complete |
+| [xyce_measure_cont_use_cont_files](cases/xyce_measure_cont_use_cont_files) | 8 | xyce | ac, dc, noise, step, tran | 13 | - | complete |
+| [xyce_measure_dc](cases/xyce_measure_dc) | 23 | xyce | dc, op | 8 | - | complete |
+| [xyce_measure_dc_remeasure](cases/xyce_measure_dc_remeasure) | 5 | xyce | dc | 5 | - | complete |
+| [xyce_measure_dc_step](cases/xyce_measure_dc_step) | 11 | xyce | dc, step | 8 | - | complete |
+| [xyce_measure_fft](cases/xyce_measure_fft) | 11 | xyce | tran | 14 | - | complete |
+| [xyce_measure_fft_step](cases/xyce_measure_fft_step) | 3 | xyce | step, tran | 5 | - | complete |
+| [xyce_measure_noise](cases/xyce_measure_noise) | 13 | xyce | noise | 13 | - | complete |
+| [xyce_measure_noise_step](cases/xyce_measure_noise_step) | 10 | xyce | noise, step | 13 | - | complete |
+| [xyce_measure_remeasure](cases/xyce_measure_remeasure) | 16 | xyce | step, tran | 49 | - | complete |
+| [xyce_measure_step](cases/xyce_measure_step) | 91 | xyce | step, tran | 10 | - | complete |
+| [xyce_memristor](cases/xyce_memristor) | 6 | xyce | tran | 7 | - | complete |
+| [xyce_message_topology](cases/xyce_message_topology) | 3 | xyce | dc | 15 | - | complete |
+| [xyce_mextram](cases/xyce_mextram) | 24 | xyce | ac, dc, step, tran | 17 | - | complete |
+| [xyce_mfg_soln_capacitor](cases/xyce_mfg_soln_capacitor) | 1 | xyce | tran | 3 | - | complete |
+| [xyce_mincapres](cases/xyce_mincapres) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_minductors](cases/xyce_minductors) | 47 | xyce | step, tran | 12 | - | complete |
+| [xyce_mixed_signal_python](cases/xyce_mixed_signal_python) | 26 | xyce | tran | 10 | - | complete |
+| [xyce_mixed_signal_vpi](cases/xyce_mixed_signal_vpi) | 5 | xyce | tran | 9 | - | complete |
+| [xyce_model_binning](cases/xyce_model_binning) | 10 | xyce | dc, op, tran | 22 | - | complete |
+| [xyce_mos13_ic](cases/xyce_mos13_ic) | 2 | xyce | tran | 105 | - | complete |
+| [xyce_mos6](cases/xyce_mos6) | 3 | xyce | dc, tran | 7 | - | complete |
+| [xyce_mosfet_paramaliases](cases/xyce_mosfet_paramaliases) | 8 | xyce | tran | 7 | - | complete |
+| [xyce_mpde](cases/xyce_mpde) | 6 | xyce | mpde, tran | 44 | - | complete |
+| [xyce_mpde_dcmix_bal](cases/xyce_mpde_dcmix_bal) | 1 | xyce | mpde | 25 | - | complete |
+| [xyce_mpde_forced_oscillator](cases/xyce_mpde_forced_oscillator) | 1 | xyce | tran | 22 | - | complete |
+| [xyce_mpde_opamp](cases/xyce_mpde_opamp) | 1 | xyce | dc | 65 | - | complete |
+| [xyce_mpde_rc](cases/xyce_mpde_rc) | 3 | xyce | hb, mpde, tran | 3 | - | complete |
+| [xyce_mpde_rcdiode](cases/xyce_mpde_rcdiode) | 1 | xyce | mpde | 4 | - | complete |
+| [xyce_multi_option](cases/xyce_multi_option) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_multiplicity_factor](cases/xyce_multiplicity_factor) | 32 | xyce | dc, noise, sens, step, tran | 20 | - | complete |
+| [xyce_multiplicity_factor_bsim4_noise](cases/xyce_multiplicity_factor_bsim4_noise) | 18 | xyce | noise, step | 25 | - | complete |
+| [xyce_mvs2](cases/xyce_mvs2) | 2 | xyce | dc | 4 | - | complete |
+| [xyce_neuron](cases/xyce_neuron) | 27 | xyce | dc, tran | 3070 | - | complete |
+| [xyce_neuronpop](cases/xyce_neuronpop) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_njfet_dc](cases/xyce_njfet_dc) | 2 | xyce | dc, step | 6 | - | complete |
+| [xyce_nl_resistor](cases/xyce_nl_resistor) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_nmesfet](cases/xyce_nmesfet) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_nmos1_dc](cases/xyce_nmos1_dc) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_nmos3_dc](cases/xyce_nmos3_dc) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_nmos_analytic](cases/xyce_nmos_analytic) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_noise](cases/xyce_noise) | 11 | xyce | noise | 28 | - | complete |
+| [xyce_nonlinear_convergencetests](cases/xyce_nonlinear_convergencetests) | 13 | xyce | tran | 22 | - | complete |
+| [xyce_npn_dc](cases/xyce_npn_dc) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_onebit](cases/xyce_onebit) | 1 | xyce | tran | 24 | - | complete |
+| [xyce_oneshot](cases/xyce_oneshot) | 1 | xyce | tran | 21 | - | complete |
+| [xyce_op](cases/xyce_op) | 4 | xyce | ac, dc, op, tran | 38 | - | complete |
+| [xyce_options_output](cases/xyce_options_output) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_output](cases/xyce_output) | 1 | xyce | op | 48 | - | complete |
+| [xyce_output_ac](cases/xyce_output_ac) | 32 | xyce | ac, op, step | 7 | - | complete |
+| [xyce_output_ac_sens](cases/xyce_output_ac_sens) | 12 | xyce | ac, sens, step | 4 | - | complete |
+| [xyce_output_dasho](cases/xyce_output_dasho) | 13 | xyce | ac, dc, embeddedsampling, four, hb, lin, noise, op, sens, step, tran | 33 | - | complete |
+| [xyce_output_dc](cases/xyce_output_dc) | 26 | xyce | dc, op, sens, step | 38 | - | complete |
+| [xyce_output_es](cases/xyce_output_es) | 10 | xyce | dc, embeddedsampling, tran | 4 | - | complete |
+| [xyce_output_hb](cases/xyce_output_hb) | 26 | xyce | hb, op, step | 6 | - | complete |
+| [xyce_output_homotopy](cases/xyce_output_homotopy) | 12 | xyce | dc, op, step, tran | 8 | - | complete |
+| [xyce_output_mpde](cases/xyce_output_mpde) | 11 | xyce | mpde | 4 | - | complete |
+| [xyce_output_noise](cases/xyce_output_noise) | 16 | xyce | noise, op, step | 7 | - | complete |
+| [xyce_output_other](cases/xyce_output_other) | 7 | xyce | dc, hb, noise, tran | 30 | - | complete |
+| [xyce_output_pce](cases/xyce_output_pce) | 6 | xyce | dc, op | 3 | - | complete |
+| [xyce_output_sens](cases/xyce_output_sens) | 18 | xyce | dc, sens, step, tran | 4 | - | complete |
+| [xyce_output_sparams](cases/xyce_output_sparams) | 22 | xyce | ac, dc, lin, step, tran | 37 | - | complete |
+| [xyce_output_tran](cases/xyce_output_tran) | 33 | xyce | op, step, tran | 4 | - | complete |
+| [xyce_param_refactor](cases/xyce_param_refactor) | 11 | xyce | dc, sens, step, tran | 3 | - | complete |
+| [xyce_param_rsp](cases/xyce_param_rsp) | 3 | xyce | dc, tran | 6 | - | complete |
+| [xyce_param_types](cases/xyce_param_types) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_params1](cases/xyce_params1) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_params2](cases/xyce_params2) | 52 | xyce | dc | 7 | - | complete |
+| [xyce_parser](cases/xyce_parser) | 33 | xyce | dc, sens, tran | 14 | - | complete |
+| [xyce_pce_ni_regression](cases/xyce_pce_ni_regression) | 4 | xyce | dc, embeddedsampling, sampling, tran | 4 | - | complete |
+| [xyce_pce_ni_regression2](cases/xyce_pce_ni_regression2) | 6 | xyce | dc, embeddedsampling, sampling, tran | 4 | - | complete |
+| [xyce_pce_nisp](cases/xyce_pce_nisp) | 6 | xyce | dc, embeddedsampling, sampling, sens, tran | 28 | - | complete |
+| [xyce_pce_nisp2](cases/xyce_pce_nisp2) | 8 | xyce | dc, embeddedsampling, sampling, tran | 28 | - | complete |
+| [xyce_pce_pce](cases/xyce_pce_pce) | 5 | xyce | dc, tran | 6 | - | complete |
+| [xyce_pce_pce2](cases/xyce_pce_pce2) | 5 | xyce | dc, tran | 28 | - | complete |
+| [xyce_pde_1d_bjt](cases/xyce_pde_1d_bjt) | 1 | xyce | dc | 2 | - | complete |
+| [xyce_pde_1d_diode](cases/xyce_pde_1d_diode) | 4 | xyce | dc | 5 | - | complete |
+| [xyce_pde_1d_tran](cases/xyce_pde_1d_tran) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_pde_2d_bjt](cases/xyce_pde_2d_bjt) | 4 | xyce | dc, tran | 12 | - | complete |
+| [xyce_pde_2d_nl](cases/xyce_pde_2d_nl) | 1 | xyce | dc | 7 | - | complete |
+| [xyce_pde_2d_nmos](cases/xyce_pde_2d_nmos) | 2 | xyce | dc | 7 | - | complete |
+| [xyce_pjfet_dc](cases/xyce_pjfet_dc) | 2 | xyce | dc, step | 6 | - | complete |
+| [xyce_pjfet_switch](cases/xyce_pjfet_switch) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_pmos1_dc](cases/xyce_pmos1_dc) | 1 | xyce | dc | 6 | - | complete |
+| [xyce_pnp_dc](cases/xyce_pnp_dc) | 1 | xyce | dc | 8 | - | complete |
+| [xyce_poly](cases/xyce_poly) | 3 | xyce | dc | 11 | - | complete |
+| [xyce_polyg](cases/xyce_polyg) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_power](cases/xyce_power) | 62 | xyce | tran | 64 | - | complete |
+| [xyce_power_grid](cases/xyce_power_grid) | 28 | xyce | dc, step, tran | 219 | - | complete |
+| [xyce_powernode](cases/xyce_powernode) | 7 | xyce | dc, tran | 34 | - | complete |
+| [xyce_preproc_addres](cases/xyce_preproc_addres) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_pseudo](cases/xyce_pseudo) | 2 | xyce | dc | 11 | - | complete |
+| [xyce_psp102](cases/xyce_psp102) | 4 | xyce | dc, tran | 34 | - | complete |
+| [xyce_psp103](cases/xyce_psp103) | 27 | xyce | dc, step, tran | 19 | - | complete |
+| [xyce_redund_remove](cases/xyce_redund_remove) | 5 | xyce | dc, tran | 30 | - | complete |
+| [xyce_reset](cases/xyce_reset) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_resistor](cases/xyce_resistor) | 4 | xyce | dc | 3 | - | complete |
+| [xyce_resistor_td](cases/xyce_resistor_td) | 3 | xyce | dc, step | 33 | - | complete |
+| [xyce_rlc](cases/xyce_rlc) | 1 | xyce | tran | 4 | - | complete |
+| [xyce_rlc_ladder](cases/xyce_rlc_ladder) | 1 | xyce | tran | 6003 | - | complete |
+| [xyce_rol](cases/xyce_rol) | 3 | xyce | dc, op, sens | 7 | - | complete |
+| [xyce_rom](cases/xyce_rom) | 10 | xyce | tran | 3889 | - | complete |
+| [xyce_rom_autodetect](cases/xyce_rom_autodetect) | 2 | xyce | tran | 4225 | - | complete |
+| [xyce_rom_autosize](cases/xyce_rom_autosize) | 4 | xyce | tran | 301 | - | complete |
+| [xyce_rom_multiport](cases/xyce_rom_multiport) | 2 | xyce | tran | 1095 | - | complete |
+| [xyce_rom_sparsify](cases/xyce_rom_sparsify) | 2 | xyce | tran | 301 | - | complete |
+| [xyce_rxn](cases/xyce_rxn) | 8 | xyce | dc, tran | 3 | - | complete |
+| [xyce_sampling](cases/xyce_sampling) | 24 | xyce | ac, dc, hb, op, sampling, sens, tran | 11 | - | complete |
+| [xyce_sampling2](cases/xyce_sampling2) | 23 | xyce | ac, dc, hb, op, sampling, sens, tran | 11 | - | complete |
+| [xyce_sandler1](cases/xyce_sandler1) | 1 | xyce | tran | 67 | - | complete |
+| [xyce_sandler2](cases/xyce_sandler2) | 1 | xyce | tran | 67 | - | complete |
+| [xyce_sandler21](cases/xyce_sandler21) | 1 | xyce | tran | 48 | - | complete |
+| [xyce_sandler22](cases/xyce_sandler22) | 1 | xyce | tran | 54 | - | complete |
+| [xyce_sandler23](cases/xyce_sandler23) | 1 | xyce | tran | 28 | - | complete |
+| [xyce_sandler24](cases/xyce_sandler24) | 1 | xyce | tran | 44 | - | complete |
+| [xyce_sandler25](cases/xyce_sandler25) | 1 | xyce | tran | 38 | - | complete |
+| [xyce_sandler28](cases/xyce_sandler28) | 1 | xyce | tran | 136 | - | complete |
+| [xyce_save_and_load](cases/xyce_save_and_load) | 7 | xyce | dc, tran | 163 | - | complete |
+| [xyce_semic_capacitor](cases/xyce_semic_capacitor) | 2 | xyce | tran | 4 | - | complete |
+| [xyce_semic_resistor](cases/xyce_semic_resistor) | 2 | xyce | dc, step | 9 | - | complete |
+| [xyce_sens](cases/xyce_sens) | 186 | xyce | dc, op, sens, step, tran | 2002 | - | complete |
+| [xyce_simulink](cases/xyce_simulink) | 4 | xyce | tran | 9 | - | complete |
+| [xyce_soln_dep_cap](cases/xyce_soln_dep_cap) | 4 | xyce | step, tran | 14 | - | complete |
+| [xyce_soln_dep_res](cases/xyce_soln_dep_res) | 5 | xyce | dc, step | 28 | - | complete |
+| [xyce_sources](cases/xyce_sources) | 3 | xyce | tran | 12 | - | complete |
+| [xyce_subckt](cases/xyce_subckt) | 41 | xyce | dc, tran | 24 | - | complete |
+| [xyce_supernode](cases/xyce_supernode) | 8 | xyce | dc, tran | 58 | - | complete |
+| [xyce_tempcap](cases/xyce_tempcap) | 3 | xyce | tran | 3 | - | complete |
+| [xyce_tempind](cases/xyce_tempind) | 3 | xyce | tran | 4 | - | complete |
+| [xyce_ternary_op](cases/xyce_ternary_op) | 1 | xyce | dc | 60 | - | complete |
+| [xyce_test1](cases/xyce_test1) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test10](cases/xyce_test10) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test11](cases/xyce_test11) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test12](cases/xyce_test12) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test13](cases/xyce_test13) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test14](cases/xyce_test14) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test2](cases/xyce_test2) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test3](cases/xyce_test3) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test4](cases/xyce_test4) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test5](cases/xyce_test5) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test6](cases/xyce_test6) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test7](cases/xyce_test7) | 1 | xyce | dc | 4 | - | complete |
+| [xyce_test8](cases/xyce_test8) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_test9](cases/xyce_test9) | 1 | xyce | dc | 3 | - | complete |
+| [xyce_testjac](cases/xyce_testjac) | 1 | xyce | dc | 22 | - | complete |
+| [xyce_thermal_resistor](cases/xyce_thermal_resistor) | 2 | xyce | tran | 6 | - | complete |
+| [xyce_tia_erroroption](cases/xyce_tia_erroroption) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_tia_gear](cases/xyce_tia_gear) | 2 | xyce | tran | 5 | - | complete |
+| [xyce_tia_interpolation_tia](cases/xyce_tia_interpolation_tia) | 2 | xyce | tran | 3 | - | complete |
+| [xyce_tia_minorder](cases/xyce_tia_minorder) | 2 | xyce | tran | 7 | - | complete |
+| [xyce_tia_trap](cases/xyce_tia_trap) | 6 | xyce | tran | 162 | - | complete |
+| [xyce_tia_trap_4049osc](cases/xyce_tia_trap_4049osc) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_tia_trap_abm](cases/xyce_tia_trap_abm) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_tia_trap_bjt](cases/xyce_tia_trap_bjt) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_tia_trap_capacitor](cases/xyce_tia_trap_capacitor) | 3 | xyce | tran | 3 | - | complete |
+| [xyce_tia_trap_ic_and_nodeset](cases/xyce_tia_trap_ic_and_nodeset) | 6 | xyce | tran | 10 | - | complete |
+| [xyce_timedepmutind](cases/xyce_timedepmutind) | 1 | xyce | sens, tran | 8 | - | complete |
+| [xyce_tl1x](cases/xyce_tl1x) | 1 | xyce | tran | 303 | - | complete |
+| [xyce_tl431](cases/xyce_tl431) | 1 | xyce | tran | 32 | - | complete |
+| [xyce_tr_tran](cases/xyce_tr_tran) | 2 | xyce | tran | 15 | - | complete |
+| [xyce_transline](cases/xyce_transline) | 2 | xyce | step, tran | 10 | - | complete |
+| [xyce_twolevelapi](cases/xyce_twolevelapi) | 4 | xyce | dc, tran | 7 | - | complete |
+| [xyce_unaryops](cases/xyce_unaryops) | 1 | xyce | dc | 17 | - | complete |
+| [xyce_users_guide](cases/xyce_users_guide) | 1 | xyce | tran | 9 | - | complete |
+| [xyce_vanoise](cases/xyce_vanoise) | 10 | xyce | noise | 20 | - | complete |
+| [xyce_vbic13](cases/xyce_vbic13) | 56 | xyce | ac, dc, step, tran | 18 | - | complete |
+| [xyce_vccs](cases/xyce_vccs) | 14 | xyce | dc, tran | 6 | - | complete |
+| [xyce_vcvs](cases/xyce_vcvs) | 2 | xyce | dc, tran | 6 | - | complete |
+| [xyce_vdmos_dc](cases/xyce_vdmos_dc) | 3 | xyce | dc | 5 | - | complete |
+| [xyce_vdmos_tran](cases/xyce_vdmos_tran) | 1 | xyce | tran | 5 | - | complete |
+| [xyce_verilog_lead_currents](cases/xyce_verilog_lead_currents) | 8 | xyce | tran | 17 | - | complete |
+| [xyce_verilog_model_binning](cases/xyce_verilog_model_binning) | 11 | xyce | dc, tran | 7 | - | complete |
+| [xyce_verilog_power](cases/xyce_verilog_power) | 5 | xyce | tran | 30 | - | complete |
+| [xyce_verilog_scale](cases/xyce_verilog_scale) | 2 | xyce | tran | 12 | - | complete |
+| [xyce_verilogplugin](cases/xyce_verilogplugin) | 6 | xyce | tran | 9 | - | complete |
+| [xyce_vexp](cases/xyce_vexp) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_vpat](cases/xyce_vpat) | 3 | xyce | step, tran | 28 | - | complete |
+| [xyce_vpulse](cases/xyce_vpulse) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_vpwl](cases/xyce_vpwl) | 3 | xyce | step, tran | 12 | - | complete |
+| [xyce_vsffm](cases/xyce_vsffm) | 1 | xyce | tran | 2 | - | complete |
+| [xyce_vsin](cases/xyce_vsin) | 3 | xyce | tran | 2 | - | complete |
+| [xyce_vstartest](cases/xyce_vstartest) | 1 | xyce | tran | 7 | - | complete |
+| [xyce_vswitch](cases/xyce_vswitch) | 3 | xyce | tran | 8 | - | complete |
+| [xyce_wampde](cases/xyce_wampde) | 5 | xyce | tran | 58 | - | complete |
+| [xyce_wampde_blocking](cases/xyce_wampde_blocking) | 2 | xyce | tran | 11 | - | complete |
+| [xyce_wampde_hartley](cases/xyce_wampde_hartley) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_wampde_oscillator](cases/xyce_wampde_oscillator) | 1 | xyce | mpde | 4 | - | complete |
+| [xyce_wampde_pierce](cases/xyce_wampde_pierce) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_wampde_vco](cases/xyce_wampde_vco) | 1 | xyce | mpde | 6 | - | complete |
+| [xyce_xdm_hspice_controlled_sources](cases/xyce_xdm_hspice_controlled_sources) | 6 | hspice, xyce | dc, tran | 14 | - | complete |
+| [xyce_xdm_hspice_darlington](cases/xyce_xdm_hspice_darlington) | 2 | hspice, xyce | tran | 8 | - | complete |
+| [xyce_xdm_hspice_diode_clipper](cases/xyce_xdm_hspice_diode_clipper) | 2 | hspice, xyce | tran | 9 | - | complete |
+| [xyce_xdm_hspice_independent_sources](cases/xyce_xdm_hspice_independent_sources) | 24 | hspice, xyce | tran | 12 | - | complete |
+| [xyce_xdm_hspice_initial_condition](cases/xyce_xdm_hspice_initial_condition) | 4 | hspice, xyce | tran | 30 | - | complete |
+| [xyce_xdm_hspice_lossless_transline](cases/xyce_xdm_hspice_lossless_transline) | 2 | hspice, xyce | tran | 8 | - | complete |
+| [xyce_xdm_hspice_models](cases/xyce_xdm_hspice_models) | 14 | hspice, xyce | dc, tran | 8 | - | complete |
+| [xyce_xdm_hspice_nodeset](cases/xyce_xdm_hspice_nodeset) | 2 | hspice, xyce | tran | 5 | - | complete |
+| [xyce_xdm_hspice_other_parsing](cases/xyce_xdm_hspice_other_parsing) | 26 | hspice, xyce | ac, dc, tran | 12 | - | complete |
+| [xyce_xdm_hspice_pwl_sources](cases/xyce_xdm_hspice_pwl_sources) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_xdm_hspice_sparams](cases/xyce_xdm_hspice_sparams) | 4 | hspice, xyce | ac, lin | 10 | - | complete |
+| [xyce_xdm_hspice_temperature](cases/xyce_xdm_hspice_temperature) | 8 | hspice, xyce | dc, step | 4 | - | complete |
+| [xyce_xdm_pspice_controlled_sources](cases/xyce_xdm_pspice_controlled_sources) | 6 | pspice, xyce | tran | 33 | - | complete |
+| [xyce_xdm_pspice_diode_clipper](cases/xyce_xdm_pspice_diode_clipper) | 2 | pspice, xyce | tran | 9 | - | complete |
+| [xyce_xdm_pspice_ic_and_nodeset](cases/xyce_xdm_pspice_ic_and_nodeset) | 10 | pspice, xyce | tran | 35 | - | complete |
+| [xyce_xdm_pspice_independent_sources](cases/xyce_xdm_pspice_independent_sources) | 4 | pspice, xyce | tran | 12 | - | complete |
+| [xyce_xdm_pspice_lossless_transline](cases/xyce_xdm_pspice_lossless_transline) | 1 | xyce | tran | 8 | - | complete |
+| [xyce_xdm_pspice_lossy_transline](cases/xyce_xdm_pspice_lossy_transline) | 1 | xyce | tran | 6 | - | complete |
+| [xyce_xdm_pspice_models](cases/xyce_xdm_pspice_models) | 12 | pspice, xyce | tran | 8 | - | complete |
+| [xyce_xdm_pspice_other_parsing](cases/xyce_xdm_pspice_other_parsing) | 23 | pspice, xyce | dc, tran | 12 | - | complete |
+| [xyce_xdm_pspice_other_parsing_one_two](cases/xyce_xdm_pspice_other_parsing_one_two) | 1 | xyce | tran | 12 | - | complete |
+| [xyce_xdm_pspice_pwl_sources](cases/xyce_xdm_pspice_pwl_sources) | 1 | xyce | tran | 10 | - | complete |
+| [xyce_xdm_pspice_temperature](cases/xyce_xdm_pspice_temperature) | 2 | pspice, xyce | step, tran | 3 | - | complete |
+| [xyce_xdm_query](cases/xyce_xdm_query) | 4 | xyce | tran | 20 | - | complete |
+| [xyce_xdm_spectre_diode_clipper](cases/xyce_xdm_spectre_diode_clipper) | 2 | spectre, xyce | tran | 18 | - | complete |
+| [xyce_xdm_spectre_independent_sources](cases/xyce_xdm_spectre_independent_sources) | 6 | spectre, xyce | tran | 27 | - | complete |
+| [xyce_xdm_spectre_models](cases/xyce_xdm_spectre_models) | 2 | spectre, xyce | tran | 5 | - | complete |
+| [xyce_xdm_spectre_multiplicity](cases/xyce_xdm_spectre_multiplicity) | 2 | spectre, xyce | tran | 21 | - | complete |
+| [xyce_xdm_spectre_other_parsing](cases/xyce_xdm_spectre_other_parsing) | 12 | spectre, xyce | dc, tran | 31 | - | complete |
+| [xyce_xdm_tspice_controlled_sources](cases/xyce_xdm_tspice_controlled_sources) | 8 | tspice, xyce | tran | 6 | - | complete |
+| [xyce_xdm_tspice_diode_clipper](cases/xyce_xdm_tspice_diode_clipper) | 2 | tspice, xyce | tran | 9 | - | complete |
+| [xyce_xdm_tspice_independent_sources](cases/xyce_xdm_tspice_independent_sources) | 8 | tspice, xyce | tran | 12 | - | complete |
+| [xyce_xdm_tspice_other_parsing](cases/xyce_xdm_tspice_other_parsing) | 2 | tspice, xyce | tran | 8 | - | complete |
+| [xyce_ylin](cases/xyce_ylin) | 30 | xyce | ac, hb, lin | 37 | - | complete |
+| [xyce_ylin_isc_fd](cases/xyce_ylin_isc_fd) | 8 | xyce | hb | 3 | - | complete |
+| [xyce_ylin_isc_td](cases/xyce_ylin_isc_td) | 1 | xyce | hb | 11 | - | complete |
+
 <!-- cases:end -->
 
 Devices: the largest netlist of the case, counted once the subcircuits defined in

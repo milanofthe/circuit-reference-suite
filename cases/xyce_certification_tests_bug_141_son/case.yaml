@@ -1,0 +1,20 @@
+id: xyce_certification_tests_bug_141_son
+title: Xyce_Regression Certification_Tests/BUG_141_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_141_SON
+files:
+- {path: abs.cir, sha256: ee14cbe071d42979aa0e36be4cbbd74ef999b78cc9ed121915df49c2876cb843}
+- {path: bug_138_1.cir, sha256: 984ac32e6949a586744e51afcfd214d3faab73b29e894c3026c63fc7856c7e13}
+- {path: dig_count.cir, sha256: 7ad36c95c8ad13ecf195fa3d99a5c388683d63dc8a37230909e5d81fed77737d}
+- {path: poly.cir, sha256: 3610460255a6b183052dd3564e4e8508cc8c6d079b554eada7ce3ddc4e4218d6}
+netlists:
+- {file: abs.cir, dialect: xyce}
+- {file: bug_138_1.cir, dialect: xyce}
+- {file: dig_count.cir, dialect: xyce}
+- {file: poly.cir, dialect: xyce}

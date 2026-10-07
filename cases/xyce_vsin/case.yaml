@@ -1,0 +1,18 @@
+id: xyce_vsin
+title: Xyce_Regression VSIN
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/VSIN
+files:
+- {path: bug1679.cir, sha256: 6573343c22c0c7deb102a3f3437b45b5f080840413f10ae7f985ae0af3b4405e}
+- {path: bug510.cir, sha256: 9aa771304dfda15f4c925d1a8e92dad7e4c4b482ff6a09f8bbc83cae72955576}
+- {path: vsin.cir, sha256: 72bfd2057ffb6360d259dd46855319d2363d3f742cd40de2b33aac4cdd1f5105}
+netlists:
+- {file: bug1679.cir, dialect: xyce}
+- {file: bug510.cir, dialect: xyce}
+- {file: vsin.cir, dialect: xyce}

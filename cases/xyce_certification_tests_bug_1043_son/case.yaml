@@ -1,0 +1,18 @@
+id: xyce_certification_tests_bug_1043_son
+title: Xyce_Regression Certification_Tests/BUG_1043_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1043_SON
+files:
+- {path: RC_AC_params.cir, sha256: 8488f1f8e782ddf8697d346f72faf18afecb0f9da72341feea405dc1dc009fd7}
+- {path: RC_AC_params_analytic.cir, sha256: caf82e0f07da37e3398988244bd3ef386c36154c7de76596eb642d2fbdd60758}
+- {path: RC_AC_params_expr.cir, sha256: f7c2cfbcaf1f524d46d624b171f89dc771e830a22c9bb458550dce2b462ab2c2}
+netlists:
+- {file: RC_AC_params.cir, dialect: xyce}
+- {file: RC_AC_params_analytic.cir, dialect: xyce}
+- {file: RC_AC_params_expr.cir, dialect: xyce}

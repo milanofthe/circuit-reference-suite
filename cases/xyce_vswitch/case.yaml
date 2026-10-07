@@ -1,0 +1,18 @@
+id: xyce_vswitch
+title: Xyce_Regression VSWITCH
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/VSWITCH
+files:
+- {path: VswitchHyst1.cir, sha256: 748a199e99df33d80db66a007225b9eb2d4c63ad5399c0c83173a03b84a39e16}
+- {path: Vswitch_A1.cir, sha256: 0c17c61046d65bd9bd3ff4abc36ebbd3eb2541b64043ea6981af52d416f66edc}
+- {path: Vswitch_B1.cir, sha256: f0b0fa5a88971a9d98dbdc398310c36fb3564927cc79720c917a95b64aeb0774}
+netlists:
+- {file: VswitchHyst1.cir, dialect: xyce}
+- {file: Vswitch_A1.cir, dialect: xyce}
+- {file: Vswitch_B1.cir, dialect: xyce}

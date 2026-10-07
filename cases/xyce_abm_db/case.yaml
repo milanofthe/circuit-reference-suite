@@ -1,0 +1,14 @@
+id: xyce_abm_db
+title: Xyce_Regression ABM_DB
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ABM_DB
+files:
+- {path: dbTest.cir, sha256: 19ab475504cf925b402402057d86b6a412c3bb7c7cf950241c8c2ad896de9c64}
+netlists:
+- {file: dbTest.cir, dialect: xyce}

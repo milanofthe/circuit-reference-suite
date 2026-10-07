@@ -1,0 +1,45 @@
+id: xyce_bsim4_v4p7
+title: Xyce_Regression BSIM4_v4p7
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BSIM4_v4p7
+files:
+- {path: gain-stage1-bsim4p7.cir, sha256: 1ecb659436af0e2e5cccfbfbe505b72c8fa1de6cf907d25c5cbe208ecc095078}
+- {path: modelcard.nmos, sha256: 069bceb035a8da77a8af748a8ce439992672f0f8cee843f770752dfb033b0ca9}
+- {path: modelcard.noise.nmos, sha256: 5ed3be7622e3a183944a90c1baea1bace5849353429b816dd04e1327782180f4}
+- {path: modelcard.pmos, sha256: 5b4699a6b16c654ed15c1009c0c9349da1bf2e38f66393d7480f9ba267d79ecf}
+- {path: test1.cir, sha256: 88f47e1a2f84a02fc69ff607cced52ef6ce25a1d2b609adec7b465d8a2756074}
+- {path: test10.cir, sha256: eeb7435dc8c956a4bea021641b0bb3031589b5540fa6d9d6b3d98e36e5948c99}
+- {path: test11.cir, sha256: 368ec181465b0fef9332c1dface02b0f72b0d603eb9c47c190d1ee32292d85df}
+- {path: test12.cir, sha256: d535d5382e295cb784932f69f1528cbc52342bb29db218bbd2cc7f4fea921651}
+- {path: test13.cir, sha256: 6edc18d85fad570f4e8accfc969b6aa46e882ff9f353e6ed9f383adba23a820d}
+- {path: test14.cir, sha256: 3bcae659f939053dc0090cd50a47f5d176cdd8b0ff1a0bbc59162d325a20a7d4}
+- {path: test2.cir, sha256: a93f2f7dd121c5d64b6b63097cffed494c7333f2bcd14f0e1cc183722f9db112}
+- {path: test3.cir, sha256: 193571d9c78aacce061fb85417785f598f382afebad279bdfc774683ea4549ef}
+- {path: test4.cir, sha256: 6649d6d86af66ceaa8fd81ee68206a72c0dbc4a91396dc824a6cc3be798a75a9}
+- {path: test5.cir, sha256: 10635b8dd35ea2c17a9f95ce8331bda0939eb2d4ff308d04d6f0b001e145d488}
+- {path: test6.cir, sha256: 144b0e777796daf012e3a8ae04712f11602cbc39dd4947136d8f25da8a47f572}
+- {path: test7.cir, sha256: 10d2c8e097678777a2d953a4a3e288988ecc70cae0c892ffd8a9f290c26b261a}
+- {path: test8.cir, sha256: 238b24f7330d0bc446d220c0c92bfb7ebb6edfc29376b6e870d2e893c09ad966}
+- {path: test9.cir, sha256: bcb5b3fb12a3d3cfabb441e9de20197db11e0a9da276bb21b4ef0dc43a060ceb}
+netlists:
+- {file: gain-stage1-bsim4p7.cir, dialect: xyce}
+- {file: test1.cir, dialect: xyce}
+- {file: test10.cir, dialect: xyce}
+- {file: test11.cir, dialect: xyce}
+- {file: test12.cir, dialect: xyce}
+- {file: test13.cir, dialect: xyce}
+- {file: test14.cir, dialect: xyce}
+- {file: test2.cir, dialect: xyce}
+- {file: test3.cir, dialect: xyce}
+- {file: test4.cir, dialect: xyce}
+- {file: test5.cir, dialect: xyce}
+- {file: test6.cir, dialect: xyce}
+- {file: test7.cir, dialect: xyce}
+- {file: test8.cir, dialect: xyce}
+- {file: test9.cir, dialect: xyce}

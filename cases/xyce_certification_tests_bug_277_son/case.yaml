@@ -1,0 +1,21 @@
+id: xyce_certification_tests_bug_277_son
+title: Xyce_Regression Certification_Tests/BUG_277_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_277_SON
+files:
+- {path: lib.h, sha256: f2ea7058236e8a9eaf3652de2885ea74eae9e143cd18341f7327c16c85ae747b}
+- {path: nmos_3_2.mod, sha256: ed2dfc86e4ee9d2c9c01892e483efd0dd9d22333b2137aa3f1ed5640ec5c10a9}
+- {path: pmos_3_2.mod, sha256: 29ee7672a773a7028e593b75998de7ab2b38a5bd5bbb20ee144421f01bfb70ad}
+- {path: ring51_srcstep1.cir, sha256: 09ac259524c75d19c4231ba844d418bd1a7bcf7d1b54585fddf9c2d519beea6b}
+- {path: ring51_srcstep2.cir, sha256: 552e6e6ee5894f192a68633b72ddf778528e9623f8b489a19cb78ae3c0cf85a0}
+- {path: ring51_trans.cir, sha256: ed5f9f7388ec6fa89e0227206347fa8e0d7a484edd4ea3d7c336fab89399beb5}
+netlists:
+- {file: ring51_srcstep1.cir, dialect: xyce}
+- {file: ring51_srcstep2.cir, dialect: xyce}
+- {file: ring51_trans.cir, dialect: xyce}

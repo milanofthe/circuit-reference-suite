@@ -1,0 +1,18 @@
+id: xyce_certification_tests_bug_1686
+title: Xyce_Regression Certification_Tests/BUG_1686
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1686
+files:
+- {path: bug_1686_dup.cir, sha256: 37ee4d42cee8d7333d1e745f841122eaf0336146204cff50e1075c6ae7fc94ce}
+- {path: bug_1686a.cir, sha256: 572b3982a1cee2da9bc691e2ea1db016024fc2e423b6fd7c3d6c4e75d7c775ce}
+- {path: inc1.sub, sha256: ea504cb694a88626af3dc8aa735e25d47e4d1852a376a27a44320e08a6ad87f0}
+- {path: inc2.sub, sha256: ea504cb694a88626af3dc8aa735e25d47e4d1852a376a27a44320e08a6ad87f0}
+netlists:
+- {file: bug_1686_dup.cir, dialect: xyce}
+- {file: bug_1686a.cir, dialect: xyce}

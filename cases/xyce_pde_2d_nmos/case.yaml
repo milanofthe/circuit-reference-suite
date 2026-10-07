@@ -1,0 +1,16 @@
+id: xyce_pde_2d_nmos
+title: Xyce_Regression PDE_2D_NMOS
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PDE_2D_NMOS
+files:
+- {path: nmos1.cir, sha256: 92200921cd7c26c0d027b3c72f2e59407cd5b2347a70fda99316807f340245b2}
+- {path: nmos1_1level.cir, sha256: d1f8c2bc8ff549b9bbee3e4be51ef48b597aaa6157a66eb37d91beaf36b5aeb5}
+netlists:
+- {file: nmos1.cir, dialect: xyce}
+- {file: nmos1_1level.cir, dialect: xyce}

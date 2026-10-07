@@ -1,0 +1,14 @@
+id: xyce_actests_sandler16
+title: Xyce_Regression ACtests/SANDLER16
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACtests/SANDLER16
+files:
+- {path: sandler16.cir, sha256: 4559c5a5df102c1f471dab8b5b77d6d0856cc78c632586b1c4b46305f223344a}
+netlists:
+- {file: sandler16.cir, dialect: xyce}

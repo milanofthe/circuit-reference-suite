@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_379_son
+title: Xyce_Regression Certification_Tests/BUG_379_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_379_SON
+files:
+- {path: bug379.cir, sha256: 0d14f8fb9cb732bbe60ed1063146601e94de614ec1bfa127b2dc8f257722f94b}
+netlists:
+- {file: bug379.cir, dialect: xyce}

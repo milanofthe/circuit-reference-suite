@@ -1,0 +1,14 @@
+id: xyce_digital_dff
+title: Xyce_Regression DIGITAL_DFF
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/DIGITAL_DFF
+files:
+- {path: DFF_Verify_Xyce.cir, sha256: 521b5a5dd0f870931a5deb3a6b1586dab4fe1bab834fae760fe2314d86602c5b}
+netlists:
+- {file: DFF_Verify_Xyce.cir, dialect: xyce}

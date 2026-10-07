@@ -1,0 +1,14 @@
+id: xyce_pnp_dc
+title: Xyce_Regression PNP_DC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PNP_DC
+files:
+- {path: pnp1.cir, sha256: 95796ac998eb051a535fcb498c259e715c1e8edd237e1e07add401fc6a1601df}
+netlists:
+- {file: pnp1.cir, dialect: xyce}

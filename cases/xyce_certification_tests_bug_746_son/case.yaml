@@ -1,0 +1,34 @@
+id: xyce_certification_tests_bug_746_son
+title: Xyce_Regression Certification_Tests/BUG_746_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_746_SON
+files:
+- {path: raw_file_b_e_h_sources.cir, sha256: 929b052805857646355599ffee25ecff39a17415e00b816802a456790f97269e}
+- {path: raw_file_bjt.cir, sha256: ef15bd0b8bb0f5904b02e550890e655982e7e8c5336e27756afad560198eea83}
+- {path: raw_file_dio1.cir, sha256: 8f0de169818184e12ce674862f329455f9602000ad2f6ed378796c51d34190ce}
+- {path: raw_file_f_sources.cir, sha256: 8d54e5cb7798fd7d688b8d9640ce801fe8cff70a5bca59b76cd564bfc7466ffe}
+- {path: raw_file_g_sources.cir, sha256: 6a618802ea02de9e5834da477306586171691f15e734e0c949d707d6d135a075}
+- {path: raw_file_jfet.cir, sha256: eec57fb076b3179831d01ec41a98d89b5e67d42434e0b429b304d206cd19986d}
+- {path: raw_file_lumped_line.cir, sha256: 07c2bda5c613f6279c49eb0c2e7fd453ef599c19e2101fb4114c00c00a82a878}
+- {path: raw_file_mesfet.cir, sha256: 78714dbdee58e02d74464636e4cd0a2c9e7b91ac95e2c8e91b7940679eca039a}
+- {path: raw_file_mutual_inductors.cir, sha256: 0edeec1b197caedc4dfe32c147eef8795494bc2c9bd33c69bfc74a9c72afbc39}
+- {path: raw_file_nsoi_mosfet.cir, sha256: e14e0315c5424471b4a579f116b0d7b88df2a5b4e50ecdb5ebfc6cfb532f10cb}
+- {path: raw_file_r_l_c_devices.cir, sha256: 0e1a8531ca512bd64734b25c5cd050a17bece5ae0074491bdbe5d05b19d7deb7}
+netlists:
+- {file: raw_file_b_e_h_sources.cir, dialect: xyce}
+- {file: raw_file_bjt.cir, dialect: xyce}
+- {file: raw_file_dio1.cir, dialect: xyce}
+- {file: raw_file_f_sources.cir, dialect: xyce}
+- {file: raw_file_g_sources.cir, dialect: xyce}
+- {file: raw_file_jfet.cir, dialect: xyce}
+- {file: raw_file_lumped_line.cir, dialect: xyce}
+- {file: raw_file_mesfet.cir, dialect: xyce}
+- {file: raw_file_mutual_inductors.cir, dialect: xyce}
+- {file: raw_file_nsoi_mosfet.cir, dialect: xyce}
+- {file: raw_file_r_l_c_devices.cir, dialect: xyce}

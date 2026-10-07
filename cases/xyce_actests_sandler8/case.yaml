@@ -1,0 +1,14 @@
+id: xyce_actests_sandler8
+title: Xyce_Regression ACtests/SANDLER8
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACtests/SANDLER8
+files:
+- {path: sandler8.cir, sha256: 4bb0a1cea94ce0b097771edb78c5bd47234606ffad529b1aef2254cc0f864a7e}
+netlists:
+- {file: sandler8.cir, dialect: xyce}

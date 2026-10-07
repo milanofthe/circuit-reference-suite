@@ -1,0 +1,14 @@
+id: xyce_unaryops
+title: Xyce_Regression UNARYOPS
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/UNARYOPS
+files:
+- {path: unary_funcs.cir, sha256: db77dabbec766ffdda1eb7971e34d21d86b55831556e7a8f82e419c8330238d9}
+netlists:
+- {file: unary_funcs.cir, dialect: xyce}

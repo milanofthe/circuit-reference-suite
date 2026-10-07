@@ -1,0 +1,16 @@
+id: xyce_semic_capacitor
+title: Xyce_Regression SEMIC_CAPACITOR
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/SEMIC_CAPACITOR
+files:
+- {path: semicap.cir, sha256: 2e8e7aacfba48d4bfcc8a860c532bf259793a47578a147975ec169ec76897b8b}
+- {path: semicap_subc.cir, sha256: 3ed7c47325242cf9579e622a4242e31e939f41a9c6ffc21546a3e34e0ed9d9c1}
+netlists:
+- {file: semicap.cir, dialect: xyce}
+- {file: semicap_subc.cir, dialect: xyce}

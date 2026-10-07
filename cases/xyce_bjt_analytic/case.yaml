@@ -1,0 +1,16 @@
+id: xyce_bjt_analytic
+title: Xyce_Regression BJT_ANALYTIC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BJT_ANALYTIC
+files:
+- {path: ramp_test1.cir, sha256: f5bb4d0e330f0bbb2f5683a870e1312c1de364184dce6aafb147d87e940bf19e}
+- {path: ramp_test2.cir, sha256: 4117823840f391e2e11481991d86efd58583043bbfa1e93f20808d8d77f89ef2}
+netlists:
+- {file: ramp_test1.cir, dialect: xyce}
+- {file: ramp_test2.cir, dialect: xyce}

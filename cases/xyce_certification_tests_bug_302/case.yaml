@@ -1,0 +1,28 @@
+id: xyce_certification_tests_bug_302
+title: Xyce_Regression Certification_Tests/BUG_302
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_302
+files:
+- {path: DC_comma.cir, sha256: 576fd732409aef8363f1decfadddf636fa1b525922a3f6dd1820d9e2dc040f3d}
+- {path: DC_defaults.cir, sha256: 00a7314ed5201c2ac0786ee396d86277de0ef3fe52f402e21dec5351a9816e60}
+- {path: DC_delimiter_invalid.cir, sha256: 579411aaab9b91e298a878bd95ba94d457807f574249722f048548083b100aaf}
+- {path: DC_tab.cir, sha256: a6f7eafbf54aea6ad9a773c304daf288ffb5ad0e7e044bb09526209f4f05c59c}
+- {path: transient_comma.cir, sha256: 333bf43c003628e28b474fca7ce0faff32439b4030acb05efb2208b1f665f52c}
+- {path: transient_defaults.cir, sha256: c0b62f4babac639a79a7168451adb974dd8d33dc2bf34701e01a8062d346a21e}
+- {path: transient_delimiter_invalid.cir, sha256: a35072f2fcfab6bc8a7fddf39313d3ae7ef55a7b3604687ecfb467e893618d9d}
+- {path: transient_tab.cir, sha256: 9904be03558e7abf27fe03da8eefc51abc66fb9b11cff7aad41c330ea868e7b3}
+netlists:
+- {file: DC_comma.cir, dialect: xyce}
+- {file: DC_defaults.cir, dialect: xyce}
+- {file: DC_delimiter_invalid.cir, dialect: xyce}
+- {file: DC_tab.cir, dialect: xyce}
+- {file: transient_comma.cir, dialect: xyce}
+- {file: transient_defaults.cir, dialect: xyce}
+- {file: transient_delimiter_invalid.cir, dialect: xyce}
+- {file: transient_tab.cir, dialect: xyce}

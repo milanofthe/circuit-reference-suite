@@ -1,0 +1,26 @@
+id: xyce_powernode
+title: Xyce_Regression POWERNODE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/POWERNODE
+files:
+- {path: capInner.cir, sha256: 4f0fafd3e047d2ebdc5932b0383e9dfa4ce1f50d241fe425d73c5d0de0500100}
+- {path: capTop.cir, sha256: cc6bf4dcb342c25123dabdb2ba37e754ea9a9fab86403f7b80855112df903a3f}
+- {path: resInner.cir, sha256: 963948800a47b162460c649e476a6eef2b563f85ded298ae28da55cb16dfcd4d}
+- {path: resTop.cir, sha256: f4b464f1eb94d3eec7fd3463b3b26db4008c7e7195cbd21db26c036cd40ecf61}
+- {path: sixNode.cir, sha256: ac566527877e93288e64eb9b47d9277bdc904953b8b9f9694e7237ac937cbff9}
+- {path: sixNode_in.cir, sha256: 263343a493cf020653af2bbb6b6fa8df4a29e9ffcd344a2ec78fb18460b6fdc0}
+- {path: sixNode_top.cir, sha256: e0ca50408e5f657d55a9c9b1977a5a9652c089a069000ca7113aba45b2a2fac4}
+netlists:
+- {file: capInner.cir, dialect: xyce}
+- {file: capTop.cir, dialect: xyce}
+- {file: resInner.cir, dialect: xyce}
+- {file: resTop.cir, dialect: xyce}
+- {file: sixNode.cir, dialect: xyce}
+- {file: sixNode_in.cir, dialect: xyce}
+- {file: sixNode_top.cir, dialect: xyce}

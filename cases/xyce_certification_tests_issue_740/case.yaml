@@ -1,0 +1,14 @@
+id: xyce_certification_tests_issue_740
+title: Xyce_Regression Certification_Tests/ISSUE_740
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/ISSUE_740
+files:
+- {path: issue740.cir, sha256: 93825b6c87ffa5231e316778d0df7309bef76955d977b70967137e438c5a7483}
+netlists:
+- {file: issue740.cir, dialect: xyce}

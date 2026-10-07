@@ -1,0 +1,14 @@
+id: xyce_tl1x
+title: Xyce_Regression TL1X
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TL1X
+files:
+- {path: TL1X_mpi.cir, sha256: ac276aea0d49801729d251cfda311fcd4f35f7fc70eeb980f5a87fe17a7c0057}
+netlists:
+- {file: TL1X_mpi.cir, dialect: xyce}

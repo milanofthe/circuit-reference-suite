@@ -1,0 +1,22 @@
+id: xyce_init_conds
+title: Xyce_Regression INIT_CONDS
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/INIT_CONDS
+files:
+- {path: comparatorIC.cir, sha256: d0ea5594278bdf7e8c07a02c3170358aedb64c4977abd1317e43f997a46502fc}
+- {path: comparatorICnonVector.cir, sha256: 80b47cf377d36da8bb1f7b340131da0896dab8702b95e4dae8236b31e551ba40}
+- {path: inv1xIC.cir, sha256: b929578b4090bc63311827e613a386771072ebc1ae06d316e4354d9054af73c2}
+- {path: modelcard.nmos, sha256: 81011ea1b6c16a237f5c014543861ab8696c2eb13b9189431e451f654326f238}
+- {path: modelcard.pmos, sha256: d7a0435f73b5c2c15f5a5e2f75ef0e68658c53abab4f175b180c89813cddc575}
+- {path: ring_osc_bsim3.cir, sha256: 9a4b64146f2abd20597153efaa670c34defc40f712c0b5b9407cc797c8c25a4c}
+netlists:
+- {file: comparatorIC.cir, dialect: xyce}
+- {file: comparatorICnonVector.cir, dialect: xyce}
+- {file: inv1xIC.cir, dialect: xyce}
+- {file: ring_osc_bsim3.cir, dialect: xyce}

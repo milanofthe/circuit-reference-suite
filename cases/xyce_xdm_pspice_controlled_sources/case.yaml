@@ -1,0 +1,24 @@
+id: xyce_xdm_pspice_controlled_sources
+title: Xyce_Regression XDM/PSPICE/CONTROLLED_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/PSPICE/CONTROLLED_SOURCES
+files:
+- {path: e_g_table_syntax.cir, sha256: 4d0b1074138d5dca8945beb085ca2ba14df9eaf457e14dacaa59ad927ee2950c}
+- {path: e_g_table_syntax.cir.pspice, sha256: c66000e0fb635461393771b13ac0f1a07462e3ed0f1b7c29daebcc00863db86c}
+- {path: e_sources.cir, sha256: 2d9b103f9d13b69f32efe2e7a6967742b79a10ec1cf6d4f5518a74cdfdfcf406}
+- {path: f_sources.cir, sha256: eb4f03ffbf5414aac94a2510a7a1a843b3b79771d5bc3cf85e397d1f5bd02dae}
+- {path: g_sources.cir, sha256: 5cbe820bb6ed2009cc3e79d522d6ecd7301e406ac5126d5130a71be462bc74f1}
+- {path: h_sources.cir, sha256: 9ccdaf6c8b77b7885a4370b46cc6b2fad6c1a20b0e711a178f7dafd25d393a6f}
+netlists:
+- {file: e_g_table_syntax.cir, dialect: xyce}
+- {file: e_g_table_syntax.cir.pspice, dialect: pspice}
+- {file: e_sources.cir, dialect: xyce}
+- {file: f_sources.cir, dialect: xyce}
+- {file: g_sources.cir, dialect: xyce}
+- {file: h_sources.cir, dialect: xyce}

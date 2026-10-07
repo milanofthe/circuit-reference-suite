@@ -1,0 +1,14 @@
+id: xyce_xdm_pspice_pwl_sources
+title: Xyce_Regression XDM/PSPICE/PWL_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/PSPICE/PWL_SOURCES
+files:
+- {path: pwl_sources.cir, sha256: be8b06dc315d5ba3c9f34b81d5d3e6bca8541960811ced9f70473a1aafea82e2}
+netlists:
+- {file: pwl_sources.cir, dialect: xyce}

@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_1012
+title: Xyce_Regression Certification_Tests/BUG_1012
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1012
+files:
+- {path: negtable.cir, sha256: e1690cb4ee0619909668a7595ac5167823763dcbc0b5e34efa3ad90e81f1938e}
+netlists:
+- {file: negtable.cir, dialect: xyce}

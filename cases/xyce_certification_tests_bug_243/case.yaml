@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_243
+title: Xyce_Regression Certification_Tests/BUG_243
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_243
+files:
+- {path: bug_243_mpi.cir, sha256: f641188c541b2279e7a24868ef4626d3b06a024501f03cf5ab19f2eaf81566f0}
+netlists:
+- {file: bug_243_mpi.cir, dialect: xyce}

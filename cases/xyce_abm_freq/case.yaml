@@ -1,0 +1,28 @@
+id: xyce_abm_freq
+title: Xyce_Regression ABM_FREQ
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ABM_FREQ
+files:
+- {path: RC_data.cir, sha256: 9e5ea0a9a9830fc40f99e3f0d1b300ff686ff37cc7eeded9aba844896b6fae41}
+- {path: RC_data_hertz.cir, sha256: 605bf266002b738f611f0cbdf0884b2658bf0f7eab080bea883c714324135a48}
+- {path: RC_simple.cir, sha256: af54d414f1d196f8d6909efdee6393dadae8de334e1339033f4b6d1a6a8e6722}
+- {path: RC_simple_hertz.cir, sha256: 78ca5e3468b0524b8845a6a381d645f73fdf4291eefe3552b759abadf9bfd9a2}
+- {path: abmfreq1.cir, sha256: bbe231d5766e40337f89c043201ca153610e17d96c59bc0df7f2d6639d9768a7}
+- {path: abmfreq1_data.cir, sha256: fb0ca6c03c8f3fd020d4a895f0f893ed43abb05b9945e4297569dac06d63c644}
+- {path: abmhertz1.cir, sha256: 8ee590542c132e309e4b50d3067a774121ee916af27e09a75806f113280b2848}
+- {path: abmhertz1_data.cir, sha256: 7aa602e61ed264973ac5627dab66d64f0bc47b1708e8d245df7342573d95a34e}
+netlists:
+- {file: RC_data.cir, dialect: xyce}
+- {file: RC_data_hertz.cir, dialect: xyce}
+- {file: RC_simple.cir, dialect: xyce}
+- {file: RC_simple_hertz.cir, dialect: xyce}
+- {file: abmfreq1.cir, dialect: xyce}
+- {file: abmfreq1_data.cir, dialect: xyce}
+- {file: abmhertz1.cir, dialect: xyce}
+- {file: abmhertz1_data.cir, dialect: xyce}

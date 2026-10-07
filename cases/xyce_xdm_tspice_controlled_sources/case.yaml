@@ -1,0 +1,28 @@
+id: xyce_xdm_tspice_controlled_sources
+title: Xyce_Regression XDM/TSPICE/CONTROLLED_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/TSPICE/CONTROLLED_SOURCES
+files:
+- {path: e_sources.cir, sha256: e9939a01a6210027253be93c615d7ae86d7ac64b95b3aef90236bb09e84360a3}
+- {path: e_sources.cir.tspice, sha256: e095147d658e6f8db6918e700079712a30761483eaba148c6d547be5ff0a80bb}
+- {path: f_sources.cir, sha256: 29f2e1caa16597a2ed728614f88bd4d64ae5c8adba2ae1f85e2f53328613bcc4}
+- {path: f_sources.cir.tspice, sha256: 37d513fb8512d445fe378e09fef00afb3c8b27fa121e99cd1878de743c3d7039}
+- {path: g_sources.cir, sha256: 65191db6208c636ed8b739ebcfad7054be531c51836064b3fa4262700a879ced}
+- {path: g_sources.cir.tspice, sha256: 273350c2e625de079212898b68f902a50e93497c952017dddd32fa84d1e7db92}
+- {path: h_sources.cir, sha256: 9049269b192a89ea2f8e62a05472bf6112478b3d6d16aca48a10caba2395ea2c}
+- {path: h_sources.cir.tspice, sha256: 7e63f6e3c297d8a25b36cf45c916b50086f2d80b6c827d0d85892adcfb4184a6}
+netlists:
+- {file: e_sources.cir, dialect: xyce}
+- {file: e_sources.cir.tspice, dialect: tspice}
+- {file: f_sources.cir, dialect: xyce}
+- {file: f_sources.cir.tspice, dialect: tspice}
+- {file: g_sources.cir, dialect: xyce}
+- {file: g_sources.cir.tspice, dialect: tspice}
+- {file: h_sources.cir, dialect: xyce}
+- {file: h_sources.cir.tspice, dialect: tspice}

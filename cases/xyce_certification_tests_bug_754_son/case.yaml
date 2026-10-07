@@ -1,0 +1,46 @@
+id: xyce_certification_tests_bug_754_son
+title: Xyce_Regression Certification_Tests/BUG_754_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_754_SON
+files:
+- {path: dcsweep_globalpar.cir, sha256: ae3725aac1f21abfe06b94346e754aafb561ca802fd21724159704cd22619c49}
+- {path: dcsweep_nopar.cir, sha256: fa6ff3b32e8930ba63178abf5b8f7b4cdc7db53f4cfb175aad9ba558bf68a7a8}
+- {path: newton_and_swept.cir, sha256: b99462a884b31ede3878e412b707dd9e15157d96ec380fae9c3f875e3bfb6fad}
+- {path: newton_globalparam.cir, sha256: 673ca50980c9e05998f24b914a11174ce617663a6d6ae8d6e19a3ade51532acc}
+- {path: source2_stepped_1.cir, sha256: f05e74e2d6b1cf432f1840f87e6bbcf33dfa7600457353670f36191f0f349514}
+- {path: source2_stepped_2.cir, sha256: e5c92ace5842a8e362431661287c69c63c3fd95684e77f40a4ccfe9331c4f3c5}
+- {path: source2_stepped_3.cir, sha256: df42f57f403e24164517fa729a4874a59557921753c7f0c0bd4d67a283c01900}
+- {path: source2_stepped_4.cir, sha256: ed908bf6359a93dc5d1230e1f2372b11d8f00119bab979a468be018127af414a}
+- {path: source2_stepped_5.cir, sha256: 48230158299ee6e6c68803ceda0518136fd62b0c596ef6fdca27f71bc01e49ab}
+- {path: source2_stepped_and_swept.cir, sha256: bb8bc6b1b6614332a84fe856589727adb3c8e9faf9f7e3a295beaf0350b15197}
+- {path: source_stepped_1.cir, sha256: 20738c7f8c185903c90553c9c878af5f5e55c12726f42312f14ac5b969a08822}
+- {path: source_stepped_2.cir, sha256: cdf1a8e8d983db03a70aba6da2493fc247cc06ed5fcfb34f4e6b1c9a623ac8ed}
+- {path: source_stepped_3.cir, sha256: d27c4a1cad25bc1e4f53fd0d9344dd5759bac8d198babcf1147788c19bcbfccb}
+- {path: source_stepped_4.cir, sha256: dd646fb241b0af0dd94de2187e09bbae9d8a51ea4808a90397a1b9e26e6cd7e9}
+- {path: source_stepped_5.cir, sha256: 959f8e1973ce6a36d6d2e24a292d6c6e86264e3d62429de0e5b5b76aa0572282}
+- {path: source_stepped_and_swept.cir, sha256: 2789c73449b6127be202c88f6d69b015fdb94ffb22dce8e7d9d58228c6d8babe}
+- {path: sourcestep_globalparam.cir, sha256: da11dff0f5776e9997f0d4c0d372472035ef535c6e04c9f7f8e5c37930d734c0}
+netlists:
+- {file: dcsweep_globalpar.cir, dialect: xyce}
+- {file: dcsweep_nopar.cir, dialect: xyce}
+- {file: newton_and_swept.cir, dialect: xyce}
+- {file: newton_globalparam.cir, dialect: xyce}
+- {file: source2_stepped_1.cir, dialect: xyce}
+- {file: source2_stepped_2.cir, dialect: xyce}
+- {file: source2_stepped_3.cir, dialect: xyce}
+- {file: source2_stepped_4.cir, dialect: xyce}
+- {file: source2_stepped_5.cir, dialect: xyce}
+- {file: source2_stepped_and_swept.cir, dialect: xyce}
+- {file: source_stepped_1.cir, dialect: xyce}
+- {file: source_stepped_2.cir, dialect: xyce}
+- {file: source_stepped_3.cir, dialect: xyce}
+- {file: source_stepped_4.cir, dialect: xyce}
+- {file: source_stepped_5.cir, dialect: xyce}
+- {file: source_stepped_and_swept.cir, dialect: xyce}
+- {file: sourcestep_globalparam.cir, dialect: xyce}

@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_769_son
+title: Xyce_Regression Certification_Tests/BUG_769_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_769_SON
+files:
+- {path: bad_print_node.cir, sha256: c59e7950f39b21cf8fb1fdbfc7cbef949d5e7982cb3fe41646582164dde001ea}
+netlists:
+- {file: bad_print_node.cir, dialect: xyce}

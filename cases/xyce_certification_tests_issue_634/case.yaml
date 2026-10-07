@@ -1,0 +1,14 @@
+id: xyce_certification_tests_issue_634
+title: Xyce_Regression Certification_Tests/ISSUE_634
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/ISSUE_634
+files:
+- {path: hussamp.cir, sha256: 84b0b752f478921bcf9264e2a1c36a241f793fa375ee59a3a96908be5c784004}
+netlists:
+- {file: hussamp.cir, dialect: xyce}

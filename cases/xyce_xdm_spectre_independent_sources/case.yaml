@@ -1,0 +1,24 @@
+id: xyce_xdm_spectre_independent_sources
+title: Xyce_Regression XDM/SPECTRE/INDEPENDENT_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/SPECTRE/INDEPENDENT_SOURCES
+files:
+- {path: i_sources.cir, sha256: cb401c1b81e215e20ce7e88e29580102cd7d5754c9d99b5fe1da154d3e0530f0}
+- {path: i_sources.cir.spectre, sha256: dd664851a972317120394de8a198c89542a54731d646c43a2fe012e9d2e2ef39}
+- {path: pwl_sources.cir, sha256: fa04e5abb9bf23a2785ba49d1f86a15f86bb1aebfb016f27aadb5809f6a05ddf}
+- {path: pwl_sources.cir.spectre, sha256: 59a6c181da332ed5e8052e2d3c2611ad24ec5bbb1676ea63dfe171a152adbe3d}
+- {path: v_sources.cir, sha256: a7c3cca96297688a2e23a1e2cb21e523c0cb38ed2352c27693bf3e6e92bb6236}
+- {path: v_sources.cir.spectre, sha256: 3ca0c5d914af3fbbe2853ff9b4ae6da77f920e1ff98e4dab2da54377741cd0ac}
+netlists:
+- {file: i_sources.cir, dialect: xyce}
+- {file: i_sources.cir.spectre, dialect: spectre}
+- {file: pwl_sources.cir, dialect: xyce}
+- {file: pwl_sources.cir.spectre, dialect: spectre}
+- {file: v_sources.cir, dialect: xyce}
+- {file: v_sources.cir.spectre, dialect: spectre}

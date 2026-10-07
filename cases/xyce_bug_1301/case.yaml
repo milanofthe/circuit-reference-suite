@@ -1,0 +1,14 @@
+id: xyce_bug_1301
+title: Xyce_Regression BUG_1301
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BUG_1301
+files:
+- {path: rlc_tranline.cir, sha256: f75b62bc4198c0b5858c96d1ff459fe3452b4c6a584ee3dc0ea89bacc9b5c104}
+netlists:
+- {file: rlc_tranline.cir, dialect: xyce}

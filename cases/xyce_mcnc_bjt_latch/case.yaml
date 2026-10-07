@@ -1,0 +1,14 @@
+id: xyce_mcnc_bjt_latch
+title: Xyce_Regression MCNC_BJT_LATCH
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MCNC_BJT_LATCH
+files:
+- {path: latch.cir, sha256: 41622f75dcc9297915a1b0614ad27cfe19850cb4e19817f02a8914644e4d6382}
+netlists:
+- {file: latch.cir, dialect: xyce}

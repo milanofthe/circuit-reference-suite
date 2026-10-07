@@ -1,0 +1,44 @@
+id: xyce_output_noise
+title: Xyce_Regression Output/NOISE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Output/NOISE
+files:
+- {path: noise-csv.cir, sha256: a3d710afb191ef99985b5f081189bcc45b91fbfaf20e4653c06360e154de76b7}
+- {path: noise-gnuplot.cir, sha256: 88d5331d596b3c176a9b39668eabcb4937e70ca4b757e86546583f227fbf67bb}
+- {path: noise-prn-noindex.cir, sha256: 32a3d488a67492c9ad47dce3f0c4ad530cbc53abeca51bf9b55519c4317fb56f}
+- {path: noise-prn.cir, sha256: f7546a84ba4f55ea3dd4bd622221bde43c654c9064f5c9afa763b2672d9f6100}
+- {path: noise-probe-defaults-to-prn.cir, sha256: 20137a9fe78cea7e2516237be1952d6ccffd15c411cae7c3f35f63491589345e}
+- {path: noise-raw-defaults-to-prn.cir, sha256: 4f55b296fb0f0980d15512912b88c43a054474a6cdd548b9084f7f7724efc622}
+- {path: noise-raw-override-ascii.cir, sha256: 6a0d9e5b8b558dfba45994566ed2415dabfdfae1e2aea2fab0a793f34c550a85}
+- {path: noise-raw-override.cir, sha256: ede30defc35ae3a93413a04c62ea6ea2494115b33e37fcfc3285a0ccca3719cf}
+- {path: noise-step-csv.cir, sha256: eca775cb32e07f6c5d0f38cec704ca625d33a44b7d5998820c6b6638cb3a7e3d}
+- {path: noise-step-gnuplot.cir, sha256: 896c99c1a7d889a48e0aac6d5dfcbd61f7a42160c8ef291ffe54937b31cec816}
+- {path: noise-step-prn.cir, sha256: 1be438503a3485cb99a37fbd5bb37c843908ea1545d7e78ba0b038718bfa1871}
+- {path: noise-step-tecplot.cir, sha256: 3c34ada5707bdd84aa2558c1382c60d66d1227655f1104185e6df6598bc191b8}
+- {path: noise-stepnum-col.cir, sha256: 60393d964f38b8968f712e727d039a2e155eec103711ccb430b29033d25d95c1}
+- {path: noise-tecplot.cir, sha256: cdd2f59f9484739ea4799df29508ff932f0f421faa15956840d12645530c155f}
+- {path: op-raw-override-ascii.cir, sha256: e6d9e871b8b09709dcb3077ebfad65c0b49b8ec41dae4c9da6688e55f8e990d4}
+- {path: op-raw-override.cir, sha256: cf6a94b42451bff938dea3eb5316df673b2091f49183fb2a2ad59341c4b4dceb}
+netlists:
+- {file: noise-csv.cir, dialect: xyce}
+- {file: noise-gnuplot.cir, dialect: xyce}
+- {file: noise-prn-noindex.cir, dialect: xyce}
+- {file: noise-prn.cir, dialect: xyce}
+- {file: noise-probe-defaults-to-prn.cir, dialect: xyce}
+- {file: noise-raw-defaults-to-prn.cir, dialect: xyce}
+- {file: noise-raw-override-ascii.cir, dialect: xyce}
+- {file: noise-raw-override.cir, dialect: xyce}
+- {file: noise-step-csv.cir, dialect: xyce}
+- {file: noise-step-gnuplot.cir, dialect: xyce}
+- {file: noise-step-prn.cir, dialect: xyce}
+- {file: noise-step-tecplot.cir, dialect: xyce}
+- {file: noise-stepnum-col.cir, dialect: xyce}
+- {file: noise-tecplot.cir, dialect: xyce}
+- {file: op-raw-override-ascii.cir, dialect: xyce}
+- {file: op-raw-override.cir, dialect: xyce}

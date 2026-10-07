@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_1040_son
+title: Xyce_Regression Certification_Tests/BUG_1040_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1040_SON
+files:
+- {path: rc_discharge_diode_noop.net, sha256: 7084016db0779c82ce55b1c072774e330b8d4d25100b18e773429b8d27502c5d}
+- {path: rc_discharge_diode_op.net, sha256: cdaea1743b0ca4046b94b11ee56eb957996631cfbbd3466ba0f296c6cd5ed7ca}
+netlists:
+- {file: rc_discharge_diode_noop.net, dialect: xyce}
+- {file: rc_discharge_diode_op.net, dialect: xyce}

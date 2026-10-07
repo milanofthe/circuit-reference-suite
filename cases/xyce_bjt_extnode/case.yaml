@@ -1,0 +1,28 @@
+id: xyce_bjt_extnode
+title: Xyce_Regression BJT_EXTNODE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BJT_EXTNODE
+files:
+- {path: npn1.cir, sha256: faea2b9386a9cc2e351d8e69f4e2896d309926d2c9f64d5409ac6cb111752fea}
+- {path: npn2.cir, sha256: 54089a56e1b919d6b91f7da6528bc14a235bf05079488dbf73db762dfa7df287}
+- {path: npn_rb_rc_re_1.cir, sha256: f50eb5ad28ae3c5a5a1b44aba7adf972bf89ea5c30632cbf6098624774044fb3}
+- {path: npn_rb_rc_re_2.cir, sha256: e827701a14ba46d2dd287f2e7a831c284fc127bac1bbeb2961f48e27f9c9bed1}
+- {path: npn_rb_rc_re_3.cir, sha256: 3b66d2324ffe2d10f23b13c933da8005e78a35242d45105c665be827b73ea940}
+- {path: npn_rc_re_1.cir, sha256: b222125ff7ca5ba305bcf6d8c0451cd02208b61a818e9de7b39432caa335b940}
+- {path: npn_rc_re_2.cir, sha256: c7bd3fa322552650009684c9cd4c7229507485f251e9945b1bd568ad93fc3913}
+- {path: npn_rc_re_3.cir, sha256: 353fdff6a19b2b432460ab99d0ace357636e66b8917974cef69fab473ef56a03}
+netlists:
+- {file: npn1.cir, dialect: xyce}
+- {file: npn2.cir, dialect: xyce}
+- {file: npn_rb_rc_re_1.cir, dialect: xyce}
+- {file: npn_rb_rc_re_2.cir, dialect: xyce}
+- {file: npn_rb_rc_re_3.cir, dialect: xyce}
+- {file: npn_rc_re_1.cir, dialect: xyce}
+- {file: npn_rc_re_2.cir, dialect: xyce}
+- {file: npn_rc_re_3.cir, dialect: xyce}

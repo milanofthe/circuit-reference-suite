@@ -1,0 +1,14 @@
+id: xyce_invert1
+title: Xyce_Regression INVERT1
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/INVERT1
+files:
+- {path: invert1.cir, sha256: c6f4ab5ccdad271804d9f9cc464c55cc9be8376f3283e8744037e5638639bef7}
+netlists:
+- {file: invert1.cir, dialect: xyce}

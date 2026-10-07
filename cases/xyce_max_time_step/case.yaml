@@ -1,0 +1,14 @@
+id: xyce_max_time_step
+title: Xyce_Regression MAX_TIME_STEP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MAX_TIME_STEP
+files:
+- {path: max_time_step.cir, sha256: 351799e0c6dbf018bf18133d037c39c44a4e0a3c5c0f5653461fd4085fb99b4f}
+netlists:
+- {file: max_time_step.cir, dialect: xyce}

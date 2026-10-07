@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_120
+title: Xyce_Regression Certification_Tests/BUG_120
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_120
+files:
+- {path: README, sha256: 52e4f41159acd44c5ea63e0ebab6e76cc805d573155a7e18826deecd1c54da5e}
+- {path: bug_120.cir, sha256: 7f0ff70ccbe017109e377a275905f1bee5b08ac595e754df6317ed79d1c3874e}
+netlists:
+- {file: README, dialect: xyce}
+- {file: bug_120.cir, dialect: xyce}

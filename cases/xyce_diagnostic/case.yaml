@@ -1,0 +1,46 @@
+id: xyce_diagnostic
+title: Xyce_Regression DIAGNOSTIC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/DIAGNOSTIC
+files:
+- {path: CurrentCheck1.cir, sha256: aad86fafd0245c21d3f48098e4a42aea7cb6538c4737960c96763521da330b6b}
+- {path: DC_CurrentCheck1.cir, sha256: aacf25e8f4d43aab081a548f54b145edf0d56eb52115d286503c337d24445d73}
+- {path: DC_DisconCheck1.cir, sha256: 1efd36228205ca835354cc9700233d5aa8049714e6466d8650fe4b2223f7d7b8}
+- {path: DC_ExVCheck1.cir, sha256: 40fd140c60e5b08a9f550ea3eb0ff90b0b0d4d8a7716d8c5ec49737205f6db54}
+- {path: DC_ExVICheck1.cir, sha256: 323374421b8e18a31b2a424992b0f555fea071fa7575b0e48e96b252cb3c20bf}
+- {path: DC_ExtCheck1.cir, sha256: bc1261518980f950c7cee54ce3d8f12c3439576f1df09a4e0482f5e1a08e4fe3}
+- {path: DC_GStep.cir, sha256: 87e906cca7f076dd8f7c307ce25eb818f652db455d61419258c90248e3e8c2c0}
+- {path: DC_Ring51.cir, sha256: ab20f2459d992a4251e15cc55f1d4d4db6922a6e0bb9b3a378e604afc94064b3}
+- {path: DC_VICheck1.cir, sha256: 483d78b612586281b96069a89ee24a63d864c815f2a291739e4e23b8c7b05726}
+- {path: DisconCheck1.cir, sha256: 46818f6484fdcfe4c011b1a60f13ab5dcaf16e35fc92fe200ac9ba3801979767}
+- {path: DisconCheck2.cir, sha256: 50934086b12d0cb7f68b11cdfec9637f82052bf826b48b211509c34abcf24e68}
+- {path: ExVCheck1.cir, sha256: cabc20d4b275934ad651e5aae42fce800fca8fc4e9da873156900a2ed0a5f0b1}
+- {path: ExVICheck1.cir, sha256: 8af4cc1ae9d20893226a351efde442ab3df1ee4cce6a5ea2cbf88a0900495fa2}
+- {path: ExtremaCheck1.cir, sha256: 8f3bde7e237f418436aa65376372478317d0c8591aefe88d42aa5542d13ac832}
+- {path: RCLadderVICheck.cir, sha256: 9a79df9a03b17e83459fff9a276e6e792bffd3ae322988d0b786963f4f7abaf4}
+- {path: VICheck1.cir, sha256: 3d7eb8bc59a0cc1461a4cf0d438ea0630bb743d4b45085ad96393d0981d70275}
+- {path: VoltageCheck1.cir, sha256: bada01c669514745618fd02983183df20095b801d8b308f858082b0ca25513ca}
+netlists:
+- {file: CurrentCheck1.cir, dialect: xyce}
+- {file: DC_CurrentCheck1.cir, dialect: xyce}
+- {file: DC_DisconCheck1.cir, dialect: xyce}
+- {file: DC_ExVCheck1.cir, dialect: xyce}
+- {file: DC_ExVICheck1.cir, dialect: xyce}
+- {file: DC_ExtCheck1.cir, dialect: xyce}
+- {file: DC_GStep.cir, dialect: xyce}
+- {file: DC_Ring51.cir, dialect: xyce}
+- {file: DC_VICheck1.cir, dialect: xyce}
+- {file: DisconCheck1.cir, dialect: xyce}
+- {file: DisconCheck2.cir, dialect: xyce}
+- {file: ExVCheck1.cir, dialect: xyce}
+- {file: ExVICheck1.cir, dialect: xyce}
+- {file: ExtremaCheck1.cir, dialect: xyce}
+- {file: RCLadderVICheck.cir, dialect: xyce}
+- {file: VICheck1.cir, dialect: xyce}
+- {file: VoltageCheck1.cir, dialect: xyce}

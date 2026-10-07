@@ -1,0 +1,14 @@
+id: xyce_test9
+title: Xyce_Regression TEST9
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TEST9
+files:
+- {path: test9.cir, sha256: f32ea43fddb4b4d364c889e2874fabace08d988c2e7e976282c388dd01055219}
+netlists:
+- {file: test9.cir, dialect: xyce}

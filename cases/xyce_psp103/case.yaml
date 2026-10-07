@@ -1,0 +1,76 @@
+id: xyce_psp103
+title: Xyce_Regression PSP103
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PSP103
+files:
+- {path: asym_nmos_idvdh_dt.cir, sha256: ea34e3f1462c4b06c3e74b4e0a4265443cbb0d989f23241e0f6ac74030d2697b}
+- {path: asym_pmos_idvdh_dt.cir, sha256: 68e0704ae22a7d1c200327cecd2862c422312ba0503677917229b51c07565112}
+- {path: invert_psp.cir, sha256: 25988646a1d6d7f778c712aa363e192b032abe99201163c18a530eb3e01465d8}
+- {path: invert_psp_testDTA0.cir, sha256: cae412b9ac52fbb9c544c3a013080634a9e404a1c4f1858c5c05e202f31925ba}
+- {path: invert_psp_testDTA1.cir, sha256: d10d3715c42b065e52f5cdd3517ca0f14b0678b11bc56073daebacf94460e593}
+- {path: invert_psp_testDTA2.cir, sha256: 35522d727d3573e7353132eb19f4cc8887934abb3997bd66634824e79bb57dad}
+- {path: psp_asym_nmos_idvg0.cir, sha256: 77901ae40e6bea4adcadc3232d90d1e37cbb74da7b2215349b0b13c61b939bb6}
+- {path: psp_asym_nmos_idvg0.model, sha256: 8825393864774c2b8850e0bf615741af8a11e7b0f6456a682bd561a564a51ac8}
+- {path: psp_asym_pmos_idvg0.cir, sha256: 021ce535250f5a8289da2ed05228757a486c3ac0964fcd1e162aa01c37f79fa0}
+- {path: psp_asym_pmos_idvg0.model, sha256: 2540bdc44721a0248192145754be8c70872e58e0710bf73acac5e0b9eec6fc1f}
+- {path: psp_nmos_idvg0.model, sha256: bfbb0330231082ed0122f2f46eec8a2f5b5640e16e44195fd1899d0120e3c325}
+- {path: psp_nmos_idvg0_allsw0.model, sha256: 7e179f4e3a36fa66f82f5116247be097d9f0836e520e7fcbcfc885dd0b64d38c}
+- {path: psp_nmos_idvg0_swigate1.model, sha256: a91fa10ec6cf3e4e96ffd94ff0375b0abcdfd34e4c63b8bb4212c7391848d196}
+- {path: psp_nmos_idvg0_swimpact1.model, sha256: 5d0141a03e54df69c4cc95c5ed20cef49ad06fec88645b3eed091150ba15c2f1}
+- {path: psp_pmos_idvg0.model, sha256: 2dc5667c79c059e77eb47999eb7c37afb87af5708bfdf1660a448212b887047e}
+- {path: psp_pmos_idvg0_allsw0.model, sha256: 45a772a7ecc87906295f92abdba8ff39d9681812696b54283b3b68314b473ffb}
+- {path: psp_pmos_idvg0_swigate1.model, sha256: 64557e52f1d32dc7cfc6e502bbfdb63944817c368445ae1a2e6af274dd1d7ff4}
+- {path: psp_pmos_idvg0_swimpact1.model, sha256: 4c5d0ed26127ae16075ec4eeda12708ce71dfcdefc6051f18f82281b853bf2a0}
+- {path: psp_symm_nmos_idvg0.cir, sha256: e5140afd6db91c01645c6c5f2ac407af6fb5471db088628518c90733e9dab45f}
+- {path: psp_symm_nmos_idvg0_allsw0.cir, sha256: a8f41b840963c5a3e4044b96fdac7f33988b271159676c600d13ef662d33e983}
+- {path: psp_symm_nmos_idvg0_swigate1.cir, sha256: ff6ef1ef513f63c9226d8829096bc84545188501b2614e7cc64bbce186e2f2ab}
+- {path: psp_symm_nmos_idvg0_swimpact1.cir, sha256: ea8b695e83f45b7b3acb7bf016519f0150c1b9c2caffcfffc7777e3d2e9212df}
+- {path: psp_symm_nmos_idvgh.cir, sha256: 19416c36fc18e8d79eb722179b99ff59dca1c65bf5659aceaff32bb07eaf1f4f}
+- {path: psp_symm_nmos_idvgh_allsw0.cir, sha256: 9c80ad00a653703acce5dae835cba4e412485e459794209f4de43d6666841e74}
+- {path: psp_symm_nmos_idvgh_outvars.cir, sha256: 4b7d81edeab5a0ecce11c6823c17400200c567cb2aac5159c01c5329478f29fe}
+- {path: psp_symm_nmos_idvgh_swigate1.cir, sha256: 0e89dadcfd1bfd4e4d70f1e866fa89957b41ed3c30f965261ed7477e60fc1ee7}
+- {path: psp_symm_nmos_idvgh_swimpact1.cir, sha256: 2cf475eb6e61840e5e95c0dae20c04aa0f8f5ab5e49961639e0f1b687f95f928}
+- {path: psp_symm_pmos_idvg0.cir, sha256: 47b0b88211f253d11764f94bab6d40c43c1e3e4d4687267b25cdd6e033654b43}
+- {path: psp_symm_pmos_idvg0_allsw0.cir, sha256: b24b05168d089ccfac03b98438c3ee84e4d4fcd5c5e3054134193f7a98c32fa3}
+- {path: psp_symm_pmos_idvg0_swigate1.cir, sha256: 0ca37b6e2e5389244a23dcd908c4694d2514f045dde78f259ba1254aa5245a21}
+- {path: psp_symm_pmos_idvg0_swimpact1.cir, sha256: 2339468546ba23dedbcd5ea5be494ff1eaf403509d1e513df624414f7098f3c2}
+- {path: psp_symm_pmos_idvgh.cir, sha256: bde8efec03b4bacdfa30a8589c4695015b5cf2dc72bf5288cddb4d4b68acf035}
+- {path: psp_symm_pmos_idvgh_allsw0.cir, sha256: 5d462687e3faf737f44286a4ba42f9251ab201aa7928bc67b694dba30403d5c9}
+- {path: psp_symm_pmos_idvgh_swigate1.cir, sha256: c5fe3b4ff165d312da12cb5d7274c3b8ce5595f591793149ec6f270359443296}
+- {path: psp_symm_pmos_idvgh_swimpact1.cir, sha256: 20997827fd50dd7d921caf621f03110610e55122d8332c6a5e1c95e097a33e2b}
+- {path: sym_nmos_idvdh_dt.cir, sha256: 7d5f7f22ffb4a245cbf4abdc3d2b3dfd09f938280fc1e0d9b7e45133d7c0fb2b}
+- {path: sym_pmos_idvdh_dt.cir, sha256: 38e6734ebc5748d2165f92dd44e70150ce99d64b02047dfa67191697317aab4e}
+netlists:
+- {file: asym_nmos_idvdh_dt.cir, dialect: xyce}
+- {file: asym_pmos_idvdh_dt.cir, dialect: xyce}
+- {file: invert_psp.cir, dialect: xyce}
+- {file: invert_psp_testDTA0.cir, dialect: xyce}
+- {file: invert_psp_testDTA1.cir, dialect: xyce}
+- {file: invert_psp_testDTA2.cir, dialect: xyce}
+- {file: psp_asym_nmos_idvg0.cir, dialect: xyce}
+- {file: psp_asym_pmos_idvg0.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvg0.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvg0_allsw0.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvg0_swigate1.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvg0_swimpact1.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvgh.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvgh_allsw0.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvgh_outvars.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvgh_swigate1.cir, dialect: xyce}
+- {file: psp_symm_nmos_idvgh_swimpact1.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvg0.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvg0_allsw0.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvg0_swigate1.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvg0_swimpact1.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvgh.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvgh_allsw0.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvgh_swigate1.cir, dialect: xyce}
+- {file: psp_symm_pmos_idvgh_swimpact1.cir, dialect: xyce}
+- {file: sym_nmos_idvdh_dt.cir, dialect: xyce}
+- {file: sym_pmos_idvdh_dt.cir, dialect: xyce}

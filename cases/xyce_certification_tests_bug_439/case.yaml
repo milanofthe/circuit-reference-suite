@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_439
+title: Xyce_Regression Certification_Tests/BUG_439
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_439
+files:
+- {path: formerly-bad-vsrc.cir, sha256: 70a0966eaef8398fed087206844433fd66f98170fb731e61e98b72e6c6d123f6}
+netlists:
+- {file: formerly-bad-vsrc.cir, dialect: xyce}

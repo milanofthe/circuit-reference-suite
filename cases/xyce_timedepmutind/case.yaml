@@ -1,0 +1,14 @@
+id: xyce_timedepmutind
+title: Xyce_Regression TimeDepMutInd
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TimeDepMutInd
+files:
+- {path: timeDepMutIndSens.cir, sha256: 21dbda555b80890dd013038b9b3b2967282a7949d05d76e3971ebfe0a416728b}
+netlists:
+- {file: timeDepMutIndSens.cir, dialect: xyce}

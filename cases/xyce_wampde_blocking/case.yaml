@@ -1,0 +1,16 @@
+id: xyce_wampde_blocking
+title: Xyce_Regression WAMPDE/BLOCKING
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/WAMPDE/BLOCKING
+files:
+- {path: block.cir, sha256: b5596b3b51855b15cf4ba279da6ea273b349b3d54b993b69d8c940952d92e3c2}
+- {path: simple_single_channel.cir, sha256: 58c53bde4e87f10292e5729f2b5f3e0aaa896dfef399d88995d2b1527f797714}
+netlists:
+- {file: block.cir, dialect: xyce}
+- {file: simple_single_channel.cir, dialect: xyce}

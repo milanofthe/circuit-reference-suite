@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_1822
+title: Xyce_Regression Certification_Tests/BUG_1822
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1822
+files:
+- {path: FBH_HBT.cir, sha256: bc5f0eec30f2d8b31a3ac8c54517d5e89ff7d522c8e66dd3ac991e304d623663}
+- {path: FBH_HBT_trans.cir, sha256: b927a4398d4971afbeca8c62ef0d504737abf327b3876b7d489702c03b900cf3}
+netlists:
+- {file: FBH_HBT.cir, dialect: xyce}
+- {file: FBH_HBT_trans.cir, dialect: xyce}

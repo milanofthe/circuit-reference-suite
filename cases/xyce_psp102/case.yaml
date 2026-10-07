@@ -1,0 +1,20 @@
+id: xyce_psp102
+title: Xyce_Regression PSP102
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PSP102
+files:
+- {path: idvg0_Id_T27.cir, sha256: 39acf9d2116ef42aec5465eb5a16ae1571654f9f225ed02df48ea259b49dd258}
+- {path: idvg0_Id_T27_pmos.cir, sha256: 7135f800d6d6dfb8720d81e4ef7e576e702fbfe9a28b077b9c48e09c037a4c92}
+- {path: invert_psp.cir, sha256: d2593e80ae98a6a2079cfab2bfa5396b57ed56a153cf969c84ed28b5ac8b4564}
+- {path: psp102_outvars.cir, sha256: 89f6f8e6c79f06b6dae31b3871deb0d0f8d281b70a6dd8cc55289d3b166ed41b}
+netlists:
+- {file: idvg0_Id_T27.cir, dialect: xyce}
+- {file: idvg0_Id_T27_pmos.cir, dialect: xyce}
+- {file: invert_psp.cir, dialect: xyce}
+- {file: psp102_outvars.cir, dialect: xyce}

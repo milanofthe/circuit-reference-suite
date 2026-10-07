@@ -1,0 +1,14 @@
+id: xyce_neuronpop
+title: Xyce_Regression NEURONPOP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/NEURONPOP
+files:
+- {path: NeuronPopLv1.cir, sha256: e35126ee7fcad27ec62787168b06f982cbc06c01b399b109aa6d7d8773c2b342}
+netlists:
+- {file: NeuronPopLv1.cir, dialect: xyce}

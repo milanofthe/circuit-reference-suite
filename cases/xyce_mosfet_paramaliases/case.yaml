@@ -1,0 +1,28 @@
+id: xyce_mosfet_paramaliases
+title: Xyce_Regression MOSFET_ParamAliases
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MOSFET_ParamAliases
+files:
+- {path: invert1.cir, sha256: a25f498f542c6b3e62d5ca10ee4f6aadc6ad05e05ac5b49123c41e54f928abd2}
+- {path: invert1_alt.cir, sha256: 059f73d7dc3bcc5b5b05698a50d9356c4dcd39eec05b0f2996906111a9d496bb}
+- {path: invert2.cir, sha256: 55def2f3c379d38a88a52c542d396f23750bf0c5acc0873f67a6c093b3f8d081}
+- {path: invert2_alt.cir, sha256: a21e82a9a4af97cca4862c84b3fd5eeb9a22a594bc4af871c981eced55f52fac}
+- {path: invert3.cir, sha256: ec9a86626e18cf53dab5cb25f003715d4e74b37a0307347cbf290865b14f5dbc}
+- {path: invert3_alt.cir, sha256: 937b489015b214372885d42158765a70c5b7da65850224d644e67fbed136f591}
+- {path: invert6.cir, sha256: bacd253a3cb268ff0191a07a0647ec160f396fe4ab8b187cfc1b9ab1d3829d35}
+- {path: invert6_alt.cir, sha256: 8edd8d8c6450e7cff7385d126c38b3f23809f47f186e8d3873a44d4b7c753008}
+netlists:
+- {file: invert1.cir, dialect: xyce}
+- {file: invert1_alt.cir, dialect: xyce}
+- {file: invert2.cir, dialect: xyce}
+- {file: invert2_alt.cir, dialect: xyce}
+- {file: invert3.cir, dialect: xyce}
+- {file: invert3_alt.cir, dialect: xyce}
+- {file: invert6.cir, dialect: xyce}
+- {file: invert6_alt.cir, dialect: xyce}

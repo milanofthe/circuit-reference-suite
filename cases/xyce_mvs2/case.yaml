@@ -1,0 +1,16 @@
+id: xyce_mvs2
+title: Xyce_Regression MVS2
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/MVS2
+files:
+- {path: etsoi.cir, sha256: 768482c45ace55c3fb7605256a8603ae9a06c8d5703214d3a916e15856e0de9a}
+- {path: hemt.cir, sha256: 4067da8833dba1c8ac8d7ff44e2fa46176c7461ad9e4a6b8ebfc0d43b79d70dc}
+netlists:
+- {file: etsoi.cir, dialect: xyce}
+- {file: hemt.cir, dialect: xyce}

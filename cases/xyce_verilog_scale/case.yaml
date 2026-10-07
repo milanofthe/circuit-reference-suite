@@ -1,0 +1,18 @@
+id: xyce_verilog_scale
+title: Xyce_Regression VERILOG_SCALE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/VERILOG_SCALE
+files:
+- {path: bsimcmg_107_inverter_transient.cir, sha256: ff0687a7379a76cfcb176043184ab8a3ac29b20ed4b236010e95ae87ea2e5247}
+- {path: bsimcmg_107_inverter_transientBaseline.cir, sha256: e6d3bf9c754f303c23654501bffc3a04354b3d9f418b52b9477c23be73e3e363}
+- {path: modelcard.nmos_xyce, sha256: 85a279df7a5b61751c008ba7bbe52dc22806d98856404d7959f94bc968e1885f}
+- {path: modelcard.pmos_xyce, sha256: 46fc223cce2e9ae5477bdf533378342df70cf2aa4b5787646894e6f37b4e455a}
+netlists:
+- {file: bsimcmg_107_inverter_transient.cir, dialect: xyce}
+- {file: bsimcmg_107_inverter_transientBaseline.cir, dialect: xyce}

@@ -1,0 +1,14 @@
+id: xyce_comparator
+title: Xyce_Regression COMPARATOR
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/COMPARATOR
+files:
+- {path: comparator.cir, sha256: 12c28f84973fc091f98103767334ac6d787dc2d6cff370982805bfdaffff1efa}
+netlists:
+- {file: comparator.cir, dialect: xyce}

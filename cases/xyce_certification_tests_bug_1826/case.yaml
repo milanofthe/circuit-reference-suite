@@ -1,0 +1,17 @@
+id: xyce_certification_tests_bug_1826
+title: Xyce_Regression Certification_Tests/BUG_1826
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1826
+files:
+- {path: copper.linear, sha256: c92fe4ced3c3cccbc88624109fb82305e6aaf51bacc5ba6473fb70ea8c08e9f5}
+- {path: linear_simple_global.cir, sha256: b9e01445dc77fa0977f289482b7b4f310bb788ebdad517fedf3bad7768e53f60}
+- {path: linear_simple_param.cir, sha256: 0e030c893f93f649b479f291bb974d4b1207020a734d2d6f4051b26f221f21f3}
+netlists:
+- {file: linear_simple_global.cir, dialect: xyce}
+- {file: linear_simple_param.cir, dialect: xyce}

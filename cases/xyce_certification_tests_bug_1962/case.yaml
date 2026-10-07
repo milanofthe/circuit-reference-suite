@@ -1,0 +1,28 @@
+id: xyce_certification_tests_bug_1962
+title: Xyce_Regression Certification_Tests/BUG_1962
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1962
+files:
+- {path: four.cir, sha256: a9cb407172366eb85fcbebce6585dea4e1631e2a2097236533ab4aa8e4bf3c1b}
+- {path: ic.cir, sha256: 0278f2c8c34b7a069cce69c61e06c10ebb52c03e9f9ef3327bf529f4be2b10ae}
+- {path: ic2.cir, sha256: 5e330e31f2a17d5f09bc311c85509fe059c5125e590c13ff8ec5e111066462bf}
+- {path: measure.cir, sha256: 45560dc0a7c82984fce66cc05e3d75767539bb63d7a5efc21b2e962f82b244b7}
+- {path: nodeset.cir, sha256: 8dddaf2e9db37fde89b5124744ed3a398c06603eb96612a32debc748ece2b480}
+- {path: print.cir, sha256: 373ece0f80f82161d118f0b09d92105775c264ca98041e07452fe8bd3ebe2bc1}
+- {path: result.cir, sha256: 87c7058c0edc37cbf34a91db56e2589223e71f619fe641d09ac611044644490c}
+- {path: sens.cir, sha256: 69b2bb23f648fbcda2c3c9afa972c7b8f9bf0b48c18f0f0d1611672212cc79f0}
+netlists:
+- {file: four.cir, dialect: xyce}
+- {file: ic.cir, dialect: xyce}
+- {file: ic2.cir, dialect: xyce}
+- {file: measure.cir, dialect: xyce}
+- {file: nodeset.cir, dialect: xyce}
+- {file: print.cir, dialect: xyce}
+- {file: result.cir, dialect: xyce}
+- {file: sens.cir, dialect: xyce}

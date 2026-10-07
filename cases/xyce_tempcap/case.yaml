@@ -1,0 +1,18 @@
+id: xyce_tempcap
+title: Xyce_Regression TEMPCAP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TEMPCAP
+files:
+- {path: tempcap.cir, sha256: 078694c4271dd11cc126488789dca79081824d281f9f88dbb20da5e19388a83c}
+- {path: tempcap_instance.cir, sha256: b739fd2ca1568724227076e72a12dc6051a6d3e1cadc2bdb2d470fe66a3b9ad2}
+- {path: tempcap_instance2.cir, sha256: 6041df3f1493c093729d9fc4b6a484de47e047697a393c099c470a247ebc8103}
+netlists:
+- {file: tempcap.cir, dialect: xyce}
+- {file: tempcap_instance.cir, dialect: xyce}
+- {file: tempcap_instance2.cir, dialect: xyce}

@@ -1,0 +1,22 @@
+id: xyce_complex_num
+title: Xyce_Regression COMPLEX_NUM
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/COMPLEX_NUM
+files:
+- {path: test1.cir, sha256: 3aea25fbb7792f112dea82c3d7a902b3a7a95dbcc121a0e257b90f175866d05b}
+- {path: test2.cir, sha256: 279c703265926f57160b99210b7da634f015816409d979aead6c2c7b101c32c9}
+- {path: test3.cir, sha256: dc0db7aa7143cc5b85fab5304cc38a2c0db256f7f063fef0770d179314aef069}
+- {path: test4.cir, sha256: 8c2aba64c2b9586d73dd10aa71e1041e158643ec8161fa64b006e662b89dfb4b}
+- {path: test5.cir, sha256: 9c6ff6abc515ea8cc21ad58e5a841ce57c2a4e8c9984cb9568141603aac1840b}
+netlists:
+- {file: test1.cir, dialect: xyce}
+- {file: test2.cir, dialect: xyce}
+- {file: test3.cir, dialect: xyce}
+- {file: test4.cir, dialect: xyce}
+- {file: test5.cir, dialect: xyce}

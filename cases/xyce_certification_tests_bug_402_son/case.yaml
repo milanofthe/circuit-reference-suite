@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_402_son
+title: Xyce_Regression Certification_Tests/BUG_402_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_402_SON
+files:
+- {path: bug402SpiceTempOptions.cir, sha256: 4fffcf69d172c4d614673de74539634997dd35776743408ebe160701ff339d4c}
+- {path: bug402XyceTempOptions.cir, sha256: aefc2180e4bb6a5b39e3f4105546f3c5ba22af3b74f003d2d4d3c55f45938e9e}
+netlists:
+- {file: bug402SpiceTempOptions.cir, dialect: xyce}
+- {file: bug402XyceTempOptions.cir, dialect: xyce}

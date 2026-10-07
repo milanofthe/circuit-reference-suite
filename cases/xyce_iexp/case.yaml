@@ -1,0 +1,14 @@
+id: xyce_iexp
+title: Xyce_Regression IEXP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/IEXP
+files:
+- {path: iexp.cir, sha256: 57d0bdd0174c4b85802549e631962e6f4b7f9d46b5d0e3bdd14c9efc2a4551af}
+netlists:
+- {file: iexp.cir, dialect: xyce}

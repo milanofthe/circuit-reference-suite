@@ -1,0 +1,18 @@
+id: xyce_actests_bsim4
+title: Xyce_Regression ACtests/bsim4
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACtests/bsim4
+files:
+- {path: gstage.cir, sha256: ad0963e4db0138fd5db3f266b55da29928a12a72c2f71bb04042ea7fee81d173}
+- {path: modelcard.nmos, sha256: f6f56f82fe654c81912228777d2b8583174f270923522bf37400323320d5e214}
+- {path: modelcard.pmos, sha256: cda3a2badf68cf845eac5ab7da6cb1235643151043a8d703394cf99c9e4bb13b}
+- {path: opamp.cir, sha256: 7447f1fdbd9a87a43f25ca8182fc54f15568eee10fd7c3d58ef6f141c4d1cab4}
+netlists:
+- {file: gstage.cir, dialect: xyce}
+- {file: opamp.cir, dialect: xyce}

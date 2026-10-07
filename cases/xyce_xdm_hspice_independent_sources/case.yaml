@@ -1,0 +1,60 @@
+id: xyce_xdm_hspice_independent_sources
+title: Xyce_Regression XDM/HSPICE/INDEPENDENT_SOURCES
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/HSPICE/INDEPENDENT_SOURCES
+files:
+- {path: i_sources.cir, sha256: d35ef3fb568e052a15708d9be4d433d9bbb3d694f40a1a544de3cac183bc1a9e}
+- {path: i_sources.cir.hspice, sha256: 8101dd4182da637e2789f9b678813a44e962dec1c04de6d9af8abd600e0f3cd1}
+- {path: i_sources_ac_mag_phase.cir, sha256: 0f944ddce46c9795e22ad169b9f7616506c8e040f9df72ba27471bc4ad253294}
+- {path: i_sources_ac_mag_phase.cir.hspice, sha256: 73d1e41e822d8f900f60c69e8b48e8523261738e41670c5244d11955a8e4d75c}
+- {path: i_sources_exp.cir, sha256: 61a5bb664d7f76a68ecbe0644cd6cdb9511d2d589984188cc85e94e24edcabf2}
+- {path: i_sources_exp.cir.hspice, sha256: 9f6a9ee3921bbba7347ef63ddb2d1aa7c937bdafdb044bc193328275c7fede96}
+- {path: i_sources_mixed.cir, sha256: 3ba3e3b087277cade2e08c2133706a0e1a0290809df9726c9ac1b264cfd4a827}
+- {path: i_sources_mixed.cir.hspice, sha256: 147db6ab117c8eb80486c0dda8e83260af76582bdcd20cffe8934757c3980857}
+- {path: i_sources_pulse.cir, sha256: 50ebb040207ede51e3fb9baf01c4412b406236b65c88b3a447171fe292b33315}
+- {path: i_sources_pulse.cir.hspice, sha256: eb409242297257f3879dd8deaac9d6d36f64796cbbd9b569178460c1c4cc45ad}
+- {path: i_sources_sffm.cir, sha256: 9b618ace78f4f77934abf77a1590af008069227dfe295d21b5865ad858a2cdb0}
+- {path: i_sources_sffm.cir.hspice, sha256: bad7fb85cddcf4fc141ab980de05a0b97a82a7fff1c36128b693330d76f5ecaf}
+- {path: v_sources.cir, sha256: 58628cd037660d9604b802c5deeb702b75ee7ddb2291a1031f3ec707d59b8ff8}
+- {path: v_sources.cir.hspice, sha256: 44c22fe70a5995ff079a6d8a19758a3c0353637bc5eebf49c7d8ab945da42dba}
+- {path: v_sources_ac_mag_phase.cir, sha256: bfc33ef78752687b1f5bb682ce5ed0704f12618c3472c0fccb59044265d30c72}
+- {path: v_sources_ac_mag_phase.cir.hspice, sha256: 4837da8ccf2394e343a2d02a1cde9b718ae215daa90555ca6ec3dd9a37cc1147}
+- {path: v_sources_exp.cir, sha256: 64fa6a5bd803d737929acdcb90a0abaae8e0656b87ca8fcf98a36cacc22b6d8e}
+- {path: v_sources_exp.cir.hspice, sha256: 22d782a317a79961f10b77701330a294f18316cb99498f34bb85a922e06c4f3d}
+- {path: v_sources_mixed.cir, sha256: d67f6923f6f1b40764e4f85b16aa44f7c25a1a476bbcdcd1b1cd88002eac95ff}
+- {path: v_sources_mixed.cir.hspice, sha256: 26fb8011ffa0c6c4f009a136f5b8fd4fbe32e3ee949c0ce25e073b7dd79274ff}
+- {path: v_sources_pulse.cir, sha256: 04a6dba7adec92bd6fb3e2c7dd0476e3bbd2dbfb1ecb5dd555deb32f5fac64f2}
+- {path: v_sources_pulse.cir.hspice, sha256: 7dfeb4de3d2934bf63062e3d33553851cba1b1e88d355292b72740cbccd1156c}
+- {path: v_sources_sffm.cir, sha256: b5d696ed6dce8a8d909de179f57438f45ab2d8c77b048647865d6a170ae691ea}
+- {path: v_sources_sffm.cir.hspice, sha256: 90ea46f1039d6dc34b69190dc840dff6d01746040221c191cb2447f1d1478cab}
+netlists:
+- {file: i_sources.cir, dialect: xyce}
+- {file: i_sources.cir.hspice, dialect: hspice}
+- {file: i_sources_ac_mag_phase.cir, dialect: xyce}
+- {file: i_sources_ac_mag_phase.cir.hspice, dialect: hspice}
+- {file: i_sources_exp.cir, dialect: xyce}
+- {file: i_sources_exp.cir.hspice, dialect: hspice}
+- {file: i_sources_mixed.cir, dialect: xyce}
+- {file: i_sources_mixed.cir.hspice, dialect: hspice}
+- {file: i_sources_pulse.cir, dialect: xyce}
+- {file: i_sources_pulse.cir.hspice, dialect: hspice}
+- {file: i_sources_sffm.cir, dialect: xyce}
+- {file: i_sources_sffm.cir.hspice, dialect: hspice}
+- {file: v_sources.cir, dialect: xyce}
+- {file: v_sources.cir.hspice, dialect: hspice}
+- {file: v_sources_ac_mag_phase.cir, dialect: xyce}
+- {file: v_sources_ac_mag_phase.cir.hspice, dialect: hspice}
+- {file: v_sources_exp.cir, dialect: xyce}
+- {file: v_sources_exp.cir.hspice, dialect: hspice}
+- {file: v_sources_mixed.cir, dialect: xyce}
+- {file: v_sources_mixed.cir.hspice, dialect: hspice}
+- {file: v_sources_pulse.cir, dialect: xyce}
+- {file: v_sources_pulse.cir.hspice, dialect: hspice}
+- {file: v_sources_sffm.cir, dialect: xyce}
+- {file: v_sources_sffm.cir.hspice, dialect: hspice}

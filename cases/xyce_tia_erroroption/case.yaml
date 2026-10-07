@@ -1,0 +1,14 @@
+id: xyce_tia_erroroption
+title: Xyce_Regression TIA/ERROROPTION
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TIA/ERROROPTION
+files:
+- {path: erroroption.cir, sha256: 4c20d987ab43a25c74d26f18975246aad819b6c65e0f77b0d5cb8c472bbddc61}
+netlists:
+- {file: erroroption.cir, dialect: xyce}

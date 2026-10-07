@@ -1,0 +1,14 @@
+id: xyce_sandler2
+title: Xyce_Regression SANDLER2
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/SANDLER2
+files:
+- {path: sandler2.cir, sha256: 79214a89bdb03d96c2ae9119ae3c2ac122c47ab2376617c312bd8cf1b0d36b22}
+netlists:
+- {file: sandler2.cir, dialect: xyce}

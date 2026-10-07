@@ -1,0 +1,20 @@
+id: xyce_pde_1d_diode
+title: Xyce_Regression PDE_1D_DIODE
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PDE_1D_DIODE
+files:
+- {path: bug1155.cir, sha256: 65cb26a6b2102071e9392c1f40425d1292fc320680df08ef0de0bdebe6a40284}
+- {path: bug1155_1level.cir, sha256: baba0648190032ebca501c51ac89a6dc23ff85b1f131b443d3129132b3061cee}
+- {path: bug978son.cir, sha256: 54f5c2c2e01dbfce68e1f1026c69f9c2dc17894943401e82920dfe6f88861eb9}
+- {path: diopde.cir, sha256: cbc8bed921b1bc4588e029421b521443735ef5124875a2ee0809ecf36162675d}
+netlists:
+- {file: bug1155.cir, dialect: xyce}
+- {file: bug1155_1level.cir, dialect: xyce}
+- {file: bug978son.cir, dialect: xyce}
+- {file: diopde.cir, dialect: xyce}

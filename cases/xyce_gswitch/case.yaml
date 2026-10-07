@@ -1,0 +1,16 @@
+id: xyce_gswitch
+title: Xyce_Regression GSWITCH
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/GSWITCH
+files:
+- {path: gswitch.cir, sha256: 2147c1dd490f9d1c785407d33c591ed5a7109adf48e33485744bbae18bcdef21}
+- {path: gswitchHyst1.cir, sha256: 103a190f09f7e646e11d942e25669255570d9d87947e19b11a5c4ea432d1abdd}
+netlists:
+- {file: gswitch.cir, dialect: xyce}
+- {file: gswitchHyst1.cir, dialect: xyce}

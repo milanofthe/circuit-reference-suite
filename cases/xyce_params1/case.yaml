@@ -1,0 +1,16 @@
+id: xyce_params1
+title: Xyce_Regression PARAMS1
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PARAMS1
+files:
+- {path: params_a0.cir, sha256: 4fc432623b7502e1c741efb8e0ed7a0da133da3123b1079f03129298f43103f4}
+- {path: params_a1.cir, sha256: 75a6436775d0adb44da597a5892e6bfe3472e4187dcd1adfff3c93b0dfa4f871}
+netlists:
+- {file: params_a0.cir, dialect: xyce}
+- {file: params_a1.cir, dialect: xyce}

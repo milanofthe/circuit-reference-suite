@@ -1,0 +1,18 @@
+id: xyce_certification_tests_bug_546_son
+title: Xyce_Regression Certification_Tests/BUG_546_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_546_SON
+files:
+- {path: tempcap.cir, sha256: 80d017057b9ac586a5fd3669bf907083adaeeded56e20d51a83b77dd113c2310}
+- {path: tempcap_instance.cir, sha256: 13c9e81d1168ece98d97b3790a662b7624a79e2803e40e8d7b9d52a22bac92be}
+- {path: tempcap_instance2.cir, sha256: a950cfd985603b3ea6059f745f4c72f9bc83556f5532ea4030b8ae9f149f2cae}
+netlists:
+- {file: tempcap.cir, dialect: xyce}
+- {file: tempcap_instance.cir, dialect: xyce}
+- {file: tempcap_instance2.cir, dialect: xyce}

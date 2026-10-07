@@ -1,0 +1,62 @@
+id: xyce_certification_tests_issue_267
+title: Xyce_Regression Certification_Tests/ISSUE_267
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/ISSUE_267
+files:
+- {path: test_a0.cir, sha256: d6e692ec71ae9dfa897befcd78c7e116a522fb5f79e8de49d79417cba948e2f3}
+- {path: test_a1.cir, sha256: a222450325a886028c2e81a0dffbb33bc25181b39fbfe961a9d6f49bf8ee38b3}
+- {path: test_a2.cir, sha256: 0b1b4e69e6e683201209b87d5afd5242b4610c0612f337103532db7136c4573a}
+- {path: test_a3.cir, sha256: 07b2db4fa211fde04aa38ef2eb21cf36e011a799b2d00b49d7fd8f21b577cfe1}
+- {path: test_a4.cir, sha256: b0304e964577ef4947e403c7213698c49a7f6c718262e5dcdc45a2816eeecf6c}
+- {path: test_b0.cir, sha256: e92bc723459a3ae2b23deb0d78b80990a94ac01c8e3e149bc9f679aaca71afae}
+- {path: test_b1.cir, sha256: fb0a9f082768918dd2e71c839bcd42b96b5c31ba1a23b573893f88fe01f02758}
+- {path: test_b2.cir, sha256: 599e6e89f63daca3bb79dce38bb49d18ceffbfd8898982d066f291994368bbf4}
+- {path: test_b3.cir, sha256: a2bfbd5ec1cd875eb91da2ec8de324966aa7dfd53836b5c111516bbec46033e1}
+- {path: test_b3soi_inv0.cir, sha256: e98c16b2368abd463bd94fafbc426b7df65a058ab342f43222a647aa5ca2b349}
+- {path: test_b3soi_inv1.cir, sha256: bceae39363840025f05783664725d4fe9d5899d10240a9ba3172d4615cd12b36}
+- {path: test_b3soi_inv2.cir, sha256: 8d410267fdba6965192f2a0dd563915a91bb7e473e1701482b81f7e42348459c}
+- {path: test_b3soi_inv3.cir, sha256: 687649d205ba69fc6d14c375eccc7b7a8dab35b0879ce9edab4ab228c9d2802f}
+- {path: test_b3soi_inv4.cir, sha256: 961b4ff88142b6b50baee817b70732695601cf918c7eeb6f4e509a7db4aff15c}
+- {path: test_b3soi_inv5.cir, sha256: e34df103f32cbc6507e5ab2a3d26292ee40aa7dc3c0cd758b87991ee2bae8bf0}
+- {path: test_b4.cir, sha256: e8ef0a474026303564886bfbbd86d24f9d5df08370559fee68cb250f5797604a}
+- {path: test_bjt_ampSens1.cir, sha256: 981afc3175eb38e510c8046e5543f0f29c8e09a7aa401e24fdd1e03b70cb1604}
+- {path: test_bjt_ampSens2.cir, sha256: 65497dbbf6193fe7b5e88be86a68b4461f38c00041e1f0d9fd9176a86cfcbf67}
+- {path: test_c0.cir, sha256: 18d4ffd45f37e5ef9e2bc6517634ba0c471f7a6a2ae3ea621e795aec8818da06}
+- {path: test_c1.cir, sha256: 6c38eb4ef2c4464c5a9216391262e25f07fcbd09420b2d724139dcefa2c000fc}
+- {path: test_c2.cir, sha256: edb1b0e2bdd0296375b6b4ae56c6c1dfaa6dbd1a9142810a046f7f7516b1df6d}
+- {path: test_c3.cir, sha256: 542553bee8353100cf1bdaaae365086b67771b98df7b0b9efbdbc4f51ff31b32}
+- {path: test_c4.cir, sha256: 194d315e7adaa43a55ede0f4861943426ee9adbed5350c4d96b260858b9a2ec0}
+- {path: test_c5.cir, sha256: d1246e50bf809e77f48a8b29725d50a006134a80f7e82cf12468e4c5196dcdb8}
+- {path: test_c6.cir, sha256: 7df6c35f453a85075b77bf9b8f678880990aa2b3f7a3ecbae9a8e777e793634f}
+netlists:
+- {file: test_a0.cir, dialect: xyce}
+- {file: test_a1.cir, dialect: xyce}
+- {file: test_a2.cir, dialect: xyce}
+- {file: test_a3.cir, dialect: xyce}
+- {file: test_a4.cir, dialect: xyce}
+- {file: test_b0.cir, dialect: xyce}
+- {file: test_b1.cir, dialect: xyce}
+- {file: test_b2.cir, dialect: xyce}
+- {file: test_b3.cir, dialect: xyce}
+- {file: test_b3soi_inv0.cir, dialect: xyce}
+- {file: test_b3soi_inv1.cir, dialect: xyce}
+- {file: test_b3soi_inv2.cir, dialect: xyce}
+- {file: test_b3soi_inv3.cir, dialect: xyce}
+- {file: test_b3soi_inv4.cir, dialect: xyce}
+- {file: test_b3soi_inv5.cir, dialect: xyce}
+- {file: test_b4.cir, dialect: xyce}
+- {file: test_bjt_ampSens1.cir, dialect: xyce}
+- {file: test_bjt_ampSens2.cir, dialect: xyce}
+- {file: test_c0.cir, dialect: xyce}
+- {file: test_c1.cir, dialect: xyce}
+- {file: test_c2.cir, dialect: xyce}
+- {file: test_c3.cir, dialect: xyce}
+- {file: test_c4.cir, dialect: xyce}
+- {file: test_c5.cir, dialect: xyce}
+- {file: test_c6.cir, dialect: xyce}

@@ -1,0 +1,16 @@
+id: xyce_bjt_ic
+title: Xyce_Regression BJT_IC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BJT_IC
+files:
+- {path: bjt_ic.cir, sha256: b2f414dea73a0fb66b61335fe83320fecac2b7bbf1f12e0438b6893c363c5534}
+- {path: bjt_ic_nonzero.cir, sha256: ff51174099ac2601e5fcea3c65bcde943b404194272cedbd5afe05f085bd4462}
+netlists:
+- {file: bjt_ic.cir, dialect: xyce}
+- {file: bjt_ic_nonzero.cir, dialect: xyce}

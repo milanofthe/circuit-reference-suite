@@ -1,0 +1,14 @@
+id: xyce_polyg
+title: Xyce_Regression POLYG
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/POLYG
+files:
+- {path: polyg.cir, sha256: a2bcaad9f6fa0351bd60f71034b6e1fda47d7da0e37b1989e9394b242adef10a}
+netlists:
+- {file: polyg.cir, dialect: xyce}

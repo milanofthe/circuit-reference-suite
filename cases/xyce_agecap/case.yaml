@@ -1,0 +1,16 @@
+id: xyce_agecap
+title: Xyce_Regression AGECAP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/AGECAP
+files:
+- {path: agecap.cir, sha256: 9fbf03aacd4e3550fa012dcfa2449aeb9e21da584343d912e72ffbe57fc6a906}
+- {path: agecap_ref.cir, sha256: b2ac35cd08c4409515bf25f3309ae919dea9fe9b2f165f5a9fbe885247ac4077}
+netlists:
+- {file: agecap.cir, dialect: xyce}
+- {file: agecap_ref.cir, dialect: xyce}

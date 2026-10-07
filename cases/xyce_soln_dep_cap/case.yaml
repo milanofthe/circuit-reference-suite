@@ -1,0 +1,20 @@
+id: xyce_soln_dep_cap
+title: Xyce_Regression SOLN_DEP_CAP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/SOLN_DEP_CAP
+files:
+- {path: ageTempDep.cir, sha256: 74740344c0e552a827d42bbac7f9214cb4a6955099931e163e47c89a9354e634}
+- {path: voltDepCap_baseline.cir, sha256: 68b4b540b8282be2d3330f1854b2da051909586381e02cf7a2174011a124ee7a}
+- {path: voltDepCap_test.cir, sha256: c7b2e69af3e2d5a8fce1d84630f6bb29a8b83aeb9465149d5c7e606d39d7c52d}
+- {path: voltDepCharge_test.cir, sha256: af314507939354de2aea328693693b63375050c129d507e63ed9128a181e9239}
+netlists:
+- {file: ageTempDep.cir, dialect: xyce}
+- {file: voltDepCap_baseline.cir, dialect: xyce}
+- {file: voltDepCap_test.cir, dialect: xyce}
+- {file: voltDepCharge_test.cir, dialect: xyce}

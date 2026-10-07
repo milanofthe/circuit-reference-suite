@@ -1,0 +1,92 @@
+id: xyce_certification_tests_bug_1041_son
+title: Xyce_Regression Certification_Tests/BUG_1041_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1041_SON
+files:
+- {path: b3soi_invert_option_scale.cir, sha256: 24d955f49d765ffcce9c975f0dde16f662ed7d738e37f705fcd7c08e14989e7c}
+- {path: b3soi_invert_option_scale2.cir, sha256: bc9f6a02674f96fdf9ad1421867c2d744fb1169f5c4c3397ca93f9eac593d85a}
+- {path: b3soi_invert_option_scale2Ref.cir, sha256: 73adc56cbad8db47987d3a872e70983767f403cc77bf14c9676b47e11982d04d}
+- {path: b3soi_invert_option_scaleRef.cir, sha256: 73adc56cbad8db47987d3a872e70983767f403cc77bf14c9676b47e11982d04d}
+- {path: b3soi_invert_scale.cir, sha256: 129e2603aaba293c7a7faea925b48a8290dd200dcfc6a8946664ad509cac0aa5}
+- {path: b3soi_invert_scale2.cir, sha256: 9cae24a6923896cf1550a0fc74f1761baf832adba26b7ad86458880455e5195b}
+- {path: b3soi_invert_scale2Ref.cir, sha256: 73adc56cbad8db47987d3a872e70983767f403cc77bf14c9676b47e11982d04d}
+- {path: b3soi_invert_scaleRef.cir, sha256: 73adc56cbad8db47987d3a872e70983767f403cc77bf14c9676b47e11982d04d}
+- {path: bsim3_comparatorBinningScale.cir, sha256: 4eea3bf82c35e049558098de5a15a10aec637d5e91c8e3132f0135567dc4ed95}
+- {path: bsim3_comparatorBinningScale2.cir, sha256: 3027c0c6c4ce8bc76041b929f4a7c6c89601942af178e86fb8a3f351119bb529}
+- {path: bsim3_comparatorBinningScale2Ref.cir, sha256: f102fbce0bb91cd5a01058208c8feffffbb1e390db0936704dcdf91a83b56a89}
+- {path: bsim3_comparatorBinningScaleRef.cir, sha256: 9465e3cdd69c954a8556d7a6732acc03afb559e8e07320e28944a21c4a3c92cf}
+- {path: bsim4_tranInverterBinningScale.cir, sha256: c01bad62e7ff02e92fc009065a076a0627b0e8a82162513d04ee3e9c35ba97ed}
+- {path: bsim4_tranInverterBinningScale2.cir, sha256: f87af1cc7fd1617af88ce21635b9c4fdc07c15f073073705ee37675cc1141ca2}
+- {path: bsim4_tranInverterBinningScale2Ref.cir, sha256: 8fae5affbd4b32369369e267186755a29892dc09533ceb472ff6e943749967e6}
+- {path: bsim4_tranInverterBinningScaleRef.cir, sha256: df628774ce62ba5266eafcfcd2b3b42dad537c7a3598c2671f8f798799a4ace8}
+- {path: bsim4_tranInverterBinningScale_option.cir, sha256: f3180a824fc20d54f651d81ce0e78feb23127c7b534f0cab703063d6168ca80b}
+- {path: bsim4_tranInverterBinningScale_option2.cir, sha256: e540260ee2b438e88b21b1482020e6efb20591e338249b603a352ddd0fe235cd}
+- {path: bsim4_tranInverterBinningScale_option2Ref.cir, sha256: 8fae5affbd4b32369369e267186755a29892dc09533ceb472ff6e943749967e6}
+- {path: bsim4_tranInverterBinningScale_optionRef.cir, sha256: df628774ce62ba5266eafcfcd2b3b42dad537c7a3598c2671f8f798799a4ace8}
+- {path: mos1_invert_scale.cir, sha256: 983968372e3e6ad81244e048c7c8d1d52db345252e57c365bb385a951bd18f71}
+- {path: mos1_invert_scale2.cir, sha256: a1c581030a3d4b38758bdf354aefcb8351ce5f9c9e12c45e018a0f20a28f7ab7}
+- {path: mos1_invert_scale2Ref.cir, sha256: c6f4ab5ccdad271804d9f9cc464c55cc9be8376f3283e8744037e5638639bef7}
+- {path: mos1_invert_scaleRef.cir, sha256: c6f4ab5ccdad271804d9f9cc464c55cc9be8376f3283e8744037e5638639bef7}
+- {path: mos2_invert_scale.cir, sha256: 5f79799b749135dfb8a8c7b168339b2400068d7423ffa12f50fe534e44fd5f4a}
+- {path: mos2_invert_scale2.cir, sha256: c232dfa624a8541c5ca9fa86063ca630ea38caa3e3c32c2ce530d8958240cdec}
+- {path: mos2_invert_scale2Ref.cir, sha256: d875d046f3d7e9169d00c51d17a0f964d6093ddf9b9d69e4acacb10738e2aba2}
+- {path: mos2_invert_scaleRef.cir, sha256: d875d046f3d7e9169d00c51d17a0f964d6093ddf9b9d69e4acacb10738e2aba2}
+- {path: mos3_invert_scale.cir, sha256: fb93bb8f8d3e520f90ca0bdcd8c1bb5c7133df884571a35068f879dfc55c83d4}
+- {path: mos3_invert_scale2.cir, sha256: 2cf94fbb6b5b364e3cb53f6fdefa1bfb05159a35a6c2436ab2e58ffd2db6e6a9}
+- {path: mos3_invert_scale2Ref.cir, sha256: fb12d145b646aeb189ef5ddba62bff7ea7853d62547efcee626f9ac4bdb37e52}
+- {path: mos3_invert_scaleRef.cir, sha256: fb12d145b646aeb189ef5ddba62bff7ea7853d62547efcee626f9ac4bdb37e52}
+- {path: mos6_invert_scale.cir, sha256: 9ce2543ff220e9ee9dc513721d4918ae8639e8807acc2e60483e34bf4b95a19d}
+- {path: mos6_invert_scale2.cir, sha256: c760b120ab02e694da15630914880a29212eec8fa7a0a556e3a514e84cd77e2c}
+- {path: mos6_invert_scale2Ref.cir, sha256: c396c2621e73db9fcca4a11ac9bc634e36c1a869d6b1800bf1fae88e9338efed}
+- {path: mos6_invert_scaleRef.cir, sha256: c396c2621e73db9fcca4a11ac9bc634e36c1a869d6b1800bf1fae88e9338efed}
+- {path: vdmos_tran_scale.cir, sha256: ae8ccc6a7a7952f61b743fcc4d8f319efd9d74a1606489d328e6eaa2253901da}
+- {path: vdmos_tran_scale2.cir, sha256: 247c263d785c163d554c7103004fa749fc990673b2ecd3977b660536d6defbc4}
+- {path: vdmos_tran_scale2Ref.cir, sha256: 88b00bac3ab2fab557dc331e4b494ce83c84063d739df1572fae4b15c22ed6f3}
+- {path: vdmos_tran_scaleRef.cir, sha256: 88b00bac3ab2fab557dc331e4b494ce83c84063d739df1572fae4b15c22ed6f3}
+netlists:
+- {file: b3soi_invert_option_scale.cir, dialect: xyce}
+- {file: b3soi_invert_option_scale2.cir, dialect: xyce}
+- {file: b3soi_invert_option_scale2Ref.cir, dialect: xyce}
+- {file: b3soi_invert_option_scaleRef.cir, dialect: xyce}
+- {file: b3soi_invert_scale.cir, dialect: xyce}
+- {file: b3soi_invert_scale2.cir, dialect: xyce}
+- {file: b3soi_invert_scale2Ref.cir, dialect: xyce}
+- {file: b3soi_invert_scaleRef.cir, dialect: xyce}
+- {file: bsim3_comparatorBinningScale.cir, dialect: xyce}
+- {file: bsim3_comparatorBinningScale2.cir, dialect: xyce}
+- {file: bsim3_comparatorBinningScale2Ref.cir, dialect: xyce}
+- {file: bsim3_comparatorBinningScaleRef.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale2.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale2Ref.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScaleRef.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale_option.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale_option2.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale_option2Ref.cir, dialect: xyce}
+- {file: bsim4_tranInverterBinningScale_optionRef.cir, dialect: xyce}
+- {file: mos1_invert_scale.cir, dialect: xyce}
+- {file: mos1_invert_scale2.cir, dialect: xyce}
+- {file: mos1_invert_scale2Ref.cir, dialect: xyce}
+- {file: mos1_invert_scaleRef.cir, dialect: xyce}
+- {file: mos2_invert_scale.cir, dialect: xyce}
+- {file: mos2_invert_scale2.cir, dialect: xyce}
+- {file: mos2_invert_scale2Ref.cir, dialect: xyce}
+- {file: mos2_invert_scaleRef.cir, dialect: xyce}
+- {file: mos3_invert_scale.cir, dialect: xyce}
+- {file: mos3_invert_scale2.cir, dialect: xyce}
+- {file: mos3_invert_scale2Ref.cir, dialect: xyce}
+- {file: mos3_invert_scaleRef.cir, dialect: xyce}
+- {file: mos6_invert_scale.cir, dialect: xyce}
+- {file: mos6_invert_scale2.cir, dialect: xyce}
+- {file: mos6_invert_scale2Ref.cir, dialect: xyce}
+- {file: mos6_invert_scaleRef.cir, dialect: xyce}
+- {file: vdmos_tran_scale.cir, dialect: xyce}
+- {file: vdmos_tran_scale2.cir, dialect: xyce}
+- {file: vdmos_tran_scale2Ref.cir, dialect: xyce}
+- {file: vdmos_tran_scaleRef.cir, dialect: xyce}

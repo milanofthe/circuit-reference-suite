@@ -1,0 +1,14 @@
+id: xyce_actests_gminstepping
+title: Xyce_Regression ACtests/gminstepping
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACtests/gminstepping
+files:
+- {path: opamp-vf-gstepping.cir, sha256: 028226bbf4b112415a3a0a619cdfe936510db3ede71c186185625424236cfce6}
+netlists:
+- {file: opamp-vf-gstepping.cir, dialect: xyce}

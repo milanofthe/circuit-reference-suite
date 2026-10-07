@@ -1,0 +1,20 @@
+id: xyce_pde_2d_bjt
+title: Xyce_Regression PDE_2D_BJT
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/PDE_2D_BJT
+files:
+- {path: cartbjt.cir, sha256: 8674595eb50f299a0b724e910297df3b4046bcea6d835128a8ab016a8de2466c}
+- {path: cartbjt2.cir, sha256: 46a332c2e235780a3daed41e257e4318dfbe7f41f77846e5beb79d60699fd127}
+- {path: cartbjt3.cir, sha256: debbb7c5795a36cd8fe6d663c0b291fcc261c3a3e0b228d7f134d1006749e7e8}
+- {path: invertbjt.cir, sha256: 7ac6f2d1807596d3bdd8fb92c31678b960e74a861097ef56d95e792a91a99be4}
+netlists:
+- {file: cartbjt.cir, dialect: xyce}
+- {file: cartbjt2.cir, dialect: xyce}
+- {file: cartbjt3.cir, dialect: xyce}
+- {file: invertbjt.cir, dialect: xyce}

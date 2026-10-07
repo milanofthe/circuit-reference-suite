@@ -1,0 +1,14 @@
+id: xyce_ternary_op
+title: Xyce_Regression TERNARY_OP
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TERNARY_OP
+files:
+- {path: ternary_op.cir, sha256: 87df8f8a840ad8d02f0049639171a875182e32972d4657be8162c2739fa449c8}
+netlists:
+- {file: ternary_op.cir, dialect: xyce}

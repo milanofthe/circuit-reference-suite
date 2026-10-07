@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_981_son
+title: Xyce_Regression Certification_Tests/BUG_981_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_981_SON
+files:
+- {path: bug981A.cir, sha256: 9c5e7b9d0b8fa9f72299c2f01bcb4c014fef0e60d44f3e0e6ab9558cc7bdcf1c}
+- {path: bug981B.cir, sha256: 93fb996bfe71b4843ccfc38ddf6bd10c7cacadc12aef95b80fd589a59ab33808}
+netlists:
+- {file: bug981A.cir, dialect: xyce}
+- {file: bug981B.cir, dialect: xyce}

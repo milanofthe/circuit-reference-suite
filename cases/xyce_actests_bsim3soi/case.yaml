@@ -1,0 +1,19 @@
+id: xyce_actests_bsim3soi
+title: Xyce_Regression ACtests/bsim3soi
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACtests/bsim3soi
+files:
+- {path: gain-stagesoi.cir, sha256: fa96ab5e41a174691b4899234438c8c3331b4c331c019d214f7c63094057870e}
+- {path: gain-stagesoi_default.cir, sha256: 5b077be2cd8700ea04a265730b0d65b04aae5ce370b9e9c285f0bbb972a6b2bf}
+- {path: gain-stagesoi_default_spice.cir, sha256: 428d1d5136e9918fd03eb6de06e2dd544d20bf24454b77236ded5db8400494e7}
+- {path: nmos_3_2.mod, sha256: 692512180cf631975cda00cee099586f4a39a269e4c37aedb6569f32d42500e4}
+netlists:
+- {file: gain-stagesoi.cir, dialect: xyce}
+- {file: gain-stagesoi_default.cir, dialect: xyce}
+- {file: gain-stagesoi_default_spice.cir, dialect: xyce}

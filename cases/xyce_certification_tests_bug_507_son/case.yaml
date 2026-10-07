@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_507_son
+title: Xyce_Regression Certification_Tests/BUG_507_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_507_SON
+files:
+- {path: bug_507.cir, sha256: 2842d85b489d27a380388c257ad5125a44004b21cf9cbd6ad67fe9e2f5a7d57a}
+netlists:
+- {file: bug_507.cir, dialect: xyce}

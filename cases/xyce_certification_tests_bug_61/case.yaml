@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_61
+title: Xyce_Regression Certification_Tests/BUG_61
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_61
+files:
+- {path: capacitor.cir, sha256: e8f101b94d9e0396f37d9d6f5bd271b0f509c29c8b338b76f4112ddef05757f1}
+netlists:
+- {file: capacitor.cir, dialect: xyce}

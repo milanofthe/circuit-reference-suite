@@ -1,0 +1,32 @@
+id: xyce_certification_tests_bug_1035_son
+title: Xyce_Regression Certification_Tests/BUG_1035_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1035_SON
+files:
+- {path: RC_AC_data_expr.cir, sha256: eaaa23b9fb4705405f2b502aaf81d7b4326c7bc9fc46d3443f1a051edb5e1f17}
+- {path: RC_AC_data_expr2.cir, sha256: 51064609bb8cad6f478fde863895e770d54c144bcf51e904d555d0eb49c73d1a}
+- {path: RC_AC_data_expr3.cir, sha256: 9e87671007c4d5bc23c438e02c660380c1109734cecd33d4143c85900d602d0a}
+- {path: RC_AC_data_expr4.cir, sha256: 0d298e016b3da4782d50b0329e0ccd11041f9504f4fee56b601ddfdc9aeff4e3}
+- {path: RC_AC_data_expr4_baseline.cir, sha256: 200873cf6d53cd7804de6b7987e7e726bb08334c333731ef34254d65bf2e0914}
+- {path: RC_AC_data_exprAlone.cir, sha256: eaaa23b9fb4705405f2b502aaf81d7b4326c7bc9fc46d3443f1a051edb5e1f17}
+- {path: RC_simple.cir, sha256: fd3917e0a106b6d27b486dd7eb1875683af604d74c2e3bd2d7ee979b3ecfd4d3}
+- {path: RC_simple_baseline.cir, sha256: 8429901b2d71d1f91f0c6ac9b5cf6bb1e22a723f502a31af47cf8b5757151151}
+- {path: RC_simple_data.cir, sha256: 487b45ef4faea9b126a194eea6211e675a4b64746b330e3ae48ce573c95da596}
+- {path: transLineDataGlobal_AC.cir, sha256: 69912d6e59c4a4430cebc8686449a291bfdb12488b99ee7625b89ccbb3260b8c}
+netlists:
+- {file: RC_AC_data_expr.cir, dialect: xyce}
+- {file: RC_AC_data_expr2.cir, dialect: xyce}
+- {file: RC_AC_data_expr3.cir, dialect: xyce}
+- {file: RC_AC_data_expr4.cir, dialect: xyce}
+- {file: RC_AC_data_expr4_baseline.cir, dialect: xyce}
+- {file: RC_AC_data_exprAlone.cir, dialect: xyce}
+- {file: RC_simple.cir, dialect: xyce}
+- {file: RC_simple_baseline.cir, dialect: xyce}
+- {file: RC_simple_data.cir, dialect: xyce}
+- {file: transLineDataGlobal_AC.cir, dialect: xyce}

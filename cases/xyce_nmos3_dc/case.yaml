@@ -1,0 +1,14 @@
+id: xyce_nmos3_dc
+title: Xyce_Regression NMOS3_DC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/NMOS3_DC
+files:
+- {path: mos3_dc.cir, sha256: 27642aa865e437ab6d3ec158fecb4e546b1795e25909f9f7dd950e49211dafc7}
+netlists:
+- {file: mos3_dc.cir, dialect: xyce}

@@ -1,0 +1,34 @@
+id: xyce_abm
+title: Xyce_Regression ABM
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ABM
+files:
+- {path: ascth.cir, sha256: 08dd66df0342993bfadf557cb641b7bdbfb6258fd3da93c5167bccb179395223}
+- {path: ddt.cir, sha256: c2cf72dbaf2b435f847912d3c389eda43e89be0a2d95c4edf076ad43750f07d3}
+- {path: ifstatement.cir, sha256: c8590a1b507f679321686fa38db8e3b96d660d163567968950fb962373909a44}
+- {path: limit.cir, sha256: 379998656a8ddcad8d639cfa1507063e02f7f701d10e0fd30aa563d2b740200c}
+- {path: meg.cir, sha256: 7d95e605af6ab5c1346e69a3ab63975ef368a1db82c1cbf866d49040d08cb54b}
+- {path: scth.cir, sha256: 568f96b819e669a045a1769a4d4ca2b42d18d63762361f344b943b586718c978}
+- {path: sdt.cir, sha256: 1be35dffbac0d7fe8297b3b89b17bfe0f51def1ce4c0619785522538fdd6e85b}
+- {path: smoothbsrc.cir, sha256: e0cdf6eda45c857d821ff206ff5ac753b0661302f3f9bf0105b8d64d1004bee8}
+- {path: smoothbsrc2.cir, sha256: 9accc0b8d90fae7556d37f9af128f82f274327b1c38e034cd6c77b09664f3654}
+- {path: smoothrcconst.cir, sha256: ee9acd3fdbb71cad8ec5a1a8cb8f4d4aeecafd8f8c5a3b462882bffdde733a80}
+- {path: stp.cir, sha256: e165de0a0ca3081dc81e1d375f15f25e87aec2753143363f903f5b34c9648bf5}
+netlists:
+- {file: ascth.cir, dialect: xyce}
+- {file: ddt.cir, dialect: xyce}
+- {file: ifstatement.cir, dialect: xyce}
+- {file: limit.cir, dialect: xyce}
+- {file: meg.cir, dialect: xyce}
+- {file: scth.cir, dialect: xyce}
+- {file: sdt.cir, dialect: xyce}
+- {file: smoothbsrc.cir, dialect: xyce}
+- {file: smoothbsrc2.cir, dialect: xyce}
+- {file: smoothrcconst.cir, dialect: xyce}
+- {file: stp.cir, dialect: xyce}

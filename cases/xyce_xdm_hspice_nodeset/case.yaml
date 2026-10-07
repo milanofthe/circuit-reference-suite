@@ -1,0 +1,16 @@
+id: xyce_xdm_hspice_nodeset
+title: Xyce_Regression XDM/HSPICE/NODESET
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/HSPICE/NODESET
+files:
+- {path: nodeset_global_node_warning.cir, sha256: ab8cceb221f1d538f41ac2593b3eb84445a1a2fa6e65d91fa5abf859b1855ab6}
+- {path: nodeset_global_node_warning.cir.hspice, sha256: 890c084b023be036e090b7960fd29d19d4e8b8e69e52d78e7a107fd1d2c701d2}
+netlists:
+- {file: nodeset_global_node_warning.cir, dialect: xyce}
+- {file: nodeset_global_node_warning.cir.hspice, dialect: hspice}

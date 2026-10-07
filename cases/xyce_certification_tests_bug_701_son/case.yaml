@@ -1,0 +1,24 @@
+id: xyce_certification_tests_bug_701_son
+title: Xyce_Regression Certification_Tests/BUG_701_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_701_SON
+files:
+- {path: ac_files.cir, sha256: 95c54983b2b5c77b5bb8561e5b7242fea635ff61938d3b8fbce249744eac2e1f}
+- {path: ac_files_csv.cir, sha256: 7f34c22d9c5d671e082ab39c987a905ea17602003834b37afd6a0890fec7e78a}
+- {path: ac_files_fallback.cir, sha256: b6882937c880fe624a565a166281195f07928e4cf5eb4a2a1f4021ac67cacb1c}
+- {path: ac_files_fallback_csv.cir, sha256: 97ee624ede67751d1271c135fdfb258ecd6e296034e9cd24958fbf5b3f03f31d}
+- {path: hb_files_csv.cir, sha256: 371396609a485c1b60e8453093f95b48b4f1bb2f727b63d7507d4bf0dcf27c99}
+- {path: hb_files_fallback_csv.cir, sha256: 4ab682134291d81e131dcdc09a061bba9c7ee631a71b65dc49eb1a1128ed23b0}
+netlists:
+- {file: ac_files.cir, dialect: xyce}
+- {file: ac_files_csv.cir, dialect: xyce}
+- {file: ac_files_fallback.cir, dialect: xyce}
+- {file: ac_files_fallback_csv.cir, dialect: xyce}
+- {file: hb_files_csv.cir, dialect: xyce}
+- {file: hb_files_fallback_csv.cir, dialect: xyce}

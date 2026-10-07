@@ -26,6 +26,14 @@ VA_STANDARD = ("disciplines.vams", "constants.vams", "discipline.h", "constants.
 
 # Model types of ngspice N instances that are built in rather than loaded as OSDI.
 NGSPICE_N_BUILTIN = {"nport"}
+# Xyce's own Y devices; any other Y<type> is a Verilog-A plugin.
+XYCE_Y_BUILTIN = {
+    "acc", "adc", "add", "and", "antiwindup", "antiwindupl", "antiwinduplimiter", "awl",
+    "battery", "buf", "dac", "delay", "dff", "dltch", "ext", "genext", "ibis", "inv", "jkff",
+    "lin", "memristor", "mil", "min", "nand", "neuron", "neuronpop", "nor", "not", "nxor",
+    "opamp", "or", "pde", "pgbr", "pgbs", "pggb", "pgtr", "powergrid", "powergridbranch",
+    "powergridbusshunt", "powergridgenbus", "powergridtransformer", "rom", "rxn", "synapse",
+    "tff", "transline", "xor"}
 
 SPICE_ANALYSES = ("op", "dc", "ac", "tran", "noise", "tf", "pz", "sens", "disto", "four",
                   "pss", "hb", "sp", "step", "mpde", "sampling", "embeddedsampling", "lin")
@@ -51,6 +59,7 @@ class Parsed:
     sections: dict[str, list[Ref]] = field(default_factory=dict)
     models: dict[str, str] = field(default_factory=dict)        # .model name -> type
     osdi_devices: set[str] = field(default_factory=set)         # model names of N instances
+    va_types: set[str] = field(default_factory=set)             # Xyce Y<type> plugin devices
     modules: set[str] = field(default_factory=set)              # Verilog-A modules defined
 
 
@@ -106,7 +115,8 @@ def _spice_lines(text: str, deck: bool) -> list[tuple[int, str]]:
     return out
 
 
-def _spice(text: str, deck: bool, bare_commands: bool = False) -> Parsed:
+def _spice(text: str, deck: bool, dialect: str) -> Parsed:
+    bare_commands = dialect == "gnucap"
     p = Parsed(instances={"": Counter()})
     stack = [""]
     section = None
@@ -150,8 +160,10 @@ def _spice(text: str, deck: bool, bare_commands: bool = False) -> Parsed:
         elif bare_commands and head in SPICE_ANALYSES:
             p.analyses.append(head)
         elif head[0].isalpha():
-            if head[0] == "n" and (model := _master(tokens)):
+            if head[0] == "n" and dialect == "ngspice" and (model := _master(tokens)):
                 p.osdi_devices.add(model)
+            if head[0] == "y" and dialect == "xyce" and head[1:] not in XYCE_Y_BUILTIN:
+                p.va_types.add(head[1:])
             master = _master(tokens) if head[0] == "x" else None
             p.instances[stack[-1]][f"x:{master}" if master else head[0]] += 1
             refs += _data_refs(line, n)
@@ -254,7 +266,7 @@ def _veriloga(text: str) -> Parsed:
 def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
     text = _text(path)
     if dialect in SPICE:
-        return _spice(text, deck, dialect == "gnucap")
+        return _spice(text, deck, dialect)
     if dialect in SPECTRE:
         return _spectre(text, deck)
     return _veriloga(text)

@@ -1,0 +1,76 @@
+id: xyce_output_ac
+title: Xyce_Regression Output/AC
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Output/AC
+files:
+- {path: ac-csv.cir, sha256: 0491074eda36d7b8ebf728039a3c01802b28ea74bef4b2c82f23e9ee36cbfb62}
+- {path: ac-gnuplot.cir, sha256: 7ad5053c04cd4ec446d0e30e568491b7968040d1bf42a1309f4d0ce08130bf19}
+- {path: ac-phase-in-radians.cir, sha256: b72254bdec95083914cf1294d7a3b1d1b7220bd9e86108518a9ec08c415d1362}
+- {path: ac-prn-diff.cir, sha256: f96fc9edd66c15839095ab06f11e0c277278c3afca21dc576fbfae16806f9e12}
+- {path: ac-prn.cir, sha256: 0c4881b5808f1ee7f7ff74986872afd4b8fcb595eed624159164b54cd40de531}
+- {path: ac-probe.cir, sha256: 763966846af1fab41b204dd8a4f747c27c6372b13a36827f1dfddbd180f1179d}
+- {path: ac-raw-ascii.cir, sha256: 58437c04ac8aead2186bbdb3a28c8567385502b68bf02e40b7311f3da3c4550e}
+- {path: ac-raw-override-ascii.cir, sha256: d2a7bb1d473525355fce2574041e6b57e72228e10ee6fee623938b843f822337}
+- {path: ac-raw-override.cir, sha256: 051e7a597b4469446e99a958a9a50c49de52805964594cdbc0e777fc2b6d6e0a}
+- {path: ac-raw.cir, sha256: 58437c04ac8aead2186bbdb3a28c8567385502b68bf02e40b7311f3da3c4550e}
+- {path: ac-step-gnuplot.cir, sha256: 2543c924b7abcb95ac1994871bef21d53265316b6810601641ba57f79ad650c9}
+- {path: ac-step-prn.cir, sha256: 812ae376b9041e97f05578894bbc9bce8124e641be8442daf35f82938fa6a9b3}
+- {path: ac-step-probe.cir, sha256: e915ba6783ccdcdce28287cdfc5fe0e7dbc7572c11fcc45edefad064a1690506}
+- {path: ac-step-raw-override-ascii.cir, sha256: 5055ba698d8f063a2b1d00629903875b384e0450189bfd2d8b9e9beed0435a63}
+- {path: ac-step-raw-override-ascii2.cir, sha256: 493e81fdb527db4e0118eaee4f7d0e81ca6a9f56ef8c81c7b51dd35a6852ed97}
+- {path: ac-step-raw-override.cir, sha256: 88c0f9b4c495fb18a66b0bf46989750029c41f6b4ba1b5e5ace57349f59bdb78}
+- {path: ac-step-tecplot.cir, sha256: d1eb96968bd4c872edbd14e502087d19f0c22a1a2f94bd57d27e1fc867f35299}
+- {path: ac-stepnum-col.cir, sha256: e704cee55a8f14deed67fc2a95c4babbd43fbe3f8e935f5e793763b26e0f2b53}
+- {path: ac-tecplot.cir, sha256: e04fca6637e7356c0b4e4584ffc93a29c1a94b16b7f76abb94bb98df3e562e60}
+- {path: ac-touchstone-defaults-to-prn.cir, sha256: bab2dc3180fb11992b7c2099fdacba9788d47e3a40f5ce417ec4501dcce0b2df}
+- {path: op-csv.cir, sha256: 9036d24ed8ee534a800f95512b30dd349338f720111bb8be8b0dce764a598205}
+- {path: op-print-line-order.cir, sha256: 19267e2cc623cecf571096fa5ad40fa207c5bd8718ed36edfff2191777bd759c}
+- {path: op-prn.cir, sha256: a55a9638d62890068d3d155a6000e78c46c0403e0fba7e148ba1b94d00a2d4e0}
+- {path: op-raw-ascii.cir, sha256: a35251e9c91f674913519d75ae07da463b721ba35973049bec309763cd7f29b4}
+- {path: op-raw-override-ascii.cir, sha256: 6622366cba7d2116d75af43b0b32b8878976071680e55105849ad279cdad4757}
+- {path: op-raw-override.cir, sha256: 4815ad4ccab31c303c1e0545a73f6c4ca308f08c5f4aacc0d1421a4bf626cd5d}
+- {path: op-raw.cir, sha256: a35251e9c91f674913519d75ae07da463b721ba35973049bec309763cd7f29b4}
+- {path: op-step-prn.cir, sha256: 7e069ecc1639400fcb1b200960df1df9f9e750b884a4c89a740a62459cd8aadc}
+- {path: op-step-probe.cir, sha256: d7e996ae6a78a99bf935d21543b5ada4417ad100fcbc868e051c1837ba96cc9b}
+- {path: op-step-raw-override-ascii.cir, sha256: f6d382c992c9aff5eccc234b0792cff00dc7d6ca50ed4ab41a3fd190416210f5}
+- {path: op-step-raw-override.cir, sha256: d3580104b5b9dbeac1345ec2553ab7ab1a0a50c21fd3fb7fa6a9a0b7e317c88e}
+- {path: op-td-prn.cir, sha256: 62fccc1598b70fc22e91b0417f2fccfef006db69aa10c9543f62e75b56e67ef5}
+netlists:
+- {file: ac-csv.cir, dialect: xyce}
+- {file: ac-gnuplot.cir, dialect: xyce}
+- {file: ac-phase-in-radians.cir, dialect: xyce}
+- {file: ac-prn-diff.cir, dialect: xyce}
+- {file: ac-prn.cir, dialect: xyce}
+- {file: ac-probe.cir, dialect: xyce}
+- {file: ac-raw-ascii.cir, dialect: xyce}
+- {file: ac-raw-override-ascii.cir, dialect: xyce}
+- {file: ac-raw-override.cir, dialect: xyce}
+- {file: ac-raw.cir, dialect: xyce}
+- {file: ac-step-gnuplot.cir, dialect: xyce}
+- {file: ac-step-prn.cir, dialect: xyce}
+- {file: ac-step-probe.cir, dialect: xyce}
+- {file: ac-step-raw-override-ascii.cir, dialect: xyce}
+- {file: ac-step-raw-override-ascii2.cir, dialect: xyce}
+- {file: ac-step-raw-override.cir, dialect: xyce}
+- {file: ac-step-tecplot.cir, dialect: xyce}
+- {file: ac-stepnum-col.cir, dialect: xyce}
+- {file: ac-tecplot.cir, dialect: xyce}
+- {file: ac-touchstone-defaults-to-prn.cir, dialect: xyce}
+- {file: op-csv.cir, dialect: xyce}
+- {file: op-print-line-order.cir, dialect: xyce}
+- {file: op-prn.cir, dialect: xyce}
+- {file: op-raw-ascii.cir, dialect: xyce}
+- {file: op-raw-override-ascii.cir, dialect: xyce}
+- {file: op-raw-override.cir, dialect: xyce}
+- {file: op-raw.cir, dialect: xyce}
+- {file: op-step-prn.cir, dialect: xyce}
+- {file: op-step-probe.cir, dialect: xyce}
+- {file: op-step-raw-override-ascii.cir, dialect: xyce}
+- {file: op-step-raw-override.cir, dialect: xyce}
+- {file: op-td-prn.cir, dialect: xyce}

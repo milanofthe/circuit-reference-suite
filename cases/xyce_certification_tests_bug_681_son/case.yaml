@@ -1,0 +1,28 @@
+id: xyce_certification_tests_bug_681_son
+title: Xyce_Regression Certification_Tests/BUG_681_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_681_SON
+files:
+- {path: bsim3_681.cir, sha256: d61939c35f4809fb93783831e8612913ce8a2c8becdc54bd4518d46c36485a27}
+- {path: bsim3_681_1.cir, sha256: 3b79148e56434cd1728dab63e086e33c0849a09fc5636251e70cccf6d7e639f0}
+- {path: bsim3_681_2.cir, sha256: 1790eb131c14177bb918b5941566716189191409d2331b867d5ecf7baced6ef5}
+- {path: bsim3_681_3.cir, sha256: d47d5a2b7f4f393e67648405f1ebb8c926444f511f869f96c7699aeae7d81682}
+- {path: bsim4_681.cir, sha256: e7e58beacc8842f436f16a3f438e4196b296b6b1ba851ff503f8d838143b1b6b}
+- {path: bsim4_681_1.cir, sha256: 31c3f162af6f72a750a9052ba7fcb10756b3cd36fd34252f65b386b89fe89471}
+- {path: bsim4_681_2.cir, sha256: 9104b2b80d17afc9d219d63f7f6f7d10db003ef407b7fa41abcd5fcffacc2daf}
+- {path: bsim4_681_3.cir, sha256: a6d14647d7cc4f3744befc30376e53ba359ea7237e07de3b1b130f2ba158541e}
+netlists:
+- {file: bsim3_681.cir, dialect: xyce}
+- {file: bsim3_681_1.cir, dialect: xyce}
+- {file: bsim3_681_2.cir, dialect: xyce}
+- {file: bsim3_681_3.cir, dialect: xyce}
+- {file: bsim4_681.cir, dialect: xyce}
+- {file: bsim4_681_1.cir, dialect: xyce}
+- {file: bsim4_681_2.cir, dialect: xyce}
+- {file: bsim4_681_3.cir, dialect: xyce}

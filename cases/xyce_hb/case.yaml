@@ -1,0 +1,62 @@
+id: xyce_hb
+title: Xyce_Regression HB
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/HB
+files:
+- {path: circuit3.cir, sha256: 76cb661664ed5cf8099b0341846ec7226426f09cb3c14a46f628790d16c95e09}
+- {path: common_emitter_hb.cir, sha256: b9d9ad78888a71758c065bd269740626455ecb296695c8e6b4da510527b3497d}
+- {path: common_emitter_hb_basker.cir, sha256: efeda9d49ea3247a2deb24a4f58df6318bded965d57cb292575713ca06ff73ea}
+- {path: common_emitter_hb_blockbasker.cir, sha256: 8d0baf99bd38e40fd8f03cbc23d741c01125d34c48fbd79537bbf481319f21f6}
+- {path: gilbert_cell_hb.cir, sha256: 288484167172ea873386ab01f424ae87f0a169a487fc8d619dbe5c85fd1732ff}
+- {path: gilbert_cell_hb1.cir, sha256: 826f73acac8995fbbbbe23294cc9ec1b5943b102dfe8daadf9773ace583c7f95}
+- {path: gilbert_cell_hbTdsamples.cir, sha256: fc6fb3ba96620efa16a7497672831bad96d3733394065d64b207fa12b0ebdf6e}
+- {path: gilbert_cell_hbTran.cir, sha256: 4a174a18fd712360409d0f5053da613cb4bfec6013f7ddfdd4d662f95971205c}
+- {path: gilbert_cell_hbTran2.cir, sha256: 4a174a18fd712360409d0f5053da613cb4bfec6013f7ddfdd4d662f95971205c}
+- {path: gilbert_cell_hbTran_copy1.cir, sha256: 4a174a18fd712360409d0f5053da613cb4bfec6013f7ddfdd4d662f95971205c}
+- {path: gilbert_cell_hbTran_copy2.cir, sha256: 4a174a18fd712360409d0f5053da613cb4bfec6013f7ddfdd4d662f95971205c}
+- {path: gilbert_cell_hbTran_copy3.cir, sha256: 4a174a18fd712360409d0f5053da613cb4bfec6013f7ddfdd4d662f95971205c}
+- {path: gilbert_cell_hbTran_tahb.cir, sha256: 0d26891726a905ff3d3e1ea993c04589a33a6a6fd99c476ee7f44ed3312d6b84}
+- {path: gilbert_cell_hbt.cir, sha256: 7790f69328c9d7cd1103a11720900fa7943a91e39ba285f1e001c97d33dd5add}
+- {path: gilbert_cell_hbt1.cir, sha256: 3459cd5bd10e5c65362801622b3e23691b3abd2c47af67af0cb2ac587bf12011}
+- {path: gilbert_cell_hbt_tahb.cir, sha256: 6b3096dbed081be3718ba53492dc5943fd08d1668475107ec34f891dc7848cae}
+- {path: gilbert_cell_hbtbox.cir, sha256: 4e6c473c0a60f13f705f63bfd8b5f8d328ca8c7d12a6aa64434c10544e468c8f}
+- {path: gilbert_cell_hbtdia.cir, sha256: 021b331bbd5b9300c69c0755a8494c91aecdc24e741f3fa54c1a49e8e4703b0c}
+- {path: gilbert_cell_mpde.cir, sha256: 5569e621e80d034425e38d1558802f183f39764dc68053dde43de8ac45744d5c}
+- {path: invert_hb.cir, sha256: 4eda05d964026a976fa96b722aee1723bb3af1d9c2aec4e781a7b4710520787e}
+- {path: invert_hb1.cir, sha256: cf0fc67d8aff060f4436a118a90d52b54852fdaba14d3e04dae7f5cda4b78b8b}
+- {path: invert_hb_accurate.cir, sha256: 99ae21168926ebb900d1a2aabcdd6107078137d48c3dffd1dbfa34a42d175bdb}
+- {path: invert_hb_accurate_nostartup.cir, sha256: 1beee4222e9ea941a916b982514fd3b026c2997fe6dfc1d6dca7d87c90141df5}
+- {path: invert_hb_corrected.cir, sha256: 7e814fe285ba9ffb2aa7e78c209e697f637ac1625b88c29a1c2115c11cea7206}
+- {path: invert_hb_lapack.cir, sha256: 553258e7ec600ac658390c63f797cc09acc62b8939387ec25933ce045a706c19}
+netlists:
+- {file: circuit3.cir, dialect: xyce}
+- {file: common_emitter_hb.cir, dialect: xyce}
+- {file: common_emitter_hb_basker.cir, dialect: xyce}
+- {file: common_emitter_hb_blockbasker.cir, dialect: xyce}
+- {file: gilbert_cell_hb.cir, dialect: xyce}
+- {file: gilbert_cell_hb1.cir, dialect: xyce}
+- {file: gilbert_cell_hbTdsamples.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran2.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran_copy1.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran_copy2.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran_copy3.cir, dialect: xyce}
+- {file: gilbert_cell_hbTran_tahb.cir, dialect: xyce}
+- {file: gilbert_cell_hbt.cir, dialect: xyce}
+- {file: gilbert_cell_hbt1.cir, dialect: xyce}
+- {file: gilbert_cell_hbt_tahb.cir, dialect: xyce}
+- {file: gilbert_cell_hbtbox.cir, dialect: xyce}
+- {file: gilbert_cell_hbtdia.cir, dialect: xyce}
+- {file: gilbert_cell_mpde.cir, dialect: xyce}
+- {file: invert_hb.cir, dialect: xyce}
+- {file: invert_hb1.cir, dialect: xyce}
+- {file: invert_hb_accurate.cir, dialect: xyce}
+- {file: invert_hb_accurate_nostartup.cir, dialect: xyce}
+- {file: invert_hb_corrected.cir, dialect: xyce}
+- {file: invert_hb_lapack.cir, dialect: xyce}

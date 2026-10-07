@@ -1,0 +1,34 @@
+id: xyce_acsens_bsim3
+title: Xyce_Regression ACSENS/bsim3
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/ACSENS/bsim3
+files:
+- {path: gain-stage.cir, sha256: f03dff5a79ea74ca7e19dfef248db3eb775326d50901a86a74af1a2ca5e5f961}
+- {path: gain-stage_adj.cir, sha256: de8e119a9aa67fae20873f90b44ec33bab22d81b4fab407734bda5d7ef2d8112}
+- {path: gain-stage_fd.cir, sha256: 99118f5b0051f5c078665b483ac30fcf1364c14ae8ebdcdf2094bf156b3d882d}
+- {path: op-amp.cir, sha256: 4cdaf22713a6494601bfa53d921d0947fc4631efa263c7fbe7273f89f54b3f42}
+- {path: op-amp_expr.cir, sha256: b1f55c69430b7a1a53b25faf5910a912346d5fc9c6faba4e7fc053a7312a41f5}
+- {path: op-amp_expr_fd.cir, sha256: 1667c34c9cd58942432fb21c93943b6f12b0138a1460f576acaaaaad82d61519}
+- {path: op-amp_fd.cir, sha256: 1667c34c9cd58942432fb21c93943b6f12b0138a1460f576acaaaaad82d61519}
+- {path: op-amp_param.cir, sha256: d61a1cb5299911836c73fb089ff14fa048305a5ca49a2ef9570d5605b6b34ba4}
+- {path: op-amp_param_fd.cir, sha256: 1667c34c9cd58942432fb21c93943b6f12b0138a1460f576acaaaaad82d61519}
+- {path: op-amp_unique.cir, sha256: 571c39b291128b59aad132c75f654f71f0d7e95d68d4e7cd9f5a0a811663ea41}
+- {path: op-amp_unique_fd.cir, sha256: 31770a8ccf83d8d1e4d84d32a80c5cb035d53c72b887cccf0a92409a598523ef}
+netlists:
+- {file: gain-stage.cir, dialect: xyce}
+- {file: gain-stage_adj.cir, dialect: xyce}
+- {file: gain-stage_fd.cir, dialect: xyce}
+- {file: op-amp.cir, dialect: xyce}
+- {file: op-amp_expr.cir, dialect: xyce}
+- {file: op-amp_expr_fd.cir, dialect: xyce}
+- {file: op-amp_fd.cir, dialect: xyce}
+- {file: op-amp_param.cir, dialect: xyce}
+- {file: op-amp_param_fd.cir, dialect: xyce}
+- {file: op-amp_unique.cir, dialect: xyce}
+- {file: op-amp_unique_fd.cir, dialect: xyce}

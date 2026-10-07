@@ -1,0 +1,68 @@
+id: xyce_certification_tests_issue_24
+title: Xyce_Regression Certification_Tests/ISSUE_24
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/ISSUE_24
+files:
+- {path: issue631a.cir, sha256: 4d0df19123451f4bf051e2eb960333fc42aa8d1e1454484a02e2c32a949c025d}
+- {path: issue631a_Ref.cir, sha256: ee2a905aa4100146e945683f8c5f79918d4a8d93d2b8343c721c7ad11be5eb95}
+- {path: issue631a_devbal.cir, sha256: f064135dfa4548b38135654cd366d5d9373fa2dd8eac8f97c76dfe64760fa2eb}
+- {path: issue631a_devbal_Ref.cir, sha256: c22c5fa33aeb9cef2cb01adc4bd7c593e56241ebbfc4bd06aedfa5817bc61799}
+- {path: issue631b.cir, sha256: 81e3fd451f31a55ad8fed962c93636099554e72673eaec07b580646b5db7df6d}
+- {path: issue631b_Ref.cir, sha256: 35336fee70ee853dff3c27fad708b75da03b6b6108ecc0ce8d6599e487f1574a}
+- {path: issue631b_devbal.cir, sha256: 30dcde854dd4ac7210857302aae76a533c1167eac1f1be18a181469d51c4066d}
+- {path: issue631b_devbal_Ref.cir, sha256: b99bae63b184ebffb130b23c63ebcc2f664c172e1a8402c8bf8f4e9006c7a507}
+- {path: localVariation1.cir, sha256: 0455502f4606160cd9f9dbb9a65e5b3ecd8f4b7d7344cf2d0c4d44cfc1d4432e}
+- {path: localVariation1Ref.cir, sha256: bd658d1697be35be380e8af3d8d3c04487f8466425273da5a7d6f3a055edae59}
+- {path: localVariation2.cir, sha256: 67d5e239ff651a5c690b6b0d6bcc909023c51de141d5a0b8411a0f15df9ed6a7}
+- {path: localVariation2Ref.cir, sha256: 061705f73f5a9d2e06514830c83d85e28e38d6ed1ac8500d430e95be11e8d75d}
+- {path: localVariation3.cir, sha256: e194c8098d387897154e36e2503c901eb359004f220f5bcefd04391d12bfffea}
+- {path: localVariation3Ref.cir, sha256: 8b64d83e4721ac3c4400f4218711630e79e246ee0ac088f67a926ceeb981a567}
+- {path: localVariation4.cir, sha256: b7cc133fac94cad8f30a6ed1d961dffcabd88b8593687f970a6a0fa2b9f91f9b}
+- {path: localVariation4Ref.cir, sha256: 44f5370d9d7f46b8b9148937b6ea97d2ed19b03a099f34edba47465366dafbe3}
+- {path: localVariation5.cir, sha256: 8339a11a5c7f03593fbbcf1ab4f4d5bb25d8d8429de64e8e83d65a50d3bb9a6c}
+- {path: localVariation5Ref.cir, sha256: f411f24b01a94225c4978e94139c787ae3732a6533d25f49afb53b1ae30a4b89}
+- {path: localVariation6.cir, sha256: c74a5831ad7da38a916f235606f880010c9f9b79a51108745904d2af909948cf}
+- {path: localVariation6Ref.cir, sha256: 6c3da67f8ceab9e01b8ab953175b1ae5090aac30f2794af01ff61cc294477069}
+- {path: localVariation7.cir, sha256: ab93e6da39b22b6af076c12dd74d24b4cc01ec929242099add53367467bc9583}
+- {path: localVariation7Ref.cir, sha256: cec95643ec70aeb75500d9dfafba02fce742316071f8eb549d99d9ccfeb6a060}
+- {path: localVariation7Ref_devbal.cir, sha256: ab07e30c35f71ed6f0201ecfd2ee36a1b5becb4ace5ef02a6c24f9c997db80a5}
+- {path: localVariation7_devbal.cir, sha256: 0fdb3ceb412fcb436c6f92db4585fbda3e154d64d6fd5de9710f3e47e1a328b5}
+- {path: localVariation8.cir, sha256: 82d00d495e8d5266f37b18efd0f5f718ae39431320b30cadad39a11ec22f5780}
+- {path: localVariation8Ref.cir, sha256: 3ec4dc3e96e119ac667de13c6568a58979f90ea030b0ac51f290774b5a6af19e}
+- {path: localVariation8Ref_devbal.cir, sha256: 9fff1da387b454bdfb5df47ad66b6ad5f3e2c2e9da0f1a9c55e7d4f5e446829f}
+- {path: localVariation8_devbal.cir, sha256: 83cb5b85ad453c4ed96b98775b41a087063ad4b646e600097e176bdffbbefed6}
+netlists:
+- {file: issue631a.cir, dialect: xyce}
+- {file: issue631a_Ref.cir, dialect: xyce}
+- {file: issue631a_devbal.cir, dialect: xyce}
+- {file: issue631a_devbal_Ref.cir, dialect: xyce}
+- {file: issue631b.cir, dialect: xyce}
+- {file: issue631b_Ref.cir, dialect: xyce}
+- {file: issue631b_devbal.cir, dialect: xyce}
+- {file: issue631b_devbal_Ref.cir, dialect: xyce}
+- {file: localVariation1.cir, dialect: xyce}
+- {file: localVariation1Ref.cir, dialect: xyce}
+- {file: localVariation2.cir, dialect: xyce}
+- {file: localVariation2Ref.cir, dialect: xyce}
+- {file: localVariation3.cir, dialect: xyce}
+- {file: localVariation3Ref.cir, dialect: xyce}
+- {file: localVariation4.cir, dialect: xyce}
+- {file: localVariation4Ref.cir, dialect: xyce}
+- {file: localVariation5.cir, dialect: xyce}
+- {file: localVariation5Ref.cir, dialect: xyce}
+- {file: localVariation6.cir, dialect: xyce}
+- {file: localVariation6Ref.cir, dialect: xyce}
+- {file: localVariation7.cir, dialect: xyce}
+- {file: localVariation7Ref.cir, dialect: xyce}
+- {file: localVariation7Ref_devbal.cir, dialect: xyce}
+- {file: localVariation7_devbal.cir, dialect: xyce}
+- {file: localVariation8.cir, dialect: xyce}
+- {file: localVariation8Ref.cir, dialect: xyce}
+- {file: localVariation8Ref_devbal.cir, dialect: xyce}
+- {file: localVariation8_devbal.cir, dialect: xyce}

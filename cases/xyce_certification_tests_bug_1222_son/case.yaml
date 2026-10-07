@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_1222_son
+title: Xyce_Regression Certification_Tests/BUG_1222_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1222_SON
+files:
+- {path: bug_1222_son_1.cir, sha256: 320b4a8ec7b1e2885c72a4a1d4adf7766cb53e8ad6e5f2bde9922ff9223dad0f}
+- {path: bug_1222_son_2.cir, sha256: 2bf919e42ff62efc540a118cb9af116776b08e0a90c92488ee7aa1667338e4ba}
+netlists:
+- {file: bug_1222_son_1.cir, dialect: xyce}
+- {file: bug_1222_son_2.cir, dialect: xyce}

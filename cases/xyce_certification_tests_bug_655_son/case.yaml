@@ -1,0 +1,16 @@
+id: xyce_certification_tests_bug_655_son
+title: Xyce_Regression Certification_Tests/BUG_655_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_655_SON
+files:
+- {path: contLine.cir, sha256: d4fc1d33fc3b7b5cc103d6774d18506b1a3c3587946cf3ff82ca43637a7b0921}
+- {path: contLine_with_spaces.cir, sha256: e4bedb25251e161d4d1038a188a079848e826900e9d8748e8c5be799f451411b}
+netlists:
+- {file: contLine.cir, dialect: xyce}
+- {file: contLine_with_spaces.cir, dialect: xyce}

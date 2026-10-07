@@ -1,0 +1,14 @@
+id: xyce_inductor
+title: Xyce_Regression INDUCTOR
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/INDUCTOR
+files:
+- {path: inductor.cir, sha256: a0a869d9fe3b04d3bbdc8abf9e8a89a9302a54ac5be9c97f446f06834a248b35}
+netlists:
+- {file: inductor.cir, dialect: xyce}

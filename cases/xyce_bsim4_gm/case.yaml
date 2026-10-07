@@ -1,0 +1,22 @@
+id: xyce_bsim4_gm
+title: Xyce_Regression BSIM4_GM
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/BSIM4_GM
+files:
+- {path: Xmodelcard.nmos, sha256: 97292efd5b4db720d8cccd422c06d8587be29d8eca0e08d75e0add7fe46bda95}
+- {path: Xmodelcard.pmos, sha256: 8f09c1ccf2da53ecf6fc4e9f36b946dac92b86a44f5ab4702a5fff3fb4eea9f4}
+- {path: nmosGm1.cir, sha256: 8001cea249834c2fec9065b2278b32f20cfb99e6f9a8f36a77befbdee0bac50f}
+- {path: nmosGm1_rev.cir, sha256: fe75ced5937a39a706b2dbb572c85f5493246f76570a60e3b07dc6097fc31f34}
+- {path: pmosGm1.cir, sha256: c516caa2ee15666409093cef9e4456125516731a75fc6d961c74655c35bf6b3c}
+- {path: pmosGm1_rev.cir, sha256: b3961ca963c2435c7c116f90bb1f3319b3b68d0e0b581ca0f9960110007e0b96}
+netlists:
+- {file: nmosGm1.cir, dialect: xyce}
+- {file: nmosGm1_rev.cir, dialect: xyce}
+- {file: pmosGm1.cir, dialect: xyce}
+- {file: pmosGm1_rev.cir, dialect: xyce}

@@ -1,0 +1,18 @@
+id: xyce_message_topology
+title: Xyce_Regression Message/Topology
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Message/Topology
+files:
+- {path: Bad_Voltage_Node_Error.cir, sha256: a6b1160b996a4cb286c1633fd6620d143e9506520e6f3602e0806c3518a1a5a5}
+- {path: FloatingNode_Warning.cir, sha256: 42e1f2b3a5d89cb5af82b5ad7fec148ee2d9ea750c89a30a7138f0dfeaa1a913}
+- {path: Supernode_Warning.cir, sha256: ff2e8c8376ed418cbf8392317bc4509b40c7b53e5f13ba0b763cf971520bbe89}
+netlists:
+- {file: Bad_Voltage_Node_Error.cir, dialect: xyce}
+- {file: FloatingNode_Warning.cir, dialect: xyce}
+- {file: Supernode_Warning.cir, dialect: xyce}

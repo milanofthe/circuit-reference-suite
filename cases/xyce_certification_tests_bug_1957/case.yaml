@@ -1,0 +1,20 @@
+id: xyce_certification_tests_bug_1957
+title: Xyce_Regression Certification_Tests/BUG_1957
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_1957
+files:
+- {path: mutindlin_even_ps.cir, sha256: 4004f2c10faed0aecdbb2d829149897534c756039422486e5dbe6946d2988978}
+- {path: mutindlin_even_s3f5.cir, sha256: 3e47dbae28980555baca6737d88b77cbace82671076f5fb45d3b8fc72364dee3}
+- {path: mutindlin_odd_ps.cir, sha256: 1900d7a004fbd31cf3138fdfef1946e667896ffe476f49ff1d5a08d9229215f3}
+- {path: mutindlin_odd_s3f5.cir, sha256: 9539ff92354d35a2fdad7a44061eb6f87376f7c7976afc0d3171ae59322f3353}
+netlists:
+- {file: mutindlin_even_ps.cir, dialect: xyce}
+- {file: mutindlin_even_s3f5.cir, dialect: xyce}
+- {file: mutindlin_odd_ps.cir, dialect: xyce}
+- {file: mutindlin_odd_s3f5.cir, dialect: xyce}

@@ -1,0 +1,14 @@
+id: xyce_tl431
+title: Xyce_Regression TL431
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/TL431
+files:
+- {path: TL431.cir, sha256: 0144d0b70a7234606fff487608a5fd6ec6bf3dadc1d18443a02457e09f9f72e0}
+netlists:
+- {file: TL431.cir, dialect: xyce}

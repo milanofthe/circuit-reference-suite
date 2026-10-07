@@ -1,0 +1,16 @@
+id: xyce_xdm_tspice_other_parsing
+title: Xyce_Regression XDM/TSPICE/OTHER_PARSING
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/XDM/TSPICE/OTHER_PARSING
+files:
+- {path: subckt.cir, sha256: 3c5ea2217a07806d93871591fa1da9c9b8bfacb0489f151f7bebde9a9f2d36fa}
+- {path: subckt.cir.tspice, sha256: d60a8301d00ee5fb05eb75d487f6b4ba8840c8572c3078192afa5179ec6ddab4}
+netlists:
+- {file: subckt.cir, dialect: xyce}
+- {file: subckt.cir.tspice, dialect: tspice}

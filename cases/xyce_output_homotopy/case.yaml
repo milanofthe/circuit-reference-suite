@@ -1,0 +1,36 @@
+id: xyce_output_homotopy
+title: Xyce_Regression Output/HOMOTOPY
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Output/HOMOTOPY
+files:
+- {path: arclengthSimple.cir, sha256: 81ef69d7d5fff312487e4229c1aeb23fa6ab52189e6a32375735ac96cd09de83}
+- {path: homotopy-csv.cir, sha256: f02348417f3e07f902b5591136cc6f06bc03a120251650f844547d9523468aa8}
+- {path: homotopy-gnuplot.cir, sha256: 4faf5932334825098e785cb79f71e86c4e5e75b86b2f67b07757173f8eb6af53}
+- {path: homotopy-op-prn.cir, sha256: 382373bdaf5f620099cb05cb663cec45a65068b8e3a9eeed6f25418194db624e}
+- {path: homotopy-prn-noindex.cir, sha256: be723a9b445bdb089537eb5e9ed3b2c6a50478deb260f6b52196e786cb95482f}
+- {path: homotopy-prn.cir, sha256: 7f7f8eb72f9653a633fab07e33664fbeb7d06ab963274c7abf63da47a7025371}
+- {path: homotopy-probe-defaults-to-prn.cir, sha256: a22a3c19210e4f46bf577ee61442943d67f45130f45eac517575e5ef499299d8}
+- {path: homotopy-raw-defaults-to-prn.cir, sha256: aaeefd43c5d06c92c26a789da1a010c4c9131168e519c5f1e2d3800c493777ad}
+- {path: homotopy-step-gnuplot.cir, sha256: d11b50332055ce457163d99259150078ec5099d578d73ec87728bf19a1ff86d8}
+- {path: homotopy-step-tecplot.cir, sha256: 82fe18d5f295471bfce913f78a6ea66638698ba42b141fe9209e1b4b53721699}
+- {path: homotopy-stepnum-col.cir, sha256: 828af02268e48e6b636ae514d0a2b8d754ef1bb0fff4ece1a0f428bcee88cb2f}
+- {path: homotopy-tecplot.cir, sha256: adcd0dea634ece2a80aff3359f03843186926ae57ff7adced51ed32ce0891990}
+netlists:
+- {file: arclengthSimple.cir, dialect: xyce}
+- {file: homotopy-csv.cir, dialect: xyce}
+- {file: homotopy-gnuplot.cir, dialect: xyce}
+- {file: homotopy-op-prn.cir, dialect: xyce}
+- {file: homotopy-prn-noindex.cir, dialect: xyce}
+- {file: homotopy-prn.cir, dialect: xyce}
+- {file: homotopy-probe-defaults-to-prn.cir, dialect: xyce}
+- {file: homotopy-raw-defaults-to-prn.cir, dialect: xyce}
+- {file: homotopy-step-gnuplot.cir, dialect: xyce}
+- {file: homotopy-step-tecplot.cir, dialect: xyce}
+- {file: homotopy-stepnum-col.cir, dialect: xyce}
+- {file: homotopy-tecplot.cir, dialect: xyce}

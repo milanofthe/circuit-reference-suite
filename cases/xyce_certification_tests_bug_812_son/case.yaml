@@ -1,0 +1,14 @@
+id: xyce_certification_tests_bug_812_son
+title: Xyce_Regression Certification_Tests/BUG_812_SON
+family: test
+source:
+  name: Xyce_Regression
+  url: https://github.com/Xyce/Xyce_Regression
+  license: GPL-3.0-or-later
+  authors: [Sandia National Laboratories]
+  commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
+  root: Netlists/Certification_Tests/BUG_812_SON
+files:
+- {path: global_accessor_interference.cir, sha256: d384dd25b3d16ed3e4445d2fb21b432238fcac3ad64e76d7aeff39b0b236fdd0}
+netlists:
+- {file: global_accessor_interference.cir, dialect: xyce}
