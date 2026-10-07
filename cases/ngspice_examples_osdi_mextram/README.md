@@ -20,10 +20,9 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `mex_gum.sp` | `bjt504tva` | missing |
-| `mex_out.sp` | `bjt504tva` | missing |
+| `bjt504tva` | missing | 2 |
 
 ## Notes
 

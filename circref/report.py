@@ -74,16 +74,18 @@ def case_readme(case: Case) -> str:
         lines += [""] + [f"- `{n.file}`: {n.note}" for n in case.netlists() if n.note]
     lines += ["", "Devices: instances once the subcircuits defined in this case are expanded; "
               "a device from a library or a compiled model counts once."]
-    external = sorted({(_rel(e.origin), e.ref.target,
-                        f"[{_rel(e.target)}]({_link(e.target, case.directory)})"
-                        if e.target else "missing")
-                       for g in case.graphs.values() for e in g.edges
-                       if case.directory in e.origin.parents and (
-                           e.missing or case.directory not in e.target.parents)})
+    external: dict[tuple[str, str], set[str]] = {}
+    for name, g in case.graphs.items():
+        for e in g.edges:
+            if case.directory in e.origin.parents and (
+                    e.missing or case.directory not in e.target.parents):
+                to = (f"[{_rel(e.target)}]({_link(e.target, case.directory)})"
+                      if e.target else "missing")
+                external.setdefault((e.ref.target, to), set()).add(name)
     if external:
-        lines += ["", "## External references", "", "| in | as written | resolves to |",
+        lines += ["", "## External references", "", "| as written | resolves to | netlists |",
                   "|---|---|---|"]
-        lines += [f"| `{o.split('/', 2)[2]}` | `{t}` | {r} |" for o, t, r in external]
+        lines += [f"| `{t}` | {r} | {len(n)} |" for (t, r), n in sorted(external.items())]
     adapted = case.adapted()
     if adapted:
         lines += ["", "## Files not from upstream", ""]

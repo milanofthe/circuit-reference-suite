@@ -43,83 +43,11 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `tb_moslv_inv_ff.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_ff.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_ff.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_ff_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_ff_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_ff_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_fs.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_fs.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_fs.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_fs_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_fs_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_fs_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_sf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_sf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_sf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_sf_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_sf_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_sf_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_ss_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_ss_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_ss_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_tt.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_tt.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_tt.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_inv_tt_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_inv_tt_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_inv_tt_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng1.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng1.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng1.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng1_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng1_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng1_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng2.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng2.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng2.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng2_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng2_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng2_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng3.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng3.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng3.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng3_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng3_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng3_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng4.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng4.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng4.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_nmos_id_vd_ng4_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_nmos_id_vd_ng4_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_nmos_id_vd_ng4_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng1.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng1.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng1.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng1_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng1_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng1_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng2.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng2.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng2.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng2_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng2_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng2_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng3.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng3.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng3.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng3_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng3_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng3_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng4.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng4.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng4.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
-| `tb_moslv_pmos_id_vd_ng4_rf.sp` | `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) |
-| `tb_moslv_pmos_id_vd_ng4_rf.sp` | `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) |
-| `tb_moslv_pmos_id_vd_ng4_rf.sp` | `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) |
+| `cornerMOSlv.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib) | 25 |
+| `psp103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va) | 25 |
+| `pspnqs103va` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va) | 25 |
 
 ## Notes
 

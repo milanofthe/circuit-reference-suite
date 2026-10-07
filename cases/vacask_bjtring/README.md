@@ -24,14 +24,14 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `ngspiceva/runme.sim` | `bjt.osdi` | [libraries/vacask_spice_va/bjt.va](../../libraries/vacask_spice_va/bjt.va) |
-| `ngspiceva/runme.sim` | `capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) |
-| `ngspiceva/runme.sim` | `resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) |
-| `vacask/runme.sim` | `spice/capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) |
-| `vacask/runme.sim` | `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) |
-| `vacask/runme.sim` | `spice/sn/bjt.osdi` | [libraries/vacask_spice_va/sn/bjt.va](../../libraries/vacask_spice_va/sn/bjt.va) |
+| `bjt.osdi` | [libraries/vacask_spice_va/bjt.va](../../libraries/vacask_spice_va/bjt.va) | 1 |
+| `capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) | 1 |
+| `resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 1 |
+| `spice/capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) | 1 |
+| `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 1 |
+| `spice/sn/bjt.osdi` | [libraries/vacask_spice_va/sn/bjt.va](../../libraries/vacask_spice_va/sn/bjt.va) | 1 |
 
 ## Notes
 

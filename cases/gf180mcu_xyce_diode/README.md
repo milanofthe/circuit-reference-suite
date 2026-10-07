@@ -19,10 +19,10 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `run_diode_independently.spice` | `../../../../design.spice` | [libraries/gf180mcu_fd_pr/models/xyce/design.spice](../../libraries/gf180mcu_fd_pr/models/xyce/design.spice) |
-| `run_diode_independently.spice` | `../../../../sm141064.spice` | [libraries/gf180mcu_fd_pr/models/xyce/sm141064.spice](../../libraries/gf180mcu_fd_pr/models/xyce/sm141064.spice) |
+| `../../../../design.spice` | [libraries/gf180mcu_fd_pr/models/xyce/design.spice](../../libraries/gf180mcu_fd_pr/models/xyce/design.spice) | 1 |
+| `../../../../sm141064.spice` | [libraries/gf180mcu_fd_pr/models/xyce/sm141064.spice](../../libraries/gf180mcu_fd_pr/models/xyce/sm141064.spice) | 1 |
 
 ## Notes
 

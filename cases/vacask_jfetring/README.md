@@ -23,14 +23,14 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `ngspiceva/runme.sim` | `capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) |
-| `ngspiceva/runme.sim` | `jfet1.osdi` | [libraries/vacask_spice_va/jfet1.va](../../libraries/vacask_spice_va/jfet1.va) |
-| `ngspiceva/runme.sim` | `resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) |
-| `vacask/runme.sim` | `capacitor.osdi` | [libraries/vacask_va/capacitor.va](../../libraries/vacask_va/capacitor.va) |
-| `vacask/runme.sim` | `resistor.osdi` | [libraries/vacask_va/resistor.va](../../libraries/vacask_va/resistor.va) |
-| `vacask/runme.sim` | `spice/jfet1.osdi` | [libraries/vacask_spice_va/jfet1.va](../../libraries/vacask_spice_va/jfet1.va) |
+| `capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) | 1 |
+| `capacitor.osdi` | [libraries/vacask_va/capacitor.va](../../libraries/vacask_va/capacitor.va) | 1 |
+| `jfet1.osdi` | [libraries/vacask_spice_va/jfet1.va](../../libraries/vacask_spice_va/jfet1.va) | 1 |
+| `resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 1 |
+| `resistor.osdi` | [libraries/vacask_va/resistor.va](../../libraries/vacask_va/resistor.va) | 1 |
+| `spice/jfet1.osdi` | [libraries/vacask_spice_va/jfet1.va](../../libraries/vacask_spice_va/jfet1.va) | 1 |
 
 ## Notes
 

@@ -19,9 +19,9 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `res_r2_cmc.cir` | `r2_cmc` | missing |
+| `r2_cmc` | missing | 1 |
 
 ## Notes
 

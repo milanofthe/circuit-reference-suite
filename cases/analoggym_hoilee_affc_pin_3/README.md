@@ -20,10 +20,9 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `amp_spice_testbench/TB_Amplifier_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `amp_spice_testbench/TB_Amplifier_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) | 2 |
 
 ## Notes
 

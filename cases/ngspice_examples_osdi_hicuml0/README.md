@@ -26,13 +26,9 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `DFF_Y_ECL_HICUM.sp` | `hicuml0va` | missing |
-| `ECL-OR.cir` | `hicuml0va` | missing |
-| `ECL-RO-5.cir` | `hicuml0va` | missing |
-| `hic0_gum.sp` | `hicuml0va` | missing |
-| `hic0_out.sp` | `hicuml0va` | missing |
+| `hicuml0va` | missing | 5 |
 
 ## Notes
 

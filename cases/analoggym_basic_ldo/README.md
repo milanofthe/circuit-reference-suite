@@ -19,12 +19,12 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `ldo_spice_testbench/TB_LDO_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `ldo_spice_testbench/TB_LDO_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) |
-| `ldo_spice_testbench/TB_LDO_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) |
-| `ldo_spice_testbench/TB_LDO_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) | 1 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) | 1 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) | 1 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) | 1 |
 
 ## Notes
 

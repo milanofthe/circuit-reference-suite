@@ -21,10 +21,9 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `ngspice/runme.sim` | `psp103v4.osdi` | [libraries/vacask_psp103v4/psp103.va](../../libraries/vacask_psp103v4/psp103.va) |
-| `vacask/runme.sim` | `psp103v4.osdi` | [libraries/vacask_psp103v4/psp103.va](../../libraries/vacask_psp103v4/psp103.va) |
+| `psp103v4.osdi` | [libraries/vacask_psp103v4/psp103.va](../../libraries/vacask_psp103v4/psp103.va) | 2 |
 
 ## Notes
 

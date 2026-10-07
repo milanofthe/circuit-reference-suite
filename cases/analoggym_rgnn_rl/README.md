@@ -22,23 +22,11 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `simulations/AMP_NMCF_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `simulations/AMP_NMCF_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) |
-| `simulations/AMP_NMCF_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) |
-| `simulations/AMP_NMCF_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) |
-| `simulations/AMP_NMCF_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `simulations/AMP_NMCF_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) |
-| `simulations/AMP_NMCF_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) |
-| `simulations/AMP_NMCF_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) |
-| `simulations/LDO_TB_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `simulations/LDO_TB_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) |
-| `simulations/LDO_TB_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) |
-| `simulations/LDO_TB_ACDC.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) |
-| `simulations/LDO_TB_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) |
-| `simulations/LDO_TB_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) |
-| `simulations/LDO_TB_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) |
-| `simulations/LDO_TB_Tran.cir` | `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice) | 4 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice) | 4 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice) | 4 |
+| `../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice` | [libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice](../../libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice) | 4 |
 
 Generated by `python -m circref build`. Do not edit by hand.

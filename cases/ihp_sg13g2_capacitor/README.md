@@ -20,12 +20,12 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `tb_cap_cmomf_typ.sp` | `cap_cmomf` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomf/cap_cmomf.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomf/cap_cmomf.va) |
-| `tb_cap_cmomf_typ.sp` | `cap_cmomf.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomf.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomf.lib) |
-| `tb_cap_cmomi_typ.sp` | `cap_cmomi` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomi/cap_cmomi.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomi/cap_cmomi.va) |
-| `tb_cap_cmomi_typ.sp` | `cap_cmomi.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomi.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomi.lib) |
+| `cap_cmomf` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomf/cap_cmomf.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomf/cap_cmomf.va) | 1 |
+| `cap_cmomf.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomf.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomf.lib) | 1 |
+| `cap_cmomi` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomi/cap_cmomi.va](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/cap_cmomi/cap_cmomi.va) | 1 |
+| `cap_cmomi.lib` | [libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomi.lib](../../libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cap_cmomi.lib) | 1 |
 
 ## Notes
 

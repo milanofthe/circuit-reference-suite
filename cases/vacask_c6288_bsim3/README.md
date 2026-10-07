@@ -23,11 +23,11 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `ngspiceva/runme.sim` | `bsim3v3.osdi` | [libraries/vacask_spice_va/bsim3v3.va](../../libraries/vacask_spice_va/bsim3v3.va) |
-| `vacask/runme.sim` | `spice/bsim3v3.osdi` | [libraries/vacask_spice_va/bsim3v3.va](../../libraries/vacask_spice_va/bsim3v3.va) |
-| `vacask/runme.sim` | `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) |
+| `bsim3v3.osdi` | [libraries/vacask_spice_va/bsim3v3.va](../../libraries/vacask_spice_va/bsim3v3.va) | 1 |
+| `spice/bsim3v3.osdi` | [libraries/vacask_spice_va/bsim3v3.va](../../libraries/vacask_spice_va/bsim3v3.va) | 1 |
+| `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 1 |
 
 ## Notes
 

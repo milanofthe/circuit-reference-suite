@@ -40,35 +40,14 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## External references
 
-| in | as written | resolves to |
+| as written | resolves to | netlists |
 |---|---|---|
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50__nfet_vth.spice` | `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM02W3p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM02W5p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM02W5p00__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM02__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04W3p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04W5p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04W5p00__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04W7p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04W7p00__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM04__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10W3p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10W5p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10W5p00__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10W7p00L0p50__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10W7p00__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
-| `sky130_fd_pr__rf_nfet_g5v0d10v5_bM10__nfet_vth.spice` | `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) |
+| `../../../models/sky130.lib.spice` | [libraries/sky130_fd_pr/models/sky130.lib.spice](../../libraries/sky130_fd_pr/models/sky130.lib.spice) | 22 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice) | 1 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice) | 1 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice) | 1 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice) | 1 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice) | 1 |
+| `../sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice` | [libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice](../../libraries/sky130_fd_pr/cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice) | 1 |
 
 Generated by `python -m circref build`. Do not edit by hand.
