@@ -13,7 +13,6 @@ test | xyce | status: **complete**
 
 | file | dialect | analyses | devices | libraries |
 |---|---|---|---|---|
-| [`README`](README) | xyce | tran | 19 | - |
 | [`bug_120.cir`](bug_120.cir) | xyce | tran | 28 | - |
 
 Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.

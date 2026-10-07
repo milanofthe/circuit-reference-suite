@@ -25,7 +25,6 @@ files:
 - {path: roessler-attractor.cir, sha256: 233dcc7565c8eea8a2c646cf6ddb339bf4bd0fba84a8810f84ae54717988f80c}
 - {path: tmp-noise-2.cir, sha256: ea246a219279f144908acf7ed9c1b4e2043ebc492fded4a045a8e0097f8ef645}
 - {path: tmp-noise.cir, sha256: 7aecacf01f605b90ddc6d9416ebc7d678726d299e1fed7195aac9a03b4d8882e}
-- {path: todo-temper-3.cir, sha256: 5db4c278b772b18b959c137bb3b05c40a9890e49dec03f3196a22c6b5d10a35d}
 - {path: transformers1.cir, sha256: aa23e822b0a3fdca9e07f7af4222dc6007900eeee3abca1911f0fcdeefb559c1}
 - {path: v-i-sources-am-ffm.cir, sha256: 10a03b9178c31281543d59034a0bca5415764dff41bcdca8640eb8b3cf2764bd}
 netlists:
@@ -45,7 +44,6 @@ netlists:
 - {file: roessler-attractor.cir, dialect: ngspice}
 - {file: tmp-noise-2.cir, dialect: ngspice}
 - {file: tmp-noise.cir, dialect: ngspice}
-- {file: todo-temper-3.cir, dialect: ngspice}
 - {file: transformers1.cir, dialect: ngspice}
 - {file: v-i-sources-am-ffm.cir, dialect: ngspice}
 notes: |

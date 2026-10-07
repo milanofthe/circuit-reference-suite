@@ -87,7 +87,11 @@ def _data_refs(line: str, n: int) -> list[Ref]:
 
 
 def _master(tokens: list[str]) -> str | None:
-    """The last bare token before the first parameter assignment."""
+    """The last bare token before the first parameter assignment (``w=1``, ``w = 1``), or
+    after the last one: SKY130 writes ``x1 d g s b l={l} w={w} sky130_fd_pr__...``."""
+    tokens = re.sub(r"\s*=\s*", "=", " ".join(tokens)).split()
+    if len(tokens) > 2 and "=" not in tokens[-1] and any("=" in t for t in tokens[1:-1]):
+        return _unquote(tokens[-1]).lower()
     bare = []
     for t in tokens:
         if "=" in t or t.lower() in ("params:", "parameters:"):
@@ -150,10 +154,10 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
             refs += _data_refs(line, n)
         elif head == ".hdl" and len(tokens) > 1:
             refs.append(Ref("va", _unquote(tokens[1]), None, n))
-        elif head == ".subckt" and len(tokens) > 1:
+        elif head in (".subckt", ".macro") and len(tokens) > 1:
             stack.append(tokens[1].lower())
             p.instances.setdefault(stack[-1], Counter())
-        elif head == ".ends":
+        elif head in (".ends", ".eom"):
             if len(stack) > 1:
                 stack.pop()
         elif head[0] == "." and head[1:] in SPICE_ANALYSES:

@@ -13,7 +13,6 @@ test | xyce | status: **complete**
 
 | file | dialect | analyses | devices | libraries |
 |---|---|---|---|---|
-| [`README`](README) | xyce | step | 89 | - |
 | [`comparator0_5_-10.cir`](comparator0_5_-10.cir) | xyce | tran | 22 | - |
 | [`comparator0_5_0.cir`](comparator0_5_0.cir) | xyce | tran | 22 | - |
 | [`comparator0_5_10.cir`](comparator0_5_10.cir) | xyce | tran | 22 | - |

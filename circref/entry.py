@@ -201,6 +201,8 @@ def walk(case: Case, nl: Netlist) -> Graph:
     osdi_devices: set[str] = set()
     va_types: set[str] = set()
     modules: set[str] = set()
+    defined: set[str] = set()
+    used: set[str] = set()
     asked: set[str] = set()
     while True:
         while queue:
@@ -216,6 +218,8 @@ def walk(case: Case, nl: Netlist) -> Graph:
             models |= parsed.models
             osdi_devices |= parsed.osdi_devices
             va_types |= parsed.va_types
+            defined |= set(parsed.instances) - {""}
+            used |= {k[2:] for c in parsed.instances.values() for k in c if k.startswith("x:")}
             modules |= parsed.modules
             if section is None:
                 refs = parsed.refs
@@ -242,6 +246,11 @@ def walk(case: Case, nl: Netlist) -> Graph:
         needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
         if not needed:
+            undefined = sorted(used - defined) if nl.dialect in netlist.SPICE else []
+            if undefined:
+                g.edges.append(Edge(start, netlist.Ref("subckt", undefined[0], None, 0), None,
+                                    False, f"{nl.file}: subcircuit {', '.join(undefined[:5])} "
+                                    f"used but defined nowhere it includes"))
             return g
         for t in sorted(needed):
             asked.add(t)

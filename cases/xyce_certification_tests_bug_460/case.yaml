@@ -9,8 +9,6 @@ source:
   commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
   root: Netlists/Certification_Tests/BUG_460
 files:
-- {path: README, sha256: 154213626d0d0bc7857c3257b03056b772444d49e1a4776f0254c9af7b52cb7a}
 - {path: bug_460.cir, sha256: 8c118ac450bb02940da983519dd67ca14902587f54ff3dfe62dbb9ed7ec1b9f5}
 netlists:
-- {file: README, dialect: xyce}
 - {file: bug_460.cir, dialect: xyce}

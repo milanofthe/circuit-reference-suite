@@ -31,7 +31,6 @@ files:
 - {path: ro_17_4.cir, sha256: f5bb5d27829c65db5d6e531c5a90b709bc466d5987de0c5c3240bd8d4be64666}
 - {path: tmp-noise-2.cir, sha256: ea246a219279f144908acf7ed9c1b4e2043ebc492fded4a045a8e0097f8ef645}
 - {path: tmp-noise.cir, sha256: 7aecacf01f605b90ddc6d9416ebc7d678726d299e1fed7195aac9a03b4d8882e}
-- {path: todo-temper-3.cir, sha256: 5db4c278b772b18b959c137bb3b05c40a9890e49dec03f3196a22c6b5d10a35d}
 netlists:
 - {file: 3d_loop.sp, dialect: ngspice}
 - {file: FFT_Leakage.cir, dialect: ngspice}
@@ -53,4 +52,3 @@ netlists:
 - {file: ro_17_4.cir, dialect: ngspice}
 - {file: tmp-noise-2.cir, dialect: ngspice}
 - {file: tmp-noise.cir, dialect: ngspice}
-- {file: todo-temper-3.cir, dialect: ngspice}

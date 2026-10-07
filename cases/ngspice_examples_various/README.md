@@ -15,7 +15,7 @@ test | ngspice | status: **complete**
 |---|---|---|---|---|
 | [`3d_loop.sp`](3d_loop.sp) | ngspice | dc | 2 | - |
 | [`FFT_Leakage.cir`](FFT_Leakage.cir) | ngspice | tran | 3 | - |
-| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 4 | - |
+| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 6 | - |
 | [`atanh.sp`](atanh.sp) | ngspice | ac | 7 | - |
 | [`bjt_ac_par.sp`](bjt_ac_par.sp) | ngspice | dc | 4 | - |
 | [`bjtnoise.cir`](bjtnoise.cir) | ngspice | noise | 6 | - |
@@ -29,7 +29,6 @@ test | ngspice | status: **complete**
 | [`roessler-attractor.cir`](roessler-attractor.cir) | ngspice | tran | 6 | - |
 | [`tmp-noise-2.cir`](tmp-noise-2.cir) | ngspice | op, ac | 4 | - |
 | [`tmp-noise.cir`](tmp-noise.cir) | ngspice | op, noise, noise, ac | 6 | - |
-| [`todo-temper-3.cir`](todo-temper-3.cir) | ngspice | dc | 6 | - |
 | [`transformers1.cir`](transformers1.cir) | ngspice | tran | 25 | - |
 | [`v-i-sources-am-ffm.cir`](v-i-sources-am-ffm.cir) | ngspice | tran | 14 | - |
 

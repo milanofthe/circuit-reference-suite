@@ -9,7 +9,6 @@ source:
   commit: 7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2
   root: Netlists/Certification_Tests/BUG_381
 files:
-- {path: README, sha256: 00a1f0b2040cf7d1ca84a0adf1ec2e99ac20549198f1f5094291bf5840a45a3f}
 - {path: comparator0_5_-10.cir, sha256: 33c3f123151125e22d88d1bc0024010f61fff9ba54fce6d17a77d7d05a4c5aec}
 - {path: comparator0_5_0.cir, sha256: 1926f21268fd0fea1ee7f6467ef18cecd86b98f0249dddf37d4b2a1fd2583fdb}
 - {path: comparator0_5_10.cir, sha256: 231cad87091f8ef923bce163dff7a64800204521f449524dcf4a9d74cfa2d4b8}
@@ -23,7 +22,6 @@ files:
 - {path: comparator2.cir, sha256: 518a39681511859c536e5bd75bebc0161d33231f4a47c1cc28cc4f435ca312ee}
 - {path: comparator3.cir, sha256: 716b576933571bdaec126e8db3dfe154b38e20b97fa15f3f3d2aa4c0026a76fe}
 netlists:
-- {file: README, dialect: xyce}
 - {file: comparator0_5_-10.cir, dialect: xyce}
 - {file: comparator0_5_0.cir, dialect: xyce}
 - {file: comparator0_5_10.cir, dialect: xyce}

@@ -17,7 +17,7 @@ test | ngspice | status: **complete**
 | [`FFT_Leakage.cir`](FFT_Leakage.cir) | ngspice | tran | 3 | - |
 | [`Tschebyschef-LP.cir`](Tschebyschef-LP.cir) | ngspice | sp | 7 | - |
 | [`adder_mos.cir`](adder_mos.cir) | ngspice | tran | 153 | - |
-| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 4 | - |
+| [`alterparam.sp`](alterparam.sp) | ngspice | op, op, op | 6 | - |
 | [`bjt_ac_par.sp`](bjt_ac_par.sp) | ngspice | dc | 4 | - |
 | [`bjtnoise.cir`](bjtnoise.cir) | ngspice | noise | 6 | - |
 | [`dc_loop.sp`](dc_loop.sp) | ngspice | dc | 2 | - |
@@ -33,7 +33,6 @@ test | ngspice | status: **complete**
 | [`ro_17_4.cir`](ro_17_4.cir) | ngspice | tran | 36 | - |
 | [`tmp-noise-2.cir`](tmp-noise-2.cir) | ngspice | op, ac | 4 | - |
 | [`tmp-noise.cir`](tmp-noise.cir) | ngspice | op, noise, noise, ac | 6 | - |
-| [`todo-temper-3.cir`](todo-temper-3.cir) | ngspice | dc | 6 | - |
 
 Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once.
 

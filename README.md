@@ -43,9 +43,19 @@ reference solutions. License per case and library.
 | [analoggym_tan_clia_pin_3](cases/analoggym_tan_clia_pin_3) | 2 | ngspice | ac, dc, tran | 162 | analoggym_sky130 | adapted (2) |
 | [analoggym_yan_az_pin_3](cases/analoggym_yan_az_pin_3) | 2 | ngspice | ac, dc, tran | 152 | analoggym_sky130 | adapted (2) |
 
+### IHP-Open-PDK
+
+[https://github.com/IHP-GmbH/IHP-Open-PDK](https://github.com/IHP-GmbH/IHP-Open-PDK) | 3 cases, 53 netlists | Apache-2.0
+
+| case | netlists | dialects | analyses | devices | libraries | status |
+|---|---|---|---|---|---|---|
+| [ihp_sg13g2_capacitor](cases/ihp_sg13g2_capacitor) | 2 | ngspice | ac | 3 | ihp_sg13g2 | complete |
+| [ihp_sg13g2_moshv](cases/ihp_sg13g2_moshv) | 26 | ngspice | dc | 4 | ihp_sg13g2 | complete |
+| [ihp_sg13g2_moslv](cases/ihp_sg13g2_moslv) | 25 | ngspice | dc | 4 | ihp_sg13g2 | complete |
+
 ### ngspice
 
-[https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) | 135 cases, 766 netlists | BSD-3-Clause
+[https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) | 135 cases, 764 netlists | BSD-3-Clause
 
 | case | netlists | dialects | analyses | devices | libraries | status |
 |---|---|---|---|---|---|---|
@@ -105,7 +115,7 @@ reference solutions. License per case and library.
 | [ngspice_examples_transient_noise](cases/ngspice_examples_transient_noise) | 6 | ngspice | tran | 117 | - | complete |
 | [ngspice_examples_transmissionlines](cases/ngspice_examples_transmissionlines) | 21 | ngspice | tran | 169 | - | complete |
 | [ngspice_examples_utf_8](cases/ngspice_examples_utf_8) | 4 | ngspice | tran | 153 | - | complete |
-| [ngspice_examples_various](cases/ngspice_examples_various) | 19 | ngspice | ac, dc, noise, op, tran | 25 | - | complete |
+| [ngspice_examples_various](cases/ngspice_examples_various) | 18 | ngspice | ac, dc, noise, op, tran | 25 | - | complete |
 | [ngspice_examples_vbic](cases/ngspice_examples_vbic) | 5 | ngspice | dc, op, tran | 26 | - | complete |
 | [ngspice_examples_vdmos](cases/ngspice_examples_vdmos) | 18 | ngspice | ac, dc, noise, op, tran | 52 | - | complete |
 | [ngspice_examples_wave](cases/ngspice_examples_wave) | 5 | ngspice | ac, op, tran | 19 | - | complete |
@@ -144,7 +154,7 @@ reference solutions. License per case and library.
 | [ngspice_paranoia_parallel_examples_transient_noise](cases/ngspice_paranoia_parallel_examples_transient_noise) | 8 | ngspice | tran | 117 | - | complete |
 | [ngspice_paranoia_parallel_examples_transimpedanceamp](cases/ngspice_paranoia_parallel_examples_transimpedanceamp) | 1 | ngspice | tran | 376 | - | complete |
 | [ngspice_paranoia_parallel_examples_transmissionlines](cases/ngspice_paranoia_parallel_examples_transmissionlines) | 19 | ngspice | tran | 169 | - | complete |
-| [ngspice_paranoia_parallel_examples_various](cases/ngspice_paranoia_parallel_examples_various) | 21 | ngspice | ac, dc, noise, op, sp, tran | 153 | - | complete |
+| [ngspice_paranoia_parallel_examples_various](cases/ngspice_paranoia_parallel_examples_various) | 20 | ngspice | ac, dc, noise, op, sp, tran | 153 | - | complete |
 | [ngspice_paranoia_parallel_examples_vbic](cases/ngspice_paranoia_parallel_examples_vbic) | 8 | ngspice | ac, dc, op, tran | 26 | - | complete |
 | [ngspice_paranoia_parallel_examples_vdmos](cases/ngspice_paranoia_parallel_examples_vdmos) | 31 | ngspice | ac, dc, noise, op, tran | 52 | - | complete |
 | [ngspice_paranoia_parallel_examples_xspice](cases/ngspice_paranoia_parallel_examples_xspice) | 6 | ngspice | tran | 33 | - | complete |
@@ -299,7 +309,7 @@ reference solutions. License per case and library.
 
 ### Xyce_Regression
 
-[https://github.com/Xyce/Xyce_Regression](https://github.com/Xyce/Xyce_Regression) | 629 cases, 3662 netlists | GPL-3.0-or-later
+[https://github.com/Xyce/Xyce_Regression](https://github.com/Xyce/Xyce_Regression) | 625 cases, 3655 netlists | GPL-3.0-or-later
 
 | case | netlists | dialects | analyses | devices | libraries | status |
 |---|---|---|---|---|---|---|
@@ -392,7 +402,7 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_1178](cases/xyce_certification_tests_bug_1178) | 1 | xyce | tran | 6 | - | complete |
 | [xyce_certification_tests_bug_1190_son](cases/xyce_certification_tests_bug_1190_son) | 10 | xyce | dc, step, tran | 17 | - | complete |
 | [xyce_certification_tests_bug_1197_son](cases/xyce_certification_tests_bug_1197_son) | 1 | xyce | step, tran | 4 | - | complete |
-| [xyce_certification_tests_bug_120](cases/xyce_certification_tests_bug_120) | 2 | xyce | tran | 28 | - | complete |
+| [xyce_certification_tests_bug_120](cases/xyce_certification_tests_bug_120) | 1 | xyce | tran | 28 | - | complete |
 | [xyce_certification_tests_bug_1203_son](cases/xyce_certification_tests_bug_1203_son) | 3 | xyce | dc, step | 10 | - | complete |
 | [xyce_certification_tests_bug_1210_son](cases/xyce_certification_tests_bug_1210_son) | 1 | xyce | tran | 4 | - | complete |
 | [xyce_certification_tests_bug_1211_son](cases/xyce_certification_tests_bug_1211_son) | 10 | xyce | ac, dc, tran | 32 | - | complete |
@@ -451,7 +461,6 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_2007](cases/xyce_certification_tests_bug_2007) | 1 | xyce | tran | 8 | - | complete |
 | [xyce_certification_tests_bug_201_son](cases/xyce_certification_tests_bug_201_son) | 2 | xyce | tran | 4 | - | complete |
 | [xyce_certification_tests_bug_2039](cases/xyce_certification_tests_bug_2039) | 1 | xyce | tran | 6 | - | complete |
-| [xyce_certification_tests_bug_206](cases/xyce_certification_tests_bug_206) | 1 | xyce | dc | 2 | - | complete |
 | [xyce_certification_tests_bug_21_son](cases/xyce_certification_tests_bug_21_son) | 2 | xyce | dc | 4 | - | complete |
 | [xyce_certification_tests_bug_225](cases/xyce_certification_tests_bug_225) | 1 | xyce | dc | 2 | - | complete |
 | [xyce_certification_tests_bug_229_son](cases/xyce_certification_tests_bug_229_son) | 1 | xyce | tran | 4 | - | complete |
@@ -492,7 +501,7 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_372](cases/xyce_certification_tests_bug_372) | 14 | xyce | tran | 69 | - | complete |
 | [xyce_certification_tests_bug_379_son](cases/xyce_certification_tests_bug_379_son) | 1 | xyce | tran | 4 | - | complete |
 | [xyce_certification_tests_bug_37_son](cases/xyce_certification_tests_bug_37_son) | 1 | xyce | tran | 88 | - | complete |
-| [xyce_certification_tests_bug_381](cases/xyce_certification_tests_bug_381) | 13 | xyce | step, tran | 89 | - | complete |
+| [xyce_certification_tests_bug_381](cases/xyce_certification_tests_bug_381) | 12 | xyce | step, tran | 22 | - | complete |
 | [xyce_certification_tests_bug_386](cases/xyce_certification_tests_bug_386) | 1 | xyce | dc | 4 | - | complete |
 | [xyce_certification_tests_bug_387](cases/xyce_certification_tests_bug_387) | 1 | xyce | dc | 8 | - | complete |
 | [xyce_certification_tests_bug_389_son](cases/xyce_certification_tests_bug_389_son) | 2 | xyce | hb | 5 | - | complete |
@@ -513,7 +522,7 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_442](cases/xyce_certification_tests_bug_442) | 4 | xyce | tran | 4 | - | complete |
 | [xyce_certification_tests_bug_456](cases/xyce_certification_tests_bug_456) | 16 | xyce | tran | 90 | - | complete |
 | [xyce_certification_tests_bug_457_son](cases/xyce_certification_tests_bug_457_son) | 1 | xyce | dc, step | 9 | - | complete |
-| [xyce_certification_tests_bug_460](cases/xyce_certification_tests_bug_460) | 2 | xyce | step, tran | 23 | - | complete |
+| [xyce_certification_tests_bug_460](cases/xyce_certification_tests_bug_460) | 1 | xyce | step, tran | 9 | - | complete |
 | [xyce_certification_tests_bug_461_son](cases/xyce_certification_tests_bug_461_son) | 8 | xyce | ac, op, tran | 10 | - | complete |
 | [xyce_certification_tests_bug_466_son](cases/xyce_certification_tests_bug_466_son) | 1 | xyce | step, tran | 3 | - | complete |
 | [xyce_certification_tests_bug_467_son](cases/xyce_certification_tests_bug_467_son) | 1 | xyce | tran | 6003 | - | complete |
@@ -536,7 +545,6 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_547_son](cases/xyce_certification_tests_bug_547_son) | 1 | xyce | tran | 22 | - | complete |
 | [xyce_certification_tests_bug_54_son](cases/xyce_certification_tests_bug_54_son) | 4 | xyce | dc | 110 | - | complete |
 | [xyce_certification_tests_bug_568](cases/xyce_certification_tests_bug_568) | 1 | xyce | step, tran | 4 | - | complete |
-| [xyce_certification_tests_bug_569](cases/xyce_certification_tests_bug_569) | 1 | xyce | step | 26 | - | complete |
 | [xyce_certification_tests_bug_573](cases/xyce_certification_tests_bug_573) | 1 | xyce | tran | 6 | - | complete |
 | [xyce_certification_tests_bug_573_son](cases/xyce_certification_tests_bug_573_son) | 2 | xyce | hb, op | 10 | - | complete |
 | [xyce_certification_tests_bug_574](cases/xyce_certification_tests_bug_574) | 1 | xyce | tran | 9 | - | complete |
@@ -564,7 +572,6 @@ reference solutions. License per case and library.
 | [xyce_certification_tests_bug_668](cases/xyce_certification_tests_bug_668) | 6 | xyce | tran | 18 | - | complete |
 | [xyce_certification_tests_bug_681_son](cases/xyce_certification_tests_bug_681_son) | 8 | xyce | dc, step | 4 | - | complete |
 | [xyce_certification_tests_bug_689](cases/xyce_certification_tests_bug_689) | 2 | xyce | dc | 4 | - | complete |
-| [xyce_certification_tests_bug_690](cases/xyce_certification_tests_bug_690) | 1 | xyce | tran | 10 | - | complete |
 | [xyce_certification_tests_bug_692](cases/xyce_certification_tests_bug_692) | 1 | xyce | dc, step | 5 | - | complete |
 | [xyce_certification_tests_bug_695](cases/xyce_certification_tests_bug_695) | 1 | xyce | dc | 5 | - | complete |
 | [xyce_certification_tests_bug_700_son](cases/xyce_certification_tests_bug_700_son) | 1 | xyce | tran | 8 | - | complete |
@@ -755,7 +762,6 @@ reference solutions. License per case and library.
 | [xyce_oneshot](cases/xyce_oneshot) | 1 | xyce | tran | 21 | - | complete |
 | [xyce_op](cases/xyce_op) | 4 | xyce | ac, dc, op, tran | 38 | - | complete |
 | [xyce_options_output](cases/xyce_options_output) | 1 | xyce | tran | 2 | - | complete |
-| [xyce_output](cases/xyce_output) | 1 | xyce | op | 48 | - | complete |
 | [xyce_output_ac](cases/xyce_output_ac) | 32 | xyce | ac, op, step | 7 | - | complete |
 | [xyce_output_ac_sens](cases/xyce_output_ac_sens) | 12 | xyce | ac, sens, step | 4 | - | complete |
 | [xyce_output_dasho](cases/xyce_output_dasho) | 13 | xyce | ac, dc, embeddedsampling, four, hb, lin, noise, op, sens, step, tran | 33 | - | complete |
@@ -904,7 +910,7 @@ reference solutions. License per case and library.
 | [xyce_xdm_hspice_lossless_transline](cases/xyce_xdm_hspice_lossless_transline) | 2 | hspice, xyce | tran | 8 | - | complete |
 | [xyce_xdm_hspice_models](cases/xyce_xdm_hspice_models) | 14 | hspice, xyce | dc, tran | 8 | - | complete |
 | [xyce_xdm_hspice_nodeset](cases/xyce_xdm_hspice_nodeset) | 2 | hspice, xyce | tran | 5 | - | complete |
-| [xyce_xdm_hspice_other_parsing](cases/xyce_xdm_hspice_other_parsing) | 26 | hspice, xyce | ac, dc, tran | 12 | - | complete |
+| [xyce_xdm_hspice_other_parsing](cases/xyce_xdm_hspice_other_parsing) | 26 | hspice, xyce | ac, dc, tran | 10 | - | complete |
 | [xyce_xdm_hspice_pwl_sources](cases/xyce_xdm_hspice_pwl_sources) | 1 | xyce | tran | 8 | - | complete |
 | [xyce_xdm_hspice_sparams](cases/xyce_xdm_hspice_sparams) | 4 | hspice, xyce | ac, lin | 10 | - | complete |
 | [xyce_xdm_hspice_temperature](cases/xyce_xdm_hspice_temperature) | 8 | hspice, xyce | dc, step | 4 | - | complete |
@@ -924,7 +930,7 @@ reference solutions. License per case and library.
 | [xyce_xdm_spectre_independent_sources](cases/xyce_xdm_spectre_independent_sources) | 6 | spectre, xyce | tran | 27 | - | complete |
 | [xyce_xdm_spectre_models](cases/xyce_xdm_spectre_models) | 2 | spectre, xyce | tran | 5 | - | complete |
 | [xyce_xdm_spectre_multiplicity](cases/xyce_xdm_spectre_multiplicity) | 2 | spectre, xyce | tran | 21 | - | complete |
-| [xyce_xdm_spectre_other_parsing](cases/xyce_xdm_spectre_other_parsing) | 12 | spectre, xyce | dc, tran | 31 | - | complete |
+| [xyce_xdm_spectre_other_parsing](cases/xyce_xdm_spectre_other_parsing) | 12 | spectre, xyce | dc, tran | 26 | - | complete |
 | [xyce_xdm_tspice_controlled_sources](cases/xyce_xdm_tspice_controlled_sources) | 8 | tspice, xyce | tran | 6 | - | complete |
 | [xyce_xdm_tspice_diode_clipper](cases/xyce_xdm_tspice_diode_clipper) | 2 | tspice, xyce | tran | 9 | - | complete |
 | [xyce_xdm_tspice_independent_sources](cases/xyce_xdm_tspice_independent_sources) | 8 | tspice, xyce | tran | 12 | - | complete |
@@ -945,6 +951,7 @@ the case are expanded; a device from a library or a compiled model counts once.
 | library | content | files | source | license |
 |---|---|---|---|---|
 | [analoggym_sky130](libraries/analoggym_sky130) | SkyWater SKY130 models as installed by open_pdks, typical corner | 170 | [AnalogGym](https://github.com/CODA-Team/AnalogGym) | Apache-2.0 |
+| [ihp_sg13g2](libraries/ihp_sg13g2) | IHP SG13G2 device models (ngspice) and their Verilog-A sources | 39 | [IHP-Open-PDK](https://github.com/IHP-GmbH/IHP-Open-PDK) | Apache-2.0 |
 | [openvaf_asmhemt](libraries/openvaf_asmhemt) | ASM-HEMT GaN HEMT model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
 | [openvaf_bsim6](libraries/openvaf_bsim6) | BSIM6 bulk MOSFET model | 1 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | LicenseRef-BSIM |
 | [openvaf_bsimbulk](libraries/openvaf_bsimbulk) | BSIM-BULK MOSFET model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
