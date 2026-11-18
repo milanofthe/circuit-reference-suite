@@ -1,0 +1,6 @@
+title = "ahkab tests/miller"
+case = "ahkab_tests_miller"
+source = "miller.ckt"
+analysis = [
+    { type = "op" },
+]

@@ -1,0 +1,6 @@
+title = "ahkab tests/fft_ckt"
+case = "ahkab_tests_fft_ckt"
+source = "fft_ckt.ckt"
+analysis = [
+    { type = "tran", step = 0.001, stop = 0.03, uic = true },
+]

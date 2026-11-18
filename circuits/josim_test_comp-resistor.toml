@@ -1,0 +1,12 @@
+title = "JoSIM test/comp"
+case = "josim_test_comp"
+source = "resistor.cir"
+outputs = [
+    "v(2)",
+    "i(r2)",
+    "i(itest)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 1e-10, uic = true },
+]

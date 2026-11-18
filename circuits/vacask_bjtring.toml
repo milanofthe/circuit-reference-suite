@@ -1,0 +1,9 @@
+title = "Bipolar ring oscillator"
+case = "vacask_bjtring"
+source = "vacask/runme.sim"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 0.001, max_step = 1e-09, uic = true },
+]
+
+[options]
+method = "trap"

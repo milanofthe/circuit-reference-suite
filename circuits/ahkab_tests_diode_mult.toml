@@ -1,0 +1,10 @@
+title = "ahkab tests/diode_mult"
+case = "ahkab_tests_diode_mult"
+source = "diode_mult.ckt"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-05, stop = 0.005, uic = true },
+]

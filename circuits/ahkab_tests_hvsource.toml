@@ -1,0 +1,10 @@
+title = "ahkab tests/hvsource"
+case = "ahkab_tests_hvsource"
+source = "hvsource.ckt"
+outputs = [
+    "v(5)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 999, start = 7957.747, stop = 79577.471 },
+]

@@ -1,0 +1,11 @@
+title = "ahkab tests/switch1"
+case = "ahkab_tests_switch1"
+source = "switch1.ckt"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 2.5e-07, uic = true },
+]

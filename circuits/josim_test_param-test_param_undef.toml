@@ -1,0 +1,9 @@
+title = "JoSIM test/param"
+case = "josim_test_param"
+source = "test_param_undef.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 1e-10, uic = true },
+]
