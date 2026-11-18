@@ -598,7 +598,9 @@ def _slug(text: str) -> str:
 def proposals() -> tuple[dict[str, dict], list[tuple[str, str]]]:
     """A circuit per core netlist that has none yet; netlists of one case with the same
     file name in different dialects are one circuit with variants."""
-    taken = {(c.raw["case"], f) for c in iter_circuits()
+    circuits = iter_circuits()
+    existing = {c.name for c in circuits}
+    taken = {(c.raw["case"], f) for c in circuits
              for f in [c.raw["source"], *c.raw.get("variants", {}).values()]}
     out: dict[str, dict] = {}
     skipped: list[tuple[str, str]] = []
@@ -629,6 +631,8 @@ def proposals() -> tuple[dict[str, dict], list[tuple[str, str]]]:
                     circuit["variants"] = {n.dialect: n.file for n in members[1:]}
                 single = len(groups) == 1 and len(split) == 1
                 name = case.id if single else f"{case.id}-{_slug(Path(file).with_suffix('').as_posix())}"
+                if name in out or name in existing:         # d_mos1.lin1.ckt, d_mos1.lin1.spice
+                    name = f"{case.id}-{_slug(file)}"
                 out[name] = circuit
     return out, skipped
 

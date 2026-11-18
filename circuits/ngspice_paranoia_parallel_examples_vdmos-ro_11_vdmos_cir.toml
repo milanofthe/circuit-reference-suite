@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/vdmos"
+case = "ngspice_paranoia_parallel_examples_vdmos"
+source = "ro_11_vdmos.cir"
+outputs = [
+    "v(6)",
+    "i(vdd)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 1e-06 },
+]

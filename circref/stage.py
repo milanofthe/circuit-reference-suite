@@ -39,6 +39,14 @@ def _rewrite(file: Path, line: int, old: str, new: str) -> bool:
     return False
 
 
+def _load_command(file: Path, line: int) -> bool:
+    """An OSDI load written as a command (ngspice ``pre_osdi``/``osdi`` in a control
+    block or init file), not as a netlist line: the body loses it with its block, so
+    the simulator's init loads it instead."""
+    text = file.read_bytes().decode("latin-1").split("\n")
+    return text[line - 1].strip().lower().startswith(("pre_osdi", "osdi"))
+
+
 class Compiler:
     """Verilog-A compiled to OSDI once per source, shared by every run that loads it."""
 
@@ -94,8 +102,8 @@ def stage(case: Case, nl: Netlist, dest: Path, osdi: bool, compiler: Compiler) -
             new = staged(dest, e.target)
             if Path(os.path.normpath(e.origin.parent / e.ref.target)) == e.target:
                 continue                                    # resolves as written
-        if e.ref.line == 0:                                 # loaded by the simulator's init
-            preload.append(new)
+        if e.ref.line == 0 or _load_command(e.origin, e.ref.line):
+            preload.append(new)                             # loaded by the simulator's init
             continue
         origin = staged(dest, e.origin)
         rel = new.as_posix() if not new.is_relative_to(dest) else \

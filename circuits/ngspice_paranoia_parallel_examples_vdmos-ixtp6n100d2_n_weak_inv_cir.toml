@@ -1,0 +1,17 @@
+title = "ngspice paranoia_parallel/examples/vdmos"
+case = "ngspice_paranoia_parallel_examples_vdmos"
+source = "IXTP6N100D2-n-weak-inv.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = -3.1, stop = -2.1, step = 0.01 },
+    { source = "vd", start = 0.2, stop = 1.0, step = 0.2 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 60.0, step = 0.1 },
+    { source = "vg", start = -3.0, stop = 5.0, step = 1.0 },
+]
