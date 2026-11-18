@@ -479,6 +479,18 @@ class Ahkab(Adapter):
         return out
 
 
+class Spicesharp(Adapter):
+    """SpiceSharpParser through sims/spicesharp: every unknown of the analysis into a
+    SPICE rawfile; the runner reads LTspice A-device netlists in the LTspice dialect."""
+
+    def control(self, c: Circuit) -> list[str]:
+        opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
+        return [".options " + " ".join(opts)] if opts else []
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["spicesharp", "-r", raw, deck]
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -491,4 +503,5 @@ ADAPTERS = {a.name: a for a in (
     Vacask("vacask", ("vacask",), osdi=True),
     Qucsator("qucsator", ("qucsator",)),
     Ahkab("ahkab", ("ahkab",), error=r"^E: .*|^Traceback.*"),
+    Spicesharp("spicesharp", ("spicesharp",), timing=r"\* analysis time ([\d.eE+-]+) s"),
 )}
