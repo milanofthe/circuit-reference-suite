@@ -1,8 +1,9 @@
-"""python -m circref {validate,build,check,list,circuits,run}
+"""python -m circref {validate,build,check,list,circuits,run,compare}
 
 build  writes every generated file (case and library READMEs, the top README tables).
 check  validates and rebuilds in memory; fails when a committed file is stale.
 run       runs circuits on simulators (circref/bench.py), results into --out.
+compare   simulators against each other on what run left in --out.
 circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
 """
 from __future__ import annotations
@@ -103,6 +104,12 @@ def cmd_run(args) -> int:
                      args.timeout, args.memory, shard)
 
 
+def cmd_compare(args) -> int:
+    from . import compare
+    print(compare.summary(Path(args.out)))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="circref")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -121,6 +128,9 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--memory", type=float, default=4, help="GB address space per run")
     sp.add_argument("--out", default="out")
     sp.set_defaults(fn=cmd_run)
+    sp = sub.add_parser("compare")
+    sp.add_argument("out")
+    sp.set_defaults(fn=cmd_compare)
     args = ap.parse_args(argv)
     return args.fn(args)
 

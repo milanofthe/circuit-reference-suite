@@ -15,7 +15,7 @@ class Plot:
 
 
 def signal_name(name: str) -> str:
-    n = name.strip().lower()
+    n = name.strip().lower().replace(":", ".")          # Xyce: x1:n, ngspice: x1.n
     if n.endswith("#branch"):
         return f"i({n[:-7]})"
     if re.fullmatch(r"[vi]\([^()]+\)", n) or n in ("time", "frequency", "sweep"):
