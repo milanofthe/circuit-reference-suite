@@ -1,6 +1,6 @@
 # XDM, Xyce's netlist translator (HSPICE, PSpice, T-Spice, Spectre into Xyce):
 #
-#   falllow run --machine milan-box-01 --cache circsims --cpu 6 --memory 12G -- bash sims/xdm.sh
+#   falllow run --machine milan-box-01 --cache circsims --cpu 4 --memory 6G -- bash sims/xdm.sh
 #
 # Built without PyInstaller: the install holds the Python bundle (xdm_bdl.py and its Boost.Python
 # modules) and bin/xdm_bdl runs it with the system /usr/bin/python3, the one Boost.Python is
