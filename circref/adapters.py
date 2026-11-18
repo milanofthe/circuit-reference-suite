@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 
 from . import raw as rawfile
-from .circuit import OPTIONS, Circuit, number
+from .circuit import OPTIONS, Circuit, number, vacask_split
 from .entry import ROOT
 
 # Lines of a deck that state what to compute rather than the circuit. With their
@@ -290,6 +290,55 @@ class Josim(Adapter):
         return {re.sub(r"^v\(([^,]+),0\)$", r"v(\1)", n): v for n, v in signals.items()}
 
 
+class Vacask(Adapter):
+    """VACASK: the deck without its control block and embedded files; a control block of
+    its own keeps the deck's ``elaborate`` lines. The analysis writes ``circref.raw``,
+    which the run renames; postprocessing and embedded files are skipped."""
+
+    OPTION_NAMES = {"method": "tran_method"}
+    METHODS = {"trap": "trap", "gear": "gear2"}
+
+    def deck(self, c: Circuit, text: str, a: dict, raw: str) -> str:
+        outside, inside = vacask_split(text)
+        control = [l for l in inside if l.split()[:1] == ["elaborate"]]
+        opts = []
+        for k, v in c.options.items():
+            if k == "method":
+                opts.append(f'tran_method="{self.METHODS.get(v, v)}"')
+            else:
+                opts.append(f"{k}={_num(v)}")
+        if opts:
+            control.append("options " + " ".join(opts))
+        t = a["type"]
+        if t == "op":
+            control.append("analysis circref op")
+        elif t == "dc":
+            for k, s in enumerate(reversed(a["sweep"])):          # the last sweep is inner
+                control.append(f'sweep s{k} instance="{s["source"]}" parameter="dc" '
+                               f'from={_num(s["start"])} to={_num(s["stop"])} step={_num(s["step"])}')
+            control.append("analysis circref op")
+        elif t == "ac":
+            points = a["points"] - 1 if a["sweep"] == "lin" else a["points"]
+            control.append(f'analysis circref ac from={_num(a["start"])} to={_num(a["stop"])} '
+                           f'mode="{a["sweep"]}" points={points}')
+        else:
+            line = f"analysis circref tran step={_num(a['step'])} stop={_num(a['stop'])}"
+            if a.get("start"):
+                line += f" start={_num(a['start'])}"
+            if a.get("max_step"):
+                line += f" maxstep={_num(a['max_step'])}"
+            control.append(line + (' icmode="uic"' if a.get("uic") else ""))
+        control.append("print stats")
+        return "\n".join(outside + ["control"] + [f"  {l.strip()}" for l in control] + ["endc", ""])
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["sh", "-c", f'vacask -sp -se -qp "$1" && mv circref.raw "$2"', "vacask", deck, raw]
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        signals = Adapter.read(self, path, analysis)
+        return {re.sub(r"^v\((.+)\.flow\(br\)\)$", r"i(\1)", n): v for n, v in signals.items()}
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -299,4 +348,5 @@ ADAPTERS = {a.name: a for a in (
     Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
     Wrspice("wrspice", ("wrspice", "spice3"), error=r"^.*Simulation aborted.*|^Error\b.*"),
     Josim("josim", ("josim",)),
+    Vacask("vacask", ("vacask",), osdi=True),
 )}
