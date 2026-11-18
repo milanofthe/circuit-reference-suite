@@ -28,6 +28,7 @@ from . import raw
 from .adapters import ADAPTERS, Adapter
 from .circuit import Circuit, iter_circuits
 from .stage import Compiler, StageError, stage, tail
+from .translate import Untranslatable, translate
 
 
 def _limits(memory: int):
@@ -44,7 +45,7 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
     base = {"circuit": c.name, "simulator": ad.name, "version": ad.version()}
     nl = next((c.variants[d] for d in ad.dialects if d in c.variants), c.source)
     if nl.dialect not in ad.dialects:
-        return [base | {"status": "untranslated", "message": f"body is {nl.dialect}"}]
+        base["translated"] = nl.dialect
     dest = work / hashlib.sha1(f"{c.name}/{ad.name}".encode()).hexdigest()[:12]
     shutil.rmtree(dest, ignore_errors=True)
     keep = out / ad.name / c.name
@@ -56,6 +57,11 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             ad.preload(netlist.parent, osdi)
         except (StageError, NotImplementedError) as e:
             return [base | {"status": "stage-failed", "message": str(e)}]
+        if "translated" in base:
+            try:
+                translate(c.case, nl, dest, ad.dialects[0])
+            except Untranslatable as e:
+                return [base | {"status": "untranslated", "message": str(e)}]
         text = netlist.read_bytes().decode("latin-1")
         for k, a in enumerate(c.analyses):
             rec = base | {"analysis": k, "type": a["type"]}
