@@ -23,3 +23,9 @@ sha256 = "ee3baca7155790baf959f4f72f82d0855d0e27d07df2ced9d67e9432d0a93e6a"
 [[files]]
 path = "bsim2tst.cir"
 sha256 = "b2525d03cef81244e4ffac8f3ce48fef61e84e7a6dec0e31af4d2ff6f6530cd0"
+
+[resolve]
+"nmos/4" = "wrspice:obsolete/bsim1"
+"pmos/4" = "wrspice:obsolete/bsim1"
+"nmos/5" = "wrspice:obsolete/bsim2"
+"pmos/5" = "wrspice:obsolete/bsim2"

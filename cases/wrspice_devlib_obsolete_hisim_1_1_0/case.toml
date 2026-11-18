@@ -17,3 +17,7 @@ authors = [
 ]
 commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
 root = "wrspice/devlib/obsolete/hisim-1.1.0"
+
+[resolve]
+"nmos/60" = "wrspice:obsolete/hsm110"
+"pmos/60" = "wrspice:obsolete/hsm110"

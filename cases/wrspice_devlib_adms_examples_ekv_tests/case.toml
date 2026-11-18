@@ -27,3 +27,7 @@ sha256 = "d37d9daef20d79b30c40d376721a3a94d70c3ac143c93037cbff670f613e8a98"
 [[files]]
 path = "ekv_tran.sp"
 sha256 = "33897639b164db11b0c842994e6bab188a7a54487cf701df58549328dc450b84"
+
+[resolve]
+"nmos/44" = "wrspice:adms/ekv26"
+"pmos/44" = "wrspice:adms/ekv26"

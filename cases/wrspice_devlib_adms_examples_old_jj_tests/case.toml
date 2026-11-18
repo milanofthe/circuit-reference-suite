@@ -28,3 +28,6 @@ sha256 = "90ffd0e322e55ec25f9c289ce818b619aac201075391a4905fc332fb7c78dfa4"
 [[files]]
 path = "jjiv.cir"
 sha256 = "93cbad35eeaba6e1c73812efe6afd3d62aabab26193119a1124634d83fdb7492"
+
+[resolve]
+"jj/2" = "wrspice:adms.old/jj"

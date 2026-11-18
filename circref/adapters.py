@@ -275,11 +275,17 @@ class Wrspice(Ngspice):
             lines.append(".save " + " ".join(c.outputs))
         return lines
 
+    MODULES = "circref.modules"
+
     def preload(self, directory: Path, osdi: list[Path]) -> None:
-        Adapter.preload(self, directory, osdi)
+        """Device modules (``.so``) the deck's models need, listed for the run to load with
+        ``-m``: WRspice in batch mode reads no init file from the directory it starts in."""
+        Adapter.preload(self, directory, [p for p in osdi if p.suffix != ".so"])
+        (directory / self.MODULES).write_text("".join(f"{p}\n" for p in osdi if p.suffix == ".so"))
 
     def argv(self, deck: str, raw: str) -> list[str]:
-        return ["wrspice", "-b", "-r", raw, deck]
+        return ["sh", "-c", f'exec wrspice $(sed "s/^/-m /" {self.MODULES} 2>/dev/null) -b -r "$1" "$2"',
+                "wrspice", raw, deck]
 
 
 class Josim(Adapter):

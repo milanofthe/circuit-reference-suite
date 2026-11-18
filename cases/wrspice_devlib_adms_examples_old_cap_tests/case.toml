@@ -18,3 +18,6 @@ root = "wrspice/devlib/adms/examples.old/cap/tests"
 [[files]]
 path = "test.sp"
 sha256 = "1aae53249ce22d484afc9cfe4570bed53a6d6be3bae59a69aadf982253b89d69"
+
+[resolve]
+"cap/2" = "wrspice:adms.old/cap"

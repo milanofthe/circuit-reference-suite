@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 import posixpath
+import re
 import tomllib
 from collections import Counter
 from dataclasses import dataclass, field
@@ -134,6 +135,9 @@ class Graph:
     files: set[Path] = field(default_factory=set)
     dialect: str = ""
     models: dict[str, str] = field(default_factory=dict)        # every file, libraries too
+    # device type ("cap/2": model type and level) -> device module of a simulator install
+    # ("wrspice:adms/cap"), for types that simulator builds only as a loadable module
+    modules: dict[str, str] = field(default_factory=dict)
     control: bool = False
     veriloga: bool = False
 
@@ -211,12 +215,28 @@ def _resolve_cached(origin: Path, ref: netlist.Ref, local_items: tuple) -> tuple
     return path, False, None
 
 
+def _modules(case: Case, nl: Netlist, models: dict[str, str], levels: dict[str, str]) -> dict[str, str]:
+    """The device modules of a simulator install the deck's models need: a model type,
+    or type and level (``cap/2``), that the resolve table maps onto ``<simulator>:<module>``,
+    as WRspice builds Verilog-A and retired devices only as modules it loads."""
+    table = {**case.resolve_table(), **nl.resolve}
+    out = {}
+    for name, kind in models.items():
+        for key in (f"{kind}/{levels[name]}" if name in levels else None, kind):
+            mapped = table.get(key)
+            if isinstance(mapped, str) and re.fullmatch(r"[a-z]+:[\w.+-]+(/[\w.+-]+)*", mapped):
+                out[key] = mapped
+                break
+    return out
+
+
 def walk(case: Case, nl: Netlist) -> Graph:
     g = Graph(dialect=nl.dialect)
     start = case.directory / nl.file
     queue = [(start, nl.dialect, None, True)]
     seen: set = set()
     models: dict[str, str] = {}
+    levels: dict[str, str] = {}
     osdi_devices: set[str] = set()
     va_types: set[str] = set()
     modules: set[str] = set()
@@ -235,6 +255,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
                 g.libraries.add(entry.id)
             parsed = netlist.parse(path, dialect, deck)
             models |= parsed.models
+            levels |= parsed.levels
             g.veriloga |= dialect == "veriloga"
             osdi_devices |= parsed.osdi_devices
             va_types |= parsed.va_types
@@ -270,6 +291,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
         needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
         g.models = models
+        g.modules = _modules(case, nl, models, levels)
         if not needed:
             undefined = sorted(used - defined) if nl.dialect in netlist.SPICE else []
             if undefined:

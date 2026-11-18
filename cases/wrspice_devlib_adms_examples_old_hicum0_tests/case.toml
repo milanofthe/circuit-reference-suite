@@ -27,3 +27,6 @@ sha256 = "a632283f026396eb796654ee9971cdc350e106c761067ad92abaee746f22341d"
 [[files]]
 path = "model-card-hicumL0V1p11.lib"
 sha256 = "6db0a186f94015df264af616299a61cc0d2b7e8c47fbfcd86ed9e11567547c41"
+
+[resolve]
+"npn/7" = "wrspice:adms.old/hicum0"

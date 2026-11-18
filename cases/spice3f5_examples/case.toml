@@ -156,3 +156,9 @@ upstream = "spice3f5.tar.gz:spice3f5/examples/simplepz.cir"
 path = "COPYRIGHT"
 sha256 = "6dbad063070d502230501ddb05aced2e896eb636939c09b626d11c3e00b9aed4"
 upstream = "spice3f5.tar.gz:spice3f5/COPYRIGHT"
+
+[resolve]
+"nmos/4" = "wrspice:obsolete/bsim1"
+"pmos/4" = "wrspice:obsolete/bsim1"
+"nmos/5" = "wrspice:obsolete/bsim2"
+"pmos/5" = "wrspice:obsolete/bsim2"

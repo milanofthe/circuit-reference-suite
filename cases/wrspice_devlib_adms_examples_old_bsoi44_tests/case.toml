@@ -121,3 +121,7 @@ sha256 = "b6f88c7890b69c26dca1d0ded1269964259c5be9222fec444acb2468cca85bb9"
 [[files]]
 path = "test85.sp"
 sha256 = "30a63c325b9b2934ef03487374490d70f5f839720d354c0c1a0d0cc4de02a1e7"
+
+[resolve]
+"nmos/75" = "wrspice:adms.old/bsoi44"
+"pmos/75" = "wrspice:adms.old/bsoi44"

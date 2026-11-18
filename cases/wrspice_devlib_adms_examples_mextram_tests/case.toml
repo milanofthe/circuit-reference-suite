@@ -42,3 +42,6 @@ sha256 = "1d6df606c32e24d700acfdac6331e328776c17316a2090abedb783929b3b062b"
 [[files]]
 path = "tran.sp"
 sha256 = "dd3a6b0e9ec8b8295e62b808b18029b6a2138e37b2cccec8f7a4fe3917ef7df2"
+
+[resolve]
+"npn/6" = "wrspice:adms/bjt505"

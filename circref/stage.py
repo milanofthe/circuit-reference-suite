@@ -75,9 +75,19 @@ class Compiler:
         return out
 
 
-def stage(case: Case, nl: Netlist, dest: Path, osdi: bool, compiler: Compiler) -> tuple[Path, list[Path]]:
-    """The staged netlist, and the OSDI files to load before it (device types the deck
-    uses without loading them). ``osdi``: the simulator loads compiled Verilog-A."""
+def module(spec: str) -> Path:
+    """A device module of a simulator install, ``<simulator>:<module>``: the file
+    ``modules/<module>.so`` in its current install (layout in sims/common.sh)."""
+    sim, _, name = spec.partition(":")
+    sims = Path(os.environ.get("SIMS", "/cache/circsims"))
+    return sims / sim / "current" / "modules" / f"{name}.so"
+
+
+def stage(case: Case, nl: Netlist, dest: Path, osdi: bool, compiler: Compiler,
+          simulator: str = "") -> tuple[Path, list[Path]]:
+    """The staged netlist, and the files to load before it: OSDI for device types the deck
+    uses without loading them, and the device modules of the ``simulator`` install its
+    model types need. ``osdi``: the simulator loads compiled Verilog-A."""
     g = case.graphs[nl.file]
     if g.errors() or any(e.missing for e in g.edges):
         raise StageError("references not available in this repository")
@@ -110,4 +120,11 @@ def stage(case: Case, nl: Netlist, dest: Path, osdi: bool, compiler: Compiler) -
             posixpath.relpath(new.as_posix(), origin.parent.as_posix())
         if not _rewrite(origin, e.ref.line, e.ref.target, rel):
             raise StageError(f"{e.origin.relative_to(ROOT)}:{e.ref.line}: {e.ref.target!r} not found")
+    for spec in sorted(set(g.modules.values())):
+        if spec.partition(":")[0] != simulator:
+            continue                                        # another simulator's: built in here
+        if not module(spec).is_file():
+            types = ", ".join(k for k, v in sorted(g.modules.items()) if v == spec)
+            raise StageError(f"device {types}: no module {spec} in the {simulator} install")
+        preload.append(module(spec))
     return staged(dest, case.directory / nl.file), preload

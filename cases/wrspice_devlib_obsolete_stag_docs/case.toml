@@ -18,3 +18,7 @@ root = "wrspice/devlib/obsolete/stag/docs"
 [[files]]
 path = "example.cir"
 sha256 = "71cb795df793eee3a4a90ff1fc092e3f6d0e0bfd61f60f44f71aec79e47bcbbc"
+
+[resolve]
+"nsoi/33" = "wrspice:obsolete/soi3"
+"psoi/33" = "wrspice:obsolete/soi3"
