@@ -94,7 +94,9 @@ def stage(case: Case, nl: Netlist, dest: Path, osdi: bool, compiler: Compiler) -
             new = staged(dest, e.target)
             if Path(os.path.normpath(e.origin.parent / e.ref.target)) == e.target:
                 continue                                    # resolves as written
-        if e.ref.line == 0:                                 # loaded by the simulator's init
+        # Loaded by the simulator's init: a load the deck does not state, and an ngspice
+        # deck's OSDI loads, which sit in its control block and so are not in the body.
+        if e.ref.line == 0 or e.ref.kind == "osdi" and nl.dialect == "ngspice":
             preload.append(new)
             continue
         origin = staged(dest, e.origin)
