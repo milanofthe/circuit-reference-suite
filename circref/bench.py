@@ -53,7 +53,9 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
     records = []
     try:
         try:
-            netlist, osdi = stage(c.case, nl, dest, ad.osdi, compiler)
+            # A body staged for translation keeps its OSDI loads; the translation maps a
+            # Verilog-A model onto one built into the target or rejects it.
+            netlist, osdi = stage(c.case, nl, dest, ad.osdi or "translated" in base, compiler)
             ad.preload(netlist.parent, osdi)
         except (StageError, NotImplementedError) as e:
             return [base | {"status": "stage-failed", "message": str(e)}]

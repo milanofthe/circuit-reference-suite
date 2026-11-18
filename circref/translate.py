@@ -20,10 +20,10 @@ from dataclasses import dataclass, field
 from itertools import combinations
 from pathlib import Path
 
+from . import netlist
 from .adapters import NOT_BODY
 from .circuit import Unsupported, number
 from .entry import Case, Netlist
-from .netlist import VA_SUFFIXES
 from .stage import staged
 
 
@@ -100,6 +100,15 @@ TYPES = {
                 "nsoi", "psoi", "numd", "nbjt", "numos", "nhfet", "phfet"},
 }
 TYPE_NAMES = {("xyce", "ngspice"): {"cap": "c", "ind": "l"}}
+
+# Verilog-A modules (ngspice loads them as OSDI, N instances) that are built into Xyce:
+# module -> (device letter, model types for type=+1/-1, level, version Xyce implements).
+# The version is read from the module's source; another version is not translated.
+# Xyce Reference Guide 2.3.20.12: PSP 103.4, levels 103 and 1031 (self-heating).
+VA_BUILTIN = {
+    "xyce": {"psp103va": ("m", ("nmos", "pmos"), 103, "103.4"),
+             "psp103tva": ("m", ("nmos", "pmos"), 1031, "103.4")},
+}
 
 # Model parameters of R, C and L that differ in meaning: in Xyce R, C and L multiply the
 # instance value (Reference Guide tables 2-38, 2-40, 2-43); in ngspice r and res are the
@@ -482,6 +491,7 @@ class Context:
     inner: dict[str, set[str]] = field(default_factory=dict)        # subckt -> .param inside
     passed: dict[str, set[str]] = field(default_factory=dict)       # subckt -> X line parameters
     multiplier: dict[str, str | None] = field(default_factory=dict)  # Xyce R/C/L model -> R/C/L
+    builtin: dict[str, str] = field(default_factory=dict)           # model -> device letter
     replace_ground: bool = False                # Xyce .preprocess replaceground true
     hspice_math: bool = False                   # Xyce .options parser hspice_ext with math
 
@@ -494,6 +504,7 @@ class Translator:
         self.pair = (self.src, self.tgt)
         self.ctx = Context()
         self.file = Path()                      # the file being translated
+        self.modules: dict[str, str] = {}       # Verilog-A module -> version
 
     # ----------------------------------------------------------------- context
 
@@ -522,6 +533,8 @@ class Translator:
             elif w[0] == ".model" and len(w) > 2:
                 level = next((w[i + 2] for i in range(3, len(w) - 2)
                               if w[i] == "level" and w[i + 1] == "="), None)
+                if w[2] in VA_BUILTIN.get(self.tgt, {}):
+                    self.ctx.builtin[w[1]] = VA_BUILTIN[self.tgt][w[2]][0]
                 if self.src == "xyce" and w[2] in PASSIVE_VALUE:
                     self.ctx.multiplier[w[1]] = next(
                         (st.tokens[i + 2].text for i in range(3, len(w) - 2)
@@ -671,6 +684,11 @@ class Translator:
         if not head[0].isalpha():
             raise Untranslatable(f"statement {st.tokens[0].text!r}")
         letter = head[0]
+        if letter == "n" and self.src == "ngspice":         # OSDI instance of a built-in
+            model = next((t for t in st.words()[1:] if t in self.ctx.builtin), None)
+            if model:
+                st.set(0, self.ctx.builtin[model] + st.tokens[0].text)
+                letter = self.ctx.builtin[model]
         if letter in NO_ELEMENT[self.pair]:
             raise Untranslatable(NO_ELEMENT[self.pair][letter])
         self.braces(st)
@@ -827,6 +845,9 @@ class Translator:
         if typ in FAMILY_OF_TYPE:
             self.level(st, FAMILY_OF_TYPE[typ])
             return
+        if typ in VA_BUILTIN.get(self.tgt, {}):
+            self.builtin(st, typ)
+            return
         if typ in TYPES[self.tgt]:
             return
         new = TYPE_NAMES.get(self.pair, {}).get(typ)
@@ -834,6 +855,21 @@ class Translator:
             st.set(2, new)
             return
         raise Untranslatable(f"model type {typ}")
+
+    def builtin(self, st: Statement, module: str) -> None:
+        """A model of a Verilog-A module the target has built in, if the versions agree."""
+        _, types, level, version = VA_BUILTIN[self.tgt][module]
+        have = self.modules.get(module)
+        if have is None or have.split(".")[:2] != version.split("."):
+            raise Untranslatable(f"Verilog-A {module} {have or '(version unknown)'}: "
+                                 f"{self.tgt} has {version}")
+        w = st.words()
+        k = next((i for i in range(3, len(w) - 2) if w[i] == "type" and w[i + 1] == "="), None)
+        sign = number(w[k + 2]) if k is not None else 1
+        if k is not None:
+            del st.tokens[k:k + 3]
+        st.set(2, types[0] if sign > 0 else types[1])
+        _add_param(st, "level", str(level))
 
     def level(self, st: Statement, family: str) -> None:
         w = st.words()
@@ -1094,11 +1130,24 @@ def _version(text: str) -> tuple[int, int, int]:
 
 # ------------------------------------------------------------------------ files
 
-def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str
-                   ) -> dict[Path, str]:
-    """Each file's text in the target dialect. ``texts``: path -> (text, is the deck). A
-    file whose statements need no change keeps its text."""
+def va_versions(files) -> dict[str, str]:
+    """Verilog-A module -> the version its source states (``Version: 103.4.0``)."""
+    out = {}
+    for f in files:
+        if f.suffix.lower() == ".va":
+            m = re.search(r"Version:\s*(\d+(?:\.\d+)+)", f.read_text(encoding="latin-1"))
+            for module in netlist.parse(f, "veriloga").modules:
+                out[module] = m.group(1) if m else ""
+    return out
+
+
+def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str,
+                   modules: dict[str, str] | None = None) -> dict[Path, str]:
+    """Each file's text in the target dialect. ``texts``: path -> (text, is the deck);
+    ``modules``: the Verilog-A modules the body loads, with their versions. A file whose
+    statements need no change keeps its text."""
     tr = Translator(source, target)
+    tr.modules = modules or {}
     parsed = {p: parse(t, source, deck) for p, (t, deck) in texts.items()}
     for sts in parsed.values():
         tr.read_context(sts)
@@ -1116,12 +1165,12 @@ def translate(case: Case, nl: Netlist, dest: Path, target: str) -> list[Path]:
     and every netlist it reaches; a library file only where it needs a change. The files
     changed."""
     g = case.graphs[nl.file]
-    files = [staged(dest, f) for f in sorted(g.files) if f.suffix.lower() not in VA_SUFFIXES]
+    files = [staged(dest, f) for f in sorted(g.files) if f.suffix.lower() not in netlist.VA_SUFFIXES]
     if any(f.suffix.lower() == ".gz" for f in files):
         raise Untranslatable("compressed netlist file")
     deck = staged(dest, case.directory / nl.file)
     texts = {p: (p.read_bytes().decode("latin-1"), p == deck) for p in files}
-    out = translate_text(texts, nl.dialect, target)
+    out = translate_text(texts, nl.dialect, target, va_versions(g.files))
     changed = []
     for p, text in out.items():
         if text != texts[p][0]:
