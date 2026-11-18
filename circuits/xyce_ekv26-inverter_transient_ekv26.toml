@@ -1,0 +1,10 @@
+title = "Xyce_Regression EKV26"
+case = "xyce_ekv26"
+source = "inverter_transient_ekv26.cir"
+outputs = [
+    "v(vi)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 5e-06 },
+]

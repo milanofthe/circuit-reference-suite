@@ -1,0 +1,9 @@
+title = "Xyce_Regression IPULSE"
+case = "xyce_ipulse"
+source = "ipulse.cir"
+outputs = [
+    "i(vmon)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 7.0 },
+]

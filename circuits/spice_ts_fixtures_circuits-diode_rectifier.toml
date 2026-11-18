@@ -1,0 +1,6 @@
+title = "spice-ts fixtures/circuits"
+case = "spice_ts_fixtures_circuits"
+source = "diode-rectifier.cir"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.003 },
+]

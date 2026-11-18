@@ -1,0 +1,10 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/model_temperature_27.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 10.0, stop = 100000.0 },
+    { type = "op" },
+]
+
+[options]
+temp = 27.0

@@ -1,0 +1,11 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "sample-and-hold-sensor.cir"
+outputs = [
+    "v(sensor)",
+    "v(sample)",
+    "v(held)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 3.0, max_step = 0.001, uic = true },
+]

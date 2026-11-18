@@ -1,0 +1,15 @@
+title = "Xyce_Regression MULTIPLICITY_FACTOR"
+case = "xyce_multiplicity_factor"
+source = "capacitor_ic.cir"
+outputs = [
+    "v(1a)",
+    "v(2a)",
+    "i(c1)",
+    "i(c2)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.4 },
+]
+
+[options]
+method = "trap"

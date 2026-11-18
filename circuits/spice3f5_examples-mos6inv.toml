@@ -1,0 +1,19 @@
+title = "Berkeley SPICE3f5 example circuits"
+case = "spice3f5_examples"
+source = "mos6inv.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(11)",
+    "v(12)",
+    "v(13)",
+    "v(41)",
+    "v(42)",
+    "v(43)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 1.5e-07 },
+]

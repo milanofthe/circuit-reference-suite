@@ -1,0 +1,12 @@
+title = "Xyce_Regression GenCoupAPI"
+case = "xyce_gencoupapi"
+source = "rlc_series_vccs_nogenext.cir"
+outputs = [
+    "v(1)",
+    "v(1a)",
+    "i(v1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 4e-06 },
+]

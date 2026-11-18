@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/diode_ac_response.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 1000000.0 },
+]

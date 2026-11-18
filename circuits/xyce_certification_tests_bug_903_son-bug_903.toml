@@ -1,0 +1,24 @@
+title = "Xyce_Regression Certification_Tests/BUG_903_SON"
+case = "xyce_certification_tests_bug_903_son"
+source = "bug_903.cir"
+outputs = [
+    "v(name_is_122_characters_its_really_really_really_really_really_really_really_really_really_really_really_really_really_long)",
+    "v(name_is_121_characters_its_less_really_really_really_really_really_really_really_really_really_really_really_really_longg)",
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(8)",
+    "v(9)",
+    "v(10)",
+    "v(11)",
+    "v(12)",
+    "v(13)",
+    "v(14)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

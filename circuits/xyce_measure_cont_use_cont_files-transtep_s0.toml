@@ -1,0 +1,11 @@
+title = "Xyce_Regression MEASURE_CONT/USE_CONT_FILES"
+case = "xyce_measure_cont_use_cont_files"
+source = "TranStep.s0.cir"
+outputs = [
+    "v(1)",
+    "v(1a)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]

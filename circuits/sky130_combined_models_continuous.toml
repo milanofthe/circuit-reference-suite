@@ -1,0 +1,6 @@
+title = "SKY130 combined_models/continuous model checks"
+case = "sky130_combined_models_continuous"
+source = "test.spice"
+analysis = [
+    { type = "op" },
+]

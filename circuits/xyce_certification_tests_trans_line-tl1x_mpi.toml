@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/trans_line"
+case = "xyce_certification_tests_trans_line"
+source = "TL1X_mpi.cir"
+outputs = [
+    "v(1)",
+    "v(11)",
+    "v(22)",
+    "v(33)",
+    "v(44)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.3 },
+]
+
+[options]
+abstol = 0.0001
+reltol = 0.01

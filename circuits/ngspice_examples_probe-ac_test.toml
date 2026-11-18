@@ -1,0 +1,12 @@
+title = "ngspice examples/probe"
+case = "ngspice_examples_probe"
+source = "ac-test.cir"
+outputs = [
+    "i(r2)",
+    "v(r2)",
+    "v(r3)",
+    "v(2)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 10.0, stop = 10000.0 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression POWER"
+case = "xyce_power"
+source = "power_subckt_v_i_r_l_c_trap.cir"
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.1 },
+]
+
+[options]
+method = "trap"

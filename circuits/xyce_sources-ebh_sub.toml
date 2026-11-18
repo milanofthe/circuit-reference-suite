@@ -1,0 +1,12 @@
+title = "Xyce_Regression SOURCES"
+case = "xyce_sources"
+source = "ebh_sub.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3a)",
+    "v(3b)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

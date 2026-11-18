@@ -1,0 +1,15 @@
+title = "Xyce_Regression TEST5"
+case = "xyce_test5"
+source = "test5.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+    "i(vds)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = 0.0, stop = 3.5, step = 0.05 },
+    { source = "vbs", start = 0.0, stop = -3.0, step = -0.5 },
+]

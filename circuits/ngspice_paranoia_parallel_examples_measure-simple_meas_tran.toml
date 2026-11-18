@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/measure"
+case = "ngspice_paranoia_parallel_examples_measure"
+source = "simple-meas-tran.sp"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.005 },
+]

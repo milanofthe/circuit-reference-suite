@@ -1,0 +1,10 @@
+title = "ngspice examples/p-to-n-examples"
+case = "ngspice_examples_p_to_n_examples"
+source = "MOS1_out.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 5.0, step = 0.1 },
+    { source = "vg", start = 0.0, stop = 5.0, step = 1.0 },
+]

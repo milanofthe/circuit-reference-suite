@@ -1,0 +1,15 @@
+title = "SpiceSharpParser circuits/cookbook/custom-components/simple-pll"
+case = "spicesharpparser_circuits_cookbook_custom_components_simple"
+source = "simple-pll.cir"
+outputs = [
+    "v(reference)",
+    "v(feedback)",
+    "v(control)",
+    "v(vco)",
+]
+analysis = [
+    { type = "tran", step = 2e-05, stop = 0.08, max_step = 2e-06, uic = true },
+]
+
+[options]
+method = "gear"

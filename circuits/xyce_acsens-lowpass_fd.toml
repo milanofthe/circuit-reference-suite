@@ -1,0 +1,11 @@
+title = "Xyce_Regression ACSENS"
+case = "xyce_acsens"
+source = "lowpass_fd.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(2b)",
+]
+analysis = [
+    { type = "ac", sweep = "lin", points = 1, start = 360.0, stop = 360.0 },
+]

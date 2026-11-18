@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "param.0.ckt"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "op" },
+]

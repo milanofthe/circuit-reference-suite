@@ -1,0 +1,6 @@
+title = "ngspice examples/osdi/hicuml0"
+case = "ngspice_examples_osdi_hicuml0"
+source = "ECL-RO-5.cir"
+analysis = [
+    { type = "tran", step = 2e-11, stop = 2e-07 },
+]

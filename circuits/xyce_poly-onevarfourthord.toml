@@ -1,0 +1,12 @@
+title = "Xyce_Regression POLY"
+case = "xyce_poly"
+source = "oneVarFourthOrd.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vinput", start = -4.0, stop = 4.0, step = 1.0 },
+]

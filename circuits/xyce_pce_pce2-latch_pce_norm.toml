@@ -1,0 +1,12 @@
+title = "Xyce_Regression PCE/PCE2"
+case = "xyce_pce_pce2"
+source = "latch_pce_norm.cir"
+outputs = [
+    "v(1)",
+    "v(7)",
+    "v(5)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 4e-08 },
+]

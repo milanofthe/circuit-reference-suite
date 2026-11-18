@@ -1,0 +1,9 @@
+title = "ngspice examples/measure"
+case = "ngspice_examples_measure"
+source = "rc-meas-ac.sp"
+outputs = [
+    "v(out)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1000.0, stop = 10000000.0 },
+]

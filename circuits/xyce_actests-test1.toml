@@ -1,0 +1,11 @@
+title = "Xyce_Regression ACtests"
+case = "xyce_actests"
+source = "test1.cir"
+outputs = [
+    "v(cathode)",
+    "v(4)",
+    "v(1,ref)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 1000, start = 100.0, stop = 10000000.0 },
+]

@@ -1,0 +1,9 @@
+title = "ngspice paranoia_parallel/examples/various"
+case = "ngspice_paranoia_parallel_examples_various"
+source = "probe-i-dev.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbb", start = 0.0, stop = 2.0, step = 0.01 },
+]

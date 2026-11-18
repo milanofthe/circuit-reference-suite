@@ -1,0 +1,11 @@
+title = "Xyce_Regression CircuitSim90/MOS2"
+case = "xyce_circuitsim90_mos2"
+source = "ab_integ.cir"
+outputs = [
+    "v(18)",
+    "v(200)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 0.0001, stop = 0.4 },
+]

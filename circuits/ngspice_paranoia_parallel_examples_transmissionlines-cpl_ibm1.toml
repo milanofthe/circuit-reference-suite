@@ -1,0 +1,13 @@
+title = "ngspice paranoia_parallel/examples/TransmissionLines"
+case = "ngspice_paranoia_parallel_examples_transmissionlines"
+source = "cpl_ibm1.sp"
+outputs = [
+    "v(3)",
+    "v(5)",
+    "v(8)",
+    "v(11)",
+    "v(12)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 2e-08 },
+]

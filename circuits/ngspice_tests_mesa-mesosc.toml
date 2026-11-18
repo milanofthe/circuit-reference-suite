@@ -1,0 +1,9 @@
+title = "ngspice tests/mesa"
+case = "ngspice_tests_mesa"
+source = "mesosc.cir"
+outputs = [
+    "v(8)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 5e-09, start = 1e-09, max_step = 2e-11 },
+]

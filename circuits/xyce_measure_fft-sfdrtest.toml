@@ -1,0 +1,15 @@
+title = "Xyce_Regression MEASURE_FFT"
+case = "xyce_measure_fft"
+source = "SFDRTest.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(v3)",
+    "i(r3)",
+    "v(4)",
+    "v(10)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

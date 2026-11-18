@@ -1,0 +1,9 @@
+title = "Xyce_Regression Output/Other"
+case = "xyce_output_other"
+source = "tran-timer.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 2e-08 },
+]
+
+[options]
+reltol = 0.05

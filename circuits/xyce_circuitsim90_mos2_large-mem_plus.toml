@@ -1,0 +1,16 @@
+title = "Xyce_Regression CircuitSim90/MOS2_LARGE"
+case = "xyce_circuitsim90_mos2_large"
+source = "mem_plus.cir"
+outputs = [
+    "v(2827)",
+    "v(6)",
+    "v(2843)",
+    "v(2652)",
+    "v(2757)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-07 },
+]
+
+[options]
+temp = 70.0

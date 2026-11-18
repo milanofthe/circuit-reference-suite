@@ -1,0 +1,9 @@
+title = "Xyce_Regression MINDUCTORS"
+case = "xyce_minductors"
+source = "NonLinInductor_ic.cir"
+outputs = [
+    "i(l1)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.025 },
+]

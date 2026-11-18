@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE/STEP"
+case = "xyce_measure_step"
+source = "DutyTest.s0.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.5 },
+]

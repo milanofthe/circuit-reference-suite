@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_1197_SON"
+case = "xyce_certification_tests_bug_1197_son"
+source = "bug1197.cir"
+outputs = [
+    "v(1a)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.15 },
+]
+
+[options]
+tnom = 25.0

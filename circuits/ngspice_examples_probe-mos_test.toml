@@ -1,0 +1,23 @@
+title = "ngspice examples/probe"
+case = "ngspice_examples_probe"
+source = "mos-test.cir"
+outputs = [
+    "i(mp1:s)",
+    "i(mn1:s)",
+    "v(in)",
+    "v(out)",
+    "v(mn1:d:s)",
+    "v(mp1:1,mn1:1)",
+    "v(mn1:1:0)",
+    "i(mn1:z)",
+    "v(mp1:0:0)",
+    "v(mp1:1:1)",
+    "i(:u)",
+    "v(z)",
+    "v(:0:0)",
+    "i(:z)",
+    "i(mp1:8)",
+]
+analysis = [
+    { type = "tran", step = 5e-09, stop = 5e-07 },
+]

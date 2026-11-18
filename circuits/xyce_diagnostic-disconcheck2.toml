@@ -1,0 +1,10 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DisconCheck2.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]

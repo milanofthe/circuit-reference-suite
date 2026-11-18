@@ -1,0 +1,15 @@
+title = "Xyce_Regression HICUM"
+case = "xyce_hicum"
+source = "fgum_TRANS_npn_full_sh.cir"
+outputs = [
+    "v(base)",
+    "v(coll)",
+    "i(v_coll)",
+    "i(v_base)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 1.0 },
+]
+
+[options]
+temp = 27.0

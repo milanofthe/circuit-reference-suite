@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_267"
+case = "xyce_certification_tests_issue_267"
+source = "test_b3soi_inv0.cir"
+outputs = [
+    "v(in1)",
+    "v(out1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]

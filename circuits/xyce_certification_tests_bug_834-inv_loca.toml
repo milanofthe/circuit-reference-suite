@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_834"
+case = "xyce_certification_tests_bug_834"
+source = "inv_loca.cir"
+outputs = [
+    "v(dd)",
+    "v(in)",
+]
+analysis = [
+    { type = "tran", step = 2e-05, stop = 0.5 },
+]

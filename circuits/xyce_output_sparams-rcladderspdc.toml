@@ -1,0 +1,14 @@
+title = "Xyce_Regression Output/SPARAMS"
+case = "xyce_output_sparams"
+source = "RCladderSPdc.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(12)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "p1", start = 0.0, stop = 1.0, step = 0.1 },
+]

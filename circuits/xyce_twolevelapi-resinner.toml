@@ -1,0 +1,13 @@
+title = "Xyce_Regression TwoLevelAPI"
+case = "xyce_twolevelapi"
+source = "resInner.cir"
+outputs = [
+    "i(vconnect0000)",
+    "i(vconnect0001)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "r1a", start = 1000.0, stop = 1000.0, step = 1.0 },
+]

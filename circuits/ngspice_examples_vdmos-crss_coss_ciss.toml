@@ -1,0 +1,20 @@
+title = "ngspice examples/vdmos"
+case = "ngspice_examples_vdmos"
+source = "crss_coss_ciss.sp"
+outputs = [
+    "i(v1)",
+    "v(d1)",
+    "i(v2)",
+    "i(v3)",
+    "v(d2)",
+    "i(v4)",
+    "v(d3)",
+    "i(v5)",
+    "v(d1p)",
+    "i(v6)",
+    "v(d4)",
+    "v(d2p)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2.5e-05 },
+]

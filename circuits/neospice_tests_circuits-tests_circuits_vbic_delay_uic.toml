@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/vbic_delay_uic.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 6e-06, uic = true },
+]

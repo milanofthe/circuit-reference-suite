@@ -1,0 +1,9 @@
+title = "SKY130 res_generic_nd model checks"
+case = "sky130_res_generic_nd"
+source = "sky130_fd_pr__res_generic_nd__resval_test.spice"
+outputs = [
+    "v(a)",
+]
+analysis = [
+    { type = "op" },
+]

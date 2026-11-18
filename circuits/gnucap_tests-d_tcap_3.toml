@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_tcap.3.ckt"
+analysis = [
+    { type = "tran", step = 0.1, stop = 1.0 },
+]
+
+[options]
+reltol = 1e-05

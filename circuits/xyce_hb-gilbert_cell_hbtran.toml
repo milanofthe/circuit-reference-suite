@@ -1,0 +1,14 @@
+title = "Xyce_Regression HB"
+case = "xyce_hb"
+source = "gilbert_cell_hbTran.cir"
+outputs = [
+    "v(6,2)",
+    "v(15,10)",
+    "v(5,3)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 0.005 },
+]
+
+[options]
+reltol = 0.0001

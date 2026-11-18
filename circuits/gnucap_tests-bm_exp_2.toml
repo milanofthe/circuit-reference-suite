@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_exp.2.ckt"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-07 },
+]

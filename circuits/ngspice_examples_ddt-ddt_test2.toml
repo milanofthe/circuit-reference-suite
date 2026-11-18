@@ -1,0 +1,11 @@
+title = "ngspice examples/ddt"
+case = "ngspice_examples_ddt"
+source = "ddt-test2.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 8.0 },
+]

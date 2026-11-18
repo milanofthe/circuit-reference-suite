@@ -1,0 +1,10 @@
+title = "Xyce_Regression INIT_CONDS"
+case = "xyce_init_conds"
+source = "inv1xIC.cir"
+outputs = [
+    "v(vout)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]

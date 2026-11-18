@@ -1,0 +1,13 @@
+title = "Xyce_Regression SEMIC_RESISTOR"
+case = "xyce_semic_resistor"
+source = "semic_resistor.cir"
+outputs = [
+    "v(1)",
+    "i(vmon)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 5.0, step = 1.0 },
+]

@@ -1,0 +1,15 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/diode-envelope-detector"
+case = "spicesharpparser_circuits_cookbook_pure_spice_diode_envelope"
+source = "diode-envelope-detector.cir"
+outputs = [
+    "v(input)",
+    "v(diode_input)",
+    "v(envelope)",
+    "i(d1)",
+]
+analysis = [
+    { type = "tran", step = 2e-06, stop = 0.03, max_step = 1e-06, uic = true },
+]
+
+[options]
+method = "gear"

@@ -1,0 +1,33 @@
+title = "Xyce_Regression CircuitSim90/MOS2_LARGE"
+case = "xyce_circuitsim90_mos2_large"
+source = "pchip.cir"
+outputs = [
+    "v(9)",
+    "v(4)",
+    "v(23)",
+    "v(46)",
+    "v(35)",
+    "v(37)",
+    "v(49)",
+    "v(48)",
+    "v(50)",
+    "v(40)",
+    "v(41)",
+    "v(3)",
+    "v(34)",
+    "v(33)",
+    "v(36)",
+    "v(39)",
+    "v(24)",
+    "v(29)",
+    "v(19)",
+    "v(14)",
+    "v(402)",
+    "v(388)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 2.4e-05 },
+]
+
+[options]
+temp = 75.0

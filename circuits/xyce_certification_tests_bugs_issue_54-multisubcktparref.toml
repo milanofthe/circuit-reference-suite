@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUGS_ISSUE_54"
+case = "xyce_certification_tests_bugs_issue_54"
+source = "multiSubcktParRef.cir"
+outputs = [
+    "v(1)",
+    "v(xtest:2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vtest", start = 1.0, stop = 1.0, step = 1.0 },
+]

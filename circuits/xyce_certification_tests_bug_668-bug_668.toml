@@ -1,0 +1,26 @@
+title = "Xyce_Regression Certification_Tests/BUG_668"
+case = "xyce_certification_tests_bug_668"
+source = "bug_668.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(8)",
+    "v(9)",
+    "i(v1)",
+    "i(v2)",
+    "i(v3)",
+    "i(v4)",
+    "i(v5)",
+    "i(v6)",
+    "i(v7)",
+    "i(v8)",
+    "i(v9)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-06 },
+]

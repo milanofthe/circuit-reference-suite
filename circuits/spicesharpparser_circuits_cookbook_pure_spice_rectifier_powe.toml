@@ -1,0 +1,15 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/rectifier-power-supply"
+case = "spicesharpparser_circuits_cookbook_pure_spice_rectifier_powe"
+source = "rectifier-power-supply.cir"
+outputs = [
+    "v(ac_live)",
+    "v(reservoir,dc_return)",
+    "v(output,dc_return)",
+    "v(load_control)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.3, max_step = 2e-05, uic = true },
+]
+
+[options]
+method = "gear"

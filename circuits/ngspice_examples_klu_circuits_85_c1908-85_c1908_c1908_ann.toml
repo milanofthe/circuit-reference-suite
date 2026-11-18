@@ -1,0 +1,37 @@
+title = "ngspice examples/klu/Circuits/85/c1908"
+case = "ngspice_examples_klu_circuits_85_c1908"
+source = "85/c1908/c1908_ann.net"
+outputs = [
+    "v(g1894_0)",
+    "v(g1908_1)",
+    "v(g1900_0)",
+    "v(g1895_0)",
+    "v(g1892_0)",
+    "v(g1901_1)",
+    "v(g1889_0)",
+    "v(g1888_1)",
+    "v(g1885_1)",
+    "v(g1887_1)",
+    "v(g1891_0)",
+    "v(g1896_1)",
+    "v(g1904_0)",
+    "v(g1898_1)",
+    "v(g1906_1)",
+    "v(g1884_0)",
+    "v(g1907_1)",
+    "v(g1902_0)",
+    "v(g1893_0)",
+    "v(g1903_0)",
+    "v(g1890_1)",
+    "v(g1897_1)",
+    "v(g1886_0)",
+    "v(g1905_1)",
+    "v(g1899_0)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 1e-05
+abstol = 1e-18

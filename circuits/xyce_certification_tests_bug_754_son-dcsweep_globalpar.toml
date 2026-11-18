@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_754_SON"
+case = "xyce_certification_tests_bug_754_son"
+source = "dcsweep_globalpar.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+    "i(vdrain)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdrain", start = 0.0, stop = 1.0, step = 0.001 },
+]

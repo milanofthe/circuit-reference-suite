@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/PSPICE/MODELS"
+case = "xyce_xdm_pspice_models"
+source = "model_level_translation.cir"
+outputs = [
+    "v(2)",
+    "i(vds)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[variants]
+pspice = "model_level_translation.cir.pspice"

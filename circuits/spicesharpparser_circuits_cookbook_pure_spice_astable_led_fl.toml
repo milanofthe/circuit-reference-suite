@@ -1,0 +1,17 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/astable-led-flasher"
+case = "spicesharpparser_circuits_cookbook_pure_spice_astable_led_fl"
+source = "astable-led-flasher.cir"
+outputs = [
+    "v(base1)",
+    "v(base2)",
+    "v(collector1)",
+    "v(collector2)",
+    "i(dled1)",
+    "i(dled2)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 5.0, max_step = 0.0001, uic = true },
+]
+
+[options]
+method = "gear"

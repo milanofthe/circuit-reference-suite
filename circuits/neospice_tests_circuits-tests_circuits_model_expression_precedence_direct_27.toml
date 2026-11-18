@@ -1,0 +1,9 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/model_expression_precedence_direct_27.cir"
+analysis = [
+    { type = "op" },
+]
+
+[options]
+temp = 27.0

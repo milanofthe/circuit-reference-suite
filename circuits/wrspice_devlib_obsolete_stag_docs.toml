@@ -1,0 +1,16 @@
+title = "WRspice devlib/obsolete/stag/docs"
+case = "wrspice_devlib_obsolete_stag_docs"
+source = "example.cir"
+outputs = [
+    "i(vd)",
+]
+
+[options]
+gmin = 1e-25
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 5.0, step = 0.1 },
+    { source = "vg", start = 1.0, stop = 5.0, step = 1.0 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression BSIMCMG_111"
+case = "xyce_bsimcmg_111"
+source = "ac.cir"
+outputs = [
+    "v(vout)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1000.0, stop = 1000000000000.0 },
+]

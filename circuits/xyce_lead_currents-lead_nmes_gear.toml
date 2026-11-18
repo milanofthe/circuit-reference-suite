@@ -1,0 +1,9 @@
+title = "Xyce_Regression LEAD_CURRENTS"
+case = "xyce_lead_currents"
+source = "lead_nmes_gear.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-05 },
+]
+
+[options]
+method = "gear"

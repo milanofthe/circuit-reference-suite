@@ -1,0 +1,6 @@
+title = "Xyce_Regression ROM/AUTOSIZE"
+case = "xyce_rom_autosize"
+source = "RLC_ladder100.cir"
+analysis = [
+    { type = "tran", step = 1e-11, stop = 5e-07 },
+]

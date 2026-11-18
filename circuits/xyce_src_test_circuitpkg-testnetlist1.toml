@@ -1,0 +1,9 @@
+title = "Xyce test/CircuitPKG"
+case = "xyce_src_test_circuitpkg"
+source = "TestNetlist1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

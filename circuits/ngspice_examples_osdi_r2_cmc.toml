@@ -1,0 +1,6 @@
+title = "ngspice examples/osdi/r2_cmc"
+case = "ngspice_examples_osdi_r2_cmc"
+source = "res_r2_cmc.cir"
+analysis = [
+    { type = "op" },
+]

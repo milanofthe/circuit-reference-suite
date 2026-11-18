@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests"
+case = "xyce_actests"
+source = "rca3040.cir"
+outputs = [
+    "v(16)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 10000000000.0 },
+]

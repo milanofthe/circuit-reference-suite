@@ -1,0 +1,18 @@
+title = "Xyce_Regression TEST14"
+case = "xyce_test14"
+source = "test14.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+    "i(vds)",
+]
+
+[options]
+temp = 100.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = 0.0, stop = -3.5, step = -0.05 },
+    { source = "vbs", start = 0.0, stop = 3.0, step = 0.5 },
+]

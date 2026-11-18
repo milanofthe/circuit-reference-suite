@@ -1,0 +1,6 @@
+title = "Xyce_Regression AMPMOD"
+case = "xyce_ampmod"
+source = "amp_mod.cir"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.001 },
+]

@@ -1,0 +1,16 @@
+title = "Berkeley SPICE3f5 example circuits"
+case = "spice3f5_examples"
+source = "bsim1tst.cir"
+outputs = [
+    "i(v1)",
+    "i(v2)",
+    "i(v3)",
+    "i(v4)",
+    "i(v5)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = 0.0, stop = 5.0, step = 0.01 },
+]

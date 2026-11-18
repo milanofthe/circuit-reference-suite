@@ -1,0 +1,9 @@
+title = "SKY130 res_xhigh_po model checks"
+case = "sky130_res_xhigh_po"
+source = "sky130_fd_pr__res_xhigh_po__base__resval_test.spice"
+outputs = [
+    "v(a)",
+]
+analysis = [
+    { type = "op" },
+]

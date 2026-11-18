@@ -1,0 +1,9 @@
+title = "Xyce_Regression CircuitSim90/MOS2"
+case = "xyce_circuitsim90_mos2"
+source = "ab_ac.cir"
+outputs = [
+    "v(18)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 10000000.0 },
+]

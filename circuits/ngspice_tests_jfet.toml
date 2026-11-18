@@ -1,0 +1,16 @@
+title = "ngspice tests/jfet"
+case = "ngspice_tests_jfet"
+source = "jfet_vds-vgs.cir"
+outputs = [
+    "i(vd)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 25.0, step = 1.0 },
+    { source = "vg", start = -3.0, stop = 0.0, step = 1.0 },
+]

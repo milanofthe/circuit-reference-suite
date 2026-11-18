@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEXTRAM"
+case = "xyce_mextram"
+source = "FGummel_Ib_noFlip_P_TRANS.cir"
+outputs = [
+    "v(b)",
+    "i(v_b)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 1.0 },
+]

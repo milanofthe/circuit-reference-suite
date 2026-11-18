@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_848"
+case = "xyce_certification_tests_bug_848"
+source = "topoCheck.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 5.0 },
+]

@@ -1,0 +1,12 @@
+title = "ngspice paranoia_parallel/examples/TransImpedanceAmp"
+case = "ngspice_paranoia_parallel_examples_transimpedanceamp"
+source = "output.net"
+analysis = [
+    { type = "tran", step = 5e-11, stop = 4e-09 },
+]
+
+[options]
+gmin = 1e-09
+method = "gear"
+abstol = 1e-11
+temp = 0.0

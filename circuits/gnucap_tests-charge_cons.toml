@@ -1,0 +1,11 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "charge-cons.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 0.0, stop = 5e-06, start = 1e-08 },
+]

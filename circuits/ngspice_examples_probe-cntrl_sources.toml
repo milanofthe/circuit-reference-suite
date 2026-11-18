@@ -1,0 +1,13 @@
+title = "ngspice examples/probe"
+case = "ngspice_examples_probe"
+source = "cntrl-sources.cir"
+outputs = [
+    "i(vh)",
+    "i(g1)",
+    "i(h1)",
+    "i(e1)",
+    "i(f1)",
+]
+analysis = [
+    { type = "tran", step = 2e-06, stop = 0.005 },
+]

@@ -1,0 +1,19 @@
+title = "Xyce_Regression DTEMP"
+case = "xyce_dtemp"
+source = "npn_dtemp.cir"
+outputs = [
+    "v(4)",
+    "i(vmon1)",
+    "i(vmon2)",
+    "v(1)",
+    "v(2)",
+]
+
+[options]
+temp = 15.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vcc", start = 0.0, stop = 12.0, step = 1.0 },
+]

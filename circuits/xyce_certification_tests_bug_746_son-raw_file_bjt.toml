@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/BUG_746_SON"
+case = "xyce_certification_tests_bug_746_son"
+source = "raw_file_bjt.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(vib)",
+    "i(vic)",
+    "i(vie)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-05 },
+]
+
+[options]
+method = "8"

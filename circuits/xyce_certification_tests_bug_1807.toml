@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/BUG_1807"
+case = "xyce_certification_tests_bug_1807"
+source = "vbic_pnp_default.cir"
+outputs = [
+    "v(1)",
+    "v(6)",
+    "i(vmon1)",
+    "i(vmon2)",
+    "i(vmon3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vpos", start = 0.0, stop = 5.0, step = 1.0 },
+    { source = "vbb", start = 0.0, stop = -2.0, step = -0.5 },
+]

@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_534_SON"
+case = "xyce_certification_tests_bug_534_son"
+source = "noise_cancel_test1_rf.cir"
+outputs = [
+    "v(vinrf)",
+    "v(vout)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 4e-06, max_step = 1e-10 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression TR_TRAN"
+case = "xyce_tr_tran"
+source = "tran2.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]

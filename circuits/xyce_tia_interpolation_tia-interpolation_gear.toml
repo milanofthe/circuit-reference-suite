@@ -1,0 +1,13 @@
+title = "Xyce_Regression TIA/Interpolation_TIA"
+case = "xyce_tia_interpolation_tia"
+source = "interpolation_gear.cir"
+outputs = [
+    "i(v2)",
+]
+analysis = [
+    { type = "tran", step = 5e-05, stop = 0.015 },
+]
+
+[options]
+method = "gear"
+reltol = 1e-05

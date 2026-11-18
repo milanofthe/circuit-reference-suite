@@ -1,0 +1,13 @@
+title = "Xyce_Regression BUG_139"
+case = "xyce_bug_139"
+source = "in_line_comment.cir"
+outputs = [
+    "v(5)",
+    "i(vmon)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 18.0, stop = 18.0, step = 1.0 },
+]

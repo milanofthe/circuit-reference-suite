@@ -1,0 +1,10 @@
+title = "Xyce_Regression Output/TRAN"
+case = "xyce_output_tran"
+source = "tran-prn-noheaderfooter.cir"
+outputs = [
+    "v(1)",
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-08 },
+]

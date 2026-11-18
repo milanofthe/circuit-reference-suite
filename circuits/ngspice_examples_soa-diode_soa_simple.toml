@@ -1,0 +1,12 @@
+title = "ngspice examples/soa"
+case = "ngspice_examples_soa"
+source = "diode-soa-simple.cir"
+
+[options]
+temp = 100.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.02, stop = 2.0, step = 0.02 },
+]

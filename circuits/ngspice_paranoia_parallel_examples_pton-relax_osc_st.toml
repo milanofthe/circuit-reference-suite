@@ -1,0 +1,6 @@
+title = "ngspice paranoia_parallel/examples/pton"
+case = "ngspice_paranoia_parallel_examples_pton"
+source = "relax_osc_st.cir"
+analysis = [
+    { type = "tran", step = 1e-07, stop = 5e-05, uic = true },
+]

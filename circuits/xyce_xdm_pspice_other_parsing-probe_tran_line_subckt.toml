@@ -1,0 +1,14 @@
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+case = "xyce_xdm_pspice_other_parsing"
+source = "probe_tran_line_subckt.cir"
+outputs = [
+    "v(n04173)",
+    "v(n03179)",
+    "v(x_x1:b)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "probe_tran_line_subckt.cir.pspice"

@@ -1,0 +1,14 @@
+title = "Xyce_Regression TESTJAC"
+case = "xyce_testjac"
+source = "testjac_comp.cir"
+outputs = [
+    "v(e1)",
+    "v(a)",
+    "v(b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 5.0, stop = 5.0, step = 1.0 },
+]

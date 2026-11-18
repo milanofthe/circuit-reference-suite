@@ -1,0 +1,15 @@
+title = "ngspice examples/TransmissionLines"
+case = "ngspice_examples_transmissionlines"
+source = "ltra4_1_line.sp"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 6e-08 },
+]
+
+[options]
+reltol = 0.001
+abstol = 1e-14

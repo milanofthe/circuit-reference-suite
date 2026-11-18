@@ -1,0 +1,6 @@
+title = "Xyce_Regression VSIN"
+case = "xyce_vsin"
+source = "bug1679.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 0.001 },
+]

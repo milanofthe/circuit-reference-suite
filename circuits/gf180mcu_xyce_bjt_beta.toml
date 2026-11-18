@@ -1,0 +1,10 @@
+title = "GF180MCU model test, xyce bjt_beta"
+case = "gf180mcu_xyce_bjt_beta"
+source = "run_npn_beta.spice"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbp", start = 0.2, stop = 1.2, step = 0.01 },
+    { source = "vcp", start = 1.0, stop = 3.0, step = 1.0 },
+]

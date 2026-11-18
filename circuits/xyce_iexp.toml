@@ -1,0 +1,9 @@
+title = "Xyce_Regression IEXP"
+case = "xyce_iexp"
+source = "iexp.cir"
+outputs = [
+    "i(vmon)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 5.0 },
+]

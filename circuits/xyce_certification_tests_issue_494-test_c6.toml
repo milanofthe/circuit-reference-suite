@@ -1,0 +1,15 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_494"
+case = "xyce_certification_tests_issue_494"
+source = "test_c6.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(vin)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 1.0, stop = 1.0, step = 1.0 },
+]

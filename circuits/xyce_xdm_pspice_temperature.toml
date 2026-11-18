@@ -1,0 +1,14 @@
+title = "Xyce_Regression XDM/PSPICE/TEMPERATURE"
+case = "xyce_xdm_pspice_temperature"
+source = "multiple_temperature_statement.cir"
+outputs = [
+    "v(n397302)",
+    "i(r_r1)",
+    "i(r_r2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]
+
+[variants]
+pspice = "multiple_temperature_statement.cir.pspice"

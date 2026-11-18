@@ -1,0 +1,11 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "rc.cir"
+outputs = [
+    "v(2)",
+    "i(vin)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 7.0 },
+    { type = "ac", sweep = "dec", points = 10, start = 0.01, stop = 10.0 },
+]

@@ -1,0 +1,12 @@
+title = "Xyce_Regression TIA/TRAP/CAPACITOR"
+case = "xyce_tia_trap_capacitor"
+source = "capacitor.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+method = "7"

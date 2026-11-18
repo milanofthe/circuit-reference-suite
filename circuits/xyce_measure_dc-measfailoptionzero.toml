@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE_DC"
+case = "xyce_measure_dc"
+source = "MeasfailOptionZero.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "op" },
+]

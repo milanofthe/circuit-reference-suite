@@ -1,0 +1,9 @@
+title = "Xyce_Regression ABM_SPLINES"
+case = "xyce_abm_splines"
+source = "table6.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1e-05 },
+]

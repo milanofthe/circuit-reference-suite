@@ -1,0 +1,14 @@
+title = "Xyce_Regression XDM/PSPICE/MODELS"
+case = "xyce_xdm_pspice_models"
+source = "capacitor_model_statements.cir"
+outputs = [
+    "i(v_v1)",
+    "i(r_r1)",
+    "i(c_c1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.4 },
+]
+
+[variants]
+pspice = "capacitor_model_statements.cir.pspice"

@@ -1,0 +1,13 @@
+title = "ngspice paranoia_parallel/examples/optran"
+case = "ngspice_paranoia_parallel_examples_optran"
+source = "TLV6001-test.cir"
+outputs = [
+    "v(net-_r1-pad2_)",
+    "v(net-_r3-pad2_)",
+    "v(vcc)",
+    "v(vin)",
+    "v(vout)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 10.0, stop = 20000.0 },
+]

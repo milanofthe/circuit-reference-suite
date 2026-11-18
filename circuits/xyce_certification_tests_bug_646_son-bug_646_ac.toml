@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_646_SON"
+case = "xyce_certification_tests_bug_646_son"
+source = "bug_646_ac.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 4, start = 100.0, stop = 1000000.0 },
+]

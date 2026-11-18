@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "e_node_probes.ckt"
+analysis = [
+    { type = "op" },
+]

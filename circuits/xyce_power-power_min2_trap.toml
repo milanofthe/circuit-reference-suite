@@ -1,0 +1,19 @@
+title = "Xyce_Regression POWER"
+case = "xyce_power"
+source = "power_min2_trap.cir"
+outputs = [
+    "v(node1)",
+    "v(node2)",
+    "v(node3)",
+    "v(node4)",
+    "i(llead1)",
+    "i(llead2)",
+    "i(llead3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[options]
+method = "trap"
+reltol = 1e-05

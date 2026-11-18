@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+case = "xyce_xdm_pspice_other_parsing"
+source = "ext_ascii_chars_noncomment_line.cir"
+outputs = [
+    "v(n04173)",
+    "v(n03179)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "ext_ascii_chars_noncomment_line.cir.pspice"

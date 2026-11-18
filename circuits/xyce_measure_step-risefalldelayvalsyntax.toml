@@ -1,0 +1,9 @@
+title = "Xyce_Regression MEASURE/STEP"
+case = "xyce_measure_step"
+source = "RiseFallDelayValSyntax.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001, max_step = 1e-05 },
+]

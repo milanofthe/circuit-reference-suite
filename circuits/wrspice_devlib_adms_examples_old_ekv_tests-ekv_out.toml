@@ -1,0 +1,13 @@
+title = "WRspice devlib/adms/examples.old/ekv/tests"
+case = "wrspice_devlib_adms_examples_old_ekv_tests"
+source = "ekv_out.sp"
+outputs = [
+    "i(vd)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 5.0, step = 0.01 },
+    { source = "vg", start = 1.0, stop = 5.0, step = 1.0 },
+]

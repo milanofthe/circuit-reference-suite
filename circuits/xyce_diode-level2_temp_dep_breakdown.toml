@@ -1,0 +1,9 @@
+title = "Xyce_Regression DIODE"
+case = "xyce_diode"
+source = "Level2_Temp_Dep_Breakdown.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0, max_step = 0.1 },
+]

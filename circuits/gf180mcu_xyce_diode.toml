@@ -1,0 +1,9 @@
+title = "GF180MCU model test, xyce diode"
+case = "gf180mcu_xyce_diode"
+source = "run_diode_independently.spice"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vn", start = -12.13, stop = 1.13, step = 0.13 },
+]

@@ -1,0 +1,44 @@
+title = "ngspice examples/klu/Circuits/85/c499"
+case = "ngspice_examples_klu_circuits_85_c499"
+source = "85/c499/c499.net"
+outputs = [
+    "v(g470)",
+    "v(g483)",
+    "v(g493)",
+    "v(g496)",
+    "v(g494)",
+    "v(g484)",
+    "v(g476)",
+    "v(g495)",
+    "v(g471)",
+    "v(g489)",
+    "v(g468)",
+    "v(g477)",
+    "v(g488)",
+    "v(g478)",
+    "v(g490)",
+    "v(g469)",
+    "v(g487)",
+    "v(g491)",
+    "v(g479)",
+    "v(g486)",
+    "v(g497)",
+    "v(g498)",
+    "v(g473)",
+    "v(g492)",
+    "v(g472)",
+    "v(g485)",
+    "v(g480)",
+    "v(g474)",
+    "v(g481)",
+    "v(g475)",
+    "v(g482)",
+    "v(g499)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 1e-15
+abstol = 1e-13

@@ -1,0 +1,12 @@
+title = "ngspice examples/osdi/bsimcmg"
+case = "ngspice_examples_osdi_bsimcmg"
+source = "simple_inverter_dc.sp"
+outputs = [
+    "v(vout)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vsig", start = 0.0, stop = 1.0, step = 0.01 },
+]

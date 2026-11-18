@@ -1,0 +1,12 @@
+title = "Xyce_Regression TIA/TRAP"
+case = "xyce_tia_trap"
+source = "push_pullLte2.cir"
+outputs = [
+    "v(hv)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001 },
+]
+
+[options]
+method = "gear"

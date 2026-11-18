@@ -1,0 +1,6 @@
+title = "JFET ring oscillator"
+case = "vacask_jfetring"
+source = "ngspice/runme.sim"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001, max_step = 1e-09, uic = true },
+]

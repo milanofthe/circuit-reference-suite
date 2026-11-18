@@ -1,0 +1,9 @@
+title = "ngspice paranoia_parallel/examples/optran"
+case = "ngspice_paranoia_parallel_examples_optran"
+source = "simple-tran.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 2e-09, stop = 5e-06, uic = true },
+]

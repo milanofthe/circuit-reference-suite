@@ -1,0 +1,10 @@
+title = "Xyce_Regression MINDUCTORS"
+case = "xyce_minductors"
+source = "cpldLMIs_ic.cir"
+outputs = [
+    "i(vs)",
+    "i(l2)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.025 },
+]

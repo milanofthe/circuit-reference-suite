@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_584_SON"
+case = "xyce_certification_tests_bug_584_son"
+source = "bug_584.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+
+[options]
+method = "trap"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 5.0, step = 1.0 },
+]

@@ -1,0 +1,12 @@
+title = "Xyce_Regression HOMOTOPY"
+case = "xyce_homotopy"
+source = "continuation3.cir"
+outputs = [
+    "v(vout)",
+    "v(out20)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]

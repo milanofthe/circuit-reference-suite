@@ -1,0 +1,6 @@
+title = "Xyce_Regression GenCoupAPI"
+case = "xyce_gencoupapi"
+source = "VRC.sp"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.002 },
+]

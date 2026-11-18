@@ -1,0 +1,11 @@
+title = "Xyce_Regression ABM_BREAK"
+case = "xyce_abm_break"
+source = "break.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.0 },
+]

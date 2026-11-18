@@ -1,0 +1,9 @@
+title = "Xyce_Regression VPULSE"
+case = "xyce_vpulse"
+source = "vpulse.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 2.01e-05 },
+]

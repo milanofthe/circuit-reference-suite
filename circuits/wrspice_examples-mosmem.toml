@@ -1,0 +1,16 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "mosmem.cir"
+outputs = [
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2e-06 },
+]
+
+[options]
+abstol = 1e-06

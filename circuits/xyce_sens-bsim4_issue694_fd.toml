@@ -1,0 +1,14 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "bsim4_issue694_FD.cir"
+outputs = [
+    "v(vo)",
+]
+analysis = [
+    { type = "tran", step = 2e-12, stop = 1e-09 },
+]
+
+[options]
+reltol = 1e-06
+method = "gear"
+temp = 25.0

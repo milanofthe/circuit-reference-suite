@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_276_SON"
+case = "xyce_certification_tests_bug_276_son"
+source = "bug_276.cir"
+outputs = [
+    "v(coll1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "ib1", start = 0.0, stop = 0.0, step = 1.0 },
+]

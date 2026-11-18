@@ -1,0 +1,14 @@
+title = "Xyce_Regression ISWITCH"
+case = "xyce_iswitch"
+source = "iswitch_spice.cir"
+outputs = [
+    "i(is)",
+    "i(vmon)",
+    "i(vmon1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "is", start = 0.0, stop = 0.04, step = 0.001 },
+]

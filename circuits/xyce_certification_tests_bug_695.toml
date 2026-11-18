@@ -1,0 +1,24 @@
+title = "Xyce_Regression Certification_Tests/BUG_695"
+case = "xyce_certification_tests_bug_695"
+source = "bug695.cir"
+outputs = [
+    "i(ib)",
+    "v(1)",
+    "i(vc)",
+    "i(vib)",
+]
+
+[options]
+temp = 15.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vc", start = 0.0, stop = 0.0, step = 0.1 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "ib", start = 8e-05, stop = 0.0001, step = 2e-05 },
+]

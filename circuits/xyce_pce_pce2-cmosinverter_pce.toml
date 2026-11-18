@@ -1,0 +1,6 @@
+title = "Xyce_Regression PCE/PCE2"
+case = "xyce_pce_pce2"
+source = "cmosInverter_pce.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.5e-06 },
+]

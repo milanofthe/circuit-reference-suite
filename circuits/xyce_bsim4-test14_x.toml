@@ -1,0 +1,18 @@
+title = "Xyce_Regression BSIM4"
+case = "xyce_bsim4"
+source = "test14.X.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+    "i(vds)",
+]
+
+[options]
+temp = 100.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = 0.6, stop = -1.21, step = -0.02 },
+    { source = "vbs", start = 0.0, stop = 1.21, step = 0.3 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression ROM"
+case = "xyce_rom"
+source = "RC_ladder100.cir"
+outputs = [
+    "v(101)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 1.2e-06 },
+]

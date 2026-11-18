@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_macro.1.ckt"
+outputs = [
+    "v(r1.x1)",
+]
+analysis = [
+    { type = "op" },
+]

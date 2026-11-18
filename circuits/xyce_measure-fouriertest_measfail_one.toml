@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE"
+case = "xyce_measure"
+source = "FourierTest_measfail_one.cir"
+outputs = [
+    "v(vin)",
+    "v(vout)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 1e-06 },
+]

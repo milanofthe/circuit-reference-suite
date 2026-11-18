@@ -1,0 +1,10 @@
+title = "Xyce_Regression ABM_TIME"
+case = "xyce_abm_time"
+source = "time_param.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 6.0 },
+]

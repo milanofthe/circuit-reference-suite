@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE_AC"
+case = "xyce_measure_ac"
+source = "IntegTestAC.cir"
+outputs = [
+    "v(b)",
+    "i(v1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 1.0, stop = 1000.0 },
+]

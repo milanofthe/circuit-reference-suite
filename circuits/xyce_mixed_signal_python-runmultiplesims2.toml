@@ -1,0 +1,9 @@
+title = "Xyce_Regression MIXED_SIGNAL/Python"
+case = "xyce_mixed_signal_python"
+source = "runMultipleSims2.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

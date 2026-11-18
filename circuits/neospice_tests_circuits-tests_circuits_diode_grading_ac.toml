@@ -1,0 +1,10 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/diode_grading_ac.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 2, start = 1000.0, stop = 100000.0 },
+]
+
+[options]
+tnom = 27.0
+temp = 27.0

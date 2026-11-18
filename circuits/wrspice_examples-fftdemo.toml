@@ -1,0 +1,9 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "fftdemo.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 2e-09 },
+]

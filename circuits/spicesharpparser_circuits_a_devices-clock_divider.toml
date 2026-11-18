@@ -1,0 +1,11 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "clock-divider.cir"
+outputs = [
+    "v(clock)",
+    "v(divided)",
+    "v(divided_b)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.00015, max_step = 1e-07, uic = true },
+]

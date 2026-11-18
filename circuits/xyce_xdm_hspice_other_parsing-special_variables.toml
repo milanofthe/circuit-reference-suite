@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/HSPICE/OTHER_PARSING"
+case = "xyce_xdm_hspice_other_parsing"
+source = "special_variables.cir"
+outputs = [
+    "i(va)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 2, start = 1000.0, stop = 100000.0 },
+]
+
+[options]
+temp = 25.0
+
+[variants]
+hspice = "special_variables.cir.hspice"

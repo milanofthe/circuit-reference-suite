@@ -1,0 +1,10 @@
+title = "Xyce_Regression OP"
+case = "xyce_op"
+source = "sand25OpAlone.cir"
+outputs = [
+    "v(2)",
+    "v(10)",
+]
+analysis = [
+    { type = "op" },
+]

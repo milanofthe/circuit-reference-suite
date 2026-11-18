@@ -1,0 +1,16 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/bjt-relay-driver"
+case = "spicesharpparser_circuits_cookbook_pure_spice_bjt_relay_driv"
+source = "bjt-relay-driver.cir"
+outputs = [
+    "v(control)",
+    "v(base)",
+    "v(collector)",
+    "i(lcoil)",
+    "i(dfly)",
+]
+analysis = [
+    { type = "tran", step = 2e-06, stop = 0.011, max_step = 1e-06, uic = true },
+]
+
+[options]
+method = "gear"

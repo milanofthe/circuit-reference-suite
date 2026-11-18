@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_907_SON"
+case = "xyce_certification_tests_bug_907_son"
+source = "test2_nolib.cir"
+outputs = [
+    "i(vd)",
+    "i(vf)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.8, step = 0.01 },
+]

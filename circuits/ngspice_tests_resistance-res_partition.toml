@@ -1,0 +1,10 @@
+title = "ngspice tests/resistance"
+case = "ngspice_tests_resistance"
+source = "res_partition.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 10000.0 },
+]

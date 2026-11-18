@@ -1,0 +1,11 @@
+title = "Xyce_Regression Certification_Tests/BUG_577_SON"
+case = "xyce_certification_tests_bug_577_son"
+source = "bug577son.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 4.0 },
+]

@@ -1,0 +1,19 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DC_CurrentCheck1.cir"
+outputs = [
+    "v(node10)",
+    "v(node11)",
+    "v(node12)",
+]
+
+[options]
+method = "gear"
+abstol = 1e-07
+reltol = 1e-06
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v2", start = -1.0, stop = 5.0, step = 1.0 },
+]

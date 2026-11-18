@@ -1,0 +1,21 @@
+title = "Xyce_Regression Verilog_POWER"
+case = "xyce_verilog_power"
+source = "power_vbic13_3T_gear.cir"
+outputs = [
+    "v(collector1)",
+    "v(base1)",
+    "v(emitter1)",
+    "i(vic1)",
+    "i(vib1)",
+    "v(collector2)",
+    "v(base2)",
+    "v(emitter2)",
+    "i(vic2)",
+    "i(vib2)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-05 },
+]
+
+[options]
+method = "gear"

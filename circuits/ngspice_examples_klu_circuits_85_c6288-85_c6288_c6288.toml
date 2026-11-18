@@ -1,0 +1,44 @@
+title = "ngspice examples/klu/Circuits/85/c6288"
+case = "ngspice_examples_klu_circuits_85_c6288"
+source = "85/c6288/c6288.net"
+outputs = [
+    "v(g6269)",
+    "v(g6287)",
+    "v(g6266)",
+    "v(g6275)",
+    "v(g6286)",
+    "v(g6263)",
+    "v(g6262)",
+    "v(g6259)",
+    "v(g6265)",
+    "v(g6272)",
+    "v(g6280)",
+    "v(g6258)",
+    "v(g6281)",
+    "v(g6276)",
+    "v(g6288)",
+    "v(g6267)",
+    "v(g6277)",
+    "v(g6257)",
+    "v(g6273)",
+    "v(g6268)",
+    "v(g6282)",
+    "v(g6274)",
+    "v(g6261)",
+    "v(g6284)",
+    "v(g6270)",
+    "v(g6283)",
+    "v(g6278)",
+    "v(g6285)",
+    "v(g6264)",
+    "v(g6271)",
+    "v(g6260)",
+    "v(g6279)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 0.0001
+abstol = 1e-18

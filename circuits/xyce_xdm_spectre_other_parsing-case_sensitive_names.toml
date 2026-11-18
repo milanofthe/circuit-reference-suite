@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/SPECTRE/OTHER_PARSING"
+case = "xyce_xdm_spectre_other_parsing"
+source = "case_sensitive_names.cir"
+outputs = [
+    "v(net1)",
+    "v(net4)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+spectre = "case_sensitive_names.cir.spectre"

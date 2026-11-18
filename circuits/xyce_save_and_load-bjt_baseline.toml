@@ -1,0 +1,18 @@
+title = "Xyce_Regression SAVE_AND_LOAD"
+case = "xyce_save_and_load"
+source = "bjt_baseline.cir"
+outputs = [
+    "v(out1)",
+    "v(out2)",
+    "v(out19)",
+    "v(out20)",
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 1e-06 },
+]
+
+[options]
+reltol = 0.01
+abstol = 1e-06

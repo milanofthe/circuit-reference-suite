@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_1012"
+case = "xyce_certification_tests_bug_1012"
+source = "negtable.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

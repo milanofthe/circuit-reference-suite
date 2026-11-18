@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_1922"
+case = "xyce_certification_tests_bug_1922"
+source = "pspice_netlist.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 4.0, max_step = 0.01 },
+]

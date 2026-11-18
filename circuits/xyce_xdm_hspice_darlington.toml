@@ -1,0 +1,14 @@
+title = "Xyce_Regression XDM/HSPICE/DARLINGTON"
+case = "xyce_xdm_hspice_darlington"
+source = "darlington.cir"
+outputs = [
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+hspice = "darlington.cir.hspice"

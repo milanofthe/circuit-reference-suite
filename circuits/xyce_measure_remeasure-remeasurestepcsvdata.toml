@@ -1,0 +1,11 @@
+title = "Xyce_Regression MEASURE/REMEASURE"
+case = "xyce_measure_remeasure"
+source = "RemeasureStepCsvData.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(2,1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

@@ -1,0 +1,17 @@
+title = "Xyce_Regression BJT_OFF"
+case = "xyce_bjt_off"
+source = "bjt_off.cir"
+outputs = [
+    "i(vb)",
+    "i(vic)",
+]
+
+[options]
+reltol = 0.01
+abstol = 1e-06
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 0.0, stop = 0.0, step = 1.0 },
+]

@@ -1,0 +1,19 @@
+title = "Xyce_Regression XDM/SPECTRE/OTHER_PARSING"
+case = "xyce_xdm_spectre_other_parsing"
+source = "subckt.cir"
+outputs = [
+    "v(vnode1)",
+    "i(xi2:rr1)",
+    "v(xi2:vl1)",
+    "i(xi2:rr2)",
+    "v(vnode2)",
+    "i(rr1)",
+    "v(vl1)",
+    "i(rr2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+spectre = "subckt.cir.spectre"

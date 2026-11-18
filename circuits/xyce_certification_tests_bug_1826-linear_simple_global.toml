@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_1826"
+case = "xyce_certification_tests_bug_1826"
+source = "linear_simple_global.cir"
+outputs = [
+    "i(r1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

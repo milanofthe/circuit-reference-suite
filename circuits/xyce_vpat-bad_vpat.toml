@@ -1,0 +1,9 @@
+title = "Xyce_Regression VPAT"
+case = "xyce_vpat"
+source = "bad_vpat.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 5e-08 },
+]

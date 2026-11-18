@@ -1,0 +1,6 @@
+title = "spice-ts fixtures/circuits"
+case = "spice_ts_fixtures_circuits"
+source = "rc-lowpass.cir"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.003 },
+]

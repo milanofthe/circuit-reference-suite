@@ -1,0 +1,10 @@
+title = "Xyce_Regression Nonlinear/ConvergenceTests"
+case = "xyce_nonlinear_convergencetests"
+source = "NLStrategy6.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6e-08 },
+]

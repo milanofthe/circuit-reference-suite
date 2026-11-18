@@ -1,0 +1,6 @@
+title = "ngspice examples/measure"
+case = "ngspice_examples_measure"
+source = "buggy-meas-tran.sp"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.005 },
+]

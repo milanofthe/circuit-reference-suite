@@ -1,0 +1,18 @@
+title = "Xyce_Regression DTEMP"
+case = "xyce_dtemp"
+source = "bsim4.61_nmos_dtemp.cir"
+outputs = [
+    "v(2)",
+    "v(1)",
+    "i(vds)",
+]
+
+[options]
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 1.21, step = 0.02 },
+    { source = "vgs", start = 0.2, stop = 1.21, step = 0.2 },
+]

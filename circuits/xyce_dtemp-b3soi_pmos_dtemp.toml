@@ -1,0 +1,17 @@
+title = "Xyce_Regression DTEMP"
+case = "xyce_dtemp"
+source = "b3soi_pmos_dtemp.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+    "i(vd)",
+]
+
+[options]
+temp = 15.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = -1.2, step = -0.02 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression LEAD_CURRENTS"
+case = "xyce_lead_currents"
+source = "lead_bsrc_ac.cir"
+outputs = [
+    "v(4)",
+    "i(v1)",
+    "i(b6)",
+    "i(eamp)",
+    "i(h5)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 100000000.0 },
+]

@@ -1,0 +1,15 @@
+title = "Xyce_Regression BJT_ANALYTIC"
+case = "xyce_bjt_analytic"
+source = "ramp_test2.cir"
+outputs = [
+    "v(1)",
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.1 },
+]
+
+[options]
+gmin = 0.0
+abstol = 1e-13
+reltol = 1e-07

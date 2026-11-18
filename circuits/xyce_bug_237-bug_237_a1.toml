@@ -1,0 +1,10 @@
+title = "Xyce_Regression BUG_237"
+case = "xyce_bug_237"
+source = "Bug_237_A1.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]
+
+[options]
+reltol = 0.005
+abstol = 0.001

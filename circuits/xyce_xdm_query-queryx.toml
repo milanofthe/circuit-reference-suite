@@ -1,0 +1,11 @@
+title = "Xyce_Regression XDM/QUERY"
+case = "xyce_xdm_query"
+source = "queryX.cir"
+outputs = [
+    "v(1a)",
+    "v(2a)",
+    "v(3a)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]

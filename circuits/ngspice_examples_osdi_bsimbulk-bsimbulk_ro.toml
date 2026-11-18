@@ -1,0 +1,6 @@
+title = "ngspice examples/osdi/bsimbulk"
+case = "ngspice_examples_osdi_bsimbulk"
+source = "bsimbulk_ro.sp"
+analysis = [
+    { type = "tran", step = 1e-11, stop = 1e-08, uic = true },
+]

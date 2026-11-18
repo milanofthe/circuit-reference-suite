@@ -1,0 +1,9 @@
+title = "Xyce_Regression ROL"
+case = "xyce_rol"
+source = "vbic.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "ve", start = 0.0, stop = -1.4, step = -0.01 },
+]

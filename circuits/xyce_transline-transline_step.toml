@@ -1,0 +1,10 @@
+title = "Xyce_Regression TRANSLINE"
+case = "xyce_transline"
+source = "transline_step.cir"
+outputs = [
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-10, stop = 6e-08 },
+]

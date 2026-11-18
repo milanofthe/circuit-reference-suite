@@ -1,0 +1,6 @@
+title = "Xyce_Regression MEASURE_AC"
+case = "xyce_measure_ac"
+source = "RFParamsOps.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 10.0, stop = 100000.0 },
+]

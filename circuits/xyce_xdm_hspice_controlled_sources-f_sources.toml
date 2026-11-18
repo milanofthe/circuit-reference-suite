@@ -1,0 +1,12 @@
+title = "Xyce_Regression XDM/HSPICE/CONTROLLED_SOURCES"
+case = "xyce_xdm_hspice_controlled_sources"
+source = "f_sources.cir"
+outputs = [
+    "v(n385945)",
+    "v(n385703)",
+    "i(v_v5)",
+    "i(r_r9)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]

@@ -1,0 +1,11 @@
+title = "ngspice tests/vbic"
+case = "ngspice_tests_vbic"
+source = "diffamp.cir"
+outputs = [
+    "v(e1_p)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 1e-06, max_step = 1e-08 },
+    { type = "ac", sweep = "dec", points = 25, start = 100000.0, stop = 1000000000.0 },
+]

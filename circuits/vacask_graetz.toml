@@ -1,0 +1,17 @@
+title = "Full-wave bridge rectifier with smoothing capacitor and load"
+case = "vacask_graetz"
+source = "ngspice/runme.sim"
+outputs = [
+    "v(outp,outn)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1.0, max_step = 1e-06 },
+]
+
+[options]
+method = "gear"
+
+[variants]
+xyce = "xyce/runme.sim"
+gnucap = "gnucap/runme.sim"
+vacask = "vacask/runme.sim"

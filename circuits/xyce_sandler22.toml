@@ -1,0 +1,9 @@
+title = "Xyce_Regression SANDLER22"
+case = "xyce_sandler22"
+source = "sandler22.cir"
+outputs = [
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001 },
+]

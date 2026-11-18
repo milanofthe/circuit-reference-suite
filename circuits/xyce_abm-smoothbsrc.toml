@@ -1,0 +1,9 @@
+title = "Xyce_Regression ABM"
+case = "xyce_abm"
+source = "smoothbsrc.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-05 },
+]

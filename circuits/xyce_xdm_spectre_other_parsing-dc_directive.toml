@@ -1,0 +1,16 @@
+title = "Xyce_Regression XDM/SPECTRE/OTHER_PARSING"
+case = "xyce_xdm_spectre_other_parsing"
+source = "dc_directive.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "via", start = 0.0, stop = 10.0, step = 1.0 },
+]
+
+[variants]
+spectre = "dc_directive.cir.spectre"

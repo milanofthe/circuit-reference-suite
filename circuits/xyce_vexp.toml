@@ -1,0 +1,9 @@
+title = "Xyce_Regression VEXP"
+case = "xyce_vexp"
+source = "vexp.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 5e-06 },
+]

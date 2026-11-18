@@ -1,0 +1,16 @@
+title = "Xyce_Regression PARAMS2"
+case = "xyce_params2"
+source = "Params_G1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 5.0, step = 0.1 },
+    { source = "v2", start = 0.0, stop = 5.0, step = 0.1 },
+]

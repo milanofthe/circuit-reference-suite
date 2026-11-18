@@ -1,0 +1,17 @@
+title = "Xyce_Regression SUBCKT"
+case = "xyce_subckt"
+source = "subckt_j1_dup.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(9)",
+    "v(13)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 2e-07 },
+]
+
+[options]
+abstol = 0.001
+reltol = 0.001

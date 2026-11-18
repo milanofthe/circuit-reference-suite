@@ -1,0 +1,20 @@
+title = "Xyce_Regression XDM/HSPICE/TEMPERATURE"
+case = "xyce_xdm_hspice_temperature"
+source = "single_temperature_statement.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+
+[options]
+tnom = 25.0
+temp = 85.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "va", start = 0.0, stop = 10.0, step = 1.0 },
+]
+
+[variants]
+hspice = "single_temperature_statement.cir.hspice"

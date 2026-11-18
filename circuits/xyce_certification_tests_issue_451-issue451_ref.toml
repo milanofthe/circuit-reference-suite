@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_451"
+case = "xyce_certification_tests_issue_451"
+source = "issue451_ref.cir"
+outputs = [
+    "v(3)",
+    "v(eric)",
+    "v(2)",
+    "v(1)",
+    "v(x1:testnode)",
+]
+analysis = [
+    { type = "op" },
+]

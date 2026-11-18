@@ -1,0 +1,6 @@
+title = "ngspice examples/various"
+case = "ngspice_examples_various"
+source = "atanh.sp"
+analysis = [
+    { type = "ac", sweep = "dec", points = 100, start = 1000000000.0, stop = 100000000000.0 },
+]

@@ -1,0 +1,13 @@
+title = "WRspice devlib/adms/examples.old/bsoi44/tests"
+case = "wrspice_devlib_adms_examples_old_bsoi44_tests"
+source = "inv_tr.sp"
+outputs = [
+    "v(gate)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 6e-10 },
+]
+
+[options]
+temp = 27.0

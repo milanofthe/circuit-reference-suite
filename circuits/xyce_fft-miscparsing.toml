@@ -1,0 +1,10 @@
+title = "Xyce_Regression FFT"
+case = "xyce_fft"
+source = "MiscParsing.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

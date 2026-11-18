@@ -1,0 +1,17 @@
+title = "Xyce_Regression B4SOI_461"
+case = "xyce_b4soi_461"
+source = "test3.cir"
+outputs = [
+    "v(gate)",
+    "v(drain)",
+    "i(vd)",
+]
+
+[options]
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.2, step = 0.02 },
+]

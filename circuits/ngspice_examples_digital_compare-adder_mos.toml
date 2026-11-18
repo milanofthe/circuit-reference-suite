@@ -1,0 +1,21 @@
+title = "ngspice examples/digital/compare"
+case = "ngspice_examples_digital_compare"
+source = "adder_mos.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(8)",
+    "v(9)",
+    "v(10)",
+    "v(11)",
+    "v(12)",
+    "v(13)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 6.4e-06 },
+]

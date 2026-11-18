@@ -1,0 +1,15 @@
+title = "Xyce_Regression POLY"
+case = "xyce_poly"
+source = "poly.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vinput", start = -4.0, stop = 4.0, step = 1.0 },
+]

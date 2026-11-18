@@ -1,0 +1,16 @@
+title = "ngspice tests/vbic"
+case = "ngspice_tests_vbic"
+source = "temp.cir"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+]
+
+[options]
+temp = 150.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.2, stop = 1.2, step = 0.01 },
+]

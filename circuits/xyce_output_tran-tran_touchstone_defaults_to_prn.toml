@@ -1,0 +1,9 @@
+title = "Xyce_Regression Output/TRAN"
+case = "xyce_output_tran"
+source = "tran-touchstone-defaults-to-prn.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

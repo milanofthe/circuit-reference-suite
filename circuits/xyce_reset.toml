@@ -1,0 +1,13 @@
+title = "Xyce_Regression RESET"
+case = "xyce_reset"
+source = "reset.cir"
+outputs = [
+    "v(bat)",
+    "v(reset)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.004 },
+]
+
+[options]
+reltol = 0.001

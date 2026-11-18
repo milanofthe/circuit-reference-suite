@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/various"
+case = "ngspice_paranoia_parallel_examples_various"
+source = "tmp-noise-2.cir"
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 1, start = 1000.0, stop = 1000.0 },
+]
+
+[options]
+temp = 127.0

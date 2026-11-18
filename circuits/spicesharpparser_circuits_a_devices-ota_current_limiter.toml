@@ -1,0 +1,11 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "ota-current-limiter.cir"
+outputs = [
+    "v(in1p)",
+    "v(load)",
+    "i(vsense)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.003, max_step = 1e-05, uic = true },
+]

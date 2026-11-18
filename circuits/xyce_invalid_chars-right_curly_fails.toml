@@ -1,0 +1,12 @@
+title = "Xyce_Regression INVALID_CHARS"
+case = "xyce_invalid_chars"
+source = "right_curly_fails.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

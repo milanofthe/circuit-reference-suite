@@ -1,0 +1,16 @@
+title = "9-stage CMOS ring oscillator, PSP103"
+case = "vacask_ring_psp103"
+source = "ngspice/runme.sim"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 5e-11, stop = 1e-06, max_step = 5e-11 },
+]
+
+[options]
+method = "trap"
+
+[variants]
+xyce = "xyce/runme.sim"
+vacask = "vacask/runme.sim"

@@ -1,0 +1,6 @@
+title = "ngspice examples/xspice/various"
+case = "ngspice_examples_xspice_various"
+source = "xspice_c1.cir"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.002 },
+]

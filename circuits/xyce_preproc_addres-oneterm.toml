@@ -1,0 +1,14 @@
+title = "Xyce_Regression PREPROC_ADDRES"
+case = "xyce_preproc_addres"
+source = "oneterm.cir"
+outputs = [
+    "v(2)",
+    "v(x1:2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 2.0, start = 0.001 },
+]
+
+[options]
+abstol = 1e-12
+reltol = 1e-06

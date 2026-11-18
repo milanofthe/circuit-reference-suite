@@ -1,0 +1,13 @@
+title = "Xyce_Regression MEASURE_FFT"
+case = "xyce_measure_fft"
+source = "FindTest.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(v3)",
+    "i(r3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

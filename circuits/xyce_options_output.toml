@@ -1,0 +1,10 @@
+title = "Xyce_Regression OPTIONS_OUTPUT"
+case = "xyce_options_output"
+source = "bug_436_son.cir"
+outputs = [
+    "v(1)",
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.011 },
+]

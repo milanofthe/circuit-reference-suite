@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/coupled_inductor_ac.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 100000.0 },
+]

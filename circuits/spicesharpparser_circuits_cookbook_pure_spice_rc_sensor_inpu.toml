@@ -1,0 +1,13 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/rc-sensor-input-filter"
+case = "spicesharpparser_circuits_cookbook_pure_spice_rc_sensor_inpu"
+source = "rc-sensor-input-filter.cir"
+outputs = [
+    "v(source)",
+    "v(filtered)",
+    "i(dhi)",
+    "i(dlo)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 40, start = 10.0, stop = 1000000.0 },
+    { type = "tran", step = 2e-06, stop = 0.011, max_step = 1e-06 },
+]

@@ -1,0 +1,20 @@
+title = "Xyce_Regression XDM/HSPICE/MODELS"
+case = "xyce_xdm_hspice_models"
+source = "correct_instance_parameters.cir"
+outputs = [
+    "v(2)",
+    "v(3)",
+]
+
+[options]
+tnom = 25.0
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.2, step = 0.05 },
+]
+
+[variants]
+hspice = "correct_instance_parameters.cir.hspice"

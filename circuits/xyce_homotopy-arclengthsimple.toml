@@ -1,0 +1,12 @@
+title = "Xyce_Regression HOMOTOPY"
+case = "xyce_homotopy"
+source = "arclengthSimple.cir"
+outputs = [
+    "i(vtest)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vtest", start = 1.0, stop = 1.0, step = 1.0 },
+]

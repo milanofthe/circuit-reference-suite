@@ -1,0 +1,11 @@
+title = "Xyce_Regression GMIN_STEPPING"
+case = "xyce_gmin_stepping"
+source = "gstep_minconduct.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]

@@ -1,0 +1,10 @@
+title = "Berkeley SPICE3f5 example circuits"
+case = "spice3f5_examples"
+source = "rc.cir"
+outputs = [
+    "v(2)",
+    "i(vin)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 7.0 },
+]

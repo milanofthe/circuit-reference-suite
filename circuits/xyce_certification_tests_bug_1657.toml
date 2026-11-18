@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_1657"
+case = "xyce_certification_tests_bug_1657"
+source = "bug_1657.cir"
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+reltol = 1e-06
+abstol = 1e-06

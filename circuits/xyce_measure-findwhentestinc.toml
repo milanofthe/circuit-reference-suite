@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE"
+case = "xyce_measure"
+source = "FindWhenTestInc.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01, max_step = 1e-05 },
+]

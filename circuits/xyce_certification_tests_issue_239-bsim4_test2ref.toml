@@ -1,0 +1,11 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_239"
+case = "xyce_certification_tests_issue_239"
+source = "bsim4_test2Ref.cir"
+outputs = [
+    "v(vdd)",
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 4e-09 },
+]

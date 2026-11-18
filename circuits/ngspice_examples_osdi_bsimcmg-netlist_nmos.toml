@@ -1,0 +1,13 @@
+title = "ngspice examples/osdi/bsimcmg"
+case = "ngspice_examples_osdi_bsimcmg"
+source = "netlist_nmos.sp"
+outputs = [
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 2.5, step = 0.01 },
+    { source = "vg", start = 0.0, stop = 2.5, step = 0.5 },
+]

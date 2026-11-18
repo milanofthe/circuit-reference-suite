@@ -1,0 +1,14 @@
+title = "Xyce_Regression GLOBALPAR"
+case = "xyce_globalpar"
+source = "gp2.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(vidmon)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = -15.0, stop = 0.0, step = 1.0 },
+]

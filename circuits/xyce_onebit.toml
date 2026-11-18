@@ -1,0 +1,13 @@
+title = "Xyce_Regression ONEBIT"
+case = "xyce_onebit"
+source = "onebit.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(9)",
+    "v(13)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 2e-07 },
+]

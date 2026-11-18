@@ -1,0 +1,16 @@
+title = "ngspice examples/soa"
+case = "ngspice_examples_soa"
+source = "bjt-soa.cir"
+outputs = [
+    "i(ve)",
+]
+
+[options]
+temp = 50.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vce", start = 0.0, stop = -200.0, step = -0.1 },
+    { source = "ib", start = 0.0, stop = 8e-05, step = 8e-06 },
+]

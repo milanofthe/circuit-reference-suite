@@ -1,0 +1,20 @@
+title = "SKY130 rf_nfet_01v8_lvt model checks"
+case = "sky130_rf_nfet_01v8_lvt"
+source = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15__nfet_vth.spice"
+outputs = [
+    "v(1)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 0.0, stop = 1.8, step = 0.01 },
+    { source = "vgb", start = 0.0, stop = 1.2, step = 0.01 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgb", start = 0.0, stop = 1.2, step = 0.01 },
+]

@@ -1,0 +1,11 @@
+title = "Xyce_Regression VCCS"
+case = "xyce_vccs"
+source = "vccs_tran.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_1822"
+case = "xyce_certification_tests_bug_1822"
+source = "FBH_HBT_trans.cir"
+outputs = [
+    "v(n_1)",
+    "i(ibasecurrent)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1.0 },
+]
+
+[options]
+gmin = 0.0
+reltol = 0.0001

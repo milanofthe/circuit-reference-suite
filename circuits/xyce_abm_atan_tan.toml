@@ -1,0 +1,14 @@
+title = "Xyce_Regression ABM_ATAN_TAN"
+case = "xyce_abm_atan_tan"
+source = "atan_tan.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.002 },
+]
+
+[options]
+reltol = 0.0001

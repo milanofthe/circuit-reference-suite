@@ -1,7 +1,9 @@
 # Circuit Reference Suite
 
 Circuit netlists with every device model they need, for benchmarking circuit
-simulators. Upstream files are committed byte for byte and hash-checked; no
+simulators against each other. Each circuit states what is computed in a file of
+its own, independent of any simulator; adapters write it in every simulator's
+dialect. Upstream files are committed byte for byte and hash-checked; no
 reference solutions. License per case and library.
 
 | status | meaning |
@@ -1290,10 +1292,31 @@ Sources that are not (yet) cases.
 ## Layout
 
 ```
+circuits/<name>.toml        a benchmark circuit: body netlist, analyses, signals, options
 cases/<id>/case.toml        source, files with sha256, netlists and dialects, resolve table
 cases/<id>/...              upstream files at their path below source.root
 libraries/<id>/library.toml model libraries shared by cases (PDK models, Verilog-A)
 candidates.toml             sources that are not cases, and why
+```
+
+A circuit takes its body from a netlist of a case (`source`), or for a dialect
+from an upstream variant of it (`variants`); the analysis, output and option
+lines of those netlists are not used. What every simulator computes is stated in
+the circuit: `analysis` (op, dc, ac, tran with their parameters), `outputs` (the
+signals; none listed records every node voltage) and `options`. Schema in
+`schema/circuit.schema.json`.
+
+```toml
+title = "RC low-pass driven by a pulse train"
+case = "vacask_rc"
+source = "ngspice/runme.sim"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1.0, max_step = 1e-06 },
+]
+
+[variants]
+xyce = "xyce/runme.sim"
+vacask = "vacask/runme.sim"
 ```
 
 A reference that leaves the case (a PDK model path, an OSDI binary) is mapped by
@@ -1309,4 +1332,5 @@ pip install -e .
 python -m circref validate     # schema, hashes, every reference resolves
 python -m circref build        # regenerate the READMEs
 python -m circref check        # both; fails on a stale README (CI)
+python -m circref circuits     # a circuit file for every eligible netlist without one
 ```

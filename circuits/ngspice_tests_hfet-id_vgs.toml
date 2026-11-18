@@ -1,0 +1,12 @@
+title = "ngspice tests/hfet"
+case = "ngspice_tests_hfet"
+source = "id_vgs.cir"
+outputs = [
+    "i(vds)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 1.0, step = 0.01 },
+]

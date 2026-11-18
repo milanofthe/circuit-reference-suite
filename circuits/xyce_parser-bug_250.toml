@@ -1,0 +1,14 @@
+title = "Xyce_Regression PARSER"
+case = "xyce_parser"
+source = "bug_250.cir"
+outputs = [
+    "v(11)",
+    "i(v1)",
+    "i(v2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 1.0, step = 1.0 },
+]

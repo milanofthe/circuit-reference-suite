@@ -1,0 +1,17 @@
+title = "Xyce_Regression XDM/PSPICE/MODELS"
+case = "xyce_xdm_pspice_models"
+source = "multiple_devices_same_model.cir"
+outputs = [
+    "v(n01192)",
+    "v(n011460)",
+    "v(n07223)",
+    "v(n07602)",
+    "v(n075620)",
+    "v(n07662)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "multiple_devices_same_model.cir.pspice"

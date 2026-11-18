@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_543"
+case = "xyce_certification_tests_issue_543"
+source = "acBaseline1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 100000.0 },
+]

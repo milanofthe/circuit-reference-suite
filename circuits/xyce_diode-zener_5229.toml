@@ -1,0 +1,17 @@
+title = "Xyce_Regression DIODE"
+case = "xyce_diode"
+source = "Zener_5229.cir"
+outputs = [
+    "v(20)",
+    "i(vmon)",
+]
+
+[options]
+temp = 35.0
+gmin = 1e-15
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.2, stop = 1.001, step = 0.016 },
+]

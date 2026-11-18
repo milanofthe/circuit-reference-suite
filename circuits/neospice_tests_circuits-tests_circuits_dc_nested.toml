@@ -1,0 +1,10 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/dc_nested.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1.0, stop = 1.0, step = 1.0 },
+    { source = "v2", start = 0.0, stop = 2.0, step = 2.0 },
+]

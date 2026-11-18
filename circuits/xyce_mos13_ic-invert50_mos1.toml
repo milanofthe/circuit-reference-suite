@@ -1,0 +1,11 @@
+title = "Xyce_Regression MOS13_IC"
+case = "xyce_mos13_ic"
+source = "invert50_mos1.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]

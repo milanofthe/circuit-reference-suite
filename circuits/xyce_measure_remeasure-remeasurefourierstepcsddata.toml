@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE/REMEASURE"
+case = "xyce_measure_remeasure"
+source = "RemeasureFourierStepCsdData.cir"
+outputs = [
+    "v(vin)",
+    "v(vout)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 1e-06 },
+]

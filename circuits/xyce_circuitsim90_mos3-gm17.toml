@@ -1,0 +1,11 @@
+title = "Xyce_Regression CircuitSim90/MOS3"
+case = "xyce_circuitsim90_mos3"
+source = "gm17.cir"
+outputs = [
+    "v(4)",
+    "v(5)",
+    "v(17)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-10, stop = 1.6e-08 },
+]

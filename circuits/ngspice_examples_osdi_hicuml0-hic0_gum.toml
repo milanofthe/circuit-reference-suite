@@ -1,0 +1,14 @@
+title = "ngspice examples/osdi/hicuml0"
+case = "ngspice_examples_osdi_hicuml0"
+source = "hic0_gum.sp"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 0.2, stop = 1.4, step = 0.01 },
+]

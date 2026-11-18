@@ -1,0 +1,9 @@
+title = "Xyce_Regression MEASURE"
+case = "xyce_measure"
+source = "MeasfailOptionZeroTrigTarg.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

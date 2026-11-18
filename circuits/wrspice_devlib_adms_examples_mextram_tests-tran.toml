@@ -1,0 +1,16 @@
+title = "WRspice devlib/adms/examples/mextram/tests"
+case = "wrspice_devlib_adms_examples_mextram_tests"
+source = "tran.sp"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 5e-08 },
+    { type = "op" },
+]
+
+[options]
+gmin = 1e-13
+temp = 100.0

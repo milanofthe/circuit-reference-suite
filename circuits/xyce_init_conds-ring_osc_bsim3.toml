@@ -1,0 +1,9 @@
+title = "Xyce_Regression INIT_CONDS"
+case = "xyce_init_conds"
+source = "ring_osc_bsim3.cir"
+analysis = [
+    { type = "tran", step = 1e-10, stop = 2e-09 },
+]
+
+[options]
+reltol = 0.001

@@ -1,0 +1,9 @@
+title = "Xyce_Regression SIMULINK"
+case = "xyce_simulink"
+source = "TestNetlist1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

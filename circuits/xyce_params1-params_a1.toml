@@ -1,0 +1,9 @@
+title = "Xyce_Regression PARAMS1"
+case = "xyce_params1"
+source = "params_a1.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.02, stop = 0.8 },
+]
