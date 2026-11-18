@@ -55,7 +55,8 @@ def deviations(out: Path, recs: list[dict], points: int = 1001) -> dict[str, dic
                                                         if np.iscomplexobj(y) else 0)
             else:
                 curves[s] = y
-        if len(curves) < 2:
+        # One point against a sweep (a sweep one simulator did not run): not comparable.
+        if len(curves) < 2 or len({len(y) for y in curves.values()}) > 1:
             continue
         stack = np.array(list(curves.values()))
         med = np.median(stack.real, 0) + (1j * np.median(stack.imag, 0) if np.iscomplexobj(stack) else 0)
