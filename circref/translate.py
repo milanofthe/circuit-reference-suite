@@ -101,6 +101,13 @@ TYPES = {
 }
 TYPE_NAMES = {("xyce", "ngspice"): {"cap": "c", "ind": "l"}}
 
+# Model parameters of R, C and L that differ in meaning: in Xyce R, C and L multiply the
+# instance value (Reference Guide tables 2-38, 2-40, 2-43); in ngspice r and res are the
+# value of an instance that states none, cap and ind the model's value (res.c, cap.c,
+# ind.c), and c of a capacitor model is not a parameter.
+PASSIVE_VALUE = {"r": ("r", "res"), "res": ("r", "res"), "c": ("c", "cap"),
+                 "cap": ("c", "cap"), "l": ("l", "ind"), "ind": ("l", "ind")}
+
 # What a version parameter selects, per model and dialect: the version computed for a
 # card that states ``version`` (normalized to "a.b.c"), or for one that does not (None).
 # Xyce BSIM3 computes 3.2.2 whatever the card says (N_DEV_MOSFET_B3.C); Xyce BSIM4
@@ -474,6 +481,7 @@ class Context:
     declared: dict[str, set[str]] = field(default_factory=dict)     # subckt -> its parameters
     inner: dict[str, set[str]] = field(default_factory=dict)        # subckt -> .param inside
     passed: dict[str, set[str]] = field(default_factory=dict)       # subckt -> X line parameters
+    multiplier: dict[str, str | None] = field(default_factory=dict)  # Xyce R/C/L model -> R/C/L
     replace_ground: bool = False                # Xyce .preprocess replaceground true
     hspice_math: bool = False                   # Xyce .options parser hspice_ext with math
 
@@ -514,6 +522,10 @@ class Translator:
             elif w[0] == ".model" and len(w) > 2:
                 level = next((w[i + 2] for i in range(3, len(w) - 2)
                               if w[i] == "level" and w[i + 1] == "="), None)
+                if self.src == "xyce" and w[2] in PASSIVE_VALUE:
+                    self.ctx.multiplier[w[1]] = next(
+                        (st.tokens[i + 2].text for i in range(3, len(w) - 2)
+                         if w[i] == PASSIVE_VALUE[w[2]][0] and w[i + 1] == "="), None)
                 self.ctx.models[w[1].split(".")[0] if "." in w[1] and w[1].split(".")[-1].isdigit()
                                 else w[1]] = (w[2], level)
             elif w[0] == ".preprocess" and w[1:3] == ["replaceground", "true"]:
@@ -664,6 +676,8 @@ class Translator:
         self.braces(st)
         if letter == "k":
             return self.mutual(st)
+        if letter in "rcl" and self.src == "xyce":
+            self.passive(st)
         if letter in "vi":
             self.source(st)
         elif letter == "b" or letter in "eg" and any(w in ("value", "vol", "cur") for w in st.words()):
@@ -798,6 +812,18 @@ class Translator:
             raise Untranslatable("model inheritance (ako)")
         typ = w[2]
         self.braces(st)
+        key = PASSIVE_VALUE.get(typ)
+        if key:
+            k = next((i for i in range(3, len(w) - 2) if w[i] in key and w[i + 1] == "="), None)
+            if k is not None and self.src == "ngspice":
+                raise Untranslatable(f"{typ} model parameter {w[k]} (a value in ngspice, "
+                                     f"a multiplier in Xyce)")
+            if k is not None:                   # moved onto the instances, see passive()
+                ws = st.tokens[k].ws
+                del st.tokens[k:k + 3]
+                if k < len(st.tokens):
+                    st.tokens[k].ws = st.tokens[k].ws or ws
+                st.edited = True
         if typ in FAMILY_OF_TYPE:
             self.level(st, FAMILY_OF_TYPE[typ])
             return
@@ -965,6 +991,21 @@ class Translator:
                     del st.tokens[i + 1]
                     st.tokens[i + 1].ws = st.tokens[i + 1].ws or " "
                     st.edited = True
+
+    def passive(self, st: Statement) -> None:
+        """The multiplier of a Xyce R, C or L model moved onto the instance value."""
+        w = st.words()
+        if len(w) < 4 or not self.ctx.multiplier.get(w[3]):
+            return
+        m = self.ctx.multiplier[w[3]]
+        k = next((i for i in range(4, len(w)) if w[i] == w[0][0] and w[i - 1] != "=" and
+                  i + 1 < len(w) and w[i + 1] == "="), None)
+        k = k + 2 if k is not None else 4 if len(w) > 4 and w[4] not in ("=",) and \
+            (len(w) == 5 or w[5] != "=") else None
+        if k is None:
+            raise Untranslatable(f"Xyce {w[0][0].upper()} model multiplier without an instance value")
+        v = st.tokens[k].text
+        st.set(k, "{(" + (v[1:-1] if v[:1] == "{" else v) + ")*(" + m.strip("{}") + ")}")
 
     def pwl(self, st: Statement, at: int) -> None:
         """Xyce PWL [FILE name] [pairs] [TD=] [R=], parentheses optional; ngspice reads

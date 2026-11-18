@@ -66,6 +66,13 @@ class XyceToNgspice(unittest.TestCase):
         self.assertIn("pwl(v(2), 0, 0, 1, 10)", out)
         self.assertIn("((v(2)) < (0) ? (0) : (((v(2)) > (1) ? (10)", out)
 
+    def test_passive_model_multiplier(self):
+        out = tr("R1 1 0 rm 1k\nC1 1 0 cm c=2p\n.model rm R R=2 TC1=0\n.model cm C (C=3)\n",
+                 "xyce", "ngspice")
+        self.assertIn("R1 1 0 rm {(1k)*(2)}", out)
+        self.assertIn("C1 1 0 cm c={(2p)*(3)}", out)
+        self.assertIn(".model rm R TC1=0", out)
+
     def test_global_param(self):
         self.assertEqual(tr(".global_param a=1\n", "xyce", "ngspice"), ".param a=1\n")
 
