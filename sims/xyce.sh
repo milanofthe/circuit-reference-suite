@@ -31,7 +31,7 @@ JOBS=$(( MEM_JOBS < JOBS ? MEM_JOBS : JOBS ))
 JOBS=$(( JOBS < 1 ? 1 : JOBS ))
 log "xyce $TAG, $JOBS build jobs"
 
-apt_install cmake ninja-build make gfortran bison flex bc perl libxml-libxml-perl \
+apt_install cmake ninja-build make gfortran bison flex libfl-dev bc perl libxml-libxml-perl \
     libblas-dev liblapack-dev libfftw3-dev
 
 # fetch(repo, tag): the source tree of a GitHub tag, unpacked once into $BUILD/src
@@ -56,7 +56,7 @@ progress() {
             if (( BASH_REMATCH[1] % 100 == 0 || BASH_REMATCH[1] == BASH_REMATCH[2] )); then
                 printf '[%s] %s\n' "$(date +%H:%M:%S)" "${line:0:160}"
             fi
-        elif [[ $line =~ [Ee]rror|FAILED ]]; then
+        elif [[ $line =~ [Ee]rror|FAILED ]] && [[ ! $line =~ ^--\ (Installing|Up-to-date): ]]; then
             printf '%s\n' "$line"
         fi
     done
