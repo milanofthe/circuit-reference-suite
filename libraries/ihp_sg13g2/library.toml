@@ -171,3 +171,31 @@ sha256 = "398746f45048a9e075913e85a982258b929c9042257339bf1fc47d7e25303551"
 [[files]]
 path = "ihp-sg13g2/libs.tech/verilog-a/r3_cmc/r3_cmc_macros.include"
 sha256 = "66e1bf0b43495a9c17454a1ac203171db5488edc7e19563f4f645389ba7eebb4"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_mismatch.lib"
+sha256 = "2e9612bdb8252c281f422511039dc9b3ea983892aec89f8ef3361592e68fed09"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_mod_mismatch.lib"
+sha256 = "75c30f6975aad4cfe95af7c80fcea142ab0df6c9d7667c09120c7d0c9b814801"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_stat.lib"
+sha256 = "cd30f22637e41fdbbaba506ebe0f17746b8438027e4651a7a87b241a39d68903"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_mismatch.lib"
+sha256 = "2d3251e2d42eadb0f8af152a4915fdc60a68bceb95a2d17a52f90cfb34b7e63e"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_mod_mismatch.lib"
+sha256 = "fac66b4344da4e31dece9a95c32d7af5aac7b40a60b4e029201e1904fb4e8acd"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_stat.lib"
+sha256 = "8d807e0ae41be381e655bf51f0eecf72269c8eaa022a2da59a1c90b0772e229a"
+
+[[files]]
+path = "ihp-sg13g2/libs.tech/ngspice/models/sg13g2_svaricaphv_mod_mismatch.lib"
+sha256 = "509495437667afc2ee96ebb9fe5836ffeb7d18df1db24245c90662fbf09283cd"

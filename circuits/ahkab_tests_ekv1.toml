@@ -1,0 +1,15 @@
+title = "ahkab tests/ekv1"
+case = "ahkab_tests_ekv1"
+source = "ekv1.ckt"
+outputs = [
+    "i(vdd)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbias", start = 0.0, stop = 2.5, step = 0.01 },
+]

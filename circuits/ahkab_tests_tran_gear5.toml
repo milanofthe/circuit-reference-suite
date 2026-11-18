@@ -1,0 +1,14 @@
+title = "ahkab tests/tran_gear5"
+case = "ahkab_tests_tran_gear5"
+source = "tran_gear5.ckt"
+outputs = [
+    "v(2)",
+    "v(1)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-08, stop = 1e-06, uic = true },
+]
+
+[options]
+method = "gear"

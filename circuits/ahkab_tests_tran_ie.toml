@@ -1,0 +1,11 @@
+title = "ahkab tests/tran_ie"
+case = "ahkab_tests_tran_ie"
+source = "tran_ie.ckt"
+outputs = [
+    "v(2)",
+    "v(1)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-08, stop = 1e-06, uic = true },
+]

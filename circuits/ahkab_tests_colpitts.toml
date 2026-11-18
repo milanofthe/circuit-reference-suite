@@ -1,0 +1,13 @@
+title = "ahkab tests/colpitts"
+case = "ahkab_tests_colpitts"
+source = "colpitts.ckt"
+outputs = [
+    "v(nd)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-10, stop = 2.5e-08, uic = true },
+]
+
+[options]
+method = "trap"

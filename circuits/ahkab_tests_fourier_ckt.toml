@@ -1,0 +1,6 @@
+title = "ahkab tests/fourier_ckt"
+case = "ahkab_tests_fourier_ckt"
+source = "fourier_ckt.ckt"
+analysis = [
+    { type = "tran", step = 0.001, stop = 0.03, uic = true },
+]

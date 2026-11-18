@@ -24,7 +24,6 @@ from pathlib import Path
 
 import numpy as np
 
-from . import raw
 from .adapters import ADAPTERS, Adapter
 from .circuit import Circuit, iter_circuits
 from .stage import Compiler, StageError, stage, tail
@@ -70,7 +69,11 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             rec = base | {"analysis": k, "type": a["type"]}
             deck = netlist.with_name(f"{netlist.stem}.circref{k}.cir")
             rawfile = deck.with_suffix(".raw")
-            deck.write_bytes(ad.deck(c, text, a).encode("latin-1"))
+            try:
+                deck.write_bytes(ad.deck(c, text, a, rawfile.name).encode("latin-1"))
+            except NotImplementedError as e:            # an analysis the simulator lacks
+                records.append(rec | {"status": "unsupported", "message": str(e)})
+                continue
             t0 = time.monotonic()
             proc = subprocess.Popen(ad.argv(deck.name, rawfile.name), cwd=netlist.parent,
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -99,11 +102,13 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
                         "message": bad.group(0).strip() if bad else tail(log)}
             else:
                 try:
-                    plots = raw.read(rawfile.read_bytes())
+                    signals = ad.read(rawfile, a)
                 except Exception as e:
-                    rec |= {"status": "failed", "message": f"rawfile: {type(e).__name__}: {e}"}
+                    rec |= {"status": "failed", "message": f"output: {type(e).__name__}: {e}"}
                 else:
-                    signals = {name: v for p in plots[-1:] for name, v in p.signals.items()}
+                    if a["type"] == "op":                   # one point: an axis of its own
+                        signals = {"op": np.zeros(1)} | {n: v[-1:] for n, v in signals.items()
+                                                         if n[:2] in ("v(", "i(")}
                     np.savez_compressed(keep / f"{k}.npz", **signals)
                     rec |= {"status": "ok", "points": len(next(iter(signals.values()), [])),
                             "signals": len(signals)}

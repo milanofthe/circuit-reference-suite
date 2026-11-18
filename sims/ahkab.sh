@@ -19,10 +19,16 @@ PREFIX=$(prefix_for ahkab "$VERSION")
 export UV_PYTHON_INSTALL_DIR=$PREFIX/python UV_CACHE_DIR=$SRC/uv-cache
 uv venv --python "$PYTHON" "$PREFIX/venv"
 uv pip install --python "$PREFIX/venv/bin/python" "${PINS[@]}" "ahkab @ git+$GH@$COMMIT"
+# the Gear methods import factorial from scipy.misc, where scipy 1.3 removed it; no scipy
+# old enough has wheels for a Python uv still provides
+sed -i 's/^from scipy\.misc import factorial$/from scipy.special import factorial/' \
+    "$PREFIX"/venv/lib/python*/site-packages/ahkab/gear.py
+grep -n 'import factorial' "$PREFIX"/venv/lib/python*/site-packages/ahkab/gear.py
 cat > "$PREFIX/bin/ahkab" <<EOF
 #!/bin/sh
-# ahkab $VERSION; plots go to the non-interactive backend
-MPLBACKEND=\${MPLBACKEND:-Agg} exec "$PREFIX/venv/bin/python" -m ahkab "\$@"
+# ahkab $VERSION; plots go to the non-interactive backend, and the python ahkab
+# probes matplotlib with is the venv's
+PATH="$PREFIX/venv/bin:\$PATH" MPLBACKEND=\${MPLBACKEND:-Agg} exec "$PREFIX/venv/bin/python" -m ahkab "\$@"
 EOF
 chmod +x "$PREFIX/bin/ahkab"
 

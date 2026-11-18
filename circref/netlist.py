@@ -21,6 +21,7 @@ SPICE = ("ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "w
 SPECTRE = ("spectre", "vacask")
 QUCS = ("qucsator",)
 VERILOGA = ("veriloga",)
+NGSPICE_LIB = ("ngspice", "spice3")     # a .lib file is read whole, not only its section
 DIALECTS = SPICE + SPECTRE + QUCS + VERILOGA
 VA_SUFFIXES = (".va", ".vams", ".vh", ".vah", ".include", ".inc_va")
 

@@ -1,0 +1,6 @@
+title = "ahkab tests/ohms_law"
+case = "ahkab_tests_ohms_law"
+source = "ohms_law.ckt"
+analysis = [
+    { type = "op" },
+]

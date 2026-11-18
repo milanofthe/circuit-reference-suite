@@ -1,0 +1,6 @@
+title = "ahkab tests/fisource"
+case = "ahkab_tests_fisource"
+source = "fisource.ckt"
+analysis = [
+    { type = "op" },
+]

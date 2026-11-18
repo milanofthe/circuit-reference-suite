@@ -1,0 +1,6 @@
+title = "ahkab tests/gisource"
+case = "ahkab_tests_gisource"
+source = "gisource.ckt"
+analysis = [
+    { type = "op" },
+]

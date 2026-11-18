@@ -1,0 +1,10 @@
+title = "JoSIM test/syntax"
+case = "josim_test_syntax"
+source = "test_output.cir"
+outputs = [
+    "v(1,2)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 1e-10, uic = true },
+]

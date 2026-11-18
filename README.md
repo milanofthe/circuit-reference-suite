@@ -1228,7 +1228,7 @@ the case are expanded; a device from a library or a compiled model counts once.
 |---|---|---|---|---|
 | [analoggym_sky130](libraries/analoggym_sky130) | SkyWater SKY130 models as installed by open_pdks, typical corner | 170 | [AnalogGym](https://github.com/CODA-Team/AnalogGym) | Apache-2.0 |
 | [gf180mcu_fd_pr](libraries/gf180mcu_fd_pr) | GlobalFoundries GF180MCU device models (ngspice, Xyce) | 4 | [gf180mcu_fd_pr](https://github.com/fossi-foundation/gf180mcu-fd-pr) | Apache-2.0 |
-| [ihp_sg13g2](libraries/ihp_sg13g2) | IHP SG13G2 device models (ngspice) and their Verilog-A sources | 39 | [IHP-Open-PDK](https://github.com/IHP-GmbH/IHP-Open-PDK) | Apache-2.0 |
+| [ihp_sg13g2](libraries/ihp_sg13g2) | IHP SG13G2 device models (ngspice) and their Verilog-A sources | 46 | [IHP-Open-PDK](https://github.com/IHP-GmbH/IHP-Open-PDK) | Apache-2.0 |
 | [openvaf_asmhemt](libraries/openvaf_asmhemt) | ASM-HEMT GaN HEMT model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
 | [openvaf_bsim6](libraries/openvaf_bsim6) | BSIM6 bulk MOSFET model | 1 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | LicenseRef-BSIM |
 | [openvaf_bsimbulk](libraries/openvaf_bsimbulk) | BSIM-BULK MOSFET model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
@@ -1243,7 +1243,7 @@ the case are expanded; a device from a library or a compiled model counts once.
 | [openvaf_mvsg_cmc](libraries/openvaf_mvsg_cmc) | MVSG GaN HEMT model | 3 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | ECL-2.0 |
 | [openvaf_psp102](libraries/openvaf_psp102) | PSP 102 MOSFET model | 22 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | LicenseRef-PSP |
 | [openvaf_psp103](libraries/openvaf_psp103) | PSP 103.7 MOSFET and JUNCAP 200.6 | 17 | [OpenVAF-reloaded](https://github.com/OpenVAF/OpenVAF-Reloaded) | LicenseRef-PSP |
-| [sky130_fd_pr](libraries/sky130_fd_pr) | SkyWater SKY130 primitive device models (ngspice) | 391 | [sky130_fd_pr](https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr) | Apache-2.0 |
+| [sky130_fd_pr](libraries/sky130_fd_pr) | SkyWater SKY130 primitive device models (ngspice) | 547 | [sky130_fd_pr](https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr) | Apache-2.0 |
 | [vacask_psp103v4](libraries/vacask_psp103v4) | PSP 103.4 MOSFET and JUNCAP 200.5 (Verilog-A) | 19 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | LicenseRef-PSP |
 | [vacask_spice_va](libraries/vacask_spice_va) | ngspice device models in Verilog-A, from Verilog-A Distiller | 40 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |
 | [vacask_va](libraries/vacask_va) | VACASK basic devices in Verilog-A | 6 | [VACASK](https://codeberg.org/arpadbuermen/VACASK) | AGPL-3.0-or-later |

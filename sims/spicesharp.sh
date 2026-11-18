@@ -36,7 +36,7 @@ finish spicesharp "$VERSION" "$PREFIX"
 
 export PATH="$PREFIX/bin:$PATH"
 smoke spicesharpparser_circuits_cookbook_pure_spice_loaded_voltage spicesharp loaded-voltage-divider.cir
-smoke spicesharpparser_circuits_a_devices spicesharp --ltspice clock-divider.cir
+smoke spicesharpparser_circuits_a_devices spicesharp -r out.raw clock-divider.cir
 d=$(mktemp -d)
 printf 'broken netlist\nV1 1 0 1\nR1 1 0 undefined_param_xyz\nQ1 1 0 0 nomodel\n.OP\n.END\n' > "$d/bad.cir"
 smoke "$d" spicesharp bad.cir
