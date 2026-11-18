@@ -22,6 +22,18 @@ class Untouched(unittest.TestCase):
                             "xyce", "ngspice"), "R1 1 0 1\n")
 
 
+class Options(unittest.TestCase):
+    def test_circuit_options_kept_solver_options_dropped(self):
+        self.assertEqual(tr(".options parser scale=1u model_binning=true\n.options nonlin maxstep=50\n",
+                            "xyce", "ngspice"), ".options scale=1u\n")
+        self.assertEqual(tr(".options klu scale=1u\n", "ngspice", "xyce"),
+                         ".options parser scale=1u\n")
+
+    def test_no_equivalent(self):
+        with self.assertRaises(Untranslatable):
+            tr(".options rshunt=1e12\n", "ngspice", "xyce")
+
+
 class XyceToNgspice(unittest.TestCase):
     def test_bare_parameter_in_braces(self):
         out = tr(".param rv=2k wv=1u\n.model nm nmos level=1 vto=rv\nR1 rv 0 rv\n"

@@ -212,7 +212,7 @@ SOURCE_FUNCTIONS = {
 SOURCE_NAMES = {("ngspice", "xyce"): {"sine": "sin"}}
 
 # Dot commands of the body with another name in the target, and the ones it has no
-# equivalent for. NOT_BODY lines (analyses, outputs, options) are dropped, as in a deck.
+# equivalent for. NOT_BODY lines (analyses, outputs) are dropped, as in a deck.
 DOTS = {
     ("xyce", "ngspice"): {".global_param": ".param", ".dcvolt": ".ic", ".incl": ".include"},
     ("ngspice", "xyce"): {".incl": ".include"},
@@ -224,6 +224,20 @@ DROP = {
              ".probe/csd": None},
     "ngspice": {".control": ".endc", ".csparam": None, ".width": None},
 }
+# Options that change what the circuit is, as the target states them; None: the target
+# has no equivalent. Every other option sets up the solver or the output and is dropped,
+# and the circuit's own (circuit.OPTIONS) the adapter states. Xyce groups its options
+# (.options parser scale=1u); ngspice does not (.options scale=1u).
+#   Xyce Reference Guide 2.1.25: parser SCALE, MODEL_BINNING (default true; ngspice always
+#   bins). ngspice manual 11.1: scale, defad/defas/defl/defw (MOS defaults), rshunt,
+#   cshunt, rseries (elements added to every node or inductor).
+OPTION_MAP = {
+    ("xyce", "ngspice"): {"scale": "scale", "model_binning=false": None},
+    ("ngspice", "xyce"): {"scale": "parser scale", "defad": None, "defas": None, "defl": None,
+                          "defw": None, "rshunt": None, "cshunt": None, "rseries": None},
+}
+OPTION_LINES = (".options", ".option", ".opt", ".opts")
+
 NO_DOT = {
     "ngspice": {".if": "conditional netlist (.if)", ".elseif": "conditional netlist (.if)",
                 ".else": "conditional netlist (.if)", ".endif": "conditional netlist (.if)"},
@@ -694,6 +708,8 @@ class Translator:
                     new = self.hier(self.node(t.text))
                     if new != t.text:
                         st.set(i, new)
+        elif head in OPTION_LINES:
+            return self.options(st)
         elif head == ".preprocess":
             if w[1:2] == ["replaceground"]:
                 return []
@@ -704,6 +720,30 @@ class Translator:
         else:
             raise Untranslatable(f"dot command {head}")
         return [st]
+
+    def options(self, st: Statement) -> list[Statement]:
+        """The options that change the circuit, in the target's form; the rest dropped."""
+        w = st.words()
+        table = OPTION_MAP[self.pair]
+        kept = []
+        for i in range(1, len(w) - 2):
+            if w[i + 1] != "=":
+                continue
+            key, value = w[i], st.tokens[i + 2].text
+            if f"{key}={value.lower()}" in table:
+                key = f"{key}={value.lower()}"
+            if key not in table:
+                continue
+            if table[key] is None:
+                raise Untranslatable(f"option {key}")
+            kept.append(f"{table[key]}={value}")
+        if not kept:
+            return []
+        group = [k.split()[0] for k in kept if " " in k]
+        line = ".options " + (group[0] + " " if group else "") + \
+            " ".join(k.split()[-1] for k in kept) + "\n"
+        toks, tail = tokenize(line, COMMENT[self.tgt])
+        return [Statement(line, toks, tail)]
 
     def declare(self, st: Statement, sub: str) -> None:
         """Xyce takes X line parameters a subcircuit does not declare (Reference Guide
@@ -772,9 +812,10 @@ class Translator:
     def level(self, st: Statement, family: str) -> None:
         w = st.words()
         k = next((i for i in range(3, len(w) - 2) if w[i] == "level" and w[i + 1] == "="), None)
-        if k is not None and not re.fullmatch(r"\d+(\.0*)?", w[k + 2]):
+        if k is not None and not (re.fullmatch(r"[\d.e+-]+", w[k + 2]) and
+                                  number(w[k + 2]) == int(number(w[k + 2]))):
             raise Untranslatable(f"model level {st.tokens[k + 2].text}")
-        lvl = int(float(w[k + 2])) if k is not None else 1
+        lvl = int(number(w[k + 2])) if k is not None else 1
         model = LEVELS[self.src].get((family, lvl))
         if model is None:
             raise Untranslatable(f"{family} level {lvl} of {self.src}")
