@@ -9,10 +9,12 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 from .circuit import Circuit
+from .entry import ROOT
 
 # Lines of a deck that state what to compute rather than the circuit. With their
 # continuation lines, and every control block, they are not part of the body.
@@ -123,8 +125,19 @@ class Xyce(Adapter):
         return ["Xyce", "-r", raw, deck]
 
 
+class Sane(Ngspice):
+    """SANE reads the ngspice deck's body; sims/sane/run.py the rest."""
+
+    def preload(self, directory: Path, osdi: list[Path]) -> None:
+        Adapter.preload(self, directory, osdi)
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return [sys.executable, str(ROOT / "sims" / "sane" / "run.py"), deck, raw]
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
+    Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
 )}

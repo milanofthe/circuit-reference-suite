@@ -8,6 +8,7 @@
 # $SIMS/<name>/current at it. The install holds:
 #
 #   bin/            everything the run puts on PATH
+#   lib/, python/   on LD_LIBRARY_PATH and PYTHONPATH, where an install has them
 #   version         one line: the version as the simulator reports it, and its source
 #   runtime-apt     apt packages the binaries need at run time, one per line
 #

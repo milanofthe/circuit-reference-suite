@@ -126,7 +126,7 @@ def number(token: str) -> float:
     return float(Decimal(m.group(1)).scaleb(_EXPONENT.get(suffix, 0)))     # 50p: 5e-11 exactly
 
 
-def _lines(text: str) -> list[str]:
+def lines(text: str) -> list[str]:
     """Logical lines: continuations joined, comments dropped, lower case."""
     out: list[str] = []
     for raw in text.splitlines()[1:]:                       # the first line is the title
@@ -156,7 +156,7 @@ def _signals(tokens: str) -> list[str]:
     return out
 
 
-def _spice_analysis(head: str, args: list[str]) -> dict:
+def spice_analysis(head: str, args: list[str]) -> dict:
     flags = [a for a in args if "=" not in a]
     if head == "op":
         return {"type": "op"}
@@ -216,7 +216,7 @@ def _gnucap_analysis(head: str, args: list[str]) -> dict:
                     "start": nums[0], "stop": nums[1]}
         raise Unsupported(f".ac {' '.join(args)}")
     if head == "dc":
-        return _spice_analysis("dc", args)
+        return spice_analysis("dc", args)
     raise Unsupported(f".{head}")
 
 
@@ -240,10 +240,10 @@ def from_deck(case: Case, nl: Netlist) -> dict:
     if nl.dialect not in SPICE_ORDER + ("gnucap",):
         raise Unsupported(f"dialect {nl.dialect}: analysis lines not read yet")
     gnucap = nl.dialect == "gnucap"
-    analysis = _gnucap_analysis if gnucap else _spice_analysis
+    analysis = _gnucap_analysis if gnucap else spice_analysis
     analyses, outputs, options = [], [], {}
     control = False
-    for line in _lines((case.directory / nl.file).read_text(encoding="latin-1")):
+    for line in lines((case.directory / nl.file).read_text(encoding="latin-1")):
         if line in (".control", ".endc"):
             control = line == ".control"
             continue
@@ -252,7 +252,7 @@ def from_deck(case: Case, nl: Netlist) -> dict:
             if head in _SCRIPTED or line.startswith("set appendwrite"):
                 raise Unsupported(f"control script: {head}")
             if head in ("op", "tran", "ac", "dc"):
-                if (a := _spice_analysis(head, args)) not in analyses:
+                if (a := spice_analysis(head, args)) not in analyses:
                     analyses.append(a)
             elif head in ("print", "plot", "save", "wrdata", "write"):
                 outputs += [s for s in _signals(" ".join(args)) if s not in outputs]

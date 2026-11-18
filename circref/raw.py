@@ -76,3 +76,21 @@ def read(data: bytes) -> list[Plot]:
         while pos < len(data) and data[pos:pos + 1] in (b"\n", b"\r"):
             pos += 1
     return plots
+
+
+def write(plotname: str, signals: dict[str, np.ndarray], title: str = "circref") -> bytes:
+    """A binary rawfile of one plot; the first signal is the axis."""
+    names = list(signals)
+    cols = [np.asarray(signals[n]) for n in names]
+    complex_ = any(np.iscomplexobj(c) for c in cols)
+    npts = len(cols[0])
+    kind = {"time": "time", "frequency": "frequency"}
+    head = [f"Title: {title}", "Date: -", f"Plotname: {plotname}",
+            f"Flags: {'complex' if complex_ else 'real'}", f"No. Variables: {len(names)}",
+            f"No. Points: {npts}", "Variables:"]
+    head += [f"\t{k}\t{n}\t{kind.get(n, 'current' if n.startswith('i(') else 'voltage')}"
+             for k, n in enumerate(names)]
+    table = np.column_stack([c.astype(complex if complex_ else float) for c in cols])
+    if complex_:
+        table = np.column_stack([table.real, table.imag]).reshape(npts, 2, -1).transpose(0, 2, 1).reshape(npts, -1)
+    return ("\n".join(head + ["Binary:"]) + "\n").encode() + table.astype("<f8").tobytes()
