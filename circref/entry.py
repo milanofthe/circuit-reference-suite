@@ -166,15 +166,26 @@ def _listdir(directory: Path) -> frozenset[str]:
     return frozenset(os.listdir(directory))
 
 
+@lru_cache(maxsize=None)
 def is_file(path: Path) -> bool:
     """Like Path.is_file, but case-sensitive on every platform, as on the CI runner."""
     if not path.is_file():
         return False
-    return all(part.name in _listdir(part.parent)
-               for part in [path, *path.parents] if part != ROOT and ROOT in part.parents)
+    part = path
+    while part != ROOT and part.is_relative_to(ROOT):
+        if part.name not in _listdir(part.parent):
+            return False
+        part = part.parent
+    return True
 
 
 def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, bool, str | None]:
+    return _resolve_cached(origin, ref, tuple(sorted(local.items())))
+
+
+@lru_cache(maxsize=None)
+def _resolve_cached(origin: Path, ref: netlist.Ref, local_items: tuple) -> tuple[Path | None, bool, str | None]:
+    local = dict(local_items)
     entry = owner(origin)
     table = entry.resolve_table() if entry else {}
     if isinstance(entry, Case):
