@@ -910,6 +910,12 @@ class Translator:
                 st.set(i, new)
             if new == "pwl" and self.tgt == "ngspice":
                 self.pwl(st, i)
+            if new == "pulse" and self.src == "xyce":
+                # A zero rise or fall time is zero in Xyce, the time step in ngspice
+                # (Xyce Reference Guide table 6-1, ngspice vsrcload.c).
+                args = [x for x in w[i + 1:] if x not in ("(", ")", ",")]
+                if any(is_number(a) and number(a) == 0 for a in args[3:5]):
+                    raise Untranslatable("pulse with zero rise or fall time")
             break
         if self.tgt == "xyce":
             # Xyce reads DC and AC followed by their values, not as assignments.
