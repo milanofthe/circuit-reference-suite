@@ -11,6 +11,8 @@
 #   lib/            on LD_LIBRARY_PATH, where an install has one
 #   version         one line: the version as the simulator reports it, and its source
 #   runtime-apt     apt packages the binaries need at run time, one per line
+#   modules/        device modules the simulator loads at run time, <module>.so; a case
+#                   resolve table maps a device type onto one ("cap/2" = "wrspice:adms/cap")
 #
 # sims/env.sh puts every current install on PATH and installs the union of their
 # runtime-apt. Nothing outside $SIMS/<name>/ is written that a later job relies on.
