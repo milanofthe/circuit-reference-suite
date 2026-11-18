@@ -234,6 +234,9 @@ def walk(case: Case, nl: Netlist) -> Graph:
                 refs = parsed.refs
             elif section in parsed.sections:
                 refs = parsed.sections[section]
+                if nl.dialect in netlist.NGSPICE_LIB:      # ngspice opens the includes of
+                    refs = refs + [r for s, rs in parsed.sections.items()   # every section
+                                   if s != section for r in rs if r.kind == "include"]
             else:
                 g.edges.append(Edge(path, netlist.Ref("lib", path.name, section, 0), None, False,
                                     f"{path.relative_to(ROOT).as_posix()}: no section {section!r}"))

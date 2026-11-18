@@ -6,7 +6,7 @@
 - URL: https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr (commit `16f93a795d87ea2b393fe5c74d32674e111e44a2`)
 - License: Apache-2.0
 
-391 files, 9.5 MB.
+547 files, 37.9 MB.
 
 Subset of upstream: only the model files the cases here include; upstream also has the other corners, characterization data and layouts
 

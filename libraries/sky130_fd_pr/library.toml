@@ -1579,3 +1579,627 @@ sha256 = "8a4c2d8b90947a09aa671c7336345c3d26f72d668991ef9034e7c003a34d8873"
 [[files]]
 path = "models/sonos_p/begin_of_life/mm.spice"
 sha256 = "051c18598854776f43ec7194503d4d8046e768ac78d3a0012c6ef697e6de0a8b"
+
+[[files]]
+path = "combined_models/continuous/parameters_cap_high.spice"
+sha256 = "9aae3a661e7d9ba2ce151e5cca728a2ddc14ee8d73cd19717ed331016918d376"
+
+[[files]]
+path = "combined_models/continuous/parameters_cap_low.spice"
+sha256 = "96ebe0bbb20519295bc7a23e29a388586bd249edd03e73c495dc032652f7fa76"
+
+[[files]]
+path = "combined_models/continuous/parameters_fet_ff.spice"
+sha256 = "b02aa2816444bc5f2c053c7ed35f178c344d03db914082df7c8556a4380aaf3e"
+
+[[files]]
+path = "combined_models/continuous/parameters_fet_fs.spice"
+sha256 = "1f77a3d84a81d6c1fda2e3baf9c703d7a5b9e770937b4f5fb5122026db8a6a4c"
+
+[[files]]
+path = "combined_models/continuous/parameters_fet_sf.spice"
+sha256 = "20be6d9570a0a3cde62f94e3c5771e907cff5862d2167dd3bbe404e17bc35a7b"
+
+[[files]]
+path = "combined_models/continuous/parameters_fet_ss.spice"
+sha256 = "1ddb06ebec4e73ea630b9e6ae759db3410ee04da3678ace417cb3aa28e4f7880"
+
+[[files]]
+path = "combined_models/continuous/parameters_res_high.spice"
+sha256 = "a776f09e5a7177c9450b7d05daa324261e2f133e78ece987f85be430787dc8be"
+
+[[files]]
+path = "combined_models/continuous/parameters_res_low.spice"
+sha256 = "b75c5714f065f65be8b052338f9aa7418d69f005d64803e77e7735064715c238"
+
+[[files]]
+path = "models/corners/ff.spice"
+sha256 = "779038b63af4dd1da5533f1803b4443018faaab9b5078f498e431f0220b5304e"
+
+[[files]]
+path = "models/corners/ff/specialized_cells.spice"
+sha256 = "6fbb2b1d7481ec2a158f3be2f3621cafeaa539eb6b583702621cd6c27c58e0ca"
+
+[[files]]
+path = "models/corners/fs.spice"
+sha256 = "37d32b9dfbd4580c3aed4fa3a97887c5c10aa389df9c3e73c77509cd4285db1c"
+
+[[files]]
+path = "models/corners/fs/specialized_cells.spice"
+sha256 = "db53255351e564f6aa01343e070243ed1a9d643c222e375029563e6adff44378"
+
+[[files]]
+path = "models/corners/sf.spice"
+sha256 = "e3211298b156912b1bbcd647de8cc66495a25c0d6faf228f8439d68f1752dd1b"
+
+[[files]]
+path = "models/corners/sf/specialized_cells.spice"
+sha256 = "4c7d051c461dfb7f1fd5d474ab7d6aba7161ee15bb9d8e330cba558be724e86f"
+
+[[files]]
+path = "models/corners/ss.spice"
+sha256 = "05fa0218a17bc0b9198e94bb3c0329820e5759f9cfe971b6daa3855cb7fa3720"
+
+[[files]]
+path = "models/corners/ss/specialized_cells.spice"
+sha256 = "e42ae8e992d39b707c426ddf24a4ac101d57ee86516f915a2fc7f2e23fb41e0e"
+
+[[files]]
+path = "models/parameters/critical.spice"
+sha256 = "94ba392849ae3466798d7cfd29d53a31336204730e895dabfbc0c39ade8d6a28"
+
+[[files]]
+path = "models/parameters/montecarlo.spice"
+sha256 = "a6f70a0c7a5162c0980e6e4bf18fa7210cdae2dd717b4fc56946358dc0142bef"
+
+[[files]]
+path = "models/r+c/res_high__cap_high.spice"
+sha256 = "38ec47a4a5fa0d5a23dcab8dee6c43086503204c71ea956e0d78471cadc909a4"
+
+[[files]]
+path = "models/r+c/res_high__cap_high__lin.spice"
+sha256 = "a7e7c905ed3c7857fb72a6c55046f335caaa9eb2e09dc725c5bbed6d52a03a09"
+
+[[files]]
+path = "models/r+c/res_high__cap_low.spice"
+sha256 = "fa31c9c9a72f46cd4666428ff3c338a2e912578914f77049d7d15980fb546b85"
+
+[[files]]
+path = "models/r+c/res_high__cap_low__lin.spice"
+sha256 = "c602a648587cab46b5db98a994656bdfad8b8970d658bab404890f65504be20e"
+
+[[files]]
+path = "models/r+c/res_low__cap_high.spice"
+sha256 = "30bf08f792bb9c569f76b3fe3c81825551f5a0750a65208b49a2010ad9b765c3"
+
+[[files]]
+path = "models/r+c/res_low__cap_high__lin.spice"
+sha256 = "459dde9efbf35abed0554d5203fc2ed4e8a10a25422a6794bf7662a71517dc75"
+
+[[files]]
+path = "models/r+c/res_low__cap_low.spice"
+sha256 = "8d8f19bfd7d9728508b0a45bfbfae293fed168b902cb2fc820fb40a7c2627ac0"
+
+[[files]]
+path = "models/r+c/res_low__cap_low__lin.spice"
+sha256 = "3b09fb3584bdc4f8992f651c3137eaacb8c513bbbc04b71318a7e1e67868f7c6"
+
+[[files]]
+path = "cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__ff.corner.spice"
+sha256 = "0206cc43047aaa9fbdf2162f70efc716b33e4149362009f1cb8b76ed6e66ff35"
+
+[[files]]
+path = "cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__fs.corner.spice"
+sha256 = "b2da31294d07c4ce093c3daef05915467b3fcbc1acc30b56f957258194b3303a"
+
+[[files]]
+path = "cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__sf.corner.spice"
+sha256 = "95fa572dc223518cd236d0905e40390a6a6a30e3994881afdc9b16ab4cbe1065"
+
+[[files]]
+path = "cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__ss.corner.spice"
+sha256 = "e68650b0bd8e376525fda37bc03e88452d4eaa2790b7823729c8540c6d24fcc0"
+
+[[files]]
+path = "cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__ff.corner.spice"
+sha256 = "b5cc17d0ccaced826597dfeb00dd78227b1f54f085788570a77cb56557dea4a1"
+
+[[files]]
+path = "cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__fs.corner.spice"
+sha256 = "979da8a91772e6d2421f9e9e2ccbdd79505fbd2ad8c4755589ae5cf1ce2fd538"
+
+[[files]]
+path = "cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__sf.corner.spice"
+sha256 = "e2c0ccda525494a8ff28eac403a15e285e7ef0216fe6ad3c2d6c61b3420e527c"
+
+[[files]]
+path = "cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__ss.corner.spice"
+sha256 = "92ca30e89fb3873a7994a632bafd97820e6cc9ad1505628402f55a6bed04d0a3"
+
+[[files]]
+path = "cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__ff.corner.spice"
+sha256 = "5a21d27681490ef97667eb3210d1258853f4d8246ef0564c50064a05f916feb2"
+
+[[files]]
+path = "cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__fs.corner.spice"
+sha256 = "386d64641dcc97da2968ddd5cd19b532858807ed9fbc301fdc22890d76c6f43b"
+
+[[files]]
+path = "cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__sf.corner.spice"
+sha256 = "4fd874922e81055ea5a2508e97fe35ccfa90d5eefa1820368a6189916486141e"
+
+[[files]]
+path = "cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__ss.corner.spice"
+sha256 = "5913c622d254d677a437ec13d8c850445a1cc842b614eb4d65e38a0d3ade96d7"
+
+[[files]]
+path = "cells/nfet_01v8/sky130_fd_pr__nfet_01v8.pm3.spice"
+sha256 = "6a1254b3af66d379c5a7944ed0b5c71f739b6055b905b78f32a9fb51539e1a54"
+
+[[files]]
+path = "cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice"
+sha256 = "abbf671996e76bf3e75ea2bb26036fa17b99f92599330e25bb814ac498b600fe"
+
+[[files]]
+path = "cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice"
+sha256 = "85f26c62c5c6ce318d6f28dcb2e65e36144a6878e2758136ea1ecd8ad55e0e96"
+
+[[files]]
+path = "cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice"
+sha256 = "f0a46f156adb47c6dc156dc46bc5f7781a46a8c2c181af6e1fc3f428681caf23"
+
+[[files]]
+path = "cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice"
+sha256 = "4a70607ef6e016b426e9b447fe75ca417cdb7e44fe98ca6d7f0319656e65ed0c"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt.pm3.spice"
+sha256 = "5c875168764259a5ed8d40293751429acf3668347cb9415e0eda20bb8333af77"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.corner.spice"
+sha256 = "e84da569821a546bb7d59834543d680b1bd09523f5951ff5be0c67ff32370601"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.corner.spice"
+sha256 = "b44b14281fb42ca617e81d2f7c4c837e4cfddc6ec6a340871029a253860640d6"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.corner.spice"
+sha256 = "5e4122da6a18aca51d6158fb326c2e27238564bdbc4d23da4cff66e22633603f"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.corner.spice"
+sha256 = "23eb2d35ada169b393a334d4ada4dcb587f074f993315b8f23ccd241429819aa"
+
+[[files]]
+path = "cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__ff.corner.spice"
+sha256 = "0fdaf141f890121d6f67e9dfdd942d1afd8d97065b30405c803712168c308e73"
+
+[[files]]
+path = "cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__fs.corner.spice"
+sha256 = "8925259365575206f468e2288924aae14e4e72484b484b248cc11ae3f628c7c7"
+
+[[files]]
+path = "cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__sf.corner.spice"
+sha256 = "cd6e52b931d54b3dde4c89b7825ccf82c683612aac0b74a11881c3fd82ce28e2"
+
+[[files]]
+path = "cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__ss.corner.spice"
+sha256 = "a7e9ecf9dad2a681c9a11ee6d46812261836121b6d09e7d4a4dc6f99724cf59c"
+
+[[files]]
+path = "cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__ff.corner.spice"
+sha256 = "2adc32d1c5f38df8dd6ba496d5aa92cd2e0b573bc59ea837819d1f43e5e5e131"
+
+[[files]]
+path = "cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__fs.corner.spice"
+sha256 = "e5d71444f619711837f9334dc49cbde9ca840dc3b7a9bfe136975e6f4c3b5dcd"
+
+[[files]]
+path = "cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__sf.corner.spice"
+sha256 = "070556259bde129f85b5520d1962c50593ac884b8a04a40dac4badd76fdecbb2"
+
+[[files]]
+path = "cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__ss.corner.spice"
+sha256 = "47dcdf2c517f75df8a76b7b292f1a4f31276262058d4b20a3028b14a14d950e1"
+
+[[files]]
+path = "cells/nfet_20v0/sky130_fd_pr__nfet_20v0__fs_discrete.corner.spice"
+sha256 = "ed8f57c0749571ef803a1849f4eed35e8632704226f9f8a2b6f700c586e719b9"
+
+[[files]]
+path = "cells/nfet_20v0/sky130_fd_pr__nfet_20v0__sf_discrete.corner.spice"
+sha256 = "586523d527aa11ea825b94242d9060db21b5c13aa2ff03ea448ee12ce811fc46"
+
+[[files]]
+path = "cells/nfet_20v0_nvt/sky130_fd_pr__nfet_20v0_nvt__fs_discrete.corner.spice"
+sha256 = "23e9c408698a7632746b668a5016529e36abb15d92485ab467bcba6535fce5bb"
+
+[[files]]
+path = "cells/nfet_20v0_nvt/sky130_fd_pr__nfet_20v0_nvt__sf_discrete.corner.spice"
+sha256 = "9a7208e7fcba94cd06dcc7d9a50c93a709ee5679f0d35f25fb9dfbff3364faaa"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice"
+sha256 = "50aee0481defd69970d9ac09eafe9b27435b9a88f1d8b41fde99a418c3445f8e"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.corner.spice"
+sha256 = "23e17fb740ff03ff47f0c5cddfbcfa3af5c16465f388d521520d7ea057935bc2"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.corner.spice"
+sha256 = "00c599d50c81e8a5c8c6423ebcd22c07f714a119c867d1465eb39664ee4f1e8a"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.corner.spice"
+sha256 = "93fdae80469c761f3bd3bfbaa8f2d5bf091d035e004ebdb5a947a51f292f15c1"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.corner.spice"
+sha256 = "5b2ef445a9fa6f8686eba7a2bfcbca327c35fde17ae8a8f60eb4f4b9f03942ab"
+
+[[files]]
+path = "cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__ff_discrete.corner.spice"
+sha256 = "7e258c446bbdcac9021b7500b0eafc5a5e5f4fa06dd50962b02097a0e2d55361"
+
+[[files]]
+path = "cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__fs_discrete.corner.spice"
+sha256 = "6ded3c7b9b92e8d8bca353e8a71b454ef7bcaf038fb0c69090b24ad22b4fec31"
+
+[[files]]
+path = "cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__sf_discrete.corner.spice"
+sha256 = "40d2f37f470698e01fce033dfec45943ec4924e772e629ddc3edb19bc5d709b7"
+
+[[files]]
+path = "cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__ss_discrete.corner.spice"
+sha256 = "4608d0b5f22966918278cf81551d31b6708dbfc8b0d23eaffbb87321bcd217c5"
+
+[[files]]
+path = "cells/npn_05v5/sky130_fd_pr__npn_05v5__f.corner.spice"
+sha256 = "0bbd20b5b08c2cc975be4557a62418175a033b9a0b9364b117732898933353f5"
+
+[[files]]
+path = "cells/npn_05v5/sky130_fd_pr__npn_05v5__s.corner.spice"
+sha256 = "7fbf55b3c6092f6b20a01463afffca43cefd9daebafa984be63ae12e04ca8a5b"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8.pm3.spice"
+sha256 = "4a634f10ffd773e92e8e95ef1dec820534172164a696ea0f10c19a825cfd6656"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.corner.spice"
+sha256 = "30ba71bde4024ff291a68352930bf2fc3e07f627efb090e1575b9dbd7b6e75da"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.corner.spice"
+sha256 = "b3dc4e47f87a780ed7de8126839ca4620454b6de85307341672c903b0c164d01"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.corner.spice"
+sha256 = "857ce650534be04b5663787f03302f580624d6a6a477d27e293cf6ae93fc7d2f"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.corner.spice"
+sha256 = "8d8b59726b48aa7a435b8f9bf0d0ecce0cef9f6359d4bb206f0a31306712e310"
+
+[[files]]
+path = "cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt.pm3.spice"
+sha256 = "802f51505b9e68e3d0286505e509c136f79e269fe3e091bf1206dfd922d01f92"
+
+[[files]]
+path = "cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice"
+sha256 = "d67e1b0f7f379ea42f2e21d8976dbb94e93c52bbc77ece644b63ffa152c4d7ef"
+
+[[files]]
+path = "cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice"
+sha256 = "2e59b0a4a07f3411d070e73492fb48b463577fc39fd54d59ae000e1ae85b5aa1"
+
+[[files]]
+path = "cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice"
+sha256 = "4b9ec19b7681511f9e233bd6f6fa623c3f982179518a5292919c97f57eeb1f4c"
+
+[[files]]
+path = "cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice"
+sha256 = "ec4f1b79d6dc56c48f4bbf2a5d8aa33274e6e881b68433120974e27056f28076"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt.pm3.spice"
+sha256 = "186b33f469160d46403c0d8f08918733b8b007efe996131a843b5007a62e5919"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.corner.spice"
+sha256 = "4be6d4c6ee9e4ffcef6f438bbd1b83a1436b896c33a4061b9563500943eeb3d7"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.corner.spice"
+sha256 = "53eefa3929c612891ceb52c7bf3f7e3214611f899b2a2c629df823cbbdc6439b"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.corner.spice"
+sha256 = "96f4ed1667765219d2c07434f9d87b76f63f02c4fbe11596bb3cc3d6e759c06a"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.corner.spice"
+sha256 = "838e42d3bd0394b05f248b53c2a54a6a3012c897aafaa730faf35d665b9cd14a"
+
+[[files]]
+path = "cells/pfet_20v0/sky130_fd_pr__pfet_20v0__fs_discrete.corner.spice"
+sha256 = "835aa506b3d5e671fd73742472ac4157bf6c923d896f478349a88246ea41bb07"
+
+[[files]]
+path = "cells/pfet_20v0/sky130_fd_pr__pfet_20v0__sf_discrete.corner.spice"
+sha256 = "c22b2c86558d22e75a6d3844c2e25b7af2cbc86cbbcad03f5e94202242a6a57a"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice"
+sha256 = "aa0aa0635756128716906b01d700c7dc5f2c90131148c688f409b66a3663551f"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.corner.spice"
+sha256 = "70c2630c319f9856b6ef8bdf671d7ed0813ee3d07bcc4734dff5ec3beef4dfe8"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.corner.spice"
+sha256 = "914a77dd766de318c7c6ca08f72c2dd730433f52021507310b1456e8dcf84cae"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.corner.spice"
+sha256 = "64d84750c79144bc455621c536d6eaba5e6dd4569202a2229fd02949f1a8107e"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.corner.spice"
+sha256 = "171fe57846f7562cde7f32ef5012a7a21ec20c2e843f80bbfcbf91a1a13184a8"
+
+[[files]]
+path = "cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__ff.corner.spice"
+sha256 = "be86f65df228255832bddeb9d9527d019f729691cac383fcc16c59880bcd96c3"
+
+[[files]]
+path = "cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__fs.corner.spice"
+sha256 = "79c2d084e6cc9db66b680355274a4a8e63548e089b4a5a63c76969a4a6bef9fa"
+
+[[files]]
+path = "cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__sf.corner.spice"
+sha256 = "5f7ce22905a1aff0143821c7b54f84d3897959d32b411d1272f1f6a96b598e1b"
+
+[[files]]
+path = "cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__ss.corner.spice"
+sha256 = "7ae02c1c3aaf0c09ebf112d7e7465df3a749b2ef1f74e0f3f744670f8b2954ee"
+
+[[files]]
+path = "cells/special_nfet_pass_lvt/sky130_fd_pr__special_nfet_pass_lvt__ff.corner.spice"
+sha256 = "c4e3d962522f9e96a75dd18bf19b8622d4d97f28868fc4a3f58bf96ffa42289d"
+
+[[files]]
+path = "cells/special_nfet_pass_lvt/sky130_fd_pr__special_nfet_pass_lvt__ss.corner.spice"
+sha256 = "d1aad00138019e9a74faa229977802536aade2333e845818c819a550c9bde2b3"
+
+[[files]]
+path = "models/corners/ff/nonfet.spice"
+sha256 = "d03e3604898888b64c71a6ddba5f03dd8a05b298ac6a10a5dc2ae1c01ab73a74"
+
+[[files]]
+path = "models/corners/ff/rf.spice"
+sha256 = "d4730e1f25e3c4c4091998dd58845b6380c47f9d15bef54deb2900dc06201083"
+
+[[files]]
+path = "models/corners/fs/nonfet.spice"
+sha256 = "739c7e8da3ef68d2452f8f5e7a0f9d6696b8ee22cf58c4904e3bfa637fc23014"
+
+[[files]]
+path = "models/corners/fs/rf.spice"
+sha256 = "5820549389748d9a7fb92c717a8e2985dadd6479339dcc18db42109d04780fe5"
+
+[[files]]
+path = "models/corners/sf/nonfet.spice"
+sha256 = "4f790eb5083d1e202820839b58099c423fc5aa83e6ede764b14e5eb70c8397f8"
+
+[[files]]
+path = "models/corners/sf/rf.spice"
+sha256 = "62ebdcb24511ba2f422e871b8f377d05e3c44acaddf6a5e6fc25a319a64e02f8"
+
+[[files]]
+path = "models/corners/ss/nonfet.spice"
+sha256 = "7aa4c20bf9cc7d8e16239ccc750e435433f959123a2e6c2214a549f0f76395b1"
+
+[[files]]
+path = "models/corners/ss/rf.spice"
+sha256 = "b448975c38bce6b0abc1b20867d17a32cfd232409b27b48a6459b152cf8e06c6"
+
+[[files]]
+path = "models/parameters/fast.spice"
+sha256 = "283dd86a353fc872c3bbfe7c276d959faa11f91450103185af7407d1017f93c9"
+
+[[files]]
+path = "models/parameters/fast_70p.spice"
+sha256 = "6eb7f5e84f7d0676e2a4b35decd2ce27fa98bb54e5ee71544a4992a5068ada5c"
+
+[[files]]
+path = "models/parameters/invariant.spice"
+sha256 = "e610887e52547fbaacead78132493256f1b1a24ba717e8d5f09bffcc6e98a62d"
+
+[[files]]
+path = "models/parameters/slow.spice"
+sha256 = "24dac3370bdb0923c4fe02c86885c5e4d74f781a82c897b474c67517a61a4e31"
+
+[[files]]
+path = "models/parameters/slow_70p.spice"
+sha256 = "53371d7af355c863891d95a0b69604f93bb1633414d1c57c1ccc7b9d10816af0"
+
+[[files]]
+path = "models/sonos_e/begin_of_life.pm3.spice"
+sha256 = "728b5e80e51897836d22596cdc7f14d7a329acc9b4348c8f41bbdc1ea9861e5f"
+
+[[files]]
+path = "models/sonos_p/begin_of_life.pm3.spice"
+sha256 = "d7210f37af9e89969c551c0a1fbd47e825375486ddc6eafe6d2b498e5934b9d7"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice"
+sha256 = "75f096a448b5e6c9f5e6b5970f598f839a9081ae1f687e5aaccbf1dba37cd675"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice"
+sha256 = "8b17df56616e9f52564faf30a423205505e6e3cf0528f500ad29cedea9d155e5"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice"
+sha256 = "f795dd0400c46833a4ab49f3b99bdcde69c5b8c6f58313db349ccae36bbb2659"
+
+[[files]]
+path = "cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice"
+sha256 = "b7639f99ca4633080da895a9ea305f531371f26b53d658a0ccb02239fc402f35"
+
+[[files]]
+path = "cells/nfet_20v0_zvt/sky130_fd_pr__nfet_20v0_zvt__fs_discrete.corner.spice"
+sha256 = "d9e116bbf8c2ff0db28fa472e33f7130c54c5bd5841317b4059fef45ecc5e1c3"
+
+[[files]]
+path = "cells/nfet_20v0_zvt/sky130_fd_pr__nfet_20v0_zvt__sf_discrete.corner.spice"
+sha256 = "2366432b5213e267e85cb63b0d3444ef89985955763a5a54e5eba70ff9be1c1c"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice"
+sha256 = "7d76a0f2023e966607fddfca92f53b2a2fd74db585917abb217261f0cf70c7ef"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice"
+sha256 = "9220f82518bbc29e935a8ecb9b18fac06b07c869e1856aa576e2e4997f4a5f53"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice"
+sha256 = "8c8f7d1c16cfb37962282fa76a29e759ae0497873056d68eba0e816e75ae279f"
+
+[[files]]
+path = "cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice"
+sha256 = "84fd6f1eafb18dc709d278bd6f3c382218dbc27fe0079740bd839cb83257af3e"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice"
+sha256 = "2712f1132a4b21c608db59697c9ed284a8702b6a5a38c9e09a49fc592255d958"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice"
+sha256 = "55e4f670a758a036b02316030357bb647f388e788117b4fe6b965a68e72af378"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice"
+sha256 = "1d99c32aaf14705e609349010669ceb40a7158844ae9f71c417ed2e2587caf71"
+
+[[files]]
+path = "cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice"
+sha256 = "14f5f987c67b0d1d0b0c3d0f5ea21fcee06485798661a44832cf36a9da0b80f2"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice"
+sha256 = "7aaf05bda602e2e45dc9836460988d74a5ed4f571f7c6902e3e8c5017c3d7ae7"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice"
+sha256 = "2d85a3e1586f31cc26ef3bf2e756c9425b1fcc29baff6327f557bb8a40b76854"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice"
+sha256 = "05504c4e4994c22d89c60d4df51b3a58241885dc3457481a3f5a912c118fb240"
+
+[[files]]
+path = "cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice"
+sha256 = "d91f2ac093039a522afeadec110c3fd2e782fd8673f20dbfec4bfb15d588be97"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice"
+sha256 = "952ec743d60aa649b90fd45552ed0da204ac6c26f24666c9b56ad7f0ec20694d"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice"
+sha256 = "e06180cbc540e4708a4959cf4f5d3276196bfd312595713eb6fc5bd7e0e163f5"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice"
+sha256 = "ff31bd1dfdbf19f836a94cea2e34a279fff338f9e54776745413d678529daae5"
+
+[[files]]
+path = "cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice"
+sha256 = "a9c660373b84d60013f326d8ee00ad21e0ebaeff406775cfe6c78a5af53ae7cf"
+
+[[files]]
+path = "cells/rf_nfet_01v8/sky130_fd_pr__rf_nfet_01v8_b__ff.corner.spice"
+sha256 = "b0d63e167d520cf29ca61039c4de84c43a678ada8ce73c4678d81fee7dcc553b"
+
+[[files]]
+path = "cells/rf_nfet_01v8/sky130_fd_pr__rf_nfet_01v8_b__fs.corner.spice"
+sha256 = "bf63eefa1cd2facd2b1b3a1395589949231dbc5bbc678179aabe2381cc0c6dc6"
+
+[[files]]
+path = "cells/rf_nfet_01v8/sky130_fd_pr__rf_nfet_01v8_b__sf.corner.spice"
+sha256 = "f90e8bacff05b2caf4cd60357bc31a7d7c149289b47ce711986d564bcfb8a457"
+
+[[files]]
+path = "cells/rf_nfet_01v8/sky130_fd_pr__rf_nfet_01v8_b__ss.corner.spice"
+sha256 = "1f26d2444234120c2b2399d182fa55d456e9fd7e528db21709f0ea37781c6236"
+
+[[files]]
+path = "cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_b__ff.corner.spice"
+sha256 = "57a43c568eb7a35c8ffe4fa32a22c9cb0a266318d36d700a675efd820256fe05"
+
+[[files]]
+path = "cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_b__fs.corner.spice"
+sha256 = "e4e57542f3d65f1c3fb25aa4eac1278238c31c58bd36e08bd28454d8b7ed85b8"
+
+[[files]]
+path = "cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_b__sf.corner.spice"
+sha256 = "20cbbd6c2e6fc2ca96c2e6255939bb2eb847f54ec664b34b04923e03f5aced63"
+
+[[files]]
+path = "cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_b__ss.corner.spice"
+sha256 = "c04e981d19d05d8eb9b694f982202a2c7e7e8e260b048a5db2a8ffdb299a839e"
+
+[[files]]
+path = "cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_b__ff.corner.spice"
+sha256 = "57f151000b60dc65cfeab38fd8929dc4db983a94534b7c524a1f1009bb007de6"
+
+[[files]]
+path = "cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_b__fs.corner.spice"
+sha256 = "95b9700e0a64fad6a355cb9ac80f4584493812b8b4e0dd3c6093d4969f6224cf"
+
+[[files]]
+path = "cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_b__sf.corner.spice"
+sha256 = "0b8e9ed968e99e8115404cbe648fba8c9f93f605d614487751e30caf7ae2bb17"
+
+[[files]]
+path = "cells/rf_nfet_g5v0d10v5/sky130_fd_pr__rf_nfet_g5v0d10v5_b__ss.corner.spice"
+sha256 = "cec1fc1e8d0b0377d821d1c8f80c1117963b34d954c0e8d11c479e7b9dc435b6"
+
+[[files]]
+path = "cells/rf_pfet_01v8/sky130_fd_pr__rf_pfet_01v8_b__ff.corner.spice"
+sha256 = "41c98373171935548b2e28c548d63a0e68aa79761956b2e388dcfba7e164652b"
+
+[[files]]
+path = "cells/rf_pfet_01v8/sky130_fd_pr__rf_pfet_01v8_b__fs.corner.spice"
+sha256 = "0c7a88b0eb5afe5b2fa8b18f62d1b1259c70c3a9631f97208145947eb5d13787"
+
+[[files]]
+path = "cells/rf_pfet_01v8/sky130_fd_pr__rf_pfet_01v8_b__sf.corner.spice"
+sha256 = "8659d8ff6e78a8230aa75d74b986a660cb47ea89e8ae46a92dbaff29fd78ae02"
+
+[[files]]
+path = "cells/rf_pfet_01v8/sky130_fd_pr__rf_pfet_01v8_b__ss.corner.spice"
+sha256 = "e6170a98263edd3cf7718944b3c767397da94951794d4b30638e488c5de427de"
+
+[[files]]
+path = "cells/rf_pfet_01v8_mvt/sky130_fd_pr__rf_pfet_01v8_mvt__ff_discrete.corner.spice"
+sha256 = "e458e4bf007c223f198985bca9f2ce47e4acd8bd34f8847e381651d702a0d8d4"
+
+[[files]]
+path = "cells/rf_pfet_01v8_mvt/sky130_fd_pr__rf_pfet_01v8_mvt__fs_discrete.corner.spice"
+sha256 = "beb35a78f02324241fb3c4cd228735f82c9262a1f410c74d9b2fd0031a589067"
+
+[[files]]
+path = "cells/rf_pfet_01v8_mvt/sky130_fd_pr__rf_pfet_01v8_mvt__sf_discrete.corner.spice"
+sha256 = "f1780cede0d76280e91210d582875bf19ab97c70de0082b3592233f125be2eea"
+
+[[files]]
+path = "cells/rf_pfet_01v8_mvt/sky130_fd_pr__rf_pfet_01v8_mvt__ss_discrete.corner.spice"
+sha256 = "faa93cffd4a096f06499a6ff4d88b11e0b1fbb20ccae6f7ef97026d7c335e353"
