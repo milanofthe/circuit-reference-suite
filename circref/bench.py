@@ -62,7 +62,7 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             return [base | {"status": "stage-failed", "message": str(e)}]
         if translated:
             try:
-                translate(c.case, nl, dest, ad.dialects[0])
+                translate(c.case, nl, dest, ad.dialects[0], {a["type"] for a in c.analyses})
             except Untranslatable as e:
                 return [base | {"status": "untranslated", "message": str(e)}]
         text = netlist.read_bytes().decode("latin-1")

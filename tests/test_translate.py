@@ -90,6 +90,15 @@ class XyceToNgspice(unittest.TestCase):
                  "xyce", "ngspice")
         self.assertIn(".subckt s a b l=0 w={w}\n", out)
 
+    def test_dc_value_of_a_transient_source(self):
+        deck = Path("deck.cir")
+        run = lambda analyses: translate_text({deck: ("t\nV1 1 0 sin(1 1 1k)\n", True)},
+                                              "xyce", "ngspice", None, analyses)[deck]
+        self.assertEqual(run({"tran"}), "t\nV1 1 0 sin(1 1 1k)\n")
+        self.assertEqual(run({"op"}), "t\nV1 1 0 dc 0 sin(1 1 1k)\n")
+        with self.assertRaises(Untranslatable):
+            run({"op", "tran"})
+
     def test_global_node(self):
         out = tr("VDD $G_VDD 0 5\n", "xyce", "ngspice")
         self.assertEqual(out, ".global G_VDD\nVDD G_VDD 0 5\n")

@@ -241,7 +241,8 @@ SOURCE_NAMES = {("ngspice", "xyce"): {"sine": "sin"}}
 # equivalent for. NOT_BODY lines (analyses, outputs) are dropped, as in a deck.
 DOTS = {
     ("xyce", "ngspice"): {".global_param": ".param", ".dcvolt": ".ic", ".incl": ".include"},
-    ("ngspice", "xyce"): {".incl": ".include"},
+    # ngspice takes every command that starts with .param as .param (inpcom.c, ciprefix).
+    ("ngspice", "xyce"): {".incl": ".include", ".params": ".param"},
 }
 # Bookkeeping of the source dialect that is not part of the circuit: dropped with its block.
 DROP = {
@@ -526,6 +527,7 @@ class Translator:
         self.file = Path()                      # the file being translated
         self.modules: dict[str, str] = {}       # Verilog-A module -> version
         self.globals: set[str] = set()          # global nodes the target has to declare
+        self.analyses: set[str] = set()         # the analyses the circuit runs
 
     # ----------------------------------------------------------------- context
 
@@ -536,7 +538,7 @@ class Translator:
             if not w:
                 continue
             assigned = {w[i - 1] for i in range(2, len(w)) if w[i] == "="}
-            if w[0] in (".param", ".global_param"):
+            if w[0] in (".param", ".params", ".global_param"):
                 self.ctx.params |= assigned
                 if sub is None or w[0] == ".global_param":
                     self.ctx.globals |= assigned
@@ -762,7 +764,7 @@ class Translator:
         rename = DOTS[self.pair].get(head)
         if rename:
             st.set(0, rename)
-        if head in (".param", ".global_param", ".func"):
+        if (rename or head) in (".param", ".global_param", ".func"):
             self.param(st, head)
         elif head == ".model":
             self.model_card(st)
@@ -1071,6 +1073,7 @@ class Translator:
                 args = [x for x in w[i + 1:] if x not in ("(", ")", ",")]
                 if any(is_number(a) and number(a) == 0 for a in args[3:5]):
                     raise Untranslatable("pulse with zero rise or fall time")
+            self.dc_value(st, i)
             break
         if self.tgt == "xyce":
             # Xyce reads DC and AC followed by their values, not as assignments.
@@ -1094,6 +1097,24 @@ class Translator:
             raise Untranslatable(f"Xyce {w[0][0].upper()} model multiplier without an instance value")
         v = st.tokens[k].text
         st.set(k, "{(" + (v[1:-1] if v[:1] == "{" else v) + ")*(" + m.strip("{}") + ")}")
+
+    def dc_value(self, st: Statement, at: int) -> None:
+        """A source with a transient function and no DC value: in an OP or DC analysis
+        Xyce takes 0 (Vsrc::loadDAEBVector), ngspice the function at t=0 (vsrcload.c);
+        in a transient both start from the function. Exact where the circuit runs OP and
+        DC only and the target is ngspice: DC 0 stated."""
+        if not self.analyses & {"op", "dc"}:
+            return
+        before = st.words()[3:at]
+        if "ac" in before:
+            before = before[:before.index("ac")]
+        if before:
+            return                              # DC, or a value, is given
+        if self.analyses - {"op", "dc"} or self.tgt != "ngspice":
+            raise Untranslatable("source without a DC value in an OP or DC analysis (Xyce "
+                                 "takes 0, ngspice the transient value at t=0)")
+        st.tokens[at:at] = [Token(" ", "dc"), Token(" ", "0")]
+        st.edited = True
 
     def tc(self, st: Statement) -> None:
         """Xyce takes TC=a,b for TC1=a TC2=b (Reference Guide, R and L parameters)."""
@@ -1197,6 +1218,8 @@ def _depth(words: list[str]) -> int:
 def _version(text: str) -> tuple[int, int, int]:
     """'4.8.2', '4.82', '4.8', 4.8 -> (4, 8, 2), (4, 8, 2), (4, 8, 0), (4, 8, 0)."""
     t = text.strip("'\"{}")
+    if "e" in t.lower() and is_number(t):     # 4.500000e+0
+        t = f"{number(t):g}"
     parts = t.split(".")
     if len(parts) == 2 and len(parts[1]) == 2 and parts[1].isdigit():
         parts = [parts[0], parts[1][0], parts[1][1]]
@@ -1221,12 +1244,15 @@ def va_versions(files) -> dict[str, str]:
 
 
 def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str,
-                   modules: dict[str, str] | None = None) -> dict[Path, str]:
+                   modules: dict[str, str] | None = None, analyses: set[str] = frozenset()
+                   ) -> dict[Path, str]:
     """Each file's text in the target dialect. ``texts``: path -> (text, is the deck);
-    ``modules``: the Verilog-A modules the body loads, with their versions. A file whose
-    statements need no change keeps its text."""
+    ``modules``: the Verilog-A modules the body loads, with their versions; ``analyses``:
+    the types of the analyses the circuit runs. A file whose statements need no change
+    keeps its text."""
     tr = Translator(source, target)
     tr.modules = modules or {}
+    tr.analyses = set(analyses)
     parsed = {p: parse(t, source, deck) for p, (t, deck) in texts.items()}
     for sts in parsed.values():
         tr.read_context(sts)
@@ -1242,7 +1268,8 @@ def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str
     return out
 
 
-def translate(case: Case, nl: Netlist, dest: Path, target: str) -> list[Path]:
+def translate(case: Case, nl: Netlist, dest: Path, target: str, analyses: set[str]
+              ) -> list[Path]:
     """Rewrite the body of ``nl`` staged under ``dest`` in place into ``target``: the deck
     and every netlist it reaches; a library file only where it needs a change. The files
     changed."""
@@ -1252,7 +1279,7 @@ def translate(case: Case, nl: Netlist, dest: Path, target: str) -> list[Path]:
         raise Untranslatable("compressed netlist file")
     deck = staged(dest, case.directory / nl.file)
     texts = {p: (p.read_bytes().decode("latin-1"), p == deck) for p in files}
-    out = translate_text(texts, nl.dialect, target, va_versions(g.files))
+    out = translate_text(texts, nl.dialect, target, va_versions(g.files), analyses)
     changed = []
     for p, text in out.items():
         if text != texts[p][0]:
