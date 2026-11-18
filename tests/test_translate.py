@@ -73,6 +73,10 @@ class XyceToNgspice(unittest.TestCase):
         self.assertIn("C1 1 0 cm c={(2p)*(3)}", out)
         self.assertIn(".model rm R TC1=0", out)
 
+    def test_tc_vector_and_stray_ends(self):
+        self.assertEqual(tr("R1 1 0 50 tc=1m,2u\n.ends\n", "xyce", "ngspice"),
+                         "R1 1 0 50 tc1=1m tc2=2u\n")
+
     def test_global_param(self):
         self.assertEqual(tr(".global_param a=1\n", "xyce", "ngspice"), ".param a=1\n")
 

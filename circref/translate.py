@@ -21,7 +21,7 @@ from itertools import combinations
 from pathlib import Path
 
 from . import netlist
-from .adapters import NOT_BODY
+from .adapters import NOT_BODY, Ngspice
 from .circuit import Unsupported, number
 from .entry import Case, Netlist
 from .stage import staged
@@ -214,9 +214,8 @@ FUNCTIONS = {
         "pwl": None, "pwl_derivative": None, "limit": None, "vec": None, "var": None,
     },
 }
-# Signal accessors in expressions; the devices whose current ngspice's expressions read.
+# Signal accessors in expressions.
 PROBES = {"v", "i", "vr", "vi", "vm", "vp", "vdb", "ir", "ii", "im", "ip", "idb"}
-BRANCH_NGSPICE = ("v", "e", "h", "l")
 # pwr in ngspice: signed power in behavioral expressions, |x|^y in parameters.
 PWR_NGSPICE = {True: "pwrs", False: lambda x, y: f"pow(abs({x}), {y})"}
 
@@ -625,7 +624,7 @@ class Translator:
         dev = parts[0].lower()
         if len(parts) > 1 or ":" in dev or "." in dev:
             raise Untranslatable(f"current probe i({inner})")
-        if self.tgt == "ngspice" and dev[:1] not in BRANCH_NGSPICE:
+        if self.tgt == "ngspice" and dev[:1] not in Ngspice.BRANCH:
             raise Untranslatable(f"current of a {dev[:1].upper()} device in an expression")
         return inner
 
@@ -656,6 +655,7 @@ class Translator:
     def statements(self, statements: list[Statement], deck: bool) -> list[Statement]:
         out: list[Statement] = []
         end = None
+        depth = 0
         for k, st in enumerate(statements):
             if deck and k == 0:
                 out.append(st)
@@ -674,6 +674,11 @@ class Translator:
                 if head == ".control":
                     end = ".endc"
                 continue
+            depth += head in (".subckt", ".macro")
+            if head in (".ends", ".eom"):
+                if not depth:                   # Xyce passes over an .ends without .subckt
+                    continue
+                depth -= 1
             out += self.statement(st)
         return out
 
@@ -696,6 +701,7 @@ class Translator:
             return self.mutual(st)
         if letter in "rcl" and self.src == "xyce":
             self.passive(st)
+            self.tc(st)
         if letter in "vi":
             self.source(st)
         elif letter == "b" or letter in "eg" and any(w in ("value", "vol", "cur") for w in st.words()):
@@ -1042,6 +1048,20 @@ class Translator:
             raise Untranslatable(f"Xyce {w[0][0].upper()} model multiplier without an instance value")
         v = st.tokens[k].text
         st.set(k, "{(" + (v[1:-1] if v[:1] == "{" else v) + ")*(" + m.strip("{}") + ")}")
+
+    def tc(self, st: Statement) -> None:
+        """Xyce takes TC=a,b for TC1=a TC2=b (Reference Guide, R and L parameters)."""
+        w = st.words()
+        k = next((i for i in range(4, len(w) - 1) if w[i] == "tc" and w[i + 1] == "="), None)
+        if k is None:
+            return
+        values = [st.tokens[k + 2].text]
+        if k + 4 < len(w) and w[k + 3] == ",":
+            values.append(st.tokens[k + 4].text)
+        new = [Token(st.tokens[k].ws, f"tc1={values[0]}")] + \
+            [Token(" ", f"tc2={v}") for v in values[1:]]
+        st.tokens[k:k + 2 * len(values) + 1] = new
+        st.edited = True
 
     def pwl(self, st: Statement, at: int) -> None:
         """Xyce PWL [FILE name] [pairs] [TD=] [R=], parentheses optional; ngspice reads
