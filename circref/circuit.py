@@ -375,7 +375,7 @@ def _josim_deck(text: str) -> tuple[list, list, dict]:
         words = line.split()
         depth += words[0] == ".subckt"
         depth -= words[0] == ".ends"
-        if not depth and words[0][0] != "." and len(words) > 2:
+        if not depth and words[0][0] not in ".#" and len(words) > 2:     # "#": a comment
             nodes[words[0]] = (words[1], words[2])
     analyses, outputs = [], []
     for line in ls:
@@ -394,7 +394,7 @@ def _josim_deck(text: str) -> tuple[list, list, dict]:
             if kind == "nodev" and len(args) > 1:
                 pair = args[1:3] if len(args) > 2 and args[2] not in ("0", "gnd") else args[1:2]
                 found = [f"v({','.join(pair)})"]
-            elif kind == "devi" and len(args) > 1:
+            elif kind == "devi" and len(args) > 1 and args[1] in nodes:
                 found = [f"i({args[1]})"]
             elif kind == "devv" and len(args) > 1 and args[1] in nodes:
                 a, b = nodes[args[1]]

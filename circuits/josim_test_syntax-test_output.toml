@@ -3,7 +3,6 @@ case = "josim_test_syntax"
 source = "test_output.cir"
 outputs = [
     "v(1,2)",
-    "i(r2)",
     "v(1)",
 ]
 analysis = [

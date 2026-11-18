@@ -224,6 +224,33 @@ class Sane(Ngspice):
         return [sys.executable, str(ROOT / "sims" / "sane" / "run.py"), deck, raw]
 
 
+def _drop(lines: list[str], heads: set[str]) -> list[str]:
+    """Lines without the dot statements in ``heads``."""
+    return [l for l in lines if not (l.strip()[:1] == "." and
+                                     " ".join(l.strip()[1:].split()[:1]).lower() in heads)]
+
+
+def _top_nodes(lines: list[str]) -> list[str]:
+    """The nodes of the top-level elements of a SPICE-like body: the two after the name
+    (all but the last word of a subcircuit call); ground left out."""
+    nodes: list[str] = []
+    depth = 0
+    for line in lines[1:]:
+        words = line.split()
+        if not words or words[0][0] in "*+#":
+            continue
+        head = words[0].lower()
+        depth += head == ".subckt"
+        depth -= head == ".ends"
+        if depth or head[0] == ".":
+            continue
+        args = [w for w in words[1:] if "=" not in w]
+        for n in (args[:-1] if head[0] == "x" else args[:2]):
+            if n.lower() not in ("0", "gnd") and n.lower() not in nodes:
+                nodes.append(n.lower())
+    return nodes
+
+
 class Wrspice(Ngspice):
     """WRspice reads a SPICE3 deck as ngspice does and writes a SPICE3 rawfile."""
 
@@ -241,6 +268,28 @@ class Wrspice(Ngspice):
         return ["wrspice", "-b", "-r", raw, deck]
 
 
+class Josim(Adapter):
+    """JoSIM: transient only, from zero initial conditions with a fixed step; ``.print``
+    names what it writes into the rawfile."""
+
+    def deck(self, c: Circuit, text: str, a: dict, raw: str) -> str:
+        if a["type"] != "tran":
+            raise NotImplementedError(f"josim: {a['type']} analysis")
+        lines = _drop(body(text), {"iv"})
+        line = f".tran {_num(a['step'])} {_num(a['stop'])}"
+        if a.get("start"):
+            line += f" {_num(a['start'])} {_num(a['step'])}"
+        outputs = c.outputs or [f"v({n})" for n in _top_nodes(lines)]
+        return "\n".join(lines + [line] + [f".print {s}" for s in outputs] + [".end", ""])
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["josim-cli", "-o", raw, deck]
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        signals = Adapter.read(self, path, analysis)
+        return {re.sub(r"^v\(([^,]+),0\)$", r"v(\1)", n): v for n, v in signals.items()}
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -249,4 +298,5 @@ ADAPTERS = {a.name: a for a in (
     Gnucap("gnucap", ("gnucap",), error=r"^\s*\^ ?.*|.*can't find.*|.*bad file.*"),
     Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
     Wrspice("wrspice", ("wrspice", "spice3"), error=r"^.*Simulation aborted.*|^Error\b.*"),
+    Josim("josim", ("josim",)),
 )}
