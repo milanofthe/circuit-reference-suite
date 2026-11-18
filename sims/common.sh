@@ -24,7 +24,7 @@ mkdir -p "$SIMS" "$SRC"
 # out of the shipped workspace: its .git may point to a path that only exists where it was shipped from
 cd "$SRC"
 
-log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*"; }
+log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*" >&2; }
 
 # retry(cmd...): up to 5 attempts, for flaky upstream servers
 retry() {
