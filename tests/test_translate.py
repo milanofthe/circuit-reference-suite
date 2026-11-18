@@ -90,6 +90,20 @@ class XyceToNgspice(unittest.TestCase):
                  "xyce", "ngspice")
         self.assertIn(".subckt s a b l=0 w={w}\n", out)
 
+    def test_global_node(self):
+        out = tr("VDD $G_VDD 0 5\n", "xyce", "ngspice")
+        self.assertEqual(out, ".global G_VDD\nVDD G_VDD 0 5\n")
+
+    def test_dcvolt_pairs(self):
+        self.assertEqual(tr(".dcvolt 1 1.0 2 {v2}\n", "xyce", "ngspice"),
+                         ".ic v(1)=1.0 v(2)={v2}\n")
+
+    def test_variables(self):
+        self.assertEqual(tr("B1 1 0 V={sin(2*pi*freq)}\n", "xyce", "ngspice"),
+                         "B1 1 0 V={sin(2*3.141592653589793*hertz)}\n")
+        with self.assertRaises(Untranslatable):
+            tr("R1 1 0 {1+time}\n", "xyce", "ngspice")
+
     def test_hierarchical_node(self):
         self.assertEqual(tr(".ic v(x1:n1)=1\n", "xyce", "ngspice"), ".ic v(x1.n1)=1\n")
 

@@ -197,7 +197,10 @@ FUNCTIONS = {
         "unif": lambda mu, *_: mu, "rand": lambda: "0.5",
         "atan2": None, "fmod": None, "sdt": None, "ddx": None, "fasttable": None,
         "spline": None, "akima": None, "cubic": None, "wodicka": None, "bli": None,
-        "tablefile": None, "schedule": None,
+        "tablefile": None, "schedule": None, "poly": None, "splinefile": None,
+        "akimafile": None, "cubicfile": None, "wodickafile": None, "blifile": None,
+        "fasttablefile": None, "spice_pulse": None, "spice_sin": None, "spice_exp": None,
+        "spice_sffm": None,
     },
     ("ngspice", "xyce"): {
         "log": "ln",
@@ -213,6 +216,14 @@ FUNCTIONS = {
         "le0": lambda x: _ternary(f"{x}) <= (0", "1", "0"),
         "pwl": None, "pwl_derivative": None, "limit": None, "vec": None, "var": None,
     },
+}
+# Expression variables with another name: a string, a tuple for one that exists in
+# behavioral expressions only, "" for none. Xyce: temp is the temperature in C, freq and
+# hertz the AC frequency, pi; ngspice: temper, hertz (inpptree.c, behavioral only), no pi
+# in numparam (xpressn.c).
+VARIABLES = {
+    ("xyce", "ngspice"): {"temp": "temper", "freq": ("hertz",), "hertz": ("hertz",),
+                          "pi": "3.141592653589793", "vt": ""},
 }
 # Signal accessors in expressions.
 PROBES = {"v", "i", "vr", "vi", "vm", "vp", "vdb", "ir", "ii", "im", "ip", "idb"}
@@ -514,6 +525,7 @@ class Translator:
         self.ctx = Context()
         self.file = Path()                      # the file being translated
         self.modules: dict[str, str] = {}       # Verilog-A module -> version
+        self.globals: set[str] = set()          # global nodes the target has to declare
 
     # ----------------------------------------------------------------- context
 
@@ -617,10 +629,19 @@ class Translator:
                     out.append(f"{rule}({', '.join(args)})")
                 i = e + 1
                 continue
-            if self.src == "xyce" and self.tgt == "ngspice" and low in ("temp",):
-                out.append("temper")
-            elif self.src == "xyce" and low in ("vt", "hertz") and low not in self.ctx.params:
+            rule = VARIABLES.get(self.pair, {}).get(low) if low not in self.ctx.params else None
+            if rule is None and self.src == "xyce" and low in ("time", "freq", "hertz") and \
+                    not behavioral and low not in self.ctx.params:
+                raise Untranslatable(f"{low} in a parameter expression (ngspice evaluates "
+                                     f"those once)")
+            if isinstance(rule, tuple):
+                if not behavioral:
+                    raise Untranslatable(f"expression variable {low} outside a behavioral source")
+                out.append(rule[0])
+            elif rule == "":
                 raise Untranslatable(f"expression variable {low}")
+            elif rule:
+                out.append(rule)
             else:
                 out.append(name)
             i = j
@@ -654,6 +675,13 @@ class Translator:
             return "0"
         if low in self.ground(self.tgt):
             return name + "_"
+        if name[:1] == "$" and self.tgt == "ngspice":
+            # A Xyce node named $G... is global (Reference Guide 2.3.1); in ngspice a $
+            # after a blank starts a comment, and .global makes a node global.
+            if low[:2] != "$g":
+                raise Untranslatable(f"node {name}: $ starts a comment in ngspice")
+            self.globals.add(name[1:])
+            return name[1:]
         return name
 
     def ground(self, dialect: str) -> tuple[str, ...]:
@@ -755,6 +783,10 @@ class Translator:
                 _params_keyword(st)
         elif head in (".ic", ".nodeset", ".dcvolt"):
             self.braces(st)
+            if "(" not in w:                    # Xyce .DCVOLT form: node value pairs
+                st.tokens[1:] = [Token(" ", f"v({self.hier(self.node(a.text))})={b.text}")
+                                 for a, b in zip(st.tokens[1::2], st.tokens[2::2])]
+                st.edited = True
             for i, t in enumerate(st.tokens):
                 if i > 0 and st.tokens[i - 1].text == "(" and t.text.lower() not in ("(", ")"):
                     new = self.hier(self.node(t.text))
@@ -1203,6 +1235,10 @@ def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str
         tr.file = p
         new = tr.statements(sts, texts[p][1])
         out[p] = "".join(st.render(tr.tgt) for st in new)
+    if tr.globals:
+        deck = next(p for p, (_, d) in texts.items() if d)
+        title, _, rest = out[deck].partition("\n")
+        out[deck] = f"{title}\n.global {' '.join(sorted(tr.globals))}\n{rest}"
     return out
 
 
