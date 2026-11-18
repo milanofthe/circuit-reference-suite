@@ -1,6 +1,6 @@
 # Xyce, serial, release build, with Verilog-A plugin support (Xyce/ADMS):
 #
-#   falllow run --machine milan-box-01 --cache circsims --cpu 12 --memory 16G --timeout 3h -- bash sims/xyce.sh
+#   falllow run --machine milan-box-01 --cache circsims --cpu 12 --memory 12G --timeout 1h -- bash sims/xyce.sh
 #
 # The dependencies are built at the versions the Xyce release is tested with in its own CI
 # (gitlab-ci/ci.yml of the release: SuiteSparse for AMD, Trilinos, ADMS) and kept in
@@ -23,9 +23,9 @@ BUILD=$SIMS/xyce/build
 LOGS=$BUILD/logs
 mkdir -p "$DEPS" "$LOGS"
 
-# g++ on Trilinos and Xyce sources stays below this per compile job; caps the parallelism
-# to the memory the job got
-MIB_PER_JOB=${MIB_PER_JOB:-1536}
+# memory per compile job, caps the parallelism to the memory the job got. Measured with 10
+# jobs: peak 7.4 GB in the Trilinos build, 5.5 GB in the Xyce build
+MIB_PER_JOB=${MIB_PER_JOB:-1024}
 MEM_JOBS=$(( ${FALLLOW_MEMORY_MIB:-$((JOBS * MIB_PER_JOB))} / MIB_PER_JOB ))
 JOBS=$(( MEM_JOBS < JOBS ? MEM_JOBS : JOBS ))
 JOBS=$(( JOBS < 1 ? 1 : JOBS ))
