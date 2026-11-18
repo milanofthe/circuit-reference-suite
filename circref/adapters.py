@@ -91,6 +91,15 @@ class Adapter:
 
 
 class Ngspice(Adapter):
+    # ngspice's step bound when tstep does not set one: (tstop - tstart) / 50 (traninit.c).
+    STEPS = 50
+
+    def analysis(self, a: dict) -> str:
+        """ngspice needs tstep > 0; without one the bound it uses by itself."""
+        if a["type"] == "tran" and not a["step"]:
+            a = a | {"step": (a["stop"] - a.get("start", 0)) / self.STEPS}
+        return super().analysis(a)
+
     def control(self, c: Circuit) -> list[str]:
         opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
         lines = [".options acct " + " ".join(opts)]
