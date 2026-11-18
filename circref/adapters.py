@@ -126,6 +126,8 @@ class Adapter:
 class Ngspice(Adapter):
     # ngspice's step bound when tstep does not set one: (tstop - tstart) / 50 (traninit.c).
     STEPS = 50
+    # Devices with a branch current, the currents ngspice saves and reads in expressions.
+    BRANCH = ("v", "e", "h", "l")
 
     def analysis(self, a: dict) -> str:
         """ngspice needs tstep > 0; without one the bound it uses by itself."""
@@ -136,8 +138,12 @@ class Ngspice(Adapter):
     def control(self, c: Circuit) -> list[str]:
         opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
         lines = [".options acct " + " ".join(opts)]
-        if c.outputs:
-            lines.append(".save " + " ".join(c.outputs))
+        # .save takes the currents of devices with a branch only; any other i(x) (a lead
+        # current, as in Xyce) ends the run with "no data saved".
+        saved = [s for s in c.outputs if s[:2] == "v(" or
+                 s[2:3].lower() in self.BRANCH and ":" not in s]
+        if saved:
+            lines.append(".save " + " ".join(saved))
         return lines
 
     def preload(self, directory: Path, osdi: list[Path]) -> None:
