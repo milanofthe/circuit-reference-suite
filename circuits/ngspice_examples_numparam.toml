@@ -10,9 +10,3 @@ type = "dc"
 sweep = [
     { source = "vlight", start = 0.0, stop = 0.01, step = 1e-05 },
 ]
-
-[[analysis]]
-type = "dc"
-sweep = [
-    { source = "vlight", start = 0.0, stop = 0.01, step = 1e-05 },
-]

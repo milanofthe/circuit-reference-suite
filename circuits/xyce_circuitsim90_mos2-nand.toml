@@ -3,5 +3,5 @@ case = "xyce_circuitsim90_mos2"
 source = "nand.cir"
 analysis = [
     { type = "op" },
-    { type = "tran", step = 1.0000000000000002e-10, stop = 1.0000000000000001e-07 },
+    { type = "tran", step = 1e-10, stop = 1e-07 },
 ]

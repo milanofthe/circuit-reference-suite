@@ -1,0 +1,26 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "dcsweep.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -2.0, stop = 2.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v2", start = -2.0, stop = 2.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v3", start = -2.0, stop = 2.0, step = 1.0 },
+]

@@ -6,8 +6,8 @@ outputs = [
     "v(outo)",
 ]
 analysis = [
-    { type = "tran", step = 1e-08, stop = 9.999999999999999e-06, uic = true },
+    { type = "tran", step = 1e-08, stop = 1e-05, uic = true },
 ]
 
 [options]
-vntol = 9.999999999999999e-06
+vntol = 1e-05

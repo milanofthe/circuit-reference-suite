@@ -6,13 +6,9 @@ outputs = [
     "v(pole1)",
     "v(output)",
 ]
+analysis = [
+    { type = "tran", step = 5e-06, stop = 0.02, max_step = 5e-07, uic = true },
+]
 
 [options]
 method = "gear"
-
-[[analysis]]
-type = "tran"
-step = 4.9999999999999996e-06
-stop = 0.02
-max_step = 5.000000000000001e-07
-uic = true

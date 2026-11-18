@@ -19,5 +19,5 @@ outputs = [
     "i(mp1:8)",
 ]
 analysis = [
-    { type = "tran", step = 5e-09, stop = 5.000000000000001e-07 },
+    { type = "tran", step = 5e-09, stop = 5e-07 },
 ]

@@ -6,5 +6,5 @@ outputs = [
     "i(rtest)",
 ]
 analysis = [
-    { type = "tran", step = 1e-06, stop = 9.999999999999999e-06 },
+    { type = "tran", step = 1e-06, stop = 1e-05 },
 ]

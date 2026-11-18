@@ -1,9 +1,6 @@
 title = "Xyce_Regression Certification_Tests/BUG_1211_SON"
 case = "xyce_certification_tests_bug_1211_son"
 source = "istar.cir"
-outputs = [
-    "i(x1*)",
-]
 analysis = [
-    { type = "tran", step = 1e-07, stop = 9.999999999999999e-06 },
+    { type = "tran", step = 1e-07, stop = 1e-05 },
 ]

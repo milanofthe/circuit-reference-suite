@@ -9,7 +9,7 @@ outputs = [
     "i(dbackup)",
 ]
 analysis = [
-    { type = "tran", step = 4.9999999999999996e-06, stop = 0.012, max_step = 1e-06 },
+    { type = "tran", step = 5e-06, stop = 0.012, max_step = 1e-06 },
 ]
 
 [options]

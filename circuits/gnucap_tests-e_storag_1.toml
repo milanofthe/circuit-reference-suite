@@ -1,0 +1,10 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "e_storag.1.ckt"
+outputs = [
+    "v(1)",
+    "i(c1)",
+]
+analysis = [
+    { type = "tran", step = 0.05, stop = 1.0 },
+]

@@ -7,9 +7,6 @@ outputs = [
     "v(vin)",
     "v(vout)",
 ]
-
-[[analysis]]
-type = "tran"
-step = 1.0000000000000002e-10
-stop = 4e-06
-max_step = 1.0000000000000002e-10
+analysis = [
+    { type = "tran", step = 1e-10, stop = 4e-06, max_step = 1e-10 },
+]

@@ -1,0 +1,10 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_pulse.4b.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 10.0 },
+]

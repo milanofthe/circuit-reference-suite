@@ -13,5 +13,5 @@ gmin = 0.0
 type = "dc"
 sweep = [
     { source = "vvce", start = 0.0, stop = 5.0, step = 0.1 },
-    { source = "ibasecurrent", start = 0.0, stop = 0.001, step = 9.999999999999999e-05 },
+    { source = "ibasecurrent", start = 0.0, stop = 0.001, step = 0.0001 },
 ]

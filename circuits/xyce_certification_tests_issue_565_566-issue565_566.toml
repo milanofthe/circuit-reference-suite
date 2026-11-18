@@ -1,9 +1,6 @@
 title = "Xyce_Regression Certification_Tests/ISSUE_565_566"
 case = "xyce_certification_tests_issue_565_566"
 source = "issue565_566.cir"
-outputs = [
-    "v(*)",
-]
 analysis = [
     { type = "tran", step = 1e-06, stop = 1.0 },
 ]

@@ -8,5 +8,5 @@ outputs = [
     "i(r_r15)",
 ]
 analysis = [
-    { type = "tran", step = 0.0, stop = 1.0000000000000002e-06 },
+    { type = "tran", step = 0.0, stop = 1e-06 },
 ]

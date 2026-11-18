@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_diode.11c.ckt"
+analysis = [
+    { type = "op" },
+]

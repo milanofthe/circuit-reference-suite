@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_pwl.5.ckt"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 30.0, stop = 30.0 },
+]

@@ -2,7 +2,7 @@ title = "Xyce_Regression IC_AND_NODESET"
 case = "xyce_ic_and_nodeset"
 source = "ring_osc_bsim3.cir"
 analysis = [
-    { type = "tran", step = 1.0000000000000002e-10, stop = 2e-09 },
+    { type = "tran", step = 1e-10, stop = 2e-09 },
 ]
 
 [options]

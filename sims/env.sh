@@ -10,6 +10,7 @@ fi
 for _d in "$SIMS"/*/current; do
     [ -d "$_d/bin" ] && PATH="$_d/bin:$PATH"
     [ -d "$_d/lib" ] && LD_LIBRARY_PATH="$_d/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+    [ -d "$_d/python" ] && PYTHONPATH="$_d/python${PYTHONPATH:+:$PYTHONPATH}"
 done
-export PATH LD_LIBRARY_PATH SIMS
+export PATH LD_LIBRARY_PATH PYTHONPATH SIMS
 unset _d _pkgs

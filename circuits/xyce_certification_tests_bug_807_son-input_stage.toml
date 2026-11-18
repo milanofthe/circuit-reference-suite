@@ -7,9 +7,6 @@ outputs = [
     "v(ndin1)",
     "v(nin1)",
 ]
-
-[[analysis]]
-type = "tran"
-step = 1.0000000000000001e-11
-stop = 8e-09
-max_step = 1.0000000000000002e-13
+analysis = [
+    { type = "tran", step = 1e-11, stop = 8e-09, max_step = 1e-13 },
+]

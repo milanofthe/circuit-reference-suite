@@ -2,7 +2,7 @@ title = "Xyce_Regression Certification_Tests/BUG_813_SON"
 case = "xyce_certification_tests_bug_813_son"
 source = "bug_813_son.cir"
 analysis = [
-    { type = "tran", step = 1e-09, stop = 4.9999999999999996e-05 },
+    { type = "tran", step = 1e-09, stop = 5e-05 },
 ]
 
 [options]

@@ -7,5 +7,5 @@ outputs = [
     "v(rg_out)",
 ]
 analysis = [
-    { type = "tran", step = 1.0000000000000002e-10, stop = 7e-08, max_step = 1.5e-10 },
+    { type = "tran", step = 1e-10, stop = 7e-08, max_step = 1.5e-10 },
 ]

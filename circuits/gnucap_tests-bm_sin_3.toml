@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_sin.3.ckt"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2e-08 },
+]

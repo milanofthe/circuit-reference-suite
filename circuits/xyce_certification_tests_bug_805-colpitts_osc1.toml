@@ -6,7 +6,7 @@ outputs = [
     "v(q2e)",
 ]
 analysis = [
-    { type = "tran", step = 0.0, stop = 7.999999999999999e-05 },
+    { type = "tran", step = 0.0, stop = 8e-05 },
 ]
 
 [options]

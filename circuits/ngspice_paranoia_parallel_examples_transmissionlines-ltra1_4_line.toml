@@ -12,5 +12,5 @@ outputs = [
     "v(12)",
 ]
 analysis = [
-    { type = "tran", step = 1.0000000000000002e-10, stop = 4.79e-08 },
+    { type = "tran", step = 1e-10, stop = 4.79e-08 },
 ]

@@ -2,5 +2,5 @@ title = "neospice tests/circuits"
 case = "neospice_tests_circuits"
 source = "tests/circuits/sffm_source.cir"
 analysis = [
-    { type = "tran", step = 1e-08, stop = 9.999999999999999e-05 },
+    { type = "tran", step = 1e-08, stop = 0.0001 },
 ]

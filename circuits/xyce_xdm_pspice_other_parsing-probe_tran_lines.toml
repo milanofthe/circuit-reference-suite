@@ -6,7 +6,6 @@ outputs = [
     "v(n03179)",
     "i(v_v1)",
     "i(r_r1)",
-    "v(*)",
 ]
 analysis = [
     { type = "tran", step = 0.0, stop = 0.001 },

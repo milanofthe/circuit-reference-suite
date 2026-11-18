@@ -1,0 +1,99 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_tanh.2.ckt"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1e-08, stop = 1e-08, step = 1e-09 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1e-07, stop = 1e-07, step = 1e-08 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1e-06, stop = 1e-06, step = 1e-07 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1e-05, stop = 1e-05, step = 1e-06 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -0.0001, stop = 0.0001, step = 1e-05 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -0.001, stop = 0.001, step = 0.0001 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -0.01, stop = 0.01, step = 0.001 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -0.1, stop = 0.1, step = 0.01 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1.0, stop = 1.0, step = 0.1 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -10.0, stop = 10.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -100.0, stop = 100.0, step = 10.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1000.0, stop = 1000.0, step = 100.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -10000.0, stop = 10000.0, step = 1000.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -100000.0, stop = 100000.0, step = 10000.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1000000.0, stop = 1000000.0, step = 100000.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -10000000.0, stop = 10000000.0, step = 1000000.0 },
+]

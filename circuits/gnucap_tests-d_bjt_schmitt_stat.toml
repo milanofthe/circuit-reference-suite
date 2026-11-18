@@ -1,0 +1,12 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_bjt-schmitt-stat.ckt"
+outputs = [
+    "v(1)",
+    "v(3)",
+    "v(5)",
+    "v(6)",
+]
+analysis = [
+    { type = "op" },
+]

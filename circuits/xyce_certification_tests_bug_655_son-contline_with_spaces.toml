@@ -8,9 +8,6 @@ outputs = [
 
 [[analysis]]
 type = "dc"
-
-[[analysis.sweep]]
-source = "i1"
-start = -9.999999999999999e-05
-stop = 9.999999999999999e-05
-step = 9.999999999999999e-06
+sweep = [
+    { source = "i1", start = -0.0001, stop = 0.0001, step = 1e-05 },
+]

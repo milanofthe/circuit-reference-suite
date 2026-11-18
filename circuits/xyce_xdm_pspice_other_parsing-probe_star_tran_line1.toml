@@ -1,9 +1,6 @@
 title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
 case = "xyce_xdm_pspice_other_parsing"
 source = "probe_star_tran_line1.cir"
-outputs = [
-    "v(*)",
-]
 analysis = [
     { type = "tran", step = 0.0, stop = 0.001 },
 ]

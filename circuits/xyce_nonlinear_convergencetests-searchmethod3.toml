@@ -6,5 +6,5 @@ outputs = [
     "v(b)",
 ]
 analysis = [
-    { type = "tran", step = 1e-09, stop = 6.000000000000001e-08 },
+    { type = "tran", step = 1e-09, stop = 6e-08 },
 ]

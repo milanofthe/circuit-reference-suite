@@ -1,10 +1,6 @@
 title = "Xyce_Regression Certification_Tests/BUG_1238_SON"
 case = "xyce_certification_tests_bug_1238_son"
 source = "bug1238-ac-op.cir"
-outputs = [
-    "v(*)",
-    "i(*)",
-]
 analysis = [
     { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 10000000.0 },
     { type = "op" },

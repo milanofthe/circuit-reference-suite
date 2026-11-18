@@ -2,5 +2,5 @@ title = "Xyce_Regression CircuitSim90/MOS2"
 case = "xyce_circuitsim90_mos2"
 source = "toronto.cir"
 analysis = [
-    { type = "tran", step = 1e-08, stop = 2.0000000000000003e-06 },
+    { type = "tran", step = 1e-08, stop = 2e-06 },
 ]

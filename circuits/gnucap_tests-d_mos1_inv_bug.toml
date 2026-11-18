@@ -1,0 +1,15 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_mos1.inv.bug.ckt"
+outputs = [
+    "v(mn1.dsb)",
+    "v(mp1.dsb)",
+    "v(mn2.dsb)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 5.0, step = 1.0 },
+]

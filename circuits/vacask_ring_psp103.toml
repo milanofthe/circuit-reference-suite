@@ -5,7 +5,7 @@ outputs = [
     "v(1)",
 ]
 analysis = [
-    { type = "tran", step = 5.000000000000001e-11, stop = 1e-06, max_step = 5.000000000000001e-11 },
+    { type = "tran", step = 5e-11, stop = 1e-06, max_step = 5e-11 },
 ]
 
 [options]

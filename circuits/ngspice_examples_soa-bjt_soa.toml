@@ -12,5 +12,5 @@ temp = 50.0
 type = "dc"
 sweep = [
     { source = "vce", start = 0.0, stop = -200.0, step = -0.1 },
-    { source = "ib", start = 0.0, stop = 7.999999999999999e-05, step = 8e-06 },
+    { source = "ib", start = 0.0, stop = 8e-05, step = 8e-06 },
 ]

@@ -1,6 +1,6 @@
 title = "ngspice paranoia_parallel/examples/vdmos"
 case = "ngspice_paranoia_parallel_examples_vdmos"
-source = "IXTP6N100D2-n-weak-inv.cir"
+source = "IXTP6N100D2-n-weak-inv.sp"
 
 [[analysis]]
 type = "dc"

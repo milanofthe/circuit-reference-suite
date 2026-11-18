@@ -27,6 +27,7 @@ from __future__ import annotations
 import re
 import tomllib
 from dataclasses import dataclass
+from decimal import Decimal
 from functools import cached_property
 from pathlib import Path
 
@@ -110,8 +111,7 @@ class Unsupported(Exception):
     pass
 
 
-_SCALE = {"t": 1e12, "g": 1e9, "meg": 1e6, "k": 1e3, "mil": 25.4e-6, "m": 1e-3, "u": 1e-6,
-          "n": 1e-9, "p": 1e-12, "f": 1e-15}
+_EXPONENT = {"t": 12, "g": 9, "meg": 6, "k": 3, "m": -3, "u": -6, "n": -9, "p": -12, "f": -15}
 _NUMBER = re.compile(r"([-+]?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)(meg|mil|[tgkmunpf])?[a-z]*$", re.I)
 
 
@@ -120,15 +120,18 @@ def number(token: str) -> float:
     m = _NUMBER.match(token.strip())
     if not m:
         raise Unsupported(f"not a number: {token!r}")
-    return float(m.group(1)) * _SCALE.get((m.group(2) or "").lower(), 1.0)
+    suffix = (m.group(2) or "").lower()
+    if suffix == "mil":
+        return float(m.group(1)) * 25.4e-6
+    return float(Decimal(m.group(1)).scaleb(_EXPONENT.get(suffix, 0)))     # 50p: 5e-11 exactly
 
 
-def _lines(text: str) -> list[str]:
+def lines(text: str) -> list[str]:
     """Logical lines: continuations joined, comments dropped, lower case."""
     out: list[str] = []
     for raw in text.splitlines()[1:]:                       # the first line is the title
         line = re.split(r"\s;|^;|\s\$\s|\s\$$|\s//", raw.strip(), maxsplit=1)[0].rstrip()
-        if not line or line[0] == "*":
+        if not line or line[0] in "*'":
             continue
         if line[0] == "+" and out:
             out[-1] += " " + line[1:].strip()
@@ -145,13 +148,15 @@ def _signals(tokens: str) -> list[str]:
     the same signal are one signal, expressions are dropped."""
     out = []
     for kind, a, b in _SIGNAL.findall(re.sub(r"\{[^}]*\}", "", tokens)):
+        if a in ("nodes", "all", "*") or "*" in a or "?" in a:     # wildcards
+            continue
         s = f"{kind}({a},{b})" if b and b != "0" else f"{kind}({a})"
         if s not in out:
             out.append(s)
     return out
 
 
-def _spice_analysis(head: str, args: list[str]) -> dict:
+def spice_analysis(head: str, args: list[str]) -> dict:
     flags = [a for a in args if "=" not in a]
     if head == "op":
         return {"type": "op"}
@@ -182,6 +187,45 @@ def _spice_analysis(head: str, args: list[str]) -> dict:
     raise Unsupported(f".{head}")
 
 
+def _gnucap_analysis(head: str, args: list[str]) -> dict:
+    """gnucap's order: ``tran start stop step``, ``ac start stop {step | dec n | oct n}``;
+    words after the numbers (``trace all``) only change what is printed."""
+    nums, words = [], []
+    for a in args:
+        try:
+            nums.append(number(a)) if not words else words.append(a)
+        except Unsupported:
+            words.append(a)
+    if head == "op":
+        if nums:
+            raise Unsupported(".op over a temperature or sweep")
+        return {"type": "op"}
+    if head in ("tran", "tr"):
+        if len(nums) != 3:
+            raise Unsupported(f".tran {' '.join(args)}")
+        a = {"type": "tran", "step": nums[2], "stop": nums[1]}
+        if nums[0]:
+            a["start"] = nums[0]
+        return a
+    if head == "ac":
+        if len(nums) == 3:
+            points = round((nums[1] - nums[0]) / nums[2]) + 1
+            return {"type": "ac", "sweep": "lin", "points": points, "start": nums[0], "stop": nums[1]}
+        if len(nums) == 2 and len(words) >= 2 and words[0] in ("dec", "oct"):
+            return {"type": "ac", "sweep": words[0], "points": int(number(words[1])),
+                    "start": nums[0], "stop": nums[1]}
+        raise Unsupported(f".ac {' '.join(args)}")
+    if head == "dc":
+        return spice_analysis("dc", args)
+    raise Unsupported(f".{head}")
+
+
+# A gnucap deck that changes its circuit between analyses is a script, not a circuit.
+_GNUCAP_SCRIPTED = {"modify", "delete", "alter", "gen", "generator", "measure", "exp", "load",
+                    "fanout", "alarm", "mark", "unmark", "store"}
+# gnucap prints several nodes in one probe: v(1 2 3).
+_MULTI = re.compile(r"\b([vi])(?:[rimpdb]{0,2})\(([^(),]+\s[^(),]+)\)")
+
 # A control script that changes the circuit between analyses states more than analyses.
 _SCRIPTED = {"alter", "altermod", "foreach", "repeat", "while", "dowhile", "if", "reset",
              "source", "set appendwrite", "mc_source"}
@@ -193,11 +237,13 @@ BLOCKING = lambda reasons: [r for r in reasons if r not in (".control script", "
 def from_deck(case: Case, nl: Netlist) -> dict:
     """A circuit's analyses, outputs and options as the deck states them, in its dot lines
     or in its control script."""
-    if nl.dialect not in SPICE_ORDER:
+    if nl.dialect not in SPICE_ORDER + ("gnucap",):
         raise Unsupported(f"dialect {nl.dialect}: analysis lines not read yet")
+    gnucap = nl.dialect == "gnucap"
+    analysis = _gnucap_analysis if gnucap else spice_analysis
     analyses, outputs, options = [], [], {}
     control = False
-    for line in _lines((case.directory / nl.file).read_text(encoding="latin-1")):
+    for line in lines((case.directory / nl.file).read_text(encoding="latin-1")):
         if line in (".control", ".endc"):
             control = line == ".control"
             continue
@@ -206,17 +252,24 @@ def from_deck(case: Case, nl: Netlist) -> dict:
             if head in _SCRIPTED or line.startswith("set appendwrite"):
                 raise Unsupported(f"control script: {head}")
             if head in ("op", "tran", "ac", "dc"):
-                analyses.append(_spice_analysis(head, args))
+                if (a := spice_analysis(head, args)) not in analyses:
+                    analyses.append(a)
             elif head in ("print", "plot", "save", "wrdata", "write"):
                 outputs += [s for s in _signals(" ".join(args)) if s not in outputs]
             continue
         if line[0] != "." or len(line) == 1:
             continue
         head, *args = line[1:].split()
-        if head in ("op", "tran", "ac", "dc"):
-            analyses.append(_spice_analysis(head, args))
+        if gnucap and head in _GNUCAP_SCRIPTED:
+            raise Unsupported(f"script: .{head}")
+        if head in ("op", "tran", "ac", "dc") or (gnucap and head == "tr"):
+            if (a := analysis(head, args)) not in analyses:
+                analyses.append(a)
         elif head in ("print", "plot", "probe", "save"):
-            outputs += [s for s in _signals(" ".join(args)) if s not in outputs]
+            text = " ".join(args)
+            if gnucap:
+                text = _MULTI.sub(lambda m: " ".join(f"{m[1]}({n})" for n in m[2].split()), text)
+            outputs += [s for s in _signals(text) if s not in outputs]
         elif head == "temp" and args:
             options["temp"] = number(args[0])
         elif head in ("option", "options", "opt", "opts"):

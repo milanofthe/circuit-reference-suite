@@ -2,5 +2,5 @@ title = "Xyce_Regression Certification_Tests/BUG_2039"
 case = "xyce_certification_tests_bug_2039"
 source = "bug_2039.cir"
 analysis = [
-    { type = "tran", step = 1e-06, stop = 9.999999999999999e-06 },
+    { type = "tran", step = 1e-06, stop = 1e-05 },
 ]

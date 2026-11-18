@@ -9,7 +9,7 @@ outputs = [
     "v(ga2)",
 ]
 analysis = [
-    { type = "tran", step = 4.0000000000000007e-10, stop = 9.999999999999999e-05 },
+    { type = "tran", step = 4e-10, stop = 0.0001 },
 ]
 
 [options]
