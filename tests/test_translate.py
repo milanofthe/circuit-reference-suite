@@ -147,6 +147,10 @@ class NgspiceToXyce(unittest.TestCase):
         self.assertEqual(tr("  R1 1 0 1k\n", "ngspice", "xyce"), "R1 1 0 1k\n")
         self.assertEqual(tr("R1 1 0 1k\n  R2 1 0 1k\n", "xyce", "ngspice"), "R1 1 0 1k\n*R2 1 0 1k\n")
 
+    def test_ltra_flags(self):
+        self.assertEqual(tr(".model ll ltra r=1 len=1 steplimit nocontrol\n", "ngspice", "xyce"),
+                         ".model ll ltra r=1 len=1 steplimit=1\n")
+
     def test_params_keyword(self):
         self.assertEqual(tr(".subckt inv a b w=1u\n.ends\nx1 1 2 inv w=2u\n", "ngspice", "xyce"),
                          ".subckt inv a b params: w=1u\n.ends\nx1 1 2 inv params: w=2u\n")

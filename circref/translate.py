@@ -101,6 +101,22 @@ TYPES = {
 }
 TYPE_NAMES = {("xyce", "ngspice"): {"cap": "c", "ind": "l"}}
 
+# Model flags written without a value, by model type: the target's flag (set to 1), or
+# None for a setting of the solver only. ngspice LTRA (ltra.c): steplimit, nosteplimit,
+# lininterp, quadinterp, mixedinterp, truncnr, truncdontcut, nocontrol (no time step
+# control); Xyce LTRA (N_DEV_LTRA.C) has all but nocontrol as parameters.
+FLAGS = {("ngspice", "xyce"): {"ltra": {f: f for f in (
+    "steplimit", "nosteplimit", "lininterp", "quadinterp", "mixedinterp", "truncnr",
+    "truncdontcut")} | {"nocontrol": None}}}
+
+# Instance parameters of the source dialect the target's element does not have.
+# ngspice B: tc1, tc2 scale the output with temperature; ngspice R: ac is a resistance
+# for AC analysis only (ngspice manual, resistor and B source). Xyce's B and R have neither.
+NO_INSTANCE_PARAMS = {("ngspice", "xyce"): {
+    "b": {"tc1": "temperature coefficient of a B source",
+          "tc2": "temperature coefficient of a B source"},
+    "r": {"ac": "AC-only resistance"}}}
+
 # Verilog-A modules (ngspice loads them as OSDI, N instances) that are built into Xyce:
 # module -> (device letter, model types for type=+1/-1, level, version Xyce implements).
 # The version is read from the module's source; another version is not translated.
@@ -737,6 +753,10 @@ class Translator:
         if letter in NO_ELEMENT[self.pair]:
             raise Untranslatable(NO_ELEMENT[self.pair][letter])
         self.braces(st)
+        no = NO_INSTANCE_PARAMS.get(self.pair, {}).get(letter, {})
+        bad = [x for i, x in enumerate(st.words()[:-1]) if x in no and st.words()[i + 1] == "="]
+        if bad:
+            raise Untranslatable(f"{letter.upper()} parameter {bad[0]}: {no[bad[0]]}")
         if letter == "k":
             return self.mutual(st)
         if letter in "rcl" and self.src == "xyce":
@@ -903,12 +923,32 @@ class Translator:
             self.builtin(st, typ)
             return
         if typ in TYPES[self.tgt]:
+            self.flags(st, typ)
             return
         new = TYPE_NAMES.get(self.pair, {}).get(typ)
         if new:
             st.set(2, new)
             return
         raise Untranslatable(f"model type {typ}")
+
+    def flags(self, st: Statement, typ: str) -> None:
+        """Model flags written without a value (ngspice's LTRA): Xyce wants flag=1."""
+        table = FLAGS.get(self.pair, {}).get(typ)
+        if not table:
+            return
+        w = st.words()
+        for i in range(len(w) - 1, 2, -1):
+            bare = w[i] not in ("(", ")", "=") and w[i - 1] != "=" and \
+                (i + 1 >= len(w) or w[i + 1] != "=")
+            if not bare:
+                continue
+            if w[i] not in table:
+                raise Untranslatable(f"{typ} model flag {w[i]}")
+            if table[w[i]] is None:
+                del st.tokens[i]
+            else:
+                st.set(i, f"{table[w[i]]}=1")
+            st.edited = True
 
     def builtin(self, st: Statement, module: str) -> None:
         """A model of a Verilog-A module the target has built in, if the versions agree."""
