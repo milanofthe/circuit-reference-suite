@@ -224,6 +224,23 @@ class Sane(Ngspice):
         return [sys.executable, str(ROOT / "sims" / "sane" / "run.py"), deck, raw]
 
 
+class Wrspice(Ngspice):
+    """WRspice reads a SPICE3 deck as ngspice does and writes a SPICE3 rawfile."""
+
+    def control(self, c: Circuit) -> list[str]:
+        opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
+        lines = [".options " + " ".join(opts)] if opts else []
+        if c.outputs:
+            lines.append(".save " + " ".join(c.outputs))
+        return lines
+
+    def preload(self, directory: Path, osdi: list[Path]) -> None:
+        Adapter.preload(self, directory, osdi)
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["wrspice", "-b", "-r", raw, deck]
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -231,4 +248,5 @@ ADAPTERS = {a.name: a for a in (
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
     Gnucap("gnucap", ("gnucap",), error=r"^\s*\^ ?.*|.*can't find.*|.*bad file.*"),
     Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
+    Wrspice("wrspice", ("wrspice", "spice3"), error=r"^.*Simulation aborted.*|^Error\b.*"),
 )}
