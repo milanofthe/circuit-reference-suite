@@ -10,7 +10,7 @@ outputs = [
     "v(vo)",
 ]
 analysis = [
-    { type = "tran", step = 1e-08, stop = 4.9999999999999996e-06 },
+    { type = "tran", step = 1e-08, stop = 5e-06 },
 ]
 
 [options]

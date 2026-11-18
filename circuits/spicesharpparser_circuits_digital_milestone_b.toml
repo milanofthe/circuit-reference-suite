@@ -17,7 +17,7 @@ outputs = [
     "v(carry)",
 ]
 analysis = [
-    { type = "tran", step = 1e-10, stop = 8.500000000000001e-08, max_step = 1e-10, uic = true },
+    { type = "tran", step = 1e-10, stop = 8.5e-08, max_step = 1e-10, uic = true },
 ]
 
 [options]

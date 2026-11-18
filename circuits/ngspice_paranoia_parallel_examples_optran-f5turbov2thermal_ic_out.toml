@@ -2,5 +2,5 @@ title = "ngspice paranoia_parallel/examples/optran"
 case = "ngspice_paranoia_parallel_examples_optran"
 source = "F5TurboV2thermal-ic-out.cir"
 analysis = [
-    { type = "tran", step = 1.9999999999999998e-05, stop = 5.0 },
+    { type = "tran", step = 2e-05, stop = 5.0 },
 ]

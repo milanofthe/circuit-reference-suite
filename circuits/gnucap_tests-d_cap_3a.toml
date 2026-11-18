@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_cap.3a.ckt"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 80.0 },
+]

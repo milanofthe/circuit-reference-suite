@@ -6,13 +6,10 @@ outputs = [
     "v(2)",
     "v(3)",
 ]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 6e-08, max_step = 5e-10 },
+]
 
 [options]
 reltol = 0.001
 abstol = 1e-14
-
-[[analysis]]
-type = "tran"
-step = 1.0000000000000002e-10
-stop = 6.000000000000001e-08
-max_step = 5e-10

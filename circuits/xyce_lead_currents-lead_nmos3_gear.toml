@@ -2,7 +2,7 @@ title = "Xyce_Regression LEAD_CURRENTS"
 case = "xyce_lead_currents"
 source = "lead_nmos3_gear.cir"
 analysis = [
-    { type = "tran", step = 1e-09, stop = 4.9999999999999996e-05 },
+    { type = "tran", step = 1e-09, stop = 5e-05 },
 ]
 
 [options]

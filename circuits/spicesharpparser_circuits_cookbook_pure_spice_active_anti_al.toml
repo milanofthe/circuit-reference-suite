@@ -8,16 +8,7 @@ outputs = [
     "v(output)",
     "v(adc)",
 ]
-
-[[analysis]]
-type = "ac"
-sweep = "dec"
-points = 50
-start = 10.0
-stop = 10000000.0
-
-[[analysis]]
-type = "tran"
-step = 2.0000000000000002e-07
-stop = 0.006
-max_step = 1.0000000000000001e-07
+analysis = [
+    { type = "ac", sweep = "dec", points = 50, start = 10.0, stop = 10000000.0 },
+    { type = "tran", step = 2e-07, stop = 0.006, max_step = 1e-07 },
+]

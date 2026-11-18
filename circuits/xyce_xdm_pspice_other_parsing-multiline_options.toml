@@ -12,7 +12,7 @@ analysis = [
 gmin = 1e-09
 method = "trap"
 reltol = 0.01
-abstol = 9.999999999999999e-05
+abstol = 0.0001
 
 [variants]
 pspice = "multiline_options.cir.pspice"

@@ -1,6 +1,6 @@
 title = "ngspice paranoia_parallel/examples/vdmos"
 case = "ngspice_paranoia_parallel_examples_vdmos"
-source = "vdmosp-out.cir"
+source = "vdmosp-out.sp"
 
 [[analysis]]
 type = "dc"

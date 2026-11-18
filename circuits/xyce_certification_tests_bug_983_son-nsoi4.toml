@@ -1,9 +1,6 @@
 title = "Xyce_Regression Certification_Tests/BUG_983_SON"
 case = "xyce_certification_tests_bug_983_son"
 source = "nsoi4.cir"
-outputs = [
-    "i(*)",
-]
 analysis = [
     { type = "tran", step = 2e-08, stop = 3e-06 },
 ]

@@ -6,10 +6,6 @@ outputs = [
     "v(divided)",
     "v(divided_b)",
 ]
-
-[[analysis]]
-type = "tran"
-step = 1.0000000000000001e-07
-stop = 0.00015
-max_step = 1.0000000000000001e-07
-uic = true
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.00015, max_step = 1e-07, uic = true },
+]

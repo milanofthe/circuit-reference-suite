@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_switch.error3.ckt"
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.002 },
+]

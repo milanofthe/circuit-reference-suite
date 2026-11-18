@@ -10,7 +10,7 @@ outputs = [
     "i(dled2)",
 ]
 analysis = [
-    { type = "tran", step = 0.001, stop = 5.0, max_step = 9.999999999999999e-05, uic = true },
+    { type = "tran", step = 0.001, stop = 5.0, max_step = 0.0001, uic = true },
 ]
 
 [options]

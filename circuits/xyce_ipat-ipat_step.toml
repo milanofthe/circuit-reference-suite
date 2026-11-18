@@ -5,5 +5,5 @@ outputs = [
     "i(i1)",
 ]
 analysis = [
-    { type = "tran", step = 0.0, stop = 5.0000000000000004e-08 },
+    { type = "tran", step = 0.0, stop = 5e-08 },
 ]

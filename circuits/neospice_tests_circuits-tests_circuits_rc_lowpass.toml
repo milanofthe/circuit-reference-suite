@@ -2,5 +2,5 @@ title = "neospice tests/circuits"
 case = "neospice_tests_circuits"
 source = "tests/circuits/rc_lowpass.cir"
 analysis = [
-    { type = "tran", step = 1e-07, stop = 4.9999999999999996e-05 },
+    { type = "tran", step = 1e-07, stop = 5e-05 },
 ]

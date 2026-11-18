@@ -2,5 +2,5 @@ title = "Xyce_Regression VSFFM"
 case = "xyce_vsffm"
 source = "vsffm.cir"
 analysis = [
-    { type = "tran", step = 1e-08, stop = 9.999999999999999e-06 },
+    { type = "tran", step = 1e-08, stop = 1e-05 },
 ]

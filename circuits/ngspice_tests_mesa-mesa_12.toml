@@ -14,5 +14,5 @@ sweep = [
 
 [[analysis]]
 type = "tran"
-step = 1.0000000000000002e-10
+step = 1e-10
 stop = 5e-09

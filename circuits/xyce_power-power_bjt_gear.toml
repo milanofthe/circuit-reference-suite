@@ -9,7 +9,7 @@ outputs = [
     "i(vib1)",
 ]
 analysis = [
-    { type = "tran", step = 1e-09, stop = 1.4999999999999999e-05 },
+    { type = "tran", step = 1e-09, stop = 1.5e-05 },
 ]
 
 [options]

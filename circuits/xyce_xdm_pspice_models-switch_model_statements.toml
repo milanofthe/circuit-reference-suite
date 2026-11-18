@@ -3,7 +3,6 @@ case = "xyce_xdm_pspice_models"
 source = "switch_model_statements.cir"
 analysis = [
     { type = "tran", step = 2e-08, stop = 4e-06 },
-    { type = "tran", step = 2e-08, stop = 4e-06 },
 ]
 
 [variants]

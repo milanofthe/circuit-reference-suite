@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_subckt.error3.ckt"
+analysis = [
+    { type = "op" },
+]

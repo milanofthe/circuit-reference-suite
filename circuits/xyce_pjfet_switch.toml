@@ -6,10 +6,6 @@ outputs = [
     "v(2)",
     "v(3)",
 ]
-
-[[analysis]]
-type = "tran"
-step = 5e-10
-stop = 1.07e-06
-start = 1e-06
-max_step = 1.0000000000000002e-10
+analysis = [
+    { type = "tran", step = 5e-10, stop = 1.07e-06, start = 1e-06, max_step = 1e-10 },
+]

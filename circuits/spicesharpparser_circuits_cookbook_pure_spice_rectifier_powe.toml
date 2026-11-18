@@ -7,13 +7,9 @@ outputs = [
     "v(output,dc_return)",
     "v(load_control)",
 ]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.3, max_step = 2e-05, uic = true },
+]
 
 [options]
 method = "gear"
-
-[[analysis]]
-type = "tran"
-step = 9.999999999999999e-05
-stop = 0.3
-max_step = 1.9999999999999998e-05
-uic = true

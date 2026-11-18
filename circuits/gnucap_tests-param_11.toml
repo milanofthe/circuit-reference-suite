@@ -1,0 +1,15 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "param.11.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+]
+analysis = [
+    { type = "op" },
+]

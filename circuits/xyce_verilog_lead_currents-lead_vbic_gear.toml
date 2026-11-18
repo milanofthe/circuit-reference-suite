@@ -2,7 +2,7 @@ title = "Xyce_Regression Verilog_LEAD_CURRENTS"
 case = "xyce_verilog_lead_currents"
 source = "lead_vbic_gear.cir"
 analysis = [
-    { type = "tran", step = 1e-09, stop = 1.9999999999999998e-05 },
+    { type = "tran", step = 1e-09, stop = 2e-05 },
 ]
 
 [options]

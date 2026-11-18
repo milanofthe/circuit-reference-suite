@@ -8,5 +8,5 @@ outputs = [
     "v(11)",
 ]
 analysis = [
-    { type = "tran", step = 1e-11, stop = 4.9999999999999996e-06 },
+    { type = "tran", step = 1e-11, stop = 5e-06 },
 ]

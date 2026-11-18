@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_fit.3.3.ckt"
+analysis = [
+    { type = "tran", step = 1e-10, stop = 1e-08 },
+]

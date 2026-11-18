@@ -2,7 +2,7 @@ title = "Xyce_Regression LEAD_CURRENTS"
 case = "xyce_lead_currents"
 source = "lead_tra_trap.cir"
 analysis = [
-    { type = "tran", step = 2.5e-10, stop = 5.0000000000000004e-08 },
+    { type = "tran", step = 2.5e-10, stop = 5e-08 },
 ]
 
 [options]

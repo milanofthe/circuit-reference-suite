@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_mos6.sat2.spice"
+analysis = [
+    { type = "op" },
+]

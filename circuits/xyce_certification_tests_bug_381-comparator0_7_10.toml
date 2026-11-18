@@ -1,6 +1,6 @@
 title = "Xyce_Regression Certification_Tests/BUG_381"
 case = "xyce_certification_tests_bug_381"
-source = "comparator0_7_-10.cir"
+source = "comparator0_7_10.cir"
 outputs = [
     "v(a)",
     "v(b)",
@@ -12,4 +12,4 @@ analysis = [
 
 [options]
 reltol = 0.0001
-temp = -10.0
+temp = 10.0

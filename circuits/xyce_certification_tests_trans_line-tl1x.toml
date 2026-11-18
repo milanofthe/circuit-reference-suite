@@ -9,7 +9,7 @@ outputs = [
     "v(44)",
 ]
 analysis = [
-    { type = "tran", step = 9.999999999999999e-05, stop = 0.3 },
+    { type = "tran", step = 0.0001, stop = 0.3 },
 ]
 
 [options]

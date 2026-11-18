@@ -2,5 +2,5 @@ title = "Xyce_Regression Certification_Tests/MOS1_Invert_Cascade"
 case = "xyce_certification_tests_mos1_invert_cascade"
 source = "inverter_cascade_15.cir"
 analysis = [
-    { type = "tran", step = 2e-08, stop = 2.9999999999999997e-05 },
+    { type = "tran", step = 2e-08, stop = 3e-05 },
 ]

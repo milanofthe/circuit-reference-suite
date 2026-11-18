@@ -9,7 +9,7 @@ outputs = [
     "v(bus)",
 ]
 analysis = [
-    { type = "tran", step = 1e-10, stop = 1.0000000000000001e-07, max_step = 1e-10, uic = true },
+    { type = "tran", step = 1e-10, stop = 1e-07, max_step = 1e-10, uic = true },
 ]
 
 [options]

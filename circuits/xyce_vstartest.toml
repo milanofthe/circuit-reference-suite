@@ -1,10 +1,6 @@
 title = "Xyce_Regression VSTARTEST"
 case = "xyce_vstartest"
 source = "vstarTest.cir"
-outputs = [
-    "v(*)",
-    "i(*)",
-]
 analysis = [
     { type = "tran", step = 2e-08, stop = 6e-06 },
 ]

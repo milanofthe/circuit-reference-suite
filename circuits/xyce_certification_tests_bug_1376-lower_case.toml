@@ -6,5 +6,5 @@ outputs = [
     "v(2)",
 ]
 analysis = [
-    { type = "tran", step = 1.0000000000000001e-07, stop = 0.5 },
+    { type = "tran", step = 1e-07, stop = 0.5 },
 ]

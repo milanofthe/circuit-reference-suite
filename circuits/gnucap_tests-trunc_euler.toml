@@ -1,0 +1,10 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "trunc-euler.ckt"
+analysis = [
+    { type = "tran", step = 0.01, stop = 0.1 },
+]
+
+[options]
+reltol = 0.01
+method = "euler"

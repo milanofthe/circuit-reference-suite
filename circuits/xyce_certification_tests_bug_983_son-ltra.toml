@@ -4,11 +4,7 @@ source = "ltra.cir"
 outputs = [
     "v(1)",
     "v(2)",
-    "i(*)",
 ]
-
-[[analysis]]
-type = "tran"
-step = 1.0000000000000002e-10
-stop = 1.2000000000000002e-07
-max_step = 1.5e-10
+analysis = [
+    { type = "tran", step = 1e-10, stop = 1.2e-07, max_step = 1.5e-10 },
+]

@@ -1,0 +1,10 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_mos7.sts.ckt"
+outputs = [
+    "i(m1)",
+    "v(m1)",
+]
+analysis = [
+    { type = "op" },
+]
