@@ -7,6 +7,7 @@ license = "MIT"
 dependencies = [
     "jsonschema>=4.17",
     "tomli-w>=1.0",
+    "numpy>=1.26",
 ]
 
 [project.scripts]

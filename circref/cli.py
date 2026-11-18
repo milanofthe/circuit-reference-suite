@@ -1,12 +1,14 @@
-"""python -m circref {validate,build,check,list,circuits}
+"""python -m circref {validate,build,check,list,circuits,run}
 
 build  writes every generated file (case and library READMEs, the top README tables).
 check  validates and rebuilds in memory; fails when a committed file is stale.
+run       runs circuits on simulators (circref/bench.py), results into --out.
 circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
 """
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -92,6 +94,15 @@ def cmd_circuits(args) -> int:
     return 0
 
 
+def cmd_run(args) -> int:
+    from . import bench
+    from .adapters import ADAPTERS
+    adapters = [ADAPTERS[n] for n in (args.sim or ADAPTERS)]
+    shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
+    return bench.run(bench.select(args.circuit), adapters, Path(args.out), args.jobs,
+                     args.timeout, args.memory, shard)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="circref")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -102,6 +113,14 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("build").set_defaults(fn=cmd_build)
     sub.add_parser("list").set_defaults(fn=cmd_list)
     sub.add_parser("circuits").set_defaults(fn=cmd_circuits)
+    sp = sub.add_parser("run")
+    sp.add_argument("circuit", nargs="*", help="circuit names or globs; all when none")
+    sp.add_argument("--sim", action="append", default=[], help="simulator, repeatable; all when none")
+    sp.add_argument("--jobs", type=int, default=int(os.environ.get("FALLLOW_CORES", os.cpu_count())))
+    sp.add_argument("--timeout", type=float, default=600, help="seconds per analysis")
+    sp.add_argument("--memory", type=float, default=4, help="GB address space per run")
+    sp.add_argument("--out", default="out")
+    sp.set_defaults(fn=cmd_run)
     args = ap.parse_args(argv)
     return args.fn(args)
 

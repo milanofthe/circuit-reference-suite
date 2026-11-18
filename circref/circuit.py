@@ -82,10 +82,6 @@ class Circuit:
     def options(self) -> dict:
         return self.raw.get("options", {})
 
-    def body_for(self, dialect: str) -> Netlist:
-        """The netlist the circuit body of ``dialect`` comes from."""
-        return self.variants.get(dialect, self.source)
-
     def errors(self) -> list[str]:
         errors = validate_schema(self.raw, "circuit")
         if errors:
