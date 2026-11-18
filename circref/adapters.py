@@ -420,6 +420,65 @@ class Qucsator(Adapter):
         return out
 
 
+class Ahkab(Adapter):
+    """ahkab: ``-o prefix`` writes ``prefix.<analysis>``, a tab separated table whose
+    header names node voltages ``V<node>`` and currents ``I(<source>)``, for ac as
+    magnitude ``|x|`` and phase ``arg(x)``; the first column is the axis except at op."""
+
+    NOT_BODY = {"op", "dc", "ac", "tran", "pz", "pss", "symbolic", "plot", "four", "fft",
+                "shooting", "end"}
+
+    def deck(self, c: Circuit, text: str, a: dict, raw: str) -> str:
+        t = a["type"]
+        if t == "op":
+            line = ".op"
+        elif t == "dc":
+            if len(a["sweep"]) != 1:
+                raise NotImplementedError("ahkab: nested dc sweeps")
+            s = a["sweep"][0]
+            line = (f".dc source={s['source']} start={_num(s['start'])} stop={_num(s['stop'])} "
+                    f"step={_num(s['step'])}")
+        elif t == "ac":
+            n, stop = total_points(a)
+            line = (f".ac start={_num(a['start'])} stop={_num(stop)} nsteps={n} "
+                    f"type={'lin' if a['sweep'] == 'lin' else 'log'}")
+        else:
+            lines = body(text)
+            # zero initial state, or the elements' initial conditions over the operating point
+            uic = (2 if any("ic=" in l.lower() for l in lines[1:]) else 0) if a.get("uic") else 1
+            line = f".tran tstep={_num(a['step'])} tstop={_num(a['stop'])} uic={uic}"
+            if a.get("start"):
+                line += f" tstart={_num(a['start'])}"
+            method = {"trap": "trap", "gear": "gear2"}.get(c.options.get("method", ""))
+            if method:
+                line += f" method={method}"
+            if uic:                                     # from the .op the run computes first
+                line = ".op\n" + line
+        return "\n".join(_drop(body(text), self.NOT_BODY) + [line, ".end", ""])
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        prefix = raw.removesuffix(".raw")
+        return ["sh", "-c", 'ahkab -o "$1" "$2" || exit; for e in tran ac dc op; do '
+                '[ -f "$1.$e" ] && exec mv "$1.$e" "$3"; done; exit 1', "ahkab", prefix, deck, raw]
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        text = path.read_text(encoding="latin-1").splitlines()
+        names = [n.strip().lower() for n in text[0].lstrip("#").split("\t")]
+        table = np.loadtxt(text[1:], delimiter="\t", ndmin=2)
+        out: dict[str, np.ndarray] = {}
+        first = 0 if analysis["type"] == "op" else 1
+        if first:                                       # the dc axis is named as a node
+            out[{"t": "time", "f": "frequency"}.get(names[0], "sweep")] = table[:, 0]
+        cols = {n: table[:, k] for k, n in enumerate(names) if k >= first}
+        for n, col in cols.items():
+            if n.startswith("arg("):
+                continue
+            if n.startswith("|") and n.endswith("|"):
+                n, col = n[1:-1], col * np.exp(1j * cols.get(f"arg({n[1:-1]})", 0))
+            out[f"i({n[2:-1]})" if n.startswith("i(") else f"v({n[1:]})"] = col
+        return out
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -431,4 +490,5 @@ ADAPTERS = {a.name: a for a in (
     Josim("josim", ("josim",)),
     Vacask("vacask", ("vacask",), osdi=True),
     Qucsator("qucsator", ("qucsator",)),
+    Ahkab("ahkab", ("ahkab",), error=r"^E: .*|^Traceback.*"),
 )}
