@@ -16,12 +16,61 @@
 
 set -euo pipefail
 
+REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 SIMS=${SIMS:-/cache/circsims}
 JOBS=${FALLLOW_CORES:-$(nproc)}
 SRC=${SRC:-/scratch/src}
 mkdir -p "$SIMS" "$SRC"
+# out of the shipped workspace: its .git may point to a path that only exists where it was shipped from
+cd "$SRC"
 
 log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*"; }
+
+# retry(cmd...): up to 5 attempts, for flaky upstream servers
+retry() {
+    local i
+    for i in 1 2 3 4 5; do
+        "$@" && return 0
+        log "attempt $i failed: $*"
+        sleep $((i * 10))
+    done
+    return 1
+}
+
+# quiet(cmd...): run a build step, stream only its progress lines (make directories,
+# cmake targets, errors), the last 80 lines of its output if it fails
+quiet() {
+    local f pid rc=0
+    f=$(mktemp)
+    log "$*"
+    "$@" > "$f" 2>&1 &
+    pid=$!
+    tail -n +1 -f --pid=$pid "$f" | grep --line-buffered -E 'Entering directory|^\[ *[0-9]+%\] Built target|error:|Error ' || true
+    wait $pid || rc=$?
+    if [ $rc -ne 0 ]; then
+        tail -n 80 "$f"
+        log "failed with $rc: $*"
+    fi
+    rm -f "$f"
+    return $rc
+}
+
+# smoke($dir, cmd...): run cmd in a scratch copy of $dir (a directory, or a case name
+# under cases/), print the tail of its output, its exit code (124: timeout after 300 s)
+# and the files it wrote. Never fails the build.
+smoke() {
+    local src=$1 d rc=0
+    shift
+    [ -d "$src" ] || src=$REPO/cases/$src
+    d=$(mktemp -d "${TMPDIR:-/tmp}/smoke.XXXXXX")
+    cp -r "$src/." "$d"
+    sleep 1
+    touch "$d/.stamp"
+    log "smoke: $src: $*"
+    (cd "$d" && timeout 300 "$@") < /dev/null > "$d/.out" 2>&1 || rc=$?
+    tail -n 30 "$d/.out"
+    log "smoke exit code: $rc; files written: $(cd "$d" && find . -newer .stamp -type f ! -name .out | sort | tr '\n' ' ')"
+}
 
 apt_install() {
     log "apt: $*"
