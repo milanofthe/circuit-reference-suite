@@ -1,0 +1,11 @@
+title = "Xyce_Regression DIODE_CMC"
+case = "xyce_diode_cmc"
+source = "DiodeClipper_AC.cir"
+outputs = [
+    "v(3)",
+    "v(2)",
+    "v(4)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 100000000.0 },
+]

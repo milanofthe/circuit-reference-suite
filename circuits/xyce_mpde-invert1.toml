@@ -1,0 +1,9 @@
+title = "Xyce_Regression MPDE"
+case = "xyce_mpde"
+source = "invert1.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]
+
+[options]
+reltol = 0.0001

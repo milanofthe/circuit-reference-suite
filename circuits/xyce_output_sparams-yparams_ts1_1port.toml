@@ -1,0 +1,6 @@
+title = "Xyce_Regression Output/SPARAMS"
+case = "xyce_output_sparams"
+source = "yparams-ts1-1port.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 10.0, stop = 100000.0 },
+]

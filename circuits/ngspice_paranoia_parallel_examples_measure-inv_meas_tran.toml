@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/measure"
+case = "ngspice_paranoia_parallel_examples_measure"
+source = "inv-meas-tran.sp"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 4e-09 },
+]

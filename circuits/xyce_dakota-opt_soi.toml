@@ -1,0 +1,15 @@
+title = "Xyce_Regression DAKOTA"
+case = "xyce_dakota"
+source = "opt_soi.cir"
+outputs = [
+    "v(d)",
+    "v(g)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.6, step = 0.072 },
+    { source = "vg", start = 1.5, stop = 3.65, step = 0.525 },
+]

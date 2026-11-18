@@ -1,0 +1,12 @@
+title = "Xyce_Regression BSIM4_Versioning"
+case = "xyce_bsim4_versioning"
+source = "bsim4_test1.cir"
+outputs = [
+    "v(vdd)",
+    "v(in)",
+    "v(out)",
+    "v(out2)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 4e-09 },
+]

@@ -1,0 +1,11 @@
+title = "ngspice examples/vbic"
+case = "ngspice_examples_vbic"
+source = "DFF_Y_ECL.sp"
+outputs = [
+    "v(d)",
+    "v(clk)",
+    "v(q)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 1e-08 },
+]

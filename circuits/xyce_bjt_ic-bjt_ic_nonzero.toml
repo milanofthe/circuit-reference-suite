@@ -1,0 +1,13 @@
+title = "Xyce_Regression BJT_IC"
+case = "xyce_bjt_ic"
+source = "bjt_ic_nonzero.cir"
+outputs = [
+    "i(vb)",
+    "i(vic)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 1.0, stop = 10.0, step = 1.0 },
+]

@@ -1,0 +1,19 @@
+title = "ngspice examples/klu/Circuits/85/c432"
+case = "ngspice_examples_klu_circuits_85_c432"
+source = "85/c432/c432_ann.net"
+outputs = [
+    "v(g430_1)",
+    "v(g426_0)",
+    "v(g429_0)",
+    "v(g431_0)",
+    "v(g428_0)",
+    "v(g427_1)",
+    "v(g432_0)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 1e-20
+abstol = 1e-18

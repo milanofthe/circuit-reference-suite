@@ -1,0 +1,20 @@
+title = "Xyce_Regression VERILOGPLUGIN"
+case = "xyce_verilogplugin"
+source = "testBacklog527_2.cir"
+outputs = [
+    "v(3)",
+    "v(2)",
+    "v(4)",
+    "i(vcc)",
+    "i(vin)",
+    "i(d1)",
+    "i(d2)",
+    "i(r1)",
+    "i(r2)",
+    "i(r3)",
+    "i(r4)",
+    "i(c1)",
+]
+analysis = [
+    { type = "tran", step = 2e-09, stop = 0.002 },
+]

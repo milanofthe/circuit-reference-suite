@@ -1,0 +1,9 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "fdisffm2.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 9.999999999999999e-06 },
+]

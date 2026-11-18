@@ -1,0 +1,16 @@
+title = "ngspice paranoia_parallel/examples/TransmissionLines"
+case = "ngspice_paranoia_parallel_examples_transmissionlines"
+source = "txl2_3_line.sp"
+outputs = [
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+]
+
+[[analysis]]
+type = "tran"
+step = 2.0000000000000003e-10
+stop = 4.7000000000000004e-08
+max_step = 1.0000000000000002e-10

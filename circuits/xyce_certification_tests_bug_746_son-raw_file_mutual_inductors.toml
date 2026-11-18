@@ -1,0 +1,18 @@
+title = "Xyce_Regression Certification_Tests/BUG_746_SON"
+case = "xyce_certification_tests_bug_746_son"
+source = "raw_file_mutual_inductors.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(node13)",
+    "v(node14)",
+    "i(vprimary)",
+    "i(vs)",
+    "v(xbr2:node3)",
+    "v(xbr2:node4)",
+    "v(xbr2:node5)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-05, stop = 0.025 },
+]

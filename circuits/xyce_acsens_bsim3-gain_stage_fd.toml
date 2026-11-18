@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACSENS/bsim3"
+case = "xyce_acsens_bsim3"
+source = "gain-stage_fd.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 10000000.0, stop = 1000000000.0 },
+]

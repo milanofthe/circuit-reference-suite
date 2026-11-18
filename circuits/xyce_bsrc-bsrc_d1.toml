@@ -1,0 +1,19 @@
+title = "Xyce_Regression BSRC"
+case = "xyce_bsrc"
+source = "Bsrc_D1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(node)",
+    "i(h2)",
+    "i(e3)",
+    "i(b4)",
+    "v(sum)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 10.0, step = 1.0 },
+]

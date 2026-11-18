@@ -1,0 +1,6 @@
+title = "ngspice tests/hfet"
+case = "ngspice_tests_hfet"
+source = "inverter.cir"
+analysis = [
+    { type = "tran", step = 1.0000000000000001e-11, stop = 3.0000000000000004e-09 },
+]

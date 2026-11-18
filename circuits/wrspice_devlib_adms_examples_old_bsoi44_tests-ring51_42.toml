@@ -1,0 +1,13 @@
+title = "WRspice devlib/adms/examples.old/bsoi44/tests"
+case = "wrspice_devlib_adms_examples_old_bsoi44_tests"
+source = "ring51_42.sp"
+outputs = [
+    "v(out25)",
+    "v(out50)",
+]
+analysis = [
+    { type = "tran", step = 2.0000000000000003e-10, stop = 1e-08 },
+]
+
+[options]
+gmin = 1e-15

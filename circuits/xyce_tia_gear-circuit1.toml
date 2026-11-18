@@ -1,0 +1,15 @@
+title = "Xyce_Regression TIA/GEAR"
+case = "xyce_tia_gear"
+source = "circuit1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(vin)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.0000000000000001e-07 },
+]
+
+[options]
+method = "gear"

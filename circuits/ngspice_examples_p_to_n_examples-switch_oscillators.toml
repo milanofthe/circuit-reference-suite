@@ -1,0 +1,13 @@
+title = "ngspice examples/p-to-n-examples"
+case = "ngspice_examples_p_to_n_examples"
+source = "switch-oscillators.cir"
+outputs = [
+    "i(vmeasure)",
+    "v(osc_out)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 8e-08, start = 5e-11 },
+]
+
+[options]
+method = "gear"

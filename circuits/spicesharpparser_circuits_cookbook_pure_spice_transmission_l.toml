@@ -1,0 +1,17 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/transmission-line-termination"
+case = "spicesharpparser_circuits_cookbook_pure_spice_transmission_l"
+source = "transmission-line-termination.cir"
+outputs = [
+    "v(source_open)",
+    "v(open_in)",
+    "v(open_out)",
+    "v(source_match)",
+    "v(match_in)",
+    "v(match_out)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 2.0000000000000002e-07, max_step = 2.5e-10 },
+]
+
+[options]
+method = "gear"

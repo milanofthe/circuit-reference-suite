@@ -1,0 +1,11 @@
+title = "ngspice examples/osdi/hicuml0"
+case = "ngspice_examples_osdi_hicuml0"
+source = "DFF_Y_ECL_VBIC.sp"
+outputs = [
+    "v(d)",
+    "v(clk)",
+    "v(q)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 5e-09 },
+]

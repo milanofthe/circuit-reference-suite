@@ -1,0 +1,14 @@
+title = "ngspice tests/transmission"
+case = "ngspice_tests_transmission"
+source = "cpl3_4_line.cir"
+outputs = [
+    "v(2)",
+    "v(7)",
+    "v(9)",
+]
+
+[[analysis]]
+type = "tran"
+step = 2.0000000000000003e-10
+stop = 5.0000000000000004e-08
+max_step = 5.000000000000001e-11

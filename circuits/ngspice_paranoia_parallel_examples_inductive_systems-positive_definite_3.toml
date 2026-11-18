@@ -1,0 +1,6 @@
+title = "ngspice paranoia_parallel/examples/inductive-systems"
+case = "ngspice_paranoia_parallel_examples_inductive_systems"
+source = "positive-definite-3.cir"
+analysis = [
+    { type = "op" },
+]

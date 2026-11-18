@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_806_SON"
+case = "xyce_certification_tests_bug_806_son"
+source = "transLineDataGlobal.cir"
+outputs = [
+    "v(2)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 1e-05 },
+]

@@ -1,0 +1,12 @@
+title = "Xyce_Regression WAMPDE"
+case = "xyce_wampde"
+source = "Todd_test.cir"
+outputs = [
+    "v(hv-x)",
+    "v(n_0008)",
+    "v(n_0007)",
+    "v(oscout)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000001e-07, stop = 0.1 },
+]

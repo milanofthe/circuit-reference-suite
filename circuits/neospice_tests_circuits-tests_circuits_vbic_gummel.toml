@@ -1,0 +1,9 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/vbic_gummel.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbe", start = 0.3, stop = 0.9, step = 0.02 },
+]

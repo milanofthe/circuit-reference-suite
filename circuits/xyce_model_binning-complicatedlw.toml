@@ -1,0 +1,10 @@
+title = "Xyce_Regression MODEL_BINNING"
+case = "xyce_model_binning"
+source = "complicatedLW.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 9.999999999999999e-06 },
+]

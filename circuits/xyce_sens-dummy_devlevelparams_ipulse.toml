@@ -1,0 +1,9 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "dummy_devLevelParams_ipulse.cir"
+outputs = [
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 7.0 },
+]

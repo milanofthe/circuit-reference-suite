@@ -1,0 +1,10 @@
+title = "Xyce_Regression CircuitSim90/MOS3"
+case = "xyce_circuitsim90_mos3"
+source = "mike2.cir"
+analysis = [
+    { type = "tran", step = 5.000000000000001e-11, stop = 2e-08 },
+]
+
+[options]
+method = "gear"
+reltol = 0.001

@@ -1,0 +1,13 @@
+title = "Xyce_Regression B4SOI_461"
+case = "xyce_b4soi_461"
+source = "ring_osc.cir"
+outputs = [
+    "v(out25)",
+    "v(out50)",
+]
+analysis = [
+    { type = "tran", step = 2.0000000000000003e-10, stop = 1e-08 },
+]
+
+[options]
+temp = 25.0

@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_706_SON"
+case = "xyce_certification_tests_bug_706_son"
+source = "rc_simple_lib.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.001 },
+]

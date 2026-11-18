@@ -1,0 +1,23 @@
+title = "Xyce_Regression XDM/PSPICE/IC_AND_NODESET"
+case = "xyce_xdm_pspice_ic_and_nodeset"
+source = "ic_in_subckt.cir"
+outputs = [
+    "v(n15206)",
+    "v(n15971)",
+    "v(n15554)",
+    "v(n15997)",
+    "v(n16554)",
+    "v(n16997)",
+    "v(9a)",
+    "v(9b)",
+    "v(10a)",
+    "v(10b)",
+    "v(11a)",
+    "v(11b)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]
+
+[variants]
+pspice = "ic_in_subckt.cir.pspice"

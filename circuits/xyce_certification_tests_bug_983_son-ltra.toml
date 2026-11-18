@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_983_SON"
+case = "xyce_certification_tests_bug_983_son"
+source = "ltra.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(*)",
+]
+
+[[analysis]]
+type = "tran"
+step = 1.0000000000000002e-10
+stop = 1.2000000000000002e-07
+max_step = 1.5e-10

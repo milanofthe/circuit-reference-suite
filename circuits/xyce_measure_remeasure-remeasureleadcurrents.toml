@@ -1,0 +1,24 @@
+title = "Xyce_Regression MEASURE/REMEASURE"
+case = "xyce_measure_remeasure"
+source = "RemeasureLeadCurrents.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(v1)",
+    "i(i1)",
+    "i(r1b)",
+    "i(c3)",
+    "i(l4)",
+    "i(l6)",
+    "v(x1:1)",
+    "v(x1:2)",
+    "i(x1:v1)",
+    "i(x1:i1)",
+    "i(x1:r1b)",
+    "i(x1:c3)",
+    "i(x1:l4)",
+    "i(x1:l6)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.1 },
+]

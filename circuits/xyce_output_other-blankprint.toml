@@ -1,0 +1,13 @@
+title = "Xyce_Regression Output/Other"
+case = "xyce_output_other"
+source = "blankPrint.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

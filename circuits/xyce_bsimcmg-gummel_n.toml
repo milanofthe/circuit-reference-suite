@@ -1,0 +1,17 @@
+title = "Xyce_Regression BSIMCMG"
+case = "xyce_bsimcmg"
+source = "gummel_n.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+]
+
+[options]
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdrain", start = -0.1, stop = 0.1, step = 0.001 },
+    { source = "vgate", start = 0.0, stop = 1.0, step = 0.2 },
+]

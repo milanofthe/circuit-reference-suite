@@ -1,0 +1,9 @@
+title = "Xyce_Regression ABM"
+case = "xyce_abm"
+source = "sdt.cir"
+outputs = [
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-06, stop = 1.0 },
+]

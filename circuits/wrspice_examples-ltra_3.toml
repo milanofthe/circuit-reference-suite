@@ -1,0 +1,15 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "ltra_3.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 6.000000000000001e-08 },
+]
+
+[options]
+reltol = 0.001
+abstol = 1e-12

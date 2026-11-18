@@ -1,0 +1,12 @@
+title = "Xyce_Regression Output/SPARAMS"
+case = "xyce_output_sparams"
+source = "RCladderSPtran.cir"
+outputs = [
+    "v(12)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.0001 },
+]
+
+[options]
+reltol = 0.0001

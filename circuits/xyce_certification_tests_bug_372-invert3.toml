@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_372"
+case = "xyce_certification_tests_bug_372"
+source = "invert3.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2.9999999999999997e-05 },
+]
+
+[options]
+reltol = 5e-05

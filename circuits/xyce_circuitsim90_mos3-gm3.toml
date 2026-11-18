@@ -1,0 +1,7 @@
+title = "Xyce_Regression CircuitSim90/MOS3"
+case = "xyce_circuitsim90_mos3"
+source = "gm3.cir"
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 5e-10, stop = 5.0000000000000004e-08 },
+]

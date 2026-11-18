@@ -1,0 +1,19 @@
+title = "Xyce_Regression SOURCES"
+case = "xyce_sources"
+source = "sources.cir"
+outputs = [
+    "v(1s)",
+    "v(1)",
+    "v(2s)",
+    "v(2)",
+    "v(3s)",
+    "v(3)",
+    "v(4s)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 1.0000000000000001e-07 },
+]
+
+[options]
+reltol = 0.001

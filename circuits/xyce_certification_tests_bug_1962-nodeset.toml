@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_1962"
+case = "xyce_certification_tests_bug_1962"
+source = "nodeset.cir"
+outputs = [
+    "v(in_1)",
+    "v(out_1)",
+    "v(out_2)",
+    "v(x1:in_1)",
+    "v(x1:out_1)",
+    "v(x1:out_2)",
+    "v(x2:x1:in_1)",
+    "v(x2:x1:out_1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

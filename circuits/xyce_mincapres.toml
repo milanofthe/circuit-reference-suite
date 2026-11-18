@@ -1,0 +1,13 @@
+title = "Xyce_Regression MINCAPRES"
+case = "xyce_mincapres"
+source = "mincr.cir"
+outputs = [
+    "v(2a)",
+    "v(2c)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[options]
+reltol = 0.0001

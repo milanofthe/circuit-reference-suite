@@ -1,0 +1,6 @@
+title = "spice-ts fixtures/circuits"
+case = "spice_ts_fixtures_circuits"
+source = "voltage-divider.cir"
+analysis = [
+    { type = "op" },
+]

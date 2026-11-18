@@ -1,0 +1,9 @@
+title = "ngspice tests/bsim3soidd"
+case = "ngspice_tests_bsim3soidd"
+source = "ring51.cir"
+analysis = [
+    { type = "tran", step = 2.0000000000000003e-10, stop = 5.0000000000000004e-08 },
+]
+
+[options]
+gmin = 1e-15

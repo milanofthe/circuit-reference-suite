@@ -1,0 +1,19 @@
+title = "ngspice paranoia_parallel/examples/xspice/original-examples"
+case = "ngspice_paranoia_parallel_examples_xspice_original_examples"
+source = "rtlinv.in"
+outputs = [
+    "v(3)",
+    "v(5)",
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 2.5, step = 0.025 },
+]
+
+[[analysis]]
+type = "tran"
+step = 2e-09
+stop = 2.0000000000000002e-07

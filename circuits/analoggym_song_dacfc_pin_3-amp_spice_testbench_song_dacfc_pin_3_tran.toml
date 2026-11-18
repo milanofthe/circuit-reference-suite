@@ -1,0 +1,10 @@
+title = "AnalogGym amplifier Song_DACFC_Pin_3, SKY130"
+case = "analoggym_song_dacfc_pin_3"
+source = "amp_spice_testbench/Song_DACFC_Pin_3_Tran.cir"
+outputs = [
+    "v(visr)",
+    "v(vout3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.000401 },
+]

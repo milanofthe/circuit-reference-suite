@@ -1,0 +1,18 @@
+title = "ngspice tests/mesa"
+case = "ngspice_tests_mesa"
+source = "mesa-12.cir"
+outputs = [
+    "v(3)",
+    "v(2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = -2.0, stop = 0.0, step = 0.02 },
+]
+
+[[analysis]]
+type = "tran"
+step = 1.0000000000000002e-10
+stop = 5e-09

@@ -313,13 +313,17 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_schema(instance, name: str) -> list[str]:
+@lru_cache(maxsize=None)
+def _validator(name: str):
     import jsonschema
     from referencing import Registry, Resource
     schemas = {p.name: json.loads(p.read_text(encoding="utf-8"))
                for p in SCHEMA_DIR.glob("*.schema.json")}
     registry = Registry().with_resources(
         (k, Resource.from_contents(v)) for k, v in schemas.items())
-    validator = jsonschema.Draft202012Validator(schemas[f"{name}.schema.json"], registry=registry)
+    return jsonschema.Draft202012Validator(schemas[f"{name}.schema.json"], registry=registry)
+
+
+def validate_schema(instance, name: str) -> list[str]:
     return [f"{'/'.join(str(p) for p in e.path) or '<root>'}: {e.message}"
-            for e in validator.iter_errors(instance)]
+            for e in _validator(name).iter_errors(instance)]

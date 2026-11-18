@@ -1,0 +1,12 @@
+title = "Xyce_Regression Output/PCE"
+case = "xyce_output_pce"
+source = "pce-dc-tecplot.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "von", start = 5.0, stop = 5.0, step = 1.0 },
+]

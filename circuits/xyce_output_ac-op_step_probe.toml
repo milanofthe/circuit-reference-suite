@@ -1,0 +1,11 @@
+title = "Xyce_Regression Output/AC"
+case = "xyce_output_ac"
+source = "op-step-probe.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 1000000.0 },
+    { type = "op" },
+]

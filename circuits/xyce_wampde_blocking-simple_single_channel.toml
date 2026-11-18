@@ -1,0 +1,17 @@
+title = "Xyce_Regression WAMPDE/BLOCKING"
+case = "xyce_wampde_blocking"
+source = "simple_single_channel.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(l1)",
+    "i(l2)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 0.0003 },
+]
+
+[options]
+reltol = 0.01
+abstol = 0.0001

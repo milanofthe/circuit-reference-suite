@@ -1,0 +1,6 @@
+title = "neospice tests/circuits/paired"
+case = "neospice_tests_circuits_paired"
+source = "diode_rc_grid_8.cir"
+analysis = [
+    { type = "op" },
+]

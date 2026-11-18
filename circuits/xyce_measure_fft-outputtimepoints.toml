@@ -1,0 +1,9 @@
+title = "Xyce_Regression MEASURE_FFT"
+case = "xyce_measure_fft"
+source = "OutputTimePoints.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

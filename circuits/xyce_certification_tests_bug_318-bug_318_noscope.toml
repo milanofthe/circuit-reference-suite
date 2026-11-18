@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_318"
+case = "xyce_certification_tests_bug_318"
+source = "bug_318_noscope.cir"
+outputs = [
+    "v(4)",
+    "v(11)",
+]
+analysis = [
+    { type = "tran", step = 4.9999999999999996e-06, stop = 0.007 },
+]

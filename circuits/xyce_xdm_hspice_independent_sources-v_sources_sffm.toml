@@ -1,0 +1,12 @@
+title = "Xyce_Regression XDM/HSPICE/INDEPENDENT_SOURCES"
+case = "xyce_xdm_hspice_independent_sources"
+source = "v_sources_sffm.cir"
+outputs = [
+    "v(15)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[variants]
+hspice = "v_sources_sffm.cir.hspice"

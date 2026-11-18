@@ -1,0 +1,14 @@
+title = "Xyce_Regression MVS2"
+case = "xyce_mvs2"
+source = "hemt.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+    "i(vdrain)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdrain", start = 0.0, stop = 0.8, step = 0.001 },
+]

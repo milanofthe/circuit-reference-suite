@@ -1,0 +1,14 @@
+title = "ngspice paranoia_parallel/examples/xspice/original-examples"
+case = "ngspice_paranoia_parallel_examples_xspice_original_examples"
+source = "mosamp2.in"
+outputs = [
+    "v(20)",
+    "v(66)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 9.999999999999999e-06 },
+]
+
+[options]
+abstol = 1e-08
+vntol = 1e-08

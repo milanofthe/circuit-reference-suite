@@ -1,0 +1,17 @@
+title = "Xyce_Regression VERILOG_MODEL_BINNING"
+case = "xyce_verilog_model_binning"
+source = "gummel_p_bsimcmg111.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+]
+
+[options]
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdrain", start = -0.1, stop = 0.1, step = 0.001 },
+    { source = "vgate", start = 0.0, stop = -1.0, step = -0.2 },
+]

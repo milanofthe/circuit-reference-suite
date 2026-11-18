@@ -1,0 +1,15 @@
+title = "Xyce_Regression PARSER"
+case = "xyce_parser"
+source = "separator5Ref.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(xdio1:b)",
+    "v(xdio2:b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.5, stop = 0.5, step = 0.5 },
+]

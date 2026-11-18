@@ -1,0 +1,14 @@
+title = "Diode voltage multiplier, 4 stages"
+case = "vacask_mul"
+source = "ngspice/runme.sim"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 0.005, max_step = 1e-08 },
+]
+
+[options]
+method = "gear"
+
+[variants]
+xyce = "xyce/runme.sim"
+gnucap = "gnucap/runme.sim"
+vacask = "vacask/runme.sim"

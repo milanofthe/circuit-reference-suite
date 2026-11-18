@@ -1,0 +1,15 @@
+title = "Xyce_Regression SOLN_DEP_RES"
+case = "xyce_soln_dep_res"
+source = "solDepRes.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(cntl)",
+    "i(v1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 2.0, stop = 2.0, step = 1.0 },
+]

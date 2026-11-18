@@ -1,0 +1,6 @@
+title = "ngspice examples/snapshot"
+case = "ngspice_examples_snapshot"
+source = "adder_mos_circ.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.0000000000000002e-06 },
+]

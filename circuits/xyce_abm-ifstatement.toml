@@ -1,0 +1,17 @@
+title = "Xyce_Regression ABM"
+case = "xyce_abm"
+source = "ifstatement.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3a)",
+    "v(4a)",
+    "v(5a)",
+    "v(8a)",
+    "v(9a)",
+    "v(10a)",
+    "v(11a)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_1957"
+case = "xyce_certification_tests_bug_1957"
+source = "mutindlin_even_ps.cir"
+outputs = [
+    "i(vs)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-05, stop = 0.025 },
+]

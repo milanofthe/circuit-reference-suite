@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_846"
+case = "xyce_certification_tests_bug_846"
+source = "ring51_loca.cir"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 2.0000000000000003e-10, stop = 1e-09 },
+]

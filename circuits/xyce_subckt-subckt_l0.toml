@@ -1,0 +1,9 @@
+title = "Xyce_Regression SUBCKT"
+case = "xyce_subckt"
+source = "subckt_l0.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.005 },
+]

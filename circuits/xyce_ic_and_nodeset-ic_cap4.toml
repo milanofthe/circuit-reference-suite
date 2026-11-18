@@ -1,0 +1,13 @@
+title = "Xyce_Regression IC_AND_NODESET"
+case = "xyce_ic_and_nodeset"
+source = "ic_cap4.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+reltol = 1e-06
+abstol = 1e-06

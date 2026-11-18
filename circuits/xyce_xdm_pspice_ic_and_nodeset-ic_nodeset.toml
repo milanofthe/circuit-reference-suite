@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/PSPICE/IC_AND_NODESET"
+case = "xyce_xdm_pspice_ic_and_nodeset"
+source = "ic_nodeset.cir"
+outputs = [
+    "v(n15554)",
+    "v(n15997)",
+    "v(n15554a)",
+    "v(n15997a)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "ic_nodeset.cir.pspice"

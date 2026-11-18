@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_250"
+case = "xyce_certification_tests_bug_250"
+source = "bug_250.cir"
+outputs = [
+    "v(11)",
+    "i(v1)",
+    "i(v3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 2.0, step = 1.0 },
+]

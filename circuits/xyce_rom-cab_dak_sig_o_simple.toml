@@ -1,0 +1,9 @@
+title = "Xyce_Regression ROM"
+case = "xyce_rom"
+source = "cab_dak_sig_o_simple.cir"
+outputs = [
+    "v(scope)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 4e-07 },
+]

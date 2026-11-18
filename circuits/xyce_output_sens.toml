@@ -1,0 +1,10 @@
+title = "Xyce_Regression Output/SENS"
+case = "xyce_output_sens"
+source = "sens-tranadjoint-overrideRaw_ref.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

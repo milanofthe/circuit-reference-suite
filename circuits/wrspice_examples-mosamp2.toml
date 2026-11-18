@@ -1,0 +1,11 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "mosamp2.cir"
+outputs = [
+    "v(20)",
+    "v(66)",
+    "v(21)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 9.999999999999999e-06 },
+]

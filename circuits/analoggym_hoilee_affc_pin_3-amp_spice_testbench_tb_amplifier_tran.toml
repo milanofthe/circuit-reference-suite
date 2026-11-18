@@ -1,0 +1,10 @@
+title = "AnalogGym amplifier HoiLee_AFFC_Pin_3, SKY130"
+case = "analoggym_hoilee_affc_pin_3"
+source = "amp_spice_testbench/TB_Amplifier_Tran.cir"
+outputs = [
+    "v(visr)",
+    "v(vout3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.000401 },
+]

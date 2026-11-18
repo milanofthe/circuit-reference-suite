@@ -1,0 +1,18 @@
+title = "Xyce_Regression BINARYOPS"
+case = "xyce_binaryops"
+source = "binary_funcs.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vs", start = 1.0, stop = 4.0, step = 1.0 },
+]

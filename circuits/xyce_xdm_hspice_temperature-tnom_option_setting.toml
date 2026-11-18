@@ -1,0 +1,20 @@
+title = "Xyce_Regression XDM/HSPICE/TEMPERATURE"
+case = "xyce_xdm_hspice_temperature"
+source = "tnom_option_setting.cir"
+outputs = [
+    "v(2)",
+    "i(vds)",
+]
+
+[options]
+temp = 25.0
+tnom = 50.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 1.2, step = 0.1 },
+]
+
+[variants]
+hspice = "tnom_option_setting.cir.hspice"

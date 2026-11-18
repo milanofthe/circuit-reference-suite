@@ -1,0 +1,13 @@
+title = "Xyce_Regression RESISTOR"
+case = "xyce_resistor"
+source = "resistor_lv3_2.cir"
+outputs = [
+    "v(a)",
+    "i(r1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 5.0, step = 1.0 },
+]

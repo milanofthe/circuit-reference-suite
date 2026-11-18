@@ -1,0 +1,6 @@
+title = "Xyce_Regression XDM/QUERY"
+case = "xyce_xdm_query"
+source = "queryQ.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.9999999999999998e-05 },
+]

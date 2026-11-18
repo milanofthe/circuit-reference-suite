@@ -1,0 +1,10 @@
+title = "Xyce_Regression IC_AND_NODESET"
+case = "xyce_ic_and_nodeset"
+source = "ic_baseline.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_246"
+case = "xyce_certification_tests_bug_246"
+source = "bug_246.cir"
+outputs = [
+    "v(n_3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]

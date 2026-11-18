@@ -1,0 +1,17 @@
+title = "Xyce_Regression CircuitSim90/MOS2_LARGE"
+case = "xyce_circuitsim90_mos2_large"
+source = "sqrt.cir"
+outputs = [
+    "v(19)",
+    "v(20)",
+    "v(21)",
+    "v(22)",
+    "v(23)",
+    "v(24)",
+    "v(14)",
+    "v(507)",
+    "v(10)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 9e-07 },
+]

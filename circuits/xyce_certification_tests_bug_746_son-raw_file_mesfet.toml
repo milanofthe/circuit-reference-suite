@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/BUG_746_SON"
+case = "xyce_certification_tests_bug_746_son"
+source = "raw_file_mesfet.cir"
+outputs = [
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "i(vds)",
+    "i(vgs)",
+    "i(vss)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 9.999999999999999e-06 },
+]
+
+[options]
+method = "gear"

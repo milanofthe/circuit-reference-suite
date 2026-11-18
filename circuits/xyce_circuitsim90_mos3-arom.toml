@@ -1,0 +1,21 @@
+title = "Xyce_Regression CircuitSim90/MOS3"
+case = "xyce_circuitsim90_mos3"
+source = "arom.cir"
+outputs = [
+    "v(57)",
+    "v(11)",
+    "v(15)",
+    "v(14)",
+    "v(48)",
+    "v(53)",
+    "v(55)",
+    "v(12)",
+    "v(52)",
+    "v(54)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 5.3e-07 },
+]
+
+[options]
+temp = 27.0

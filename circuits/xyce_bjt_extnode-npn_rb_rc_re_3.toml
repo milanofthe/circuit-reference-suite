@@ -1,0 +1,16 @@
+title = "Xyce_Regression BJT_EXTNODE"
+case = "xyce_bjt_extnode"
+source = "npn_rb_rc_re_3.cir"
+outputs = [
+    "v(4)",
+    "i(vmon1)",
+    "i(vmon2)",
+    "v(1)",
+    "v(2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vcc", start = 1.0, stop = 12.0, step = 1.0 },
+]

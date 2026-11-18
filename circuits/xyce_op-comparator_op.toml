@@ -1,0 +1,11 @@
+title = "Xyce_Regression OP"
+case = "xyce_op"
+source = "comparator_op.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 6.000000000000001e-08 },
+]

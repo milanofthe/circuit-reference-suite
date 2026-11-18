@@ -1,0 +1,6 @@
+title = "Xyce_Regression MPDE"
+case = "xyce_mpde"
+source = "sandler24.cir"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.002 },
+]

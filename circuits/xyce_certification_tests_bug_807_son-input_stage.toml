@@ -1,0 +1,15 @@
+title = "Xyce_Regression Certification_Tests/BUG_807_SON"
+case = "xyce_certification_tests_bug_807_son"
+source = "input_stage.cir"
+outputs = [
+    "v(dd)",
+    "v(nvin1)",
+    "v(ndin1)",
+    "v(nin1)",
+]
+
+[[analysis]]
+type = "tran"
+step = 1.0000000000000001e-11
+stop = 8e-09
+max_step = 1.0000000000000002e-13

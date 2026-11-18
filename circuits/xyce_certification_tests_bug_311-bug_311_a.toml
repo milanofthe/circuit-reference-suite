@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/BUG_311"
+case = "xyce_certification_tests_bug_311"
+source = "bug_311_a.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(9)",
+    "v(13)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 2.0000000000000002e-07 },
+]
+
+[options]
+abstol = 0.001
+reltol = 0.001

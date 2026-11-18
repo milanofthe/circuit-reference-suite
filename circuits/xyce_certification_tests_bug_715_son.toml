@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_715_SON"
+case = "xyce_certification_tests_bug_715_son"
+source = "bug715.cir"
+outputs = [
+    "i(*)",
+    "v(*)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.002 },
+]

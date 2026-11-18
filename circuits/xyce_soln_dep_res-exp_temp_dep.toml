@@ -1,0 +1,27 @@
+title = "Xyce_Regression SOLN_DEP_RES"
+case = "xyce_soln_dep_res"
+source = "exp_temp_dep.cir"
+outputs = [
+    "v(1b)",
+    "v(2b)",
+    "v(3b)",
+    "v(4b)",
+    "v(5b)",
+    "v(6b)",
+    "v(8b)",
+    "v(9b)",
+    "i(r1a)",
+    "i(r2a)",
+    "i(r3a)",
+    "i(r4a)",
+    "i(r5a)",
+    "i(r6a)",
+    "i(r8a)",
+    "i(r9a)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

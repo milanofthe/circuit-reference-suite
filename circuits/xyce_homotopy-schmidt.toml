@@ -1,0 +1,12 @@
+title = "Xyce_Regression HOMOTOPY"
+case = "xyce_homotopy"
+source = "schmidt.cir"
+outputs = [
+    "v(5)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v0", start = 24.0, stop = 24.0, step = 1.0 },
+]

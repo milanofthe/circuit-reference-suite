@@ -1,0 +1,14 @@
+title = "Xyce_Regression VERILOG_MODEL_BINNING"
+case = "xyce_verilog_model_binning"
+source = "invert_psp102.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2.9999999999999997e-05 },
+]
+
+[options]
+reltol = 0.0001

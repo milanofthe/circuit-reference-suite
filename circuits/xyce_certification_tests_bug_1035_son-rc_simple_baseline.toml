@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_1035_SON"
+case = "xyce_certification_tests_bug_1035_son"
+source = "RC_simple_baseline.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 1, start = 1.0, stop = 100000000.0 },
+]

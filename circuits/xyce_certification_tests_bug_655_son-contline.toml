@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_655_SON"
+case = "xyce_certification_tests_bug_655_son"
+source = "contLine.cir"
+outputs = [
+    "i(i1)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+
+[[analysis.sweep]]
+source = "i1"
+start = -9.999999999999999e-05
+stop = 9.999999999999999e-05
+step = 9.999999999999999e-06

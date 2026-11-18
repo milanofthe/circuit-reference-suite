@@ -1,0 +1,6 @@
+title = "ngspice examples/xspice/original-examples"
+case = "ngspice_examples_xspice_original_examples"
+source = "spice3.deck"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.002 },
+]

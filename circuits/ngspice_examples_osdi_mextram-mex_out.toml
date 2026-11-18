@@ -1,0 +1,13 @@
+title = "ngspice examples/osdi/mextram"
+case = "ngspice_examples_osdi_mextram"
+source = "mex_out.sp"
+outputs = [
+    "i(vc)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vc", start = 0.0, stop = 6.0, step = 0.05 },
+    { source = "ib", start = 0.0, stop = 8e-06, step = 1e-06 },
+]

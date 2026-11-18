@@ -1,0 +1,13 @@
+title = "Xyce_Regression REDUND_REMOVE"
+case = "xyce_redund_remove"
+source = "just_redund.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1.0, stop = 1.0, step = 0.1 },
+]

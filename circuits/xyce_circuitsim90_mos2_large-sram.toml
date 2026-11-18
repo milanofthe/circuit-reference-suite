@@ -1,0 +1,18 @@
+title = "Xyce_Regression CircuitSim90/MOS2_LARGE"
+case = "xyce_circuitsim90_mos2_large"
+source = "sram.cir"
+outputs = [
+    "v(285)",
+    "v(4)",
+    "v(219)",
+    "v(17)",
+    "v(340)",
+    "v(295)",
+    "v(344)",
+    "v(297)",
+    "v(338)",
+    "v(342)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6.5e-06 },
+]

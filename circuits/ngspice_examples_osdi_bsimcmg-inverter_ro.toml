@@ -1,0 +1,10 @@
+title = "ngspice examples/osdi/bsimcmg"
+case = "ngspice_examples_osdi_bsimcmg"
+source = "inverter_ro.sp"
+outputs = [
+    "i(vss)",
+    "v(vo)",
+]
+analysis = [
+    { type = "tran", step = 1e-13, stop = 1e-09 },
+]

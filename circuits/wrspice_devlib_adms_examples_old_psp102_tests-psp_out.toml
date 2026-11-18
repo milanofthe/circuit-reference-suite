@@ -1,0 +1,17 @@
+title = "WRspice devlib/adms/examples.old/psp102/tests"
+case = "wrspice_devlib_adms_examples_old_psp102_tests"
+source = "psp_out.sp"
+outputs = [
+    "i(vd)",
+    "i(vb)",
+]
+
+[options]
+temp = 21.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.5, step = 0.05 },
+    { source = "vg", start = 0.5, stop = 3.0, step = 0.5 },
+]

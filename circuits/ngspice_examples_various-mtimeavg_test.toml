@@ -1,0 +1,9 @@
+title = "ngspice examples/various"
+case = "ngspice_examples_various"
+source = "mtimeavg_test.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 5.000000000000001e-07 },
+]

@@ -1,0 +1,15 @@
+title = "Xyce_Regression SUBCKT"
+case = "xyce_subckt"
+source = "subckt_k3.cir"
+outputs = [
+    "v(2)",
+    "v(1)",
+    "v(3)",
+    "v(4)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v2", start = 0.0, stop = 10.0, step = 1.0 },
+]

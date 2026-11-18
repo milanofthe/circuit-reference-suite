@@ -1,0 +1,21 @@
+title = "Xyce_Regression XDM/HSPICE/MODELS"
+case = "xyce_xdm_hspice_models"
+source = "multiple_devices_same_model.cir"
+outputs = [
+    "v(n01192)",
+    "v(n011460)",
+    "v(n07223)",
+    "v(n07602)",
+    "v(n075620)",
+    "v(n07662)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.001 },
+]
+
+[options]
+tnom = 25.0
+temp = 25.0
+
+[variants]
+hspice = "multiple_devices_same_model.cir.hspice"

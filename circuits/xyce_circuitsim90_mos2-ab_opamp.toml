@@ -1,0 +1,13 @@
+title = "Xyce_Regression CircuitSim90/MOS2"
+case = "xyce_circuitsim90_mos2"
+source = "ab_opamp.cir"
+outputs = [
+    "v(18)",
+    "v(203)",
+    "v(200)",
+    "v(201)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1.0000000000000001e-07, stop = 0.0002 },
+]

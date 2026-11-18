@@ -1,0 +1,14 @@
+title = "WRspice devlib/adms/examples.old/mextram/tests"
+case = "wrspice_devlib_adms_examples_old_mextram_tests"
+source = "mex_gum.sp"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 0.2, stop = 1.4, step = 0.01 },
+]

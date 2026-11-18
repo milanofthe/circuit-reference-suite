@@ -1,0 +1,13 @@
+title = "ngspice paranoia_parallel/examples/pton"
+case = "ngspice_paranoia_parallel_examples_pton"
+source = "op-test.cir"
+outputs = [
+    "v(in)",
+    "v(outo)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 9.999999999999999e-06, uic = true },
+]
+
+[options]
+vntol = 9.999999999999999e-06

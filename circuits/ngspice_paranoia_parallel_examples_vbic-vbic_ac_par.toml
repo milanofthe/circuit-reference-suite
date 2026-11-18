@@ -1,0 +1,9 @@
+title = "ngspice paranoia_parallel/examples/vbic"
+case = "ngspice_paranoia_parallel_examples_vbic"
+source = "vbic_ac_par.sp"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 5.0, step = 0.01 },
+]

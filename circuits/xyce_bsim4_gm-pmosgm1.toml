@@ -1,0 +1,15 @@
+title = "Xyce_Regression BSIM4_GM"
+case = "xyce_bsim4_gm"
+source = "pmosGm1.cir"
+outputs = [
+    "v(2)",
+    "v(1)",
+    "i(vds)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = -1.21, step = -0.02 },
+    { source = "vgs", start = -0.2, stop = -1.21, step = -0.2 },
+]

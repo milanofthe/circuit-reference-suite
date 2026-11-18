@@ -1,0 +1,11 @@
+title = "Xyce_Regression ABM_SQRT"
+case = "xyce_abm_sqrt"
+source = "sqrt.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 12.0 },
+]

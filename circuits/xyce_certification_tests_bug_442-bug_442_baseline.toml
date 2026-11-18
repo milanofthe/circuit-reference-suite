@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_442"
+case = "xyce_certification_tests_bug_442"
+source = "bug_442_baseline.cir"
+outputs = [
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-10, stop = 5.0000000000000004e-08 },
+]

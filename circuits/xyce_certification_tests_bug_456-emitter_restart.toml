@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_456"
+case = "xyce_certification_tests_bug_456"
+source = "emitter_restart.cir"
+outputs = [
+    "v(1)",
+    "v(ve)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 5e-05 },
+]

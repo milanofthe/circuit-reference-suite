@@ -1,0 +1,9 @@
+title = "Xyce_Regression LTRA"
+case = "xyce_ltra"
+source = "ltra3.cir"
+
+[[analysis]]
+type = "tran"
+step = 1.0000000000000002e-10
+stop = 6.000000000000001e-08
+max_step = 1.0000000000000002e-10

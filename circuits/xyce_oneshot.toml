@@ -1,0 +1,10 @@
+title = "Xyce_Regression ONESHOT"
+case = "xyce_oneshot"
+source = "one-shot.cir"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-08 },
+]

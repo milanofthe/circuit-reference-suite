@@ -1,0 +1,12 @@
+title = "Xyce_Regression ISFFM"
+case = "xyce_isffm"
+source = "isffm.cir"
+outputs = [
+    "i(vmon)",
+]
+
+[[analysis]]
+type = "tran"
+step = 4.9999999999999996e-06
+stop = 0.001
+max_step = 4.9999999999999996e-06

@@ -1,0 +1,11 @@
+title = "Xyce_Regression MOSFET_ParamAliases"
+case = "xyce_mosfet_paramaliases"
+source = "invert3_alt.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2.9999999999999997e-05 },
+]

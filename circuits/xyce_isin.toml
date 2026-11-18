@@ -1,0 +1,9 @@
+title = "Xyce_Regression ISIN"
+case = "xyce_isin"
+source = "isin.cir"
+outputs = [
+    "i(vmon)",
+]
+analysis = [
+    { type = "tran", step = 6e-05, stop = 0.006 },
+]

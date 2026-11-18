@@ -1,0 +1,21 @@
+title = "ngspice examples/probe"
+case = "ngspice_examples_probe"
+source = "F5TurboV2-Probe.cir"
+outputs = [
+    "i(r19)",
+    "v(r10)",
+    "v(in)",
+    "v(out)",
+    "v(net-_p3-pad1_)",
+    "i(r2)",
+    "v(mq4:3)",
+    "i(mq3,3)",
+    "i(mq5,s)",
+    "i(xp2,1)",
+    "i(mq8,s)",
+    "i(mq3:s)",
+    "i(mq5:s)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-06, stop = 0.01 },
+]

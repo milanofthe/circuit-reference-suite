@@ -1,0 +1,11 @@
+title = "Xyce_Regression MEASURE_FFT/STEP"
+case = "xyce_measure_fft_step"
+source = "AllMeasures.s0.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression LOAD"
+case = "xyce_load"
+source = "load.cir"
+outputs = [
+    "v(13)",
+    "v(6)",
+    "v(8)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v4", start = 5.0, stop = 55.0, step = 0.05 },
+]

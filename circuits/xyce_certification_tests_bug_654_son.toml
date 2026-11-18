@@ -1,0 +1,17 @@
+title = "Xyce_Regression Certification_Tests/BUG_654_SON"
+case = "xyce_certification_tests_bug_654_son"
+source = "bug_654.cir"
+outputs = [
+    "v(5)",
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vjunk", start = 1.0, stop = 1.0, step = 1.0 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression NJFET_DC"
+case = "xyce_njfet_dc"
+source = "njfet.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(vidmon)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 15.0, step = 1.0 },
+]

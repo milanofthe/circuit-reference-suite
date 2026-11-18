@@ -1,0 +1,16 @@
+title = "Xyce_Regression VDMOS_DC"
+case = "xyce_vdmos_dc"
+source = "irf130.cir"
+outputs = [
+    "v(3)",
+    "v(4)",
+    "v(2)",
+    "i(vid)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 50.0, step = 5.0 },
+    { source = "vg", start = 5.0, stop = 15.0, step = 5.0 },
+]

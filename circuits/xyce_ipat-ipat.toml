@@ -1,0 +1,22 @@
+title = "Xyce_Regression IPAT"
+case = "xyce_ipat"
+source = "ipat.cir"
+outputs = [
+    "i(i1)",
+    "i(i2)",
+    "i(i3)",
+    "i(i4)",
+    "i(i5)",
+    "i(i6)",
+    "i(i7)",
+    "i(i8)",
+    "i(i9)",
+    "i(i10)",
+    "i(i11)",
+    "i(i12)",
+    "i(i13)",
+    "i(i14)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 5.0000000000000004e-08 },
+]

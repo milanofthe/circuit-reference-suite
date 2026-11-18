@@ -1,0 +1,6 @@
+title = "IHP SG13G2 capacitor model tests"
+case = "ihp_sg13g2_capacitor"
+source = "tb_cap_cmomf_typ.sp"
+analysis = [
+    { type = "ac", sweep = "dec", points = 1000, start = 1000000.0, stop = 1000000000.0 },
+]

@@ -1,0 +1,32 @@
+title = "Xyce_Regression XDM/PSPICE/IC_AND_NODESET"
+case = "xyce_xdm_pspice_ic_and_nodeset"
+source = "nodeset_in_subckt.cir"
+outputs = [
+    "v(in_1)",
+    "v(out_1)",
+    "v(out_2)",
+    "v(x1:in_1)",
+    "v(x1:out_1)",
+    "v(5)",
+    "v(in_3)",
+    "v(out_3)",
+    "v(out_4)",
+    "v(x2:in_1)",
+    "v(x2:out_1)",
+    "v(6)",
+    "v(x3:in_1)",
+    "v(x3:out_1)",
+    "v(7)",
+    "v(in_8)",
+    "v(out_8)",
+    "v(out_9)",
+    "v(x4:in_1)",
+    "v(x4:out_1)",
+    "v(10)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "nodeset_in_subckt.cir.pspice"

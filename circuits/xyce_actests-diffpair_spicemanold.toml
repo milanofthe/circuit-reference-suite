@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests"
+case = "xyce_actests"
+source = "diffpair_spiceManOld.cir"
+outputs = [
+    "v(5)",
+]
+analysis = [
+    { type = "ac", sweep = "lin", points = 1, start = 100.0, stop = 100.0 },
+]

@@ -1,0 +1,11 @@
+title = "ngspice examples/p-to-n-examples"
+case = "ngspice_examples_p_to_n_examples"
+source = "logic.cir"
+outputs = [
+    "v(1)",
+    "v(8)",
+    "v(9)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 1.0 },
+]

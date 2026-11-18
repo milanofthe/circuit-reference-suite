@@ -1,0 +1,20 @@
+title = "Xyce_Regression L_UTSOI"
+case = "xyce_l_utsoi"
+source = "asym_pmos_idvg0_allsw0_T27.cir"
+outputs = [
+    "v(g)",
+    "v(d)",
+    "i(v_d)",
+    "i(v_g)",
+    "i(v_s)",
+]
+
+[options]
+temp = 27.0
+gmin = 1e-15
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_g", start = 1.0, stop = -1.2, step = -0.01 },
+]

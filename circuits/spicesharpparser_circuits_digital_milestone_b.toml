@@ -1,0 +1,24 @@
+title = "SpiceSharpParser circuits/digital-milestone-b"
+case = "spicesharpparser_circuits_digital_milestone_b"
+source = "circuits/digital-milestone-b/milestone-b-clocked-state.cir"
+outputs = [
+    "v(clock)",
+    "v(latch_q)",
+    "v(dff_q)",
+    "v(tff_q)",
+    "v(reg_q0)",
+    "v(reg_q1)",
+    "v(reg_q2)",
+    "v(reg_q3)",
+    "v(count_q0)",
+    "v(count_q1)",
+    "v(count_q2)",
+    "v(count_q3)",
+    "v(carry)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 8.500000000000001e-08, max_step = 1e-10, uic = true },
+]
+
+[options]
+method = "gear"

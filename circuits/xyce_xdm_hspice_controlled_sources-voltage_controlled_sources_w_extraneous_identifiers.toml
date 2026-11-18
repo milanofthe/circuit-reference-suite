@@ -1,0 +1,19 @@
+title = "Xyce_Regression XDM/HSPICE/CONTROLLED_SOURCES"
+case = "xyce_xdm_hspice_controlled_sources"
+source = "voltage_controlled_sources_w_extraneous_identifiers.cir"
+outputs = [
+    "v(in)",
+    "v(2)",
+    "v(4)",
+    "v(6)",
+    "v(8)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "va", start = 0.0, stop = 10.0, step = 1.0 },
+]
+
+[variants]
+hspice = "voltage_controlled_sources_w_extraneous_identifiers.cir.hspice"

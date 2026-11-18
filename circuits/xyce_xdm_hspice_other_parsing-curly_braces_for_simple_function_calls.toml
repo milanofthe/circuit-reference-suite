@@ -1,0 +1,19 @@
+title = "Xyce_Regression XDM/HSPICE/OTHER_PARSING"
+case = "xyce_xdm_hspice_other_parsing"
+source = "curly_braces_for_simple_function_calls.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+
+[options]
+tnom = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "va", start = 0.0, stop = 10.0, step = 1.0 },
+]
+
+[variants]
+hspice = "curly_braces_for_simple_function_calls.cir.hspice"

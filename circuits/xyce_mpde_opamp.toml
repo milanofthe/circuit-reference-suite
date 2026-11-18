@@ -1,0 +1,15 @@
+title = "Xyce_Regression MPDE/OPAMP"
+case = "xyce_mpde_opamp"
+source = "ccmop.cir"
+outputs = [
+    "v(n_vin1)",
+    "v(n_vout1)",
+    "v(n_vin2)",
+    "v(n_vout2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vddef", start = 5.0, stop = 5.0, step = 1.0 },
+]

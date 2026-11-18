@@ -1,0 +1,12 @@
+title = "Xyce_Regression DIODE_ANALYTIC"
+case = "xyce_diode_analytic"
+source = "reverse_model.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 9.25 },
+]
+
+[options]
+reltol = 1e-06

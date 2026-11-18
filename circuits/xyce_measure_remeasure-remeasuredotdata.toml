@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE/REMEASURE"
+case = "xyce_measure_remeasure"
+source = "RemeasureDotData.cir"
+outputs = [
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

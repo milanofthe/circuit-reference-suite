@@ -1,0 +1,16 @@
+title = "Xyce_Regression WAMPDE/HARTLEY"
+case = "xyce_wampde_hartley"
+source = "hartley.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "i(vdc1)",
+    "i(vdc5)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.0005, max_step = 1e-08 },
+]

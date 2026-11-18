@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_1152"
+case = "xyce_certification_tests_bug_1152"
+source = "bug_1152.cir"
+outputs = [
+    "v(vin)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 10.0 },
+]
+
+[options]
+reltol = 0.001

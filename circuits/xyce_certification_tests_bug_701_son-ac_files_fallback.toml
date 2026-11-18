@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_701_SON"
+case = "xyce_certification_tests_bug_701_son"
+source = "ac_files_fallback.cir"
+outputs = [
+    "v(b)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 10000000.0 },
+]

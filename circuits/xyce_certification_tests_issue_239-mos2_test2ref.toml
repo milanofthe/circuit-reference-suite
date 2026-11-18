@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_239"
+case = "xyce_certification_tests_issue_239"
+source = "mos2_test2Ref.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]

@@ -1,0 +1,13 @@
+title = "Xyce_Regression LUMPEDLINE"
+case = "xyce_lumpedline"
+source = "baselineLumpedLine.cir"
+outputs = [
+    "v(1)",
+    "v(1b)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]
+
+[options]
+method = "gear"

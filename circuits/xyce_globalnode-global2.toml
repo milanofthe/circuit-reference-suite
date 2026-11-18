@@ -1,0 +1,10 @@
+title = "Xyce_Regression GLOBALNODE"
+case = "xyce_globalnode"
+source = "global2.cir"
+outputs = [
+    "v(2)",
+    "v(g1)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]

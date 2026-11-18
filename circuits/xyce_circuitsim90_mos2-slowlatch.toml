@@ -1,0 +1,6 @@
+title = "Xyce_Regression CircuitSim90/MOS2"
+case = "xyce_circuitsim90_mos2"
+source = "slowlatch.cir"
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 5.0000000000000004e-08 },
+]

@@ -1,0 +1,15 @@
+title = "Xyce_Regression BSIM4_v4p82"
+case = "xyce_bsim4_v4p82"
+source = "test4.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(vd)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.18, step = 0.02 },
+    { source = "vd", start = 0.05, stop = 1.2, step = 0.5 },
+]

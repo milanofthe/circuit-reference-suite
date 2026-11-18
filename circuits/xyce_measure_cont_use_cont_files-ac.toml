@@ -1,0 +1,13 @@
+title = "Xyce_Regression MEASURE_CONT/USE_CONT_FILES"
+case = "xyce_measure_cont_use_cont_files"
+source = "AC.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+    "v(c)",
+    "v(d)",
+    "v(e)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 20, start = 0.01, stop = 10.0 },
+]

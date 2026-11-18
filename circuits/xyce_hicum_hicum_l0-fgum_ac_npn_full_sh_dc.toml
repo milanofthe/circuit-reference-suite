@@ -1,0 +1,18 @@
+title = "Xyce_Regression HICUM/HICUM_L0"
+case = "xyce_hicum_hicum_l0"
+source = "fgum_ac_npn_full_sh_dc.cir"
+outputs = [
+    "v(base)",
+    "v(coll)",
+    "i(v_coll)",
+    "i(v_base)",
+]
+
+[options]
+temp = 27.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_base", start = 0.75, stop = 1.05, step = 0.01 },
+]

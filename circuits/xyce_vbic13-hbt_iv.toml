@@ -1,0 +1,26 @@
+title = "Xyce_Regression VBIC13"
+case = "xyce_vbic13"
+source = "HBT_IV.cir"
+outputs = [
+    "v(n_1)",
+    "i(ibasecurrent)",
+    "v(n_4)",
+]
+
+[options]
+gmin = 0.0
+
+[[analysis]]
+type = "dc"
+
+[[analysis.sweep]]
+source = "vvce"
+start = 0.0
+stop = 20.0
+step = 0.1
+
+[[analysis.sweep]]
+source = "ibasecurrent"
+start = 0.0
+stop = 0.00019999999999999998
+step = 1.9999999999999998e-05

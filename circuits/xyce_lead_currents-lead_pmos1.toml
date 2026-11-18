@@ -1,0 +1,13 @@
+title = "Xyce_Regression LEAD_CURRENTS"
+case = "xyce_lead_currents"
+source = "lead_pmos1.cir"
+outputs = [
+    "v(2)",
+    "i(m1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 0.0, stop = 8.0, step = 1.0 },
+]

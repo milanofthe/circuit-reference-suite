@@ -1,0 +1,11 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_229"
+case = "xyce_certification_tests_issue_229"
+source = "GlobalInExpressionBug.cir"
+outputs = [
+    "v(node1)",
+    "v(node2)",
+    "v(testnode)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-05 },
+]

@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/vbic_model_syntax.cir"
+analysis = [
+    { type = "op" },
+]

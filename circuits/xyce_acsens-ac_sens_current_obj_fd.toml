@@ -1,0 +1,10 @@
+title = "Xyce_Regression ACSENS"
+case = "xyce_acsens"
+source = "ac-sens-current-obj_FD.cir"
+outputs = [
+    "i(v1)",
+    "v(v1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 10000.0 },
+]

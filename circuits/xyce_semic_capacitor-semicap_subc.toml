@@ -1,0 +1,9 @@
+title = "Xyce_Regression SEMIC_CAPACITOR"
+case = "xyce_semic_capacitor"
+source = "semicap_subc.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.9999999999999998e-05 },
+]

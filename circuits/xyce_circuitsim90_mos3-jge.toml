@@ -1,0 +1,28 @@
+title = "Xyce_Regression CircuitSim90/MOS3"
+case = "xyce_circuitsim90_mos3"
+source = "jge.cir"
+outputs = [
+    "v(15)",
+    "v(4)",
+    "v(127)",
+    "v(11)",
+    "v(17)",
+    "v(28)",
+    "v(27)",
+    "v(176)",
+    "v(111)",
+    "v(37)",
+    "v(109)",
+    "v(119)",
+    "v(112)",
+    "v(128)",
+    "v(130)",
+    "v(131)",
+    "v(20)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-07 },
+]
+
+[options]
+temp = 100.0

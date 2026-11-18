@@ -1,0 +1,11 @@
+title = "Xyce_Regression LTRA"
+case = "xyce_ltra"
+source = "zero_length_rc_rg_line.cir"
+outputs = [
+    "v(1)",
+    "v(rc_out)",
+    "v(rg_out)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 7e-08, max_step = 1.5e-10 },
+]

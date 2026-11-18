@@ -1,0 +1,14 @@
+title = "ngspice examples/vbic"
+case = "ngspice_examples_vbic"
+source = "vbic99_tran.sp"
+outputs = [
+    "v(in)",
+    "v(b)",
+    "v(c)",
+    "v(vp)",
+    "v(t)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 5e-11, stop = 1.0000000000000001e-07 },
+]

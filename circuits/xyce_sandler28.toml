@@ -1,0 +1,6 @@
+title = "Xyce_Regression SANDLER28"
+case = "xyce_sandler28"
+source = "sandler28.cir"
+analysis = [
+    { type = "tran", step = 4.9999999999999996e-06, stop = 0.007 },
+]

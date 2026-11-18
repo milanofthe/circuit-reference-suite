@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_647_SON"
+case = "xyce_certification_tests_bug_647_son"
+source = "mos3.cir"
+outputs = [
+    "v(3)",
+    "v(5)",
+    "v(3,2)",
+    "v(1,2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgg", start = 0.0, stop = 18.0, step = 1.0 },
+    { source = "vdd", start = 0.0, stop = 18.0, step = 1.0 },
+]

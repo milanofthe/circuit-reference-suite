@@ -1,0 +1,12 @@
+title = "ngspice tests/mesa"
+case = "ngspice_tests_mesa"
+source = "mesinv.cir"
+outputs = [
+    "v(70)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 1.0, step = 0.01 },
+]

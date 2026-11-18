@@ -1,0 +1,17 @@
+title = "Xyce_Regression VBIC13"
+case = "xyce_vbic13"
+source = "dcFgHbt_noFlip_P.cir"
+outputs = [
+    "v(b)",
+    "i(v_c)",
+    "i(v_b)",
+]
+
+[options]
+temp = 27.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_b", start = 0.5, stop = 2.0, step = 0.01 },
+]

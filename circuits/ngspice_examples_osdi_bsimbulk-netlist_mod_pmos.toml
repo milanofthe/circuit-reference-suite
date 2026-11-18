@@ -1,0 +1,13 @@
+title = "ngspice examples/osdi/bsimbulk"
+case = "ngspice_examples_osdi_bsimbulk"
+source = "netlist_mod_pmos.sp"
+outputs = [
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = -1.8, step = -0.01 },
+    { source = "vg", start = 0.0, stop = -1.8, step = -0.2 },
+]

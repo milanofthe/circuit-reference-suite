@@ -1,0 +1,20 @@
+title = "ngspice paranoia_parallel/examples/pton"
+case = "ngspice_paranoia_parallel_examples_pton"
+source = "Optimos_out.cir"
+outputs = [
+    "v(nvd)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.0, step = 0.1 },
+    { source = "vg", start = 2.8, stop = 3.2, step = 0.2 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.0, step = 0.1 },
+    { source = "vg", start = 3.5, stop = 5.0, step = 0.5 },
+]

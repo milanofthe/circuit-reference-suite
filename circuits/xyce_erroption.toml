@@ -1,0 +1,6 @@
+title = "Xyce_Regression ERROPTION"
+case = "xyce_erroption"
+source = "rc_osc.cir"
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005, max_step = 5e-07 },
+]

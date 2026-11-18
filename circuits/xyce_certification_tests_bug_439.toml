@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_439"
+case = "xyce_certification_tests_bug_439"
+source = "formerly-bad-vsrc.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6.000000000000001e-08 },
+]

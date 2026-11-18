@@ -1,0 +1,9 @@
+title = "Xyce_Regression WAMPDE"
+case = "xyce_wampde"
+source = "invert1_WAMPDE.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 1.2e-05 },
+]
+
+[options]
+reltol = 1e-05

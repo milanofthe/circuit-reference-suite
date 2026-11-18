@@ -1,0 +1,18 @@
+title = "Xyce_Regression BSIM6"
+case = "xyce_bsim6"
+source = "inverter_transient_xyce.cir"
+outputs = [
+    "v(vi)",
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(vo)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 4.9999999999999996e-06 },
+]
+
+[options]
+method = "gear"
+temp = 25.0

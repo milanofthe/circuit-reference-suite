@@ -1,0 +1,12 @@
+title = "Xyce_Regression BSIMSOI3"
+case = "xyce_bsimsoi3"
+source = "dcSweepNoGminScaling.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = 0.0, stop = 3.0, step = 0.02 },
+]

@@ -1,0 +1,11 @@
+title = "Xyce_Regression REDUND_REMOVE"
+case = "xyce_redund_remove"
+source = "gnd_subckt.cir"
+outputs = [
+    "v(out)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 2.9999999999999997e-05 },
+]

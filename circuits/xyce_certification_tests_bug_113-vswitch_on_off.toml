@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_113"
+case = "xyce_certification_tests_bug_113"
+source = "VSWITCH_ON_OFF.cir"
+outputs = [
+    "i(v1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 5.0, stop = 5.0, step = 1.0 },
+]

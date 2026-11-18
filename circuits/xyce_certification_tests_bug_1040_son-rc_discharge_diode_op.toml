@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_1040_SON"
+case = "xyce_certification_tests_bug_1040_son"
+source = "rc_discharge_diode_op.net"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.002 },
+]

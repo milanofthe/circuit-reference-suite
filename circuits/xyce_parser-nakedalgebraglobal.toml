@@ -1,0 +1,12 @@
+title = "Xyce_Regression PARSER"
+case = "xyce_parser"
+source = "nakedAlgebraGlobal.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 1e-10 },
+]
+
+[options]
+reltol = 0.001

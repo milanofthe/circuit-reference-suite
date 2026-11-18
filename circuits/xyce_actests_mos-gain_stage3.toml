@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests/mos"
+case = "xyce_actests_mos"
+source = "gain-stage3.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 1000000000.0 },
+]

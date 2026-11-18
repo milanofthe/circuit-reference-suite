@@ -1,0 +1,14 @@
+title = "Xyce_Regression MPDE/FORCED_OSCILLATOR"
+case = "xyce_mpde_forced_oscillator"
+source = "forced_oscillator.cir"
+outputs = [
+    "v(4)",
+    "v(oscout)",
+    "v(2)",
+    "v(5)",
+    "v(1)",
+    "v(6)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-06, stop = 0.01 },
+]

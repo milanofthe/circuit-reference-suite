@@ -1,0 +1,6 @@
+title = "Xyce_Regression INIT_CONDS"
+case = "xyce_init_conds"
+source = "comparatorIC.cir"
+analysis = [
+    { type = "tran", step = 0.0, stop = 3e-08 },
+]

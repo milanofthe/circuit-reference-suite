@@ -1,0 +1,16 @@
+title = "ngspice examples/transient-noise"
+case = "ngspice_examples_transient_noise"
+source = "noi-sc-tr.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(ga1)",
+    "v(ga2)",
+]
+analysis = [
+    { type = "tran", step = 4.0000000000000007e-10, stop = 9.999999999999999e-05 },
+]
+
+[options]
+gmin = 1e-15

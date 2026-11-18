@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests/bsim3"
+case = "xyce_actests_bsim3"
+source = "gain-stage1.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 1000000000.0 },
+]

@@ -1,0 +1,10 @@
+title = "Xyce_Regression VERILOG_SCALE"
+case = "xyce_verilog_scale"
+source = "bsimcmg_107_inverter_transientBaseline.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 4.9999999999999996e-06 },
+]
+
+[options]
+method = "trap"
+temp = 25.0

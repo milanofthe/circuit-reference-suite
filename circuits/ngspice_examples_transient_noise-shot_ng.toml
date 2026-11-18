@@ -1,0 +1,9 @@
+title = "ngspice examples/transient-noise"
+case = "ngspice_examples_transient_noise"
+source = "shot_ng.cir"
+outputs = [
+    "i(vdev)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.9999999999999998e-05 },
+]

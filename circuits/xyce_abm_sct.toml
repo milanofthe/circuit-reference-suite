@@ -1,0 +1,16 @@
+title = "Xyce_Regression ABM_SCT"
+case = "xyce_abm_sct"
+source = "sct.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vs", start = 0.0, stop = 6.5, step = 0.1 },
+]

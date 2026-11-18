@@ -1,0 +1,22 @@
+title = "WRspice devlib/adms/examples/hicum/tests"
+case = "wrspice_devlib_adms_examples_hicum_tests"
+source = "hic2_out.sp"
+outputs = [
+    "i(vc)",
+    "v(dt)",
+]
+
+[[analysis]]
+type = "dc"
+
+[[analysis.sweep]]
+source = "vc"
+start = 0.0
+stop = 2.0
+step = 0.05
+
+[[analysis.sweep]]
+source = "ib"
+start = 9.999999999999999e-06
+stop = 4.9999999999999996e-05
+step = 9.999999999999999e-06

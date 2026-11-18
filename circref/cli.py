@@ -1,19 +1,19 @@
-"""python -m circref {validate,build,check,list,run,summary}
+"""python -m circref {validate,build,check,list,circuits}
 
 build  writes every generated file (case and library READMEs, the top README tables).
 check  validates and rebuilds in memory; fails when a committed file is stale.
-run    runs every netlist on its simulator (circref/run.py), results into --out.
+circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
 """
 from __future__ import annotations
 
 import argparse
-import os
 import sys
 from pathlib import Path
 
 import tomllib
 
 from . import report
+from .circuit import iter_circuits
 from .entry import ROOT, iter_cases, iter_libraries, load_case, validate_schema
 from .validate import check_case, check_library
 
@@ -46,6 +46,11 @@ def cmd_validate(args) -> int:
         failed |= bool(errors)
         if not errors:
             print(f"{c.id}: ok, {report.status_text(c)}")
+    if not args.ids:
+        for circ in iter_circuits():
+            for e in circ.errors():
+                print(f"circuits/{circ.name}.toml: error: {e}")
+                failed = True
     return int(failed)
 
 
@@ -73,16 +78,17 @@ def cmd_list(args) -> int:
     return 0
 
 
-def cmd_run(args) -> int:
-    from . import run
-    jobs = run.select(args.case, args.sim)
-    shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
-    return run.run(jobs, Path(args.out), args.jobs, args.timeout, args.memory, shard)
-
-
-def cmd_summary(args) -> int:
-    from . import run
-    print(run.summary(Path(args.results)))
+def cmd_circuits(args) -> int:
+    from . import circuit
+    proposed, skipped = circuit.proposals()
+    for name, c in proposed.items():
+        print(f"wrote {circuit.write(name, c).relative_to(ROOT).as_posix()}")
+    reasons: dict[str, int] = {}
+    for _, why in skipped:
+        key = why.split(":")[0] if ":" in why else why.split()[0]
+        reasons[key] = reasons.get(key, 0) + 1
+    for why, n in sorted(reasons.items(), key=lambda kv: -kv[1]):
+        print(f"skipped {n:5d}  {why}")
     return 0
 
 
@@ -95,17 +101,7 @@ def main(argv: list[str] | None = None) -> int:
         sp.set_defaults(fn=fn)
     sub.add_parser("build").set_defaults(fn=cmd_build)
     sub.add_parser("list").set_defaults(fn=cmd_list)
-    sp = sub.add_parser("run")
-    sp.add_argument("--case", action="append", default=[], help="case id or glob, repeatable")
-    sp.add_argument("--sim", action="append", default=[], help="simulator name, repeatable")
-    sp.add_argument("--jobs", type=int, default=int(os.environ.get("FALLLOW_CORES", os.cpu_count())))
-    sp.add_argument("--timeout", type=float, default=600, help="seconds per netlist")
-    sp.add_argument("--memory", type=float, default=4, help="GB address space per netlist")
-    sp.add_argument("--out", default="/artifacts/run")
-    sp.set_defaults(fn=cmd_run)
-    sp = sub.add_parser("summary")
-    sp.add_argument("results")
-    sp.set_defaults(fn=cmd_summary)
+    sub.add_parser("circuits").set_defaults(fn=cmd_circuits)
     args = ap.parse_args(argv)
     return args.fn(args)
 

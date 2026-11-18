@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_667_SON"
+case = "xyce_certification_tests_bug_667_son"
+source = "nodeset_not_in_subckt.cir"
+outputs = [
+    "v(n15206)",
+    "v(n15971)",
+    "v(n15554)",
+    "v(n15997)",
+    "v(n16554)",
+    "v(n16997)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]

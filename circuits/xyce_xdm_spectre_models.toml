@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/SPECTRE/MODELS"
+case = "xyce_xdm_spectre_models"
+source = "bsimsoi_translation.cir"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.002 },
+]
+
+[variants]
+spectre = "bsimsoi_translation.cir.spectre"

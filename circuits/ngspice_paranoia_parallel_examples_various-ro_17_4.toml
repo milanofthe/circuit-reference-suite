@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/various"
+case = "ngspice_paranoia_parallel_examples_various"
+source = "ro_17_4.cir"
+outputs = [
+    "v(18)",
+    "i(vdd)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 5e-09 },
+]

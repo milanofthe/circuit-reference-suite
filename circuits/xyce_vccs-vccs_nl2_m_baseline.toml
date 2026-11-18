@@ -1,0 +1,14 @@
+title = "Xyce_Regression VCCS"
+case = "xyce_vccs"
+source = "vccs_nl2_m_baseline.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 1.0, stop = 12.0, step = 1.0 },
+]

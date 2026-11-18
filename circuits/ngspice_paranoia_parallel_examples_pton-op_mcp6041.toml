@@ -1,0 +1,19 @@
+title = "ngspice paranoia_parallel/examples/pton"
+case = "ngspice_paranoia_parallel_examples_pton"
+source = "OP_MCP6041.cir"
+outputs = [
+    "v(opout)",
+    "v(opin)",
+    "v(in)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = -0.2, stop = 0.2, step = 0.01 },
+]
+
+[[analysis]]
+type = "tran"
+step = 0.0001
+stop = 0.001

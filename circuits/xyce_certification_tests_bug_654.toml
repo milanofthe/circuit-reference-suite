@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_654"
+case = "xyce_certification_tests_bug_654"
+source = "macterminator.cir"
+outputs = [
+    "i(vmon)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 5.0, stop = 5.0, step = 1.0 },
+]

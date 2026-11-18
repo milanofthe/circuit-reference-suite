@@ -1,0 +1,12 @@
+title = "Xyce_Regression Message/Topology"
+case = "xyce_message_topology"
+source = "FloatingNode_Warning.cir"
+outputs = [
+    "v(a)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 5.0, step = 1.0 },
+]

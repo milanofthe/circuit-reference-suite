@@ -1,0 +1,21 @@
+title = "Xyce_Regression HICUM/HICUM_L0"
+case = "xyce_hicum_hicum_l0"
+source = "fgum_ac_npn_full_sh_ac.cir"
+outputs = [
+    "i(v_coll_coll)",
+    "i(v_base_coll)",
+    "i(v_emit_coll)",
+    "i(v_subs_coll)",
+    "v(therm_coll)",
+    "i(v_coll_base)",
+    "i(v_base_base)",
+    "i(v_emit_base)",
+    "i(v_subs_base)",
+    "v(therm_base)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 10000000000.0, stop = 20000000000.0 },
+]
+
+[options]
+temp = 27.0

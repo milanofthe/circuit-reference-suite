@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/cccs_poly2.cir"
+analysis = [
+    { type = "op" },
+]

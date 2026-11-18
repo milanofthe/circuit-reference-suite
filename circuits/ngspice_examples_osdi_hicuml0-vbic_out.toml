@@ -1,0 +1,22 @@
+title = "ngspice examples/osdi/hicuml0"
+case = "ngspice_examples_osdi_hicuml0"
+source = "vbic_out.sp"
+outputs = [
+    "i(vc)",
+    "v(dt)",
+]
+
+[[analysis]]
+type = "dc"
+
+[[analysis.sweep]]
+source = "vc"
+start = 0.0
+stop = 5.0
+step = 0.05
+
+[[analysis.sweep]]
+source = "ib"
+start = 9.999999999999999e-06
+stop = 9.999999999999999e-05
+step = 9.999999999999999e-06

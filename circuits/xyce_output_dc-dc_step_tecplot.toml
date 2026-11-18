@@ -1,0 +1,16 @@
+title = "Xyce_Regression Output/DC"
+case = "xyce_output_dc"
+source = "dc-step-tecplot.cir"
+outputs = [
+    "v(1)",
+    "v(6)",
+    "i(vmon1)",
+    "i(vmon2)",
+    "i(vmon3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vpos", start = 0.0, stop = 5.0, step = 1.0 },
+]

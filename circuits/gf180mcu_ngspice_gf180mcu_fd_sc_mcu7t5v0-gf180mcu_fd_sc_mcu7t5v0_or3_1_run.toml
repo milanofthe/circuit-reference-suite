@@ -1,0 +1,10 @@
+title = "GF180MCU model test, ngspice gf180mcu_fd_sc_mcu7t5v0"
+case = "gf180mcu_ngspice_gf180mcu_fd_sc_mcu7t5v0"
+source = "gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice"
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1.6e-09 },
+]
+
+[options]
+temp = 25.0
+tnom = 25.0

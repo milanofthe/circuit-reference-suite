@@ -1,0 +1,12 @@
+title = "Xyce_Regression FFT"
+case = "xyce_fft"
+source = "FreqFminFmaxTest.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(5)",
+    "v(10)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

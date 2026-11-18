@@ -1,0 +1,13 @@
+title = "Xyce_Regression DAKOTA"
+case = "xyce_dakota"
+source = "res.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "va", start = 5.0, stop = 5.0, step = 1.0 },
+]

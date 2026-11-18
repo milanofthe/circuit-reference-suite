@@ -1,0 +1,11 @@
+title = "Xyce_Regression LTRA"
+case = "xyce_ltra"
+source = "square-wave-gen-resistor-compact.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 1e-13, stop = 4e-08 },
+]

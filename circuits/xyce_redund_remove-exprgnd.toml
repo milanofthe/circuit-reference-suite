@@ -1,0 +1,17 @@
+title = "Xyce_Regression REDUND_REMOVE"
+case = "xyce_redund_remove"
+source = "exprGnd.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(2a)",
+    "v(2b)",
+    "v(2c)",
+    "v(2d)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 2.0, stop = 2.0, step = 1.0 },
+]

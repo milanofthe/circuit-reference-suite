@@ -1,0 +1,10 @@
+title = "Xyce_Regression MINDUCTORS"
+case = "xyce_minductors"
+source = "mutIndPrint2.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

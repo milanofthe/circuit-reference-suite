@@ -1,0 +1,13 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DC_GStep.cir"
+outputs = [
+    "i(vb)",
+    "i(vic)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vic", start = 0.0, stop = 1.0, step = 1.0 },
+]

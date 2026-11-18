@@ -1,0 +1,19 @@
+title = "Xyce_Regression MULTIPLICITY_FACTOR"
+case = "xyce_multiplicity_factor"
+source = "resistor.cir"
+outputs = [
+    "v(1a)",
+    "i(r1)",
+    "v(2a)",
+    "i(r2)",
+    "v(3a)",
+    "i(r3)",
+    "v(4b)",
+    "i(r4b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

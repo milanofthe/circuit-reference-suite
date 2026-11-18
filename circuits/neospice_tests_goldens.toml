@@ -1,0 +1,7 @@
+title = "neospice tests/goldens"
+case = "neospice_tests_goldens"
+source = "probe.cir"
+analysis = [
+    { type = "op" },
+    { type = "op" },
+]

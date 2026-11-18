@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/diode_rectifier.cir"
+analysis = [
+    { type = "tran", step = 9.999999999999999e-06, stop = 0.005 },
+]

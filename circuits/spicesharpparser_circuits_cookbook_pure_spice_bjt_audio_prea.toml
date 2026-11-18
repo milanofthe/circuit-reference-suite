@@ -1,0 +1,16 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/bjt-audio-preamplifier"
+case = "spicesharpparser_circuits_cookbook_pure_spice_bjt_audio_prea"
+source = "bjt-audio-preamplifier.cir"
+outputs = [
+    "v(source)",
+    "v(input)",
+    "v(base)",
+    "v(collector)",
+    "v(emitter)",
+    "v(output)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 40, start = 10.0, stop = 100000000.0 },
+    { type = "tran", step = 2e-06, stop = 0.02, max_step = 2e-06 },
+]

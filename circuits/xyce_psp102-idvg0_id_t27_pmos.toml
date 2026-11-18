@@ -1,0 +1,16 @@
+title = "Xyce_Regression PSP102"
+case = "xyce_psp102"
+source = "idvg0_Id_T27_pmos.cir"
+outputs = [
+    "v(g)",
+    "i(v_d)",
+]
+
+[options]
+temp = 27.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_g", start = 1.0, stop = -1.2, step = -0.01 },
+]

@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/vdmos"
+case = "ngspice_paranoia_parallel_examples_vdmos"
+source = "VDMOS-DIO-AC.cir"
+outputs = [
+    "i(vs)",
+    "i(vk)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 100000.0 },
+]

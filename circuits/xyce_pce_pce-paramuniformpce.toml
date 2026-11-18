@@ -1,0 +1,12 @@
+title = "Xyce_Regression PCE/PCE"
+case = "xyce_pce_pce"
+source = "paramUniformPCE.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1000.0, stop = 1000.0, step = 1.0 },
+]

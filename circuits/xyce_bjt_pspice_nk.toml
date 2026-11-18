@@ -1,0 +1,14 @@
+title = "Xyce_Regression BJT_PSPICE_NK"
+case = "xyce_bjt_pspice_nk"
+source = "bjt_test_nk.cir"
+outputs = [
+    "v(6)",
+    "i(vmon1)",
+    "i(vmon2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbb", start = 0.15, stop = 0.95, step = 0.05 },
+]

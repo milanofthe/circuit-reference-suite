@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_609"
+case = "xyce_certification_tests_issue_609"
+source = "issue609_devbal.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin1", start = 3.3, stop = 3.3, step = 1.0 },
+]

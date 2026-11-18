@@ -1,0 +1,12 @@
+title = "Xyce_Regression PCE/PCE2"
+case = "xyce_pce_pce2"
+source = "pceVoltageDivider.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 10.0, stop = 10.0, step = 1.0 },
+]

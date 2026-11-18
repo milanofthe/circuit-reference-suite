@@ -1,0 +1,14 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "fm-modulator.cir"
+outputs = [
+    "v(fm)",
+    "v(carrier)",
+]
+
+[[analysis]]
+type = "tran"
+step = 9.999999999999999e-06
+stop = 0.008
+max_step = 9.999999999999999e-06
+uic = true

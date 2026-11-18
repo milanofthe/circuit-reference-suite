@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "circuit.schema.json",
+  "title": "Benchmark circuit",
+  "description": "What every simulator computes on a circuit of the corpus. The body comes from a netlist of the case; its analysis, output and option lines are not used.",
+  "type": "object",
+  "required": ["title", "case", "source", "analysis"],
+  "additionalProperties": false,
+  "$defs": {
+    "dialect": {"enum": ["ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "wrspice", "josim", "ltspice", "ahkab", "spicesharp", "cedarsim", "spectre", "vacask", "qucsator"]},
+    "sweep": {
+      "type": "object",
+      "required": ["source", "start", "stop", "step"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {"type": "string", "description": "independent source swept, by instance name"},
+        "start": {"type": "number"}, "stop": {"type": "number"}, "step": {"type": "number"}
+      }
+    }
+  },
+  "properties": {
+    "title": {"type": "string"},
+    "case": {"$ref": "common.schema.json#/$defs/id"},
+    "source": {"type": "string", "description": "netlist of the case the body comes from"},
+    "variants": {
+      "type": "object",
+      "description": "dialect -> netlist of the case, used for that dialect instead of a translation of the source",
+      "propertyNames": {"$ref": "#/$defs/dialect"},
+      "additionalProperties": {"type": "string"}
+    },
+    "outputs": {
+      "type": "array",
+      "description": "signals recorded: v(node), v(a,b), i(source); empty records every node voltage",
+      "items": {"type": "string", "pattern": "^[vi]\\([^(),\\s]+(,[^(),\\s]+)?\\)$"}
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "temp": {"type": "number"}, "tnom": {"type": "number"},
+        "reltol": {"type": "number"}, "abstol": {"type": "number"}, "vntol": {"type": "number"},
+        "chgtol": {"type": "number"}, "gmin": {"type": "number"},
+        "method": {"type": "string"}
+      }
+    },
+    "analysis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {"type": "object", "required": ["type"], "additionalProperties": false,
+           "properties": {"type": {"const": "op"}}},
+          {"type": "object", "required": ["type", "sweep"], "additionalProperties": false,
+           "properties": {"type": {"const": "dc"},
+                          "sweep": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"$ref": "#/$defs/sweep"}}}},
+          {"type": "object", "required": ["type", "sweep", "points", "start", "stop"], "additionalProperties": false,
+           "properties": {"type": {"const": "ac"}, "sweep": {"enum": ["dec", "oct", "lin"]},
+                          "points": {"type": "integer", "minimum": 1},
+                          "start": {"type": "number"}, "stop": {"type": "number"}}},
+          {"type": "object", "required": ["type", "step", "stop"], "additionalProperties": false,
+           "properties": {"type": {"const": "tran"}, "step": {"type": "number"}, "stop": {"type": "number"},
+                          "start": {"type": "number"}, "max_step": {"type": "number"},
+                          "uic": {"type": "boolean"}}}
+        ]
+      }
+    }
+  }
+}

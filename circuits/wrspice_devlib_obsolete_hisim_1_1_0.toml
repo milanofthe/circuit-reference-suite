@@ -1,0 +1,10 @@
+title = "WRspice devlib/obsolete/hisim-1.1.0"
+case = "wrspice_devlib_obsolete_hisim_1_1_0"
+source = "note"
+outputs = [
+    "v(9)",
+    "v(8)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6.000000000000001e-08 },
+]

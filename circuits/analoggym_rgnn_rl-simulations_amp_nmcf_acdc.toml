@@ -1,0 +1,26 @@
+title = "AnalogGym RGNN_RL testbenches: NMCF amplifier and LDO, SKY130"
+case = "analoggym_rgnn_rl"
+source = "simulations/AMP_NMCF_ACDC.cir"
+outputs = [
+    "v(vout6)",
+    "v(opout)",
+    "v(cm3)",
+    "v(ppsr1)",
+    "v(npsr1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "temp", start = -40.0, stop = 125.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "ac"
+sweep = "dec"
+points = 10
+start = 0.1
+stop = 1000000000.0
+
+[[analysis]]
+type = "op"

@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_518_SON"
+case = "xyce_certification_tests_bug_518_son"
+source = "bug518.cir"
+outputs = [
+    "v(node1)",
+    "v(node2)",
+    "v(node3)",
+    "v(node5)",
+    "v(node6)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.02 },
+]
+
+[options]
+reltol = 0.0001

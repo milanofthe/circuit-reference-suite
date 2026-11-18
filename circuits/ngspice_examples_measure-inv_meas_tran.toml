@@ -1,0 +1,10 @@
+title = "ngspice examples/measure"
+case = "ngspice_examples_measure"
+source = "inv-meas-tran.sp"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 4e-09 },
+]

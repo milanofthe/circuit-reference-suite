@@ -1,0 +1,14 @@
+title = "Berkeley SPICE3f5 example circuits"
+case = "spice3f5_examples"
+source = "mosamp2.cir"
+outputs = [
+    "v(20)",
+    "v(66)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 9.999999999999999e-06 },
+]
+
+[options]
+abstol = 1e-08
+vntol = 1e-08

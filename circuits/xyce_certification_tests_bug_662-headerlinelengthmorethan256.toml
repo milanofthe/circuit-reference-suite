@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_662"
+case = "xyce_certification_tests_bug_662"
+source = "headerLineLengthMoreThan256.cir"
+outputs = [
+    "v(n14950)",
+    "v(n15037)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0000000000000001e-07 },
+]

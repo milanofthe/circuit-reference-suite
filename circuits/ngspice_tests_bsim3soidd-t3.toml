@@ -1,0 +1,17 @@
+title = "ngspice tests/bsim3soidd"
+case = "ngspice_tests_bsim3soidd"
+source = "t3.cir"
+outputs = [
+    "v(g)",
+    "i(vs)",
+]
+
+[options]
+gmin = 1e-25
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.0, step = 0.01 },
+    { source = "vg", start = 0.5, stop = 3.0, step = 0.5 },
+]

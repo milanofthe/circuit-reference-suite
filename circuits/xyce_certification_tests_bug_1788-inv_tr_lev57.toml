@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_1788"
+case = "xyce_certification_tests_bug_1788"
+source = "inv_tr_lev57.cir"
+outputs = [
+    "v(gate)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000001e-11, stop = 6e-10 },
+]
+
+[options]
+temp = 27.0

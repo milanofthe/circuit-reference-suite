@@ -1,0 +1,11 @@
+title = "ngspice examples/TransmissionLines"
+case = "ngspice_examples_transmissionlines"
+source = "cpl_ibm2.sp"
+outputs = [
+    "v(in)",
+    "v(v1)",
+    "v(v3)",
+]
+analysis = [
+    { type = "tran", step = 1.0000000000000002e-10, stop = 2e-08 },
+]

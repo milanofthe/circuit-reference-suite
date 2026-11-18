@@ -1,0 +1,26 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "rca3040.cir"
+outputs = [
+    "v(16)",
+    "v(17)",
+]
+
+[[analysis]]
+type = "ac"
+sweep = "dec"
+points = 10
+start = 1.0
+stop = 10000000000.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = -0.25, stop = 0.25, step = 0.005 },
+]
+
+[[analysis]]
+type = "tran"
+step = 2e-09
+stop = 2.0000000000000002e-07
+max_step = 2e-09

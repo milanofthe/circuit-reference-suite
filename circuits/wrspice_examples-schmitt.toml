@@ -1,0 +1,12 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "schmitt.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+    "v(5)",
+    "v(6)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 1.0000000000000002e-06 },
+]

@@ -1,0 +1,10 @@
+title = "Xyce_Regression POWERNODE"
+case = "xyce_powernode"
+source = "sixNode_in.cir"
+outputs = [
+    "v(out1)",
+    "v(out2)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 9.999999999999999e-06 },
+]

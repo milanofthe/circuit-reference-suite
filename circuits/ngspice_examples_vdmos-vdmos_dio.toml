@@ -1,0 +1,11 @@
+title = "ngspice examples/vdmos"
+case = "ngspice_examples_vdmos"
+source = "VDMOS-DIO.sp"
+outputs = [
+    "i(vk)",
+    "i(vs)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 2.5 },
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 100000.0 },
+]

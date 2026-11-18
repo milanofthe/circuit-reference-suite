@@ -1,0 +1,9 @@
+title = "Xyce_Regression VSIN"
+case = "xyce_vsin"
+source = "vsin.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 9.999999999999999e-06 },
+]

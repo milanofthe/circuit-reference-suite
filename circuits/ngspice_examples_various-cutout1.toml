@@ -1,0 +1,10 @@
+title = "ngspice examples/various"
+case = "ngspice_examples_various"
+source = "cutout1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 9.999999999999999e-06, stop = 0.01 },
+]

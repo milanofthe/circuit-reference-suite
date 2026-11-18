@@ -1,0 +1,12 @@
+title = "Xyce_Regression ABM_BREAK"
+case = "xyce_abm_break"
+source = "fastTable.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-13, stop = 1e-12 },
+]
+
+[options]
+reltol = 0.001

@@ -1,0 +1,13 @@
+title = "Xyce_Regression ABM_ABS"
+case = "xyce_abm_abs"
+source = "abs.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vs", start = -10.0, stop = 10.0, step = 1.0 },
+]

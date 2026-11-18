@@ -1,0 +1,10 @@
+title = "Xyce_Regression BUG_374"
+case = "xyce_bug_374"
+source = "capacitor.cir"
+outputs = [
+    "v(3)",
+    "i(vmon)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1.9999999999999998e-05 },
+]

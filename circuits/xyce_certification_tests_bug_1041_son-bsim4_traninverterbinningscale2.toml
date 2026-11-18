@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_1041_SON"
+case = "xyce_certification_tests_bug_1041_son"
+source = "bsim4_tranInverterBinningScale2.cir"
+outputs = [
+    "v(vdd)",
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-12, stop = 4e-09 },
+]

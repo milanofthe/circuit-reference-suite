@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/vdmos"
+case = "ngspice_paranoia_parallel_examples_vdmos"
+source = "vdmosp-out.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = -15.0, stop = 1.0, step = 0.1 },
+    { source = "vg", start = 0.0, stop = -5.0, step = -1.0 },
+]

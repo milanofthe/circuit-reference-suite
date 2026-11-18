@@ -1,0 +1,9 @@
+title = "Xyce_Regression COMPLEX_NUM"
+case = "xyce_complex_num"
+source = "test1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 100000.0 },
+]

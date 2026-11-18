@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_456"
+case = "xyce_certification_tests_bug_456"
+source = "emitter_baseline_gear.cir"
+outputs = [
+    "v(1)",
+    "v(ve)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 5e-05 },
+]
+
+[options]
+method = "gear"

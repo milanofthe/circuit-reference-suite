@@ -1,0 +1,11 @@
+title = "Xyce_Regression MEASURE/STEP"
+case = "xyce_measure_step"
+source = "TrigTargTest.s1.cir"
+outputs = [
+    "v(1)",
+    "v(1a)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]

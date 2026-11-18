@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/jfet2_njf_tran.cir"
+analysis = [
+    { type = "tran", step = 1e-07, stop = 1.9999999999999998e-05 },
+]

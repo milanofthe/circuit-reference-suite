@@ -1,0 +1,9 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DC_ExVCheck1.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v2", start = -1.0, stop = 10.0, step = 1.0 },
+]

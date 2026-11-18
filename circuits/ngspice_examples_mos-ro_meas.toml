@@ -1,0 +1,9 @@
+title = "ngspice examples/mos"
+case = "ngspice_examples_mos"
+source = "ro-meas.cir"
+outputs = [
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 2e-12, stop = 3.0000000000000004e-09 },
+]
