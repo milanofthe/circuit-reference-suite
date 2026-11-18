@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import os
 import re
-import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -17,7 +16,6 @@ import numpy as np
 
 from . import raw as rawfile
 from .circuit import OPTIONS, Circuit, number
-from .entry import ROOT
 
 # Lines of a deck that state what to compute rather than the circuit. With their
 # continuation lines, and every control block, they are not part of the body.
@@ -214,21 +212,10 @@ class Gnucap(Adapter):
         return ["gnucap", "--acs", "-b", deck]
 
 
-class Sane(Ngspice):
-    """SANE reads the ngspice deck's body; sims/sane/run.py the rest."""
-
-    def preload(self, directory: Path, osdi: list[Path]) -> None:
-        Adapter.preload(self, directory, osdi)
-
-    def argv(self, deck: str, raw: str) -> list[str]:
-        return [sys.executable, str(ROOT / "sims" / "sane" / "run.py"), deck, raw]
-
-
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
             error=r"^Error\b.*|^.*Simulation interrupted.*|^.*no simulations run.*"),
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
     Gnucap("gnucap", ("gnucap",), error=r"^\s*\^ ?.*|.*can't find.*|.*bad file.*"),
-    Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
 )}
