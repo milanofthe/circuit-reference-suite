@@ -47,15 +47,28 @@ fetch() {
     printf '%s\n' "$dir"
 }
 
-# step(name, command...): full output to $LOGS/<name>.log; streams every 100th build step
-# and every error line, and the end of the log if the command fails
+# progress: of the build output read line by line, every 100th ninja step, the last one and
+# every error line (mawk reads its input in blocks and would hold the lines back)
+progress() {
+    local line
+    while IFS= read -r line; do
+        if [[ $line =~ ^\[([0-9]+)/([0-9]+)\] ]]; then
+            if (( BASH_REMATCH[1] % 100 == 0 || BASH_REMATCH[1] == BASH_REMATCH[2] )); then
+                printf '[%s] %s\n' "$(date +%H:%M:%S)" "${line:0:160}"
+            fi
+        elif [[ $line =~ [Ee]rror|FAILED ]]; then
+            printf '%s\n' "$line"
+        fi
+    done
+}
+
+# step(name, command...): full output to $LOGS/<name>.log, progress streamed, the end of
+# the log if the command fails
 step() {
     local name=$1 t0=$SECONDS
     shift
     log "$name: start"
-    if ! "$@" 2>&1 | tee "$LOGS/$name.log" | awk '
-            /^\[[0-9]+\/[0-9]+\]/ { split(substr($1, 2), a, "/"); if (a[1] % 100 == 0 || a[1] == a[2] + 0) { print; fflush() } next }
-            /[Ee]rror|FAILED/ { print; fflush() }'; then
+    if ! "$@" 2>&1 | tee "$LOGS/$name.log" | progress; then
         log "$name: FAILED, end of $LOGS/$name.log:"
         tail -n 80 "$LOGS/$name.log"
         exit 1
