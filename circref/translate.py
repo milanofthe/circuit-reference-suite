@@ -1119,7 +1119,7 @@ class Translator:
     def tc(self, st: Statement) -> None:
         """Xyce takes TC=a,b for TC1=a TC2=b (Reference Guide, R and L parameters)."""
         w = st.words()
-        k = next((i for i in range(4, len(w) - 1) if w[i] == "tc" and w[i + 1] == "="), None)
+        k = next((i for i in range(3, len(w) - 1) if w[i] == "tc" and w[i + 1] == "="), None)
         if k is None:
             return
         values = [st.tokens[k + 2].text]
