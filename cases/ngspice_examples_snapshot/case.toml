@@ -1,0 +1,20 @@
+id = "ngspice_examples_snapshot"
+title = "ngspice examples/snapshot"
+family = "test"
+netlists = [
+    { file = "adder_mos_circ.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/snapshot"
+
+[[files]]
+path = "adder_mos_circ.cir"
+sha256 = "122f948007bc09591ffb71353120c96490c8c214458fc764fad58c1dd4fb946c"

@@ -1,0 +1,25 @@
+id = "ngspice_tests_mos6"
+title = "ngspice tests/mos6"
+family = "test"
+netlists = [
+    { file = "mos6inv.cir", dialect = "ngspice" },
+    { file = "simpleinv.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "tests/mos6"
+
+[[files]]
+path = "mos6inv.cir"
+sha256 = "94fec6c136331cecd5b341bcbba693b55daf7031866bfdeb51dc86f0628481fd"
+
+[[files]]
+path = "simpleinv.cir"
+sha256 = "4461332333db77899770fbd290cf1906491ac75c3ca68d7cb5f32d6c53254fc5"

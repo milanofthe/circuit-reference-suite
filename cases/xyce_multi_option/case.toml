@@ -1,0 +1,20 @@
+id = "xyce_multi_option"
+title = "Xyce_Regression MULTI_OPTION"
+family = "test"
+netlists = [
+    { file = "multiOptionWarn.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MULTI_OPTION"
+
+[[files]]
+path = "multiOptionWarn.cir"
+sha256 = "fee3c6f7ed01edb1b9d38f3c6be9ba464957f81f48dd40bca8676a40a2e7def8"

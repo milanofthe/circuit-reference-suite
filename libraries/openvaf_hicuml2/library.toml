@@ -1,0 +1,20 @@
+id = "openvaf_hicuml2"
+title = "HICUM/L2 bipolar model"
+notes = """
+Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+model's own, stated in the license file or the header of the source.
+"""
+
+[source]
+name = "OpenVAF-reloaded"
+url = "https://github.com/OpenVAF/OpenVAF-Reloaded"
+commit = "5ed9e63afe70ac95129a78af7b3732e7d431b1e5"
+root = "integration_tests/HICUML2"
+license = "LicenseRef-HICUM"
+authors = [
+    "Michael Schroter",
+]
+
+[[files]]
+path = "hicuml2.va"
+sha256 = "75f8cef598d5c73524850bb6e7b69e1c368f428d5eb185435210560ac270423d"

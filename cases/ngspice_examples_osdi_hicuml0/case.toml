@@ -1,0 +1,65 @@
+id = "ngspice_examples_osdi_hicuml0"
+title = "ngspice examples/osdi/hicuml0"
+family = "test"
+netlists = [
+    { file = "DFF_Y_ECL_HICUM.sp", dialect = "ngspice" },
+    { file = "DFF_Y_ECL_VBIC.sp", dialect = "ngspice" },
+    { file = "ECL-OR.cir", dialect = "ngspice" },
+    { file = "ECL-RO-5.cir", dialect = "ngspice" },
+    { file = "bip_subsmod.sp", dialect = "ngspice" },
+    { file = "hic0_gum.sp", dialect = "ngspice" },
+    { file = "hic0_out.sp", dialect = "ngspice" },
+    { file = "vbic_out.sp", dialect = "ngspice" },
+]
+notes = """
+HICUM/L0 in Verilog-A has no source here with a clear license.
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/osdi/hicuml0"
+
+[[files]]
+path = "DFF_Y_ECL_HICUM.sp"
+sha256 = "913a32257fdd99e5f8973ef1075452bbfe2911d7319c67601c82dde389f6fcc6"
+
+[[files]]
+path = "DFF_Y_ECL_VBIC.sp"
+sha256 = "edcaf3b0016818459de959135cfe7694b2f1f3542c284a8efd7126963f88429f"
+
+[[files]]
+path = "ECL-OR.cir"
+sha256 = "f57344c8b4eb4628b89116a64f26d22762cf465b3a794f15f8fe88f2f4f7da32"
+
+[[files]]
+path = "ECL-RO-5.cir"
+sha256 = "0670dff78dc5584d373a33735646a7e143d8fa43b99301bbaa685e7f10f44c10"
+
+[[files]]
+path = "Modelcards/model-card-hicumL0V1p11_mod.lib"
+sha256 = "e21acd6821e0b1d6b98644cb3a49e2f51e35e3b895ba385b71118efe14e7f866"
+
+[[files]]
+path = "bip_subsmod.sp"
+sha256 = "dc47e3d612222a0be8d160bb5c92adb6566d3071b1099bba25339074c8dfdd91"
+
+[[files]]
+path = "hic0_gum.sp"
+sha256 = "0e82849f3e9f82da66a332bdf1c607af95323718863ac9964cdd93db61adad18"
+
+[[files]]
+path = "hic0_out.sp"
+sha256 = "489c2c77340d45b85fd4790a1595e7c4c3762a67110c9377c580638789a63a45"
+
+[[files]]
+path = "vbic_out.sp"
+sha256 = "7e088f28a8faa0a36c61eea751fea07efc750592572b812f75c0f498fff400b0"
+
+[resolve]
+hicuml0va = false

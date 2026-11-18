@@ -1,0 +1,35 @@
+id = "ngspice_examples_noise"
+title = "ngspice examples/noise"
+family = "test"
+netlists = [
+    { file = "baker-252-gain.cir", dialect = "ngspice" },
+    { file = "bipolar-noise.cir", dialect = "ngspice" },
+    { file = "resdiv.cir", dialect = "ngspice" },
+    { file = "resdiv_gain.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/noise"
+
+[[files]]
+path = "baker-252-gain.cir"
+sha256 = "087e2b713fa7980162d5ca1fa8f01ba383cb368ed033855ae72687469ca9b958"
+
+[[files]]
+path = "bipolar-noise.cir"
+sha256 = "e92b35fb6013a0e9e7d1ca944099a5deca7f9df3edd72bac2f88ce1d41200c27"
+
+[[files]]
+path = "resdiv.cir"
+sha256 = "340924354cf57be7e4c2cda370cf398a978be2b6a0e6f78691a12ef05e0cd937"
+
+[[files]]
+path = "resdiv_gain.cir"
+sha256 = "1507700463f8471012af61520ff5a0458fcecde74bd4c34f563e2d582a0d95f0"

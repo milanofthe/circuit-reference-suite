@@ -1,0 +1,30 @@
+id = "xyce_abm_pow"
+title = "Xyce_Regression ABM_POW"
+family = "test"
+netlists = [
+    { file = "abmpow1.cir", dialect = "xyce" },
+    { file = "abmpow2.cir", dialect = "xyce" },
+    { file = "abmpow3.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ABM_POW"
+
+[[files]]
+path = "abmpow1.cir"
+sha256 = "72a1f97fd4bdfee9f4336595ee5dc506e042dd228422451f5b8b385c74d645da"
+
+[[files]]
+path = "abmpow2.cir"
+sha256 = "3db1942155a4210faf151b3530db08630592e8edf29d9607275a91aa20205cf0"
+
+[[files]]
+path = "abmpow3.cir"
+sha256 = "78b881575ea922b2606c77c0aa18bc074dc310285dd2fa4e1482cf37c964fc3f"

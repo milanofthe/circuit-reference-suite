@@ -1,0 +1,25 @@
+id = "wrspice_devlib_adms_examples_old_psp102_tests"
+title = "WRspice devlib/adms/examples.old/psp102/tests"
+family = "test"
+netlists = [
+    { file = "psp_out.sp", dialect = "wrspice" },
+    { file = "psp_tran.sp", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/devlib/adms/examples.old/psp102/tests"
+
+[[files]]
+path = "psp_out.sp"
+sha256 = "97b461b8f351cd399b5ca376c85a59c2bdd61de31ccb9316bb9ffffcb0a8b461"
+
+[[files]]
+path = "psp_tran.sp"
+sha256 = "6c7265e3a78c3455babe6b372032fb02d13f2d7c3be86f62c96009ab7f7e9893"

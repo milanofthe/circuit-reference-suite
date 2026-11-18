@@ -1,0 +1,21 @@
+id = "ahkab_tests_tran_ie"
+title = "ahkab tests/tran_ie"
+family = "test"
+netlists = [
+    { file = "tran_ie.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/tran_ie"
+
+[[files]]
+path = "tran_ie.ckt"
+sha256 = "3983b60cd9e3c75ca509160098c13aa8c1595db2e2f81f362f9dda745966f4ad"

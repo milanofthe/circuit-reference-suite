@@ -1,0 +1,75 @@
+id = "ngspice_tests_regression_misc"
+title = "ngspice tests/regression/misc"
+family = "test"
+netlists = [
+    { file = "ac-zero.cir", dialect = "ngspice" },
+    { file = "alter-vec.cir", dialect = "ngspice" },
+    { file = "asrc-tc-1.cir", dialect = "ngspice" },
+    { file = "asrc-tc-2.cir", dialect = "ngspice" },
+    { file = "bugs-1.cir", dialect = "ngspice" },
+    { file = "bugs-2.cir", dialect = "ngspice" },
+    { file = "convergence.cir", dialect = "ngspice" },
+    { file = "if-elseif.cir", dialect = "ngspice" },
+    { file = "log-functions-1.cir", dialect = "ngspice" },
+    { file = "resume-1.cir", dialect = "ngspice" },
+    { file = "test-noise-2.cir", dialect = "ngspice" },
+    { file = "test-noise-3.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "tests/regression/misc"
+
+[[files]]
+path = "ac-zero.cir"
+sha256 = "f3572765cbaf1aa9351f4c04f78d6613a205cfcae074e593aec7221eecb5d381"
+
+[[files]]
+path = "alter-vec.cir"
+sha256 = "1518d917b7881893f44f143583bad95b3839d7547ac7dea4b28262a7a04a49a1"
+
+[[files]]
+path = "asrc-tc-1.cir"
+sha256 = "334ea61ff1a811d21f4164ec17f134f1c78f2c7179d2817beb143c279e506b63"
+
+[[files]]
+path = "asrc-tc-2.cir"
+sha256 = "619ba9cf354f171036f0c6ab332c9e40d87d8f95678e334409dccb2d2d4914eb"
+
+[[files]]
+path = "bugs-1.cir"
+sha256 = "c4b6a75e406d9809691e3e03f0be007e2353101cf830ed2e8c1f5c4db93baa2a"
+
+[[files]]
+path = "bugs-2.cir"
+sha256 = "4cfc11e171e5ac404c2260660eabfd219afe46a5da0bd81624de0c716eda51b0"
+
+[[files]]
+path = "convergence.cir"
+sha256 = "32f940ddc791123d58721a53c6f84b8e3cb2574c306da56aa8df11ee4461163f"
+
+[[files]]
+path = "if-elseif.cir"
+sha256 = "9370141f71ec427ae0ce1ac1cf0288ccc730648351b25fc7ba4f4d0efbe64a90"
+
+[[files]]
+path = "log-functions-1.cir"
+sha256 = "f6e9c6d4b1aa24617ed8cbb305a96d2cd882258febe78cc03d05d0bce31f3483"
+
+[[files]]
+path = "resume-1.cir"
+sha256 = "458fe1ccdeba1de89c908a70cb396b61de47512a1872490a55439e6a9a45e8a1"
+
+[[files]]
+path = "test-noise-2.cir"
+sha256 = "8a0bc8c7c2dd626b8243baee6bc9fe65fe8938c322723a8e087d2809be86acb5"
+
+[[files]]
+path = "test-noise-3.cir"
+sha256 = "aace00bb7800afc53fcc4eef4c433687bb957a7aee3e4c6348f1eb1e61b99a91"

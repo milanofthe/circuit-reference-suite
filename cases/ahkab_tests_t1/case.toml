@@ -1,0 +1,21 @@
+id = "ahkab_tests_t1"
+title = "ahkab tests/t1"
+family = "test"
+netlists = [
+    { file = "t1.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/t1"
+
+[[files]]
+path = "t1.ckt"
+sha256 = "932170a238fa070af717e226b9c5ee7b08f76aa0eded9053d91170d9bf0bfd6c"

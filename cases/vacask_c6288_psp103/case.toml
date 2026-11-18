@@ -1,0 +1,67 @@
+id = "vacask_c6288_psp103"
+title = "ISCAS c6288 16x16 multiplier, transistor level, PSP103"
+family = "arithmetic"
+netlists = [
+    { file = "vacask/runme.sim", dialect = "vacask" },
+    { file = "ngspice/runme.sim", dialect = "ngspice" },
+    { file = "xyce/runme.sim", dialect = "xyce" },
+]
+notes = """
+From the VACASK benchmark suite (`benchmark/README.md` there describes the setup).
+The VACASK netlist uses ngspice's models distilled to Verilog-A; ngspice, Xyce and
+Gnucap use their built-in models.
+10112 transistors, 25380 nodes, computes 0xFFFF * 0xFFFF. PSP103 is built into
+Xyce; ngspice and VACASK load it as OSDI. Upstream also has option variants of the
+VACASK and ngspice decks (`vacask-ieb`, `vacask-nocb`, `vacask-nortc`, `ngspice-sparse`),
+not taken here.
+"""
+
+[source]
+name = "VACASK"
+url = "https://codeberg.org/arpadbuermen/VACASK"
+commit = "29d99ad2df4d8262e64ba883849c2974b3f01cce"
+root = "benchmark/c6288"
+license = "AGPL-3.0-or-later"
+authors = [
+    "Arpad Buermen",
+]
+
+[[files]]
+path = "vacask/models.inc"
+sha256 = "394b747ff7d08853af3d7bc20a7f28d922c6dd73831c2bae61519177d839e69b"
+
+[[files]]
+path = "vacask/multiplier.inc"
+sha256 = "73a692eb1573475cdc9c0aa494d1b88713ded45c519ed288212a3e2cbf52c74a"
+
+[[files]]
+path = "vacask/runme.sim"
+sha256 = "e28e4c868927deb7ff0bde049b59b5ab2d18d5a05d03a34a5869539d3dacecce"
+
+[[files]]
+path = "ngspice/models.inc"
+sha256 = "c8e39ac7a08af07605be2affaac98590959ae568715365fde60971e3ac4d5d0c"
+
+[[files]]
+path = "ngspice/multiplier.inc"
+sha256 = "98f629fc42a2e86fcb205088153946a001aceb14f99dcbe57ba30a9c0ed2f1ad"
+
+[[files]]
+path = "ngspice/runme.sim"
+sha256 = "a2d519799a8a7c5c5dafca5c5bb12901940ac3a7ff0456706b47e7e1caa4a17c"
+
+[[files]]
+path = "xyce/models.inc"
+sha256 = "1e0d05a1d662a3b97c424124d0ad4a3feab312072b947d04c1ea9316809dce70"
+
+[[files]]
+path = "xyce/multiplier.inc"
+sha256 = "35cc90fc05cb2a665d1537f6122c1718e449c565b764ee5c80a41b4e488590fc"
+
+[[files]]
+path = "xyce/runme.sim"
+sha256 = "bb6e66429c8f53f2df37873cc258af9dc276c9ea2af733a0d14bec387deb67d4"
+
+[resolve]
+"psp103v4.osdi" = "libraries/vacask_psp103v4/psp103.va"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"

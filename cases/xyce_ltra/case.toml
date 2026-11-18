@@ -1,0 +1,50 @@
+id = "xyce_ltra"
+title = "Xyce_Regression LTRA"
+family = "test"
+netlists = [
+    { file = "ltra-rc.cir", dialect = "xyce" },
+    { file = "ltra1.cir", dialect = "xyce" },
+    { file = "ltra2.cir", dialect = "xyce" },
+    { file = "ltra3.cir", dialect = "xyce" },
+    { file = "square-wave-gen-resistor-compact.cir", dialect = "xyce" },
+    { file = "square-wave-gen-resistor.cir", dialect = "xyce" },
+    { file = "zero_length_rc_rg_line.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/LTRA"
+
+[[files]]
+path = "ltra-rc.cir"
+sha256 = "f5feb3138013b7f66307ad4579d00cb58a2290fe89269bd7c8b85388bc6f696c"
+
+[[files]]
+path = "ltra1.cir"
+sha256 = "9ecb2e652071bef1cfd099a369e2c03e7990f63c06ea729792cb526ad5c31c0f"
+
+[[files]]
+path = "ltra2.cir"
+sha256 = "4a65a1fc54c2ee00169fa7782d0a54d3f211db7520dd56cf6e9a1a025014c549"
+
+[[files]]
+path = "ltra3.cir"
+sha256 = "63363f61244c816611bffc4665847618e1cfcb744f974252dc145dbd5a4cdbb1"
+
+[[files]]
+path = "square-wave-gen-resistor-compact.cir"
+sha256 = "eeab3658f5323260a631ecb04483b0ecbbd1448a9827bce6bfd65b9cba54c073"
+
+[[files]]
+path = "square-wave-gen-resistor.cir"
+sha256 = "53c74b4d3f3e06adc59729b900fafcfc9d413755bb366095aeee970c52ac595e"
+
+[[files]]
+path = "zero_length_rc_rg_line.cir"
+sha256 = "d2b0dcd1a94c67d4e4e11bf5150dcb188f1461a24cd1f5779fd07af1037b1c15"

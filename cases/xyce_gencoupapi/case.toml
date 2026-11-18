@@ -1,0 +1,125 @@
+id = "xyce_gencoupapi"
+title = "Xyce_Regression GenCoupAPI"
+family = "test"
+netlists = [
+    { file = "VRC.sp", dialect = "xyce" },
+    { file = "VRC_withprint.sp", dialect = "xyce" },
+    { file = "diode_no_limiting_nogenext.cir", dialect = "xyce" },
+    { file = "diode_with_limiting_nogenext.cir", dialect = "xyce" },
+    { file = "genextDC.cir", dialect = "xyce" },
+    { file = "genextLeadCurr.cir", dialect = "xyce" },
+    { file = "genextLeadCurrWildcards.cir", dialect = "xyce" },
+    { file = "netlist_good.txt", dialect = "xyce" },
+    { file = "python_diode_no_limiting.cir", dialect = "xyce" },
+    { file = "python_diode_with_limiting.cir", dialect = "xyce" },
+    { file = "python_gmls_diode_no_limiting.cir", dialect = "xyce" },
+    { file = "python_gmls_diode_with_limiting.cir", dialect = "xyce" },
+    { file = "python_gmls_rlc_series_vccs.cir", dialect = "xyce" },
+    { file = "python_rlc_series_vccs.cir", dialect = "xyce" },
+    { file = "python_tfdnn_diode_no_limiting.cir", dialect = "xyce" },
+    { file = "python_tfdnn_rlc_series_vccs.cir", dialect = "xyce" },
+    { file = "rc_hb.cir", dialect = "xyce" },
+    { file = "rc_hb_nogenext.cir", dialect = "xyce" },
+    { file = "rlc_series_vccs.cir", dialect = "xyce" },
+    { file = "rlc_series_vccs_AC.cir", dialect = "xyce" },
+    { file = "rlc_series_vccs_AC_nogenext.cir", dialect = "xyce" },
+    { file = "rlc_series_vccs_nogenext.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/GenCoupAPI"
+
+[[files]]
+path = "VRC.sp"
+sha256 = "1453a9a614143db97690d8e30bddd5b6decbeae0ceec24f56c5060411e656678"
+
+[[files]]
+path = "VRC_withprint.sp"
+sha256 = "9a4012f3d0d93163bc9c4be2f361b051d92466ec7437bcb491a1beb11091e768"
+
+[[files]]
+path = "diode_no_limiting_nogenext.cir"
+sha256 = "d896434a713108b25f8f1bc9abaca69b411d6c15f0c685f436dc011b4a89b6ec"
+
+[[files]]
+path = "diode_with_limiting_nogenext.cir"
+sha256 = "2bda478cbfe427f5d72294dd72fdf87b060abe1c85419ea802a391eaa9e73f0a"
+
+[[files]]
+path = "genextDC.cir"
+sha256 = "01cebf9ac1c0bcd2608df36ac1e35b59249e10c7d8fbd8301f2e791f8dba2725"
+
+[[files]]
+path = "genextLeadCurr.cir"
+sha256 = "590c267fae21bfcd4f3b04d888a3537c940503980420d62ec2b9ac13a6c0d0b1"
+
+[[files]]
+path = "genextLeadCurrWildcards.cir"
+sha256 = "e943a5db7005b9b92140784d6667972f8809e71937c6307a58d7be9130c911bc"
+
+[[files]]
+path = "netlist_good.txt"
+sha256 = "7001419010a68a75efd7b6757eff9fe8dfa501dbbd969f8eaae1ea9296fd8cbc"
+
+[[files]]
+path = "python_diode_no_limiting.cir"
+sha256 = "1103a50ad6a89ba6043f60a7724a69d8f326fea4b1db8d23821e890b43533e63"
+
+[[files]]
+path = "python_diode_with_limiting.cir"
+sha256 = "6888d0a13f03585578163fd0deb1cefa8f5fd1180ec12a9e927643e58e171fe7"
+
+[[files]]
+path = "python_gmls_diode_no_limiting.cir"
+sha256 = "035de97044b57d718254630fbe35274d93c2b5a39114de71f1d7ba1a5b733f2c"
+
+[[files]]
+path = "python_gmls_diode_with_limiting.cir"
+sha256 = "2a250f9c8a3318d0fdbc4e24f15cb922879ac6a0056e08cfbf9902dfbe5c3bf5"
+
+[[files]]
+path = "python_gmls_rlc_series_vccs.cir"
+sha256 = "d4a2b7ab8b3be5205767817fcb329789c370debb5ab04062ab8e48fa34bada26"
+
+[[files]]
+path = "python_rlc_series_vccs.cir"
+sha256 = "4fb1e20d6e22fe1e2fcf56cd5454c865f2f80507ceabe683023d3e8d4eb29680"
+
+[[files]]
+path = "python_tfdnn_diode_no_limiting.cir"
+sha256 = "51d32841574ab73ea17d0ff2cd0e8a0d6fe85715f0ac2269aae9fa917c68620e"
+
+[[files]]
+path = "python_tfdnn_rlc_series_vccs.cir"
+sha256 = "27dae754d99861df8c6158e0f8b9726b2c08df410da259c2ae8553a3ba92e4d9"
+
+[[files]]
+path = "rc_hb.cir"
+sha256 = "fffd3428026a73d8097f0446057df3a2195bf0f37819bad95b1ba6e471b1ba5f"
+
+[[files]]
+path = "rc_hb_nogenext.cir"
+sha256 = "27f2c26138fee143dd9e7885580c07c10e43450f0f52b124264f7424b8cf3c71"
+
+[[files]]
+path = "rlc_series_vccs.cir"
+sha256 = "b9373f6ccbd240c5f623cfeb60aa70d9d308b76e3326819fad5812648039f1d1"
+
+[[files]]
+path = "rlc_series_vccs_AC.cir"
+sha256 = "06f28d9c64cda66d19f63ccde3b6f025b2167b3a54d84c1db63e8dfd1bf39ba8"
+
+[[files]]
+path = "rlc_series_vccs_AC_nogenext.cir"
+sha256 = "dbf878dc42525c6823bd87fce098f89e2205cbce70ad48aec7e169c87c683f4b"
+
+[[files]]
+path = "rlc_series_vccs_nogenext.cir"
+sha256 = "9f49f1b4ead72009e46b83b7e25c19c3815b1d23d9379e7cede1cd8dd62bb4d3"

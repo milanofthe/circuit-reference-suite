@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_254"
+title = "Xyce_Regression Certification_Tests/BUG_254"
+family = "test"
+netlists = [
+    { file = "atanh_tanh.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_254"
+
+[[files]]
+path = "atanh_tanh.cir"
+sha256 = "6535449e76f7ccb37757f23b1a1454cdb3135241224d2da36904d1dcbe9c50d2"

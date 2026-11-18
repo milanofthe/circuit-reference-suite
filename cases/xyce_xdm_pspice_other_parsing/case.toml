@@ -1,0 +1,130 @@
+id = "xyce_xdm_pspice_other_parsing"
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+family = "test"
+netlists = [
+    { file = "ext_ascii_chars_comment_line.cir", dialect = "xyce" },
+    { file = "ext_ascii_chars_comment_line.cir.pspice", dialect = "pspice" },
+    { file = "ext_ascii_chars_noncomment_line.cir", dialect = "xyce" },
+    { file = "ext_ascii_chars_noncomment_line.cir.pspice", dialect = "pspice" },
+    { file = "file_slash_direction.cir", dialect = "xyce" },
+    { file = "multiline_options.cir", dialect = "xyce" },
+    { file = "multiline_options.cir.pspice", dialect = "pspice" },
+    { file = "options_itl4_itl1.cir", dialect = "xyce" },
+    { file = "options_itl4_itl1.cir.pspice", dialect = "pspice" },
+    { file = "probe_dc_lines.cir", dialect = "xyce" },
+    { file = "probe_dc_lines.cir.pspice", dialect = "pspice" },
+    { file = "probe_star_tran_line1.cir", dialect = "xyce" },
+    { file = "probe_star_tran_line1.cir.pspice", dialect = "pspice" },
+    { file = "probe_star_tran_line2.cir", dialect = "xyce" },
+    { file = "probe_star_tran_line2.cir.pspice", dialect = "pspice" },
+    { file = "probe_tran_line_subckt.cir", dialect = "xyce" },
+    { file = "probe_tran_line_subckt.cir.pspice", dialect = "pspice" },
+    { file = "probe_tran_lines.cir", dialect = "xyce" },
+    { file = "probe_tran_lines.cir.pspice", dialect = "pspice" },
+    { file = "unknown_device_parameter.cir", dialect = "xyce" },
+    { file = "unknown_device_parameter.cir.pspice", dialect = "pspice" },
+    { file = "unsupported_lines_options.cir", dialect = "xyce" },
+    { file = "unsupported_lines_options.cir.pspice", dialect = "pspice" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/PSPICE/OTHER_PARSING"
+
+[[files]]
+path = "ext_ascii_chars_comment_line.cir"
+sha256 = "0bcba5909f6b1f5c0a66de2a64747906daae5897dbf56bef2284e88ef00fabe8"
+
+[[files]]
+path = "ext_ascii_chars_comment_line.cir.pspice"
+sha256 = "d6776d8e57e54e0d812cfe884b9c2ea95d30ce7688ab2217bcd145e2a8c9ed20"
+
+[[files]]
+path = "ext_ascii_chars_noncomment_line.cir"
+sha256 = "4367b25473a4f7d02c4db05bc70b753bd6bceb9ec084c9775c7e7f6c1d7450ce"
+
+[[files]]
+path = "ext_ascii_chars_noncomment_line.cir.pspice"
+sha256 = "e5f21f0d6cf178b6d9724e44911dd5932ba1216f343a5d0f620f509c917e6d52"
+
+[[files]]
+path = "file_slash_direction.cir"
+sha256 = "408c10ba20b551afe11a90efeeef39a31d3005f1112c314e1e4a90e72df1fae3"
+
+[[files]]
+path = "multiline_options.cir"
+sha256 = "a4287074e94afb4d39ffc61f13b6b5826ff5548cc1c449b1136cb7e82354dabc"
+
+[[files]]
+path = "multiline_options.cir.pspice"
+sha256 = "3e9c327c0e141c9fccfd77e87b546b4fdf745f371bb5cd1963413d81353b63ef"
+
+[[files]]
+path = "options_itl4_itl1.cir"
+sha256 = "dfa101ab156fff19e2989646bc5eb8e871d65aaf297fb45441969b28f1deda51"
+
+[[files]]
+path = "options_itl4_itl1.cir.pspice"
+sha256 = "e9d9e71c5d9186bc9da23d93d17750d2cf7567501aac8bca74cd74f2fce43d64"
+
+[[files]]
+path = "probe_dc_lines.cir"
+sha256 = "f98da1e9c30a50400912e42fedace5f20e63c20ae369bf343205cc63d0b74fb0"
+
+[[files]]
+path = "probe_dc_lines.cir.pspice"
+sha256 = "16ea3afbaea354e81db0336bb7dd94f2d56fc04814b452c77e19ca41bb929bec"
+
+[[files]]
+path = "probe_star_tran_line1.cir"
+sha256 = "80cefd3ce0dcd1a53357633449d45c39b26772650d106b97ae844c7e607ada44"
+
+[[files]]
+path = "probe_star_tran_line1.cir.pspice"
+sha256 = "c1b0ced33f572728846e05c1b50f214b2b85cd59c46247e2feb86c40a2e3212c"
+
+[[files]]
+path = "probe_star_tran_line2.cir"
+sha256 = "80cefd3ce0dcd1a53357633449d45c39b26772650d106b97ae844c7e607ada44"
+
+[[files]]
+path = "probe_star_tran_line2.cir.pspice"
+sha256 = "d7f4d5de239b0d9641688ae52064523e65bfeef4fec40b56515714da086da16e"
+
+[[files]]
+path = "probe_tran_line_subckt.cir"
+sha256 = "8d326fe0cf1a1058822edcae1fe550c0edb545efb571e2333c72c1c0e5efd1d5"
+
+[[files]]
+path = "probe_tran_line_subckt.cir.pspice"
+sha256 = "c2d15a04ec8ef79800680549c8283fab865a49fe2480f9b421b479a696a7b600"
+
+[[files]]
+path = "probe_tran_lines.cir"
+sha256 = "26757cde36479c66e098dfb108f46ca665a0c22ee9d375b7b90459fbeb2e5feb"
+
+[[files]]
+path = "probe_tran_lines.cir.pspice"
+sha256 = "496271f1b4c94aef458f0e31735dd1d4bdc9cf1be401f35f2d337cec327e37e1"
+
+[[files]]
+path = "unknown_device_parameter.cir"
+sha256 = "6e4ae558744f11ef9337f66430add88a880f96561f0410e9f69ffe7ccef97a0b"
+
+[[files]]
+path = "unknown_device_parameter.cir.pspice"
+sha256 = "5b9c814df29abaa80762b3f36b1043fb5c2214d03c5f73abc1824d1039d128c1"
+
+[[files]]
+path = "unsupported_lines_options.cir"
+sha256 = "0bcba5909f6b1f5c0a66de2a64747906daae5897dbf56bef2284e88ef00fabe8"
+
+[[files]]
+path = "unsupported_lines_options.cir.pspice"
+sha256 = "75e8a2ab7a3f277ea6ca8cda5c8e91ef08876192c0b21c916d5e48e98ea84543"

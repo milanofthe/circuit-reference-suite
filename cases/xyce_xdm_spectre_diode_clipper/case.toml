@@ -1,0 +1,29 @@
+id = "xyce_xdm_spectre_diode_clipper"
+title = "Xyce_Regression XDM/SPECTRE/DIODE_CLIPPER"
+family = "test"
+netlists = [
+    { file = "diodeClipper.cir", dialect = "xyce" },
+    { file = "diodeClipper.cir.spectre", dialect = "spectre" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/SPECTRE/DIODE_CLIPPER"
+
+[[files]]
+path = "D1N3940.scs"
+sha256 = "f1bb1cf518acd20f65ab8a4a4ace88cbdf95bdb06f2b037e05e3799cdec045c2"
+
+[[files]]
+path = "diodeClipper.cir"
+sha256 = "cded4edc4ba5b3520e0ae3c9de4e2f48db1c8db1880cb6f3a317c69444b3344f"
+
+[[files]]
+path = "diodeClipper.cir.spectre"
+sha256 = "24035db62ef63be3da771ca88c913c649e55877d4fa63ba0c9ce11ae21eeae80"

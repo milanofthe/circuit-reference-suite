@@ -1,11 +1,11 @@
 """Cases and model libraries, and the include graph that ties them together.
 
-Both are a directory with a YAML descriptor and the upstream files, committed byte
+Both are a directory with a TOML descriptor and the upstream files, committed byte
 for byte below ``source.root`` so relative includes between them still resolve.
 Every other file is listed with a provenance that says how it was made. A reference
 that leaves the directory (a PDK path, an OSDI binary) is mapped by the descriptor's
 ``resolve`` table onto a file in this repository, or onto ``null`` when nobody may
-redistribute it, which makes the case incomplete.
+redistribute it (``false``), which makes the case incomplete.
 """
 from __future__ import annotations
 
@@ -13,12 +13,12 @@ import hashlib
 import json
 import os
 import posixpath
+import tomllib
 from collections import Counter
 from dataclasses import dataclass, field
 from functools import cached_property, lru_cache
 from pathlib import Path
 
-import yaml
 
 from . import netlist
 
@@ -59,7 +59,7 @@ class Entry:
     def upstream(self, f: dict) -> str:
         return f.get("upstream") or posixpath.join(self.source.get("root", ""), f["path"])
 
-    def resolve_table(self) -> dict[str, str | None]:
+    def resolve_table(self) -> dict[str, str | bool]:
         return self.raw.get("resolve", {})
 
 
@@ -182,7 +182,7 @@ def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, 
     where = f"{origin.relative_to(ROOT).as_posix()}:{ref.line}"
     if ref.target in table:
         mapped = table[ref.target]
-        if mapped is None:
+        if mapped is False:
             return None, True, None
         path = ROOT / mapped
         if not is_file(path):
@@ -286,27 +286,27 @@ _CACHE: dict[Path, Entry] = {}
 def _load(cls, directory: Path, name: str) -> Entry:
     directory = directory.resolve()
     if directory not in _CACHE:
-        raw = yaml.safe_load((directory / name).read_text(encoding="utf-8"))
+        raw = tomllib.loads((directory / name).read_text(encoding="utf-8"))
         _CACHE[directory] = cls(directory, raw)
     return _CACHE[directory]
 
 
 def load_case(ref: str | Path) -> Case:
-    d = Path(ref) if (Path(ref) / "case.yaml").exists() else CASE_DIR / str(ref)
-    return _load(Case, d, "case.yaml")
+    d = Path(ref) if (Path(ref) / "case.toml").exists() else CASE_DIR / str(ref)
+    return _load(Case, d, "case.toml")
 
 
 def load_library(ref: str | Path) -> Library:
-    d = Path(ref) if (Path(ref) / "library.yaml").exists() else LIB_DIR / str(ref)
-    return _load(Library, d, "library.yaml")
+    d = Path(ref) if (Path(ref) / "library.toml").exists() else LIB_DIR / str(ref)
+    return _load(Library, d, "library.toml")
 
 
 def iter_cases() -> list[Case]:
-    return [load_case(d) for d in sorted(CASE_DIR.iterdir()) if (d / "case.yaml").exists()]
+    return [load_case(d) for d in sorted(CASE_DIR.iterdir()) if (d / "case.toml").exists()]
 
 
 def iter_libraries() -> list[Library]:
-    return [load_library(d) for d in sorted(LIB_DIR.iterdir()) if (d / "library.yaml").exists()]
+    return [load_library(d) for d in sorted(LIB_DIR.iterdir()) if (d / "library.toml").exists()]
 
 
 def sha256(path: Path) -> str:

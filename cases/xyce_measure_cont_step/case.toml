@@ -1,0 +1,105 @@
+id = "xyce_measure_cont_step"
+title = "Xyce_Regression MEASURE_CONT/STEP"
+family = "test"
+netlists = [
+    { file = "DerivTest1DC.cir", dialect = "xyce" },
+    { file = "DerivTestAC.cir", dialect = "xyce" },
+    { file = "DerivTestNoise.cir", dialect = "xyce" },
+    { file = "DerivTestTran.cir", dialect = "xyce" },
+    { file = "DerivTestTran.s0.cir", dialect = "xyce" },
+    { file = "DerivTestTran.s1.cir", dialect = "xyce" },
+    { file = "FindWhenTest1DC.cir", dialect = "xyce" },
+    { file = "FindWhenTestAC.cir", dialect = "xyce" },
+    { file = "FindWhenTestNoise.cir", dialect = "xyce" },
+    { file = "FindWhenTestTran.cir", dialect = "xyce" },
+    { file = "FindWhenTestTran.s0.cir", dialect = "xyce" },
+    { file = "FindWhenTestTran.s1.cir", dialect = "xyce" },
+    { file = "TrigTargTest1DC.cir", dialect = "xyce" },
+    { file = "TrigTargTestAC.cir", dialect = "xyce" },
+    { file = "TrigTargTestNoise.cir", dialect = "xyce" },
+    { file = "TrigTargTestTran.cir", dialect = "xyce" },
+    { file = "TrigTargTestTran.s0.cir", dialect = "xyce" },
+    { file = "TrigTargTestTran.s1.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_CONT/STEP"
+
+[[files]]
+path = "DerivTest1DC.cir"
+sha256 = "f5007ad12a959789abbea30c7c55ee3b23bfc3e23d7ea990049aac0b3b37fe3d"
+
+[[files]]
+path = "DerivTestAC.cir"
+sha256 = "20c61931d7907a34a5a811efe2d06a3b6dcb2594b6ac655c1facb119e8cc9afa"
+
+[[files]]
+path = "DerivTestNoise.cir"
+sha256 = "46b6f72c509ced8b54d45a5ef13ddcab250864c0bc95b4ce8c2e20c446a32d9f"
+
+[[files]]
+path = "DerivTestTran.cir"
+sha256 = "1515b66a3fcc95f043173842152d4a860ed2322d9bfdefcd40b2d5f225b130cc"
+
+[[files]]
+path = "DerivTestTran.s0.cir"
+sha256 = "3dba5249247458d03f2f1bbc0ee873afde786bca8c39fc51473c96bc6a96a011"
+
+[[files]]
+path = "DerivTestTran.s1.cir"
+sha256 = "ead7196d0bd9ae1fe53c4560cf38805d27436d5d7ed29f114fac99d6941e0abc"
+
+[[files]]
+path = "FindWhenTest1DC.cir"
+sha256 = "b07b0a72e6108674e896753c68e27718e1f1cc20754930aa698035f717fa45af"
+
+[[files]]
+path = "FindWhenTestAC.cir"
+sha256 = "c3a6d6fbe6c044b47304463502c46d064fb31dfd873b88c59a3efc84e0770ff5"
+
+[[files]]
+path = "FindWhenTestNoise.cir"
+sha256 = "1fa12e058c7a3e3f7cf2dae259194dbfa0c08f2bf112fa066693df063c3b055f"
+
+[[files]]
+path = "FindWhenTestTran.cir"
+sha256 = "a0b6d303333c9e1ea892117d87d6174b209a3aab3af356941b36490bef306eac"
+
+[[files]]
+path = "FindWhenTestTran.s0.cir"
+sha256 = "d144d31866e31b27e85b43b6ad9718837f8535bd5f287a2d6aa688180d0748c8"
+
+[[files]]
+path = "FindWhenTestTran.s1.cir"
+sha256 = "7a7c6177ad8c355e52c34f686845110385bd04168126b75c3f80ce672c9cfd4e"
+
+[[files]]
+path = "TrigTargTest1DC.cir"
+sha256 = "09022f04b8e6de5644d8a2d86bfb0ea02fa7c7a1a5e7690bdc70aa28a501f881"
+
+[[files]]
+path = "TrigTargTestAC.cir"
+sha256 = "9eca491964ed52ce7f8cb8ec0c7d147eb82e9d39945d16a707caaf349a054357"
+
+[[files]]
+path = "TrigTargTestNoise.cir"
+sha256 = "e6cc3d96ab0a6e361af82e19ac742f491511d5706d1bb61000217afc71d5d749"
+
+[[files]]
+path = "TrigTargTestTran.cir"
+sha256 = "bd6f838792a86e518b1c383129a146389fd1b450dd1230aa5dd5a208a53311e7"
+
+[[files]]
+path = "TrigTargTestTran.s0.cir"
+sha256 = "1c154d1a8efda7b9fb414c2d9647c38aadd95d28272246ec393af8efa1a3174a"
+
+[[files]]
+path = "TrigTargTestTran.s1.cir"
+sha256 = "5aa6865683d789427f1254400f2297e4ed04d1b36b8742ea51b34615579ac305"

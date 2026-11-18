@@ -1,0 +1,30 @@
+id = "xyce_certification_tests_bug_834"
+title = "Xyce_Regression Certification_Tests/BUG_834"
+family = "test"
+netlists = [
+    { file = "inv.cir", dialect = "xyce" },
+    { file = "inv_loca.cir", dialect = "xyce" },
+]
+notes = """
+Left out:
+- `inv1_tran.cir`: needs nmos_3_2.mod, not in the source tree
+- `inv2.cir`: needs nmos_3_2.mod, not in the source tree
+"""
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_834"
+
+[[files]]
+path = "inv.cir"
+sha256 = "ca1cae3a58b65d1aef73f63f56683370b1118ade4b2a408c20f38355d2d1f606"
+
+[[files]]
+path = "inv_loca.cir"
+sha256 = "c34f29e0114188a93c14c7215880d48ea554ebed319ac52bbf77742009d1b811"

@@ -1,0 +1,29 @@
+id = "wrspice_devlib_adms_examples_old_hicum0_tests"
+title = "WRspice devlib/adms/examples.old/hicum0/tests"
+family = "test"
+netlists = [
+    { file = "hic0_gum.sp", dialect = "wrspice" },
+    { file = "hic0_out.sp", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/devlib/adms/examples.old/hicum0/tests"
+
+[[files]]
+path = "hic0_gum.sp"
+sha256 = "ca6852d7f924eb6f24e46cbca033c9bcb08561775268365e982a4245a5e980df"
+
+[[files]]
+path = "hic0_out.sp"
+sha256 = "a632283f026396eb796654ee9971cdc350e106c761067ad92abaee746f22341d"
+
+[[files]]
+path = "model-card-hicumL0V1p11.lib"
+sha256 = "6db0a186f94015df264af616299a61cc0d2b7e8c47fbfcd86ed9e11567547c41"

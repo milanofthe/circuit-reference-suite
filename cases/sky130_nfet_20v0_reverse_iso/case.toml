@@ -1,0 +1,26 @@
+id = "sky130_nfet_20v0_reverse_iso"
+title = "SKY130 nfet_20v0_reverse_iso model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__nfet_20v0_reverse_iso__nfet5term_vth.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/nfet_20v0_reverse_iso/tests"
+
+[[files]]
+path = "sky130_fd_pr__nfet_20v0_reverse_iso__nfet5term_vth.spice"
+sha256 = "00830f6e6ce5f53e70a9d4bc54e055710b2c0560bf16ddcd14fc34d2591a485e"
+
+[resolve]
+"../../../models/corners/tt.spice" = "libraries/sky130_fd_pr/models/corners/tt.spice"
+"../../../models/r+c/res_typical__cap_typical.spice" = "libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice"
+"../../../models/r+c/res_typical__cap_typical__lin.spice" = "libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice"

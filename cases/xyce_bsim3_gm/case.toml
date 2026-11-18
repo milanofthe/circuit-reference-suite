@@ -1,0 +1,35 @@
+id = "xyce_bsim3_gm"
+title = "Xyce_Regression BSIM3_GM"
+family = "test"
+netlists = [
+    { file = "nmosGm1.cir", dialect = "xyce" },
+    { file = "nmosGm1_rev.cir", dialect = "xyce" },
+    { file = "pmosGm1.cir", dialect = "xyce" },
+    { file = "pmosGm1_rev.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/BSIM3_GM"
+
+[[files]]
+path = "nmosGm1.cir"
+sha256 = "bbf9943abb4b55fd3de14ef0a6a28752ca2e9b52cbd93a6c9a9b51bebf1172a5"
+
+[[files]]
+path = "nmosGm1_rev.cir"
+sha256 = "bc9e244cecbafe381598cefbe9b6a1701b8acb5a2c40d3cb3388d4d2f319d39b"
+
+[[files]]
+path = "pmosGm1.cir"
+sha256 = "f67fde1d223bef4d56736d9a99e336411d32528db37bb3f63410dfe9ef1a7a8f"
+
+[[files]]
+path = "pmosGm1_rev.cir"
+sha256 = "e0672538ccc3d76ea11d5df1322cd0037a0063a44bfbdedb72edf9ce7e9666cd"

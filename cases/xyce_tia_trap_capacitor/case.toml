@@ -1,0 +1,30 @@
+id = "xyce_tia_trap_capacitor"
+title = "Xyce_Regression TIA/TRAP/CAPACITOR"
+family = "test"
+netlists = [
+    { file = "capacitor.cir", dialect = "xyce" },
+    { file = "capacitor1.cir", dialect = "xyce" },
+    { file = "rc_osc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/TRAP/CAPACITOR"
+
+[[files]]
+path = "capacitor.cir"
+sha256 = "d8ce29f005843f2f3efd7ff2b798e674cbd54dc3ada232c8700e09bd41ee7ef5"
+
+[[files]]
+path = "capacitor1.cir"
+sha256 = "4e26278fc336e26b265aad6cde14d4d10d9f36134ce0296d9343ce3e8d4eb35d"
+
+[[files]]
+path = "rc_osc.cir"
+sha256 = "add8ca9d2654398a4c394bc9232809677b479fe35172c66bbb8e2ad9bf9410a4"

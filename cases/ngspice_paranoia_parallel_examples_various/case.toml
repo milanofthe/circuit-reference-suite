@@ -1,0 +1,123 @@
+id = "ngspice_paranoia_parallel_examples_various"
+title = "ngspice paranoia_parallel/examples/various"
+family = "test"
+netlists = [
+    { file = "3d_loop.sp", dialect = "ngspice" },
+    { file = "FFT_Leakage.cir", dialect = "ngspice" },
+    { file = "Tschebyschef-LP.cir", dialect = "ngspice" },
+    { file = "adder_mos.cir", dialect = "ngspice" },
+    { file = "alterparam.sp", dialect = "ngspice" },
+    { file = "bjt_ac_par.sp", dialect = "ngspice" },
+    { file = "bjtnoise.cir", dialect = "ngspice" },
+    { file = "dc_loop.sp", dialect = "ngspice" },
+    { file = "def_red.cir", dialect = "ngspice" },
+    { file = "diode_ac_par.sp", dialect = "ngspice" },
+    { file = "gain_stage.cir", dialect = "ngspice" },
+    { file = "i(xxx)_tests.cir", dialect = "ngspice" },
+    { file = "nic_soa.cir", dialect = "ngspice" },
+    { file = "nmos_pmos_BSIM330.sp", dialect = "ngspice" },
+    { file = "nmos_pmos_plotting.sp", dialect = "ngspice" },
+    { file = "param_sweep.cir", dialect = "ngspice" },
+    { file = "probe-i-dev.cir", dialect = "ngspice" },
+    { file = "ro_17_4.cir", dialect = "ngspice" },
+    { file = "tmp-noise-2.cir", dialect = "ngspice" },
+    { file = "tmp-noise.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/various"
+
+[[files]]
+path = "3d_loop.sp"
+sha256 = "4b0604bcb773cb11da1827a38cc9be63ccc8ae2554ce36d16b0c43b0bdad7693"
+
+[[files]]
+path = "FFT_Leakage.cir"
+sha256 = "4e3cb901fc7c7fdabfd833a0fac5cf33d3890515c9d78708aa60babc426d822a"
+
+[[files]]
+path = "Tschebyschef-LP.cir"
+sha256 = "c1d3c96b46b2b3ee584c4e24d062068b08a788f1d09f8c1d3787fc44b254e7ec"
+
+[[files]]
+path = "adder_mos.cir"
+sha256 = "837642247b44a0c70ac952e4d24a6fa52a4132ed50c1f5c6a4cbd35bd1747f7e"
+
+[[files]]
+path = "alterparam.sp"
+sha256 = "3e2ff38672a5b5d199102b1978066d5c4b660e116a7b8386f11c952f5f402944"
+
+[[files]]
+path = "bjt_ac_par.sp"
+sha256 = "a3aef35758b0c9763d5a7911d65cd23ff91b91fd9168d637933d307e5a74bdc4"
+
+[[files]]
+path = "bjtnoise.cir"
+sha256 = "e67f6fd6ced5d74ef35188c62c8e4254ad8695943d1b03d25e8e9e7182daa719"
+
+[[files]]
+path = "dc_loop.sp"
+sha256 = "786213d027f3314a61d272b6fedc862e56d3f3303495b172594c29d52dada4d6"
+
+[[files]]
+path = "def_red.cir"
+sha256 = "1f030125a69f8aebf1ce978ed93977582f451f497785cff1316f1a916c2865b9"
+
+[[files]]
+path = "diode_ac_par.sp"
+sha256 = "4c5333b0edda319f1cf895dd4cdb81db678d09281aef81624613ecb5b06a9c95"
+
+[[files]]
+path = "gain_stage.cir"
+sha256 = "02989351fd14366b6d4ae353f0e8ace8190e5a3a6f6d22f409c00222d1655e5d"
+
+[[files]]
+path = "i(xxx)_tests.cir"
+sha256 = "3e05a3d1117b7af1ca0676fd6862ec12fdc6c5b53375f668fa6632601269dacf"
+
+[[files]]
+path = "modelcard.nmos"
+sha256 = "e14792f8adbe569d6f4152292343bc9fb0a41364a5aa1a5ad476b82f70316168"
+
+[[files]]
+path = "modelcard.pmos"
+sha256 = "049320ee0d1b581efb1a63e23226feda8a1077e4b2db7f0220a3c5077f9a6085"
+
+[[files]]
+path = "nic_soa.cir"
+sha256 = "c355361136270353d4bfd45492a078e62df7bb08cf89ae2b057490604957f0c6"
+
+[[files]]
+path = "nmos_pmos_BSIM330.sp"
+sha256 = "b665425b77e31264a30b82f702788edd1a8661614eb231e1a2b45af153ee850d"
+
+[[files]]
+path = "nmos_pmos_plotting.sp"
+sha256 = "094246d7b3d28003fc5d3b1de6c426c06d1a180f8b80d64318425a3120132eb5"
+
+[[files]]
+path = "param_sweep.cir"
+sha256 = "7726958289ce2cb006d4c1dd07970aa89f53ca027e8d503d0e2096b20a6a029e"
+
+[[files]]
+path = "probe-i-dev.cir"
+sha256 = "7198750f013cdfacbd8dd0678d4dbdb10c79167273a6aef6a0ed46c34341e0c6"
+
+[[files]]
+path = "ro_17_4.cir"
+sha256 = "f5bb5d27829c65db5d6e531c5a90b709bc466d5987de0c5c3240bd8d4be64666"
+
+[[files]]
+path = "tmp-noise-2.cir"
+sha256 = "ea246a219279f144908acf7ed9c1b4e2043ebc492fded4a045a8e0097f8ef645"
+
+[[files]]
+path = "tmp-noise.cir"
+sha256 = "7aecacf01f605b90ddc6d9416ebc7d678726d299e1fed7195aac9a03b4d8882e"

@@ -1,0 +1,67 @@
+id = "ngspice_paranoia_parallel_examples_transient_noise"
+title = "ngspice paranoia_parallel/examples/transient-noise"
+family = "test"
+netlists = [
+    { file = "noi-ring51-demo.cir", dialect = "ngspice" },
+    { file = "noi-ring51-demo_s.cir", dialect = "ngspice" },
+    { file = "noi-sc-tr.cir", dialect = "ngspice" },
+    { file = "noise_vnoi.cir", dialect = "ngspice" },
+    { file = "noise_vnoi_test.cir", dialect = "ngspice" },
+    { file = "rts-1.cir", dialect = "ngspice" },
+    { file = "shot_ng.cir", dialect = "ngspice" },
+    { file = "simple-noise.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/transient-noise"
+
+[[files]]
+path = "modelcard.nmos"
+sha256 = "19fd23632a223f327fcecc7aef1b6e99ac8b2f4313a11351c889928b4d7be568"
+
+[[files]]
+path = "modelcard.pmos"
+sha256 = "70f37330ce2e1cbb3de069427b6caefb65dc5a6a6dddbeb71e4414811b42854a"
+
+[[files]]
+path = "noi-ring51-demo.cir"
+sha256 = "1c83474e112d6af6388e168539691c1d63a6db111142085e0f3476742f38bc86"
+
+[[files]]
+path = "noi-ring51-demo_s.cir"
+sha256 = "85af5a6298d15db816bbc0a2ef1ce3c388f9182a2b2abac9191ecfc79e49ea3e"
+
+[[files]]
+path = "noi-sc-tr.cir"
+sha256 = "ad188d5b8c3bfd389b1f72254f4d9150cd9e52aa70b81a59caeccc58fa354561"
+
+[[files]]
+path = "noilib-demo.h"
+sha256 = "7673eecdb83e4776eccd7977d8b82b3ca1258072ba1c026595a9782e24926068"
+
+[[files]]
+path = "noise_vnoi.cir"
+sha256 = "06c5df10444a1285fd7349f058e14075f716bec7ebc1f7b4081dd101c7b7f9dc"
+
+[[files]]
+path = "noise_vnoi_test.cir"
+sha256 = "296b5af65bedcd8793498d732411f36191217f94b89a7eb37275f9f4c7392ef8"
+
+[[files]]
+path = "rts-1.cir"
+sha256 = "2c7292979d1ef6c7073f37672a240e22cb9a505ef2526bf14260f544a99ba057"
+
+[[files]]
+path = "shot_ng.cir"
+sha256 = "3d24ac172057f1958970a95821c1e8d545e43a08e8c7798bd65344e4e4ce521b"
+
+[[files]]
+path = "simple-noise.cir"
+sha256 = "5cb8c9d9856777689b944076fc07bd77ae92e70ce6731cd0db0fc04d23adeb44"

@@ -1,0 +1,49 @@
+id = "ngspice_examples_rf_pss"
+title = "ngspice examples/rf/pss"
+family = "test"
+netlists = [
+    { file = "colpitt_osc_pss_ctrl.cir", dialect = "ngspice" },
+    { file = "compl_cross_quad_osc_pss_ctrl.cir", dialect = "ngspice" },
+    { file = "hartley_osc_pss_ctrl.cir", dialect = "ngspice" },
+    { file = "ring_osc_pss_ctrl.cir", dialect = "ngspice" },
+    { file = "vackar_osc_pss_ctrl.cir", dialect = "ngspice" },
+    { file = "vdp_osc_pss_ctrl.cir", dialect = "ngspice" },
+]
+notes = """
+Left out:
+- `19-nand-ro-IHP_ctrl.cir`: needs $PDK_ROOT/$PDK/libs.tech/ngspice/models/cornerMOSlv.lib, an absolute path outside the source
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/rf/pss"
+
+[[files]]
+path = "colpitt_osc_pss_ctrl.cir"
+sha256 = "c05a030e684ebc58b5e6ae20408b5ef92c8ba0916d82612e613e78f9f26e50b0"
+
+[[files]]
+path = "compl_cross_quad_osc_pss_ctrl.cir"
+sha256 = "7948a25a7b461739133989c38e3559f42676196f3d437eae5b32210542a924dc"
+
+[[files]]
+path = "hartley_osc_pss_ctrl.cir"
+sha256 = "f0f74452f7727a28cd201a6586ad836b15da524a3599b3e5cc04c56e6d31eef5"
+
+[[files]]
+path = "ring_osc_pss_ctrl.cir"
+sha256 = "974a798a0f95db890076136a2103539241f08b7f0d02b28ee4818f16bb6f7424"
+
+[[files]]
+path = "vackar_osc_pss_ctrl.cir"
+sha256 = "2fd91feb0d863da170a3933b0236c399a04ea164c108f4c9d2da310bb94eb33e"
+
+[[files]]
+path = "vdp_osc_pss_ctrl.cir"
+sha256 = "381614953c91452d58201325a933971df53dc55844c34e5995116d3a85aaf5c9"

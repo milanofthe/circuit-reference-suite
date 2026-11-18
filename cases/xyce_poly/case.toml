@@ -1,0 +1,30 @@
+id = "xyce_poly"
+title = "Xyce_Regression POLY"
+family = "test"
+netlists = [
+    { file = "oneVarFourthOrd.cir", dialect = "xyce" },
+    { file = "poly.cir", dialect = "xyce" },
+    { file = "twoVarThirdOrd.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/POLY"
+
+[[files]]
+path = "oneVarFourthOrd.cir"
+sha256 = "7bcfe6a2372bb95ec0ac4829183f9a15349beb0c0fd76175d96503941225bc3d"
+
+[[files]]
+path = "poly.cir"
+sha256 = "3610460255a6b183052dd3564e4e8508cc8c6d079b554eada7ce3ddc4e4218d6"
+
+[[files]]
+path = "twoVarThirdOrd.cir"
+sha256 = "5a6c6eaa4c48a831eb6a11641189892c1290f596a60525fd60b19be3ed0e7951"

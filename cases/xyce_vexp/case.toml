@@ -1,0 +1,20 @@
+id = "xyce_vexp"
+title = "Xyce_Regression VEXP"
+family = "test"
+netlists = [
+    { file = "vexp.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VEXP"
+
+[[files]]
+path = "vexp.cir"
+sha256 = "69847ed11e03e8c810d376ac1f5e116c5c4f461012dccd29c21c3cb9e823b3ea"

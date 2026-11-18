@@ -1290,10 +1290,10 @@ Sources that are not (yet) cases.
 ## Layout
 
 ```
-cases/<id>/case.yaml        source, files with sha256, netlists and dialects, resolve table
+cases/<id>/case.toml        source, files with sha256, netlists and dialects, resolve table
 cases/<id>/...              upstream files at their path below source.root
-libraries/<id>/library.yaml model libraries shared by cases (PDK models, Verilog-A)
-candidates.yaml             sources that are not cases, and why
+libraries/<id>/library.toml model libraries shared by cases (PDK models, Verilog-A)
+candidates.toml             sources that are not cases, and why
 ```
 
 A reference that leaves the case (a PDK model path, an OSDI binary) is mapped by

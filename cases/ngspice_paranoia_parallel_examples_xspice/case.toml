@@ -1,0 +1,49 @@
+id = "ngspice_paranoia_parallel_examples_xspice"
+title = "ngspice paranoia_parallel/examples/xspice"
+family = "test"
+netlists = [
+    { file = "analog_models1_transient.sp", dialect = "ngspice" },
+    { file = "bug-378-test-sequence.cir", dialect = "ngspice" },
+    { file = "fstest.sp", dialect = "ngspice" },
+    { file = "xspice_c1.cir", dialect = "ngspice" },
+    { file = "xspice_c2.cir", dialect = "ngspice" },
+    { file = "xspice_c3.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/xspice"
+
+[[files]]
+path = "analog_models1_transient.sp"
+sha256 = "d91d0da40e1ed33d7c2eac02eb637eb6aae4abaa3137c1df0c2efd5f9d76d23f"
+
+[[files]]
+path = "bug-378-test-sequence.cir"
+sha256 = "c9bb09355a4b44a2a815506ca666d93669c6c231099316bccfcc98ad51e10751"
+
+[[files]]
+path = "fstest.sp"
+sha256 = "c896a4e1b89a2054bb06b7911dbb9632b8d86f63ab72f0e1681160d29235aa57"
+
+[[files]]
+path = "sine.m"
+sha256 = "31ebcb734c5b9196fad8e4da073aed0020b4e79629e4d60f0456829b31f050c5"
+
+[[files]]
+path = "xspice_c1.cir"
+sha256 = "b244e51ad9c11ec3d56e839b9bad537aac504eae1ba2f4064e4aa3b0036192e7"
+
+[[files]]
+path = "xspice_c2.cir"
+sha256 = "b17524ea6846e5e2b63b0265757fac27fe5d417821f54b047a880c39b5dcdfff"
+
+[[files]]
+path = "xspice_c3.cir"
+sha256 = "c9ac27029e1d7be9db42ed6b0a4fed109dfb312004339d74a03e7e837c1bc706"

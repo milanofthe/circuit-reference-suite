@@ -1,0 +1,21 @@
+id = "ahkab_tests_colpitts"
+title = "ahkab tests/colpitts"
+family = "test"
+netlists = [
+    { file = "colpitts.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/colpitts"
+
+[[files]]
+path = "colpitts.ckt"
+sha256 = "02bc0b17610975b80bb01bf5b73e5a334ef39412d3c14cc39ba6f8e236f67d8c"

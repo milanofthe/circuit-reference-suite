@@ -1,0 +1,93 @@
+id = "ngspice_paranoia_parallel_examples_pton"
+title = "ngspice paranoia_parallel/examples/pton"
+family = "test"
+netlists = [
+    { file = "555-timer-2.cir", dialect = "ngspice" },
+    { file = "MOS1_out.cir", dialect = "ngspice" },
+    { file = "OP_MCP6041.cir", dialect = "ngspice" },
+    { file = "Optimos_out.cir", dialect = "ngspice" },
+    { file = "op-test-adi.cir", dialect = "ngspice" },
+    { file = "op-test-test.cir", dialect = "ngspice" },
+    { file = "op-test.cir", dialect = "ngspice" },
+    { file = "relax_osc_st.cir", dialect = "ngspice" },
+    { file = "switch-oscillators.cir", dialect = "ngspice" },
+    { file = "switch-oscillators_inc.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/pton"
+
+[[files]]
+path = "555-timer-2.cir"
+sha256 = "b96d76dba93b8e29cafe73547aba3726fa0fa0724a28f27b57baa2394dca0651"
+
+[[files]]
+path = "MCP6041.txt"
+sha256 = "056c6a2bfd39f2258b652d85bb892d537d6cb7c2132374bce38bcef82a3d8d67"
+
+[[files]]
+path = "MOS1_out.cir"
+sha256 = "91e79b5c63df553a0f0b88e8a7b5c6697359ea85e4aedc5e3e3f486ccbf04ce3"
+
+[[files]]
+path = "OPA171.txt"
+sha256 = "a9d1083026345165b77dad0c919d261568415ff06eaa03265aed983efdfaf5ba"
+
+[[files]]
+path = "OP_MCP6041.cir"
+sha256 = "a41f8c3c1b160ed3edb47bfecf6c37cdecc1b55ac21c145d0a7fcaea65b95fdd"
+
+[[files]]
+path = "Opamps_Comparators_ST.lib"
+sha256 = "93ec30e49919a066e87c79d3ddda6b0916fd20a0c56b8961a217d26e67871da8"
+
+[[files]]
+path = "OptiMOS5_30V_PSpice.lib"
+sha256 = "2b573e5ff8c3438cce6a353d1c0942a88caf43452cb2427e1adc0bd5d25ef0b0"
+
+[[files]]
+path = "Optimos_out.cir"
+sha256 = "0cc5138476a9fe75e856246ef83d4d9d33efcaef423cc562ea4dbb72860b04e4"
+
+[[files]]
+path = "TLC555.LIB"
+sha256 = "33238fb40cda5c7cfe904f47903e86c09d592aece132ca73b2411171ac32fb24"
+
+[[files]]
+path = "ad22057n.lib"
+sha256 = "f3dd259368087bb20a5510748a35d1b70d852088fc53d703641894fb757e685b"
+
+[[files]]
+path = "op-test-adi.cir"
+sha256 = "fc3693c8a145e5a1d06ad931876055e1b751a2512f39bbe66caf1284a3a6bb5d"
+
+[[files]]
+path = "op-test-test.cir"
+sha256 = "fa7492163b845c721277a20f59018d21a5bcec7a991376b0807fb73e812c9c8b"
+
+[[files]]
+path = "op-test.cir"
+sha256 = "2f8318bb21a9605a602f5f3312b5695802da5e943b9ba949f956f9cfd362b7d7"
+
+[[files]]
+path = "relax_osc_st.cir"
+sha256 = "3042f5b6c4953dea59ab34c15193fe6919d63da0f9c1e8c7305157e72e84372a"
+
+[[files]]
+path = "switch-invs.lib"
+sha256 = "013981484c6cfbf23df1b79a8bb5ed31088bc6e876fd849a7a4691b0b571f95d"
+
+[[files]]
+path = "switch-oscillators.cir"
+sha256 = "fd808f2ed6a6dab857002b3aaf29a35fce9f0723ee4da56bbc6d76c707d1d273"
+
+[[files]]
+path = "switch-oscillators_inc.cir"
+sha256 = "7f75e4d9dbc78f837d924238be68b2b77c3e7e7e1139af39ed33a88d002ebf74"

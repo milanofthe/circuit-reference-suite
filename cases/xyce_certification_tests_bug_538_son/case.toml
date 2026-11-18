@@ -1,0 +1,95 @@
+id = "xyce_certification_tests_bug_538_son"
+title = "Xyce_Regression Certification_Tests/BUG_538_SON"
+family = "test"
+netlists = [
+    { file = "bug_538_son_1.cir", dialect = "xyce" },
+    { file = "bug_538_son_1_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_2.cir", dialect = "xyce" },
+    { file = "bug_538_son_2_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_3.cir", dialect = "xyce" },
+    { file = "bug_538_son_3_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_4.cir", dialect = "xyce" },
+    { file = "bug_538_son_4_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_5.cir", dialect = "xyce" },
+    { file = "bug_538_son_5_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_6.cir", dialect = "xyce" },
+    { file = "bug_538_son_6_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_7.cir", dialect = "xyce" },
+    { file = "bug_538_son_7_baseline.cir", dialect = "xyce" },
+    { file = "bug_538_son_8.cir", dialect = "xyce" },
+    { file = "bug_538_son_8_baseline.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_538_SON"
+
+[[files]]
+path = "bug_538_son_1.cir"
+sha256 = "43f56861000c7cc42cfb6445545589fa5308527ad8857e23ec0efe87f2b14b46"
+
+[[files]]
+path = "bug_538_son_1_baseline.cir"
+sha256 = "080a85ac5eede718faa3455acf175ced3b9b89d8b8ee04c37334f9184785567e"
+
+[[files]]
+path = "bug_538_son_2.cir"
+sha256 = "3e053d8cd389875942a8141e20ccea78e97613219d3a17850c731df6d010d475"
+
+[[files]]
+path = "bug_538_son_2_baseline.cir"
+sha256 = "5345a22e6dbc5944ce779bbedbcb22cdbdc6373e4eee9c905c2eef1ac24cdfc7"
+
+[[files]]
+path = "bug_538_son_3.cir"
+sha256 = "b6b07821b93ba0c37b2a14879185dc2db243ad5e1c691526f2eccde0e7df3233"
+
+[[files]]
+path = "bug_538_son_3_baseline.cir"
+sha256 = "8a274339a932a937ba59723d5fe83107d0a2b5e712bf32f840ee00127bb38945"
+
+[[files]]
+path = "bug_538_son_4.cir"
+sha256 = "4d9457c5feda135f144b3e31a02148f62aed9df849cfd2686d72e106c9009150"
+
+[[files]]
+path = "bug_538_son_4_baseline.cir"
+sha256 = "05c4d30cdcf3a4612f0cd93b10becb7c528a205df75a5ad1ba6b4f1dac232b06"
+
+[[files]]
+path = "bug_538_son_5.cir"
+sha256 = "a72f93e30b7d1f8e01135b573cc4eed8951f440d1b5fe17cc210c2aefe5c1dcf"
+
+[[files]]
+path = "bug_538_son_5_baseline.cir"
+sha256 = "22ec33ae770feec1de19d61cafb218cdac970a0fd0fe6c9f10a3616aee916229"
+
+[[files]]
+path = "bug_538_son_6.cir"
+sha256 = "65433c263b15876b2e28a792f9ccb82deb5b178ccc7fdca27c29e1a05e9161fd"
+
+[[files]]
+path = "bug_538_son_6_baseline.cir"
+sha256 = "d78201652323e68a1fb9b5cda99e1b087e6c7f40d9c0155bbbe95fdbb6dd83ba"
+
+[[files]]
+path = "bug_538_son_7.cir"
+sha256 = "e0965bcfea6edf4454a691c329dca641a72a222bb91513c2924570e332ce26b6"
+
+[[files]]
+path = "bug_538_son_7_baseline.cir"
+sha256 = "3d6319de49b64dbfcfaceebb5e7245615e4a296092e8d55940b16d50359c0896"
+
+[[files]]
+path = "bug_538_son_8.cir"
+sha256 = "cafc3593e5956093e60a51f0c91daf0464ee2b63179a21068c5d4cb1ce4b9d90"
+
+[[files]]
+path = "bug_538_son_8_baseline.cir"
+sha256 = "e3e29d5bc6a30f8c51194143df479cb06ca75c66f0679f02d24b513b5660c7f8"

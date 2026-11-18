@@ -1,0 +1,20 @@
+id = "ngspice_tests_transient"
+title = "ngspice tests/transient"
+family = "test"
+netlists = [
+    { file = "fourbitadder.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "tests/transient"
+
+[[files]]
+path = "fourbitadder.cir"
+sha256 = "941b8840f013e064d1c2a66e1d62b35e4724de6406ffc600b1a29261387665bf"

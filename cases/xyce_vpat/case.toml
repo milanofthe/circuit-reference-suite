@@ -1,0 +1,30 @@
+id = "xyce_vpat"
+title = "Xyce_Regression VPAT"
+family = "test"
+netlists = [
+    { file = "bad_vpat.cir", dialect = "xyce" },
+    { file = "vpat.cir", dialect = "xyce" },
+    { file = "vpat_step.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VPAT"
+
+[[files]]
+path = "bad_vpat.cir"
+sha256 = "8cf0381495130d260a06eea6034855883f2d37fd638c35c54ef7b70f9fc8a68c"
+
+[[files]]
+path = "vpat.cir"
+sha256 = "def50b37dcbb1ada0770c63996c4b92cec02274421e02d5b9b7fdb20e4b21f15"
+
+[[files]]
+path = "vpat_step.cir"
+sha256 = "d9aa6b670c14aa1bda03381efd605ee632b2195b9fe4248b9d19e3c00838fec8"

@@ -1,0 +1,45 @@
+id = "ngspice_examples_cider_mos"
+title = "ngspice examples/cider/mos"
+family = "test"
+netlists = [
+    { file = "bootinv.cir", dialect = "ngspice" },
+    { file = "charge.cir", dialect = "ngspice" },
+    { file = "cmosinv.cir", dialect = "ngspice" },
+    { file = "nmosinv.cir", dialect = "ngspice" },
+    { file = "pass.cir", dialect = "ngspice" },
+    { file = "ringosc.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/cider/mos"
+
+[[files]]
+path = "bootinv.cir"
+sha256 = "66979b2c5ca39d5e9f05e8ccfaba2c629d8305f4e6ed4f4157f101f19b605e9c"
+
+[[files]]
+path = "charge.cir"
+sha256 = "b4e7435716872892f8fb9e439bcbe5c493eced64f12634259dd2eece55d354ec"
+
+[[files]]
+path = "cmosinv.cir"
+sha256 = "8362294e23d49ee482ade7005aedb942cfde80757636ca8c3481b3734bed2612"
+
+[[files]]
+path = "nmosinv.cir"
+sha256 = "fef293b96cdc1adb2080a32b3248e69625605be6c6639b1e78797cf550a2f851"
+
+[[files]]
+path = "pass.cir"
+sha256 = "3febb779cad4c0975d70ae4da1e9577783b80cb6706c38dda82e7cfbb868af8d"
+
+[[files]]
+path = "ringosc.cir"
+sha256 = "b517d551e46e38fb659369ccfd28ec35419b994a4005dd7e2c4f96a2612bacfb"

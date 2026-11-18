@@ -1,0 +1,21 @@
+id = "ahkab_tests_t3p"
+title = "ahkab tests/t3p"
+family = "test"
+netlists = [
+    { file = "t3p.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/t3p"
+
+[[files]]
+path = "t3p.ckt"
+sha256 = "e649f1d5fbb02e04566e4a627d81a027c5862cc20515220c147ddafdeca9eeb6"

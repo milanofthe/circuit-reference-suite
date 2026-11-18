@@ -1,0 +1,25 @@
+id = "xyce_njfet_dc"
+title = "Xyce_Regression NJFET_DC"
+family = "test"
+netlists = [
+    { file = "njfet-2109.cir", dialect = "xyce" },
+    { file = "njfet.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/NJFET_DC"
+
+[[files]]
+path = "njfet-2109.cir"
+sha256 = "d25578ed59ddc0f94e3a2f9281f1200982f82c682ec63d5256bf0399f34ecd46"
+
+[[files]]
+path = "njfet.cir"
+sha256 = "295e3d4208ea2d839acf4724473b921ef1706976b254912b6e8455508c65b412"

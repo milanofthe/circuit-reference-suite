@@ -1,0 +1,51 @@
+id = "analoggym_ldo_1"
+title = "AnalogGym low-dropout regulator ldo_1, SKY130"
+family = "ldo"
+netlists = [
+    { file = "ldo_spice_testbench/ldo_1_acdc.cir", dialect = "ngspice" },
+    { file = "ldo_spice_testbench/ldo_1_tran.cir", dialect = "ngspice" },
+]
+notes = """
+The testbenches include their circuit from `../simulations/`, which upstream does
+not have; `resolve` points those includes at the files in `design_variables/`
+and `spice_netlist/` that hold them.
+"""
+
+[source]
+name = "AnalogGym"
+url = "https://github.com/CODA-Team/AnalogGym"
+commit = "0a9d1390ade361e2b4a2d33181e22367edbb8afc"
+license = "BSD-3-Clause"
+authors = [
+    "CODA Team",
+]
+root = "AnalogGym/Low Dropout Regulator"
+
+[[files]]
+path = "ldo_spice_testbench/ldo_1_acdc.cir"
+sha256 = "d4fd9dbea7d6a3b79b111859b3179a28900a9846f3f2862f615adf6ea9c8a89b"
+
+[[files]]
+path = "ldo_spice_testbench/ldo_1_tran.cir"
+sha256 = "d1a52cbe30ebc7c0448672a148a3692ac601032de6ae2b04318b110f4cb1c9b9"
+
+[[files]]
+path = "design_variables/ldo_1.txt"
+sha256 = "50301ecd0124f9578474b9462ba483c1e9798c76e1a0e4c200d7f5f8dd6b87d5"
+
+[[files]]
+path = "spice_netlist/ldo_1_vars.spice"
+sha256 = "5eee14b8c169d3207e865f75e475fbaa15a6a743ba0084cff5c08c8b5098a62a"
+
+[[files]]
+path = "spice_netlist/ldo_1_dev_params.spice"
+sha256 = "328f9efe83da0b8f4ab77075dbfecb205847bbf4e04528bdd3d57b0025c4ecc9"
+
+[resolve]
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice"
+"../simulations/ldo_1.txt" = "cases/analoggym_ldo_1/design_variables/ldo_1.txt"
+"../simulations/ldo_1_dev_params.spice" = "cases/analoggym_ldo_1/spice_netlist/ldo_1_dev_params.spice"
+"../simulations/ldo_1_vars.spice" = "cases/analoggym_ldo_1/spice_netlist/ldo_1_vars.spice"

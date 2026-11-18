@@ -1,0 +1,20 @@
+id = "xyce_nl_resistor"
+title = "Xyce_Regression NL_RESISTOR"
+family = "test"
+netlists = [
+    { file = "nlrcs10.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/NL_RESISTOR"
+
+[[files]]
+path = "nlrcs10.cir"
+sha256 = "5a1fccfc16a6ec81f028a99879e5d5d69b397392fed452cf81d91aa0d3369690"

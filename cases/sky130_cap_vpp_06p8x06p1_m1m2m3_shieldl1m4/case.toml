@@ -1,0 +1,34 @@
+id = "sky130_cap_vpp_06p8x06p1_m1m2m3_shieldl1m4"
+title = "SKY130 cap_vpp_06p8x06p1_m1m2m3_shieldl1m4 model checks"
+family = "device"
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/cap_vpp_06p8x06p1_m1m2m3_shieldl1m4/tests"
+
+[[files]]
+path = "sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4__cap4termval_test.spice"
+sha256 = "782f56c1eaade04fddce836892e7def6896ff6444e9da695dd2067fbbf0a025c"
+
+[[files]]
+path = "sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4_top__cap4termval_test.spice"
+sha256 = "022780a4fe2fd176647d6a58d3d3123d3918a8a4aa0a84acf743e749fe13553b"
+
+[[netlists]]
+file = "sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4__cap4termval_test.spice"
+dialect = "ngspice"
+
+[[netlists]]
+file = "sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4_top__cap4termval_test.spice"
+dialect = "ngspice"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"
+"../sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4_top.spice" = "libraries/sky130_fd_pr/cells/cap_vpp_06p8x06p1_m1m2m3_shieldl1m4/sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4_top.spice"

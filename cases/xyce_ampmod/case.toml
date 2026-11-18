@@ -1,0 +1,20 @@
+id = "xyce_ampmod"
+title = "Xyce_Regression AMPMOD"
+family = "test"
+netlists = [
+    { file = "amp_mod.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/AMPMOD"
+
+[[files]]
+path = "amp_mod.cir"
+sha256 = "ed5159167bc0da9abe6304645a5c8fac1405eaabb56a49c23baf8ac2ce48b3e8"

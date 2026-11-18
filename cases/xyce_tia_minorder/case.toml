@@ -1,0 +1,25 @@
+id = "xyce_tia_minorder"
+title = "Xyce_Regression TIA/MINORDER"
+family = "test"
+netlists = [
+    { file = "capacitor.cir", dialect = "xyce" },
+    { file = "invert.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/MINORDER"
+
+[[files]]
+path = "capacitor.cir"
+sha256 = "1d63b05b00bb0330ec81015605317cc99325f02ff5e7e895e34bbd3c9de13a84"
+
+[[files]]
+path = "invert.cir"
+sha256 = "d37d639b52940fa79f3a4639d497a8b73e695e71a16f8e38bf0e08b036bfd2e4"

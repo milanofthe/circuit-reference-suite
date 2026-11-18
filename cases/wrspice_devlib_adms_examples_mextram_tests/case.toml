@@ -1,0 +1,44 @@
+id = "wrspice_devlib_adms_examples_mextram_tests"
+title = "WRspice devlib/adms/examples/mextram/tests"
+family = "test"
+netlists = [
+    { file = "ac.sp", dialect = "wrspice" },
+    { file = "dcop.sp", dialect = "wrspice" },
+    { file = "mex_gum.sp", dialect = "wrspice" },
+    { file = "mex_out.sp", dialect = "wrspice" },
+    { file = "tran.sp", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/devlib/adms/examples/mextram/tests"
+
+[[files]]
+path = "ac.sp"
+sha256 = "8b3e16e97df5a8cedc3c647469d3c15880f649f8d87590eba1b4b57d848cd6e5"
+
+[[files]]
+path = "dcop.sp"
+sha256 = "c8f07e0fbb49c0473f6cf41875a0f1357e5c851da861eb446b538f3f544d98a0"
+
+[[files]]
+path = "mcard_504"
+sha256 = "d5db5737f782aca186212bd6f60b7b637fe34d24c61bb2e38b4e27b3f55bb777"
+
+[[files]]
+path = "mex_gum.sp"
+sha256 = "163825a26f3674bfe6b5223412cd91608e0f7b11174c0360b295b7960ba1b0bc"
+
+[[files]]
+path = "mex_out.sp"
+sha256 = "1d6df606c32e24d700acfdac6331e328776c17316a2090abedb783929b3b062b"
+
+[[files]]
+path = "tran.sp"
+sha256 = "dd3a6b0e9ec8b8295e62b808b18029b6a2138e37b2cccec8f7a4fe3917ef7df2"

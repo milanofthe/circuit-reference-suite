@@ -1,0 +1,44 @@
+id = "xyce_redund_remove"
+title = "Xyce_Regression REDUND_REMOVE"
+family = "test"
+netlists = [
+    { file = "exprGnd.cir", dialect = "xyce" },
+    { file = "gnd_and_redund.cir", dialect = "xyce" },
+    { file = "gnd_and_redund_addres.cir", dialect = "xyce" },
+    { file = "gnd_subckt.cir", dialect = "xyce" },
+    { file = "just_redund.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/REDUND_REMOVE"
+
+[[files]]
+path = "GND"
+sha256 = "36c454a859f98684986db078cd3f1f607e441552e518e100ddafcd8e880ae30e"
+
+[[files]]
+path = "exprGnd.cir"
+sha256 = "6118eba780240b5576f108d6070a9a0f5e9c3fccf2820deeb0252dd4cd274c98"
+
+[[files]]
+path = "gnd_and_redund.cir"
+sha256 = "e8175cc1fdae929609ac809bce68bcc7cffd5ab586e3aa764682cf1ab08b7b52"
+
+[[files]]
+path = "gnd_and_redund_addres.cir"
+sha256 = "dd8eb784b34cb1eea3664cebe9743cd2d9b54a0c8061e0d4ac0e9e7e2caf0653"
+
+[[files]]
+path = "gnd_subckt.cir"
+sha256 = "9ca3fdd6112d9c6d96a4d717ec2d8e550a909cebc0e1e4c424568fe0052260bd"
+
+[[files]]
+path = "just_redund.cir"
+sha256 = "c8096d9ee4dec215a0063e5a6f67af81be8fb0521252726ddb44fe3d0f1d3700"

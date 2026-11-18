@@ -1,0 +1,33 @@
+id = "xyce_rom_autodetect"
+title = "Xyce_Regression ROM/AUTODETECT"
+family = "test"
+netlists = [
+    { file = "rc_simple.cir", dialect = "xyce" },
+    { file = "rc_simple_mor.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ROM/AUTODETECT"
+
+[[files]]
+path = "rc_ladder_lib.inc"
+sha256 = "51fd998088cff978ea95dacf96dea95a877b9a5d7cd14eadb658d89fd596285b"
+
+[[files]]
+path = "rc_simple.cir"
+sha256 = "c0281ee51aec9776506eb31a55e75a11ae5ea4b2cd31cc72de1f83c4d21b276c"
+
+[[files]]
+path = "rc_simple_mor.cir"
+sha256 = "7e8bbc084cf98c5111e8cd6dea15a12399e35110b010025929324d2352dbc356"
+
+[[files]]
+path = "rcd_ladder_lib.inc"
+sha256 = "08b9d280dfa3c42e8651a00907e7c96e83d4ba7d028e7f8de12f6a6dc44bc4e5"

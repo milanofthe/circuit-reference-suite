@@ -1,0 +1,25 @@
+id = "xyce_transline"
+title = "Xyce_Regression TRANSLINE"
+family = "test"
+netlists = [
+    { file = "transline.cir", dialect = "xyce" },
+    { file = "transline_step.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TRANSLINE"
+
+[[files]]
+path = "transline.cir"
+sha256 = "facabdba136d0f523050f67d9c2c81818aeea992aa35d1a54c8ef5d76be2f3cc"
+
+[[files]]
+path = "transline_step.cir"
+sha256 = "d74c7d85e53e1a25eb38d0cac5da91385be9db6c43f9d44c92f2b97edc11812a"

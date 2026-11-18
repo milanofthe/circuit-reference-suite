@@ -1,0 +1,80 @@
+id = "xyce_measure_noise"
+title = "Xyce_Regression MEASURE_NOISE"
+family = "test"
+netlists = [
+    { file = "AvgTestNoise.cir", dialect = "xyce" },
+    { file = "DerivTestNoise.cir", dialect = "xyce" },
+    { file = "EquationEvalTestNoise.cir", dialect = "xyce" },
+    { file = "ErrorFuncTestNoise.cir", dialect = "xyce" },
+    { file = "ErrorTestNoise.cir", dialect = "xyce" },
+    { file = "FindWhenTestNoise.cir", dialect = "xyce" },
+    { file = "InputNoiseOps.cir", dialect = "xyce" },
+    { file = "IntegTestNoise.cir", dialect = "xyce" },
+    { file = "MaxMinPPTestNoise.cir", dialect = "xyce" },
+    { file = "OutputNoiseOps.cir", dialect = "xyce" },
+    { file = "RMSTestNoise.cir", dialect = "xyce" },
+    { file = "TrigTargTestNoise.cir", dialect = "xyce" },
+    { file = "oneSweepValue.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_NOISE"
+
+[[files]]
+path = "AvgTestNoise.cir"
+sha256 = "2630c4563a9100497427a24a35fdaadb57dfa753d545d4a7f58721210b352dc8"
+
+[[files]]
+path = "DerivTestNoise.cir"
+sha256 = "91c7217b40018782fc3d039733ab07dfe193c8570aa91359e756257e9e464251"
+
+[[files]]
+path = "EquationEvalTestNoise.cir"
+sha256 = "01ee437f01b83ac09815c54df67f0d19da93742a7731286195d3db20dc1779a4"
+
+[[files]]
+path = "ErrorFuncTestNoise.cir"
+sha256 = "fc6fa90f9d185092c26798f2414ca883c5dbb7137374994d0b9c489cdb201145"
+
+[[files]]
+path = "ErrorTestNoise.cir"
+sha256 = "324737231cc80f8710af1448a1441a5515dcd2f6cfbf7d18a1124ac53329de1a"
+
+[[files]]
+path = "FindWhenTestNoise.cir"
+sha256 = "6cde8d303118d3b72b58a4ebce5de1911685506cb767c4f6c4adca45f0fcce90"
+
+[[files]]
+path = "InputNoiseOps.cir"
+sha256 = "e72b4d837886ee262d451321b9e594bf9869b0aed2696cc2b435fb263c8ad782"
+
+[[files]]
+path = "IntegTestNoise.cir"
+sha256 = "17fe25ae9446a2ec62def1836b76eea327066c94281e205414875cc1860015d4"
+
+[[files]]
+path = "MaxMinPPTestNoise.cir"
+sha256 = "f1dbbb254f7b90bfe03fdabef16e9b4f0c5638c934060874a25ddcae5496d706"
+
+[[files]]
+path = "OutputNoiseOps.cir"
+sha256 = "315737ae651c139e34b0dc30c52e96acef2d5b421544ddf5a8aa7333b5ae587e"
+
+[[files]]
+path = "RMSTestNoise.cir"
+sha256 = "a71445b299af876331f26e92fc9fa88157186ca986bc437b0f91121c72e88f84"
+
+[[files]]
+path = "TrigTargTestNoise.cir"
+sha256 = "9c211eabdca1b65f50999a7dde74c51b62acc221311e10884a20c33756f8bda3"
+
+[[files]]
+path = "oneSweepValue.cir"
+sha256 = "1f60306d95f159584aed6fec1f191db3c02a1ac852284860cd2c487254a2e5fd"

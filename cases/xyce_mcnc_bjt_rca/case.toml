@@ -1,0 +1,20 @@
+id = "xyce_mcnc_bjt_rca"
+title = "Xyce_Regression MCNC_BJT_RCA"
+family = "test"
+netlists = [
+    { file = "rca.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MCNC_BJT_RCA"
+
+[[files]]
+path = "rca.cir"
+sha256 = "a90dde190b244726972cfafabadeab0531357008dc0b3eda7d9c6a7ee42e11a3"

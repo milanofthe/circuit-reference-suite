@@ -1,0 +1,20 @@
+id = "wrspice_devlib_obsolete_stag_docs"
+title = "WRspice devlib/obsolete/stag/docs"
+family = "test"
+netlists = [
+    { file = "example.cir", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/devlib/obsolete/stag/docs"
+
+[[files]]
+path = "example.cir"
+sha256 = "71cb795df793eee3a4a90ff1fc092e3f6d0e0bfd61f60f44f71aec79e47bcbbc"

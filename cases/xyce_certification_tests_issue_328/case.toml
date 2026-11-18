@@ -1,0 +1,34 @@
+id = "xyce_certification_tests_issue_328"
+title = "Xyce_Regression Certification_Tests/ISSUE_328"
+family = "test"
+netlists = [
+    { file = "bsim4_temp.cir", dialect = "xyce" },
+    { file = "bsim4_tempC.cir", dialect = "xyce" },
+    { file = "bsim4_tempC2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/ISSUE_328"
+
+[[files]]
+path = "Xmodelcard.pmos"
+sha256 = "8f09c1ccf2da53ecf6fc4e9f36b946dac92b86a44f5ab4702a5fff3fb4eea9f4"
+
+[[files]]
+path = "bsim4_temp.cir"
+sha256 = "ada107069060848346e7bd06efe78af808db2a7204a0492e97205151241dc671"
+
+[[files]]
+path = "bsim4_tempC.cir"
+sha256 = "f775d1346b048676f0937cf1a75bad7acbc4fae1a680ace3612edf7da4aaec1a"
+
+[[files]]
+path = "bsim4_tempC2.cir"
+sha256 = "159db96270e9f1a42f2d0ededffb411fbdf9e3112fb2354b55e3f82e039939f5"

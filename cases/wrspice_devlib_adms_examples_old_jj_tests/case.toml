@@ -1,0 +1,30 @@
+id = "wrspice_devlib_adms_examples_old_jj_tests"
+title = "WRspice devlib/adms/examples.old/jj/tests"
+family = "test"
+netlists = [
+    { file = "jjac.cir", dialect = "wrspice" },
+    { file = "jjdc.cir", dialect = "wrspice" },
+    { file = "jjiv.cir", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/devlib/adms/examples.old/jj/tests"
+
+[[files]]
+path = "jjac.cir"
+sha256 = "2126b08b5582a70d707dafc074b035e0f0802260c2ea40c85105242b4c1d547b"
+
+[[files]]
+path = "jjdc.cir"
+sha256 = "90ffd0e322e55ec25f9c289ce818b619aac201075391a4905fc332fb7c78dfa4"
+
+[[files]]
+path = "jjiv.cir"
+sha256 = "93cbad35eeaba6e1c73812efe6afd3d62aabab26193119a1124634d83fdb7492"

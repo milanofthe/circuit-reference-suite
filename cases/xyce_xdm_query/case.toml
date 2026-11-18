@@ -1,0 +1,35 @@
+id = "xyce_xdm_query"
+title = "Xyce_Regression XDM/QUERY"
+family = "test"
+netlists = [
+    { file = "diodeClipperMeasure.cir", dialect = "xyce" },
+    { file = "query.cir", dialect = "xyce" },
+    { file = "queryQ.cir", dialect = "xyce" },
+    { file = "queryX.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/QUERY"
+
+[[files]]
+path = "diodeClipperMeasure.cir"
+sha256 = "7b520b12c1b8269b767d64a02e214a576c6e918c188b54a161fd20c662e2b707"
+
+[[files]]
+path = "query.cir"
+sha256 = "0ae83cd53674ca7228b4cf3052e63e0b3d3ecd31c7b93d18fc07c395bd899b71"
+
+[[files]]
+path = "queryQ.cir"
+sha256 = "6a271a69fd3347854dc04e61f06fd15c06fdc93805ac274b5037b9ba40fdd742"
+
+[[files]]
+path = "queryX.cir"
+sha256 = "16d016f2fe0c1bf04e652b4e6cdf861bb6a17ec099defbe51c90133c6605eaea"

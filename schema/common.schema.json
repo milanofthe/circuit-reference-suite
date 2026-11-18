@@ -56,8 +56,8 @@
     },
     "resolve": {
       "type": "object",
-      "description": "Reference exactly as written in a file of this entry -> repository path, or null when the target may not be redistributed.",
-      "additionalProperties": {"type": ["string", "null"]}
+      "description": "Reference exactly as written in a file of this entry -> repository path, or false when the target may not be redistributed.",
+      "additionalProperties": {"anyOf": [{"type": "string"}, {"const": false}]}
     }
   }
 }

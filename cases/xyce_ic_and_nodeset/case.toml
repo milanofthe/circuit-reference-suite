@@ -1,0 +1,207 @@
+id = "xyce_ic_and_nodeset"
+title = "Xyce_Regression IC_AND_NODESET"
+family = "test"
+netlists = [
+    { file = "bjt_baseline.cir", dialect = "xyce" },
+    { file = "bjt_baseline2.cir", dialect = "xyce" },
+    { file = "bjt_baseline3.cir", dialect = "xyce" },
+    { file = "bjt_baseline4.cir", dialect = "xyce" },
+    { file = "bjt_baseline5.cir", dialect = "xyce" },
+    { file = "comp_baseline.cir", dialect = "xyce" },
+    { file = "dcvolt_cap.cir", dialect = "xyce" },
+    { file = "dcvolt_cap2.cir", dialect = "xyce" },
+    { file = "dcvolt_cap3.cir", dialect = "xyce" },
+    { file = "dcvolt_cap4.cir", dialect = "xyce" },
+    { file = "hussamp.cir", dialect = "xyce" },
+    { file = "hussamp_par1.cir", dialect = "xyce" },
+    { file = "hussamp_par2.cir", dialect = "xyce" },
+    { file = "ic_baseline.cir", dialect = "xyce" },
+    { file = "ic_bjt.cir", dialect = "xyce" },
+    { file = "ic_bjt2.cir", dialect = "xyce" },
+    { file = "ic_cap.cir", dialect = "xyce" },
+    { file = "ic_cap2.cir", dialect = "xyce" },
+    { file = "ic_cap3.cir", dialect = "xyce" },
+    { file = "ic_cap4.cir", dialect = "xyce" },
+    { file = "ic_comp.cir", dialect = "xyce" },
+    { file = "ic_gmin.cir", dialect = "xyce" },
+    { file = "ic_gmin_bjt.cir", dialect = "xyce" },
+    { file = "nodeset_bjt.cir", dialect = "xyce" },
+    { file = "nodeset_bjt2.cir", dialect = "xyce" },
+    { file = "pierce.cir", dialect = "xyce" },
+    { file = "pierce2.cir", dialect = "xyce" },
+    { file = "pierce_noop.cir", dialect = "xyce" },
+    { file = "ring_osc_bsim3.cir", dialect = "xyce" },
+    { file = "ring_osc_bsim3_ic.cir", dialect = "xyce" },
+    { file = "ring_osc_bsim4.cir", dialect = "xyce" },
+    { file = "ring_osc_bsim4_ic.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/IC_AND_NODESET"
+
+[[files]]
+path = "Xmodelcard.nmos"
+sha256 = "97292efd5b4db720d8cccd422c06d8587be29d8eca0e08d75e0add7fe46bda95"
+
+[[files]]
+path = "Xmodelcard.pmos"
+sha256 = "8f09c1ccf2da53ecf6fc4e9f36b946dac92b86a44f5ab4702a5fff3fb4eea9f4"
+
+[[files]]
+path = "bjt_baseline.cir"
+sha256 = "cd8feabd4a7ab8ea520674b09380f1daf1457e1c875df614aca6c70ef43dc852"
+
+[[files]]
+path = "bjt_baseline2.cir"
+sha256 = "cd8feabd4a7ab8ea520674b09380f1daf1457e1c875df614aca6c70ef43dc852"
+
+[[files]]
+path = "bjt_baseline3.cir"
+sha256 = "cd8feabd4a7ab8ea520674b09380f1daf1457e1c875df614aca6c70ef43dc852"
+
+[[files]]
+path = "bjt_baseline4.cir"
+sha256 = "cd8feabd4a7ab8ea520674b09380f1daf1457e1c875df614aca6c70ef43dc852"
+
+[[files]]
+path = "bjt_baseline5.cir"
+sha256 = "cd8feabd4a7ab8ea520674b09380f1daf1457e1c875df614aca6c70ef43dc852"
+
+[[files]]
+path = "comp_baseline.cir"
+sha256 = "f2e747b130af3fa60ccac12a4d7eff5ba8241ff281f1881d2cdbcc92e0f16d95"
+
+[[files]]
+path = "dcvolt_cap.cir"
+sha256 = "1213eb4fe3dbbc9d92a9a7be37306127eceebd0de8d1cbeb8310384b23b2bfc3"
+
+[[files]]
+path = "dcvolt_cap2.cir"
+sha256 = "e14e9a34059642ccc5b29fd8fc0b374fb443882e4c7dddb102b4e3df12a0827f"
+
+[[files]]
+path = "dcvolt_cap3.cir"
+sha256 = "3cec8108bd66a9ee87964fd0ccac165db28adf51cc0181028c1c30250a5ec110"
+
+[[files]]
+path = "dcvolt_cap4.cir"
+sha256 = "a180cf28ef9a574e49f6b2646004b3b97737c62508e723d03433a461b8466146"
+
+[[files]]
+path = "hussamp.cir"
+sha256 = "262e04cd3954f5d1e87f9a6c7158c8c706cfd0763c6b8def5359c6ec528d4cf4"
+
+[[files]]
+path = "hussamp_par1.cir"
+sha256 = "82a63696619476f97c7aeb22c2f49a5730434bd6f346136066e3fe6764e1481f"
+
+[[files]]
+path = "hussamp_par2.cir"
+sha256 = "c7ed040defbb972a101e5739a3fca73502dd98e802d8be5ec0b47dae21dd0f6c"
+
+[[files]]
+path = "ic_baseline.cir"
+sha256 = "af10a375cc485a932d2aca360e16951c0154244eaa6948967e9e93e0ebfca755"
+
+[[files]]
+path = "ic_bjt.cir"
+sha256 = "48564aa2a485962a36b9f4b097ee8a913a938b3701815d14ddb31d2f429cf649"
+
+[[files]]
+path = "ic_bjt.inc"
+sha256 = "0bd6cf2325300a37fe82610c73a06297352853b26403250fc5aa77d7a33eb7d1"
+
+[[files]]
+path = "ic_bjt2.cir"
+sha256 = "15c759d2b851960bce4067a19aab968bc1a7f70908902a371156b2a29663c7c3"
+
+[[files]]
+path = "ic_bjt2.inc"
+sha256 = "93e9afd7ab4d9162cb452e0d1e2187bb88bedc75ede4e83f8555eea3e3b2a4ec"
+
+[[files]]
+path = "ic_cap.cir"
+sha256 = "0d4745ef8e6cede3a39e4bd27fe1976e42587663bda2296da9bc9968c84ac19e"
+
+[[files]]
+path = "ic_cap2.cir"
+sha256 = "9328fb5ad48fe0ec6d542c31a07e1d006a1d5491a0aaf39f9b298868b15300db"
+
+[[files]]
+path = "ic_cap3.cir"
+sha256 = "02621c049136539353d4b7d9a275bd0657323be3f28718a8b997be7dcf10de1b"
+
+[[files]]
+path = "ic_cap4.cir"
+sha256 = "e99d5158b01062a29d5e199d6c7e896b886d38dce4e3b484517ad4c5a6671648"
+
+[[files]]
+path = "ic_comp.cir"
+sha256 = "7a707a9726c1b8a3f0f17dc4d94b84dcbec3d639feac10801ce898e4b5a9823e"
+
+[[files]]
+path = "ic_gmin.cir"
+sha256 = "e109b3419b680cf88d3959a5b3d511895bdb68b69613b7633f8e0d07094d3d67"
+
+[[files]]
+path = "ic_gmin_bjt.cir"
+sha256 = "9de16cf13b021d7f1038a21ee4d5072c56fd774bd1ff4428754ca8c4645fe6cb"
+
+[[files]]
+path = "modelcard.nmos"
+sha256 = "81011ea1b6c16a237f5c014543861ab8696c2eb13b9189431e451f654326f238"
+
+[[files]]
+path = "modelcard.pmos"
+sha256 = "d7a0435f73b5c2c15f5a5e2f75ef0e68658c53abab4f175b180c89813cddc575"
+
+[[files]]
+path = "nodeset_bjt.cir"
+sha256 = "9e24e22031761d6470e07270084f0191d57ed82ecf9708c021f0fd77e441bcf9"
+
+[[files]]
+path = "nodeset_bjt.inc"
+sha256 = "a83a5774774071bd5e6aaf3391705c571a47f12bb3b1cf6a6169b1f14dfcfd6c"
+
+[[files]]
+path = "nodeset_bjt2.cir"
+sha256 = "620d2b7e98c3f2635f5aecfa3a75a52aa2178e7f4420ee7e11099f7a0838c7a8"
+
+[[files]]
+path = "nodeset_bjt2.inc"
+sha256 = "030bda4d7ad419af1d75762de73d294f2de560cc4d391fec881dce8cb9b7c4ec"
+
+[[files]]
+path = "pierce.cir"
+sha256 = "ea703be759a198d7d562b8fa511513dcc43b64317a6a1857aa1820ed59deaa68"
+
+[[files]]
+path = "pierce2.cir"
+sha256 = "ea703be759a198d7d562b8fa511513dcc43b64317a6a1857aa1820ed59deaa68"
+
+[[files]]
+path = "pierce_noop.cir"
+sha256 = "a62eecde9de5bbb7d9d671f418a1ceff935558fa1e3e5d0c5a82059c39e90ff2"
+
+[[files]]
+path = "ring_osc_bsim3.cir"
+sha256 = "f806be6e78ec7c53c333d914484fe53347f37287803ca046dbd1996e7456c011"
+
+[[files]]
+path = "ring_osc_bsim3_ic.cir"
+sha256 = "3b7d8e3948665a8aee8e4e03796f3539facc4a5d945b98b464d245a4abe6caba"
+
+[[files]]
+path = "ring_osc_bsim4.cir"
+sha256 = "466c46dabf9673c37529b997096fd7255d9bbf4dc809842d6d63c57566ed99a6"
+
+[[files]]
+path = "ring_osc_bsim4_ic.cir"
+sha256 = "b1605e1bb404e8262a3c9223b4844a4df8ca0b4a654421dcd9241691097acd70"

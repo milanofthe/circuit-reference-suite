@@ -1,0 +1,45 @@
+id = "xyce_memristor"
+title = "Xyce_Regression MEMRISTOR"
+family = "test"
+netlists = [
+    { file = "memristorPEM1.cir", dialect = "xyce" },
+    { file = "memristorPEM1wIC.cir", dialect = "xyce" },
+    { file = "memristorPEM2.cir", dialect = "xyce" },
+    { file = "memristorTEAM_lp_trap.cir", dialect = "xyce" },
+    { file = "memristorTEAM_test.cir", dialect = "xyce" },
+    { file = "memristorYakopcic.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEMRISTOR"
+
+[[files]]
+path = "memristorPEM1.cir"
+sha256 = "f0e0ed342aa3866cb9c39cfe4ac2dc39945d742a2412c561d69a38da0249f18b"
+
+[[files]]
+path = "memristorPEM1wIC.cir"
+sha256 = "5b061e2741d0311459179e2ec4254516d9d45312ab3778f40307ca0a0c65e541"
+
+[[files]]
+path = "memristorPEM2.cir"
+sha256 = "5014309ec0f69614cf9cc93bfb4cad40bac032bb852e9798f1868895f2d303b6"
+
+[[files]]
+path = "memristorTEAM_lp_trap.cir"
+sha256 = "3813839487562202531a4b3f28d97776409e3b2d2b1e64cc16a459216b1f0d13"
+
+[[files]]
+path = "memristorTEAM_test.cir"
+sha256 = "0e1f5d98638941adddde391af768e7ba75a59c505103c4b6a2fd702ee604a2c7"
+
+[[files]]
+path = "memristorYakopcic.cir"
+sha256 = "20db31de79bd41896a45ebbd1991590fd40220040b5e03b8e0c79ae88f96e6d7"

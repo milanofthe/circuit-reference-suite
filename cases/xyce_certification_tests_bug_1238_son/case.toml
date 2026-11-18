@@ -1,0 +1,40 @@
+id = "xyce_certification_tests_bug_1238_son"
+title = "Xyce_Regression Certification_Tests/BUG_1238_SON"
+family = "test"
+netlists = [
+    { file = "bug1238-ac-op.cir", dialect = "xyce" },
+    { file = "bug1238-ac.cir", dialect = "xyce" },
+    { file = "bug1238-hb.cir", dialect = "xyce" },
+    { file = "bug1238-noise.cir", dialect = "xyce" },
+    { file = "bug1320-ac.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1238_SON"
+
+[[files]]
+path = "bug1238-ac-op.cir"
+sha256 = "d2c7a2d304be0d873a848b1ba4b818a4692bc9be7a924feb8f72b5a3b3737458"
+
+[[files]]
+path = "bug1238-ac.cir"
+sha256 = "41db79b89eee45e9333a89945b8bc311f527893a5bd11117f7e4b384d9ab6087"
+
+[[files]]
+path = "bug1238-hb.cir"
+sha256 = "1bdf007590711cf30a08ac7daeb4a7d5e2bd9fc985cb027e55affdc00a558841"
+
+[[files]]
+path = "bug1238-noise.cir"
+sha256 = "dc5dd845570569993f6bc7a092373e32184458429e7ff29903dfaa301e9ff113"
+
+[[files]]
+path = "bug1320-ac.cir"
+sha256 = "6aeeeb56c49993f49f2e70b3d38ada06c60569e42ade05a15ed8a492a071a70d"

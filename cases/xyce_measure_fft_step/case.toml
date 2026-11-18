@@ -1,0 +1,30 @@
+id = "xyce_measure_fft_step"
+title = "Xyce_Regression MEASURE_FFT/STEP"
+family = "test"
+netlists = [
+    { file = "AllMeasures.cir", dialect = "xyce" },
+    { file = "AllMeasures.s0.cir", dialect = "xyce" },
+    { file = "AllMeasures.s1.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_FFT/STEP"
+
+[[files]]
+path = "AllMeasures.cir"
+sha256 = "1455d898aefc462da04fbce09b2af2a0166c58b18a8e8fc6002fc8ece54e2e4b"
+
+[[files]]
+path = "AllMeasures.s0.cir"
+sha256 = "28fbb406e3665635b9ff165e321c240bfa08b190c507b28c713720f2682c36c4"
+
+[[files]]
+path = "AllMeasures.s1.cir"
+sha256 = "ad22bdd741c4424af1d6f245cd82e77b22c2c829707b43ec105c8a9e709ce386"

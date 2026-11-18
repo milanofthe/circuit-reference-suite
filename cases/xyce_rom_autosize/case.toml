@@ -1,0 +1,35 @@
+id = "xyce_rom_autosize"
+title = "Xyce_Regression ROM/AUTOSIZE"
+family = "test"
+netlists = [
+    { file = "RC_ladder100.cir", dialect = "xyce" },
+    { file = "RC_ladder_top.cir", dialect = "xyce" },
+    { file = "RLC_ladder100.cir", dialect = "xyce" },
+    { file = "RLC_ladder_top.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ROM/AUTOSIZE"
+
+[[files]]
+path = "RC_ladder100.cir"
+sha256 = "0608845b83c78cbe6a6b3fad0a3a113c9885552dffbdc78c71a6be178232ae2e"
+
+[[files]]
+path = "RC_ladder_top.cir"
+sha256 = "b4ddd417d76ca6aa2264dd30bf69a0f249b77e717881395779eb921546f8ad38"
+
+[[files]]
+path = "RLC_ladder100.cir"
+sha256 = "ad053280668db5c151b1fbad0c53762a053bde91dc5b13e3d646d5c21ae1d5dc"
+
+[[files]]
+path = "RLC_ladder_top.cir"
+sha256 = "e791bcae9d99cf5461a667fcea45f66bea3553d1d1d9b1bb388fee0ba9334f3c"

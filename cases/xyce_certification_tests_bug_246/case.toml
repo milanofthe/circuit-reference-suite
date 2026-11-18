@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_246"
+title = "Xyce_Regression Certification_Tests/BUG_246"
+family = "test"
+netlists = [
+    { file = "bug_246.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_246"
+
+[[files]]
+path = "bug_246.cir"
+sha256 = "e0067823713cf11a35c5ee782ac71e228145e6ee84e8587058c2c34ab2e41e89"

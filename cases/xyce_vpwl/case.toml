@@ -1,0 +1,30 @@
+id = "xyce_vpwl"
+title = "Xyce_Regression VPWL"
+family = "test"
+netlists = [
+    { file = "vpwl.cir", dialect = "xyce" },
+    { file = "vpwl_filebased.cir", dialect = "xyce" },
+    { file = "vpwl_repeat_step.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VPWL"
+
+[[files]]
+path = "vpwl.cir"
+sha256 = "2566eaf4e46da8225face26c0bb756866cbf164d5e3dc5451beee09436bdd12d"
+
+[[files]]
+path = "vpwl_filebased.cir"
+sha256 = "866e18ea31fc97c984630d773f310d968e4e28ab807a7ded75bb57797468b753"
+
+[[files]]
+path = "vpwl_repeat_step.cir"
+sha256 = "c473766a08eb1f83ae3062b1b81d0be3e1ec0a7fc4a52e2f63a4f89e44494516"

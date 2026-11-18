@@ -1,0 +1,21 @@
+id = "ahkab_tests_ring3mosq"
+title = "ahkab tests/ring3mosq"
+family = "test"
+netlists = [
+    { file = "ring3mosq.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/ring3mosq"
+
+[[files]]
+path = "ring3mosq.ckt"
+sha256 = "640523ffdb36bc18d92efe90af66ddb8d5546aa6f0cd509ebbc2a7a991e5dca0"

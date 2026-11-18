@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_1302"
+title = "Xyce_Regression Certification_Tests/BUG_1302"
+family = "test"
+netlists = [
+    { file = "bug_1302.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1302"
+
+[[files]]
+path = "bug_1302.cir"
+sha256 = "c5fd9f3d96141ec98a0bd3e41293ac845534bc2ab97d8fbc85b7a5e0aae0e794"

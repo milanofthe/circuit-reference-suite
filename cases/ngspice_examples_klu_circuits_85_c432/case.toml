@@ -1,0 +1,29 @@
+id = "ngspice_examples_klu_circuits_85_c432"
+title = "ngspice examples/klu/Circuits/85/c432"
+family = "test"
+netlists = [
+    { file = "85/c432/c432.net", dialect = "ngspice" },
+    { file = "85/c432/c432_ann.net", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/klu/Circuits"
+
+[[files]]
+path = "85/c432/c432.net"
+sha256 = "3302b780ad504cbaa3f8890570895fc152c236819ec70fb1f45c82244630cb01"
+
+[[files]]
+path = "85/c432/c432_ann.net"
+sha256 = "6cf7cb24c37a9ba9e85b21952d9bfc7182fb602fca87bcc44c6f647c789d9510"
+
+[[files]]
+path = "technology/45nm_HP.pm"
+sha256 = "6cd923780be8f9762bb4ab9d101ef21dd06b6d59024aa8c0e339cb2d09fb757c"

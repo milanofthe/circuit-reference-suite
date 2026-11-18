@@ -1,0 +1,25 @@
+id = "xyce_src_src_test_deviceinterface"
+title = "Xyce src/test/DeviceInterface"
+family = "test"
+netlists = [
+    { file = "ADC_DACRunTest.cir", dialect = "xyce" },
+    { file = "ADC_DACtest.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce"
+url = "https://github.com/Xyce/Xyce"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "16889483a370b566a61198fb4bff49e60b75e895"
+root = "src/test/DeviceInterface"
+
+[[files]]
+path = "ADC_DACRunTest.cir"
+sha256 = "aad956bf41f37583ceb16385f18b6bd5473dc91a7ff15f87267f1ae9b4a2d648"
+
+[[files]]
+path = "ADC_DACtest.cir"
+sha256 = "119d398fd1cfd005f0d6bbf8b91c6d658356ccb7bfbca1e326f0f4e9bea4c00b"

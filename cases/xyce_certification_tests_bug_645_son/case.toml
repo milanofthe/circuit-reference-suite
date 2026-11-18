@@ -1,0 +1,50 @@
+id = "xyce_certification_tests_bug_645_son"
+title = "Xyce_Regression Certification_Tests/BUG_645_SON"
+family = "test"
+netlists = [
+    { file = "bug645son_Func.cir", dialect = "xyce" },
+    { file = "bug645son_FuncGold.cir", dialect = "xyce" },
+    { file = "bug645son_Global.cir", dialect = "xyce" },
+    { file = "bug645son_GlobalGold.cir", dialect = "xyce" },
+    { file = "bug645son_GlobalStep.cir", dialect = "xyce" },
+    { file = "bug645son_Param.cir", dialect = "xyce" },
+    { file = "bug645son_ParamGold.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_645_SON"
+
+[[files]]
+path = "bug645son_Func.cir"
+sha256 = "53798e6850954f5f1e59c945be85d8e51cbb1f74cbebe7b5fcb280f6461f97ba"
+
+[[files]]
+path = "bug645son_FuncGold.cir"
+sha256 = "40ace521bfba5714598ab44d9486b127036ac7fd638b9eeee42d8a5a50d86d47"
+
+[[files]]
+path = "bug645son_Global.cir"
+sha256 = "073a3a64de96cbf9aa589f011cf7d2dae458ca729dbe4495e7c7cc7352a2d3bb"
+
+[[files]]
+path = "bug645son_GlobalGold.cir"
+sha256 = "0912a214826b84bddc9758f1f52e0107dd1d645ac1d4e0c556e30f723a7fac13"
+
+[[files]]
+path = "bug645son_GlobalStep.cir"
+sha256 = "c298a1c814b9789eaee4d220da37d6422534a6774e24c3716e0714fd69fd023a"
+
+[[files]]
+path = "bug645son_Param.cir"
+sha256 = "9e41a7cfb2ef854e671dc5a9c9125b4b821e7a62f97e8d48acab33aa7aec508b"
+
+[[files]]
+path = "bug645son_ParamGold.cir"
+sha256 = "6a77e00b87ed07db57614ced93bbec0014ec16a4ff01607d685290ba5b224200"

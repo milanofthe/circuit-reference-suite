@@ -1,0 +1,135 @@
+id = "xyce_mextram"
+title = "Xyce_Regression MEXTRAM"
+family = "test"
+netlists = [
+    { file = "FGummel_Ib.cir", dialect = "xyce" },
+    { file = "FGummel_Ib_TRANS.cir", dialect = "xyce" },
+    { file = "FGummel_Ib_noFlip_P.cir", dialect = "xyce" },
+    { file = "FGummel_Ib_noFlip_P_TRANS.cir", dialect = "xyce" },
+    { file = "FGummel_Ic.cir", dialect = "xyce" },
+    { file = "FGummel_Ic_noFlip_P.cir", dialect = "xyce" },
+    { file = "FGummel_low_Ib.cir", dialect = "xyce" },
+    { file = "FGummel_low_Ib_noFlip_P.cir", dialect = "xyce" },
+    { file = "FGummel_low_Ic.cir", dialect = "xyce" },
+    { file = "FGummel_low_Ic_noFlip_P.cir", dialect = "xyce" },
+    { file = "FGummel_low_MLF_Ib.cir", dialect = "xyce" },
+    { file = "FGummel_low_MLF_Ib_noFlip_P.cir", dialect = "xyce" },
+    { file = "FGummel_low_MLF_Ic.cir", dialect = "xyce" },
+    { file = "FGummel_low_MLF_Ic_noFlip_P.cir", dialect = "xyce" },
+    { file = "RGummel_Ib.cir", dialect = "xyce" },
+    { file = "RGummel_Ib_noFlip_P.cir", dialect = "xyce" },
+    { file = "RGummel_Ie.cir", dialect = "xyce" },
+    { file = "RGummel_Ie_noFlip_P.cir", dialect = "xyce" },
+    { file = "acBias_Gbb.cir", dialect = "xyce" },
+    { file = "acBias_Gbb_noFlip_P.cir", dialect = "xyce" },
+    { file = "acBias_Gcc.cir", dialect = "xyce" },
+    { file = "acBias_Gcc_noFlip_P.cir", dialect = "xyce" },
+    { file = "acFreq_Gbb.cir", dialect = "xyce" },
+    { file = "acFreq_Gbb_noFlip_P.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEXTRAM"
+
+[[files]]
+path = "FGummel_Ib.cir"
+sha256 = "ec63a5aa4f7b9949ac780abed73ff5f6d3c99ba9956442f024da6ed9ea55ae27"
+
+[[files]]
+path = "FGummel_Ib_TRANS.cir"
+sha256 = "38658ffc6944cef76cce46ce2923653bd728a4e4f93c59ceec0e46307d117dec"
+
+[[files]]
+path = "FGummel_Ib_noFlip_P.cir"
+sha256 = "bb21831dd7d30f29974648d1f477622367ca1bd4e5bf0133e66fb87e64501114"
+
+[[files]]
+path = "FGummel_Ib_noFlip_P_TRANS.cir"
+sha256 = "95a5334601e0ebad484241b511ecbc8c385848057c767f6342d66476de9f6378"
+
+[[files]]
+path = "FGummel_Ic.cir"
+sha256 = "c7e4b763e73b9027b8e90f125050c6a19e1771ed8471dbb38412caafb03a4690"
+
+[[files]]
+path = "FGummel_Ic_noFlip_P.cir"
+sha256 = "9b2e2b073551822212fddaee1aea09a27bb877cbe4cafe06a47a6619568eb6c6"
+
+[[files]]
+path = "FGummel_low_Ib.cir"
+sha256 = "c83391158b15ed0c20f325f09d9cf864607ba438af4c98d2f771c2257acf083e"
+
+[[files]]
+path = "FGummel_low_Ib_noFlip_P.cir"
+sha256 = "7456154768c4417eb78fd3fd70879468906a8f0df3633d377dcd2db45cb9f8a2"
+
+[[files]]
+path = "FGummel_low_Ic.cir"
+sha256 = "ce53d51f85a7239e213bab8710e18bb2d6b8a43103117fb0fb8a3f99750f0462"
+
+[[files]]
+path = "FGummel_low_Ic_noFlip_P.cir"
+sha256 = "107428acc25c82c5c74f18ef4698847e085bbe47b729da86b5525090cb8f46d4"
+
+[[files]]
+path = "FGummel_low_MLF_Ib.cir"
+sha256 = "c14e34d4b7148290f4a6058829bddb985368332b1b0c37cab686fe5627b70791"
+
+[[files]]
+path = "FGummel_low_MLF_Ib_noFlip_P.cir"
+sha256 = "734c09ac63a2ace4444104c99bb63a9b34e53f4ce6a01fc92b3f86075ef8640f"
+
+[[files]]
+path = "FGummel_low_MLF_Ic.cir"
+sha256 = "49e434eddc76f539bd5e7befe9858ded0647aacdcdecabe21c2a2bcd1f26403f"
+
+[[files]]
+path = "FGummel_low_MLF_Ic_noFlip_P.cir"
+sha256 = "3bbf5912bc8a54e91bd0442e67b0eb0a96be185c17a67340e1d467844eee9278"
+
+[[files]]
+path = "RGummel_Ib.cir"
+sha256 = "0a6d6e2d077971ca09c991737ba2d0666bfad64af095ce6a82fe6b2dd946659e"
+
+[[files]]
+path = "RGummel_Ib_noFlip_P.cir"
+sha256 = "6a161ce306868c15a4fe1baedc0928ed79556ba0e7901699dca8d379e462a609"
+
+[[files]]
+path = "RGummel_Ie.cir"
+sha256 = "4558d24acb00adee66f68cb09d8e17b9d4b042c64c4e890e00982c0f9db2fa5a"
+
+[[files]]
+path = "RGummel_Ie_noFlip_P.cir"
+sha256 = "e4480cf03c2c50518245ecd3e3f1b9fc03c45a2eb11d1910250c721a1539002e"
+
+[[files]]
+path = "acBias_Gbb.cir"
+sha256 = "d7be1c6ea700c8fffb0896d8ab924a58717c426819cdd11dc00c760119bce015"
+
+[[files]]
+path = "acBias_Gbb_noFlip_P.cir"
+sha256 = "4a01cae7a11dd48e85163bb5411c0ad29b08b8b3feff9232f265cb1dd80155c5"
+
+[[files]]
+path = "acBias_Gcc.cir"
+sha256 = "2e2b43aa8aa9dc2dc7a9779494aec9bcd6c98f6efacb4837418bcc07c0dd03da"
+
+[[files]]
+path = "acBias_Gcc_noFlip_P.cir"
+sha256 = "6de375be0f404f453454a06918f12bd888dac4d844e91c46ec1d1d588555cf2c"
+
+[[files]]
+path = "acFreq_Gbb.cir"
+sha256 = "ceda4daffa05058c569ca13d9c839455ab69e1f234e38a2face8a8078d223d10"
+
+[[files]]
+path = "acFreq_Gbb_noFlip_P.cir"
+sha256 = "7a63f982cea7ece66c9139af6e18f48ad4f86c56321da2fdfda886eafd19788d"

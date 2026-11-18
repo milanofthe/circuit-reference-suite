@@ -1,0 +1,25 @@
+id = "xyce_certification_tests_bug_870_son"
+title = "Xyce_Regression Certification_Tests/BUG_870_SON"
+family = "test"
+netlists = [
+    { file = "gummel_p.cir", dialect = "xyce" },
+    { file = "gummel_p_notypeval.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_870_SON"
+
+[[files]]
+path = "gummel_p.cir"
+sha256 = "4155cce08f7b52acbe4dc93022732593569af14954c590fce855ea43be31a9b7"
+
+[[files]]
+path = "gummel_p_notypeval.cir"
+sha256 = "feda6ead045fd9c15e915df5bfaef69418c9ab0c07f72af0c865106704fd868c"

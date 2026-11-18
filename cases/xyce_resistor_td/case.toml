@@ -1,0 +1,30 @@
+id = "xyce_resistor_td"
+title = "Xyce_Regression RESISTOR_TD"
+family = "test"
+netlists = [
+    { file = "exp_temp_dep.cir", dialect = "xyce" },
+    { file = "temp_dep.cir", dialect = "xyce" },
+    { file = "temp_dep_2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/RESISTOR_TD"
+
+[[files]]
+path = "exp_temp_dep.cir"
+sha256 = "db9e63312189adfd5b06249b003d0f9c6bf67f1460efe4b26a89deb9c55181d1"
+
+[[files]]
+path = "temp_dep.cir"
+sha256 = "9b04414534c5249140ad91e4de18980c410aa9f641c0acfdee767cbe94132fd5"
+
+[[files]]
+path = "temp_dep_2.cir"
+sha256 = "0cf07696e48a02460bf8498734378555f249c642fb4a7e53b1becce33375dc16"

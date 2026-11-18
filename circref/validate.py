@@ -30,10 +30,10 @@ def check_library(lib: Library) -> list[str]:
         return errors
     if lib.id != lib.directory.name:
         errors.append(f"id {lib.id!r} differs from directory name")
-    for target in (t for t in lib.resolve_table().values() if t is not None):
+    for target in (t for t in lib.resolve_table().values() if t is not False):
         if not (ROOT / target).is_file():
             errors.append(f"resolve: {target} does not exist")
-    errors += check_files(lib, "library.yaml")
+    errors += check_files(lib, "library.toml")
     # Verilog-A sources must compile from what is committed, used by a case or not.
     for f in lib.files():
         path = lib.directory / f["path"]
@@ -41,7 +41,7 @@ def check_library(lib: Library) -> list[str]:
             continue
         for ref in netlist.parse(path, "veriloga").refs:
             target = lib.resolve_table().get(ref.target, ref.target)
-            if target is None or not is_file(path.parent / target):
+            if target is False or not is_file(path.parent / target):
                 errors.append(f"{f['path']}:{ref.line}: cannot resolve {ref.target!r}")
     return errors
 
@@ -52,7 +52,7 @@ def check_case(case: Case) -> list[str]:
         return errors
     if case.id != case.directory.name:
         errors.append(f"id {case.id!r} differs from directory name")
-    errors += check_files(case, "case.yaml")
+    errors += check_files(case, "case.toml")
     listed = {f["path"] for f in case.files()}
     for n in case.netlists():
         if n.file not in listed:

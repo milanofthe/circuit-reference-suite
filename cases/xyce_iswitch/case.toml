@@ -1,0 +1,30 @@
+id = "xyce_iswitch"
+title = "Xyce_Regression ISWITCH"
+family = "test"
+netlists = [
+    { file = "iswitch.cir", dialect = "xyce" },
+    { file = "iswitchHyst1.cir", dialect = "xyce" },
+    { file = "iswitch_spice.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ISWITCH"
+
+[[files]]
+path = "iswitch.cir"
+sha256 = "599bc9fe9e53e4f7537710f24ff4c9776e3eec32d754abb73c07c3a6395f836e"
+
+[[files]]
+path = "iswitchHyst1.cir"
+sha256 = "385b36f181600ffe94b126bc0f581e472972c0f62d6823e598f43366f6097098"
+
+[[files]]
+path = "iswitch_spice.cir"
+sha256 = "05d0e68e32e91b3f7c83d0ef179bc1db880d845046b6686f7cd12624d86bc812"

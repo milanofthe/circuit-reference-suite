@@ -1,0 +1,29 @@
+id = "sky130_cap_mim_m3"
+title = "SKY130 cap_mim_m3 model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__cap_mim_m3_1__mimcap_test.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__cap_mim_m3_2__mimcap_test.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/cap_mim_m3/tests"
+
+[[files]]
+path = "sky130_fd_pr__cap_mim_m3_1__mimcap_test.spice"
+sha256 = "f14803d7f2bb52009931f8c03bced7716d4f8088d65a6e2d270b5525e1a00b96"
+
+[[files]]
+path = "sky130_fd_pr__cap_mim_m3_2__mimcap_test.spice"
+sha256 = "cb7534a7e82382a87878615e7f023075b290b7da97160eb2700e7ee15d5e3157"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"

@@ -1,0 +1,20 @@
+id = "xyce_oneshot"
+title = "Xyce_Regression ONESHOT"
+family = "test"
+netlists = [
+    { file = "one-shot.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ONESHOT"
+
+[[files]]
+path = "one-shot.cir"
+sha256 = "a174dc0f6c68d3979407b739a1f97e457f37bb3ee3ea3699ede31733639a025f"

@@ -1,0 +1,20 @@
+id = "xyce_isin"
+title = "Xyce_Regression ISIN"
+family = "test"
+netlists = [
+    { file = "isin.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ISIN"
+
+[[files]]
+path = "isin.cir"
+sha256 = "1b594087d0531fda2cd614862aaec4f2b0a49723da14d998aa8e424daced622e"

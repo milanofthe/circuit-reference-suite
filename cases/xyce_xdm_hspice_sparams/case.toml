@@ -1,0 +1,35 @@
+id = "xyce_xdm_hspice_sparams"
+title = "Xyce_Regression XDM/HSPICE/SPARAMS"
+family = "test"
+netlists = [
+    { file = "p_element_bandpass_filter.cir", dialect = "xyce" },
+    { file = "p_element_bandpass_filter.cir.hspice", dialect = "hspice" },
+    { file = "telegrapher_line.cir", dialect = "xyce" },
+    { file = "telegrapher_line.cir.hspice", dialect = "hspice" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/HSPICE/SPARAMS"
+
+[[files]]
+path = "p_element_bandpass_filter.cir"
+sha256 = "8150d10ed63b13ad9ce824655b4850353a14537535aa2b23f95c49d130b4a0d5"
+
+[[files]]
+path = "p_element_bandpass_filter.cir.hspice"
+sha256 = "34039470d6339d19f05fdcf156071e65a5b86637c43ae62e230e501eff968012"
+
+[[files]]
+path = "telegrapher_line.cir"
+sha256 = "362a95fb7ca5b17ada4a4486e5b7dc3d215249b9f36955861b43626b4a4fcf6a"
+
+[[files]]
+path = "telegrapher_line.cir.hspice"
+sha256 = "f6e36aeb82ded672f4dc7b75216c9b580b12bdf43fc84504825c7bf581eb3a40"

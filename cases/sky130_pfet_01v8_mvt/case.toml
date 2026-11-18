@@ -1,0 +1,24 @@
+id = "sky130_pfet_01v8_mvt"
+title = "SKY130 pfet_01v8_mvt model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__pfet_01v8_mvt__pfet_vth.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/pfet_01v8_mvt/tests"
+
+[[files]]
+path = "sky130_fd_pr__pfet_01v8_mvt__pfet_vth.spice"
+sha256 = "1372b2723a5ea004b78b297f30c9dd11dd5eb7bb1a0e20f0fa15ca2a06e3d13b"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"

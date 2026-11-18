@@ -1,0 +1,25 @@
+id = "ngspice_examples_digital_auto_bridge"
+title = "ngspice examples/digital/auto_bridge"
+family = "test"
+netlists = [
+    { file = "shared_line.cir", dialect = "ngspice" },
+    { file = "vcc.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/digital/auto_bridge"
+
+[[files]]
+path = "shared_line.cir"
+sha256 = "86b6140d7f4682033fc1fae2564bc6bf3a93fbad0b0e657b4787bd77298c7391"
+
+[[files]]
+path = "vcc.cir"
+sha256 = "b304a66b63ec5fc32bf82b6f99f82ba0b1d7d89477ed0623dab6386fbd165716"

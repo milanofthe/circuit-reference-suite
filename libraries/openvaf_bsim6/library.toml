@@ -1,0 +1,20 @@
+id = "openvaf_bsim6"
+title = "BSIM6 bulk MOSFET model"
+notes = """
+Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+model's own, stated in the license file or the header of the source.
+"""
+
+[source]
+name = "OpenVAF-reloaded"
+url = "https://github.com/OpenVAF/OpenVAF-Reloaded"
+commit = "5ed9e63afe70ac95129a78af7b3732e7d431b1e5"
+root = "integration_tests/BSIM6"
+license = "LicenseRef-BSIM"
+authors = [
+    "University of California, Berkeley",
+]
+
+[[files]]
+path = "bsim6.va"
+sha256 = "4866f46c78f101ac8bc6ebaf62f114bb2e5784c739cb147bb6447acf985df1ca"

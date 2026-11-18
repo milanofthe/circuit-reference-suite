@@ -1,0 +1,27 @@
+id = "ngspice_examples_osdi_noise"
+title = "ngspice examples/osdi/noise"
+family = "test"
+netlists = [
+    { file = "resdiv.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/osdi/noise"
+
+[[files]]
+path = "resdiv.cir"
+sha256 = "a54d51d97d21e92b5a180c1fbe730ec2b908df50be6d9cdaf79dabe367339f7a"
+
+[[files]]
+path = "resistor.va"
+sha256 = "c040ba238377e8544d62a8074817258cfd6efcda773a3117cacfc9b5165fd461"
+
+[resolve]
+"resistor.osdi" = "cases/ngspice_examples_osdi_noise/resistor.va"

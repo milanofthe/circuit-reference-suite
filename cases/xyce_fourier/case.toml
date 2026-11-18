@@ -1,0 +1,70 @@
+id = "xyce_fourier"
+title = "Xyce_Regression FOURIER"
+family = "test"
+netlists = [
+    { file = "CMOS_inverter.cir", dialect = "xyce" },
+    { file = "CMOS_inverter_lead_currents.cir", dialect = "xyce" },
+    { file = "CMOS_inverter_sens_four.cir", dialect = "xyce" },
+    { file = "bsim3sensFourFD.cir", dialect = "xyce" },
+    { file = "bsim3sensFourFD_complicated.cir", dialect = "xyce" },
+    { file = "gilbert_cell.cir", dialect = "xyce" },
+    { file = "lead_current_not_on_print_line.cir", dialect = "xyce" },
+    { file = "lead_current_power.cir", dialect = "xyce" },
+    { file = "step_test.cir", dialect = "xyce" },
+    { file = "step_test.s0.cir", dialect = "xyce" },
+    { file = "step_test.s1.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/FOURIER"
+
+[[files]]
+path = "CMOS_inverter.cir"
+sha256 = "3b511867f3ac7fe34dbf0219b1731413adc30ad0e09270bb3f1d8ffabe5337eb"
+
+[[files]]
+path = "CMOS_inverter_lead_currents.cir"
+sha256 = "2c939bb7f47251e7706a07cdf56ab19269ca928f6837f03613d3d402b44c829b"
+
+[[files]]
+path = "CMOS_inverter_sens_four.cir"
+sha256 = "32276c6b46a06c68aef000439edd3603aa005cfb5df2696615dc8ead324cb030"
+
+[[files]]
+path = "bsim3sensFourFD.cir"
+sha256 = "990d142dfc732efc78e93e99022044abc07c1762767ae3953f9834f61edf7001"
+
+[[files]]
+path = "bsim3sensFourFD_complicated.cir"
+sha256 = "43566c0dcca9bbc952278d17df88b6e260b0888b7f1ccff2ec43549ace772783"
+
+[[files]]
+path = "gilbert_cell.cir"
+sha256 = "dcc8e64bcd785866417a295812c781773c2860151e0feafc435c8f8fbda8c786"
+
+[[files]]
+path = "lead_current_not_on_print_line.cir"
+sha256 = "3c56eef62a398c246788efd97cc39667220a24b1ff8113c079b781886ef4c582"
+
+[[files]]
+path = "lead_current_power.cir"
+sha256 = "9bba66ec4ab8ce411bb82997ddf375f40a80268765272eddbc257cc53a95f86c"
+
+[[files]]
+path = "step_test.cir"
+sha256 = "f95ecbb647311bbdb7e2999629e79861616443de1eb0cb7aa8f1f386e3996ca3"
+
+[[files]]
+path = "step_test.s0.cir"
+sha256 = "6807a649e91af795b69edb5d17ebeb82631aac464660c43b892b0609e88d478a"
+
+[[files]]
+path = "step_test.s1.cir"
+sha256 = "a4e7798f48e47a7bb979d0a3b46d22f8e6c2cc9cd6d14d6b2189a61d694a53f0"

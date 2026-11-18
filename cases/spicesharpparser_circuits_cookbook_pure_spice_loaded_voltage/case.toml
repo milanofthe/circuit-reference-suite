@@ -1,0 +1,20 @@
+id = "spicesharpparser_circuits_cookbook_pure_spice_loaded_voltage"
+title = "SpiceSharpParser circuits/cookbook/pure-spice/loaded-voltage-divider"
+family = "test"
+netlists = [
+    { file = "loaded-voltage-divider.cir", dialect = "spicesharp" },
+]
+
+[source]
+name = "SpiceSharpParser"
+url = "https://github.com/SpiceSharp/SpiceSharpParser"
+license = "MIT"
+authors = [
+    "SpiceSharp contributors",
+]
+commit = "8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7"
+root = "circuits/cookbook/pure-spice/loaded-voltage-divider"
+
+[[files]]
+path = "loaded-voltage-divider.cir"
+sha256 = "dc737ae3c563f04c80bec31a5b554b7fc7d08a30fb3535e2e2de90216e179d5d"

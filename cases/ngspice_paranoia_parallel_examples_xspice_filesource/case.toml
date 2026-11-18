@@ -1,0 +1,24 @@
+id = "ngspice_paranoia_parallel_examples_xspice_filesource"
+title = "ngspice paranoia_parallel/examples/xspice/filesource"
+family = "test"
+netlists = [
+    { file = "simple-filesource.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/xspice/filesource"
+
+[[files]]
+path = "my-source.txt"
+sha256 = "155cad4ce180bb3b5dc72607c7e9f965558731ee3467a7c88a489882ba96e006"
+
+[[files]]
+path = "simple-filesource.cir"
+sha256 = "48e5e45494e059d8c1d794c7ceab6ab4137d8e81db59831b7fd98d7abd0f8acf"

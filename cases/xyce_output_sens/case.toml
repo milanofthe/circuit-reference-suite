@@ -1,0 +1,105 @@
+id = "xyce_output_sens"
+title = "Xyce_Regression Output/SENS"
+family = "test"
+netlists = [
+    { file = "diode_adjoint_prn.cir", dialect = "xyce" },
+    { file = "diode_adjoint_tecplot.cir", dialect = "xyce" },
+    { file = "sens-csv.cir", dialect = "xyce" },
+    { file = "sens-gnuplot.cir", dialect = "xyce" },
+    { file = "sens-noindex.cir", dialect = "xyce" },
+    { file = "sens-prn.cir", dialect = "xyce" },
+    { file = "sens-step-csv.cir", dialect = "xyce" },
+    { file = "sens-step-gnuplot.cir", dialect = "xyce" },
+    { file = "sens-step-prn.cir", dialect = "xyce" },
+    { file = "sens-step-tecplot.cir", dialect = "xyce" },
+    { file = "sens-stepnum-col.cir", dialect = "xyce" },
+    { file = "sens-tecplot.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-csv.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-noindex.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-overrideRaw.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-overrideRaw_ref.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-unsupportedProbeFormat.cir", dialect = "xyce" },
+    { file = "sens-tranadjoint-unsupportedRawFormat.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Output/SENS"
+
+[[files]]
+path = "diode_adjoint_prn.cir"
+sha256 = "67122318b3b355a2c7e8f5aaa6e1722e552933e88b4b1d36f4685e6e474999c0"
+
+[[files]]
+path = "diode_adjoint_tecplot.cir"
+sha256 = "53a14d9a604deea59e2105b1c01fc813792d333a361f1fa91d940b954062a4b5"
+
+[[files]]
+path = "sens-csv.cir"
+sha256 = "79c52b3d41497f7170ce51a5d97c7a9c704d862e51a3d0b722cf2b195c33bdbe"
+
+[[files]]
+path = "sens-gnuplot.cir"
+sha256 = "341e31a696cbb0462f2b7eefe1a3d3a26f98882c049e028e54f558b3fac2f946"
+
+[[files]]
+path = "sens-noindex.cir"
+sha256 = "a6ac32e8e5d6ed29d3d2dbaad6f187ddd1951255372c8126c7f8feca75878236"
+
+[[files]]
+path = "sens-prn.cir"
+sha256 = "2238fe5a4b6196811fec0ea493ad11dc484c6cc806a5ba12607eaf9ca3ba6571"
+
+[[files]]
+path = "sens-step-csv.cir"
+sha256 = "3c0e6156159094f12d53a3f00dd0fa10bedb47e03468b58c3c630861df6b659e"
+
+[[files]]
+path = "sens-step-gnuplot.cir"
+sha256 = "5f251cdf06f3625047bf7fcb38df9d235b4024ce894f72e449ce6926ee4c69ec"
+
+[[files]]
+path = "sens-step-prn.cir"
+sha256 = "c5584dae34da7abdc97178424e1d6584acdf7ce37cf70a0c0be8e10095e677ba"
+
+[[files]]
+path = "sens-step-tecplot.cir"
+sha256 = "eb4f5174ae8921aa0d52ff7f1dd7f2affb89ceee6f0d0a8abccf3674a7fd91d4"
+
+[[files]]
+path = "sens-stepnum-col.cir"
+sha256 = "e9e44f73ede88c1d3cf64f28829e503013ca7e1cc8864d1d608c124e07c9e5f7"
+
+[[files]]
+path = "sens-tecplot.cir"
+sha256 = "c083fc3efeb3dad8196d9ab0b94306bce57d0353fd60c1e42c7af7a78356c399"
+
+[[files]]
+path = "sens-tranadjoint-csv.cir"
+sha256 = "60282c5d6f911e2c58a40db6504758a5ed59f66a21c4f968257bc1d966f1b313"
+
+[[files]]
+path = "sens-tranadjoint-noindex.cir"
+sha256 = "942ad7666a4ba148a88bf3254e2ec3f3fa8a39da9cface416154d2dca11de4c2"
+
+[[files]]
+path = "sens-tranadjoint-overrideRaw.cir"
+sha256 = "6e1c6bdd835cb9f1bbcdc235c3a7c0a0852f3e5471d2e3421a91834096415d35"
+
+[[files]]
+path = "sens-tranadjoint-overrideRaw_ref.cir"
+sha256 = "a6224ee43e3a0e18d1295688cd4936df895d03055b8ced9ea33ad555ecc6b22e"
+
+[[files]]
+path = "sens-tranadjoint-unsupportedProbeFormat.cir"
+sha256 = "f9a5d6ec608588193763464283a711771b7602099fd6f24d054a5503ec986f7f"
+
+[[files]]
+path = "sens-tranadjoint-unsupportedRawFormat.cir"
+sha256 = "94b7ed00d71ad54da5df9165d20217dddacf6e91e17ba6f2983ee32b1f02371c"

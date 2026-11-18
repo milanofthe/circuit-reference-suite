@@ -1,0 +1,30 @@
+id = "xyce_mpde_rc"
+title = "Xyce_Regression MPDE/RC"
+family = "test"
+netlists = [
+    { file = "RC.cir", dialect = "xyce" },
+    { file = "simpleRC-hb.cir", dialect = "xyce" },
+    { file = "simpleRC.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MPDE/RC"
+
+[[files]]
+path = "RC.cir"
+sha256 = "50ef5c70e54198a3cc6145f523a5f63a9dd921d8f088da714a6111afcef33a9c"
+
+[[files]]
+path = "simpleRC-hb.cir"
+sha256 = "a1e8f28412b41b27d7e90636c3de7bf2c45b2cf6302fe40a6064fceaf6817628"
+
+[[files]]
+path = "simpleRC.cir"
+sha256 = "422bfa144573d2a296369428757545fd27784850b0d79cc3d80f859687fb66b9"

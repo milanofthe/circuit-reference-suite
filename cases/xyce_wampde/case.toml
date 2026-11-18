@@ -1,0 +1,40 @@
+id = "xyce_wampde"
+title = "Xyce_Regression WAMPDE"
+family = "test"
+netlists = [
+    { file = "Todd_test.cir", dialect = "xyce" },
+    { file = "invert1.cir", dialect = "xyce" },
+    { file = "invert1_WAMPDE.cir", dialect = "xyce" },
+    { file = "sandler24.cir", dialect = "xyce" },
+    { file = "sandler24_WAMPDE.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/WAMPDE"
+
+[[files]]
+path = "Todd_test.cir"
+sha256 = "29a516c506522038022e475bda4820df64a47986e88db4c98ebe3f681c1c8285"
+
+[[files]]
+path = "invert1.cir"
+sha256 = "b0a39341f40d68203f0fee5203ec9917af3697117c4de6137ff5fd829b8eb42f"
+
+[[files]]
+path = "invert1_WAMPDE.cir"
+sha256 = "e1a1ad50d58b8bd8c7430495d71a1b00941e957ed74b6dfd04029b8bbd4589b7"
+
+[[files]]
+path = "sandler24.cir"
+sha256 = "0a2ec33c800b6a606fad76acce93dab58731838b1ea2740eb3b6a2a76a27b452"
+
+[[files]]
+path = "sandler24_WAMPDE.cir"
+sha256 = "5fb875893f860e138004fdeac0290a7cc6db0886219e9b25775cca1cb51ac63d"

@@ -1,0 +1,75 @@
+id = "xyce_measure_cont"
+title = "Xyce_Regression MEASURE_CONT"
+family = "test"
+netlists = [
+    { file = "DerivTest1DC.cir", dialect = "xyce" },
+    { file = "DerivTestAC.cir", dialect = "xyce" },
+    { file = "DerivTestNoise.cir", dialect = "xyce" },
+    { file = "DerivTestTran.cir", dialect = "xyce" },
+    { file = "FindWhenTest1DC.cir", dialect = "xyce" },
+    { file = "FindWhenTestAC.cir", dialect = "xyce" },
+    { file = "FindWhenTestNoise.cir", dialect = "xyce" },
+    { file = "FindWhenTestTran.cir", dialect = "xyce" },
+    { file = "TrigTargTest1DC.cir", dialect = "xyce" },
+    { file = "TrigTargTestAC.cir", dialect = "xyce" },
+    { file = "TrigTargTestNoise.cir", dialect = "xyce" },
+    { file = "TrigTargTestTran.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_CONT"
+
+[[files]]
+path = "DerivTest1DC.cir"
+sha256 = "db0d2c76fb13c80e746e24fd432bd23cb9ccc39019f25c3d41d3e88a3aa55f74"
+
+[[files]]
+path = "DerivTestAC.cir"
+sha256 = "c932ef1e39f82b5a7b03d5ac30e24a7ce5efbe66d1583a27fcd51d1911a5956a"
+
+[[files]]
+path = "DerivTestNoise.cir"
+sha256 = "17d428d863b72bb1bd811b0a051acbe4a0361cf9b1fe08140b7f2b77ad7f62ee"
+
+[[files]]
+path = "DerivTestTran.cir"
+sha256 = "b2be3f2a3971388d7ecb7e5eabdc303dc560f93234164d64a36984056dfc6d74"
+
+[[files]]
+path = "FindWhenTest1DC.cir"
+sha256 = "e7713afb824efb7524bc494b12086b8f6915385d7236c4ab41bb996f97146836"
+
+[[files]]
+path = "FindWhenTestAC.cir"
+sha256 = "ba1bd1b33934b4a3e9ee5b647ba43417c0e9cd02dae83eafd75ee60e94bef706"
+
+[[files]]
+path = "FindWhenTestNoise.cir"
+sha256 = "79c8635a6f6d3f47d07760ed2b8422030c6edfc0bac70a49600278f34ec24a50"
+
+[[files]]
+path = "FindWhenTestTran.cir"
+sha256 = "9fadd63221d0bfaa5e5d7f2a4aca841c6e7442749720b2bddbfa23e6953fef0c"
+
+[[files]]
+path = "TrigTargTest1DC.cir"
+sha256 = "a17e0229be47155a0c5d49af38c72c1c62fd828fecde1b2af521420eb5355512"
+
+[[files]]
+path = "TrigTargTestAC.cir"
+sha256 = "afeb2ea4ffd381b7679ac109cb59eed2ce87335f0bfe48c6cd2f14a08c970dde"
+
+[[files]]
+path = "TrigTargTestNoise.cir"
+sha256 = "486369e49b32a20f46b7cd2b75cec72710a25c9d9f8a7a6b7a2896b2188e578f"
+
+[[files]]
+path = "TrigTargTestTran.cir"
+sha256 = "6851a9f600c4445e95d5149009bfc22a8400cdb9151d83027fe510bf88e9ff30"

@@ -1,0 +1,30 @@
+id = "xyce_mos6"
+title = "Xyce_Regression MOS6"
+family = "test"
+netlists = [
+    { file = "invert_mos6.cir", dialect = "xyce" },
+    { file = "nmos6_dc.cir", dialect = "xyce" },
+    { file = "pmos6_dc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MOS6"
+
+[[files]]
+path = "invert_mos6.cir"
+sha256 = "eb06558814d7a40c6d92e5e7f0d92848a295833ce53f980fa123538047969e99"
+
+[[files]]
+path = "nmos6_dc.cir"
+sha256 = "bbca6b19fae1ffd8cebe1e5103d73546ca7e33b886353c64f927ddab96163d47"
+
+[[files]]
+path = "pmos6_dc.cir"
+sha256 = "47622e3837585a8b4585917134b9c0bacb4cc98a8fddbbc59976296e47c85185"

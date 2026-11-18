@@ -1,0 +1,56 @@
+id = "ngspice_paranoia_parallel_examples_optran"
+title = "ngspice paranoia_parallel/examples/optran"
+family = "test"
+netlists = [
+    { file = "F5TurboV2thermal-ic-out.cir", dialect = "ngspice" },
+    { file = "TLV6001-test.cir", dialect = "ngspice" },
+    { file = "TLV9002-test.cir", dialect = "ngspice" },
+    { file = "simple-tran.cir", dialect = "ngspice" },
+]
+notes = """
+Left out:
+- `F5TurboV2thermal-ic-in.cir`: needs c:\\Spice64\\bin\\F5interm.inc, an absolute path outside the source
+- `HiPass3opamps_optran.cir`: needs opa1611.lib, not in the source tree
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "paranoia_parallel/examples/optran"
+
+[[files]]
+path = "F5TurboV2thermal-ic-out.cir"
+sha256 = "1e9626a3060f74d7b1a1ad57cfef54b800aea3f63a9dac2a37d8acad608239fe"
+
+[[files]]
+path = "F5models.lib"
+sha256 = "c8f531c3fbbf8ad99c7e43ef6e762e608ce564d92884d1c5b48fd3d99ddc2111"
+
+[[files]]
+path = "TLV6001-test.cir"
+sha256 = "c8a84a5f44758d2ed081bd5896592a0a9d265ae476fb36f839fb99c940a7ac55"
+
+[[files]]
+path = "TLV9002-test.cir"
+sha256 = "71a1263765bee6cd11546d7bba70acf2eeb7d9d42925ce776152b892588af0b0"
+
+[[files]]
+path = "models/TLV6001.LIB"
+sha256 = "68e616a077752c88f279e494092cb9d6625eda2a0b13ebdd5e81916c4bfa9b2c"
+
+[[files]]
+path = "models/TLV9002.lib"
+sha256 = "8d482d075395aa6d995354f6289f819120ba66126c88c23fb1113b8c14a81b18"
+
+[[files]]
+path = "script-icout.txt"
+sha256 = "2020057acc2d25f68872b4131484c8f5311f86d30bbfcbf9790d36386b41efb1"
+
+[[files]]
+path = "simple-tran.cir"
+sha256 = "90efbf783eba8c30260e4992f809d6e7d71e940c2cdfdb590e54c01f58f9942f"

@@ -1,0 +1,35 @@
+id = "xyce_xdm_hspice_initial_condition"
+title = "Xyce_Regression XDM/HSPICE/INITIAL_CONDITION"
+family = "test"
+netlists = [
+    { file = "ic_global_node_warning.cir", dialect = "xyce" },
+    { file = "ic_global_node_warning.cir.hspice", dialect = "hspice" },
+    { file = "ic_in_subckt.cir", dialect = "xyce" },
+    { file = "ic_in_subckt.cir.hspice", dialect = "hspice" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/HSPICE/INITIAL_CONDITION"
+
+[[files]]
+path = "ic_global_node_warning.cir"
+sha256 = "9f89267e1e1868e0386ffcfe281cd65d7415a05b2f953aeaf9e6604036ca6ed3"
+
+[[files]]
+path = "ic_global_node_warning.cir.hspice"
+sha256 = "d8ff13e841407e87d226055f5cf2e36558655ca503c7444557db2e4a17efb041"
+
+[[files]]
+path = "ic_in_subckt.cir"
+sha256 = "a911689f36b1b58da95886d4fefd16f8b38e0d447dae364c76d92992909d56ee"
+
+[[files]]
+path = "ic_in_subckt.cir.hspice"
+sha256 = "96ee0b9633861fdc61f3bcc0564b9885cd2e921b7176ea07bfe2eb48a8ef4e5d"

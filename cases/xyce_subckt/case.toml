@@ -1,0 +1,236 @@
+id = "xyce_subckt"
+title = "Xyce_Regression SUBCKT"
+family = "test"
+netlists = [
+    { file = "subckt_a0.cir", dialect = "xyce" },
+    { file = "subckt_a1.cir", dialect = "xyce" },
+    { file = "subckt_a1_dup.cir", dialect = "xyce" },
+    { file = "subckt_a2.cir", dialect = "xyce" },
+    { file = "subckt_a2_dup.cir", dialect = "xyce" },
+    { file = "subckt_a3.cir", dialect = "xyce" },
+    { file = "subckt_a3_hs.cir", dialect = "xyce" },
+    { file = "subckt_a4.cir", dialect = "xyce" },
+    { file = "subckt_a4_ends_warning.cir", dialect = "xyce" },
+    { file = "subckt_a4_hs.cir", dialect = "xyce" },
+    { file = "subckt_a5.cir", dialect = "xyce" },
+    { file = "subckt_a5_hs.cir", dialect = "xyce" },
+    { file = "subckt_b0.cir", dialect = "xyce" },
+    { file = "subckt_b1.cir", dialect = "xyce" },
+    { file = "subckt_b2.cir", dialect = "xyce" },
+    { file = "subckt_b2_hs.cir", dialect = "xyce" },
+    { file = "subckt_b3.cir", dialect = "xyce" },
+    { file = "subckt_b3_hs.cir", dialect = "xyce" },
+    { file = "subckt_e0.cir", dialect = "xyce" },
+    { file = "subckt_e1.cir", dialect = "xyce" },
+    { file = "subckt_e2.cir", dialect = "xyce" },
+    { file = "subckt_e3.cir", dialect = "xyce" },
+    { file = "subckt_f0.cir", dialect = "xyce" },
+    { file = "subckt_f1.cir", dialect = "xyce" },
+    { file = "subckt_g0.cir", dialect = "xyce" },
+    { file = "subckt_g1.cir", dialect = "xyce" },
+    { file = "subckt_h0.cir", dialect = "xyce" },
+    { file = "subckt_h0_hs.cir", dialect = "xyce" },
+    { file = "subckt_i1.cir", dialect = "xyce" },
+    { file = "subckt_i2.cir", dialect = "xyce" },
+    { file = "subckt_i3.cir", dialect = "xyce" },
+    { file = "subckt_i3_hs.cir", dialect = "xyce" },
+    { file = "subckt_j1.cir", dialect = "xyce" },
+    { file = "subckt_j1_dup.cir", dialect = "xyce" },
+    { file = "subckt_j1_hs.cir", dialect = "xyce" },
+    { file = "subckt_k0.cir", dialect = "xyce" },
+    { file = "subckt_k1.cir", dialect = "xyce" },
+    { file = "subckt_k2.cir", dialect = "xyce" },
+    { file = "subckt_k3.cir", dialect = "xyce" },
+    { file = "subckt_l0.cir", dialect = "xyce" },
+    { file = "subckt_l1.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/SUBCKT"
+
+[[files]]
+path = "dfor.lib"
+sha256 = "d6876332668cf3450ca9010f6ef19e4d722d3957e5e7a7ac01cd6e3942c2473d"
+
+[[files]]
+path = "parameters.lib"
+sha256 = "3ae40a8453ae2e93ebd23b6d49278f4ff6129eed3ee457d7b8c5f9114202e966"
+
+[[files]]
+path = "scdfor.lib"
+sha256 = "8f11226ba2ae7d0d8a11b60e03548cafa83bdfc52cc9c8464083cc27498e0a60"
+
+[[files]]
+path = "subckt_a0.cir"
+sha256 = "c850223e654c3b3308b1488ed1fd2634d054f57a00b3c8a49c516ece1645de44"
+
+[[files]]
+path = "subckt_a1.cir"
+sha256 = "fe6401bd69bf4aec5d090ff8925fdfeb47e5aaecc13126903030b4879c13f9c1"
+
+[[files]]
+path = "subckt_a1_dup.cir"
+sha256 = "b3143cc959eafdd3f24d22ede792187a04a27b660e6be8594bf55033b1073066"
+
+[[files]]
+path = "subckt_a2.cir"
+sha256 = "ee9e508ab66268608f9bfef66462d2145d4a49ba5ff7da8bbb0c06198c5c6152"
+
+[[files]]
+path = "subckt_a2_dup.cir"
+sha256 = "d9f3e51440e6be03b5e2b05195cbfda9bceb76fffc46126baa5e096fc2ad16f9"
+
+[[files]]
+path = "subckt_a3.cir"
+sha256 = "9060008494593401dc6db069f7aa2f1a667952c324ce95630db77add38f4dca9"
+
+[[files]]
+path = "subckt_a3_hs.cir"
+sha256 = "10de1a847b6ddf690f4cc84ad54e9d73a8384cdeeaaa4791308d5e2bf6fb6abf"
+
+[[files]]
+path = "subckt_a4.cir"
+sha256 = "6657792967265d09da4fa08f1873ce3f5c638d2233761fc715e37e6e28c19f79"
+
+[[files]]
+path = "subckt_a4_ends_warning.cir"
+sha256 = "2aa20bcff5e0a39e5ad4ad1d8897e36eb61c72fe55a195fb857153a81f6f7d44"
+
+[[files]]
+path = "subckt_a4_hs.cir"
+sha256 = "fac9c333efe7888c68b3776d9ff6af8b2ae4e0b99751258eea9cb7535b236d8e"
+
+[[files]]
+path = "subckt_a5.cir"
+sha256 = "f049c0b71249a0730bfd2925107c311812419e3f806462218028942e0d0e0836"
+
+[[files]]
+path = "subckt_a5_hs.cir"
+sha256 = "529b0841bab7a7c6ae95c48abeb50cb4dda438715d4748cd81cd80ee786c34c2"
+
+[[files]]
+path = "subckt_b0.cir"
+sha256 = "e2870465fa9516e63780e25bee1c4089fd710dbd77fa202d0a191b6a8bbeaa7c"
+
+[[files]]
+path = "subckt_b1.cir"
+sha256 = "6e273d4d41c2fa142cda45f491a433871d5cfe1241be44495430cfc227780173"
+
+[[files]]
+path = "subckt_b2.cir"
+sha256 = "046882e655217a4cee71b292cb29e385f27d7a84270a2598f9db261889f505f7"
+
+[[files]]
+path = "subckt_b2_hs.cir"
+sha256 = "f312f27e30f4845b59bbdb3c5993203d8f438d164765c13f9b98d52c3a4931b7"
+
+[[files]]
+path = "subckt_b3.cir"
+sha256 = "b97e839718205d6f0727d2d864e73a3c9890dd199ea830fa9dbeeabad8c4d862"
+
+[[files]]
+path = "subckt_b3_hs.cir"
+sha256 = "0f37b126dcf0c200363a1f317c578cdf0c7a86657351f3ff2eda8455b6dfaf01"
+
+[[files]]
+path = "subckt_e0.cir"
+sha256 = "6f6f8f9974a368b10309e9e7a3d4ce14eb09002751fe1400eff2fe4ddccf879f"
+
+[[files]]
+path = "subckt_e1.cir"
+sha256 = "3280f70f9f166395c1e7edbeb8d53b1d0a753d0ef3f19deef5759df8a553ca4f"
+
+[[files]]
+path = "subckt_e2.cir"
+sha256 = "478509517cb13e0dbbeb49770abd09fb1d9cfe492078b5c741c8fa53a3c951c1"
+
+[[files]]
+path = "subckt_e3.cir"
+sha256 = "b7417e603ca7c31652cbec59dd05fb31c8c5e71c561cfc398f13514075830d8c"
+
+[[files]]
+path = "subckt_f0.cir"
+sha256 = "f3b7228676f1803596132f60d19b9c529dba3fd5f37302ffc56752416250820d"
+
+[[files]]
+path = "subckt_f1.cir"
+sha256 = "09badefa9651edd7ad79a84f5697f618ebfb0347560108d04dabba41f6e80f45"
+
+[[files]]
+path = "subckt_g0.cir"
+sha256 = "fb005634aa1fa55209a81ebcc8d76f6ab809551843acacd23584eff69eaefdaf"
+
+[[files]]
+path = "subckt_g1.cir"
+sha256 = "84a13506041979526d952d43dd07c1db89c6d40283f6d748f2c21b3a37e478f1"
+
+[[files]]
+path = "subckt_h0.cir"
+sha256 = "3220fe3977f8a3d0ff620fb827686c5a95674f06aa36b7e0bf8af0ac3b28c3a2"
+
+[[files]]
+path = "subckt_h0_hs.cir"
+sha256 = "b9aea413036e5db5cd9c3f4bfd7f94801e49bc537282b34f94ec32ca988cf2f6"
+
+[[files]]
+path = "subckt_i1.cir"
+sha256 = "8611496e9a09774f060217a5e1fea08d2559bd016742cbed4f0eaecdef5f033f"
+
+[[files]]
+path = "subckt_i2.cir"
+sha256 = "0695e9df7bc4d4f68bdad9f523d84c3541d8fbef30f45290dd90411fb1670811"
+
+[[files]]
+path = "subckt_i3.cir"
+sha256 = "1bebe2cf26aee80dff044eeb318478fb132668edd897c00412b43ec50108c82c"
+
+[[files]]
+path = "subckt_i3_hs.cir"
+sha256 = "4464b87a605fc36d0fb992f1a37622320bd8277009aa2df2537eebf353b5d690"
+
+[[files]]
+path = "subckt_j1.cir"
+sha256 = "afd87a247d8bd58c9a66ce98be42a7e4bc7a0bcee12c4b426260783fa2a09f97"
+
+[[files]]
+path = "subckt_j1_dup.cir"
+sha256 = "0e796c056c4eef506c2ce5b87848fac863df2f91236cf6eefe5482f5e25ae248"
+
+[[files]]
+path = "subckt_j1_hs.cir"
+sha256 = "9a45a20e714d0b68d4d336bd548a66021744547ff841c92c8b204eabdfdab1e8"
+
+[[files]]
+path = "subckt_k0.cir"
+sha256 = "c211f8f3ab9d429e53a152acb41d7f954c3c9e850c349c49c9c8d1429e4cfaac"
+
+[[files]]
+path = "subckt_k1.cir"
+sha256 = "f25d0db2077fb5c68595f26bc362c6cbc6ed985a854635d4168584cda24677ec"
+
+[[files]]
+path = "subckt_k2.cir"
+sha256 = "ecd87ccf909f14e580170a28f755e12610826c644877813d5fad5d44a11f185d"
+
+[[files]]
+path = "subckt_k3.cir"
+sha256 = "39cd8115dea8c98a3ef63024a28614f4ee1a7a67cbfff6bd7ecb7ad45581060b"
+
+[[files]]
+path = "subckt_l0.cir"
+sha256 = "f8f915bc27a161efdf087df427cd79417e6b01a687425a1f2b9e51f1cfc4ba78"
+
+[[files]]
+path = "subckt_l1.cir"
+sha256 = "abdc25ba42fa5b06d622a08c8039729eca8e442c2d026fbc32048c83009d6dc8"
+
+[[files]]
+path = "usage.lib"
+sha256 = "b2dfbe2726007163760c713c03f7565769ab2a72d916068ac7df48ea0acf18e7"

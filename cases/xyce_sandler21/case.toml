@@ -1,0 +1,20 @@
+id = "xyce_sandler21"
+title = "Xyce_Regression SANDLER21"
+family = "test"
+netlists = [
+    { file = "sandler21.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/SANDLER21"
+
+[[files]]
+path = "sandler21.cir"
+sha256 = "04f2b149b6ee09744b69b4bc9173e980fdf5eee7064738ca47334a5953a4fabb"

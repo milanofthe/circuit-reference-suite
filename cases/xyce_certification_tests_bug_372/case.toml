@@ -1,0 +1,85 @@
+id = "xyce_certification_tests_bug_372"
+title = "Xyce_Regression Certification_Tests/BUG_372"
+family = "test"
+netlists = [
+    { file = "invert1-sim.cir", dialect = "xyce" },
+    { file = "invert1.cir", dialect = "xyce" },
+    { file = "invert2-sim.cir", dialect = "xyce" },
+    { file = "invert2.cir", dialect = "xyce" },
+    { file = "invert3-sim.cir", dialect = "xyce" },
+    { file = "invert3.cir", dialect = "xyce" },
+    { file = "invert6-sim.cir", dialect = "xyce" },
+    { file = "invert6.cir", dialect = "xyce" },
+    { file = "invert_b3soi-sim.cir", dialect = "xyce" },
+    { file = "invert_b3soi.cir", dialect = "xyce" },
+    { file = "invert_bsim3-sim.cir", dialect = "xyce" },
+    { file = "invert_bsim3.cir", dialect = "xyce" },
+    { file = "invert_bsim4-sim.cir", dialect = "xyce" },
+    { file = "invert_bsim4.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_372"
+
+[[files]]
+path = "invert1-sim.cir"
+sha256 = "0210d74d502c9084594b83bd66eafe760c0c01f155963b631744da6d74ddad64"
+
+[[files]]
+path = "invert1.cir"
+sha256 = "f3593fcfdb325c2bae6230c4a26eb170d3da9cbda58ed555779c57c53b284f7d"
+
+[[files]]
+path = "invert2-sim.cir"
+sha256 = "ec8e9d8c6fef6f1c3c88e67721a4d892ae7802fb58275b5ab86b31977536d199"
+
+[[files]]
+path = "invert2.cir"
+sha256 = "743f9929ad0aeff7ec56707f8f9899158720da39935f44550555b8a1a99350ae"
+
+[[files]]
+path = "invert3-sim.cir"
+sha256 = "afc1d50a80f0e6e63d3bf15f42c357fccba96733c55168447e9216fb85530422"
+
+[[files]]
+path = "invert3.cir"
+sha256 = "30281ab916000c3ce76b4525c51ea7076eda38ed70d274016efd6232690c42ba"
+
+[[files]]
+path = "invert6-sim.cir"
+sha256 = "680a248a389bd87011fe179a19bb450e587e4914289593e348d64a8f25dc57c9"
+
+[[files]]
+path = "invert6.cir"
+sha256 = "dcc28c094a64526ca7c2a8d2d8bf33ebe57786b8c50439d51213712c07b33e1c"
+
+[[files]]
+path = "invert_b3soi-sim.cir"
+sha256 = "cae0d5c9953ed3b5989af9356507becd2816fb6d737b40fc8a860c0c406446dd"
+
+[[files]]
+path = "invert_b3soi.cir"
+sha256 = "3b0a3ed9c34a651e65469c5cf37876625e00797a8ab89c6da92ab2ce9166b02f"
+
+[[files]]
+path = "invert_bsim3-sim.cir"
+sha256 = "49d082d1fe93e8aecd4a9b86b88d2376b5084d92929dce9a3db3c5eaa5831992"
+
+[[files]]
+path = "invert_bsim3.cir"
+sha256 = "66ab668eacacf9b5c5b14453ddb8524418346990a2d4c65388e81973ff420eeb"
+
+[[files]]
+path = "invert_bsim4-sim.cir"
+sha256 = "7f3617e63d297f3a1695f9494b6d8cf4eaa0d38fc12e9d23b292ca67dc2b84e1"
+
+[[files]]
+path = "invert_bsim4.cir"
+sha256 = "15cc01d3463521a9d249c7817ae3123ff16b3378b48fa3ec81c2d9def6027358"

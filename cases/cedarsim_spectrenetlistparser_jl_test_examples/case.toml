@@ -1,0 +1,28 @@
+id = "cedarsim_spectrenetlistparser_jl_test_examples"
+title = "CedarSim.jl SpectreNetlistParser.jl/test/examples"
+family = "test"
+netlists = [
+    { file = "subckt_example.scs", dialect = "spectre" },
+]
+notes = """
+CedarSim is available under CERN-OHL-S-2.0 or, for this package, MIT; MIT applies here.
+
+Left out:
+- `inv1x2.scs`: needs libs/spectre/7nm_TT.scs, not in the source tree
+- `inverter_ring.scs`: needs q35d4h5.modsp, not in the source tree
+"""
+
+[source]
+name = "CedarSim.jl"
+url = "https://github.com/CedarEDA/CedarSim.jl"
+license = "MIT"
+authors = [
+    "JuliaHub",
+    "CedarSim contributors",
+]
+commit = "5d5ea8d4e7e17fd06f775eddd11f15a4731a4210"
+root = "SpectreNetlistParser.jl/test/examples"
+
+[[files]]
+path = "subckt_example.scs"
+sha256 = "c6015e93cc605562a4bae7fbf8977bff7ea757100a73ce4103f07a4b7a58d52d"

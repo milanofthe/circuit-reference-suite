@@ -1,0 +1,20 @@
+id = "xyce_ylin_isc_td"
+title = "Xyce_Regression YLIN/ISC_TD"
+family = "test"
+netlists = [
+    { file = "opAmpWithTDIsc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/YLIN/ISC_TD"
+
+[[files]]
+path = "opAmpWithTDIsc.cir"
+sha256 = "a166368558761189a356171aaaf654cddde36526a25cf38220de1659171040d5"

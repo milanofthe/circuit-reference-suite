@@ -1,0 +1,43 @@
+id = "analoggym_song_dacfc_pin_3"
+title = "AnalogGym amplifier Song_DACFC_Pin_3, SKY130"
+family = "opamp"
+netlists = [
+    { file = "amp_spice_testbench/Song_DACFC_Pin_3_ACDC.cir", dialect = "ngspice" },
+    { file = "amp_spice_testbench/Song_DACFC_Pin_3_Tran.cir", dialect = "ngspice" },
+]
+notes = """
+AnalogGym's amplifier testbenches are written for `HoiLee_AFFC_Pin_3`; their comments
+say to replace the circuit name for any other amplifier. The ACDC deck measures gain,
+bandwidth, phase margin, CMRR and PSRR, the transient deck slew and settling.
+"""
+
+[source]
+name = "AnalogGym"
+url = "https://github.com/CODA-Team/AnalogGym"
+commit = "0a9d1390ade361e2b4a2d33181e22367edbb8afc"
+license = "BSD-3-Clause"
+authors = [
+    "CODA Team",
+]
+root = "AnalogGym/Amplifier"
+
+[[files]]
+path = "spice_netlist/Song_DACFC_Pin_3"
+sha256 = "6bf8535244e8b74276541ec403a6432b8709c581973e03182f1c084479da582a"
+
+[[files]]
+path = "design_variables/Song_DACFC_Pin_3"
+sha256 = "01405ecd4b0d5a76acf9eaaff12482902481179bbca1a8c4341bc8659bae34c7"
+
+[[files]]
+path = "amp_spice_testbench/Song_DACFC_Pin_3_ACDC.cir"
+provenance = "modified"
+how = "`amp_spice_testbench/TB_Amplifier_ACDC.cir` with `HoiLee_AFFC_Pin_3` replaced by `Song_DACFC_Pin_3`, as its comments instruct"
+
+[[files]]
+path = "amp_spice_testbench/Song_DACFC_Pin_3_Tran.cir"
+provenance = "modified"
+how = "`amp_spice_testbench/TB_Amplifier_Tran.cir` with `HoiLee_AFFC_Pin_3` replaced by `Song_DACFC_Pin_3`, as its comments instruct"
+
+[resolve]
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice"
