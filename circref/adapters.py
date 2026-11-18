@@ -13,36 +13,66 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from .circuit import Circuit
+from .circuit import OPTIONS, Circuit
 from .entry import ROOT
 
 # Lines of a deck that state what to compute rather than the circuit. With their
 # continuation lines, and every control block, they are not part of the body.
 NOT_BODY = {"op", "tran", "ac", "dc", "noise", "tf", "pz", "sens", "disto", "four", "hb",
             "print", "plot", "probe", "save", "width", "meas", "measure", "step", "sampling",
-            "option", "options", "opt", "opts", "temp", "end", "control", "endc", "lin"}
+            "temp", "end", "control", "endc", "lin"}
+OPTION_LINES = {"option", "options", "opt", "opts"}
+# An option the circuit states itself; every other option stays with the body, since
+# it can change what the circuit means (Xyce's model_binning, ngspice's scale).
+_MANAGED = re.compile(r"\b(?:" + "|".join(OPTIONS) + r")\s*=\s*[^\s,]+", re.I)
+
+
+def _statements(lines: list[str]):
+    """(first line, continuation lines) per statement; comment and blank lines between a
+    statement and its continuation belong to neither and come out on their own."""
+    current: list[str] = []
+    for line in lines:
+        s = line.strip()
+        if s.startswith("+") and current:
+            current.append(line)
+            continue
+        if not s or s[0] in "*;":
+            if current:
+                current.append(line)                    # kept in order, judged with it
+            else:
+                yield [line]
+            continue
+        if current:
+            yield current
+        current = [line]
+    if current:
+        yield current
 
 
 def body(text: str) -> list[str]:
-    """The circuit of a SPICE deck: its lines without analysis, output, option and
-    control lines. The title line stays first."""
+    """The circuit of a SPICE deck: its lines without analysis, output and control lines,
+    and without the options the circuit states itself. The title line stays first."""
     lines = text.splitlines()
     out = lines[:1]
-    skip = control = False
-    for line in lines[1:]:
-        s = line.strip().lower()
+    control = False
+    for st in _statements(lines[1:]):
+        s = st[0].strip().lower()
         if control:
-            control = s != ".endc"
-            continue
-        if s.startswith("+"):
-            if not skip:
-                out.append(line)
+            control = not any(l.strip().lower().startswith(".endc") for l in st)
             continue
         head = s.split()[0][1:] if s.startswith(".") and len(s) > 1 else ""
-        control = head == "control"
-        skip = control or head in NOT_BODY
-        if not skip:
-            out.append(line)
+        if head == "control":
+            control = not any(l.strip().lower().startswith(".endc") for l in st[1:])
+            continue
+        if head in NOT_BODY:
+            continue
+        if head in OPTION_LINES:
+            st = [_MANAGED.sub("", l) for l in st]
+            words = " ".join(l.strip().lstrip("+") for l in st if l.strip()[:1] not in "*;").split()[1:]
+            if not [w for w in words if w.lower() not in ("device", "timeint", "nonlin", "parser")
+                    or "=" in w]:
+                continue
+        out += st
     return out
 
 
@@ -56,6 +86,7 @@ class Adapter:
     dialects: tuple[str, ...]           # bodies read as written
     osdi: bool = False                  # loads Verilog-A compiled to OSDI
     timing: str | None = None           # the simulator's own analysis time, seconds
+    error: str | None = None            # a line that marks a failed run despite exit 0
 
     def version(self) -> str:
         f = Path(os.environ.get("SIMS", "/cache/circsims")) / self.name / "current" / "version"
@@ -137,7 +168,8 @@ class Sane(Ngspice):
 
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
-            timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
+            timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
+            error=r"^Error\b.*|^.*Simulation interrupted.*|^.*no simulations run.*"),
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
     Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
 )}

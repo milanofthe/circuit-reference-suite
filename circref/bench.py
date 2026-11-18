@@ -40,7 +40,7 @@ def _limits(memory: int):
 
 
 def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compiler,
-                timeout: float, memory_gb: float) -> list[dict]:
+                timeout: float, memory_gb: float, env: dict) -> list[dict]:
     base = {"circuit": c.name, "simulator": ad.name, "version": ad.version()}
     nl = next((c.variants[d] for d in ad.dialects if d in c.variants), c.source)
     if nl.dialect not in ad.dialects:
@@ -65,7 +65,7 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             t0 = time.monotonic()
             proc = subprocess.Popen(ad.argv(deck.name, rawfile.name), cwd=netlist.parent,
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                    stdin=subprocess.DEVNULL, start_new_session=True,
+                                    stdin=subprocess.DEVNULL, start_new_session=True, env=env,
                                     preexec_fn=_limits(int(memory_gb * 2**30)))
             try:
                 output, _ = proc.communicate(timeout=timeout)
@@ -84,8 +84,10 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
                 rec |= {"status": "timeout"}
             elif rc < 0:
                 rec |= {"status": "killed", "exit": rc}
-            elif rc or not rawfile.exists():
-                rec |= {"status": "failed", "exit": rc, "message": tail(log)}
+            elif rc or not rawfile.exists() or (ad.error and re.search(ad.error, log, re.M)):
+                bad = ad.error and re.search(ad.error, log, re.M)
+                rec |= {"status": "failed", "exit": rc,
+                        "message": bad.group(0).strip() if bad else tail(log)}
             else:
                 try:
                     plots = raw.read(rawfile.read_bytes())
@@ -108,16 +110,22 @@ def select(patterns: list[str]) -> list[Circuit]:
 
 
 def run(circuits: list[Circuit], adapters: list[Adapter], out: Path, workers: int,
-        timeout: float, memory_gb: float, shard: tuple[int, int] = (0, 1)) -> int:
+        timeout: float, memory_gb: float, threads: int = 1,
+        shard: tuple[int, int] = (0, 1)) -> int:
+    """``threads``: what every simulator may use per run (OpenMP, SANE), the same for all."""
+    env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "SANE_THREADS",
+                                                  "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")}
     jobs = [(c, a) for c in circuits for a in adapters]
     jobs = jobs[shard[0]::shard[1]]
     out.mkdir(parents=True, exist_ok=True)
+    (out / "run.json").write_text(json.dumps({"threads": threads, "timeout_s": timeout,
+                                              "memory_gb": memory_gb, "workers": workers}))
     work = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
     compiler = Compiler(out / "osdi")
     counts: dict[str, int] = {}
     t0 = time.monotonic()
     with open(out / "results.jsonl", "a") as results, ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(run_circuit, c, a, work, out, compiler, timeout, memory_gb): (c, a)
+        futures = {pool.submit(run_circuit, c, a, work, out, compiler, timeout, memory_gb, env): (c, a)
                    for c, a in jobs}
         for done, f in enumerate(as_completed(futures), 1):
             c, a = futures[f]
