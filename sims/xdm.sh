@@ -57,6 +57,8 @@ else
 fi
 
 printf '%s (github Xyce/XDM %s)\n' "$REPORTED" "$TAG" > "$PREFIX/version"
-# the Boost.Python runtime the modules were linked against
-BOOST_PY=$(ldd "$PREFIX"/xdm_bundle/SpiritCommon.so | awk '/libboost_python/ { print $3 }')
-finish xdm "$VERSION" "$PREFIX" python3 "$(dpkg -S "$(readlink -f "$BOOST_PY")" | cut -d: -f1)"
+# the packages of the shared libraries the modules were linked against (Boost.Python,
+# libpython, libstdc++)
+PKGS=$(ldd "$PREFIX"/xdm_bundle/*.so | awk '$2 == "=>" && $3 ~ /^\// { print $3 }' | sort -u |
+    xargs readlink -f | xargs dpkg -S | cut -d: -f1 | sort -u)
+finish xdm "$VERSION" "$PREFIX" python3 $PKGS
