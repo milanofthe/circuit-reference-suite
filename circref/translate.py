@@ -298,13 +298,16 @@ class Statement:
     def words(self) -> list[str]:
         return [t.text.lower() for t in self.tokens]
 
-    def render(self, marks: tuple[str, ...]) -> str:
+    def render(self, target: str) -> str:
+        """The statement as the target reads it: unchanged text where nothing differs."""
         if self.title:
             return self.raw
         if not self.tokens:
-            return _comment_lines(self.raw, marks)
-        parts = [(_comments(t.ws, marks), t.text) for t in self.tokens]
-        tail = _comments(self.tail, marks)
+            return _comment_lines(self.raw, target)
+        parts = [(_comments(t.ws, target), t.text) for t in self.tokens]
+        if target == "xyce":                    # an indented line is a comment in Xyce
+            parts[0] = ("", parts[0][1])
+        tail = _comments(self.tail, target)
         if not self.edited and tail == self.tail and all(w == t.ws for (w, _), t in
                                                           zip(parts, self.tokens)):
             return self.raw
@@ -323,39 +326,43 @@ def _comment_at(s: str, i: int, marks: tuple[str, ...]) -> bool:
     return "//" in marks and s.startswith("//", i)
 
 
-def _comments(ws: str, marks: tuple[str, ...]) -> str:
-    """The comments in the text between two tokens written with the target's marks: an
-    inline comment with its first mark, a comment line with ``*``."""
-    if all(m in marks for m in ALL_MARKS):
-        return ws
+def comment_line(line: str, dialect: str) -> bool:
+    """Whether a dialect reads a whole line as a comment: ``*`` or an inline mark first,
+    and in Xyce a line that starts with a blank and does not continue a statement
+    (Reference Guide 2.1.39.1, SpiceSeparatedFieldTool)."""
+    s = line.lstrip(" \t")
+    if not s.strip():
+        return False
+    if s[0] == "*" or _comment_at(s, 0, COMMENT[dialect]):
+        return True
+    return dialect == "xyce" and line[:1] == " " and s[0] != "+"
+
+
+def _comments(ws: str, target: str) -> str:
+    """The comments in the text between two tokens as the target reads them: an inline
+    comment with a mark of the target, a comment line between continuation lines with ``*``."""
+    marks = COMMENT[target]
     lines = ws.split("\n")
     for k, line in enumerate(lines):
         s = line.lstrip(" \t")
-        if k and s[:1] == "*":
+        if k and s[:1] not in ("", "+"):
+            if not comment_line(line, target):
+                lines[k] = "*" + s
             continue
-        if k and s[:1] not in ("", "+"):                # a comment line between continuations
-            lines[k] = line[:len(line) - len(s)] + "*" + s
-            continue
-        m = re.search(r"\$|//", line)
-        if m and ";" not in line[:m.start()]:
+        m = re.search(r"\$|//|;", line)
+        if m and line[m.start():m.end()] not in marks:
             lines[k] = line[:m.start()] + marks[0] + line[m.end():]
     return "\n".join(lines)
 
 
-def _comment_lines(text: str, marks: tuple[str, ...]) -> str:
-    """Comment and blank lines with the target's marks: ``*`` for a whole line."""
-    if all(m in marks for m in ALL_MARKS):
-        return text
+def _comment_lines(text: str, target: str) -> str:
+    """Comment and blank lines, each a comment line of the target as well."""
     out = []
     for line in text.splitlines(keepends=True):
-        s = line.lstrip(" \t")
-        if s[:1] not in ("", "*", "\n", "\r"):
-            line = line[:len(line) - len(s)] + "*" + s
+        if line.strip() and not comment_line(line, target):
+            line = "*" + line.lstrip(" \t")
         out.append(line)
     return "".join(out)
-
-
-ALL_MARKS = {m for marks in COMMENT.values() for m in marks}
 
 
 def _close(s: str, i: int) -> int:
@@ -374,7 +381,8 @@ def _close(s: str, i: int) -> int:
 _BREAK = set(" \t\r\n(){},='\"")
 
 
-def tokenize(raw: str, marks: tuple[str, ...]) -> tuple[list[Token], str]:
+def tokenize(raw: str, dialect: str) -> tuple[list[Token], str]:
+    marks = COMMENT[dialect]
     toks: list[Token] = []
     i, n, ws = 0, len(raw), 0
     line_start = True
@@ -392,9 +400,10 @@ def tokenize(raw: str, marks: tuple[str, ...]) -> tuple[list[Token], str]:
             if toks and j < n and raw[j] == "+":
                 i = j + 1
                 continue
-            if toks and j < n and (raw[j] == "*" or _comment_at(raw, j, marks)):
-                k = raw.find("\n", j)
-                i = n if k < 0 else k
+            end = raw.find("\n", i)
+            end = n if end < 0 else end
+            if toks and comment_line(raw[i:end], dialect):
+                i = end
                 continue
             i = j
             continue
@@ -424,7 +433,7 @@ def tokenize(raw: str, marks: tuple[str, ...]) -> tuple[list[Token], str]:
 def parse(text: str, dialect: str, deck: bool) -> list[Statement]:
     """Statements of a file; comment and blank lines are statements without tokens. The
     first line of a deck is its title."""
-    marks = COMMENT[FAMILY[dialect]]
+    dialect = FAMILY[dialect]
     lines = text.splitlines(keepends=True)
     out: list[Statement] = []
     if deck and lines:
@@ -436,7 +445,7 @@ def parse(text: str, dialect: str, deck: bool) -> list[Statement]:
         if s.startswith("+") and current is not None:
             current.raw += pending + line
             pending = ""
-        elif not s.strip() or s[0] == "*" or _comment_at(s, 0, marks):
+        elif not s.strip() or comment_line(line, dialect):
             pending += line
         else:
             if current is not None:
@@ -450,8 +459,9 @@ def parse(text: str, dialect: str, deck: bool) -> list[Statement]:
     if pending:
         out.append(Statement(pending))
     for st in out[1 if deck else 0:]:
-        if st.raw.lstrip() and st.raw.lstrip()[0] != "*" and not _comment_at(st.raw.lstrip(), 0, marks):
-            st.tokens, st.tail = tokenize(st.raw, marks)
+        first = next((l for l in st.raw.splitlines() if l.strip()), "")
+        if first and not comment_line(first, dialect):
+            st.tokens, st.tail = tokenize(st.raw, dialect)
     return out
 
 
@@ -784,7 +794,7 @@ class Translator:
         group = [k.split()[0] for k in kept if " " in k]
         line = ".options " + (group[0] + " " if group else "") + \
             " ".join(k.split()[-1] for k in kept) + "\n"
-        toks, tail = tokenize(line, COMMENT[self.tgt])
+        toks, tail = tokenize(line, self.tgt)
         return [Statement(line, toks, tail)]
 
     def declare(self, st: Statement, sub: str) -> None:
@@ -1007,7 +1017,7 @@ class Translator:
         out = []
         for n, (a, b) in enumerate(combinations(names, 2)):
             raw = f"{name}{'' if n == 0 else f'_{n}'} {a} {b} {coupling}\n"
-            toks, tail = tokenize(raw, COMMENT[self.tgt])
+            toks, tail = tokenize(raw, self.tgt)
             out.append(Statement(raw, toks, tail))
         return out
 
@@ -1188,12 +1198,11 @@ def translate_text(texts: dict[Path, tuple[str, bool]], source: str, target: str
     parsed = {p: parse(t, source, deck) for p, (t, deck) in texts.items()}
     for sts in parsed.values():
         tr.read_context(sts)
-    marks = COMMENT[tr.tgt]
     out = {}
     for p, sts in parsed.items():
         tr.file = p
         new = tr.statements(sts, texts[p][1])
-        out[p] = "".join(st.render(marks) for st in new)
+        out[p] = "".join(st.render(tr.tgt) for st in new)
     return out
 
 
