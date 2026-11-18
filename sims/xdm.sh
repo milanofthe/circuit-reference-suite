@@ -3,7 +3,8 @@
 #   falllow run --machine milan-box-01 --cache circsims --cpu 6 --memory 12G -- bash sims/xdm.sh
 #
 # Built without PyInstaller: the install holds the Python bundle (xdm_bdl.py and its Boost.Python
-# modules) and bin/xdm_bdl runs it with the system python3, the one Boost.Python is built for.
+# modules) and bin/xdm_bdl runs it with the system /usr/bin/python3, the one Boost.Python is
+# built for (the job image puts another python3 first on PATH).
 #
 #   xdm_bdl -s hspice -d <outdir> --auto netlist.sp    ->  <outdir>/netlist.sp (Xyce syntax)
 #
@@ -23,13 +24,14 @@ mkdir -p "$SRC/xdm"
 curl -fsSL "https://github.com/Xyce/XDM/archive/refs/tags/$TAG.tar.gz" | tar xz -C "$SRC/xdm" --strip-components=1
 
 PREFIX=$(prefix_for xdm "$VERSION")
-cmake -S "$SRC/xdm" -B "$SRC/xdm-build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$PREFIX"
+cmake -S "$SRC/xdm" -B "$SRC/xdm-build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+    -DPython3_EXECUTABLE=/usr/bin/python3
 cmake --build "$SRC/xdm-build" -j "$JOBS"
 cmake --install "$SRC/xdm-build"
 
 cat > "$PREFIX/bin/xdm_bdl" <<'EOF'
 #!/bin/sh
-exec python3 "$(dirname "$(readlink -f "$0")")/../xdm_bundle/xdm_bdl.py" "$@"
+exec /usr/bin/python3 "$(dirname "$(readlink -f "$0")")/../xdm_bundle/xdm_bdl.py" "$@"
 EOF
 chmod +x "$PREFIX/bin/xdm_bdl"
 
