@@ -50,6 +50,7 @@ tail -n 5 xdm.log; log "xdm_bdl diodeClipper.cir.hspice: exit $rc"; [ "$rc" = 0 
 ls -l out
 XYCE=$SIMS/xyce/current/bin/Xyce
 if [ -x "$XYCE" ]; then
+    apt_install $(cat "$SIMS/xyce/current/runtime-apt")
     rc=0; (cd out && "$XYCE" diodeClipper.cir.hspice > xyce.log 2>&1) || rc=$?
     tail -n 5 out/xyce.log; log "Xyce on the translation: exit $rc"; [ "$rc" = 0 ]
 else
