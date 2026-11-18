@@ -1,0 +1,15 @@
+title = "ahkab tests/downscaling_cm"
+case = "ahkab_tests_downscaling_cm"
+source = "downscaling_cm.ckt"
+outputs = [
+    "i(v1)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "i1", start = 0.0, stop = 0.0001, step = 2e-06 },
+]

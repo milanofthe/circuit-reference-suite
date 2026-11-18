@@ -1,0 +1,6 @@
+title = "ahkab tests/sffmckt"
+case = "ahkab_tests_sffmckt"
+source = "sffmckt.ckt"
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.0005, uic = true },
+]

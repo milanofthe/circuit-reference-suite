@@ -1,0 +1,6 @@
+title = "ahkab tests/rout"
+case = "ahkab_tests_rout"
+source = "rout.ckt"
+analysis = [
+    { type = "op" },
+]

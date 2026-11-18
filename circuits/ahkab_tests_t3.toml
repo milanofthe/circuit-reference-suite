@@ -1,0 +1,6 @@
+title = "ahkab tests/t3"
+case = "ahkab_tests_t3"
+source = "t3.ckt"
+analysis = [
+    { type = "op" },
+]

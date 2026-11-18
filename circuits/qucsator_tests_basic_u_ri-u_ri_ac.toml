@@ -1,0 +1,9 @@
+title = "qucsator tests/basic/u=ri"
+case = "qucsator_tests_basic_u_ri"
+source = "u=ri@ac.net"
+outputs = [
+    "i(current)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 1000000000.0 },
+]

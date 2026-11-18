@@ -40,7 +40,7 @@ ldd "$wr" || true
 
 out=$("$PREFIX/bin/wrspice" -v 2>&1 < /dev/null || true)
 echo "$out"
-{ head -n 2 <<< "$out" | tr '\n' ' '; echo; echo "source: $URL tag $TAG"; } > "$PREFIX/version"
+{ grep -m1 -o "WRspice.*release [^,]*" <<< "$out" || echo "WRspice $VERSION"; echo "source: $URL tag $TAG"; } > "$PREFIX/version"
 finish wrspice "$VERSION" "$PREFIX" libgsl27 libncurses6 libtiff6 libjpeg8
 
 export PATH="$PREFIX/bin:$PATH"

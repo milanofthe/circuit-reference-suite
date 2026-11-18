@@ -60,7 +60,11 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             rec = base | {"analysis": k, "type": a["type"]}
             deck = netlist.with_name(f"{netlist.stem}.circref{k}.cir")
             rawfile = deck.with_suffix(".raw")
-            deck.write_bytes(ad.deck(c, text, a, rawfile.name).encode("latin-1"))
+            try:
+                deck.write_bytes(ad.deck(c, text, a, rawfile.name).encode("latin-1"))
+            except NotImplementedError as e:            # an analysis the simulator lacks
+                records.append(rec | {"status": "unsupported", "message": str(e)})
+                continue
             t0 = time.monotonic()
             proc = subprocess.Popen(ad.argv(deck.name, rawfile.name), cwd=netlist.parent,
                                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
