@@ -62,6 +62,11 @@ class XyceToNgspice(unittest.TestCase):
         out = tr(".preprocess replaceground true\nR1 gnd 0 1\n", "xyce", "ngspice")
         self.assertEqual(out, "R1 0 0 1\n")
 
+    def test_undeclared_subcircuit_parameter(self):
+        out = tr(".param w=2\n.subckt s a b\nR1 a b {w*l}\n.ends\nX1 1 0 s w=1 l=3\n",
+                 "xyce", "ngspice")
+        self.assertIn(".subckt s a b l=0 w={w}\n", out)
+
     def test_hierarchical_node(self):
         self.assertEqual(tr(".ic v(x1:n1)=1\n", "xyce", "ngspice"), ".ic v(x1.n1)=1\n")
 

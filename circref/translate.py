@@ -455,7 +455,11 @@ def _split_args(s: str) -> list[str]:
 class Context:
     """What the files of a body define, read before any is translated."""
     params: set[str] = field(default_factory=set)
+    globals: set[str] = field(default_factory=set)                  # .param at the top level
     models: dict[str, tuple[str, str | None]] = field(default_factory=dict)   # name -> type, level
+    declared: dict[str, set[str]] = field(default_factory=dict)     # subckt -> its parameters
+    inner: dict[str, set[str]] = field(default_factory=dict)        # subckt -> .param inside
+    passed: dict[str, set[str]] = field(default_factory=dict)       # subckt -> X line parameters
     replace_ground: bool = False                # Xyce .preprocess replaceground true
     hspice_math: bool = False                   # Xyce .options parser hspice_ext with math
 
@@ -472,14 +476,27 @@ class Translator:
     # ----------------------------------------------------------------- context
 
     def read_context(self, statements: list[Statement]) -> None:
+        sub = None
         for st in statements:
             w = st.words()
             if not w:
                 continue
+            assigned = {w[i - 1] for i in range(2, len(w)) if w[i] == "="}
             if w[0] in (".param", ".global_param"):
-                self.ctx.params |= {w[i - 1] for i in range(2, len(w)) if w[i] == "="}
-            elif w[0] in (".subckt", ".macro"):
-                self.ctx.params |= {w[i - 1] for i in range(2, len(w)) if w[i] == "="}
+                self.ctx.params |= assigned
+                if sub is None or w[0] == ".global_param":
+                    self.ctx.globals |= assigned
+                else:
+                    self.ctx.inner.setdefault(sub, set()).update(assigned)
+            elif w[0] in (".subckt", ".macro") and len(w) > 1:
+                sub = w[1]
+                self.ctx.params |= assigned
+                self.ctx.declared[sub] = assigned
+            elif w[0] in (".ends", ".eom"):
+                sub = None
+            elif w[0][0] == "x":
+                name, _ = _subckt_of(w)
+                self.ctx.passed.setdefault(name, set()).update(assigned - {"m"})
             elif w[0] == ".model" and len(w) > 2:
                 level = next((w[i + 2] for i in range(3, len(w) - 2)
                               if w[i] == "level" and w[i + 1] == "="), None)
@@ -668,6 +685,8 @@ class Translator:
                     raise Untranslatable(f"ground name {st.tokens[i].text} as a subcircuit port")
                 if new != st.tokens[i].text:
                     st.set(i, new)
+            if self.pair == ("xyce", "ngspice"):
+                self.declare(st, w[1])
         elif head in (".ic", ".nodeset", ".dcvolt"):
             self.braces(st)
             for i, t in enumerate(st.tokens):
@@ -685,6 +704,18 @@ class Translator:
         else:
             raise Untranslatable(f"dot command {head}")
         return [st]
+
+    def declare(self, st: Statement, sub: str) -> None:
+        """Xyce takes X line parameters a subcircuit does not declare (Reference Guide
+        2.1.37), and they override a .param inside it; ngspice takes declared ones only.
+        A parameter only passed is declared, with the global of its name as default."""
+        extra = self.ctx.passed.get(sub, set()) - self.ctx.declared.get(sub, set())
+        if extra & self.ctx.inner.get(sub, set()):
+            raise Untranslatable("X line parameter overrides a .param inside the subcircuit")
+        for name in sorted(extra):
+            default = "{" + name + "}" if name in self.ctx.globals else "0"
+            st.tokens += [Token(" ", name), Token("", "="), Token("", default)]
+            st.edited = True
 
     def param(self, st: Statement, head: str) -> None:
         """Parameters and functions: their right-hand sides as expressions, written with
@@ -833,9 +864,7 @@ class Translator:
         w = st.words()
         letter = w[0][0]
         if letter == "x":
-            last = next((i for i in range(1, len(w)) if w[i] in ("params:", "params") or
-                         i + 1 < len(w) and w[i + 1] == "="), len(w)) - 1
-            span = range(1, last)
+            span = range(1, _subckt_of(w)[1])
         elif letter in "qm":                    # terminals up to the model
             model = next((i for i in range(1 + NODES[letter], len(w)) if self.model(w[i])),
                          1 + NODES[letter])
@@ -941,6 +970,14 @@ class Translator:
                 st.tokens[i + 2:end] = [Token(st.tokens[i + 2].ws, "{" + text + "}")]
                 st.edited = True
                 return
+
+
+def _subckt_of(w: list[str]) -> tuple[str, int]:
+    """The subcircuit an X line instantiates and its index: the last name before the
+    parameters."""
+    k = next((i for i in range(1, len(w)) if w[i] in ("params:", "params") or
+              i + 1 < len(w) and w[i + 1] == "="), len(w)) - 1
+    return w[k], k
 
 
 def _add_param(st: Statement, name: str, value: str) -> None:
