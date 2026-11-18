@@ -13,14 +13,19 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from .circuit import OPTIONS, Circuit
+import numpy as np
+
+from . import raw as rawfile
+from .circuit import OPTIONS, Circuit, number
 from .entry import ROOT
 
 # Lines of a deck that state what to compute rather than the circuit. With their
 # continuation lines, and every control block, they are not part of the body.
 NOT_BODY = {"op", "tran", "ac", "dc", "noise", "tf", "pz", "sens", "disto", "four", "hb",
             "print", "plot", "probe", "save", "width", "meas", "measure", "step", "sampling",
-            "temp", "end", "control", "endc", "lin"}
+            "temp", "end", "control", "endc", "lin",
+            # gnucap commands that report rather than define
+            "list", "status", "stat", "tr", "portdump", "fanout", "alarm", "mark", "unmark"}
 OPTION_LINES = {"option", "options", "opt", "opts"}
 # An option the circuit states itself; every other option stays with the body, since
 # it can change what the circuit means (Xyce's model_binning, ngspice's scale).
@@ -119,8 +124,12 @@ class Adapter:
     def argv(self, deck: str, raw: str) -> list[str]:
         raise NotImplementedError
 
-    def deck(self, circuit: Circuit, text: str, analysis: dict) -> str:
+    def deck(self, circuit: Circuit, text: str, analysis: dict, raw: str) -> str:
         return "\n".join(body(text) + self.control(circuit) + [self.analysis(analysis), ".end", ""])
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        """The signals the run wrote to ``path``; the first is the axis."""
+        return rawfile.read(path.read_bytes())[-1].signals
 
 
 class Ngspice(Adapter):
@@ -156,6 +165,55 @@ class Xyce(Adapter):
         return ["Xyce", "-r", raw, deck]
 
 
+class Gnucap(Adapter):
+    """gnucap prints tables: ``.print`` names the columns, the analysis redirects them into
+    the file the run reads (``> file``); the first column is the axis, at op the
+    temperature."""
+
+    def deck(self, c: Circuit, text: str, a: dict, raw: str) -> str:
+        opts = " ".join(f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items())
+        t = a["type"]
+        signals = c.outputs or ["v(nodes)"]
+        if t == "ac":                                   # complex: real and imaginary parts
+            signals = [f"{s[0]}{part}{s[1:]}" for s in signals for part in "ri"]
+        if t == "op":
+            line = ".op"
+        elif t == "dc":
+            if len(a["sweep"]) != 1:
+                raise NotImplementedError("gnucap: nested dc sweeps")
+            sw = a["sweep"][0]
+            line = f".dc {sw['source']} {_num(sw['start'])} {_num(sw['stop'])} {_num(sw['step'])}"
+        elif t == "ac":
+            step = (f"{_num((a['stop'] - a['start']) / max(a['points'] - 1, 1))}" if a["sweep"] == "lin"
+                    else f"{a['sweep']} {a['points']}")
+            line = f".ac {_num(a['start'])} {_num(a['stop'])} {step}"
+        else:
+            line = f".tran {_num(a.get('start', 0))} {_num(a['stop'])} {_num(a['step'])}"
+            if a.get("uic"):
+                line += " uic"
+        return "\n".join(body(text) + [f".options numdgt=12 {opts}", ".width out=100000",
+                                        f".print {t} " + " ".join(signals), f"{line} > {raw}",
+                                        ".end", ""])
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        lines = [l.split() for l in path.read_text(encoding="latin-1").splitlines() if l.strip()]
+        head = next(i for i, l in enumerate(lines) if l[0].startswith("#"))
+        names = [lines[head][0][1:] or "axis"] + lines[head][1:]
+        table = np.array([[number(x) for x in l] for l in lines[head + 1:]])
+        cols = {n.lower(): table[:, k] for k, n in enumerate(names)}
+        out: dict[str, np.ndarray] = {}
+        for n, col in cols.items():
+            m = re.fullmatch(r"([vi])([ri])\((.+)\)", n)
+            if m and m[2] == "r":
+                out[f"{m[1]}({m[3]})"] = col + 1j * cols.get(f"{m[1]}i({m[3]})", 0)
+            elif not m:
+                out[{"time": "time", "freq": "frequency"}.get(n, n)] = col
+        return out
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["gnucap", "--acs", "-b", deck]
+
+
 class Sane(Ngspice):
     """SANE reads the ngspice deck's body; sims/sane/run.py the rest."""
 
@@ -171,5 +229,6 @@ ADAPTERS = {a.name: a for a in (
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
             error=r"^Error\b.*|^.*Simulation interrupted.*|^.*no simulations run.*"),
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
+    Gnucap("gnucap", ("gnucap",), error=r"^\s*\^ ?.*|.*can't find.*|.*bad file.*"),
     Sane("sane", ("ngspice", "spice3"), timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)"),
 )}
