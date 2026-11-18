@@ -120,6 +120,10 @@ class NgspiceToXyce(unittest.TestCase):
     def test_value_form(self):
         self.assertEqual(tr("E1 1 0 vol='v(2)*2'\n", "ngspice", "xyce"), "E1 1 0 value={v(2)*2}\n")
 
+    def test_params_keyword(self):
+        self.assertEqual(tr(".subckt inv a b w=1u\n.ends\nx1 1 2 inv w=2u\n", "ngspice", "xyce"),
+                         ".subckt inv a b params: w=1u\n.ends\nx1 1 2 inv params: w=2u\n")
+
     def test_gnd_is_ground(self):
         self.assertEqual(tr("R1 gnd 1 1\n", "ngspice", "xyce"), "R1 0 1 1\n")
 

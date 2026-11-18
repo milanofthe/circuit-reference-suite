@@ -708,6 +708,8 @@ class Translator:
             self.behavioral(st)
         if letter in NODES or letter == "x":
             self.nodes(st)
+        if letter == "x" and self.tgt == "xyce":
+            _params_keyword(st)
         if letter in "dqmjz" and self.tgt == "xyce" and letter in "dqjz" and "m" in st.words():
             raise Untranslatable(f"multiplier m on a {letter.upper()} device (Xyce: R, L, C, M only)")
         return [st]
@@ -739,6 +741,8 @@ class Translator:
                     st.set(i, new)
             if self.pair == ("xyce", "ngspice"):
                 self.declare(st, w[1])
+            if self.tgt == "xyce":
+                _params_keyword(st)
         elif head in (".ic", ".nodeset", ".dcvolt"):
             self.braces(st)
             for i, t in enumerate(st.tokens):
@@ -1122,6 +1126,19 @@ def _subckt_of(w: list[str]) -> tuple[str, int]:
     k = next((i for i in range(1, len(w)) if w[i] in ("params:", "params") or
               i + 1 < len(w) and w[i + 1] == "="), len(w)) - 1
     return w[k], k
+
+
+def _params_keyword(st: Statement) -> None:
+    """PARAMS: before the first parameter of a .subckt or X line, the form the Xyce
+    Reference Guide (2.1.37) gives; ngspice writes the parameters without it."""
+    w = st.words()
+    if "params:" in w:
+        return
+    k = next((i for i in range(2, len(w) - 1) if w[i + 1] == "="), None)
+    if k is not None:
+        st.tokens.insert(k, Token(st.tokens[k].ws, "params:"))
+        st.tokens[k + 1].ws = st.tokens[k + 1].ws or " "
+        st.edited = True
 
 
 def _add_param(st: Statement, name: str, value: str) -> None:
