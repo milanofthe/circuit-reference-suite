@@ -26,7 +26,7 @@ MPLBACKEND=\${MPLBACKEND:-Agg} exec "$PREFIX/venv/bin/python" -m ahkab "\$@"
 EOF
 chmod +x "$PREFIX/bin/ahkab"
 
-out=$("$PREFIX/bin/ahkab" --version 2>&1 || true)
+out=$("$PREFIX/bin/ahkab" --version 2>/dev/null || true)
 echo "$out"
 { echo "ahkab $UPSTREAM ($(head -n 1 <<< "$out")) commit $COMMIT, Python $PYTHON, ${PINS[*]}"
   echo "source: $GH/commit/$COMMIT"; } > "$PREFIX/version"

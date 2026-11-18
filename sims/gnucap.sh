@@ -35,7 +35,7 @@ ls "$PREFIX/lib" "$PREFIX/lib/gnucap-tests"
 
 out=$(gnucap --acs -b /dev/null 2>&1 || true)
 echo "$out"
-{ grep -i 'version' <<< "$out" | tr '\n' ' '; echo; echo "source: $URL tag $VERSION"; } > "$PREFIX/version"
+{ grep 'version: ' <<< "$out" | tr '\n' ' '; echo; echo "source: $URL tag $VERSION"; } > "$PREFIX/version"
 finish gnucap "$VERSION" "$PREFIX" libreadline8t64
 
 smoke gnucap_tests gnucap --acs -b basic.ckt
