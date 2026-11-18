@@ -24,8 +24,10 @@ mkdir -p "$SRC/xdm"
 curl -fsSL "https://github.com/Xyce/XDM/archive/refs/tags/$TAG.tar.gz" | tar xz -C "$SRC/xdm" --strip-components=1
 
 PREFIX=$(prefix_for xdm "$VERSION")
+# the expression parser misses <sstream> and the global isnan of <math.h>, which newer
+# libstdc++ headers no longer pull in: force-included instead of patching the source
 cmake -S "$SRC/xdm" -B "$SRC/xdm-build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$PREFIX" \
-    -DPython3_EXECUTABLE=/usr/bin/python3
+    -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_CXX_FLAGS="-include sstream -include math.h"
 cmake --build "$SRC/xdm-build" -j "$JOBS"
 cmake --install "$SRC/xdm-build"
 
