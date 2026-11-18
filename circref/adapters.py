@@ -7,6 +7,7 @@ turns into signals.
 """
 from __future__ import annotations
 
+import math
 import os
 import re
 import sys
@@ -224,6 +225,16 @@ class Sane(Ngspice):
         return [sys.executable, str(ROOT / "sims" / "sane" / "run.py"), deck, raw]
 
 
+def total_points(a: dict) -> tuple[int, float]:
+    """An ac sweep by its total number of points, both ends included, for simulators that
+    state it so; a dec or oct sweep ends on its last point at or below ``stop``."""
+    if a["sweep"] == "lin":
+        return a["points"], a["stop"]
+    base = 10.0 if a["sweep"] == "dec" else 2.0
+    n = math.floor(a["points"] * math.log(a["stop"] / a["start"]) / math.log(base) + 1e-9) + 1
+    return n, a["start"] * base ** ((n - 1) / a["points"])
+
+
 def _drop(lines: list[str], heads: set[str]) -> list[str]:
     """Lines without the dot statements in ``heads``."""
     return [l for l in lines if not (l.strip()[:1] == "." and
@@ -339,6 +350,76 @@ class Vacask(Adapter):
         return {re.sub(r"^v\((.+)\.flow\(br\)\)$", r"i(\1)", n): v for n, v in signals.items()}
 
 
+class Qucsator(Adapter):
+    """qucsator: the netlist without its analysis lines; a dc sweep sweeps the value of the
+    source, made a variable; the dataset holds every node voltage and probe current."""
+
+    METHODS = {"trap": "Trapezoidal", "gear": "Gear"}
+
+    def deck(self, c: Circuit, text: str, a: dict, raw: str) -> str:
+        lines = [l for l in text.splitlines() if not l.strip().startswith(".")]
+        o = c.options
+        opts = "".join(f' {q}="{_num(o[k])}"' for k, q in (("temp", "Temp"), ("reltol", "reltol"),
+                                                           ("abstol", "abstol"), ("vntol", "vntol"))
+                       if k in o)
+        t = a["type"]
+        if t in ("op", "dc"):
+            lines.append(f".DC:DC1{opts}")
+            sim = "DC1"
+            for k, s in enumerate(a.get("sweep", [])):              # the first sweep is inner
+                var = f"circref_{s['source']}"
+                pattern = re.compile(rf'^(\s*[VI]dc:{re.escape(s["source"])}\s.*?\b[UI]=)"[^"]*"', re.I)
+                hit = [i for i, l in enumerate(lines) if pattern.match(l)]
+                if not hit:
+                    raise NotImplementedError(f"qucsator: no dc source {s['source']}")
+                lines[hit[0]] = pattern.sub(rf'\1"{var}"', lines[hit[0]])
+                points = round((s["stop"] - s["start"]) / s["step"]) + 1
+                lines.append(f'.SW:SW{k + 1} Sim="{sim}" Type="lin" Param="{var}" '
+                             f'Start="{_num(s["start"])}" Stop="{_num(s["stop"])}" Points="{points}"')
+                sim = f"SW{k + 1}"
+        elif t == "ac":
+            n, stop = total_points(a)
+            kind = "lin" if a["sweep"] == "lin" else "log"
+            lines.append(f'.AC:AC1 Type="{kind}" Start="{_num(a["start"])}" Stop="{_num(stop)}" '
+                         f'Points="{n}" Noise="no"')
+        else:
+            start = a.get("start", 0.0)
+            n = round((a["stop"] - start) / a["step"]) + 1
+            line = (f'.TR:TR1 Type="lin" Start="{_num(start)}" Stop="{_num(a["stop"])}" Points="{n}"'
+                    f'{opts}')
+            if o.get("method") in self.METHODS:
+                line += f' IntegrationMethod="{self.METHODS[o["method"]]}"'
+            if a.get("max_step"):
+                line += f' MaxStep="{_num(a["max_step"])}"'
+            lines.append(line + (' initialDC="no"' if a.get("uic") else ""))
+        return "\n".join(lines + [""])
+
+    def argv(self, deck: str, raw: str) -> list[str]:
+        return ["qucsator_rf", "-i", deck, "-o", raw]
+
+    def read(self, path: Path, analysis: dict) -> dict[str, np.ndarray]:
+        """The dataset: ``<indep name n>`` and ``<dep name indep...>`` blocks of one value
+        per line, complex as ``+1e0-j2e0``; ``n.V``/``n.Vt``/``n.v`` is a node voltage,
+        ``x.I``/``x.It``/``x.i`` the current of a probe or source."""
+        blocks: dict[str, np.ndarray] = {}
+        axis = None
+        for kind, name, values in re.findall(r"<(indep|dep) (\S+)[^>]*>\n(.*?)</(?:indep|dep)>",
+                                             path.read_text(encoding="latin-1"), re.S):
+            data = np.array([complex(v.replace("j", "") + "j") if "j" in v else float(v)
+                             for v in values.split()])
+            if kind == "indep" and len(data) > 1 and axis is None:
+                axis = name
+            blocks[name] = data
+        out: dict[str, np.ndarray] = {}
+        if axis:
+            out[{"time": "time", "acfrequency": "frequency"}.get(axis, "sweep")] = blocks[axis]
+        for name, data in blocks.items():
+            m = re.fullmatch(r"(.+)\.(V|Vt|v|I|It|i)", name)
+            if m:
+                out[f"{m[2][0].lower()}({m[1].lower()})"] = data
+        return out
+
+
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
@@ -349,4 +430,5 @@ ADAPTERS = {a.name: a for a in (
     Wrspice("wrspice", ("wrspice", "spice3"), error=r"^.*Simulation aborted.*|^Error\b.*"),
     Josim("josim", ("josim",)),
     Vacask("vacask", ("vacask",), osdi=True),
+    Qucsator("qucsator", ("qucsator",)),
 )}
