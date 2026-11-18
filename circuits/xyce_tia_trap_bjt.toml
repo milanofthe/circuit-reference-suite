@@ -11,4 +11,4 @@ analysis = [
 
 [options]
 gmin = 0.0
-method = "7"
+method = "trap"

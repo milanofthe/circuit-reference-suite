@@ -45,6 +45,9 @@ SOURCE_PREFERENCE = SPICE_ORDER + ("gnucap", "vacask", "spectre", "qucsator", "a
                                    "cedarsim")
 # Options every adapter knows how to state.
 OPTIONS = ("temp", "tnom", "reltol", "abstol", "vntol", "chgtol", "gmin", "method")
+# Integration methods by name, the form every simulator reads; Xyce also numbers them
+# (Reference Guide table 2-5: 7 trapezoid, 8 Gear).
+METHODS = {"7": "trap", "8": "gear"}
 
 
 @dataclass(frozen=True)
@@ -276,7 +279,7 @@ def from_deck(case: Case, nl: Netlist) -> dict:
             for a in args:
                 key, _, value = a.partition("=")
                 if key in OPTIONS and value:
-                    options[key] = value if key == "method" else number(value)
+                    options[key] = METHODS.get(value, value) if key == "method" else number(value)
     if not analyses:
         raise Unsupported("no analysis")
     circuit = {"title": case.title, "case": case.id, "source": nl.file}

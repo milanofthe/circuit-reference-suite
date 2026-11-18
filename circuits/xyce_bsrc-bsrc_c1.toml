@@ -9,5 +9,5 @@ analysis = [
 ]
 
 [options]
-method = "7"
+method = "trap"
 reltol = 0.01

@@ -6,4 +6,4 @@ analysis = [
 ]
 
 [options]
-method = "8"
+method = "gear"
