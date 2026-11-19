@@ -215,7 +215,7 @@ def circuit(out: Path, recs: list[dict], info: dict, ref, path: Path) -> None:
     sig = worst.most_common(1)[0][0] if worst else min(shared, default=None)
     if sig is None:
         return
-    fig, axes = plt.subplots(2 if ref else 1, 1, figsize=(7, 5 if ref else 3), sharex=True, squeeze=False)
+    fig, axes = plt.subplots(2 if ref else 1, 1, figsize=(9.5, 5 if ref else 3), sharex=True, squeeze=False)
     top = axes[0][0]
     a = recs[0]
     part = np.abs if a["type"] == "ac" else np.real
