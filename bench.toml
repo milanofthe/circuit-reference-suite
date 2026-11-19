@@ -32,22 +32,13 @@ converged = 1e-4
 agree = 1e-4
 bands = [1e-6, 1e-4, 1e-2]
 
-# Plot style (circref/plot.py), a theme per GitHub color scheme on a transparent
-# background: ``surface`` is the page the plot lands on (gaps between bar segments).
-# Series by simulator in the order of circref.adapters.ADAPTERS.
-[plot.light]
-series = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
-surface = "#ffffff"
-ink = "#0b0b0b"
-muted = "#52514e"
-grid = "#e1e0d9"
-
-[plot.dark]
+# Plot style (circref/plot.py): transparent, one gray ink that reads on the light and
+# the dark GitHub page (#8b949e: 3.1:1 on #ffffff, 6.2:1 on #0d1117), series steps
+# that hold 3:1 on both; the grays of states that are not a result, 2:1 on both. Series by simulator in the order of circref.adapters.ADAPTERS.
+[plot]
 series = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#0ca30c", "#9085e9", "#e66767"]
-surface = "#0d1117"
-ink = "#f0efec"
-muted = "#c3c2b7"
-grid = "#2c2c2a"
+ink = "#8b949e"
+grid = "#8b949e40"
 
 [plot.status]
 ok = "#0ca30c"
@@ -55,13 +46,13 @@ failed = "#d03b3b"
 error = "#7a1f1f"
 timeout = "#ec835a"
 killed = "#fab219"
-stage-failed = "#a3a29c"
-untranslated = "#c9c8c2"
-unsupported = "#e4e3df"
+stage-failed = "#6e7681"
+untranslated = "#8b949e"
+unsupported = "#adb5bd"
 
 [plot.reference_status]
 agreed = "#2a78d6"
 single = "#86b6ef"
 disagree = "#d03b3b"
-none = "#c9c8c2"
-"no shared signal" = "#e4e3df"
+none = "#8b949e"
+"no shared signal" = "#adb5bd"
