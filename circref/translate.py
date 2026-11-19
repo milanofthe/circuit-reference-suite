@@ -226,6 +226,9 @@ CAPACITOR_MODEL_GEOMETRY = {"spicesharp"}
 GLOBAL_COUPLING = {"spicesharp"}
 #   an X line parameter is evaluated in the subcircuit's scope (EvaluationContext.cs);
 CALLEE_SCOPE = {"spicesharp"}
+#   a .param inside a subcircuit is read after the X line's parameters and overrides them
+#   (SubCircuitGenerator.CreateSubcircuitContent);
+INNER_PARAMS_WIN = {"spicesharp"}
 #   dot commands, library sections and .ends names are compared case-sensitively;
 CASE_SENSITIVE_NAMES = {"spicesharp"}
 #   a V or I takes one expression in braces (VoltageSourceGenerator.cs .Single);
@@ -518,8 +521,9 @@ VARIABLES = {
     ("xyce", "ngspice"): {"temp": "temper", "freq": ("hertz",), "hertz": ("hertz",),
                           "pi": "3.141592653589793", "vt": ""},
     # WRspice device expressions know time, freq and omega (inpptree.c specSigs); what
-    # freq is outside an AC analysis is not stated.
-    ("ngspice", "wrspice"): {"hertz": ""},
+    # freq is outside an AC analysis is not stated. temper aborts the run in a model
+    # parameter, in a .param it is read once with the deck.
+    ("ngspice", "wrspice"): {"hertz": "", "temper": ""},
     # SpiceSharpParser: TEMP in C, TIME, FREQ (a constant 0 in parameters), PI, E
     # (SpiceEvaluationContext.cs).
     ("ngspice", "spicesharp"): {"temper": "temp", "hertz": ""},
@@ -1258,6 +1262,10 @@ class Translator:
                 self.declare(st, w[1])
             if self.pair == ("ngspice", "wrspice"):
                 self.inherit(st, w[1])
+            if self.tgt in INNER_PARAMS_WIN and \
+                    self.ctx.passed.get(w[1], set()) & self.ctx.inner.get(w[1], set()):
+                raise Untranslatable(f"X line parameter that a .param inside the subcircuit sets "
+                                     f"(the X line's in {self.src}, the .param's in {self.tgt})")
             self.params_keyword(st)
         elif head in (".ic", ".nodeset", ".dcvolt"):
             self.braces(st)
@@ -1328,11 +1336,12 @@ class Translator:
 
     def declare(self, st: Statement, sub: str) -> None:
         """Xyce takes X line parameters a subcircuit does not declare (Reference Guide
-        2.1.37), and they override a .param inside it; ngspice takes declared ones only.
-        A parameter only passed is declared, with the global of its name as default."""
-        extra = self.ctx.passed.get(sub, set()) - self.ctx.declared.get(sub, set())
-        if extra & self.ctx.inner.get(sub, set()):
-            raise Untranslatable("X line parameter overrides a .param inside the subcircuit")
+        2.1.37), and they override a .param inside it; ngspice takes declared ones only,
+        and declares every .param inside a subcircuit on its .subckt line, so that an X
+        line overrides it too (inpcom.c inp_add_params_to_subckt). A parameter only
+        passed is declared, with the global of its name as default."""
+        extra = self.ctx.passed.get(sub, set()) - self.ctx.declared.get(sub, set()) - \
+            self.ctx.inner.get(sub, set())
         for name in sorted(extra):
             default = self.quoted(name) if name in self.ctx.globals else "0"
             st.tokens += [Token(" ", name), Token("", "="), Token("", default)]
@@ -1341,11 +1350,7 @@ class Translator:
     def inherit(self, st: Statement, sub: str) -> None:
         """WRspice takes X line parameters a subcircuit does not declare and sees the
         enclosing scope inside it (subexpand.cc): a default that is the parameter of the
-        enclosing scope (the form declare() writes) goes, the name would refer to itself.
-        An X line parameter that a .param inside sets is the X line's in WRspice
-        (spInput.hlp, Subcircuit Parameters), the .param's in ngspice."""
-        if self.ctx.passed.get(sub, set()) & self.ctx.inner.get(sub, set()):
-            raise Untranslatable("X line parameter that a .param inside the subcircuit sets")
+        enclosing scope (the form declare() writes) goes, the name would refer to itself."""
         w = st.words()
         for i in range(len(w) - 3, 1, -1):
             if w[i + 1] == "=" and w[i + 2].strip("{}'") == w[i]:
