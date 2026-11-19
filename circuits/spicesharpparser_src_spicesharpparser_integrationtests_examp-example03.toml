@@ -1,0 +1,12 @@
+title = "SpiceSharpParser src/SpiceSharpParser.IntegrationTests/Examples/Circuits"
+case = "spicesharpparser_src_spicesharpparser_integrationtests_examp"
+source = "example03.cir"
+outputs = [
+    "i(v1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -1.0, stop = 1.0, step = 0.01 },
+]

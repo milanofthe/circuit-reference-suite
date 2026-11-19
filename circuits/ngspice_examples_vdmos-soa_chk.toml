@@ -1,0 +1,21 @@
+title = "ngspice examples/vdmos"
+case = "ngspice_examples_vdmos"
+source = "soa_chk.sp"
+outputs = [
+    "i(vd1)",
+    "i(vd2)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd1", start = -1.0, stop = 210.0, step = 1.0 },
+    { source = "vg1", start = 5.0, stop = 25.0, step = 5.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd2", start = -1.0, stop = 210.0, step = 1.0 },
+    { source = "vg2", start = 5.0, stop = 25.0, step = 5.0 },
+]

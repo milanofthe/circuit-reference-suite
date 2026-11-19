@@ -1,0 +1,12 @@
+title = "Xyce_Regression PSEUDO"
+case = "xyce_pseudo"
+source = "nonpseudo.cir"
+outputs = [
+    "v(vdd)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vhi", start = 5.0, stop = 5.0, step = 1.0 },
+]

@@ -1,0 +1,16 @@
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+case = "xyce_xdm_pspice_other_parsing"
+source = "file_slash_direction.cir"
+outputs = [
+    "v(n01173)",
+    "v(n01179)",
+    "v(n02173)",
+    "v(n02179)",
+    "v(n03173)",
+    "v(n03179)",
+    "v(n04173)",
+    "v(n04179)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

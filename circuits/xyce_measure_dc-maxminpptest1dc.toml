@@ -1,0 +1,13 @@
+title = "Xyce_Regression MEASURE_DC"
+case = "xyce_measure_dc"
+source = "MaxMinPPTest1DC.cir"
+outputs = [
+    "v(1a)",
+    "v(1b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vsrc1", start = 1.0, stop = 5.0, step = 1.0 },
+]

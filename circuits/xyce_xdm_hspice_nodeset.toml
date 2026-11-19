@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/HSPICE/NODESET"
+case = "xyce_xdm_hspice_nodeset"
+source = "nodeset_global_node_warning.cir"
+outputs = [
+    "v(n16554)",
+    "v(n16997)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.01 },
+]
+
+[variants]
+hspice = "nodeset_global_node_warning.cir.hspice"

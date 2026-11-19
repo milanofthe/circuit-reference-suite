@@ -1,0 +1,155 @@
+id = "xyce_power_grid"
+title = "Xyce_Regression POWER_GRID"
+family = "test"
+netlists = [
+    { file = "IEEE_14Bus_GenBusDevice_PQPFormat.cir", dialect = "xyce" },
+    { file = "IEEE_14Bus_PQPFormat.cir", dialect = "xyce" },
+    { file = "IEEE_14Bus_PQRFormat.cir", dialect = "xyce" },
+    { file = "IEEE_14Bus_PSTransformer_PQPFormat.cir", dialect = "xyce" },
+    { file = "IEEE_30Bus_QLimit_PQPFormat.cir", dialect = "xyce" },
+    { file = "IEEE_57Bus_PQPFormat.cir", dialect = "xyce" },
+    { file = "IEEE_57Bus_QLimit_PQPFormat.cir", dialect = "xyce" },
+    { file = "antiWindupLimiter.cir", dialect = "xyce" },
+    { file = "sixBus_OneGen_BusShunts_IVFormat.cir", dialect = "xyce" },
+    { file = "sixBus_OneGen_BusShunts_PQPFormat.cir", dialect = "xyce" },
+    { file = "sixBus_OneGen_BusShunts_PQRFormat.cir", dialect = "xyce" },
+    { file = "threeBus_GenBusDevice_PQPFormat.cir", dialect = "xyce" },
+    { file = "threeBus_TwoBranch_IVFormat.cir", dialect = "xyce" },
+    { file = "threeBus_TwoBranch_PQPFormat.cir", dialect = "xyce" },
+    { file = "threeBus_TwoBranch_PQRFormat.cir", dialect = "xyce" },
+    { file = "twoBus_OneBranch_IVFormat.cir", dialect = "xyce" },
+    { file = "twoBus_OneBranch_PQPFormat.cir", dialect = "xyce" },
+    { file = "twoBus_OneBranch_PQRFormat.cir", dialect = "xyce" },
+    { file = "twoBus_PSTransformer_IVFormat.cir", dialect = "xyce" },
+    { file = "twoBus_PSTransformer_PQRFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TapChangingTransformers_IVFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TapChangingTransformers_PQRFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TransformerBranch_IVFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TransformerBranch_PQPFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TransformerBranch_PQRFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TwoParallelBranch_IVFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TwoParallelBranch_PQPFormat.cir", dialect = "xyce" },
+    { file = "twoBus_TwoParallelBranch_PQRFormat.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/POWER_GRID"
+
+[[files]]
+path = "IEEE_14Bus_GenBusDevice_PQPFormat.cir"
+sha256 = "0d66a392258ab3e8080f3884452201a5d86bf461063da498a7351c5b58d0acbb"
+
+[[files]]
+path = "IEEE_14Bus_PQPFormat.cir"
+sha256 = "fde000bd5152ff2f7aae6bb2b989a9d3cc124e7781c3f769056a1995707b36f5"
+
+[[files]]
+path = "IEEE_14Bus_PQRFormat.cir"
+sha256 = "01bfd65fc77a8acbfad24bca923adcfc64d4ffacc4a8a83c5a2fe0023de74b02"
+
+[[files]]
+path = "IEEE_14Bus_PSTransformer_PQPFormat.cir"
+sha256 = "b1e67985907ff1a83afe80673d07cd3b2b2ae9c0c7fda58c16eed8c198a383a7"
+
+[[files]]
+path = "IEEE_30Bus_QLimit_PQPFormat.cir"
+sha256 = "c6fa929eef538291bbb6fe20d818fe5f4f4f1f90268e3a383ad1c3140fa0114a"
+
+[[files]]
+path = "IEEE_57Bus_PQPFormat.cir"
+sha256 = "3dd9dc56dd0b7cc3268d8c107dbedfeb29f4108181d0e8cc8e2d90eed3dfca24"
+
+[[files]]
+path = "IEEE_57Bus_QLimit_PQPFormat.cir"
+sha256 = "7b69262859d0f27b048501aeef788acfb0677f0366f6370c23583cf07b9e2492"
+
+[[files]]
+path = "antiWindupLimiter.cir"
+sha256 = "3d4edc586f599e1c74d78add4c3407adeb27e2ac0478493ef26cf13e09d6455e"
+
+[[files]]
+path = "sixBus_OneGen_BusShunts_IVFormat.cir"
+sha256 = "31493c01beac049673b86afc4b94b231dfa15264c63632fffc7f19f2de04c8df"
+
+[[files]]
+path = "sixBus_OneGen_BusShunts_PQPFormat.cir"
+sha256 = "9b018cdf5ecb8a540483fa4320cd8025b41f4fa5d3dfef84d4d437c2bd13bd35"
+
+[[files]]
+path = "sixBus_OneGen_BusShunts_PQRFormat.cir"
+sha256 = "5a924c26f28dba735d3807417b1c916ae53e52085e52200177e352f0a9edc2b0"
+
+[[files]]
+path = "threeBus_GenBusDevice_PQPFormat.cir"
+sha256 = "5449b17c7d61e93dbbf81177697c7ef7a2339dc145fa9476c738d812a4d38a0c"
+
+[[files]]
+path = "threeBus_TwoBranch_IVFormat.cir"
+sha256 = "1f89dc5501f0ba4270051e562fa7bc5ed23156de23ea30ee7fa099843ab43572"
+
+[[files]]
+path = "threeBus_TwoBranch_PQPFormat.cir"
+sha256 = "05a16e481b29eaeb7be511405533e362efc653fce2cf504fe7cb46bd450093f3"
+
+[[files]]
+path = "threeBus_TwoBranch_PQRFormat.cir"
+sha256 = "2659fd4a0df1361728362f69c13f0fb0de4cbd6002c89467f6eba4718e0c28ac"
+
+[[files]]
+path = "twoBus_OneBranch_IVFormat.cir"
+sha256 = "ae0fe90e9164b9d8bccb7e1a775052f9452c2a7cb7d4f4ac476c7dde8054a459"
+
+[[files]]
+path = "twoBus_OneBranch_PQPFormat.cir"
+sha256 = "17d8690d7f37a1c4abe8397702e36e767c07c1850544b08daf882fd903f8aa06"
+
+[[files]]
+path = "twoBus_OneBranch_PQRFormat.cir"
+sha256 = "daa5ad2acc4ea9108d39ce47393c35c87762a3231de8a1840eac55845053eb36"
+
+[[files]]
+path = "twoBus_PSTransformer_IVFormat.cir"
+sha256 = "b47fd0ebfa821a9c890db359137187943f8bd5728ff7922cc98396c70f35e1c5"
+
+[[files]]
+path = "twoBus_PSTransformer_PQRFormat.cir"
+sha256 = "89b31f130d4a61e073e8448519d9b6768c73786339608e6c67fd26b3073bc9f1"
+
+[[files]]
+path = "twoBus_TapChangingTransformers_IVFormat.cir"
+sha256 = "d9cd6874e167ce14628d232bb7eb93af8fe10dac854574c1e9d551d22693e61b"
+
+[[files]]
+path = "twoBus_TapChangingTransformers_PQRFormat.cir"
+sha256 = "f3d6e61e3b19efdccdf51fe42c4277d6b7ca0f9efe9a25e2bc2215ab9354209a"
+
+[[files]]
+path = "twoBus_TransformerBranch_IVFormat.cir"
+sha256 = "c9a6b8fde5182924eb61fca869f0b1e637ceb699bcd290141f205f31efbd0d5f"
+
+[[files]]
+path = "twoBus_TransformerBranch_PQPFormat.cir"
+sha256 = "32379b94fde2b825b45eab330e4282ec6716882055b06b74c01c685cbc0567c5"
+
+[[files]]
+path = "twoBus_TransformerBranch_PQRFormat.cir"
+sha256 = "c84fd24ee236e8a85d93f3a493b5cfbd1b73cab9124f0f4006e5089c7d1fa6fa"
+
+[[files]]
+path = "twoBus_TwoParallelBranch_IVFormat.cir"
+sha256 = "a14903331a8098eddc6227b7854f740cd223595b55af5c435adfb050893a1865"
+
+[[files]]
+path = "twoBus_TwoParallelBranch_PQPFormat.cir"
+sha256 = "6d18c6a70e43d564292b8ee7700f5462d1dde9f7455534bcdf130dff0e0ca103"
+
+[[files]]
+path = "twoBus_TwoParallelBranch_PQRFormat.cir"
+sha256 = "2c25b68635f936091ee281a6e6c6ae663586f11e076a1039e034b4a3c85a346a"

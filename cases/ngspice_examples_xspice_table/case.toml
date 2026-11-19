@@ -1,0 +1,112 @@
+id = "ngspice_examples_xspice_table"
+title = "ngspice examples/xspice/table"
+family = "test"
+netlists = [
+    { file = "table-generator-b4-2d.sp", dialect = "ngspice" },
+    { file = "table-generator-b4-3d.sp", dialect = "ngspice" },
+    { file = "table-generator-q-2d.sp", dialect = "ngspice" },
+    { file = "table-model-man-2d-1.sp", dialect = "ngspice" },
+    { file = "table-model-man-3d-1.sp", dialect = "ngspice" },
+    { file = "table-model-mos-2d-2.sp", dialect = "ngspice" },
+    { file = "table-model-mos-2d-3.sp", dialect = "ngspice" },
+    { file = "table-model-mos-2d-4.sp", dialect = "ngspice" },
+    { file = "table-model-mos-3d-2.sp", dialect = "ngspice" },
+    { file = "table-model-mos-3d-3.sp", dialect = "ngspice" },
+    { file = "table-model-mos-3d-4.sp", dialect = "ngspice" },
+    { file = "table-model-mos-3d-5.sp", dialect = "ngspice" },
+]
+notes = """
+Left out:
+- `table-model-bip-2d-1.sp`: needs qinn-clc409-2d-1.table, not in the source tree
+- `table-model-bip-2d-2.sp`: needs qinn-clc409-2d-1.table, not in the source tree
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/xspice/table"
+
+[[files]]
+path = "bsim4n-2d-3.table"
+sha256 = "9c5b7e9c51a54495dd855e9112653babb214175a003df04b310b18edbe633e5e"
+
+[[files]]
+path = "bsim4n-3d-1.table"
+sha256 = "722c06d99b40370235cae18079fd7453846b3cf3c03f86f28e861c1a7f03438d"
+
+[[files]]
+path = "bsim4p-2d-3.table"
+sha256 = "049380c3255799f0d8dde842b5c835db27f8327722a9fc44a90aecab6e20ee48"
+
+[[files]]
+path = "bsim4p-3d-1.table"
+sha256 = "7750b49b1cbecfaf2833fc40f5b02614353f97d4965bf62d4094ca2047288794"
+
+[[files]]
+path = "modelcards/modelcard.nmos"
+sha256 = "a6cf097047e490c7f1f743a9548d6f3032c2c9460d9999437adcfe3d3c10a374"
+
+[[files]]
+path = "modelcards/modelcard.pmos"
+sha256 = "4778577b2907f5bd8e68de133c257a843c1b363debeabf55d1ca013b4efd9d4b"
+
+[[files]]
+path = "table-generator-b4-2d.sp"
+sha256 = "447adeee1d1561603e8e9cf860c1ab2192730a071ce21b6d0ecc82152fba1368"
+
+[[files]]
+path = "table-generator-b4-3d.sp"
+sha256 = "b8909a1fc0a1d5dc70d4462fd16e0c34ae471a8f933f21804ebff70b46f25a64"
+
+[[files]]
+path = "table-generator-q-2d.sp"
+sha256 = "0b4455864466114dbec374a94dca9e0aa4c31fa70c562c692377d914a2162929"
+
+[[files]]
+path = "table-model-man-2d-1.sp"
+sha256 = "51e7741de5a8ea9f5f83f36cb703bb12036b819f3d9ef658725802145a5fd673"
+
+[[files]]
+path = "table-model-man-3d-1.sp"
+sha256 = "842ffd04a88e971abf126f2cf78050be3fc064c2d39a1194bc765cc854f0a03f"
+
+[[files]]
+path = "table-model-mos-2d-2.sp"
+sha256 = "b1391ac0502086b6ddfe6552f0f2f5b3d3a6829678680ede0411a085874a7e56"
+
+[[files]]
+path = "table-model-mos-2d-3.sp"
+sha256 = "7faf2323989657190460871571079a4d67d2d92c29803af58a8ad1f6b28cab83"
+
+[[files]]
+path = "table-model-mos-2d-4.sp"
+sha256 = "2cd836168e0ab34910e16213b29323fe33abd1ea9e396850bc61f5e44df5d0ad"
+
+[[files]]
+path = "table-model-mos-3d-2.sp"
+sha256 = "80897f192a2a0e79fc96f3bf2a23c2eb10a585487e55011f7f53fa8e3a229a07"
+
+[[files]]
+path = "table-model-mos-3d-3.sp"
+sha256 = "282ee743a72aba593d7f55f58805cdcbdc7bb8b3e1ed41cb87c48dc25720d3ab"
+
+[[files]]
+path = "table-model-mos-3d-4.sp"
+sha256 = "fdb6ef15f455948a5cd39770c3def3147ceff455aa661343cb33c75fbf516680"
+
+[[files]]
+path = "table-model-mos-3d-5.sp"
+sha256 = "fbb3f364d4e8fe08376efc83792c567537591f5e4d31e4541179281810e06de8"
+
+[[files]]
+path = "test-2d-1.table"
+sha256 = "8a95bcd5bd831c998321cdc13a7ffc9419603e49ecbe65dcc782a766b91896b3"
+
+[[files]]
+path = "test-3d-1.table"
+sha256 = "7d0ca198c2f697f40a5df033c37fe172805390b7e457c56c1b2be4047bcc6b10"

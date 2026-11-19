@@ -1,0 +1,11 @@
+title = "Xyce_Regression B4SOI"
+case = "xyce_b4soi"
+source = "invert_b4soi.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]

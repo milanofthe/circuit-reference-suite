@@ -1,0 +1,26 @@
+id = "sky130_nfet_20v0_nvt"
+title = "SKY130 nfet_20v0_nvt model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__nfet_20v0_nvt__nfet_vth.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/nfet_20v0_nvt/tests"
+
+[[files]]
+path = "sky130_fd_pr__nfet_20v0_nvt__nfet_vth.spice"
+sha256 = "93cb56b727fbf8a07441541d478624e781e57da04457b1fd04fa1c5d3bd107df"
+
+[resolve]
+"../../../models/corners/tt.spice" = "libraries/sky130_fd_pr/models/corners/tt.spice"
+"../../../models/r+c/res_typical__cap_typical.spice" = "libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice"
+"../../../models/r+c/res_typical__cap_typical__lin.spice" = "libraries/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice"

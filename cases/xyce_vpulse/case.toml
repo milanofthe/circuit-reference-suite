@@ -1,0 +1,20 @@
+id = "xyce_vpulse"
+title = "Xyce_Regression VPULSE"
+family = "test"
+netlists = [
+    { file = "vpulse.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VPULSE"
+
+[[files]]
+path = "vpulse.cir"
+sha256 = "fc1c7154d6cb089ae3110b2870b383fde003e1440c9bbf214c33bf500b704f34"

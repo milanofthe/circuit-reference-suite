@@ -1,0 +1,9 @@
+title = "Xyce_Regression ABM_FREQ"
+case = "xyce_abm_freq"
+source = "abmhertz1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 1, start = 1.0, stop = 100000.0 },
+]

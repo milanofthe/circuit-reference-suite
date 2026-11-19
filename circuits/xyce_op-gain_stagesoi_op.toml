@@ -1,0 +1,10 @@
+title = "Xyce_Regression OP"
+case = "xyce_op"
+source = "gain-stagesoi_op.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 1000000000.0 },
+]

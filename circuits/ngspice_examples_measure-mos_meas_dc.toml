@@ -1,0 +1,14 @@
+title = "ngspice examples/measure"
+case = "ngspice_examples_measure"
+source = "mos-meas-dc.sp"
+outputs = [
+    "v(1)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 3.5, step = 0.05 },
+    { source = "vgs", start = 0.5, stop = 3.5, step = 0.5 },
+]

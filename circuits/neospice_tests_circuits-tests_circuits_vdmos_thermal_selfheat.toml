@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/vdmos_thermal_selfheat.cir"
+analysis = [
+    { type = "op" },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression SANDLER2"
+case = "xyce_sandler2"
+source = "sandler2.cir"
+analysis = [
+    { type = "tran", step = 2e-07, stop = 0.0029, start = 0.0004 },
+]
+
+[options]
+reltol = 0.001

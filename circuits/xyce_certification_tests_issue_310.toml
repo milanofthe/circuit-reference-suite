@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_310"
+case = "xyce_certification_tests_issue_310"
+source = "issue310.cir"
+outputs = [
+    "v(tri)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 2e-07 },
+]

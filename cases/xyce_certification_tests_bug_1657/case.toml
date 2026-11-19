@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_1657"
+title = "Xyce_Regression Certification_Tests/BUG_1657"
+family = "test"
+netlists = [
+    { file = "bug_1657.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1657"
+
+[[files]]
+path = "bug_1657.cir"
+sha256 = "35cc0894b2bd3b41822e4be497bfab13b11332faae24cd50900374241d214298"

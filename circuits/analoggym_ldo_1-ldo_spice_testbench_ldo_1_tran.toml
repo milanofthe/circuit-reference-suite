@@ -1,0 +1,10 @@
+title = "AnalogGym low-dropout regulator ldo_1, SKY130"
+case = "analoggym_ldo_1"
+source = "ldo_spice_testbench/ldo_1_tran.cir"
+outputs = [
+    "v(vout1)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 0.0001 },
+    { type = "op" },
+]

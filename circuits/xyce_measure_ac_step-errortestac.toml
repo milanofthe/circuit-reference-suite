@@ -1,0 +1,12 @@
+title = "Xyce_Regression MEASURE_AC/STEP"
+case = "xyce_measure_ac_step"
+source = "ErrorTestAC.cir"
+outputs = [
+    "v(1a)",
+    "v(1b)",
+    "v(2b)",
+    "v(3b)",
+]
+analysis = [
+    { type = "ac", sweep = "lin", points = 27, start = 10.0, stop = 130.0 },
+]

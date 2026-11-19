@@ -1,0 +1,16 @@
+title = "Xyce_Regression MEASURE_DC"
+case = "xyce_measure_dc"
+source = "DerivTest1DC.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(r2)",
+    "v(4)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 5.0, step = 1.0 },
+]

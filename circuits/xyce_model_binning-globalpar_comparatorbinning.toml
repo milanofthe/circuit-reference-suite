@@ -1,0 +1,10 @@
+title = "Xyce_Regression MODEL_BINNING"
+case = "xyce_model_binning"
+source = "globalPar_comparatorBinning.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6e-08 },
+]

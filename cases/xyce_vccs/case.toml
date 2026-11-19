@@ -1,0 +1,85 @@
+id = "xyce_vccs"
+title = "Xyce_Regression VCCS"
+family = "test"
+netlists = [
+    { file = "vccs.cir", dialect = "xyce" },
+    { file = "vccs_m.cir", dialect = "xyce" },
+    { file = "vccs_m_baseline.cir", dialect = "xyce" },
+    { file = "vccs_nl1_m.cir", dialect = "xyce" },
+    { file = "vccs_nl1_m_baseline.cir", dialect = "xyce" },
+    { file = "vccs_nl2_m.cir", dialect = "xyce" },
+    { file = "vccs_nl2_m_baseline.cir", dialect = "xyce" },
+    { file = "vccs_nl3_m.cir", dialect = "xyce" },
+    { file = "vccs_nl3_m_baseline.cir", dialect = "xyce" },
+    { file = "vccs_nl4_m.cir", dialect = "xyce" },
+    { file = "vccs_nl4_m_baseline.cir", dialect = "xyce" },
+    { file = "vccs_tran.cir", dialect = "xyce" },
+    { file = "vccs_tran_m.cir", dialect = "xyce" },
+    { file = "vccs_tran_m_baseline.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VCCS"
+
+[[files]]
+path = "vccs.cir"
+sha256 = "963d8d506600a2ac7f43812156739c8f49d332c50701f64268041ecd51b0306d"
+
+[[files]]
+path = "vccs_m.cir"
+sha256 = "ec0318045b1bdfe4486d62895e20eaf34eb54ed9c08f8dae9641284ee8785c23"
+
+[[files]]
+path = "vccs_m_baseline.cir"
+sha256 = "a76623e96f1c181a5935391eda43bac889c24cdde69d31e01bcf2dd55c78ba18"
+
+[[files]]
+path = "vccs_nl1_m.cir"
+sha256 = "41d9678a8b8e920bf59819db13262c4a42b0bc66272d555f678c8cd3666dcda9"
+
+[[files]]
+path = "vccs_nl1_m_baseline.cir"
+sha256 = "a76623e96f1c181a5935391eda43bac889c24cdde69d31e01bcf2dd55c78ba18"
+
+[[files]]
+path = "vccs_nl2_m.cir"
+sha256 = "94d2ab9118fcd302f28811e792365d89936b47519513a0fdb29d2a0738eefc3f"
+
+[[files]]
+path = "vccs_nl2_m_baseline.cir"
+sha256 = "a76623e96f1c181a5935391eda43bac889c24cdde69d31e01bcf2dd55c78ba18"
+
+[[files]]
+path = "vccs_nl3_m.cir"
+sha256 = "c14e07bc5df34d5b04dd6b96c888a3ee4332ca3ede3e91b5c4dfc758e9ccab9b"
+
+[[files]]
+path = "vccs_nl3_m_baseline.cir"
+sha256 = "a76623e96f1c181a5935391eda43bac889c24cdde69d31e01bcf2dd55c78ba18"
+
+[[files]]
+path = "vccs_nl4_m.cir"
+sha256 = "186c3567598635c8d52bd934a71153bc877a45235a08f4ea26a9b32b2981bedc"
+
+[[files]]
+path = "vccs_nl4_m_baseline.cir"
+sha256 = "a76623e96f1c181a5935391eda43bac889c24cdde69d31e01bcf2dd55c78ba18"
+
+[[files]]
+path = "vccs_tran.cir"
+sha256 = "93de9d2fb74d93c266c11fe55dd760d19ff1e507abb23e07a57c6955784ff53d"
+
+[[files]]
+path = "vccs_tran_m.cir"
+sha256 = "fead564fc6b4e439600dcef91b31fe34cf982e4877ce992e80bc91acb0214da8"
+
+[[files]]
+path = "vccs_tran_m_baseline.cir"
+sha256 = "106c17221272af73ae33a125f551ae30100989767d296140294cfe84195918b3"

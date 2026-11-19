@@ -1,0 +1,20 @@
+id = "xyce_xdm_pspice_other_parsing_one_two"
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING/ONE/TWO"
+family = "test"
+netlists = [
+    { file = "file_hierarchy.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/PSPICE/OTHER_PARSING/ONE/TWO"
+
+[[files]]
+path = "file_hierarchy.cir"
+sha256 = "408c10ba20b551afe11a90efeeef39a31d3005f1112c314e1e4a90e72df1fae3"

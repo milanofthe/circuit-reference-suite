@@ -1,0 +1,12 @@
+title = "Xyce_Regression SUPERNODE"
+case = "xyce_supernode"
+source = "supernode1b.cir"
+outputs = [
+    "v(a)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 0.0, stop = 5.0, step = 1.0 },
+]

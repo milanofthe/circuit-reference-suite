@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/HSPICE/INITIAL_CONDITION"
+case = "xyce_xdm_hspice_initial_condition"
+source = "ic_global_node_warning.cir"
+outputs = [
+    "v(n16554)",
+    "v(n16997)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]
+
+[variants]
+hspice = "ic_global_node_warning.cir.hspice"

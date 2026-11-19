@@ -1,0 +1,9 @@
+title = "Xyce_Regression GSWITCH"
+case = "xyce_gswitch"
+source = "gswitchHyst1.cir"
+outputs = [
+    "i(sw1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 8e-06, max_step = 8e-08 },
+]

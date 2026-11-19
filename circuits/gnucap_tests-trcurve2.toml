@@ -1,0 +1,28 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "trcurve2.ckt"
+outputs = [
+    "v(1)",
+    "v(6)",
+    "i(vpu)",
+    "i(vpd)",
+    "i(mpu)",
+    "i(mpd)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 0.0, stop = 5.0, step = 1.0 },
+    { source = "vin", start = 0.0, stop = 5.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 5.0, step = 1.0 },
+    { source = "vback", start = 0.0, stop = 5.0, step = 1.0 },
+]

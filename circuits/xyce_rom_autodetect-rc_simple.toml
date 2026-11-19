@@ -1,0 +1,9 @@
+title = "Xyce_Regression ROM/AUTODETECT"
+case = "xyce_rom_autodetect"
+source = "rc_simple.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.002 },
+]

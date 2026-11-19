@@ -1,0 +1,10 @@
+title = "ngspice paranoia_parallel/examples/pton"
+case = "ngspice_paranoia_parallel_examples_pton"
+source = "switch-oscillators_inc.cir"
+outputs = [
+    "i(vmeasure)",
+    "v(osc_out)",
+]
+analysis = [
+    { type = "tran", step = 5e-11, stop = 4e-09, start = 5e-11, uic = true },
+]

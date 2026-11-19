@@ -1,0 +1,9 @@
+title = "Xyce_Regression MEASURE_FFT"
+case = "xyce_measure_fft"
+source = "BinSizeTest.cir"
+outputs = [
+    "v(10)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

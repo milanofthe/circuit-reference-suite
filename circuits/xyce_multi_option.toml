@@ -1,0 +1,15 @@
+title = "Xyce_Regression MULTI_OPTION"
+case = "xyce_multi_option"
+source = "multiOptionWarn.cir"
+outputs = [
+    "i(vmon)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[options]
+temp = 200.0
+method = "gear"
+reltol = 1e-05

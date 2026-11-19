@@ -1,0 +1,30 @@
+id = "xyce_dc_upgrade"
+title = "Xyce_Regression DC_UPGRADE"
+family = "test"
+netlists = [
+    { file = "dcDec.cir", dialect = "xyce" },
+    { file = "dcList.cir", dialect = "xyce" },
+    { file = "dcOct.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/DC_UPGRADE"
+
+[[files]]
+path = "dcDec.cir"
+sha256 = "fada70929d81dab78aa236fcfc7f4e0875bc749d710c1e1f7452492b4ff4f14e"
+
+[[files]]
+path = "dcList.cir"
+sha256 = "46c5b6d9f4d931f3b8c84342a52f7421755fbf1754cab7592cae4cbda7006af1"
+
+[[files]]
+path = "dcOct.cir"
+sha256 = "1ec170695e21d2beca02582dbdfbfee63efccf10f569864d82444451a94a5fc2"

@@ -1,0 +1,20 @@
+id = "xyce_pde_2d_nl"
+title = "Xyce_Regression PDE_2D_NL"
+family = "test"
+netlists = [
+    { file = "pde2D_nl.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/PDE_2D_NL"
+
+[[files]]
+path = "pde2D_nl.cir"
+sha256 = "93c50897dfd73af0e35de723f1255bc805efd1b4f503957ef56eb1da795181e9"

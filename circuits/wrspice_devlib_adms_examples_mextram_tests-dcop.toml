@@ -1,0 +1,28 @@
+title = "WRspice devlib/adms/examples/mextram/tests"
+case = "wrspice_devlib_adms_examples_mextram_tests"
+source = "dcop.sp"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+    "i(ve)",
+    "i(vs)",
+]
+
+[options]
+gmin = 1e-13
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 0.4, stop = 1.2, step = 0.1 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vc", start = 1.4, stop = 2.2, step = 0.1 },
+]
+
+[[analysis]]
+type = "op"

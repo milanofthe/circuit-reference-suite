@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/TSPICE/DIODE_CLIPPER"
+case = "xyce_xdm_tspice_diode_clipper"
+source = "diodeClipper.cir"
+outputs = [
+    "v(n04173)",
+    "v(n03179)",
+    "v(n03334)",
+    "v(n04104)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.002 },
+]
+
+[variants]
+tspice = "diodeClipper.cir.tspice"

@@ -1,0 +1,75 @@
+id = "xyce_measure_ac"
+title = "Xyce_Regression MEASURE_AC"
+family = "test"
+netlists = [
+    { file = "AvgTestAC.cir", dialect = "xyce" },
+    { file = "DerivTestAC.cir", dialect = "xyce" },
+    { file = "EquationEvalTestAC.cir", dialect = "xyce" },
+    { file = "ErrorFuncTestAC.cir", dialect = "xyce" },
+    { file = "ErrorTestAC.cir", dialect = "xyce" },
+    { file = "FindWhenTestAC.cir", dialect = "xyce" },
+    { file = "IntegTestAC.cir", dialect = "xyce" },
+    { file = "MaxMinPPTestAC.cir", dialect = "xyce" },
+    { file = "RFParamsOps.cir", dialect = "xyce" },
+    { file = "RMSTestAC.cir", dialect = "xyce" },
+    { file = "TrigTargTestAC.cir", dialect = "xyce" },
+    { file = "oneSweepValue.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_AC"
+
+[[files]]
+path = "AvgTestAC.cir"
+sha256 = "6eab138dd81445cba1e388f255017479f804d97895140717d5a062384cb4e11c"
+
+[[files]]
+path = "DerivTestAC.cir"
+sha256 = "12a8802c4043840ae8ea60ed7f276060e374c1d736b9255c2bd1eef4d6500e2b"
+
+[[files]]
+path = "EquationEvalTestAC.cir"
+sha256 = "6b3b30b8c7585e05b56a69450888942fc6110ae8691fe86404c5953fadbc27df"
+
+[[files]]
+path = "ErrorFuncTestAC.cir"
+sha256 = "736a68d93f4264e9f825db143d11bb28da5b400ba51ce380b42040bc646ff15e"
+
+[[files]]
+path = "ErrorTestAC.cir"
+sha256 = "8b26ec16de65afb76e27aef850491927ad253b0e94bf92ac62b0d00d11392422"
+
+[[files]]
+path = "FindWhenTestAC.cir"
+sha256 = "bd415fbe28f786e1de873b545f8543c5719ecd116ab4ca479db75a17a1209360"
+
+[[files]]
+path = "IntegTestAC.cir"
+sha256 = "f3caeaae432fb9b33b003ebbd1f273401f16d570c28ec2ce935de1e11c920749"
+
+[[files]]
+path = "MaxMinPPTestAC.cir"
+sha256 = "63cf3fea8167ff659ded50c18e5db54aac1b1153bd113dce918638ff048c91cb"
+
+[[files]]
+path = "RFParamsOps.cir"
+sha256 = "b940b8a5c42eb44ecc3bffffb15805a679ff39250fa730c7aa1de6b408a7d341"
+
+[[files]]
+path = "RMSTestAC.cir"
+sha256 = "2ab76bc262ebb9e7415dea5fc8344c3438d96d91eb02e442adf5891da75145b8"
+
+[[files]]
+path = "TrigTargTestAC.cir"
+sha256 = "da18adc70e65ae199b433d9042ad8692f118ef1a75f4da2400086ff11612b7d9"
+
+[[files]]
+path = "oneSweepValue.cir"
+sha256 = "cbdb5847a39bfc36aa438bb7f1490771eb7db4ff5e2e5314ef085f52a5d05460"

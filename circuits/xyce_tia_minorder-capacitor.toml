@@ -1,0 +1,13 @@
+title = "Xyce_Regression TIA/MINORDER"
+case = "xyce_tia_minorder"
+source = "capacitor.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+reltol = 0.0001
+vntol = 0.0001

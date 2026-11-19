@@ -1,0 +1,165 @@
+id = "xyce_homotopy"
+title = "Xyce_Regression HOMOTOPY"
+family = "test"
+netlists = [
+    { file = "arclengthSimple.cir", dialect = "xyce" },
+    { file = "continuation1.cir", dialect = "xyce" },
+    { file = "continuation1_bsim3.cir", dialect = "xyce" },
+    { file = "continuation1_bsim4.cir", dialect = "xyce" },
+    { file = "continuation1_mos1.cir", dialect = "xyce" },
+    { file = "continuation1_mos2.cir", dialect = "xyce" },
+    { file = "continuation1_mos3.cir", dialect = "xyce" },
+    { file = "continuation1_mos6.cir", dialect = "xyce" },
+    { file = "continuation2.cir", dialect = "xyce" },
+    { file = "continuation2_bsim3.cir", dialect = "xyce" },
+    { file = "continuation2_bsim4.cir", dialect = "xyce" },
+    { file = "continuation2_mos1.cir", dialect = "xyce" },
+    { file = "continuation2_mos2.cir", dialect = "xyce" },
+    { file = "continuation2_mos3.cir", dialect = "xyce" },
+    { file = "continuation2_mos6.cir", dialect = "xyce" },
+    { file = "continuation3.cir", dialect = "xyce" },
+    { file = "continuation3_bsim3.cir", dialect = "xyce" },
+    { file = "continuation3_bsim4.cir", dialect = "xyce" },
+    { file = "continuation3_mos1.cir", dialect = "xyce" },
+    { file = "continuation3_mos2.cir", dialect = "xyce" },
+    { file = "continuation3_mos3.cir", dialect = "xyce" },
+    { file = "continuation3_mos6.cir", dialect = "xyce" },
+    { file = "continuation4.cir", dialect = "xyce" },
+    { file = "continuation4_bsim3.cir", dialect = "xyce" },
+    { file = "continuation4_bsim4.cir", dialect = "xyce" },
+    { file = "continuation4_mos1.cir", dialect = "xyce" },
+    { file = "continuation4_mos2.cir", dialect = "xyce" },
+    { file = "continuation4_mos3.cir", dialect = "xyce" },
+    { file = "continuation4_mos6.cir", dialect = "xyce" },
+    { file = "schmidt.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/HOMOTOPY"
+
+[[files]]
+path = "arclengthSimple.cir"
+sha256 = "4dfbb492c68e5c1f23eac572de2a16b440640ada9cef8d8b2840e5b078f89a9c"
+
+[[files]]
+path = "continuation1.cir"
+sha256 = "721f29ffa1dc280f7ced3fb37351d46a9391dea462c5687138683ce1fc985c88"
+
+[[files]]
+path = "continuation1_bsim3.cir"
+sha256 = "b6bbba6acd771ab6b2788ab5d29468dee87a7c58ea741f27863e49945f2b0271"
+
+[[files]]
+path = "continuation1_bsim4.cir"
+sha256 = "6f429e9f2d52057e4513b4093fba943dc0f3af060b40db71ff744ca33ee47136"
+
+[[files]]
+path = "continuation1_mos1.cir"
+sha256 = "b0cba2801840900bdfb600cc7035b2b3807b631938ac6109d7b9ab704ae17b40"
+
+[[files]]
+path = "continuation1_mos2.cir"
+sha256 = "c7be8efce67eaa5351c8716d6c786b741d548fb5c31149b51c52a622f5b2c2a1"
+
+[[files]]
+path = "continuation1_mos3.cir"
+sha256 = "054dc05689ea5e361f2e8c00686e0406dfd10c7390efbd0d545fb20b8952ff76"
+
+[[files]]
+path = "continuation1_mos6.cir"
+sha256 = "1a014d7d78e3f042556f372f288adddd9e2a10718767d05967e65c81b0665436"
+
+[[files]]
+path = "continuation2.cir"
+sha256 = "ea4a99547ed2daf340dfb8730f2a07f4f4b6f8543d9cf65649beec2184b09854"
+
+[[files]]
+path = "continuation2_bsim3.cir"
+sha256 = "a26242e209c307561d5c0c8f87ae9f630960bb0ad490ed971dc28b5daaaed636"
+
+[[files]]
+path = "continuation2_bsim4.cir"
+sha256 = "72920c96d618ddf0febc3ae6f06adcda73eedc0a690ddd8aedd2f00c96e2541f"
+
+[[files]]
+path = "continuation2_mos1.cir"
+sha256 = "9c78faef571452e08c71b5dbe186920f983863149326147bd6d7189c83d8265b"
+
+[[files]]
+path = "continuation2_mos2.cir"
+sha256 = "a06a6c339c1138b8069c0635de4327d74351ee0e4d67899e99ad8e9369e8d1b8"
+
+[[files]]
+path = "continuation2_mos3.cir"
+sha256 = "13273944055e6f1c89276c751307f32d6142eb225137298b3e50b5772b3b878f"
+
+[[files]]
+path = "continuation2_mos6.cir"
+sha256 = "dc631232df900bfc7ba72612fcd83b8bd181b504660f41f79f5d0677f228da89"
+
+[[files]]
+path = "continuation3.cir"
+sha256 = "a4fae84e7620a5607f2471f5b35a7700b1454a33d5cdd4e302e425dffbdb88bd"
+
+[[files]]
+path = "continuation3_bsim3.cir"
+sha256 = "fbff576ed78e7ccc7fa5e06a1b92c89f90a9f92edc2a780655d02e3ce32aecb2"
+
+[[files]]
+path = "continuation3_bsim4.cir"
+sha256 = "6f429e9f2d52057e4513b4093fba943dc0f3af060b40db71ff744ca33ee47136"
+
+[[files]]
+path = "continuation3_mos1.cir"
+sha256 = "c8322c6d384c584c0a41150dd9ec18c5f8c8181c8db2ab97f1419c03995ad546"
+
+[[files]]
+path = "continuation3_mos2.cir"
+sha256 = "c7be8efce67eaa5351c8716d6c786b741d548fb5c31149b51c52a622f5b2c2a1"
+
+[[files]]
+path = "continuation3_mos3.cir"
+sha256 = "054dc05689ea5e361f2e8c00686e0406dfd10c7390efbd0d545fb20b8952ff76"
+
+[[files]]
+path = "continuation3_mos6.cir"
+sha256 = "1a014d7d78e3f042556f372f288adddd9e2a10718767d05967e65c81b0665436"
+
+[[files]]
+path = "continuation4.cir"
+sha256 = "e880e993ba59be71816db618963d8e4bd4935e47233754e6afdaeab718eefe6e"
+
+[[files]]
+path = "continuation4_bsim3.cir"
+sha256 = "da88f444311e99cced6d0e64f8aa64a39221e11381e74886d4cd9745f55dec53"
+
+[[files]]
+path = "continuation4_bsim4.cir"
+sha256 = "72920c96d618ddf0febc3ae6f06adcda73eedc0a690ddd8aedd2f00c96e2541f"
+
+[[files]]
+path = "continuation4_mos1.cir"
+sha256 = "9bb31c603bc31ed833ed16d25a5859c11e447f6c26c3ca5e79ad03df5393ca53"
+
+[[files]]
+path = "continuation4_mos2.cir"
+sha256 = "a06a6c339c1138b8069c0635de4327d74351ee0e4d67899e99ad8e9369e8d1b8"
+
+[[files]]
+path = "continuation4_mos3.cir"
+sha256 = "13273944055e6f1c89276c751307f32d6142eb225137298b3e50b5772b3b878f"
+
+[[files]]
+path = "continuation4_mos6.cir"
+sha256 = "dc631232df900bfc7ba72612fcd83b8bd181b504660f41f79f5d0677f228da89"
+
+[[files]]
+path = "schmidt.cir"
+sha256 = "488b4d00dbd2541b77e77b637444a60b9904857c03f6797bde83829c8d518eb4"

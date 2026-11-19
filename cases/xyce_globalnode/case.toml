@@ -1,0 +1,35 @@
+id = "xyce_globalnode"
+title = "Xyce_Regression GLOBALNODE"
+family = "test"
+netlists = [
+    { file = "global.cir", dialect = "xyce" },
+    { file = "global2.cir", dialect = "xyce" },
+    { file = "global3.cir", dialect = "xyce" },
+    { file = "global_hspice.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/GLOBALNODE"
+
+[[files]]
+path = "global.cir"
+sha256 = "65356cc5d7bc6c42dfe9e1a8fc7e77ba57ec56b755a6dc4e87b069e211b1049e"
+
+[[files]]
+path = "global2.cir"
+sha256 = "7166c54863458503cccaeca313980fd508095aae28d4f6f0de99641a84821731"
+
+[[files]]
+path = "global3.cir"
+sha256 = "3cbf7e7a475e92b152e40a93c74a1440dc9af9e361f75b1c297301065abd3bc9"
+
+[[files]]
+path = "global_hspice.cir"
+sha256 = "4d895f9d846c996ac0eacb8862869e3a625117723810ff7f57626493dbfc50b4"

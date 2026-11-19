@@ -1,0 +1,48 @@
+id = "xyce_bsimcmg"
+title = "Xyce_Regression BSIMCMG"
+family = "test"
+netlists = [
+    { file = "ac.cir", dialect = "xyce" },
+    { file = "gummel_n.cir", dialect = "xyce" },
+    { file = "gummel_n_outvars.cir", dialect = "xyce" },
+    { file = "gummel_p.cir", dialect = "xyce" },
+    { file = "inverter_transient.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/BSIMCMG"
+
+[[files]]
+path = "ac.cir"
+sha256 = "1646a593b141932c3117ab399188d07cfa456c5507119de23c2ff7c7c9ad4b24"
+
+[[files]]
+path = "gummel_n.cir"
+sha256 = "d939519d930e62a44aa67c67dcafbae20273137b945518a637ba9ab62870951b"
+
+[[files]]
+path = "gummel_n_outvars.cir"
+sha256 = "ada57df47accbe3f93a1853576271426a51ce932e5c8ebac3c36839945154ad5"
+
+[[files]]
+path = "gummel_p.cir"
+sha256 = "ae9a1c02dc2c60cd3cb32a126b895b65abca218488d36a87e7914280edd3d38a"
+
+[[files]]
+path = "inverter_transient.cir"
+sha256 = "e6d3bf9c754f303c23654501bffc3a04354b3d9f418b52b9477c23be73e3e363"
+
+[[files]]
+path = "modelcard.nmos_xyce"
+sha256 = "85a279df7a5b61751c008ba7bbe52dc22806d98856404d7959f94bc968e1885f"
+
+[[files]]
+path = "modelcard.pmos_xyce"
+sha256 = "46fc223cce2e9ae5477bdf533378342df70cf2aa4b5787646894e6f37b4e455a"

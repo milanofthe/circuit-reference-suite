@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACSENS/bsim3"
+case = "xyce_acsens_bsim3"
+source = "op-amp_param_fd.cir"
+outputs = [
+    "v(8)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 100000000.0 },
+]

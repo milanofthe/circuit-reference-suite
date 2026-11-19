@@ -1,0 +1,325 @@
+id = "xyce_power"
+title = "Xyce_Regression POWER"
+family = "test"
+netlists = [
+    { file = "power_b_gear.cir", dialect = "xyce" },
+    { file = "power_b_trap.cir", dialect = "xyce" },
+    { file = "power_bjt_gear.cir", dialect = "xyce" },
+    { file = "power_bjt_trap.cir", dialect = "xyce" },
+    { file = "power_bsim3_gear.cir", dialect = "xyce" },
+    { file = "power_bsim3_trap.cir", dialect = "xyce" },
+    { file = "power_bsim3soi_gear.cir", dialect = "xyce" },
+    { file = "power_bsim3soi_trap.cir", dialect = "xyce" },
+    { file = "power_bsim4_gear.cir", dialect = "xyce" },
+    { file = "power_bsim4_trap.cir", dialect = "xyce" },
+    { file = "power_dio1_gear.cir", dialect = "xyce" },
+    { file = "power_dio1_trap.cir", dialect = "xyce" },
+    { file = "power_dio2_gear.cir", dialect = "xyce" },
+    { file = "power_dio2_trap.cir", dialect = "xyce" },
+    { file = "power_e_gear.cir", dialect = "xyce" },
+    { file = "power_e_trap.cir", dialect = "xyce" },
+    { file = "power_f_gear.cir", dialect = "xyce" },
+    { file = "power_f_trap.cir", dialect = "xyce" },
+    { file = "power_g_gear.cir", dialect = "xyce" },
+    { file = "power_g_trap.cir", dialect = "xyce" },
+    { file = "power_h_gear.cir", dialect = "xyce" },
+    { file = "power_h_trap.cir", dialect = "xyce" },
+    { file = "power_i_gear.cir", dialect = "xyce" },
+    { file = "power_i_trap.cir", dialect = "xyce" },
+    { file = "power_mil_gear.cir", dialect = "xyce" },
+    { file = "power_mil_trap.cir", dialect = "xyce" },
+    { file = "power_min2_gear.cir", dialect = "xyce" },
+    { file = "power_min2_trap.cir", dialect = "xyce" },
+    { file = "power_min_gear.cir", dialect = "xyce" },
+    { file = "power_min_trap.cir", dialect = "xyce" },
+    { file = "power_njfet_gear.cir", dialect = "xyce" },
+    { file = "power_njfet_trap.cir", dialect = "xyce" },
+    { file = "power_nmes_gear.cir", dialect = "xyce" },
+    { file = "power_nmes_trap.cir", dialect = "xyce" },
+    { file = "power_nmos1_gear.cir", dialect = "xyce" },
+    { file = "power_nmos1_trap.cir", dialect = "xyce" },
+    { file = "power_nmos2_gear.cir", dialect = "xyce" },
+    { file = "power_nmos2_trap.cir", dialect = "xyce" },
+    { file = "power_nmos3_gear.cir", dialect = "xyce" },
+    { file = "power_nmos3_trap.cir", dialect = "xyce" },
+    { file = "power_nmos6_gear.cir", dialect = "xyce" },
+    { file = "power_nmos6_trap.cir", dialect = "xyce" },
+    { file = "power_polarity_b_e_f_g_h_trap.cir", dialect = "xyce" },
+    { file = "power_polarity_v_i_trap.cir", dialect = "xyce" },
+    { file = "power_r_c_gear.cir", dialect = "xyce" },
+    { file = "power_r_c_trap.cir", dialect = "xyce" },
+    { file = "power_r_gear.cir", dialect = "xyce" },
+    { file = "power_r_l_gear.cir", dialect = "xyce" },
+    { file = "power_r_l_trap.cir", dialect = "xyce" },
+    { file = "power_r_trap.cir", dialect = "xyce" },
+    { file = "power_subckt_b_e_f_g_h_trap.cir", dialect = "xyce" },
+    { file = "power_subckt_v_i_r_l_c_trap.cir", dialect = "xyce" },
+    { file = "power_sw_gear.cir", dialect = "xyce" },
+    { file = "power_sw_trap.cir", dialect = "xyce" },
+    { file = "power_thermalres_gear.cir", dialect = "xyce" },
+    { file = "power_thermalres_trap.cir", dialect = "xyce" },
+    { file = "power_tra_gear.cir", dialect = "xyce" },
+    { file = "power_tra_trap.cir", dialect = "xyce" },
+    { file = "power_v_gear.cir", dialect = "xyce" },
+    { file = "power_v_trap.cir", dialect = "xyce" },
+    { file = "power_vdmos_gear.cir", dialect = "xyce" },
+    { file = "power_vdmos_trap.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/POWER"
+
+[[files]]
+path = "power_b_gear.cir"
+sha256 = "2459d326abb0abd4b470de4e91be793813cfd1e39db11f88304e7ff884f5f919"
+
+[[files]]
+path = "power_b_trap.cir"
+sha256 = "978f9f8775c0b6c3427fde1cc216c3ca87d61b029b5aa6b0cf96cb0da2941b4a"
+
+[[files]]
+path = "power_bjt_gear.cir"
+sha256 = "af5969a749147500f34ea3e3362858f2f23ae384dc89b55e4e3335ecab89b8ea"
+
+[[files]]
+path = "power_bjt_trap.cir"
+sha256 = "b752a2d3189c622cae80662838535681d08644108c1da33ddb995fa7c8ea62a2"
+
+[[files]]
+path = "power_bsim3_gear.cir"
+sha256 = "f3734696ab70221bfae226890c6616fac5fded26000dc9c4251cd24e0e4b7667"
+
+[[files]]
+path = "power_bsim3_trap.cir"
+sha256 = "86e121a7dab236b9f1420ac6e5e3ea27d47d2e7cb47d14c7fbc35f03afe5fc02"
+
+[[files]]
+path = "power_bsim3soi_gear.cir"
+sha256 = "290e8f13ab581033a2e399a6b3c04fa86c78b9f05f01b2430856ee48c61573df"
+
+[[files]]
+path = "power_bsim3soi_trap.cir"
+sha256 = "980ed5af62f632099066f3f032798aa21f10d9dfe366f31c8e597a1a3ff82312"
+
+[[files]]
+path = "power_bsim4_gear.cir"
+sha256 = "b0ebf31b3a10d18569738b20f62d6f76f0b60409bc9eab37f8a9eb41d81a41fa"
+
+[[files]]
+path = "power_bsim4_trap.cir"
+sha256 = "cae55fb71976dcaa19a64c3b7cfc0798ccd9d2cb859b14323f360a8bf4275b36"
+
+[[files]]
+path = "power_dio1_gear.cir"
+sha256 = "db973c26012ed4ad2dc067dc0602dd186ae2d972ce4552dffbc1f1c7db5a58ee"
+
+[[files]]
+path = "power_dio1_trap.cir"
+sha256 = "de51de74dd5989d582ef87c7733870f44633464ebf9e7f806540fbc32cac3d6c"
+
+[[files]]
+path = "power_dio2_gear.cir"
+sha256 = "d09ae66f42ea247e6f99cd6532d239c1176e9e4a873b0067a773e0ffb305a2d4"
+
+[[files]]
+path = "power_dio2_trap.cir"
+sha256 = "19c01517c53a518b765466c930adc77e4f9245e68e0ff54b354094c15dbee287"
+
+[[files]]
+path = "power_e_gear.cir"
+sha256 = "e98700b09ca4e6ddfc5f7af1cde228602c84fb16821a16803ca73820298cdd38"
+
+[[files]]
+path = "power_e_trap.cir"
+sha256 = "5f576982f9e1d0dc063b75ec7de4652b6497902475fbf3ddbd4d3ec4c155db98"
+
+[[files]]
+path = "power_f_gear.cir"
+sha256 = "3d7581b42e1c52c172d975dd7ba544a2cdf30c103cb698640baea36358762fb9"
+
+[[files]]
+path = "power_f_trap.cir"
+sha256 = "259daae2a2119a01b4288c568ffba5546334b871c5e551aa420403ceb6ac7282"
+
+[[files]]
+path = "power_g_gear.cir"
+sha256 = "f4cab2c858df90226769a3b0d00787a8f6a891f8c174c39d9fee04c6a48c23c8"
+
+[[files]]
+path = "power_g_trap.cir"
+sha256 = "60bbbaade81a75805092bb53621b6e2a842c86c642f907c6e88e29c5f2fe8f0a"
+
+[[files]]
+path = "power_h_gear.cir"
+sha256 = "e76085be3f8f3ac6f0553d077b10ca3e348b5fee5ab5a4927a4f553d0c997103"
+
+[[files]]
+path = "power_h_trap.cir"
+sha256 = "f4a49ced25aa240352168b6c36cff685e62a78ea5bf9604d5354eab1fa14c6cc"
+
+[[files]]
+path = "power_i_gear.cir"
+sha256 = "fd1af4767502f366d5e9adccdb9922a8cb90c0725f1db3d0f8deed83e2114940"
+
+[[files]]
+path = "power_i_trap.cir"
+sha256 = "fc0df260fe146dc61564ce3550c867c6a41ff9939bba084a1a690713de2c59d9"
+
+[[files]]
+path = "power_mil_gear.cir"
+sha256 = "a33789d4df6526475fc669cb641c27375203cb1da403f213fc8517fa731ccf07"
+
+[[files]]
+path = "power_mil_trap.cir"
+sha256 = "8dba37560d1ce08158e5037e9d628492bb304c82b13fe0f2f4eb06438105a341"
+
+[[files]]
+path = "power_min2_gear.cir"
+sha256 = "b01aaf5455984e84baac9d504f9b54e749a086daa9f66d9d514eb2099913603c"
+
+[[files]]
+path = "power_min2_trap.cir"
+sha256 = "7b9ac2b71aea7742ddea085c4cdb15552fcae83771b6d124d606fc75d245c6f5"
+
+[[files]]
+path = "power_min_gear.cir"
+sha256 = "5ba0ed46dba514a797b2de37ba93cdfffa6af7f22330d7d4dbeabcec94bf582d"
+
+[[files]]
+path = "power_min_trap.cir"
+sha256 = "ebfd076bdcbdd9897f5672543924c7ed458a29e1b4e92376a1e4d343c6dda461"
+
+[[files]]
+path = "power_njfet_gear.cir"
+sha256 = "1aebf66a102204c209bd8635aae5534dd55a5ca5b092f1aedb3bc738c2c976a2"
+
+[[files]]
+path = "power_njfet_trap.cir"
+sha256 = "6eb50c4b058dbfaf894c26e169783a2ac2b69d0bbd37767587cdc0bc1e246cb5"
+
+[[files]]
+path = "power_nmes_gear.cir"
+sha256 = "966669008b72fc27bb4b1ac85d397806b8cabe0222ad62d6b9dd442f2de38b7f"
+
+[[files]]
+path = "power_nmes_trap.cir"
+sha256 = "ad4cd667062dc68066fedf21411d5ca8e6f7c7fb942caa5eba66174aef433b26"
+
+[[files]]
+path = "power_nmos1_gear.cir"
+sha256 = "0eb0a768c092690248dd59e84f9a51fec8aa795d147d8c7bbab767d77ccd6d4f"
+
+[[files]]
+path = "power_nmos1_trap.cir"
+sha256 = "3d8cc97ee6fb93404f0ed92c416b80b5d385824c29c5e0ace2f0d7970d31c8a1"
+
+[[files]]
+path = "power_nmos2_gear.cir"
+sha256 = "9a8029aea4e030b4f3329c5220c3e58833923cd893c3d699cf08d05f4551531b"
+
+[[files]]
+path = "power_nmos2_trap.cir"
+sha256 = "829a8c908cc3913bbc9cf8879a0824daffb092b02ac82668f6adf6d0abd63aab"
+
+[[files]]
+path = "power_nmos3_gear.cir"
+sha256 = "d7236ef00dcd5c9bd997db49b13a7e859898497005f6678080d9b2ff3daade85"
+
+[[files]]
+path = "power_nmos3_trap.cir"
+sha256 = "4c71924602b7e906da5ceec7dc304cdbadc981f1155b1746724d1d91ce8a4eed"
+
+[[files]]
+path = "power_nmos6_gear.cir"
+sha256 = "61fccb7a746b3f2b815d762d4bc5ace5a0ddecd4fa774e5abc68e3ec6328ffe8"
+
+[[files]]
+path = "power_nmos6_trap.cir"
+sha256 = "5ac789ed637273f94085bd08a685d15a6c086326b7704dba03b8ed6e4912c471"
+
+[[files]]
+path = "power_polarity_b_e_f_g_h_trap.cir"
+sha256 = "9af8eea0f2c8612fbda366074e465796f4fac21d399a9f59ebb688a3d99cf108"
+
+[[files]]
+path = "power_polarity_v_i_trap.cir"
+sha256 = "1e49eecc8e80e533c09aebda91d0ee9518eab495d7a95c2afd705f7b40218ea7"
+
+[[files]]
+path = "power_r_c_gear.cir"
+sha256 = "b3730293c696b7bb0db9e7b42574b1c24228df7ab7df6671fd99cb3fd7f0fa0b"
+
+[[files]]
+path = "power_r_c_trap.cir"
+sha256 = "6ee6ae9beb0a40a8c248f6eeb2d1db5180a50cccdd7f56fa913056c67683b0f0"
+
+[[files]]
+path = "power_r_gear.cir"
+sha256 = "166b51308221d0f6ebdfefd01a57ea9e447ed1fcdf49416921b975a9a9de2bfa"
+
+[[files]]
+path = "power_r_l_gear.cir"
+sha256 = "bb60d9fed8723e41f1fe20f96f9eba7100dadb1e8157774d18c6c598b0ac5f20"
+
+[[files]]
+path = "power_r_l_trap.cir"
+sha256 = "baa05959a56ea15abe0635b43d1e1db92e55648ed6a82139cd2f4678b596a952"
+
+[[files]]
+path = "power_r_trap.cir"
+sha256 = "eb76cf509987841249bbcf51aba4c71e4cd1f862a07fe61a8b7a3538b203c2b8"
+
+[[files]]
+path = "power_subckt_b_e_f_g_h_trap.cir"
+sha256 = "d0884ec866806fa4388925eefbe266bd7ba5a00bebb688ae01052799997cae6d"
+
+[[files]]
+path = "power_subckt_v_i_r_l_c_trap.cir"
+sha256 = "9bb902e09e18f070624e613ceb03b9404f2de7db3cce8bddb779a3143117170e"
+
+[[files]]
+path = "power_sw_gear.cir"
+sha256 = "01ebe196e9297f83cd30405a5de8ee5b005083a8baa23916f01ae22222747243"
+
+[[files]]
+path = "power_sw_trap.cir"
+sha256 = "3f07efe39c736a27a1a9e6fb0a50364953efd34f6452b9a45b845e184898f651"
+
+[[files]]
+path = "power_thermalres_gear.cir"
+sha256 = "10ec2df07b3c579538292849414cc2d4a78950b12d30312f2c8bb9cfa3c0c546"
+
+[[files]]
+path = "power_thermalres_trap.cir"
+sha256 = "2d2ef5d8dadfce08a0a13b9330751d4d3e97b4ead5b4f2e459d1eac7006ecca9"
+
+[[files]]
+path = "power_tra_gear.cir"
+sha256 = "2a2d7ee0dba5104741c43868abaa2c2e4c6947cbfb9f2eb0f69d6768f12278a3"
+
+[[files]]
+path = "power_tra_trap.cir"
+sha256 = "2f7d3fb6b6a31429ad8ce5a04e1e73444f2ad6e62a4be17db794b8fa89fb7b91"
+
+[[files]]
+path = "power_v_gear.cir"
+sha256 = "603cf01ff551469450e12c1679636506491b94801ab2164fca23be9ebb60af71"
+
+[[files]]
+path = "power_v_trap.cir"
+sha256 = "71646473bb9a0e98690f40451e7b305fe4d20b61940302de68089c581fe5fd26"
+
+[[files]]
+path = "power_vdmos_gear.cir"
+sha256 = "ec43efeb248ac62034710f1cddc0059f05be69fea624a6f4ca38f82d2646c16b"
+
+[[files]]
+path = "power_vdmos_trap.cir"
+sha256 = "9f2c4713008ac0468e7ae9d0291b10be4dd060d093a44587ff81daf9cdd0e5b7"

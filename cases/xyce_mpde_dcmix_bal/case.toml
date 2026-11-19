@@ -1,0 +1,20 @@
+id = "xyce_mpde_dcmix_bal"
+title = "Xyce_Regression MPDE/DCMIX_BAL"
+family = "test"
+netlists = [
+    { file = "dcmix_bal.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MPDE/DCMIX_BAL"
+
+[[files]]
+path = "dcmix_bal.cir"
+sha256 = "5301e4beb9311b8938a667333db570139e261fcf2308a7c691179a10217589aa"

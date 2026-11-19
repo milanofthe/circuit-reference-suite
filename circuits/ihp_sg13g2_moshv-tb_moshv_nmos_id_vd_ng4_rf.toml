@@ -1,0 +1,17 @@
+title = "IHP SG13G2 moshv model tests"
+case = "ihp_sg13g2_moshv"
+source = "tb_moshv_nmos_id_vd_ng4_rf.sp"
+outputs = [
+    "v(1)",
+    "i(vd)",
+]
+
+[options]
+reltol = 0.0001
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 1.2, step = 0.02 },
+    { source = "vg", start = 0.2, stop = 1.2, step = 0.2 },
+]

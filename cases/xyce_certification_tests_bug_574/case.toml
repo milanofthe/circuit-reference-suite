@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_574"
+title = "Xyce_Regression Certification_Tests/BUG_574"
+family = "test"
+netlists = [
+    { file = "bug_574_mpi.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_574"
+
+[[files]]
+path = "bug_574_mpi.cir"
+sha256 = "c6663532d9a3e4228c7858597e6068c244ce8fb0dbe98ab0e89ffc9802d26dad"

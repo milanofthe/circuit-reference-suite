@@ -1,0 +1,113 @@
+id = "openvaf_hisimhv"
+title = "HiSIM_HV high-voltage MOSFET model"
+notes = """
+Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+model's own, stated in the license file or the header of the source.
+"""
+
+[source]
+name = "OpenVAF-reloaded"
+url = "https://github.com/OpenVAF/OpenVAF-Reloaded"
+commit = "5ed9e63afe70ac95129a78af7b3732e7d431b1e5"
+root = "integration_tests/HiSIMHV"
+license = "ECL-2.0"
+authors = [
+    "Hiroshima University",
+    "STARC",
+]
+
+[[files]]
+path = "HSMHV_analyticalPs0.inc"
+sha256 = "af686f89f6f790d969685ca08d37e5fa49e952288e060fa3adb1f6a636fa7e65"
+
+[[files]]
+path = "HSMHV_depmos.inc"
+sha256 = "027ccd85d705666bba132bcc1aff5646d9188f8eeca9f7bdd96775e301816f10"
+
+[[files]]
+path = "HSMHV_depmos2.inc"
+sha256 = "2247b18a424be336b374341bdf87c0b8d40bb4053465cbac4b5736f7f38a52d0"
+
+[[files]]
+path = "HSMHV_depmos3.inc"
+sha256 = "71421b6bdc3760db18176a64c5cadaf3f4d0e7c28aec10d8584637eb7a8e87e6"
+
+[[files]]
+path = "HSMHV_eval_Overlap.inc"
+sha256 = "4eabe464482bc848679f085eb7bef3377e7328b48f8510a6f4fa4da1b2c9b71c"
+
+[[files]]
+path = "HSMHV_eval_aging.inc"
+sha256 = "cf50cb85d1be2f5b5d62aac04146ae4022a181cc6f65be8f007d44f0432ff4f2"
+
+[[files]]
+path = "HSMHV_eval_dio.inc"
+sha256 = "5425a697553e06c9e525068b0d2beb85bee0d78ff3ee3fc749e46fdffdc50ef6"
+
+[[files]]
+path = "HSMHV_eval_loverLim.inc"
+sha256 = "3febf2496f5807f4dc81b11cd1c6d629c4f87cc00af0cc7b80c4deb6b1b51e6e"
+
+[[files]]
+path = "HSMHV_eval_newPT.inc"
+sha256 = "8bc8317e942f12b4ec786b31d74f42b9bde0757138af541a9c997d4d2a212068"
+
+[[files]]
+path = "HSMHV_eval_qover.inc"
+sha256 = "005dc417696bed37bd4a597811947ed00ca6018e014041f3972efda31faf6695"
+
+[[files]]
+path = "HSMHV_eval_rdrift.inc"
+sha256 = "2566059e49e16826a21da91a68763b54a02ab521d367072b73cf6530312764fb"
+
+[[files]]
+path = "HSMHV_eval_rdrifts.inc"
+sha256 = "dd0d1ff95f68aff52165f54f55ba04bdc0970bbe0e1bfd62a34abadb5333ad04"
+
+[[files]]
+path = "HSMHV_iterativePs0.inc"
+sha256 = "7978d569edb31638b34cd600fc46b5dc4ead77c233d6facc86cb81b27806992a"
+
+[[files]]
+path = "HSMHV_macrosAndDefs.inc"
+sha256 = "1f2383c2cdc84c727d1d9ab9e9e4a0f9d796b1cc2a95eebadada9cbf55e8e010"
+
+[[files]]
+path = "HSMHV_module.inc"
+sha256 = "6a4876d876bc56a6aba0e2f135a7cfb224b15d8388cd4d78d2a4e95ab19c8785"
+
+[[files]]
+path = "HSMHV_temp_eval.inc"
+sha256 = "301ea2a03dbc129ac14054ddb35d29721bf6f57cb967a209c72c60414d97dbc9"
+
+[[files]]
+path = "HSMHV_temp_eval_dio.inc"
+sha256 = "c0f03b6232c13f1d38bd5ca62387984bee1129e629a429ea319977a60d5ab4fa"
+
+[[files]]
+path = "HSMHV_temp_eval_rdri.inc"
+sha256 = "a08e82bd02e13571083ff77d2ea6555f9d129d4b13a5666562087b654b797862"
+
+[[files]]
+path = "HSMHV_temp_eval_rdris.inc"
+sha256 = "fb037e5d5620fc9935afad4f79770452705f67c07d402442a638757150f54d10"
+
+[[files]]
+path = "LICENSE.txt"
+sha256 = "d7ba00a5359ea17b35b067da34f48e1d6f01d7718c14be8ae562298f6306bdb0"
+
+[[files]]
+path = "NOTICE.txt"
+sha256 = "eef73b7d8192e4d542e2163d47aaa42cbafa65b94531f28671a910031ad3ed16"
+
+[[files]]
+path = "hisimhv.va"
+sha256 = "863e0e8857893821b39fade88a747c26f48a2607c7b1b0fb609d7055cc0fa19b"
+
+[[files]]
+path = "hisimhv_n4.va"
+sha256 = "b7ac953ba854b11a9ecff43badcac3caed9639796fe549ba0c863c73ab84d19b"
+
+[[files]]
+path = "hisimhv_n5.va"
+sha256 = "e643322b5baface19d5439f0677cff1cc03cebeb1fd7f8b8fe77b30cdd760de9"

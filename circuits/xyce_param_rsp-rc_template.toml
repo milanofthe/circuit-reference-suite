@@ -1,0 +1,9 @@
+title = "Xyce_Regression PARAM_RSP"
+case = "xyce_param_rsp"
+source = "rc_template.cir"
+outputs = [
+    "v(obj)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_table.error1.ckt"
+analysis = [
+    { type = "op" },
+]

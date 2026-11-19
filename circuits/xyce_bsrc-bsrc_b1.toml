@@ -1,0 +1,14 @@
+title = "Xyce_Regression BSRC"
+case = "xyce_bsrc"
+source = "Bsrc_B1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.002 },
+]
+
+[options]
+method = "trap"

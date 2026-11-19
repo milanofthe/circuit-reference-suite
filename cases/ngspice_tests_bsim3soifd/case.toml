@@ -1,0 +1,57 @@
+id = "ngspice_tests_bsim3soifd"
+title = "ngspice tests/bsim3soifd"
+family = "test"
+netlists = [
+    { file = "RampVg2.cir", dialect = "ngspice" },
+    { file = "inv2.cir", dialect = "ngspice" },
+    { file = "ring51.cir", dialect = "ngspice" },
+    { file = "t3.cir", dialect = "ngspice" },
+    { file = "t4.cir", dialect = "ngspice" },
+    { file = "t5.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "tests/bsim3soifd"
+
+[[files]]
+path = "RampVg2.cir"
+sha256 = "b4d2dae183f8f6797d978c705636b6712d617c10144094945d7eabbf8c5ba77f"
+
+[[files]]
+path = "inv2.cir"
+sha256 = "74e16d0bdf35c4f474ae058ce14267900532adf803e007e8667025973e0f4003"
+
+[[files]]
+path = "lib.h"
+sha256 = "f2ea7058236e8a9eaf3652de2885ea74eae9e143cd18341f7327c16c85ae747b"
+
+[[files]]
+path = "nmosfd.mod"
+sha256 = "9ce05cda44aac0905337b020525c0062010275c18956a3ff50fb6ba1aa2dd5a2"
+
+[[files]]
+path = "pmosfd.mod"
+sha256 = "d1f2c64e23cf3b562ef9065c5e5e903ea799c038f28fc61a5226c1e31c966dd4"
+
+[[files]]
+path = "ring51.cir"
+sha256 = "dbd7564c234cff6f2c757b1a6af02c99be29473382e2823b7df5df3845bfcb94"
+
+[[files]]
+path = "t3.cir"
+sha256 = "63d2271cbf7be394e88c957ea205492ceefaf869394061009074ecfe32f1ecb8"
+
+[[files]]
+path = "t4.cir"
+sha256 = "b7a25d372a270e6fdaed6188a72d85acf66cd92555318d5443d6bc6aca06764d"
+
+[[files]]
+path = "t5.cir"
+sha256 = "e7405d252ef21ad415663e1f0a7cc06d8266661736bc3b0c7a2982f206442779"

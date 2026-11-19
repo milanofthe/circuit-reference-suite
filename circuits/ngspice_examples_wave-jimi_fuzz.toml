@@ -1,0 +1,11 @@
+title = "ngspice examples/wave"
+case = "ngspice_examples_wave"
+source = "jimi_fuzz.cir"
+outputs = [
+    "v(10)",
+    "v(9)",
+]
+analysis = [
+    { type = "tran", step = 2.0833333333333e-05, stop = 5.0, max_step = 2.0833333333333e-05 },
+    { type = "op" },
+]

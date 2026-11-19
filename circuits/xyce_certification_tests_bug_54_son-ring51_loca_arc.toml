@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_54_SON"
+case = "xyce_certification_tests_bug_54_son"
+source = "ring51_loca_arc.cir"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 2.0, stop = 2.0, step = 1.0 },
+]

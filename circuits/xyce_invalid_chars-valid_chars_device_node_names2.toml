@@ -1,0 +1,338 @@
+title = "Xyce_Regression INVALID_CHARS"
+case = "xyce_invalid_chars"
+source = "valid_chars_device_node_names2.cir"
+outputs = [
+    "v(1)",
+    "v(1`)",
+    "v(1~)",
+    "v(1!)",
+    "v(1@)",
+    "v(1#)",
+    "v(1$)",
+    "v(1%)",
+    "v(1^)",
+    "v(1&)",
+    "v(1-)",
+    "v(1_)",
+    "v(1+)",
+    "v(1[)",
+    "v(1])",
+    "v(1|)",
+    "v(1\\)",
+    "v(1<)",
+    "v(1>)",
+    "v(1.)",
+    "v(1/)",
+    "v(`)",
+    "v(~)",
+    "v(!)",
+    "v(@)",
+    "v(#)",
+    "v($)",
+    "v(%)",
+    "v(^)",
+    "v(&)",
+    "v(-)",
+    "v(_)",
+    "v(+)",
+    "v([)",
+    "v(])",
+    "v(|)",
+    "v(\\)",
+    "v(<)",
+    "v(>)",
+    "v(.)",
+    "v(/)",
+    "v(x1.1`)",
+    "v(x1.1~)",
+    "v(x1.1!)",
+    "v(x1.1@)",
+    "v(x1.1#)",
+    "v(x1.1$)",
+    "v(x1.1%)",
+    "v(x1.1^)",
+    "v(x1.1&)",
+    "v(x1.1-)",
+    "v(x1.1_)",
+    "v(x1.1+)",
+    "v(x1.1[)",
+    "v(x1.1])",
+    "v(x1.1|)",
+    "v(x1.1\\)",
+    "v(x1.1<)",
+    "v(x1.1>)",
+    "v(x1.1.)",
+    "v(x1.1/)",
+    "v(x1.`)",
+    "v(x1.~)",
+    "v(x1.!)",
+    "v(x1.@)",
+    "v(x1.#)",
+    "v(x1.$)",
+    "v(x1.%)",
+    "v(x1.^)",
+    "v(x1.&)",
+    "v(x1.-)",
+    "v(x1._)",
+    "v(x1.+)",
+    "v(x1.[)",
+    "v(x1.])",
+    "v(x1.|)",
+    "v(x1.\\)",
+    "v(x1.<)",
+    "v(x1.>)",
+    "v(x1..)",
+    "v(x1./)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1`", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1~", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1!", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1@", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1#", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1$", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1%", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1^", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1&", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1*", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1-", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1_", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1+", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1[", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1]", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1|", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1\\", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1<", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1>", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1per", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1/", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v`", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v~", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v!", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v@", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v#", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v$", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v%", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v^", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v&", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v*", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v-", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v+", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v[", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v]", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v|", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v\\", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v<", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v>", start = 1.0, stop = 1.0, step = 1.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v/", start = 1.0, stop = 1.0, step = 1.0 },
+]

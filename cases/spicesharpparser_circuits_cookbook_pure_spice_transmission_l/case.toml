@@ -1,0 +1,20 @@
+id = "spicesharpparser_circuits_cookbook_pure_spice_transmission_l"
+title = "SpiceSharpParser circuits/cookbook/pure-spice/transmission-line-termination"
+family = "test"
+netlists = [
+    { file = "transmission-line-termination.cir", dialect = "spicesharp" },
+]
+
+[source]
+name = "SpiceSharpParser"
+url = "https://github.com/SpiceSharp/SpiceSharpParser"
+license = "MIT"
+authors = [
+    "SpiceSharp contributors",
+]
+commit = "8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7"
+root = "circuits/cookbook/pure-spice/transmission-line-termination"
+
+[[files]]
+path = "transmission-line-termination.cir"
+sha256 = "4599777f6a0e037f3ae1fc477d7436d700c651fada5a9205f916262433b85cb0"

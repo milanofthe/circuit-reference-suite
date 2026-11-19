@@ -1,0 +1,9 @@
+title = "ngspice examples/wave"
+case = "ngspice_examples_wave"
+source = "rcsim.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "ac", sweep = "lin", points = 50, start = 20.0, stop = 1000.0 },
+]

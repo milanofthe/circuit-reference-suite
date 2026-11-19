@@ -1,0 +1,75 @@
+id = "xyce_xdm_spectre_other_parsing"
+title = "Xyce_Regression XDM/SPECTRE/OTHER_PARSING"
+family = "test"
+netlists = [
+    { file = "case_sensitive_names.cir", dialect = "xyce" },
+    { file = "case_sensitive_names.cir.spectre", dialect = "spectre" },
+    { file = "comment_lines.cir", dialect = "xyce" },
+    { file = "comment_lines.cir.spectre", dialect = "spectre" },
+    { file = "dc_directive.cir", dialect = "xyce" },
+    { file = "dc_directive.cir.spectre", dialect = "spectre" },
+    { file = "statistics_line.cir", dialect = "xyce" },
+    { file = "statistics_line.cir.spectre", dialect = "spectre" },
+    { file = "subckt.cir", dialect = "xyce" },
+    { file = "subckt.cir.spectre", dialect = "spectre" },
+    { file = "unsupported_lines_options.cir", dialect = "xyce" },
+    { file = "unsupported_lines_options.cir.spectre", dialect = "spectre" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/SPECTRE/OTHER_PARSING"
+
+[[files]]
+path = "case_sensitive_names.cir"
+sha256 = "54af3053b1d0de0192470174d21c13bd402c6e0fef594899f15a78f05f20ce0a"
+
+[[files]]
+path = "case_sensitive_names.cir.spectre"
+sha256 = "0e115e5cb4374deab7e16c1fa07477850a3404623a3d19594d95b75a6f751c69"
+
+[[files]]
+path = "comment_lines.cir"
+sha256 = "587fdf5b826ee2c880b8642ef89361e3b12b9af214b96fd80cc6d4151c5b74b9"
+
+[[files]]
+path = "comment_lines.cir.spectre"
+sha256 = "cb42aa25c5ae0ee3b6a4c3460cdd50d1ccc2be9b3fce374571cb148e388e2f4c"
+
+[[files]]
+path = "dc_directive.cir"
+sha256 = "d01dfde4147b4b83c80d1fda21e19bb04d2eef06374010e93532cd1f73ca7c8e"
+
+[[files]]
+path = "dc_directive.cir.spectre"
+sha256 = "d12518e706d2a8689b9c7cffdab640771690c4c77f7b9a591949e937a50fa18f"
+
+[[files]]
+path = "statistics_line.cir"
+sha256 = "5b4037e0d6d0acecad4658888cf411d9e42db9a8fdfc03f21a472f11e1c4e3bd"
+
+[[files]]
+path = "statistics_line.cir.spectre"
+sha256 = "041f296c311381f4ec88fc21945abe3622eaf31b9f1fe55d55b9927e57b64f73"
+
+[[files]]
+path = "subckt.cir"
+sha256 = "578a9af427ba04a211dc5a10e00b3915d0cadb2b8624070109a62f40887b2a79"
+
+[[files]]
+path = "subckt.cir.spectre"
+sha256 = "e02647d2b1d1bf9b69483f50e0436e50bd168bdffff564d45bd7a5acfd91d579"
+
+[[files]]
+path = "unsupported_lines_options.cir"
+sha256 = "d4e5cb4da0240c41b09a1730d2437ed696d2f5c1119d8465490cd1ece0e3c22c"
+
+[[files]]
+path = "unsupported_lines_options.cir.spectre"
+sha256 = "73a1d7a309920ac8ee150212f808b1b789b8ded1acd3800fc538515b76aeead6"

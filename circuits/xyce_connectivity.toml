@@ -1,0 +1,10 @@
+title = "Xyce_Regression CONNECTIVITY"
+case = "xyce_connectivity"
+source = "connect.cir"
+outputs = [
+    "v(4)",
+    "v(11)",
+]
+analysis = [
+    { type = "tran", step = 5e-06, stop = 0.007 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression MCNC_BJT_RCA"
+case = "xyce_mcnc_bjt_rca"
+source = "rca.cir"
+outputs = [
+    "v(1)",
+    "v(16)",
+    "v(17)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 1.25e-07 },
+]
+
+[options]
+reltol = 0.0001

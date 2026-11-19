@@ -1,0 +1,458 @@
+id = "sky130_rf_nfet_01v8_lvt"
+title = "SKY130 rf_nfet_01v8_lvt model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p84L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p42L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p42L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p84L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p42L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p84L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p15__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p18__nfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p25__nfet_vth.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/rf_nfet_01v8_lvt/tests"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15__nfet_vth.spice"
+sha256 = "beae78f07fcd4a049be03c55a789a4783292e088a35c33ef8bc18c1381f4be20"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p84L0p15__nfet_vth.spice"
+sha256 = "25984e675c6b71427f514baa55f5075be05443a1041313b78fe84287fe1a0548"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W1p65L0p15__nfet_vth.spice"
+sha256 = "1b3bcc0c90eb1589e62d13bf3312fb782d7429b6dea30f845250cb0edbc3ba15"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF02W3p00L0p15__nfet_vth.spice"
+sha256 = "0fd3d4e2415816a75769b9ab773f1c9f110d80c5d3efc0ba028a324bde169830"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p42L0p15__nfet_vth.spice"
+sha256 = "f8cbe86c50dbdd77de11052d14879d1a92ced8e6a5bf82fd550712d93c4ad4ea"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15__nfet_vth.spice"
+sha256 = "bb0e4cf5031ae521d917192bb6a426aa9a60e5140d0b2471ff08d112c12bbeec"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W1p65L0p15__nfet_vth.spice"
+sha256 = "a977bceee0d36013142705865d96480fea3e931bfce45abf70bf0cd541db58e9"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF04W3p00L0p15__nfet_vth.spice"
+sha256 = "66d556546a53b4f1b78ae868e05aac6b821f1ffd2b90d66e45ed85d4f53f62b7"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p42L0p15__nfet_vth.spice"
+sha256 = "800535f8971003906c08c61b659ce52ac316cd952a4b6d7f1221e5ba12db2f05"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p84L0p15__nfet_vth.spice"
+sha256 = "6e2692112c6a9ad90f2a881e492e2140fae2ee35836907b1e503d2537282ba2d"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W1p65L0p15__nfet_vth.spice"
+sha256 = "723b297d9273f57e931452517e4357069e1f759818b916a86271fdc85589722a"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF06W3p00L0p15__nfet_vth.spice"
+sha256 = "8b2a18986180e9aa375ee54ac34e283c980a9fbdfbf01cfda3b5c5e2fd0534d4"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p42L0p15__nfet_vth.spice"
+sha256 = "2eda4e997b00a2f3b68dc7bbdf5b8f3c8be2db5ec67320cd821a750ae95c4ffa"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p84L0p15__nfet_vth.spice"
+sha256 = "172dc9039632f1b1011c258f0ca9762cdf2de1ece799d8278813c1b7d7a362d7"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W1p65L0p15__nfet_vth.spice"
+sha256 = "35757d6df8f4ebb7a1babbadcd74bd18f6eb9e27f41dd7ae98c9131f956aec77"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15__nfet_vth.spice"
+sha256 = "ea6a3c9587041ff927bb2de35e47e40d6ca7e1cb1acc49b9a69a48bc7e19da7b"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p15__nfet_vth.spice"
+sha256 = "98e1fdec202054d1f76bbd8acc1146b401137de8059642cf13ace7b49f56012f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p18__nfet_vth.spice"
+sha256 = "7ed216a33745335bfefab9fad85cb3673690c08fbe29b1349c8a65449c32929a"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p25__nfet_vth.spice"
+sha256 = "87b9b549abe38dc17ebbf56cc6b8f5cc59b1df5133c4063e18158760a325732f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p15__nfet_vth.spice"
+sha256 = "f287fa286769036d58b1965b7eb7555f97bba2a35125683f941bf441635af023"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p18__nfet_vth.spice"
+sha256 = "a2b510131bbdad215bf6d08e6d1d001d28a661cb671ae1c10c845e459d52450a"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p25__nfet_vth.spice"
+sha256 = "aa1bfc95b330e24261df18ee88bebfc49e8721b94754882e3050ba1aa2d3ee1a"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p15__nfet_vth.spice"
+sha256 = "be02ffb64b608a630b3f54814e270bf0a75094217eac90421330443cf33a0867"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p18__nfet_vth.spice"
+sha256 = "ed9f95a64fb48c3883b810ef8e8d937968562af11a74f1dc49f43a1f78931759"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p25__nfet_vth.spice"
+sha256 = "4a036abed4d517760af4db7e43b695290fcf9d8a6f790cba870f07728e5e6971"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p15__nfet_vth.spice"
+sha256 = "4cf114b66ff42de317b973d36c137310d34827016f891dd44eb741d107b2400c"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p18__nfet_vth.spice"
+sha256 = "bae0d0e76797c6ef6e67b5a5436ff7e34434d1a7f25fe97f02b77c4b2c64d1a7"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p25__nfet_vth.spice"
+sha256 = "a5c98e189f559ff3a6d25ace19a53131047ad1037f6018199d16b5d672eabd7f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p15__nfet_vth.spice"
+sha256 = "8c171d79fa6c495df1a6ae2b5ede2c9838c3d3e567d0774e33efca4e79b96c5d"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p18__nfet_vth.spice"
+sha256 = "7cda19691618556426859c7138ae65f05ff503824cf6c99d547df7298b4f0e92"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p25__nfet_vth.spice"
+sha256 = "92ad2e64c5cf31cc4053e5403a28e2d025dfe3cdf3d94ca0b4c66d7627e46156"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p15__nfet_vth.spice"
+sha256 = "f092f873fe7baf167d0c2f3e11c90e399c210e44644e0a66c67256c239ba5da6"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p18__nfet_vth.spice"
+sha256 = "79d19c41b59ebd713e4b218f3dab95a7358a6cf27eea88de9583aaf0313ac1e0"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p25__nfet_vth.spice"
+sha256 = "821035585d9389af3158221721c8cb355b7801d07fb5d27f6a9027b3702339dc"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p15__nfet_vth.spice"
+sha256 = "cbcf1373e1e309631191f4dd20f81af5833c3d495ad72aa7f1de7de97ad050f3"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p18__nfet_vth.spice"
+sha256 = "a97de56928dc3eb8aa9954c6300b5f6485a29e0a9cf65fb68e9915f971764e5a"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p25__nfet_vth.spice"
+sha256 = "c71cf2b3d0f4ee6f562435fc546df20589071aa16cb68df299abac51f781a808"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p15__nfet_vth.spice"
+sha256 = "663cf5286ee0146e8de32cf12bdf1975c74c669d6fa9e6a310589b062adb92a6"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p18__nfet_vth.spice"
+sha256 = "634fc87832deef789427fd8681070b1dc3613661b0a1eb80f7177704c33a59da"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p25__nfet_vth.spice"
+sha256 = "d19a60f6997131291ae22c3ab32805ffa91b11bd60273c8e6ede8532b0323136"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00__nfet_vth.spice"
+sha256 = "e5c7d9bd07664bf730a24719a101ab50cc72e27d545a267009d80ebbbf99a500"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p15__nfet_vth.spice"
+sha256 = "958edddfe6850b5169bfcfe097d4450f9a88f9d62f599d78d108bbe255c3122e"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p18__nfet_vth.spice"
+sha256 = "afaa8da7c037a1779220b85fd2e7f7e122764a8500f03104cc4883a067726fbd"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p25__nfet_vth.spice"
+sha256 = "44555f2bdc6537bdaf01568c7f941029fca6f0b9b2b37eebb4fdd19e357a4f2b"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00__nfet_vth.spice"
+sha256 = "1f114a45ac421526b8ec4031ba73ba2c0c4d278aa0ee7afd7d97dae37c0398a3"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM02__nfet_vth.spice"
+sha256 = "bcdc80dbc8ae4ac529a58426e2080595e2b5a114dc71c8d8e36bde68b46c9cc3"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p15__nfet_vth.spice"
+sha256 = "ce9ecc5081e67f7ee689a5ef13cac58a3836029fbaa63d15ae9730c2ad501d9b"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p18__nfet_vth.spice"
+sha256 = "a627804333ea0b7c44ad293bd159e61a97c92391cf82ebfe2f3379151f5d5a6f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p25__nfet_vth.spice"
+sha256 = "389973673777b68e3d3ec5ba3fffe2339eeb85ace8309ac10fa25b702bf87938"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p15__nfet_vth.spice"
+sha256 = "e3dceed8d93895fd53572975316c45d66f4116627f01037bf81727d665cfedeb"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p18__nfet_vth.spice"
+sha256 = "28d05741515fd5f59e1a58b4edae6a3c3bd2a2658662da72337ca631f0198c2f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p25__nfet_vth.spice"
+sha256 = "39d0a32060400bbcde6e7220376d941ca565d8f751a429560782190167456377"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00__nfet_vth.spice"
+sha256 = "2ceb499d041819bff8bd40b51f30e457349a84efba56f7cf21d3994c572e7dfb"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p15__nfet_vth.spice"
+sha256 = "60c4a559e639ad29c5a0d69a57ae436d288c4768ce572230ad3d28cbc60230c2"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p18__nfet_vth.spice"
+sha256 = "d6884822def21bed4f09f488eecef0ef9db3d968da9ba1003bc5892bc2a4cacd"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p25__nfet_vth.spice"
+sha256 = "7c5f74f46095657ab5945b44a6934a4faedde484150892a3910ee68654d35943"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00__nfet_vth.spice"
+sha256 = "706cc8a623fd338bd40a13e8dd213387ed0fde9e21b919516f4c96b2035c662f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_bM04__nfet_vth.spice"
+sha256 = "09fa58ae5ede8fe49bb6779fbf4adfc29e76b0d12173afce974899143fe988bc"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p15__nfet_vth.spice"
+sha256 = "a991dad62d4f4fd947830a6b888cfd0fccd695e4378e1230a9ac4697aa0a7979"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p18__nfet_vth.spice"
+sha256 = "360a79fa2bc46fb0081269ec74d0d6d6a746ee786825d309fb2e0742e015b143"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p25__nfet_vth.spice"
+sha256 = "f2bac3b815714039813e536008fa76d8a6aa4c0d6105162ca0b2c2a3b0438760"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15__nfet_vth.spice"
+sha256 = "d766f3bd2108c77982a2b982add88b3f4e0180d4ad0c44603cf706ca39aa2c21"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p18__nfet_vth.spice"
+sha256 = "ea670bb6de41f9c4a4527507a0635fd4b2a23fd774d9c663df15f38803ed2338"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p25__nfet_vth.spice"
+sha256 = "0969239c803129da05f2d88577429fbc4719878e10d2c858d9fb6725a1cc6eef"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p15__nfet_vth.spice"
+sha256 = "99d69c8cd5e2b5e2f49ad914d15e649e107967db0c0b0db9b619bfaa89af456b"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p18__nfet_vth.spice"
+sha256 = "f0e47a1d68ab05a5126a98e47cc0b001314422952c6b3d6b8bd9f7e443803405"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p25__nfet_vth.spice"
+sha256 = "7e856c019caaba9ee1509d4e16d4bf133270ff765e74ac1bb62f2b124f4bde78"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p15__nfet_vth.spice"
+sha256 = "743e28bf2546b88bf397bc14440a876bfbd73eb4ea50e333ad73aae9ba0ad47b"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p18__nfet_vth.spice"
+sha256 = "cafa6cf650680d042da196628b1ce73a2c96358feb47c385792b66e8a419c13d"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p25__nfet_vth.spice"
+sha256 = "092ea8a0dcc4a6dd5f0e0292dc69949a3176cba2dbe769d6264a94d1fd373b9f"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p15__nfet_vth.spice"
+sha256 = "b5c8fa98f29645a66fe884819d5aad78eb4a4d04b196fdca753f926f39cee597"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p18__nfet_vth.spice"
+sha256 = "9741bba094c24372d57b081fcb9ff2f89d4cbb83ba9594b2fb67e419bb54eaef"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p25__nfet_vth.spice"
+sha256 = "a0195187aa2107930bc57c235fe96f6f5a2360b2f5f5652f1c7f39a2780dfac6"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p15__nfet_vth.spice"
+sha256 = "c6126c4612fee84a1541af1616d33ea64c8459c65e191f590419435538d29016"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p18__nfet_vth.spice"
+sha256 = "eab7ca3c8bec289e85473bd6f9055eb300934ae1d4fb4c28d29a8a4551fe627c"
+
+[[files]]
+path = "sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p25__nfet_vth.spice"
+sha256 = "4ea8f9ced7b4548acbba4570ddbd88a4ccd7ae1716044c6acf1b740904bf550c"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF02W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF02W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p42L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p42L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF04W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF04W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p42L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p42L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p84L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p84L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF06W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF06W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p42L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p42L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aF08W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aF08W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p25.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p15.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p15.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p18.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p18.spice"
+"../sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p25.spice" = "libraries/sky130_fd_pr/cells/rf_nfet_01v8_lvt/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p25.spice"

@@ -1,0 +1,6 @@
+title = "Xyce_Regression ABM_NINT_FMOD"
+case = "xyce_abm_nint_fmod"
+source = "nint.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 0.005 },
+]

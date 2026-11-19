@@ -1,0 +1,13 @@
+title = "ngspice examples/various"
+case = "ngspice_examples_various"
+source = "v-i-sources-am-ffm.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(10)",
+    "v(20)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.064 },
+]

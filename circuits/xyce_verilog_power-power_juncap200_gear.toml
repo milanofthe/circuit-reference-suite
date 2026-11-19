@@ -1,0 +1,17 @@
+title = "Xyce_Regression Verilog_POWER"
+case = "xyce_verilog_power"
+source = "power_juncap200_gear.cir"
+outputs = [
+    "v(3)",
+    "v(2)",
+    "i(d1)",
+    "v(4)",
+    "v(5)",
+    "i(d2)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.4 },
+]
+
+[options]
+method = "gear"

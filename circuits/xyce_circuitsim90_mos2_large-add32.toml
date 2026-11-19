@@ -1,0 +1,45 @@
+title = "Xyce_Regression CircuitSim90/MOS2_LARGE"
+case = "xyce_circuitsim90_mos2_large"
+source = "add32.cir"
+outputs = [
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(37)",
+    "v(38)",
+    "v(39)",
+    "v(40)",
+    "v(70)",
+    "v(71)",
+    "v(72)",
+    "v(73)",
+    "v(103)",
+    "v(104)",
+    "v(105)",
+    "v(106)",
+    "v(136)",
+    "v(137)",
+    "v(138)",
+    "v(139)",
+    "v(169)",
+    "v(170)",
+    "v(171)",
+    "v(172)",
+    "v(202)",
+    "v(203)",
+    "v(204)",
+    "v(205)",
+    "v(235)",
+    "v(236)",
+    "v(237)",
+    "v(238)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-06 },
+]
+
+[options]
+reltol = 0.01
+vntol = 1e-06

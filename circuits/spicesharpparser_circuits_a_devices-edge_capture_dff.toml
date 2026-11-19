@@ -1,0 +1,12 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "edge-capture-dff.cir"
+outputs = [
+    "v(data)",
+    "v(clock)",
+    "v(q)",
+    "v(qb)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 4e-08, max_step = 1e-10, uic = true },
+]

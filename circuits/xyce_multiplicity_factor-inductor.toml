@@ -1,0 +1,23 @@
+title = "Xyce_Regression MULTIPLICITY_FACTOR"
+case = "xyce_multiplicity_factor"
+source = "inductor.cir"
+outputs = [
+    "v(1)",
+    "v(1a)",
+    "v(2)",
+    "v(2a)",
+    "v(3)",
+    "v(3a)",
+    "v(4)",
+    "v(4a)",
+    "v(5)",
+    "v(5a)",
+    "v(6)",
+    "v(6a)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.02 },
+]
+
+[options]
+reltol = 0.0001

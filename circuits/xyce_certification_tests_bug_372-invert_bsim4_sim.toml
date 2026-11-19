@@ -1,0 +1,15 @@
+title = "Xyce_Regression Certification_Tests/BUG_372"
+case = "xyce_certification_tests_bug_372"
+source = "invert_bsim4-sim.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]
+
+[options]
+reltol = 0.005
+vntol = 0.001

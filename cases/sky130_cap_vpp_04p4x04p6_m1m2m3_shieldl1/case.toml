@@ -1,0 +1,25 @@
+id = "sky130_cap_vpp_04p4x04p6_m1m2m3_shieldl1"
+title = "SKY130 cap_vpp_04p4x04p6_m1m2m3_shieldl1 model checks"
+family = "device"
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/cap_vpp_04p4x04p6_m1m2m3_shieldl1/tests"
+
+[[files]]
+path = "sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1__capval_test.spice"
+sha256 = "b70f2afb565d6d96a58414c9c8c5aa12cc347d950f35f224e46a92127362d248"
+
+[[netlists]]
+file = "sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1__capval_test.spice"
+dialect = "ngspice"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"

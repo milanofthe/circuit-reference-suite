@@ -1,0 +1,15 @@
+title = "Xyce_Regression MOS6"
+case = "xyce_mos6"
+source = "nmos6_dc.cir"
+outputs = [
+    "v(4)",
+    "v(1)",
+    "i(vmon)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 6.0, step = 0.01 },
+    { source = "vgs", start = 1.0, stop = 4.0, step = 1.0 },
+]

@@ -1,0 +1,6 @@
+title = "ngspice examples/osdi/absdelay"
+case = "ngspice_examples_osdi_absdelay"
+source = "absdelay_tran.cir"
+analysis = [
+    { type = "tran", step = 1e-11, stop = 4e-08 },
+]

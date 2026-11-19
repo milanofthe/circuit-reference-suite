@@ -1,0 +1,10 @@
+title = "AnalogGym amplifier Alfio_RAFFC_Pin_3, SKY130"
+case = "analoggym_alfio_raffc_pin_3"
+source = "amp_spice_testbench/Alfio_RAFFC_Pin_3_Tran.cir"
+outputs = [
+    "v(visr)",
+    "v(vout3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.000401 },
+]

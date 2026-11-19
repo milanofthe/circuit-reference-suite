@@ -1,0 +1,16 @@
+title = "Xyce_Regression PSP102"
+case = "xyce_psp102"
+source = "psp102_outvars.cir"
+outputs = [
+    "v(g)",
+    "v(d)",
+]
+
+[options]
+temp = 27.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_g", start = -1.0, stop = 1.2, step = 0.01 },
+]

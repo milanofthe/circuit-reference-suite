@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+case = "xyce_xdm_pspice_other_parsing"
+source = "options_itl4_itl1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+pspice = "options_itl4_itl1.cir.pspice"

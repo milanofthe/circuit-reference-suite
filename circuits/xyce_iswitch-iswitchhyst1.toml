@@ -1,0 +1,10 @@
+title = "Xyce_Regression ISWITCH"
+case = "xyce_iswitch"
+source = "iswitchHyst1.cir"
+outputs = [
+    "i(v2)",
+    "i(s1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.3 },
+]

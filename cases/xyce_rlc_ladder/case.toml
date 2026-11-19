@@ -1,0 +1,20 @@
+id = "xyce_rlc_ladder"
+title = "Xyce_Regression RLC_LADDER"
+family = "test"
+netlists = [
+    { file = "rc_simple_xyce.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/RLC_LADDER"
+
+[[files]]
+path = "rc_simple_xyce.cir"
+sha256 = "6213de4a619934ce6624b5c2f030ed2b895c4de23be8a4438d037643c7c36296"

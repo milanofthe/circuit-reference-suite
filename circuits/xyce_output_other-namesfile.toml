@@ -1,0 +1,14 @@
+title = "Xyce_Regression Output/Other"
+case = "xyce_output_other"
+source = "Namesfile.cir"
+outputs = [
+    "v(r1_in)",
+    "v(sub_in)",
+    "v(sub_out)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

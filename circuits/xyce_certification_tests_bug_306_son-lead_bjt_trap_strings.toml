@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_306_SON"
+case = "xyce_certification_tests_bug_306_son"
+source = "lead_bjt_trap_strings.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-05 },
+]
+
+[options]
+method = "trap"

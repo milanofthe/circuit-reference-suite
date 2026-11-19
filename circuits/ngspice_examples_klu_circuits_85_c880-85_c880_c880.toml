@@ -1,0 +1,38 @@
+title = "ngspice examples/klu/Circuits/85/c880"
+case = "ngspice_examples_klu_circuits_85_c880"
+source = "85/c880/c880.net"
+outputs = [
+    "v(g859)",
+    "v(g861)",
+    "v(g865)",
+    "v(g870)",
+    "v(g864)",
+    "v(g866)",
+    "v(g878)",
+    "v(g862)",
+    "v(g860)",
+    "v(g869)",
+    "v(g874)",
+    "v(g863)",
+    "v(g877)",
+    "v(g876)",
+    "v(g857)",
+    "v(g871)",
+    "v(g868)",
+    "v(g856)",
+    "v(g880)",
+    "v(g873)",
+    "v(g872)",
+    "v(g875)",
+    "v(g867)",
+    "v(g858)",
+    "v(g879)",
+    "v(g855)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 1e-15
+abstol = 1e-13

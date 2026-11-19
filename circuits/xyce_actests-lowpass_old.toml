@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests"
+case = "xyce_actests"
+source = "lowpass_old.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1000.0, stop = 1000000.0 },
+]

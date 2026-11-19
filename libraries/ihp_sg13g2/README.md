@@ -6,7 +6,7 @@
 - URL: https://github.com/IHP-GmbH/IHP-Open-PDK (commit `5e6d592e4002946a4616f798c357f0f3c06cf3b6`)
 - License: Apache-2.0
 
-39 files, 0.9 MB.
+46 files, 0.9 MB.
 
 Subset of upstream: the ngspice model files the cases here include, and the Verilog-A sources
 

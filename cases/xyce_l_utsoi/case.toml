@@ -1,0 +1,35 @@
+id = "xyce_l_utsoi"
+title = "Xyce_Regression L_UTSOI"
+family = "test"
+netlists = [
+    { file = "asym_nmos_idvg0_allsw0_T27.cir", dialect = "xyce" },
+    { file = "asym_pmos_idvg0_allsw0_T27.cir", dialect = "xyce" },
+    { file = "sym_nmos_idvg0_allsw0_T27.cir", dialect = "xyce" },
+    { file = "sym_pmos_idvg0_allsw0_T27.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/L_UTSOI"
+
+[[files]]
+path = "asym_nmos_idvg0_allsw0_T27.cir"
+sha256 = "5045d7264c8dc5a11884e548f1dcd3c89cf250d075318f88d3567988d732f492"
+
+[[files]]
+path = "asym_pmos_idvg0_allsw0_T27.cir"
+sha256 = "1e7170605da5e9acdfb84ed517f2f7664c4ed16a88417defa6606cd126f1fa45"
+
+[[files]]
+path = "sym_nmos_idvg0_allsw0_T27.cir"
+sha256 = "020f2e0f2f092e448e7f548e343889d988f9da8412e0fd33f2f0559b73072660"
+
+[[files]]
+path = "sym_pmos_idvg0_allsw0_T27.cir"
+sha256 = "116657f350143a3020fa1519573bf3b0feee4514ff9d1249732ed76cab85f6b6"

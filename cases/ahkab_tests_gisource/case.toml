@@ -1,0 +1,21 @@
+id = "ahkab_tests_gisource"
+title = "ahkab tests/gisource"
+family = "test"
+netlists = [
+    { file = "gisource.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/gisource"
+
+[[files]]
+path = "gisource.ckt"
+sha256 = "11ee74a73e2b03071c4127dd8c6e46e92982ef6b79e58fe9fe65e979828bfe0b"

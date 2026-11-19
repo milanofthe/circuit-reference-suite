@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_710_SON"
+case = "xyce_certification_tests_bug_710_son"
+source = "b4cap.cir"
+outputs = [
+    "v(g)",
+]
+analysis = [
+    { type = "tran", step = 4e-11, stop = 2e-08, max_step = 1e-11 },
+]
+
+[options]
+temp = 27.0

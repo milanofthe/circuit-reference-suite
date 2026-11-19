@@ -1,0 +1,35 @@
+id = "xyce_simulink"
+title = "Xyce_Regression SIMULINK"
+family = "test"
+netlists = [
+    { file = "1Dac2ADCSystem.cir", dialect = "xyce" },
+    { file = "TestNetlist1.cir", dialect = "xyce" },
+    { file = "TestNetlist2.cir", dialect = "xyce" },
+    { file = "TestNetlist3.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/SIMULINK"
+
+[[files]]
+path = "1Dac2ADCSystem.cir"
+sha256 = "e9ec317ec6fcc1511b1c0e07f13b8d1dac488cf3bf1194b865215d41359af45e"
+
+[[files]]
+path = "TestNetlist1.cir"
+sha256 = "7f06b822ac3a654300a3d38946d47d99ff1d933fbce6b8a5bbaf57eca607c797"
+
+[[files]]
+path = "TestNetlist2.cir"
+sha256 = "632450d57092f7c8f8475480193847b0c86fdfbe4d045517d9c4283f056bd556"
+
+[[files]]
+path = "TestNetlist3.cir"
+sha256 = "bb1467ca7e8ca09c03a615cac8505d0971e3002277c74583735ec452bc344d5b"

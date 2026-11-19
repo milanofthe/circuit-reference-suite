@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_848"
+title = "Xyce_Regression Certification_Tests/BUG_848"
+family = "test"
+netlists = [
+    { file = "topoCheck.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_848"
+
+[[files]]
+path = "topoCheck.cir"
+sha256 = "77e5c1a04dcf875b26abf68b7d9d75427f603451821f0005990185ebe5b17d73"

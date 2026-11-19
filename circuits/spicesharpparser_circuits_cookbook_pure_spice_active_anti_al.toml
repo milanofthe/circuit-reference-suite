@@ -1,0 +1,14 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/active-anti-alias-filter"
+case = "spicesharpparser_circuits_cookbook_pure_spice_active_anti_al"
+source = "active-anti-alias-filter.cir"
+outputs = [
+    "v(source)",
+    "v(pole1)",
+    "v(pole2)",
+    "v(output)",
+    "v(adc)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 50, start = 10.0, stop = 10000000.0 },
+    { type = "tran", step = 2e-07, stop = 0.006, max_step = 1e-07 },
+]

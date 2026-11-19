@@ -1,0 +1,14 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "dummyDiodeTran2.cir"
+outputs = [
+    "v(2)",
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 2e-05 },
+]
+
+[options]
+method = "gear"
+temp = 25.0

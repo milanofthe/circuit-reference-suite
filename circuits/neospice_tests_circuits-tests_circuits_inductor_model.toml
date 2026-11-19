@@ -1,0 +1,9 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/inductor_model.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 100.0, stop = 100000.0 },
+]
+
+[options]
+temp = 85.0

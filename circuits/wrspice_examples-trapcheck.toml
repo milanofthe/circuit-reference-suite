@@ -1,0 +1,9 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "trapcheck.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.01 },
+]

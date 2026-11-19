@@ -1,0 +1,9 @@
+title = "Xyce_Regression INVALID_CHARS"
+case = "xyce_invalid_chars"
+source = "comma_fails_node_name.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

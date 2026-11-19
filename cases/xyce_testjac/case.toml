@@ -1,0 +1,20 @@
+id = "xyce_testjac"
+title = "Xyce_Regression TESTJAC"
+family = "test"
+netlists = [
+    { file = "testjac_comp.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TESTJAC"
+
+[[files]]
+path = "testjac_comp.cir"
+sha256 = "28e72b5b93522017e27805acfe1a49c445853bcece776cb2b1fde0e62db63046"

@@ -1,0 +1,12 @@
+title = "Xyce_Regression ROM/MULTIPORT"
+case = "xyce_rom_multiport"
+source = "RLC_mesh2.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(8)",
+    "v(11)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 5e-06 },
+]

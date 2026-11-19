@@ -1,0 +1,150 @@
+id = "wrspice_examples_jjexamples"
+title = "WRspice examples/JJexamples"
+family = "test"
+netlists = [
+    { file = "ex8.cir", dialect = "wrspice" },
+    { file = "jjac.cir", dialect = "wrspice" },
+    { file = "jjbadmut.cir", dialect = "wrspice" },
+    { file = "jjcntr.cir", dialect = "wrspice" },
+    { file = "jjdc.cir", dialect = "wrspice" },
+    { file = "jjintr.cir", dialect = "wrspice" },
+    { file = "jjiv.cir", dialect = "wrspice" },
+    { file = "jjiv4.cir", dialect = "wrspice" },
+    { file = "jjloop.cir", dialect = "wrspice" },
+    { file = "jjloop1.cir", dialect = "wrspice" },
+    { file = "jjloop2.cir", dialect = "wrspice" },
+    { file = "jjmc.cir", dialect = "wrspice" },
+    { file = "jjmc1.cir", dialect = "wrspice" },
+    { file = "jjoprng.cir", dialect = "wrspice" },
+    { file = "jjoprng1.cir", dialect = "wrspice" },
+    { file = "jjoprng2.cir", dialect = "wrspice" },
+    { file = "jjprbs.cir", dialect = "wrspice" },
+    { file = "jjpulse.cir", dialect = "wrspice" },
+    { file = "nor_mc.cir", dialect = "wrspice" },
+    { file = "nor_op.cir", dialect = "wrspice" },
+    { file = "nor_vamc.cir", dialect = "wrspice" },
+    { file = "sfq.cir", dialect = "wrspice" },
+    { file = "shutop.cir", dialect = "wrspice" },
+    { file = "shuttle.cir", dialect = "wrspice" },
+    { file = "shuttlea.cir", dialect = "wrspice" },
+    { file = "sk.cir", dialect = "wrspice" },
+    { file = "sk03.cir", dialect = "wrspice" },
+]
+
+[source]
+name = "WRspice"
+url = "https://github.com/wrcad/xictools"
+license = "Apache-2.0"
+authors = [
+    "Whiteley Research",
+]
+commit = "a51c6b6386ad923b9da4e66d11513dc2e0fe3997"
+root = "wrspice/examples/JJexamples"
+
+[[files]]
+path = "ex8.cir"
+sha256 = "c1f9a3b18de863abc9334dc9db1b7fe9cffa14e5bfce25f76ab2b45292a27213"
+
+[[files]]
+path = "jjac.cir"
+sha256 = "f8d2eacf73f4717e60a21e401bf566cedc69b1b0adc3af6a0a8c949c00dcefee"
+
+[[files]]
+path = "jjbadmut.cir"
+sha256 = "ebcff7e2a0fe3c319dcc26f50a17fd308e68da7d56056486b623e8994dd53a96"
+
+[[files]]
+path = "jjcntr.cir"
+sha256 = "c56739effb72e6f2451bdda5f7acb451c88e972fa11b1249875ec00500fe0e10"
+
+[[files]]
+path = "jjdc.cir"
+sha256 = "e66191e84b55499990d84e3d431ac3513545588d451bdabd3aeea287c1d24b5e"
+
+[[files]]
+path = "jjintr.cir"
+sha256 = "b6751b9e0080452d9fbe68206d8bf637196356fc4600a3671dc0178b5d55b01b"
+
+[[files]]
+path = "jjiv.cir"
+sha256 = "8c4eb18f94d9d4fb840252dcd235a09440add28658853170ba69a34834ba65a7"
+
+[[files]]
+path = "jjiv4.cir"
+sha256 = "1717fc0443a96b0cb4b258ac6a19facc7825ab01ac1146ac987fa9eb08b322fc"
+
+[[files]]
+path = "jjloop.cir"
+sha256 = "3704d3b99b0c8bb4e867b1c8e252eb9a017e8ca2b84ac4f8304a6495e2a5f717"
+
+[[files]]
+path = "jjloop1.cir"
+sha256 = "b8e7e053cee31d744c99974efd871738f877b112ce90e9e1c25d0aab36544803"
+
+[[files]]
+path = "jjloop2.cir"
+sha256 = "f272765bc8b7334108e1ca967010747b77e40a93772ca1e4ee07febb3d25ac18"
+
+[[files]]
+path = "jjmc.cir"
+sha256 = "7f26c4b268f16dc27605a70e6d6171ff3185cbf105d0af89586f0ec794cfa12d"
+
+[[files]]
+path = "jjmc1.cir"
+sha256 = "8dcdec44f45f36675bd32c5d884cabaaaa071dc8259315be11ea3aa7d33f22b2"
+
+[[files]]
+path = "jjoprng.cir"
+sha256 = "979700765568b83bade0217bf98f1b2a0ed24f7e791daedb07b856baeea6bad0"
+
+[[files]]
+path = "jjoprng1.cir"
+sha256 = "62eb2e81843d0003315d1b141fc63278bccd20609358fc026007d849fb3bacc7"
+
+[[files]]
+path = "jjoprng2.cir"
+sha256 = "17fa951cb1ce742aaaef5a1288a8cbf36abe940d0dc6b22eca86a291701ec2b2"
+
+[[files]]
+path = "jjprbs.cir"
+sha256 = "cf0b795ec9d408b45f48036db69a3dcc1ac56ed418913cc649fc8ae76b526869"
+
+[[files]]
+path = "jjpulse.cir"
+sha256 = "6c82d735ebe71c7b00a8ac58c8e9a8ac18ed2329be2e557ea43c4854eacc55dc"
+
+[[files]]
+path = "nor_mc.cir"
+sha256 = "178b519d98e66e6659428ff43d1589cc34712bb92079d27e0a5931a58e2e52df"
+
+[[files]]
+path = "nor_op.cir"
+sha256 = "93ce86ccfa26f4531c0db6d3b18c8c8ad3c26d2218b279e6f2917846a90af0b5"
+
+[[files]]
+path = "nor_vamc.cir"
+sha256 = "4acbbecf2d478b8caca84c1a4f79901b2968a62aeb20bc6f5feafb9708f0f109"
+
+[[files]]
+path = "sfq.cir"
+sha256 = "72f5b3a923994d869e9d18f9018593b5984f01ee94735f97d5b06737e8768fec"
+
+[[files]]
+path = "shutop.cir"
+sha256 = "1fd7307903386b494bf01a0d437a664dfd2e799a52ab4215a2badb62afa3fd88"
+
+[[files]]
+path = "shuttle.cir"
+sha256 = "8ee6721706fe26859b11b59def3ee2d328f1393eb8f10c2377302b609e9617fb"
+
+[[files]]
+path = "shuttlea.cir"
+sha256 = "3f20e2a4a9fc2a36e319cc849ffd8dfa79b9ede9e0a64f0c2aa45cc0fbb3d9cd"
+
+[[files]]
+path = "sk.cir"
+sha256 = "9d7b9cbe8f966a5de9875ed31cfb1a0acdb85f974de832e95d780762faf83f0d"
+
+[[files]]
+path = "sk03.cir"
+sha256 = "c401712d6764aaeab22d9bb7c521ce07a99420602ff34d35b28186e1b0f90176"

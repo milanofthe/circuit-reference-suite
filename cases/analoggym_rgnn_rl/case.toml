@@ -1,0 +1,65 @@
+id = "analoggym_rgnn_rl"
+title = "AnalogGym RGNN_RL testbenches: NMCF amplifier and LDO, SKY130"
+family = "opamp"
+netlists = [
+    { file = "simulations/AMP_NMCF_ACDC.cir", dialect = "ngspice" },
+    { file = "simulations/AMP_NMCF_Tran.cir", dialect = "ngspice" },
+    { file = "simulations/LDO_TB_ACDC.cir", dialect = "ngspice" },
+    { file = "simulations/LDO_TB_Tran.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "AnalogGym"
+url = "https://github.com/CODA-Team/AnalogGym"
+commit = "0a9d1390ade361e2b4a2d33181e22367edbb8afc"
+license = "BSD-3-Clause"
+authors = [
+    "CODA Team",
+]
+root = "RGNN_RL"
+
+[[files]]
+path = "simulations/AMP_NMCF_ACDC.cir"
+sha256 = "e8983f1aca6d366cd9cadeb2f9a113c8ea9c13f6dc10f92244270b4cd4a0fec2"
+
+[[files]]
+path = "simulations/AMP_NMCF_Tran.cir"
+sha256 = "0ab79789ff9e33a65ce4dd20d9da27dfa655b8fae47eb1ccba46761cdce242f9"
+
+[[files]]
+path = "simulations/LDO_TB_ACDC.cir"
+sha256 = "971d9b5dd14ee130ff1f99a549aa987eb45c459c6a41de4d435313ef8d5312fc"
+
+[[files]]
+path = "simulations/LDO_TB_Tran.cir"
+sha256 = "d64462bdba6a7b4d7210075402cc0c299fc96be8997ada5cb8c5ee41a2684d00"
+
+[[files]]
+path = "simulations/AMP_NMCF_Pin_3_HSPICE_130.txt"
+sha256 = "8b58c1a4fe2eed5859c36125c39732b15d6e84796dfd9b56784420fd84301117"
+
+[[files]]
+path = "simulations/AMP_NMCF_vars.spice"
+sha256 = "8c925c42369d0b1f2190e583366a8deae5e8458c7e1de12a35f518fa2f437718"
+
+[[files]]
+path = "simulations/AMP_NMCF_dev_params.spice"
+sha256 = "0b9c15c8ec73ad4e647e5f81b7f14fdd86fe1f25fda1012624bc501809a29554"
+
+[[files]]
+path = "simulations/LDO_TB.txt"
+sha256 = "d69b60919d9785ff59ac2c9a55c40c6fea94295e9a0f18647862335da4041672"
+
+[[files]]
+path = "simulations/LDO_TB_vars.spice"
+sha256 = "b7c9b9865f85a9891fe048a33ce1f1c63a8265526b83c16b1167d796184a237f"
+
+[[files]]
+path = "simulations/LDO_TB_dev_params.spice"
+sha256 = "6d48528ffffe7570897ea11680ecd07a1ee1346f0922ee2256a665f9a9cb1331"
+
+[resolve]
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/corners/tt.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/corners/tt/specialized_cells.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical.spice"
+"../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice" = "libraries/analoggym_sky130/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice"

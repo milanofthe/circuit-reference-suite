@@ -1,0 +1,33 @@
+id = "xyce_thermal_resistor"
+title = "Xyce_Regression THERMAL_RESISTOR"
+family = "test"
+netlists = [
+    { file = "constant.cir", dialect = "xyce" },
+    { file = "linear.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/THERMAL_RESISTOR"
+
+[[files]]
+path = "constant.cir"
+sha256 = "38e3df568b6f27a974fdf58f4321d63b33dab345173db2906b8a3bbabe431bc7"
+
+[[files]]
+path = "copper.constant"
+sha256 = "1442d0b55f3599ed545f2c5fe2ff662c8a33ea4a6f4167fe4081c8605d16b221"
+
+[[files]]
+path = "copper.linear"
+sha256 = "c92fe4ced3c3cccbc88624109fb82305e6aaf51bacc5ba6473fb70ea8c08e9f5"
+
+[[files]]
+path = "linear.cir"
+sha256 = "0928e9a83c64f1576e14b066aab613493a1e2c87c1b63d63a6218b2223244144"

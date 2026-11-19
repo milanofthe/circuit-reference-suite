@@ -1,0 +1,14 @@
+title = "ngspice paranoia_parallel/examples/vbic"
+case = "ngspice_paranoia_parallel_examples_vbic"
+source = "vbic99_tran.sp"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(t)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 5e-11, stop = 5e-08 },
+]

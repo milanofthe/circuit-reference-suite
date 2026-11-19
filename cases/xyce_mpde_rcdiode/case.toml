@@ -1,0 +1,20 @@
+id = "xyce_mpde_rcdiode"
+title = "Xyce_Regression MPDE/RCDIODE"
+family = "test"
+netlists = [
+    { file = "RCDiode.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MPDE/RCDIODE"
+
+[[files]]
+path = "RCDiode.cir"
+sha256 = "dae5ada2ffe7bf0f8d6ada5cf1305e051ba1d82b524384fb01cb0b16393b5890"

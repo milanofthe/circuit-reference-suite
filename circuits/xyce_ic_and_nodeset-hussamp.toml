@@ -1,0 +1,11 @@
+title = "Xyce_Regression IC_AND_NODESET"
+case = "xyce_ic_and_nodeset"
+source = "hussamp.cir"
+outputs = [
+    "v(34)",
+    "v(12)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 1e-07 },
+]

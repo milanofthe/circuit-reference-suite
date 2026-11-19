@@ -1,0 +1,13 @@
+title = "Xyce_Regression MEASURE_CONT/STEP"
+case = "xyce_measure_cont_step"
+source = "FindWhenTestAC.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+    "v(c)",
+    "v(d)",
+    "v(e)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 20, start = 1.0, stop = 1000.0 },
+]

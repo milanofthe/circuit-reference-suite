@@ -1,0 +1,14 @@
+title = "ngspice paranoia_parallel/examples/various"
+case = "ngspice_paranoia_parallel_examples_various"
+source = "i(xxx)_tests.cir"
+outputs = [
+    "i(v1)",
+    "i(v2)",
+    "i(v4)",
+    "i(v8)",
+    "i(vrm)",
+    "i(bmm)",
+]
+analysis = [
+    { type = "op" },
+]

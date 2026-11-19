@@ -1,0 +1,35 @@
+id = "xyce_dakota"
+title = "Xyce_Regression DAKOTA"
+family = "test"
+netlists = [
+    { file = "opt_rc.cir", dialect = "xyce" },
+    { file = "opt_soi.cir", dialect = "xyce" },
+    { file = "rc.cir", dialect = "xyce" },
+    { file = "res.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/DAKOTA"
+
+[[files]]
+path = "opt_rc.cir"
+sha256 = "d98fa93d74ec8719785ac7682e0d2439bb7970edd1c3e92b89c3b81b6d479981"
+
+[[files]]
+path = "opt_soi.cir"
+sha256 = "5c6d47bac777da205d8fd4fcf80d2db677f7763bc492aff8fac554e5d2c775d8"
+
+[[files]]
+path = "rc.cir"
+sha256 = "79dad7a161df161b3d66d622ddc32f3e12d70077d9bf4c5c5c1089a94ee24c5f"
+
+[[files]]
+path = "res.cir"
+sha256 = "a8b6b83454fc9ea6e595624df4aea40dd136f8e908ab7d649078e55ed1ca115d"

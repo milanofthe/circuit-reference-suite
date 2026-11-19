@@ -1,0 +1,13 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "ampSensFD.cir"
+outputs = [
+    "v(4a)",
+    "i(vma)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vccvalue", start = 1.0, stop = 10.0, step = 0.2 },
+]

@@ -1,0 +1,67 @@
+# The precision levels every analysis runs at, and the bounds the comparison judges by
+# (circref/bench.py, circref/compare.py).
+#
+# A level states circuit options in their SPICE meaning (reltol relative, vntol a voltage,
+# abstol a current) in place of the circuit's own; an adapter writes them in its dialect.
+# ``points`` bounds a transient's step to (stop - start) / points.
+
+# The circuit as stated: what a user of the simulator gets.
+[level.default]
+
+# reltol two decades below the SPICE defaults (reltol 1e-3, vntol 1e-6, abstol 1e-12).
+[level.fine]
+reltol = 1e-5
+
+# reltol three decades below, the absolute bounds one decade below, on a dense time grid:
+# linear interpolation between 20000 points of a period resolved on 1000 of them is off
+# by (2 pi / 1000)^2 / 8 = 5e-6 of its peak. Tighter, ngspice 47 and Xyce 7.10 stop with
+# "timestep too small" on diode bridges and gate-level CMOS (abstol 1e-16, vntol 1e-10,
+# reltol 1e-7: vacask_graetz, vacask_mul, the ISCAS circuits of ngspice_examples_klu).
+[level.reference]
+reltol = 1e-6
+vntol = 1e-7
+abstol = 1e-13
+points = 20000
+
+[compare]
+# Added to a signal's peak before dividing by it, so a signal near zero does not dominate.
+floor = { v = 1e-6, i = 1e-12 }
+# The reference of one simulator: its fine and reference runs within this of each other.
+converged = 1e-4
+# The reference of several: their converged reference runs within this of their median.
+agree = 1e-4
+bands = [1e-6, 1e-4, 1e-2]
+
+# Plot style (circref/plot.py), a theme per GitHub color scheme on a transparent
+# background: ``surface`` is the page the plot lands on (gaps between bar segments).
+# Series by simulator in the order of circref.adapters.ADAPTERS.
+[plot.light]
+series = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+surface = "#ffffff"
+ink = "#0b0b0b"
+muted = "#52514e"
+grid = "#e1e0d9"
+
+[plot.dark]
+series = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#0ca30c", "#9085e9", "#e66767"]
+surface = "#0d1117"
+ink = "#f0efec"
+muted = "#c3c2b7"
+grid = "#2c2c2a"
+
+[plot.status]
+ok = "#0ca30c"
+failed = "#d03b3b"
+error = "#7a1f1f"
+timeout = "#ec835a"
+killed = "#fab219"
+stage-failed = "#a3a29c"
+untranslated = "#c9c8c2"
+unsupported = "#e4e3df"
+
+[plot.reference_status]
+agreed = "#2a78d6"
+single = "#86b6ef"
+disagree = "#d03b3b"
+none = "#c9c8c2"
+"no shared signal" = "#e4e3df"

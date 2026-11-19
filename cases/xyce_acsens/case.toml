@@ -1,0 +1,80 @@
+id = "xyce_acsens"
+title = "Xyce_Regression ACSENS"
+family = "test"
+netlists = [
+    { file = "ac-sens-current-obj.cir", dialect = "xyce" },
+    { file = "ac-sens-current-obj_FD.cir", dialect = "xyce" },
+    { file = "ac-sens-mult-obj-def_baseline.cir", dialect = "xyce" },
+    { file = "ac-sens-mult-obj-def_modified.cir", dialect = "xyce" },
+    { file = "lowpass.cir", dialect = "xyce" },
+    { file = "lowpass_baseline.cir", dialect = "xyce" },
+    { file = "lowpass_baseline2.cir", dialect = "xyce" },
+    { file = "lowpass_baseline3.cir", dialect = "xyce" },
+    { file = "lowpass_fd.cir", dialect = "xyce" },
+    { file = "lowpass_forceDeviceFD.cir", dialect = "xyce" },
+    { file = "lowpass_forceDeviceFD2.cir", dialect = "xyce" },
+    { file = "lowpass_forceDeviceFD3.cir", dialect = "xyce" },
+    { file = "lowpass_param.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ACSENS"
+
+[[files]]
+path = "ac-sens-current-obj.cir"
+sha256 = "341b356b7efc77d660e8e8e41fc40a3fdf06445e39d34c97921e37e214e6c381"
+
+[[files]]
+path = "ac-sens-current-obj_FD.cir"
+sha256 = "ae52f0f59a36d92e07d3a11d6bb1a5742ca9ceb98bd0d7a3f4bac9762278a8e0"
+
+[[files]]
+path = "ac-sens-mult-obj-def_baseline.cir"
+sha256 = "254bced6fae8ade24c0ce1375a690e797a2e6b4f29109eaa1af0dddc9cfb69ec"
+
+[[files]]
+path = "ac-sens-mult-obj-def_modified.cir"
+sha256 = "23008b216f4120137ce591ad988b9c9dad8fcfc777cc05a91c6f1156ffd17332"
+
+[[files]]
+path = "lowpass.cir"
+sha256 = "6509b26943ed012601ee9c899e0a21b2d6f37a3bf3715f3b37c928e654f05813"
+
+[[files]]
+path = "lowpass_baseline.cir"
+sha256 = "9ba732692afb307bb4d9dea7912d5663965a148ce833744fb46bca6d9c15a6d8"
+
+[[files]]
+path = "lowpass_baseline2.cir"
+sha256 = "945e1253b32edb69b991c75485c20933b4cdc5186029d327e5f7c1021b8609d6"
+
+[[files]]
+path = "lowpass_baseline3.cir"
+sha256 = "881963199f7918d6d266ac2594a68d530c6a5e32fa4afe639d03cbf9a1c0e2f4"
+
+[[files]]
+path = "lowpass_fd.cir"
+sha256 = "a14a0557618de9409bdb3bcf893a92605e3d5385fbf8dc776b47a63ab6dfca81"
+
+[[files]]
+path = "lowpass_forceDeviceFD.cir"
+sha256 = "793f2e2fdd516c7c9059ec32ac9ac2681359d46d277c236f177fee6202018642"
+
+[[files]]
+path = "lowpass_forceDeviceFD2.cir"
+sha256 = "e8151efe11967ec6be8326f536b90339787d7121b9dccac6e1eb60c8701a089f"
+
+[[files]]
+path = "lowpass_forceDeviceFD3.cir"
+sha256 = "ab5f0d8e139a5417a32f5a55d9d669d6b5ad2a6aad6d5d79ee84e606d10aaf6e"
+
+[[files]]
+path = "lowpass_param.cir"
+sha256 = "b10d5c739efed9dcc54b5d920269242dbde59bbe253da367cbcd3c0866e561b2"

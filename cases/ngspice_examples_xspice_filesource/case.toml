@@ -1,0 +1,46 @@
+id = "ngspice_examples_xspice_filesource"
+title = "ngspice examples/xspice/filesource"
+family = "test"
+netlists = [
+    { file = "filesource_variants.cir", dialect = "ngspice" },
+    { file = "simple-filesource.cir", dialect = "ngspice" },
+    { file = "subckt-filesource.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/xspice/filesource"
+
+[[files]]
+path = "filesource_variants.cir"
+sha256 = "e3136e1368e08f21810fcdee9d3db0b05ded315f2b34a71d134d7a1422d78912"
+
+[[files]]
+path = "my-source.txt"
+sha256 = "98c621f633600b6f614ed4b8cbdbffba1be55dddc70466d8713c2203552f6d15"
+
+[[files]]
+path = "rect_abs.m"
+sha256 = "46e45e6811ee444576aad71b300d34f89f8a5bf1826c3e183a15b088e094e8a1"
+
+[[files]]
+path = "rect_abs_dual.m"
+sha256 = "aa41747ed245c9bc8012c105e00b857a6675f162b436f4ba9f9c5f7dff6b0c47"
+
+[[files]]
+path = "rect_rel.m"
+sha256 = "680afa2e1e8453580456f59ddeac68c88334f14ab9e37b5d7579e7fa7d31d0cb"
+
+[[files]]
+path = "simple-filesource.cir"
+sha256 = "0034af44687ec707c54347354942c781285a169eb5b18d39a966bb9745c7bc89"
+
+[[files]]
+path = "subckt-filesource.cir"
+sha256 = "df4cb1f4978f95fd0791710dc9addf99c70ee3b3ee666dbf0d744647e5e357b5"

@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/PSPICE/OTHER_PARSING"
+case = "xyce_xdm_pspice_other_parsing"
+source = "unknown_device_parameter.cir"
+outputs = [
+    "v(n04173)",
+    "v(n03179)",
+    "v(n03334)",
+    "v(n04104)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.002 },
+]
+
+[variants]
+pspice = "unknown_device_parameter.cir.pspice"

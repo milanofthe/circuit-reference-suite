@@ -1,0 +1,40 @@
+id = "xyce_pce_pce"
+title = "Xyce_Regression PCE/PCE"
+family = "test"
+netlists = [
+    { file = "cmosInverter_pce.cir", dialect = "xyce" },
+    { file = "mutInd_pce.cir", dialect = "xyce" },
+    { file = "paramUniformPCE.cir", dialect = "xyce" },
+    { file = "pceVoltageDivider.cir", dialect = "xyce" },
+    { file = "simpleUniformPCE.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/PCE/PCE"
+
+[[files]]
+path = "cmosInverter_pce.cir"
+sha256 = "9b75734215aa97c721ab6631ae1095e061927b0d2ae8dacf52e78ee8866dbcd2"
+
+[[files]]
+path = "mutInd_pce.cir"
+sha256 = "90f487949494f95f67c0d074efdad884c6df478d50aab58cf56676775141113a"
+
+[[files]]
+path = "paramUniformPCE.cir"
+sha256 = "92fb4f8cbbe37a8b53c4c3291823616d30e264bad3ec5b02752c5ac1dcbf7983"
+
+[[files]]
+path = "pceVoltageDivider.cir"
+sha256 = "b86b326d67ed58f83afabc6bfc07a2531512ca3ea73fa0a77f0f14b087a422b8"
+
+[[files]]
+path = "simpleUniformPCE.cir"
+sha256 = "f953c6767ed16d04a38783c739624828453239bad80e9fe940a72f9ca4f54bbf"

@@ -1,0 +1,15 @@
+title = "Xyce_Regression SOLN_DEP_CAP"
+case = "xyce_soln_dep_cap"
+source = "voltDepCap_baseline.cir"
+outputs = [
+    "v(vdd)",
+    "i(xc2:vc)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-06 },
+]
+
+[options]
+reltol = 0.0001
+vntol = 1e-07
+method = "trap"

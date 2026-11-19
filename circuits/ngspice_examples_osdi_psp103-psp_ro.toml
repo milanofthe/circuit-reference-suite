@@ -1,0 +1,6 @@
+title = "ngspice examples/osdi/psp103"
+case = "ngspice_examples_osdi_psp103"
+source = "psp_ro.sp"
+analysis = [
+    { type = "tran", step = 1e-11, stop = 1e-08, uic = true },
+]

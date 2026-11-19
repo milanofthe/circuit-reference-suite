@@ -1,0 +1,23 @@
+title = "AnalogGym amplifier Peng_ACBC_Pin_3, SKY130"
+case = "analoggym_peng_acbc_pin_3"
+source = "amp_spice_testbench/Peng_ACBC_Pin_3_ACDC.cir"
+outputs = [
+    "v(vout6)",
+    "v(opout)",
+    "v(cm3)",
+    "v(ppsr1)",
+    "v(npsr1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "temp", start = -40.0, stop = 125.0, step = 0.1 },
+]
+
+[[analysis]]
+type = "ac"
+sweep = "dec"
+points = 10
+start = 0.1
+stop = 1000000000.0

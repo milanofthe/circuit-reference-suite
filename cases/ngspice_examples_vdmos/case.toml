@@ -1,0 +1,105 @@
+id = "ngspice_examples_vdmos"
+title = "ngspice examples/vdmos"
+family = "test"
+netlists = [
+    { file = "100W.sp", dialect = "ngspice" },
+    { file = "100W_wingspread.sp", dialect = "ngspice" },
+    { file = "IXTH80N20L-IXTH48P20P-quasisat.sp", dialect = "ngspice" },
+    { file = "IXTP6N100D2-cap.sp", dialect = "ngspice" },
+    { file = "IXTP6N100D2-n-weak-inv.sp", dialect = "ngspice" },
+    { file = "VDMOS-DIO.sp", dialect = "ngspice" },
+    { file = "crss_coss_ciss.sp", dialect = "ngspice" },
+    { file = "dcdc.sp", dialect = "ngspice" },
+    { file = "inv_vdmos.sp", dialect = "ngspice" },
+    { file = "mtriode_nch.sp", dialect = "ngspice" },
+    { file = "ro_11_vdmos.sp", dialect = "ngspice" },
+    { file = "self-heating.sp", dialect = "ngspice" },
+    { file = "soa_chk.sp", dialect = "ngspice" },
+    { file = "theta_nch.sp", dialect = "ngspice" },
+    { file = "vdmos-out.sp", dialect = "ngspice" },
+    { file = "vdmos-out_ir_mtr.sp", dialect = "ngspice" },
+    { file = "vdmosp-out-mtr.sp", dialect = "ngspice" },
+    { file = "vdmosp-out.sp", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/vdmos"
+
+[[files]]
+path = "100W.sp"
+sha256 = "485a3f31183ed3a9f6d773717753fbcc2eb3dc65f69cdf5d805535d3ed9a13d8"
+
+[[files]]
+path = "100W_wingspread.sp"
+sha256 = "95f344036b6c560d6a9f0ee75545071c8e123e3360780dd2662d877edd65be49"
+
+[[files]]
+path = "IXTH80N20L-IXTH48P20P-quasisat.sp"
+sha256 = "9728c327225c825ae3f44d88cf62f261084a91687bd95061eeb62bfa9d2b1b84"
+
+[[files]]
+path = "IXTP6N100D2-cap.sp"
+sha256 = "f9ca199eb92a5c32237eb88d60d577ba673e15683c03eca3458cec465dcfbdf7"
+
+[[files]]
+path = "IXTP6N100D2-n-weak-inv.sp"
+sha256 = "dc56fc9ed2a429e8a9c00f037f79d26680ad60b640aa3a2784f6abd4f6116d2b"
+
+[[files]]
+path = "VDMOS-DIO.sp"
+sha256 = "bba292eaa51ea7bb6cf91cfc1435544901c54d3920828c1d6ba96f32634e72cf"
+
+[[files]]
+path = "crss_coss_ciss.sp"
+sha256 = "3014b1858e7db1c6d56f612d28a272ddbc563161bc49b0efd2888e335a13fbee"
+
+[[files]]
+path = "dcdc.sp"
+sha256 = "f90ff5a22daa4ad32f92a4bcc5bf892b44a8f0931c7a8210d50354486922e491"
+
+[[files]]
+path = "inv_vdmos.sp"
+sha256 = "19b465dcc39efef811304dc20fe4c4736f0a417a9eabd1ccbaaa7a6336832fe3"
+
+[[files]]
+path = "mtriode_nch.sp"
+sha256 = "16f4e3ea716e4c06019dabf9e66f16be386d59c87829a40fcc3d64a60fc177ff"
+
+[[files]]
+path = "ro_11_vdmos.sp"
+sha256 = "7657796c7c6e1968ae775d7569cd6f12aa91c04c53dca43690011b75a7152f63"
+
+[[files]]
+path = "self-heating.sp"
+sha256 = "3badebdb57602407a7dafac930182dc8dd1606b2ce0005531ff4fbafd0a10787"
+
+[[files]]
+path = "soa_chk.sp"
+sha256 = "83184b2b2e27e13d425816fd43856ee6a75b6c0ef69c759267bb3ce1fdcec8d8"
+
+[[files]]
+path = "theta_nch.sp"
+sha256 = "94699e96e73d786ce98ee335606878ecf9add3ea08a37c8f3e920c4e432131a8"
+
+[[files]]
+path = "vdmos-out.sp"
+sha256 = "fbc35903f6201c8da076b1638e660895941f21b30ea97cbdadf720411540bd76"
+
+[[files]]
+path = "vdmos-out_ir_mtr.sp"
+sha256 = "355fe11fe232e49dd16274ec73f7c75f2389e1b1000e5609cd91137ba697d04c"
+
+[[files]]
+path = "vdmosp-out-mtr.sp"
+sha256 = "f83cd54db334a749a6a33363c79d77025b0ef54656f1878f87191b68ff1819a5"
+
+[[files]]
+path = "vdmosp-out.sp"
+sha256 = "57d852795a3ed8bb884bad94036fb48bb30a6c0a398ed1195e060f43259afc61"

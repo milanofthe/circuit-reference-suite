@@ -1,0 +1,10 @@
+title = "Xyce_Regression FOURIER"
+case = "xyce_fourier"
+source = "lead_current_power.cir"
+outputs = [
+    "i(r1)",
+    "i(r2)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 1.0 },
+]

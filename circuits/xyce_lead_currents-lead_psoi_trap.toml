@@ -1,0 +1,9 @@
+title = "Xyce_Regression LEAD_CURRENTS"
+case = "xyce_lead_currents"
+source = "lead_psoi_trap.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-06 },
+]
+
+[options]
+method = "trap"

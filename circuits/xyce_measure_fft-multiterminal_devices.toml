@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE_FFT"
+case = "xyce_measure_fft"
+source = "multiterminal_devices.cir"
+outputs = [
+    "i(q1)",
+    "i(j1)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-06 },
+]

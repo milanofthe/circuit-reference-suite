@@ -1,0 +1,16 @@
+title = "SpiceSharpParser circuits/digital-milestone-a"
+case = "spicesharpparser_circuits_digital_milestone_a"
+source = "circuits/digital-milestone-a/milestone-a-routing.cir"
+outputs = [
+    "v(input)",
+    "v(conditioned)",
+    "v(routed)",
+    "v(enable)",
+    "v(bus)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 1e-07, max_step = 1e-10, uic = true },
+]
+
+[options]
+method = "gear"

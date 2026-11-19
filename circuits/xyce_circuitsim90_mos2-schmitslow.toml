@@ -1,0 +1,12 @@
+title = "Xyce_Regression CircuitSim90/MOS2"
+case = "xyce_circuitsim90_mos2"
+source = "schmitslow.cir"
+outputs = [
+    "v(6)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vsrc", start = 1.5, stop = 3.5, step = 0.001 },
+]

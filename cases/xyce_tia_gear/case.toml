@@ -1,0 +1,25 @@
+id = "xyce_tia_gear"
+title = "Xyce_Regression TIA/GEAR"
+family = "test"
+netlists = [
+    { file = "circuit1.cir", dialect = "xyce" },
+    { file = "circuit3.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/GEAR"
+
+[[files]]
+path = "circuit1.cir"
+sha256 = "d481cb61b5daae561daaaca5a850839b6d1a085265c69989d98cedda703a1378"
+
+[[files]]
+path = "circuit3.cir"
+sha256 = "6540299b444af3c2320d9a544d2dbcfb11077aa97b08d2d91e6d6a0449bcb703"

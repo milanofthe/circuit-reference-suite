@@ -1,0 +1,9 @@
+title = "Xyce_Regression TIA/ERROROPTION"
+case = "xyce_tia_erroroption"
+source = "erroroption.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]
+
+[options]
+method = "trap"

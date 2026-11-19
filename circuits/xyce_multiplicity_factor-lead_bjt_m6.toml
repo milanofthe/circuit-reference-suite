@@ -1,0 +1,14 @@
+title = "Xyce_Regression MULTIPLICITY_FACTOR"
+case = "xyce_multiplicity_factor"
+source = "lead_bjt_m6.net"
+outputs = [
+    "i(vib)",
+    "i(vic)",
+    "i(vie)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-05 },
+]
+
+[options]
+method = "trap"

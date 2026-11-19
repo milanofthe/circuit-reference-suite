@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_1299_SON"
+case = "xyce_certification_tests_bug_1299_son"
+source = "bug1299son_lastcycle_gear.net"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 5.0, start = 4.0 },
+]

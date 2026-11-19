@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_524_SON"
+case = "xyce_certification_tests_bug_524_son"
+source = "cmod_capmod.cir"
+outputs = [
+    "v(3)",
+    "i(c1)",
+    "i(c2)",
+    "i(c3)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2e-05 },
+]

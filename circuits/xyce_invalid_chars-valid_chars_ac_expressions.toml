@@ -1,0 +1,6 @@
+title = "Xyce_Regression INVALID_CHARS"
+case = "xyce_invalid_chars"
+source = "valid_chars_ac_expressions.cir"
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 1000000.0 },
+]

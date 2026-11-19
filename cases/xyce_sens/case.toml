@@ -1,0 +1,953 @@
+id = "xyce_sens"
+title = "Xyce_Regression SENS"
+family = "test"
+netlists = [
+    { file = "150nm_nmos.cir", dialect = "xyce" },
+    { file = "150nm_nmosFD.cir", dialect = "xyce" },
+    { file = "150nm_nmos_deviceFD.cir", dialect = "xyce" },
+    { file = "150nm_nmos_oldFD.cir", dialect = "xyce" },
+    { file = "150nm_pmos.cir", dialect = "xyce" },
+    { file = "150nm_pmosFD.cir", dialect = "xyce" },
+    { file = "ampSens.cir", dialect = "xyce" },
+    { file = "ampSensAdj.cir", dialect = "xyce" },
+    { file = "ampSensAdj_aztec.cir", dialect = "xyce" },
+    { file = "ampSensAdj_belos.cir", dialect = "xyce" },
+    { file = "ampSensFD.cir", dialect = "xyce" },
+    { file = "ampSensFDa.cir", dialect = "xyce" },
+    { file = "ampSensFDb.cir", dialect = "xyce" },
+    { file = "ampSensFDc.cir", dialect = "xyce" },
+    { file = "ampSens_10v.cir", dialect = "xyce" },
+    { file = "ampSens_fbh.cir", dialect = "xyce" },
+    { file = "ampSens_fbhFD.cir", dialect = "xyce" },
+    { file = "ampSens_fbhPNP.cir", dialect = "xyce" },
+    { file = "ampSens_fbhPNPFD.cir", dialect = "xyce" },
+    { file = "ampSens_hicum.cir", dialect = "xyce" },
+    { file = "ampSens_hicumFD.cir", dialect = "xyce" },
+    { file = "ampSens_hicumL0.cir", dialect = "xyce" },
+    { file = "ampSens_hicumL0FD.cir", dialect = "xyce" },
+    { file = "ampSens_mextram.cir", dialect = "xyce" },
+    { file = "ampSens_mextramFD.cir", dialect = "xyce" },
+    { file = "ampSens_mextramPNP.cir", dialect = "xyce" },
+    { file = "ampSens_mextramPNPFD.cir", dialect = "xyce" },
+    { file = "ampSens_op.cir", dialect = "xyce" },
+    { file = "ampSens_vbic.cir", dialect = "xyce" },
+    { file = "ampSens_vbicFD.cir", dialect = "xyce" },
+    { file = "ampSens_vbicPNPdefault.cir", dialect = "xyce" },
+    { file = "ampSens_vbicPNPdefaultFD.cir", dialect = "xyce" },
+    { file = "bsim3Inv.cir", dialect = "xyce" },
+    { file = "bsim3Inv_newFD.cir", dialect = "xyce" },
+    { file = "bsim3Inv_oldFD.cir", dialect = "xyce" },
+    { file = "bsim4_issue694.cir", dialect = "xyce" },
+    { file = "bsim4_issue694_FD.cir", dialect = "xyce" },
+    { file = "bsim4_issue694_ref.cir", dialect = "xyce" },
+    { file = "bsim6invAdjoint.cir", dialect = "xyce" },
+    { file = "bsim6invAdjointForceAnalytic.cir", dialect = "xyce" },
+    { file = "bsim6invAdjointNewFD.cir", dialect = "xyce" },
+    { file = "bsim6invAdjointTrap.cir", dialect = "xyce" },
+    { file = "bsim6invAdjointTrapNewFD.cir", dialect = "xyce" },
+    { file = "bsim6invDirect.cir", dialect = "xyce" },
+    { file = "bsim6invDirectFD.cir", dialect = "xyce" },
+    { file = "bug1092sonA.cir", dialect = "xyce" },
+    { file = "bug1092sonB.cir", dialect = "xyce" },
+    { file = "bug669a.cir", dialect = "xyce" },
+    { file = "bug669b.cir", dialect = "xyce" },
+    { file = "bug702son.cir", dialect = "xyce" },
+    { file = "bug772sonA.cir", dialect = "xyce" },
+    { file = "bug772sonB.cir", dialect = "xyce" },
+    { file = "bug797Adjoint.cir", dialect = "xyce" },
+    { file = "bug797Direct.cir", dialect = "xyce" },
+    { file = "bugs799_and_842A.cir", dialect = "xyce" },
+    { file = "bugs799_and_842D.cir", dialect = "xyce" },
+    { file = "comparator.cir", dialect = "xyce" },
+    { file = "devLevelParams_ipulse.cir", dialect = "xyce" },
+    { file = "devLevelParams_ipwl.cir", dialect = "xyce" },
+    { file = "devLevelParams_isffm.cir", dialect = "xyce" },
+    { file = "devLevelParams_isin.cir", dialect = "xyce" },
+    { file = "devLevelParams_vpulse.cir", dialect = "xyce" },
+    { file = "devLevelParams_vpwl.cir", dialect = "xyce" },
+    { file = "devLevelParams_vsffm.cir", dialect = "xyce" },
+    { file = "devLevelParams_vsin.cir", dialect = "xyce" },
+    { file = "diodeTran.cir", dialect = "xyce" },
+    { file = "diodeTranAdjoint.cir", dialect = "xyce" },
+    { file = "diodeTranAdjointScaled.cir", dialect = "xyce" },
+    { file = "diodeTranAdjointTrap.cir", dialect = "xyce" },
+    { file = "diodeTranFD.cir", dialect = "xyce" },
+    { file = "diodeTranForAdjoint.cir", dialect = "xyce" },
+    { file = "diodeTranScaled.cir", dialect = "xyce" },
+    { file = "diodeTranTrap.cir", dialect = "xyce" },
+    { file = "diode_adjoint.cir", dialect = "xyce" },
+    { file = "diode_direct.cir", dialect = "xyce" },
+    { file = "dummyDiodeTran.cir", dialect = "xyce" },
+    { file = "dummyDiodeTran2.cir", dialect = "xyce" },
+    { file = "dummyDiodeTran3.cir", dialect = "xyce" },
+    { file = "dummyDiodeTranScaled.cir", dialect = "xyce" },
+    { file = "dummy_bugs799_and_842.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_ipulse.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_ipwl.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_isffm.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_isin.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_vpulse.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_vpwl.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_vsffm.cir", dialect = "xyce" },
+    { file = "dummy_devLevelParams_vsin.cir", dialect = "xyce" },
+    { file = "dummy_ipulse.cir", dialect = "xyce" },
+    { file = "dummy_ipwl.cir", dialect = "xyce" },
+    { file = "dummy_isffm.cir", dialect = "xyce" },
+    { file = "dummy_isin.cir", dialect = "xyce" },
+    { file = "dummy_vpulse.cir", dialect = "xyce" },
+    { file = "dummy_vpwl.cir", dialect = "xyce" },
+    { file = "dummy_vsffm.cir", dialect = "xyce" },
+    { file = "dummy_vsin.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_ipulse.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_ipulse2.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_ipwl.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_isffm.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_isffm2.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_isin.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_isin2.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_vpulse.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_vpwl.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_vsffm.cir", dialect = "xyce" },
+    { file = "fddevLevelParams_vsin.cir", dialect = "xyce" },
+    { file = "fdipulse.cir", dialect = "xyce" },
+    { file = "fdipulse2.cir", dialect = "xyce" },
+    { file = "fdipwl.cir", dialect = "xyce" },
+    { file = "fdipwl2.cir", dialect = "xyce" },
+    { file = "fdisffm.cir", dialect = "xyce" },
+    { file = "fdisffm2.cir", dialect = "xyce" },
+    { file = "fdisin.cir", dialect = "xyce" },
+    { file = "fdisin2.cir", dialect = "xyce" },
+    { file = "fdvpulse.cir", dialect = "xyce" },
+    { file = "fdvpwl.cir", dialect = "xyce" },
+    { file = "fdvsffm.cir", dialect = "xyce" },
+    { file = "fdvsin.cir", dialect = "xyce" },
+    { file = "fullWaveDummy.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiode.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiodeAdjoint.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiodeAnalytic.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiodeDirect.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiodeNewFD.cir", dialect = "xyce" },
+    { file = "fullWaveRectDiodeOldFD.cir", dialect = "xyce" },
+    { file = "gummel_n.cir", dialect = "xyce" },
+    { file = "gummel_nFD.cir", dialect = "xyce" },
+    { file = "gummel_n_110.cir", dialect = "xyce" },
+    { file = "gummel_n_110FD.cir", dialect = "xyce" },
+    { file = "gummel_n_111.cir", dialect = "xyce" },
+    { file = "gummel_n_111FD.cir", dialect = "xyce" },
+    { file = "gummel_nmos_xyce.cir", dialect = "xyce" },
+    { file = "gummel_nmos_xyceFD.cir", dialect = "xyce" },
+    { file = "gummel_p.cir", dialect = "xyce" },
+    { file = "gummel_pFD.cir", dialect = "xyce" },
+    { file = "gummel_p_110.cir", dialect = "xyce" },
+    { file = "gummel_p_110FD.cir", dialect = "xyce" },
+    { file = "gummel_p_111.cir", dialect = "xyce" },
+    { file = "gummel_p_111FD.cir", dialect = "xyce" },
+    { file = "gummel_pmos_xyce.cir", dialect = "xyce" },
+    { file = "gummel_pmos_xyceFD.cir", dialect = "xyce" },
+    { file = "inverter_event.cir", dialect = "xyce" },
+    { file = "ipulse.cir", dialect = "xyce" },
+    { file = "ipwl.cir", dialect = "xyce" },
+    { file = "isffm.cir", dialect = "xyce" },
+    { file = "isin.cir", dialect = "xyce" },
+    { file = "issue729.cir", dialect = "xyce" },
+    { file = "issue729Ref.cir", dialect = "xyce" },
+    { file = "missingSensFunction.cir", dialect = "xyce" },
+    { file = "nlMutIndSens1.cir", dialect = "xyce" },
+    { file = "nlMutIndSens1_FD.cir", dialect = "xyce" },
+    { file = "nlMutIndSens2.cir", dialect = "xyce" },
+    { file = "nlMutIndSens2_FD.cir", dialect = "xyce" },
+    { file = "psp_asym_nmos_idvg0_FD_SENS.cir", dialect = "xyce" },
+    { file = "psp_asym_nmos_idvg0_SENS.cir", dialect = "xyce" },
+    { file = "psp_asym_pmos_idvg0_FD_SENS.cir", dialect = "xyce" },
+    { file = "psp_asym_pmos_idvg0_SENS.cir", dialect = "xyce" },
+    { file = "rc1000TranAdjGear.cir", dialect = "xyce" },
+    { file = "res.cir", dialect = "xyce" },
+    { file = "sensCapGear.cir", dialect = "xyce" },
+    { file = "sensCapGearAdj.cir", dialect = "xyce" },
+    { file = "sensCapGearAdjNewFD.cir", dialect = "xyce" },
+    { file = "sensCapGearAdjOrder1.cir", dialect = "xyce" },
+    { file = "sensCapGear_baseline.cir", dialect = "xyce" },
+    { file = "sensCapGear_baseline_copy.cir", dialect = "xyce" },
+    { file = "sensCapGear_forceDeviceFD.cir", dialect = "xyce" },
+    { file = "sensCapGear_global.cir", dialect = "xyce" },
+    { file = "sensCapGear_global2.cir", dialect = "xyce" },
+    { file = "sensCapGear_global_curlybrace.cir", dialect = "xyce" },
+    { file = "sensCapGear_numerical.cir", dialect = "xyce" },
+    { file = "sensCapGear_oldFD.cir", dialect = "xyce" },
+    { file = "sensCapTrapAdj.cir", dialect = "xyce" },
+    { file = "sensCapTrapAdjNewFD.cir", dialect = "xyce" },
+    { file = "sensCapTrapAdjOrder1.cir", dialect = "xyce" },
+    { file = "sensCapTrapOrder1.cir", dialect = "xyce" },
+    { file = "sensCapTrapOrder2.cir", dialect = "xyce" },
+    { file = "transLineStepDataGlobalPar.cir", dialect = "xyce" },
+    { file = "twoObj.cir", dialect = "xyce" },
+    { file = "twoObjFD.cir", dialect = "xyce" },
+    { file = "vpulse.cir", dialect = "xyce" },
+    { file = "vpwl.cir", dialect = "xyce" },
+    { file = "vsffm.cir", dialect = "xyce" },
+    { file = "vsin.cir", dialect = "xyce" },
+    { file = "vsrcSensTest.cir", dialect = "xyce" },
+    { file = "vsrcSensTest2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/SENS"
+
+[[files]]
+path = "150nm_nmos.cir"
+sha256 = "7d0b2b91a7fc5d4605d67023a9cf21392237aa5939baaadd3ba4981f3334952b"
+
+[[files]]
+path = "150nm_nmosFD.cir"
+sha256 = "d64d1ca3813510c608e65e2659c4fd611d37c0922a4c8429e8e8c9e2d32ccb28"
+
+[[files]]
+path = "150nm_nmos_deviceFD.cir"
+sha256 = "ef568130d39b7a37a4274d6e87863e6f43547e625c2712742b5c9a841ecee8ea"
+
+[[files]]
+path = "150nm_nmos_oldFD.cir"
+sha256 = "d64d1ca3813510c608e65e2659c4fd611d37c0922a4c8429e8e8c9e2d32ccb28"
+
+[[files]]
+path = "150nm_pmos.cir"
+sha256 = "21b96b8eba69aee658b4802544bf30cafd84c47f7eea0c00d69f278fd1b3559b"
+
+[[files]]
+path = "150nm_pmosFD.cir"
+sha256 = "300176d2097db88806cd7dd67a423d3d95a20f907ed4b05204d2a51f5121c777"
+
+[[files]]
+path = "ampSens.cir"
+sha256 = "eb9a503acd16c63a0442d154cb855b68999a1c695383ab8aa8a1ee1dd1fd4fad"
+
+[[files]]
+path = "ampSensAdj.cir"
+sha256 = "a461ad941ba0fe05693d29a2eea8724dd120edad1cb870a9bda992ea7fd94977"
+
+[[files]]
+path = "ampSensAdj_aztec.cir"
+sha256 = "08dd8edbd4bd6d2aff06bd52618d73c40916769f4697e3796298651253504ec6"
+
+[[files]]
+path = "ampSensAdj_belos.cir"
+sha256 = "41f9789110f4f9484ffdf66ac25025b3f487387a36efbf9a0edcab53f06dea16"
+
+[[files]]
+path = "ampSensFD.cir"
+sha256 = "03a99cd0e8a3f159574291b4ae76ef9788508b2d8a371fa4155e2f0bde15c10f"
+
+[[files]]
+path = "ampSensFDa.cir"
+sha256 = "03a99cd0e8a3f159574291b4ae76ef9788508b2d8a371fa4155e2f0bde15c10f"
+
+[[files]]
+path = "ampSensFDb.cir"
+sha256 = "03a99cd0e8a3f159574291b4ae76ef9788508b2d8a371fa4155e2f0bde15c10f"
+
+[[files]]
+path = "ampSensFDc.cir"
+sha256 = "03a99cd0e8a3f159574291b4ae76ef9788508b2d8a371fa4155e2f0bde15c10f"
+
+[[files]]
+path = "ampSens_10v.cir"
+sha256 = "2a78fe500c3f6ea92428e8af54f4fe6fbef174f060dfe8f3fbd5ca26c21045c1"
+
+[[files]]
+path = "ampSens_fbh.cir"
+sha256 = "bc0e130629847a096824969fcbaa279d54f13edef9e4e5e6fc4ac479bd583634"
+
+[[files]]
+path = "ampSens_fbhFD.cir"
+sha256 = "68ba67cdc27f00abd4f03a4f43e603cf5b519c80b24b94e905f9094948cbf471"
+
+[[files]]
+path = "ampSens_fbhPNP.cir"
+sha256 = "184fc3668ef42d8221a3e609d6ad069938278bc3fea22731a5e800b530ad5365"
+
+[[files]]
+path = "ampSens_fbhPNPFD.cir"
+sha256 = "a0d1cc2e39afad45454dc6c006841f9cb2fa397f2edd22fc41e2e95de0c371dd"
+
+[[files]]
+path = "ampSens_hicum.cir"
+sha256 = "5e24cc4e81cca933c8d5e7c193b29e3c51b03a90a0ef74ac9af3922d6899f9fc"
+
+[[files]]
+path = "ampSens_hicumFD.cir"
+sha256 = "5d2c1c903bdad2c27c3f0974ef1746ae4b777ebffe60c022398826a2a78ab996"
+
+[[files]]
+path = "ampSens_hicumL0.cir"
+sha256 = "f636764128d01c57c34141fdc9401354d3de12f40e8060b0bc0933e5d02bc38b"
+
+[[files]]
+path = "ampSens_hicumL0FD.cir"
+sha256 = "7bcce3e8efaad46a4823f226643219539f2609b9d0460fe0661880aa51021319"
+
+[[files]]
+path = "ampSens_mextram.cir"
+sha256 = "a9370c57f034e9eb4f00ef7e11c36d2dfcd1f6a077258bed5a6b2a9750373d05"
+
+[[files]]
+path = "ampSens_mextramFD.cir"
+sha256 = "12a41a5249fe93a7b8c91ab0aeff9d31a2b9552c017f2122555136f82d1e59a1"
+
+[[files]]
+path = "ampSens_mextramPNP.cir"
+sha256 = "7447d459499a493808b7331714604e323f3fd14bdb655b06794e07f87409184b"
+
+[[files]]
+path = "ampSens_mextramPNPFD.cir"
+sha256 = "eef337a0a24d1e19a93245f040fe9c628812815f57b63107fa480a3f1ca822e7"
+
+[[files]]
+path = "ampSens_op.cir"
+sha256 = "56f0b9548b7a8f3727ce1b8166b0bb0dda9fa83e776178cc02514acd4e2e56f8"
+
+[[files]]
+path = "ampSens_vbic.cir"
+sha256 = "4cebb4f8c9cc97f2e2936177699d34b6ef51cfb0a2771be089b36cc38701ac73"
+
+[[files]]
+path = "ampSens_vbicFD.cir"
+sha256 = "40855b73f27ac25337f71c5ed00331771cc1e012ca0fa4f0eae69ff783837586"
+
+[[files]]
+path = "ampSens_vbicPNPdefault.cir"
+sha256 = "4a37de3b89abbc47e0193dd7ddbe0c1994437ae33c994a281bc3ab64b8008b0b"
+
+[[files]]
+path = "ampSens_vbicPNPdefaultFD.cir"
+sha256 = "12d780bca911a45126b063b0ecc6ecbdda2d0699d6f8ce658371f8241f5c5020"
+
+[[files]]
+path = "bsim3Inv.cir"
+sha256 = "fd2b75d89aaac93c90820558eb71dca7e4c3610d75793444049136b280ef84a8"
+
+[[files]]
+path = "bsim3Inv_newFD.cir"
+sha256 = "332c5079455de71b2f9f9ccf1902274b95d17497d0e1dc6e63a98bfea3232889"
+
+[[files]]
+path = "bsim3Inv_oldFD.cir"
+sha256 = "6c167e448d15edc0a34619cee703b42244b3798a303d122c60ebe9fe3b0d8e3e"
+
+[[files]]
+path = "bsim4_issue694.cir"
+sha256 = "491a106ceeba171fca3b8c4b1cc10a68f486d11b6d525b963e5a70c192dfd2e1"
+
+[[files]]
+path = "bsim4_issue694_FD.cir"
+sha256 = "389855a2c201ca9c67578051bb074cabc015c4b3c2942ac9ee149f7934156bbb"
+
+[[files]]
+path = "bsim4_issue694_ref.cir"
+sha256 = "71da8edc6a93f8e231011cb14211b3b8eb3e1d390c45ce5b63815e00a0f6d37f"
+
+[[files]]
+path = "bsim6invAdjoint.cir"
+sha256 = "eb7b84416815889552a357f4d7e38c596545077082081b00e636b1b2ee6baed8"
+
+[[files]]
+path = "bsim6invAdjointForceAnalytic.cir"
+sha256 = "bbc9b1bb5c916b3b42f97bdf42ac39f18426633e952aaca1cf26e28bcc1a4480"
+
+[[files]]
+path = "bsim6invAdjointNewFD.cir"
+sha256 = "ccb4f4faefa005c39294b1c3289f56baeaf2b11f87b065a00568efc26bc9405f"
+
+[[files]]
+path = "bsim6invAdjointTrap.cir"
+sha256 = "6f89ee5b2b254f209773c6de157abb78829bd6417e87dfc8825d79a7e15c0d01"
+
+[[files]]
+path = "bsim6invAdjointTrapNewFD.cir"
+sha256 = "6c29ea1422f27cfb938f81cf94701bd013c7ef313b76ac5ec3176cfcb0aa51c0"
+
+[[files]]
+path = "bsim6invDirect.cir"
+sha256 = "a7860d0fd0dd14437af1ca5f432e10d2e4a894c7ca249c45ab57dcdb0d641591"
+
+[[files]]
+path = "bsim6invDirectFD.cir"
+sha256 = "693206216db2bb39ebec58e40d725c6d328b69962bfc599930cd9e518a8ad6ab"
+
+[[files]]
+path = "bug1092sonA.cir"
+sha256 = "4f0750a89fb26aa8d49ac4a7e1590fc259412e8efc33cc2aadf0a8e35a2d1f9e"
+
+[[files]]
+path = "bug1092sonB.cir"
+sha256 = "4c25feaf0458301a7280f2a3d0b01ed07994efc02241cb146b17b3356b989444"
+
+[[files]]
+path = "bug669a.cir"
+sha256 = "a5844589e2eee19885409664863fa091c5ae068e7095140cdcf0ecc5e43813a5"
+
+[[files]]
+path = "bug669b.cir"
+sha256 = "2dc549a79a11101b07a95db8e74a4dd56994f7cbd23045a5acbd671fbc040d93"
+
+[[files]]
+path = "bug702son.cir"
+sha256 = "1459e0f45c3e585be6cc612d1865446bd557552c9f4aeb189a353bea1e2c7cca"
+
+[[files]]
+path = "bug772sonA.cir"
+sha256 = "537c053a958e5e0faf1584bf4b5a0ea8b6efe82f7dd94dd52fadb320dfef544e"
+
+[[files]]
+path = "bug772sonB.cir"
+sha256 = "aecf60eb406b883af5bd6d10209961359deaf84f0ff60d1c2b969bf2cb431336"
+
+[[files]]
+path = "bug797Adjoint.cir"
+sha256 = "94d3c385a8d0852c324cab3b02d02a47f6502aaedb41d98daaf2eb8eeb664749"
+
+[[files]]
+path = "bug797Direct.cir"
+sha256 = "b1a2ecacf93db2960f8ef97a4ccd49e7255b1dfd78d2fd8ac0f749f190c37c7f"
+
+[[files]]
+path = "bugs799_and_842A.cir"
+sha256 = "af4ef5c3270e4a90fae96d6bcd1643a4176ff28b328c0dd792ee4e0adf6d14d7"
+
+[[files]]
+path = "bugs799_and_842D.cir"
+sha256 = "96347bb647c845106afaaf459d728b2ada2a5b0d006123a5b9563a7d2be78a7a"
+
+[[files]]
+path = "comparator.cir"
+sha256 = "4e5566cb1c7dbb5aba4ef0b773b14046b4c830651766e59d4951dc8599593fe1"
+
+[[files]]
+path = "devLevelParams_ipulse.cir"
+sha256 = "ae321bae8aa418f14644c8cee0fcba7a6f875e3b0df42fb78dbfba522b27be92"
+
+[[files]]
+path = "devLevelParams_ipwl.cir"
+sha256 = "e6a769382c998b88fc57f7ccbb30991ce67e3413a3deafddce82de46e9dfa6c3"
+
+[[files]]
+path = "devLevelParams_isffm.cir"
+sha256 = "97031b27855352ca3c6c693cf91e94263192ebf7eff0afb0f49e6510c1ee7688"
+
+[[files]]
+path = "devLevelParams_isin.cir"
+sha256 = "8afd8c2e8b0492b8a8e8bb9ee997b61deaa448854b17d97e4f8fae826d2d9e9b"
+
+[[files]]
+path = "devLevelParams_vpulse.cir"
+sha256 = "88f703a974da935416c8f4af2999ab7ccbe1c6663c5a3252993d733440d3b9d4"
+
+[[files]]
+path = "devLevelParams_vpwl.cir"
+sha256 = "a7d20e232c8767c73dc1a8f5aa1033d0574401b14964593b0bd6b8e23123135d"
+
+[[files]]
+path = "devLevelParams_vsffm.cir"
+sha256 = "dbf971c609a0e04780635fe5337d438fa9a5375e4541d3fda284aba702de8a40"
+
+[[files]]
+path = "devLevelParams_vsin.cir"
+sha256 = "e3f99ef18f492bc1613c3e54851a3f0e140ca8058a2a2ed948723f7236ab8506"
+
+[[files]]
+path = "diodeTran.cir"
+sha256 = "0d246da7acea9f3fcd9fd727db2774c727858d9bca35d97506b2aa53bd923056"
+
+[[files]]
+path = "diodeTranAdjoint.cir"
+sha256 = "3f93fa56cbb10f7b104a6f65d075b3437de0bcb9ee36b68076909e06e952948a"
+
+[[files]]
+path = "diodeTranAdjointScaled.cir"
+sha256 = "41f62000fccc0d921f222b4f0cbbff88e7a966b4578cff57510ab974b5c96ae2"
+
+[[files]]
+path = "diodeTranAdjointTrap.cir"
+sha256 = "0d2147a2050d1700c5666be2c96df965bf5f6cc51a1ff92c775d520a1f708480"
+
+[[files]]
+path = "diodeTranFD.cir"
+sha256 = "3edf016af95483cae41daa656e49dafe0617743c258f35fe5f7fc82929479808"
+
+[[files]]
+path = "diodeTranForAdjoint.cir"
+sha256 = "0d246da7acea9f3fcd9fd727db2774c727858d9bca35d97506b2aa53bd923056"
+
+[[files]]
+path = "diodeTranScaled.cir"
+sha256 = "8b4cd4da7ab09c01fab3d2ce6f8bf26dab5b4bb15868b0fe9d4056ec2eb1d1a2"
+
+[[files]]
+path = "diodeTranTrap.cir"
+sha256 = "6d23ac9579b520fb0c884866dad9d71e3d3c15de407ddfe232ad1c4cd019df5d"
+
+[[files]]
+path = "diode_adjoint.cir"
+sha256 = "e143423ca6873a9589ab5505ec773b587a728b599382f83bf8a9876874f668cf"
+
+[[files]]
+path = "diode_direct.cir"
+sha256 = "0064561ecb34562d811df91963ea78bd10b2a2a2065940aa11447ced40fdfdd9"
+
+[[files]]
+path = "dummyDiodeTran.cir"
+sha256 = "303a41592e1bf8e88ba6cbc43ad921ad8b711a80617888e9e122087d9fa064a9"
+
+[[files]]
+path = "dummyDiodeTran2.cir"
+sha256 = "45d8bdfdfc380666690a6fac6d47e12fa28d0dd5143679a420c49af87006c78e"
+
+[[files]]
+path = "dummyDiodeTran3.cir"
+sha256 = "62b9b2df4f005daa1a3dcbec8a34683d54cfbb1b45a4882013189b7ceacdbc93"
+
+[[files]]
+path = "dummyDiodeTranScaled.cir"
+sha256 = "45d8bdfdfc380666690a6fac6d47e12fa28d0dd5143679a420c49af87006c78e"
+
+[[files]]
+path = "dummy_bugs799_and_842.cir"
+sha256 = "1c8c11556053276e61866022c1a118e86fb54c6b1dabf7694ea19f22dfe48234"
+
+[[files]]
+path = "dummy_devLevelParams_ipulse.cir"
+sha256 = "d118fb7fa376189f825136fc33c40e4ecf21059e3db47ebf6fa6358fe46b949f"
+
+[[files]]
+path = "dummy_devLevelParams_ipwl.cir"
+sha256 = "02b91df4e477868bc1657d0e6ec6a366a1be4b32d3a6b10914714629c5c68b6e"
+
+[[files]]
+path = "dummy_devLevelParams_isffm.cir"
+sha256 = "5ee273cb574d3c50f0507ee9a3fbf946cbb4083525598732d19d10c790b33dee"
+
+[[files]]
+path = "dummy_devLevelParams_isin.cir"
+sha256 = "33a390dbdd1f38e6c6bc26d16c62e577640611a41a5b5690cfeca55dba638e65"
+
+[[files]]
+path = "dummy_devLevelParams_vpulse.cir"
+sha256 = "703de444807f8f6e6bf3972c5a46d7366c6a53a19e7a49222896eb0c437256a9"
+
+[[files]]
+path = "dummy_devLevelParams_vpwl.cir"
+sha256 = "56b53d177e5176f77cd8006ae319616e9629c6aabdf621f6e8695309eb0c7636"
+
+[[files]]
+path = "dummy_devLevelParams_vsffm.cir"
+sha256 = "f69f5845bf2205c31701b53d4cd02e5eb4701072a75383917a626c145ec99b7f"
+
+[[files]]
+path = "dummy_devLevelParams_vsin.cir"
+sha256 = "19f595f28dc0c98e1141a91316eb994e1a44b7772aad84627c96bc745f270730"
+
+[[files]]
+path = "dummy_ipulse.cir"
+sha256 = "d118fb7fa376189f825136fc33c40e4ecf21059e3db47ebf6fa6358fe46b949f"
+
+[[files]]
+path = "dummy_ipwl.cir"
+sha256 = "02b91df4e477868bc1657d0e6ec6a366a1be4b32d3a6b10914714629c5c68b6e"
+
+[[files]]
+path = "dummy_isffm.cir"
+sha256 = "5ee273cb574d3c50f0507ee9a3fbf946cbb4083525598732d19d10c790b33dee"
+
+[[files]]
+path = "dummy_isin.cir"
+sha256 = "33a390dbdd1f38e6c6bc26d16c62e577640611a41a5b5690cfeca55dba638e65"
+
+[[files]]
+path = "dummy_vpulse.cir"
+sha256 = "703de444807f8f6e6bf3972c5a46d7366c6a53a19e7a49222896eb0c437256a9"
+
+[[files]]
+path = "dummy_vpwl.cir"
+sha256 = "56b53d177e5176f77cd8006ae319616e9629c6aabdf621f6e8695309eb0c7636"
+
+[[files]]
+path = "dummy_vsffm.cir"
+sha256 = "f69f5845bf2205c31701b53d4cd02e5eb4701072a75383917a626c145ec99b7f"
+
+[[files]]
+path = "dummy_vsin.cir"
+sha256 = "19f595f28dc0c98e1141a91316eb994e1a44b7772aad84627c96bc745f270730"
+
+[[files]]
+path = "fddevLevelParams_ipulse.cir"
+sha256 = "44d7e5ed5a6402e606da861e727a35132050531e1a8a63f8c6e759aecce55211"
+
+[[files]]
+path = "fddevLevelParams_ipulse2.cir"
+sha256 = "661d0a4ee6bc770f6b342667ba7dfb8ea6430317e47cf4e941dcf3729097d388"
+
+[[files]]
+path = "fddevLevelParams_ipwl.cir"
+sha256 = "8eea9d270000f6d1b8a4d61214c5ef425299f4ce35891194e01059b9e1439418"
+
+[[files]]
+path = "fddevLevelParams_isffm.cir"
+sha256 = "9ee77e5788c13f98e8435301bd7a0b4ff65b1788da1c14bd8fabbe65ed4d9ad2"
+
+[[files]]
+path = "fddevLevelParams_isffm2.cir"
+sha256 = "ea8a339e59173270845fd5639457d653c5f9f7ff3f923d8db6eb072373c732fb"
+
+[[files]]
+path = "fddevLevelParams_isin.cir"
+sha256 = "c7e1d94b6bd901fcf75c144353b3e7824111bc80c4592ab9d21140406ff927c4"
+
+[[files]]
+path = "fddevLevelParams_isin2.cir"
+sha256 = "f22e197c81c523b21e1530d8ff5e9b39372ce9907fba91a545fe9fe618dc9cb0"
+
+[[files]]
+path = "fddevLevelParams_vpulse.cir"
+sha256 = "5779282dda2f2756b0ce8a01d3732d6ebac8ae8fd81522ed7b4f413d7b6dc3fa"
+
+[[files]]
+path = "fddevLevelParams_vpwl.cir"
+sha256 = "1a6883b7b1906577a78793443dc8ac8187b76e314a1af3b1981d151e20261d65"
+
+[[files]]
+path = "fddevLevelParams_vsffm.cir"
+sha256 = "c7d06c28cb5fca2cc3ab660ae19c7ecd64aaa4fe7023c33b0548bb145ff33980"
+
+[[files]]
+path = "fddevLevelParams_vsin.cir"
+sha256 = "cffd682eaba8f3a7f4ebd78a0d8aba58a5fef14fc7021e7b96a0d8c34b3a73b6"
+
+[[files]]
+path = "fdipulse.cir"
+sha256 = "44d7e5ed5a6402e606da861e727a35132050531e1a8a63f8c6e759aecce55211"
+
+[[files]]
+path = "fdipulse2.cir"
+sha256 = "661d0a4ee6bc770f6b342667ba7dfb8ea6430317e47cf4e941dcf3729097d388"
+
+[[files]]
+path = "fdipwl.cir"
+sha256 = "8eea9d270000f6d1b8a4d61214c5ef425299f4ce35891194e01059b9e1439418"
+
+[[files]]
+path = "fdipwl2.cir"
+sha256 = "e7ae6f9c9ce6ab5d8e629ef3aa282562e083b20c8e1a8b15f7ee951eb7471acc"
+
+[[files]]
+path = "fdisffm.cir"
+sha256 = "9ee77e5788c13f98e8435301bd7a0b4ff65b1788da1c14bd8fabbe65ed4d9ad2"
+
+[[files]]
+path = "fdisffm2.cir"
+sha256 = "ea8a339e59173270845fd5639457d653c5f9f7ff3f923d8db6eb072373c732fb"
+
+[[files]]
+path = "fdisin.cir"
+sha256 = "c7e1d94b6bd901fcf75c144353b3e7824111bc80c4592ab9d21140406ff927c4"
+
+[[files]]
+path = "fdisin2.cir"
+sha256 = "f22e197c81c523b21e1530d8ff5e9b39372ce9907fba91a545fe9fe618dc9cb0"
+
+[[files]]
+path = "fdvpulse.cir"
+sha256 = "5779282dda2f2756b0ce8a01d3732d6ebac8ae8fd81522ed7b4f413d7b6dc3fa"
+
+[[files]]
+path = "fdvpwl.cir"
+sha256 = "1a6883b7b1906577a78793443dc8ac8187b76e314a1af3b1981d151e20261d65"
+
+[[files]]
+path = "fdvsffm.cir"
+sha256 = "c7d06c28cb5fca2cc3ab660ae19c7ecd64aaa4fe7023c33b0548bb145ff33980"
+
+[[files]]
+path = "fdvsin.cir"
+sha256 = "cffd682eaba8f3a7f4ebd78a0d8aba58a5fef14fc7021e7b96a0d8c34b3a73b6"
+
+[[files]]
+path = "fullWaveDummy.cir"
+sha256 = "0f20006e63e271a34b962e05fe7d74d388d10c601e0cb5a281d445cbc34c59b0"
+
+[[files]]
+path = "fullWaveRectDiode.cir"
+sha256 = "9fb6cdaef5eb69878833216b1d103b5b59eb5b5bb4980cc93261964c4c079c4f"
+
+[[files]]
+path = "fullWaveRectDiodeAdjoint.cir"
+sha256 = "98d19432bb7497e5907658ae672ae9bbd1661a0e7cd62a8cdb061fa484142c2f"
+
+[[files]]
+path = "fullWaveRectDiodeAnalytic.cir"
+sha256 = "062aa82649e9eccf2877b6393ed420617675e1b08ada7d6f3cea20525ecb6db9"
+
+[[files]]
+path = "fullWaveRectDiodeDirect.cir"
+sha256 = "bae979f832f148bb3b802b32ea616a84571910253978f1458502b0037c12ff7f"
+
+[[files]]
+path = "fullWaveRectDiodeNewFD.cir"
+sha256 = "446ad2bfc4974f2fdf76a0a9631fb26baa034e6de0ac828826205a20da2c78a8"
+
+[[files]]
+path = "fullWaveRectDiodeOldFD.cir"
+sha256 = "3399008c285d1dfee472dc34037407d8623fbadb6f919f342f7e01196dd0a4f9"
+
+[[files]]
+path = "gummel_n.cir"
+sha256 = "e60ae140625bb37a5c6459aaef9f5cb6f64cf0efa963c74413305dd621583dd1"
+
+[[files]]
+path = "gummel_nFD.cir"
+sha256 = "eda59ea3b81fe6a9bfbce0d8e0af4d5a447712f88e94c8cf57c29fdd1fbb1d38"
+
+[[files]]
+path = "gummel_n_110.cir"
+sha256 = "eb6cbcbb71c4488d532521ffb27cd9e37d712589ed8fad7a4ac5c16bd4b6c853"
+
+[[files]]
+path = "gummel_n_110FD.cir"
+sha256 = "d758a0e25241cafc71d31781b35c679d1057cc5ac6217392a430cb5120719eec"
+
+[[files]]
+path = "gummel_n_111.cir"
+sha256 = "2b449881e8f323b0177611a2ef2bc78fc3175e02c7411e4f02b4f9cb4d603702"
+
+[[files]]
+path = "gummel_n_111FD.cir"
+sha256 = "21acf9a6dcbf9aa65ddab345a4f6bf1a329054f94224b616ef6a8dd7bf201afe"
+
+[[files]]
+path = "gummel_nmos_xyce.cir"
+sha256 = "e8f0f417772414ae014cede2343cac29bda02183e6d83f9fae466bb4e926b952"
+
+[[files]]
+path = "gummel_nmos_xyceFD.cir"
+sha256 = "7cc5a0337bf4d0f28362205c1d90961e74ea93ed2874ca5af5ee0fc4e595b05e"
+
+[[files]]
+path = "gummel_p.cir"
+sha256 = "f2c2d6e9ccf6d3c910ba3584d2213f9a29e957c448d85e8115713dd94e2341c9"
+
+[[files]]
+path = "gummel_pFD.cir"
+sha256 = "f056cfd35b3f1757511a8c02b4e9433b3a071944bd7181a929f68e6f0d231ba2"
+
+[[files]]
+path = "gummel_p_110.cir"
+sha256 = "ad43f058c06e3c028ca77e390bff42dde6e46f2dad86520461acd75bb70e2f3f"
+
+[[files]]
+path = "gummel_p_110FD.cir"
+sha256 = "59eb0fa09825cdc4f913d6c4b181a200e5ad50f53121ffce9a65017d317bfcf9"
+
+[[files]]
+path = "gummel_p_111.cir"
+sha256 = "443dc8d492ad15e23bf29fae3863470699fe62287608a87ed22d53a4dc8e5823"
+
+[[files]]
+path = "gummel_p_111FD.cir"
+sha256 = "1766115aca89dd3e7720b95b4c5a4509b60d34e87105ab248f2e0cb0bda3bd05"
+
+[[files]]
+path = "gummel_pmos_xyce.cir"
+sha256 = "40ed178ea1051e4c3cf3accbf2a0e28636368cb59b1181eb31c9340b4455bb89"
+
+[[files]]
+path = "gummel_pmos_xyceFD.cir"
+sha256 = "7e7d305f44124b78f39df43a60751560bf5fbcdbf03eadb2f594e76804c05594"
+
+[[files]]
+path = "inverter_event.cir"
+sha256 = "10ea3dc95d6c0e498b26ff742cbcdb0cfa34e9233c59983918f4d4e967414e62"
+
+[[files]]
+path = "ipulse.cir"
+sha256 = "4f7b7ae76e30f3c3eae7aca758d9b2bae3a88507fa913e60e37c760759a53dd8"
+
+[[files]]
+path = "ipwl.cir"
+sha256 = "56c0ba63ab2dfa4b705cefef79ab91f0a504027de5f599fa2d71edc37d07f473"
+
+[[files]]
+path = "isffm.cir"
+sha256 = "9035a1d4f3844c30f0633ba8fd1bb1699bfb573a05d8dc553fc0019ca4715fe8"
+
+[[files]]
+path = "isin.cir"
+sha256 = "f276c232327c9df7fda36f3beab1000593f11c3f4956835bc16ba9f0897e096d"
+
+[[files]]
+path = "issue729.cir"
+sha256 = "348d7f23d45b551731f767ea8ed5cbaba180b7afba806b9e9713b2489222a859"
+
+[[files]]
+path = "issue729Ref.cir"
+sha256 = "2037db93b8456a37bea0a04fc522717c05c89fcc046ef3dd9edb6a7e056c32b9"
+
+[[files]]
+path = "missingSensFunction.cir"
+sha256 = "097e33f331e1dcfdd228b289e578702cd2cfc003e5c53cacce7b1906086c40e9"
+
+[[files]]
+path = "modelcard_xyce.nmos"
+sha256 = "29a4935270fe6eaf30cafaf497628d865f2b5f4ce0d68c2135b9ca5af009ac1b"
+
+[[files]]
+path = "modelcard_xyce.pmos"
+sha256 = "ac114fc333bf456994876b6fffe9767430747e7f025cc05cd29ce400b8dc92c1"
+
+[[files]]
+path = "nlMutIndSens1.cir"
+sha256 = "650125b921970b94025c4c588f47e3288081679d898fd3e228037ec53bf5ba60"
+
+[[files]]
+path = "nlMutIndSens1_FD.cir"
+sha256 = "3c8f0b7a9dbfd96b6c1f6686c6dd41f136e64dcf8d19b305f135acc3b5d52ca4"
+
+[[files]]
+path = "nlMutIndSens2.cir"
+sha256 = "d921878626bc7ceb755a4b76992414702299eb28452324a8bb554ef4e790853e"
+
+[[files]]
+path = "nlMutIndSens2_FD.cir"
+sha256 = "73822b230afcfe8262a6b6a11032d01d243c62a83523f3e84d250f3790c89e42"
+
+[[files]]
+path = "psp_asym_nmos_idvg0_FD_SENS.cir"
+sha256 = "ce0daf089f4e52a251eec29627017dddbe9eff6c55e378c2c60c81a3d873bd05"
+
+[[files]]
+path = "psp_asym_nmos_idvg0_SENS.cir"
+sha256 = "4c7a661ff51ae6ba50f5dfdd8bc37453eb9cec0d66bc836ebfbdcec5c0d1c2a2"
+
+[[files]]
+path = "psp_asym_pmos_idvg0_FD_SENS.cir"
+sha256 = "a902eebd9c1b04f4850e48bb906157f0dd8b814d22a99d4e74637fd82487f5d5"
+
+[[files]]
+path = "psp_asym_pmos_idvg0_SENS.cir"
+sha256 = "a8075a6c1362e950ca44d60c967830d0a7cb428b09e4e416262bd3dacb49e14c"
+
+[[files]]
+path = "rc1000TranAdjGear.cir"
+sha256 = "667f0231e88e5de7d4995825c793efa9236c9fad972fac1c76b7b80f6de6b9b1"
+
+[[files]]
+path = "res.cir"
+sha256 = "e4e396cf0a789b4ed51cd7d9f3d3b3f7b40f9cc761b0fc565a4640491b34d36d"
+
+[[files]]
+path = "sensCapGear.cir"
+sha256 = "1c8aa037d9ffa05a42687ca7488f13cd0e55fd965c0045f84e44fe4e98a3dce2"
+
+[[files]]
+path = "sensCapGearAdj.cir"
+sha256 = "3fff2695014eb6fbbf3b850581064fca4abd9818c5f884e0759bde6fe47f8a59"
+
+[[files]]
+path = "sensCapGearAdjNewFD.cir"
+sha256 = "98f22342250a91c7eaec99029c4dcd3e2bb907e46ea27451971234f84042d55f"
+
+[[files]]
+path = "sensCapGearAdjOrder1.cir"
+sha256 = "902544fc21468d1e0ddff1310ee11585dd6011cff65b1002b22cd29122d4a6ba"
+
+[[files]]
+path = "sensCapGear_baseline.cir"
+sha256 = "f32fe63dee4adc977c5fd2bc6a38d56a08525c25749b9e944c2fad613b0ef9a8"
+
+[[files]]
+path = "sensCapGear_baseline_copy.cir"
+sha256 = "f32fe63dee4adc977c5fd2bc6a38d56a08525c25749b9e944c2fad613b0ef9a8"
+
+[[files]]
+path = "sensCapGear_forceDeviceFD.cir"
+sha256 = "9101c0566bee29570eb7586a867902b1daa1d0e3570199f65a628469865452c8"
+
+[[files]]
+path = "sensCapGear_global.cir"
+sha256 = "0734c5bb39daafcce1d024d4a2dca96d0db7fc98c16dc6075f4db751d84f7a01"
+
+[[files]]
+path = "sensCapGear_global2.cir"
+sha256 = "0d076711f4b94182b7fed5c036a2b2612484a9719dbd50e8581e8fcc813aaeee"
+
+[[files]]
+path = "sensCapGear_global_curlybrace.cir"
+sha256 = "1ce16c2e97f93ee7a9d826f5f2a78a6cdde1ade10a722b96dafd705201b5aafa"
+
+[[files]]
+path = "sensCapGear_numerical.cir"
+sha256 = "11932568c806eadf17b92e284d3ade75a8e0ecdd2e7794040e394cccbf2276fe"
+
+[[files]]
+path = "sensCapGear_oldFD.cir"
+sha256 = "53dd6035cc2b9df7eacdeef726927ed28ebecb62f89055e17ec5e0768149bdd3"
+
+[[files]]
+path = "sensCapTrapAdj.cir"
+sha256 = "d3550243b96ee99686720c39821d4b1aaafa38bc396f2a94d233f0caf3f5fe82"
+
+[[files]]
+path = "sensCapTrapAdjNewFD.cir"
+sha256 = "c1da52c40a09bea1962b8f956d6c0f06a63a9fcf6093fe6a8d4fe491534c2144"
+
+[[files]]
+path = "sensCapTrapAdjOrder1.cir"
+sha256 = "f559d83c8b7bab2572de44abdac9351662895ea8fbbea4164b963e5369ad7cbf"
+
+[[files]]
+path = "sensCapTrapOrder1.cir"
+sha256 = "d564e0083dc51647e5763cda9a5b369d34ffb1706c8b5b5d3b11568cea3d97c4"
+
+[[files]]
+path = "sensCapTrapOrder2.cir"
+sha256 = "ceb533a51a706e19ac793942b5536e9b633bd8cff7b5fbf99ebeee82b22c4476"
+
+[[files]]
+path = "transLineStepDataGlobalPar.cir"
+sha256 = "da100fd0c15aea92c6a2da6726de5b5af60cb4f2c7380d9140b929228adb8b1c"
+
+[[files]]
+path = "twoObj.cir"
+sha256 = "eff4549757b39cbdf9b4b6dfa6b03e2283411f83209ebe067b46906890cb336a"
+
+[[files]]
+path = "twoObjFD.cir"
+sha256 = "75ce3737986d7522d153b602a6d392ccbf1fb4e5e888866dc199d623914724ea"
+
+[[files]]
+path = "vpulse.cir"
+sha256 = "9e51173c2c1fbd92819179e7fa69f4cb3367760b13fc286112cf30b5d5369912"
+
+[[files]]
+path = "vpwl.cir"
+sha256 = "01822a192fce69ef23a7bcb5fcdc1cb5b80017bf012769a290108c0afa467973"
+
+[[files]]
+path = "vsffm.cir"
+sha256 = "e00a00b5d895fb9390ba596e9c720f94c07a414a7623207a2e3dbcc7a3ceef73"
+
+[[files]]
+path = "vsin.cir"
+sha256 = "a0ef9cdc09edb8f7834fa79945ad4f4f501381b636515f7a689971c3e5c7b0c3"
+
+[[files]]
+path = "vsrcSensTest.cir"
+sha256 = "92242393d3682f6a6e5ee1cb47390dec1f02ef76fd814381e2f422828a612b46"
+
+[[files]]
+path = "vsrcSensTest2.cir"
+sha256 = "db6d8b8148eff45bb9c2de42d12ca4db0fd7922c21045af2d117249c6549e5e3"

@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_1018_SON"
+case = "xyce_certification_tests_bug_1018_son"
+source = "bug1018son.cir"
+outputs = [
+    "v(myvccnet)",
+    "i(v0)",
+    "v(anodeofmosdiode)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v0", start = 1.8, stop = 1.8, step = 1.0 },
+]

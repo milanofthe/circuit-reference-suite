@@ -1,0 +1,23 @@
+title = "ngspice examples/osdi/psp103"
+case = "ngspice_examples_osdi_psp103"
+source = "psp_out_nmos_nm.sp"
+outputs = [
+    "i(vs)",
+]
+
+[options]
+temp = 21.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 2.0, step = 0.05 },
+    { source = "vg", start = 0.0, stop = 1.5, step = 0.25 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.5, step = 0.05 },
+    { source = "vb", start = 0.0, stop = -3.0, step = -1.0 },
+]

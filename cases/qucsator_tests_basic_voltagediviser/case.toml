@@ -1,0 +1,20 @@
+id = "qucsator_tests_basic_voltagediviser"
+title = "qucsator tests/basic/voltagediviser"
+family = "test"
+netlists = [
+    { file = "voltagediviser@tr.net", dialect = "qucsator" },
+]
+
+[source]
+name = "qucsator"
+url = "https://github.com/Qucs/qucsator"
+license = "GPL-2.0-or-later"
+authors = [
+    "Qucs team",
+]
+commit = "e995f9acc71a8c7319286944e4a1692318b9dd80"
+root = "tests/basic/voltagediviser"
+
+[[files]]
+path = "voltagediviser@tr.net"
+sha256 = "c575cd91991efbba5cd7f0d34f8b830c516b9e8ff01d40976e1c961c6981c176"

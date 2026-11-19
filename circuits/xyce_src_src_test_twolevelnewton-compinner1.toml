@@ -1,0 +1,15 @@
+title = "Xyce src/test/TwoLevelNewton"
+case = "xyce_src_src_test_twolevelnewton"
+source = "compInner1.cir"
+outputs = [
+    "v(dd1)",
+    "v(ss1)",
+    "v(a)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 6e-08 },
+]
+
+[options]
+vntol = 1e-06
+reltol = 0.001

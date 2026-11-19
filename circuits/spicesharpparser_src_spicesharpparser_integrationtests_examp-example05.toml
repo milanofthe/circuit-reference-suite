@@ -1,0 +1,9 @@
+title = "SpiceSharpParser src/SpiceSharpParser.IntegrationTests/Examples/Circuits"
+case = "spicesharpparser_src_spicesharpparser_integrationtests_examp"
+source = "Example05.cir"
+outputs = [
+    "i(v1)",
+]
+analysis = [
+    { type = "op" },
+]

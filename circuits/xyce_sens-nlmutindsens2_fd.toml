@@ -1,0 +1,14 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "nlMutIndSens2_FD.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0003 },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-06
+method = "gear"

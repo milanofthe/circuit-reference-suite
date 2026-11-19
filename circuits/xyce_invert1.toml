@@ -1,0 +1,9 @@
+title = "Xyce_Regression INVERT1"
+case = "xyce_invert1"
+source = "invert1.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]

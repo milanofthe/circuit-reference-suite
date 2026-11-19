@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_920_SON"
+case = "xyce_certification_tests_bug_920_son"
+source = "homotopy-tran-order2.cir"
+outputs = [
+    "i(vb)",
+    "i(vic)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 1e-06 },
+]
+
+[options]
+reltol = 0.01
+vntol = 1e-06

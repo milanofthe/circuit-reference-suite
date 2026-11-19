@@ -1,0 +1,12 @@
+title = "Xyce_Regression MCNC_BJT_LATCH"
+case = "xyce_mcnc_bjt_latch"
+source = "latch.cir"
+outputs = [
+    "v(1)",
+    "v(7)",
+    "v(5)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 7.5e-08 },
+]

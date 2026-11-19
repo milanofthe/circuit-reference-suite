@@ -1,0 +1,21 @@
+id = "ahkab_tests_diode_mult"
+title = "ahkab tests/diode_mult"
+family = "test"
+netlists = [
+    { file = "diode_mult.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/diode_mult"
+
+[[files]]
+path = "diode_mult.ckt"
+sha256 = "de110e81dd425b8117efd6acd32d7d4311b854bf1236715f3233b1e12419da50"

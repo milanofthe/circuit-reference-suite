@@ -1,0 +1,17 @@
+title = "Xyce_Regression PARSER"
+case = "xyce_parser"
+source = "nakedRandom.cir"
+outputs = [
+    "v(1)",
+    "i(r1)",
+    "i(r2)",
+    "i(r3)",
+    "i(r4)",
+    "i(r5)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

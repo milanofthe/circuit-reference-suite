@@ -1,0 +1,34 @@
+id = "sky130_rf_pfet_01v8_mvt"
+title = "SKY130 rf_pfet_01v8_mvt model checks"
+family = "device"
+netlists = [
+    { file = "sky130_fd_pr__rf_pfet_01v8_mvt_aF02W0p84L0p15__pfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_pfet_01v8_mvt_aF02W1p68L0p15__pfet_vth.spice", dialect = "ngspice" },
+    { file = "sky130_fd_pr__rf_pfet_01v8_mvt_aF04W1p68L0p15__pfet_vth.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "cells/rf_pfet_01v8_mvt/tests"
+
+[[files]]
+path = "sky130_fd_pr__rf_pfet_01v8_mvt_aF02W0p84L0p15__pfet_vth.spice"
+sha256 = "e62485ae8d27a9596e4d6bb961a70ee1a99a8aa0aed195a8e1845495d777b820"
+
+[[files]]
+path = "sky130_fd_pr__rf_pfet_01v8_mvt_aF02W1p68L0p15__pfet_vth.spice"
+sha256 = "dd9f67eaa17bd6cdb21134809eaaf1bd20b6bc825b58dbdabbec6f896d100b12"
+
+[[files]]
+path = "sky130_fd_pr__rf_pfet_01v8_mvt_aF04W1p68L0p15__pfet_vth.spice"
+sha256 = "7d3679c8266dc56ccf302194d3e406706b626ea7ec07f84641b0c6f980fc2054"
+
+[resolve]
+"../../../models/sky130.lib.spice" = "libraries/sky130_fd_pr/models/sky130.lib.spice"

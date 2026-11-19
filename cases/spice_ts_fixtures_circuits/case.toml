@@ -1,0 +1,35 @@
+id = "spice_ts_fixtures_circuits"
+title = "spice-ts fixtures/circuits"
+family = "test"
+netlists = [
+    { file = "diode-rectifier.cir", dialect = "spice3" },
+    { file = "rc-lowpass.cir", dialect = "spice3" },
+    { file = "rl-circuit.cir", dialect = "spice3" },
+    { file = "voltage-divider.cir", dialect = "spice3" },
+]
+
+[source]
+name = "spice-ts"
+url = "https://github.com/mfiumara/spice-ts"
+license = "MIT"
+authors = [
+    "Mattia Fiumara",
+]
+commit = "6cb4a4ae43320ef8f10a7f972eaef5a21a005796"
+root = "fixtures/circuits"
+
+[[files]]
+path = "diode-rectifier.cir"
+sha256 = "e0635edf888b2cbf253b75ab34a1ec596d3d668f1d014e5d9436734c653a56a8"
+
+[[files]]
+path = "rc-lowpass.cir"
+sha256 = "b37cac7a56f807e29d25e7c46dbd6fc31c5ff82bd14a3933d8b8c9b08c4e6799"
+
+[[files]]
+path = "rl-circuit.cir"
+sha256 = "b4a4318deb86095544ec12f43a2d024ff56fccb2c0fe8b80d2874395b260384b"
+
+[[files]]
+path = "voltage-divider.cir"
+sha256 = "e787d50b799b19217f4ca769276b2e0a7a7e78ee98ee6a2c4fe2352c2ee345d2"

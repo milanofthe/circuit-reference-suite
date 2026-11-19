@@ -1,0 +1,35 @@
+id = "gf180mcu_ngspice_gf180mcu_fd_sc_mcu7t5v0"
+title = "GF180MCU model test, ngspice gf180mcu_fd_sc_mcu7t5v0"
+family = "device"
+netlists = [
+    { file = "gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice", dialect = "ngspice" },
+    { file = "gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice", dialect = "ngspice" },
+    { file = "gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "gf180mcu_fd_pr"
+url = "https://github.com/fossi-foundation/gf180mcu-fd-pr"
+license = "Apache-2.0"
+authors = [
+    "GlobalFoundries",
+    "Google",
+]
+commit = "e11a8c98dfc905561d38813b1416e65a4b9280e9"
+root = "models/ngspice/testing/sc_regression/gf180mcu_fd_sc_mcu7t5v0/device_netlists"
+
+[[files]]
+path = "gf180mcu_fd_sc_mcu7t5v0__inv_1_run.spice"
+sha256 = "98167b3f9eac6ef0060c86922423229f8fee284afdd713b45108c2cb0759a894"
+
+[[files]]
+path = "gf180mcu_fd_sc_mcu7t5v0__nand2_1_run.spice"
+sha256 = "c5fa52db6fdcffc0890a77266518c4024108fa22bb2102cb4ef6ea700c2d1554"
+
+[[files]]
+path = "gf180mcu_fd_sc_mcu7t5v0__or3_1_run.spice"
+sha256 = "d2ce741f7b37e39ffce3b37bf0601f5e0774191655a94ce83ae3fb0744262421"
+
+[resolve]
+"../../../../design.spice" = "libraries/gf180mcu_fd_pr/models/ngspice/design.spice"
+"../../../../sm141064.spice" = "libraries/gf180mcu_fd_pr/models/ngspice/sm141064.spice"

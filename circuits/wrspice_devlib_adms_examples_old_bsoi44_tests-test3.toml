@@ -1,0 +1,17 @@
+title = "WRspice devlib/adms/examples.old/bsoi44/tests"
+case = "wrspice_devlib_adms_examples_old_bsoi44_tests"
+source = "test3.sp"
+outputs = [
+    "i(vd)",
+    "v(g)",
+]
+
+[options]
+gmin = 0.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vg", start = 0.0, stop = 1.2, step = 0.02 },
+    { source = "vd", start = 0.05, stop = 1.2, step = 0.5 },
+]

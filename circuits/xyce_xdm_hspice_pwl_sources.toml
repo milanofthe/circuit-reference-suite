@@ -1,0 +1,12 @@
+title = "Xyce_Regression XDM/HSPICE/PWL_SOURCES"
+case = "xyce_xdm_hspice_pwl_sources"
+source = "pwl_sources.cir"
+outputs = [
+    "v(n14375)",
+    "v(n14713)",
+    "v(n14875)",
+    "v(n15043)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]

@@ -1,0 +1,13 @@
+title = "Xyce_Regression GenCoupAPI"
+case = "xyce_gencoupapi"
+source = "diode_no_limiting_nogenext.cir"
+outputs = [
+    "i(vmon)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[options]
+reltol = 0.0001

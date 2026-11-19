@@ -1,0 +1,45 @@
+id = "xyce_hicum"
+title = "Xyce_Regression HICUM"
+family = "test"
+netlists = [
+    { file = "fgum_TRANS_npn_full_sh.cir", dialect = "xyce" },
+    { file = "fgum_ac_npn_full_sh_ac.cir", dialect = "xyce" },
+    { file = "fgum_ac_npn_full_sh_dc.cir", dialect = "xyce" },
+    { file = "fgum_dc_npn_full_sh.cir", dialect = "xyce" },
+    { file = "fout_npn_full_sh.cir", dialect = "xyce" },
+    { file = "noise_npn_full_sh_ac.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/HICUM"
+
+[[files]]
+path = "fgum_TRANS_npn_full_sh.cir"
+sha256 = "4654e56142600b3cd933be28601ad773d981be719645282e22a8464aef92533e"
+
+[[files]]
+path = "fgum_ac_npn_full_sh_ac.cir"
+sha256 = "6326fea21b7af32f1f640edf60da20c19074bd8bc6079a61448837a9c407d515"
+
+[[files]]
+path = "fgum_ac_npn_full_sh_dc.cir"
+sha256 = "2a2875f9e642cb452a0fcae154323fd63eb25a39242e74af707488c9b4bafd30"
+
+[[files]]
+path = "fgum_dc_npn_full_sh.cir"
+sha256 = "849c973535affc0304b1109778dd4fbc9dc9a91c9e894c38a50f3e34ce971d96"
+
+[[files]]
+path = "fout_npn_full_sh.cir"
+sha256 = "bb9629e06c1b301f18f37b4ae417d0b424378f25236efea54bf64c8f3645136b"
+
+[[files]]
+path = "noise_npn_full_sh_ac.cir"
+sha256 = "5a1105dd08eb037a84ec99caa76b51028884c16254e7adc85e71d475a0d884ad"

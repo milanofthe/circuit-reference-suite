@@ -1,0 +1,9 @@
+title = "ngspice examples/osdi/bsimcmg"
+case = "ngspice_examples_osdi_bsimcmg"
+source = "ringosc_17stg.sp"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-08 },
+]

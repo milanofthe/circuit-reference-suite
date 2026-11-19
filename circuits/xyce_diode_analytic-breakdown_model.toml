@@ -1,0 +1,13 @@
+title = "Xyce_Regression DIODE_ANALYTIC"
+case = "xyce_diode_analytic"
+source = "breakdown_model.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 10.0 },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-06

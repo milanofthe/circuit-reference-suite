@@ -1,0 +1,10 @@
+title = "AnalogGym amplifier Peng_TCFC_Pin_3, SKY130"
+case = "analoggym_peng_tcfc_pin_3"
+source = "amp_spice_testbench/Peng_TCFC_Pin_3_Tran.cir"
+outputs = [
+    "v(visr)",
+    "v(vout3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.000401 },
+]

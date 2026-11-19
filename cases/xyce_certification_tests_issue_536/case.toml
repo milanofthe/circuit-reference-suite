@@ -1,0 +1,55 @@
+id = "xyce_certification_tests_issue_536"
+title = "Xyce_Regression Certification_Tests/ISSUE_536"
+family = "test"
+netlists = [
+    { file = "dcBaseline1.cir", dialect = "xyce" },
+    { file = "dcDecBaseline.cir", dialect = "xyce" },
+    { file = "dcDecExpr.cir", dialect = "xyce" },
+    { file = "dcExpr1.cir", dialect = "xyce" },
+    { file = "dcListBaseline.cir", dialect = "xyce" },
+    { file = "dcListExpr.cir", dialect = "xyce" },
+    { file = "dcOctBaseline.cir", dialect = "xyce" },
+    { file = "dcOctExpr.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/ISSUE_536"
+
+[[files]]
+path = "dcBaseline1.cir"
+sha256 = "2f835c79c50c49f0e1fa34f5f5fbb4baa0e94eb8603ca6d90eb0e4da261689ef"
+
+[[files]]
+path = "dcDecBaseline.cir"
+sha256 = "601563043475226d46933159a9b18c7b4002f8c3fa60bf160fa1d6a9d904e031"
+
+[[files]]
+path = "dcDecExpr.cir"
+sha256 = "49571f84d12ecd48aa8270bfc442fbfcad62010c340b500667a75673e5858674"
+
+[[files]]
+path = "dcExpr1.cir"
+sha256 = "813e6e3e25c37e19f50405bf4a5c279778f668c1e663646c02c6ca5071169d36"
+
+[[files]]
+path = "dcListBaseline.cir"
+sha256 = "80315f117601741f60bc299fe3b2dd1b48e4c88d52ace858f6138b1ad709f50e"
+
+[[files]]
+path = "dcListExpr.cir"
+sha256 = "95fb1dc77bc86fa17925273d00230fa1fcb6cc4dfcc89e987347faa7a75d7c20"
+
+[[files]]
+path = "dcOctBaseline.cir"
+sha256 = "2aeea7097658936777b5ec88d1bd336e0698499bb9bcd2f5fb818778d89cb26c"
+
+[[files]]
+path = "dcOctExpr.cir"
+sha256 = "7382b040c08c3f1980b1e9635b0ebd4e4ecc11323a5f7427d688daf4e3428e56"

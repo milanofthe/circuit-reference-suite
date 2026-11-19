@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_347"
+title = "Xyce_Regression Certification_Tests/BUG_347"
+family = "test"
+netlists = [
+    { file = "diode.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_347"
+
+[[files]]
+path = "diode.cir"
+sha256 = "6d132bf7123362eb43de3b1c74fc2dabcee52c043ed6e2ac5ea2fc5dbe2bc0c9"

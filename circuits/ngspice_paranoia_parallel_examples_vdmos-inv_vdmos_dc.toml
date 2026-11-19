@@ -1,0 +1,13 @@
+title = "ngspice paranoia_parallel/examples/vdmos"
+case = "ngspice_paranoia_parallel_examples_vdmos"
+source = "inv_vdmos_dc.cir"
+outputs = [
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 5.0, step = 0.05 },
+]

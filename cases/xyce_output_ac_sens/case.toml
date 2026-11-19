@@ -1,0 +1,75 @@
+id = "xyce_output_ac_sens"
+title = "Xyce_Regression Output/AC-SENS"
+family = "test"
+netlists = [
+    { file = "ac-sens-csv.cir", dialect = "xyce" },
+    { file = "ac-sens-formats-default-to-prn.cir", dialect = "xyce" },
+    { file = "ac-sens-no-headerfooter.cir", dialect = "xyce" },
+    { file = "ac-sens-phase-in-radians.cir", dialect = "xyce" },
+    { file = "ac-sens-prn-noindex.cir", dialect = "xyce" },
+    { file = "ac-sens-prn.cir", dialect = "xyce" },
+    { file = "ac-sens-raw-override-ascii.cir", dialect = "xyce" },
+    { file = "ac-sens-step-csv.cir", dialect = "xyce" },
+    { file = "ac-sens-step-gnuplot.cir", dialect = "xyce" },
+    { file = "ac-sens-step-tecplot.cir", dialect = "xyce" },
+    { file = "ac-sens-stepnum-col.cir", dialect = "xyce" },
+    { file = "ac-sens-tecplot.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Output/AC-SENS"
+
+[[files]]
+path = "ac-sens-csv.cir"
+sha256 = "aea3309e5497bd03aa90e8b0b10c878a0e1f17fd23a67c71b6c4693c0b55fd81"
+
+[[files]]
+path = "ac-sens-formats-default-to-prn.cir"
+sha256 = "f5710baee3f3af20dfb240e02e316e989583da02763a5f87d2d21f3aff718ad1"
+
+[[files]]
+path = "ac-sens-no-headerfooter.cir"
+sha256 = "d6871c824fc0ea0fb8911375b9960c57ca83bb76657793356f5320121200f1dc"
+
+[[files]]
+path = "ac-sens-phase-in-radians.cir"
+sha256 = "e110a942ad038a4855ad8c910eb0055ae16a308bac81e91c218d5777b960fe66"
+
+[[files]]
+path = "ac-sens-prn-noindex.cir"
+sha256 = "ea866ffa330c00863bdf6dfa3aee6f211a5ee8dd0ec1f95f35b8d21a37420a29"
+
+[[files]]
+path = "ac-sens-prn.cir"
+sha256 = "1c3ceacb19a26598d83937a637d005b68b40ba1f07682c278c8c36a49c5244c9"
+
+[[files]]
+path = "ac-sens-raw-override-ascii.cir"
+sha256 = "68f316e40513a4f0c6d742efd00a6742fcdb08d42238ae1c5bc6f373e1ab36e3"
+
+[[files]]
+path = "ac-sens-step-csv.cir"
+sha256 = "862cfdc838bf92f7508ed280f7fa3d36d978766f130e575c8476bb149966148f"
+
+[[files]]
+path = "ac-sens-step-gnuplot.cir"
+sha256 = "d456f543704803cd0cb8e88f1010aa71dffa101bb3a8311fa8f02f421d441506"
+
+[[files]]
+path = "ac-sens-step-tecplot.cir"
+sha256 = "099af50a240351dcead634553ecb085419e66f034f15009b2583ef9a946c3d99"
+
+[[files]]
+path = "ac-sens-stepnum-col.cir"
+sha256 = "03096a99c8999d2b1e7de495da3cea3adc50397d6a369ccb25893c511cb67f98"
+
+[[files]]
+path = "ac-sens-tecplot.cir"
+sha256 = "60c7e206016a52501844ec9f413fde1a877f9d9e27176807e4a4a8aae053a488"

@@ -1,0 +1,34 @@
+title = "ngspice examples/klu/Circuits/85/c3540"
+case = "ngspice_examples_klu_circuits_85_c3540"
+source = "85/c3540/c3540_ann.net"
+outputs = [
+    "v(g3535_1)",
+    "v(g3538_1)",
+    "v(g3526_0)",
+    "v(g3537_0)",
+    "v(g3531_0)",
+    "v(g3519_0)",
+    "v(g3530_0)",
+    "v(g3528_1)",
+    "v(g3540_1)",
+    "v(g3534_1)",
+    "v(g3527_1)",
+    "v(g3522_0)",
+    "v(g3524_0)",
+    "v(g3525_1)",
+    "v(g3536_1)",
+    "v(g3520_0)",
+    "v(g3532_1)",
+    "v(g3529_0)",
+    "v(g3533_1)",
+    "v(g3521_1)",
+    "v(g3539_1)",
+    "v(g3523_1)",
+]
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]
+
+[options]
+gmin = 0.0001
+abstol = 1e-12

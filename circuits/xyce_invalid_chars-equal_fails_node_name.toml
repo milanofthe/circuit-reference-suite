@@ -1,0 +1,13 @@
+title = "Xyce_Regression INVALID_CHARS"
+case = "xyce_invalid_chars"
+source = "equal_fails_node_name.cir"
+outputs = [
+    "v(=)",
+    "v(3=)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 1.0, step = 1.0 },
+]

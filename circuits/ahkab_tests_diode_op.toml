@@ -1,0 +1,6 @@
+title = "ahkab tests/diode_op"
+case = "ahkab_tests_diode_op"
+source = "diode_op.ckt"
+analysis = [
+    { type = "op" },
+]

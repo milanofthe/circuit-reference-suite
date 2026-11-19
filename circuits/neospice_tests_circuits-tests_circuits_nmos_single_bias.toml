@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/nmos_single_bias.cir"
+analysis = [
+    { type = "op" },
+]

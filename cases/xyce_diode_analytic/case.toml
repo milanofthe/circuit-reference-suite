@@ -1,0 +1,30 @@
+id = "xyce_diode_analytic"
+title = "Xyce_Regression DIODE_ANALYTIC"
+family = "test"
+netlists = [
+    { file = "breakdown_model.cir", dialect = "xyce" },
+    { file = "forward_model.cir", dialect = "xyce" },
+    { file = "reverse_model.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/DIODE_ANALYTIC"
+
+[[files]]
+path = "breakdown_model.cir"
+sha256 = "c428a046c15bce99cb0f75a8346327a2becc1adb4c37b175c6d07da133159249"
+
+[[files]]
+path = "forward_model.cir"
+sha256 = "f5e090a36963633e2be6dc76dee709dc51efb4b9fa97dc5d93667c25b64dca9c"
+
+[[files]]
+path = "reverse_model.cir"
+sha256 = "84ec00feef59479221276fd0c0b4421135b7ed62bfa0b8f36706acb67cdc63b4"

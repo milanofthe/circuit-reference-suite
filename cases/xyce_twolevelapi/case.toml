@@ -1,0 +1,35 @@
+id = "xyce_twolevelapi"
+title = "Xyce_Regression TwoLevelAPI"
+family = "test"
+netlists = [
+    { file = "resInner.cir", dialect = "xyce" },
+    { file = "resInnerTran.cir", dialect = "xyce" },
+    { file = "resTop.cir", dialect = "xyce" },
+    { file = "resTopTran.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TwoLevelAPI"
+
+[[files]]
+path = "resInner.cir"
+sha256 = "963948800a47b162460c649e476a6eef2b563f85ded298ae28da55cb16dfcd4d"
+
+[[files]]
+path = "resInnerTran.cir"
+sha256 = "eae83786c277e0051575d39472149475b04479b91695cf4d96b01f9b88c834b4"
+
+[[files]]
+path = "resTop.cir"
+sha256 = "f4b464f1eb94d3eec7fd3463b3b26db4008c7e7195cbd21db26c036cd40ecf61"
+
+[[files]]
+path = "resTopTran.cir"
+sha256 = "06b92893fc83e28b5face3f54fdf0e4b7882f41d07286249f512c36038731fe0"

@@ -1,0 +1,12 @@
+title = "Xyce_Regression Output/DC"
+case = "xyce_output_dc"
+source = "dc-touchstone-defaults-to-prn.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1.0, stop = 5.0, step = 1.0 },
+]

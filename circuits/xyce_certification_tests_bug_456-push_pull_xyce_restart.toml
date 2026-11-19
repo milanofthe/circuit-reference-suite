@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_456"
+case = "xyce_certification_tests_bug_456"
+source = "push_pull_xyce_restart.cir"
+outputs = [
+    "v(hv)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001 },
+]
+
+[options]
+method = "gear"
+reltol = 0.01

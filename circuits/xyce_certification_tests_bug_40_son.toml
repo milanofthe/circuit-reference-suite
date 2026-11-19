@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_40_SON"
+case = "xyce_certification_tests_bug_40_son"
+source = "bug40.cir"
+outputs = [
+    "i(r1)",
+    "i(r2)",
+    "i(r3)",
+    "i(r4)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 7.0, uic = true },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-12

@@ -1,0 +1,178 @@
+id = "vacask_spice_va"
+title = "ngspice device models in Verilog-A, from Verilog-A Distiller"
+notes = """
+ngspice's built-in models translated to Verilog-A by Verilog-A Distiller
+(https://codeberg.org/arpadbuermen/VADistiller). `sn/`: simplified noise, no output
+variables that add internal nodes, closest to ngspice in complexity. `full/`: all
+of it. The top level: the default variant.
+"""
+
+[source]
+name = "VACASK"
+url = "https://codeberg.org/arpadbuermen/VACASK"
+commit = "29d99ad2df4d8262e64ba883849c2974b3f01cce"
+root = "devices/spice"
+license = "AGPL-3.0-or-later"
+authors = [
+    "Arpad Buermen",
+]
+
+[[files]]
+path = "bjt.va"
+sha256 = "4bf47e418df72aac4e7cca0157ebc95ecb8e09098e67084f176249006dd4c247"
+
+[[files]]
+path = "bsim3v3.va"
+sha256 = "9e1e033eae3b625c3cf18e0a09fcfa3c46ae73fa73ea86254fef80cd233610b4"
+
+[[files]]
+path = "bsim4v8.va"
+sha256 = "f1eecd715b90ab8a038c397a955beeb7ed4387b798791a2d9173122974034daa"
+
+[[files]]
+path = "capacitor.va"
+sha256 = "a2ce4612c0ccd9a897b9efb227984e617f69866a505ad0a2a9b27ce81106fb50"
+
+[[files]]
+path = "diode.va"
+sha256 = "2f4a4fa65c37e4d83ee9a6b42aae81428bd82768225a094e95c04fb18e5a386b"
+
+[[files]]
+path = "full/bjt.va"
+sha256 = "dd0aea189356bfd6a9cc1e16710d8d7065adb87cc6ccb61867b69cdee6de972b"
+
+[[files]]
+path = "full/bsim3v3.va"
+sha256 = "22df4b0e389fde782253969d689039725ea753533b4aa55b4b135d853e40d3f6"
+
+[[files]]
+path = "full/capacitor.va"
+sha256 = "10e2740e5611695e7215eb7be05818f2d59b9a54240f84a9a5bbeaba47e3b4dc"
+
+[[files]]
+path = "full/diode.va"
+sha256 = "b9c290e6b56f76fc98d4ad12f2693f3e784b15f6539c462303f23e67a862e0bb"
+
+[[files]]
+path = "full/inductor.va"
+sha256 = "76c6f5479540b9eb7b865122b8e2275318c843089607dee77faa2fd918339a0c"
+
+[[files]]
+path = "full/jfet1.va"
+sha256 = "0a0b163190496a87bc141637549c2e66dfbca7a56f03673922c2ed47a9567f3b"
+
+[[files]]
+path = "full/jfet2.va"
+sha256 = "cb25d65b12fa52bc5ee20b51c78dd75e608d302ec5c101d9020ab679d5b2d632"
+
+[[files]]
+path = "full/mes1.va"
+sha256 = "497549bcf738f6005eb7fa27857f63116b4948b53a3373e2c1095531e7866dfb"
+
+[[files]]
+path = "full/mos1.va"
+sha256 = "e48621c7b867b7d7b7d49f16a75f0c9cf047a9e58d49a047dae2b35f426b3741"
+
+[[files]]
+path = "full/mos2.va"
+sha256 = "9863def0c32df6942634c751f05b1371216f9114a61b69cb2910192ffc5d69d2"
+
+[[files]]
+path = "full/mos3.va"
+sha256 = "772ab2770341b9c9f3ecb64c974007227eb3037917f7c9ebb666cc2d0819ec73"
+
+[[files]]
+path = "full/mos6.va"
+sha256 = "83ad26d48dfcfb2a1800cdc8b1020c269bfda089c56c04dfa5de00d6c711a27b"
+
+[[files]]
+path = "full/mos9.va"
+sha256 = "023620b00c722c48d6f169be09799d642cbda61b028f566c102c6f645f224f60"
+
+[[files]]
+path = "full/vdmos.va"
+sha256 = "6303d4942b9575c6e7d9597bbdd4d414275bcf9fda3168165f6a0794de051a09"
+
+[[files]]
+path = "inductor.va"
+sha256 = "c18a972f76555e00742aecc485d1f8d390af2ff9350e474ffae5f19235a5812e"
+
+[[files]]
+path = "jfet1.va"
+sha256 = "1443c0f1805d35c415e585c10d992af9e039282400f9a6983598e0428a515f23"
+
+[[files]]
+path = "jfet2.va"
+sha256 = "b7f462f9d6a33ec0bf1c33941e996be26925bb8e69717320d9bab27a6d98dc32"
+
+[[files]]
+path = "mes1.va"
+sha256 = "e9bdd898918e385560eb19077417b72d9eaa324fe611807384da41f10afcefcf"
+
+[[files]]
+path = "mos1.va"
+sha256 = "774e41afc83bbca547acfab4f9fbdd3be7466f5ce6d42188c3ae4eff5c7a717d"
+
+[[files]]
+path = "mos2.va"
+sha256 = "dcb2853c82942f52c41704396b76d8f4cbb6caa644f4998924600db1cb4cbad7"
+
+[[files]]
+path = "mos3.va"
+sha256 = "af1949aec5223276d538010949af1fe7e6279127c72695e80a70a689e04cf634"
+
+[[files]]
+path = "mos6.va"
+sha256 = "6cee80c039430896cdca42cd299ea610919863d3a626ab5f3173fa170620a7e8"
+
+[[files]]
+path = "mos9.va"
+sha256 = "393e573d42fbd2a5ba11ffa1fe9ae8f1969ebf482a398a0a5497667610bf7b6d"
+
+[[files]]
+path = "resistor.va"
+sha256 = "b1ee0770bcc2a4ec9de2147b4abbc639df9d3a205056c206b27717ab16d7fced"
+
+[[files]]
+path = "sn/bjt.va"
+sha256 = "930e153134a2869a25b582aa1ae7c8cd9fbdd133e85080e74b851d90324ae9c1"
+
+[[files]]
+path = "sn/diode.va"
+sha256 = "e42a581fb221aebbacb11350e9288d93e42a99cd90f879cfffb6f4c253945f62"
+
+[[files]]
+path = "sn/jfet1.va"
+sha256 = "e1d9bffeda24a914f2d676d528d7e53971ac8a4da280de27b51a0deea1155ff0"
+
+[[files]]
+path = "sn/jfet2.va"
+sha256 = "071ff0a9b9516fe3e9fbb019734a3b18c3006590919efc7836595cf50df5e294"
+
+[[files]]
+path = "sn/mes1.va"
+sha256 = "8c1767c50a258601119ae6a47ede58fc6d3e8bb5130eb78f8c9c3aa3393c0ef9"
+
+[[files]]
+path = "sn/mos1.va"
+sha256 = "2009640bacdca4c3d449f7c4f0ff3adc3706867b121e67d2564681d54bac4b6e"
+
+[[files]]
+path = "sn/mos2.va"
+sha256 = "6d7556bc10df78d780a82ef28c2cb6025bf9aff1a0347fda18600e35a0fb51aa"
+
+[[files]]
+path = "sn/mos3.va"
+sha256 = "ee597d770cf6df8e864d09183408dba15d8773937e6fea4b5102c4a5471a223c"
+
+[[files]]
+path = "sn/mos6.va"
+sha256 = "9a15cb3f6b9d3e780aa68df3859104a4a376d252445ea58d44b63e18322fb91b"
+
+[[files]]
+path = "sn/mos9.va"
+sha256 = "16c033506ffa199502955465d3d9a6f7c04a1084c9a246262ca37c4d37a6a1aa"
+
+[[files]]
+path = "vdmos.va"
+sha256 = "27c1a6d8c521bd58499a97bc2e88ba1435a11b0be34f5df6d926da33d5295693"

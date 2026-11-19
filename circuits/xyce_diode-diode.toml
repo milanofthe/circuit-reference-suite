@@ -1,0 +1,13 @@
+title = "Xyce_Regression DIODE"
+case = "xyce_diode"
+source = "diode.cir"
+outputs = [
+    "i(vmon)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.0005 },
+]
+
+[options]
+reltol = 0.0001

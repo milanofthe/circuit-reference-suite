@@ -1,0 +1,24 @@
+title = "Xyce_Regression Certification_Tests/BUG_718_SON"
+case = "xyce_certification_tests_bug_718_son"
+source = "voltageDiff.cir"
+outputs = [
+    "v(1)",
+    "v(1,1)",
+    "v(1,2)",
+    "v(1,3)",
+    "v(1,4)",
+    "v(2)",
+    "v(2,1)",
+    "v(2,2)",
+    "v(2,3)",
+    "v(2,4)",
+    "v(gnd,3)",
+    "v(3,1)",
+    "v(3,2)",
+    "v(3,3)",
+    "v(3,4)",
+    "v(0)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

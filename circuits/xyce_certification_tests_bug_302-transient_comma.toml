@@ -1,0 +1,12 @@
+title = "Xyce_Regression Certification_Tests/BUG_302"
+case = "xyce_certification_tests_bug_302"
+source = "transient_comma.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+reltol = 0.001

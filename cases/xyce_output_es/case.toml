@@ -1,0 +1,65 @@
+id = "xyce_output_es"
+title = "Xyce_Regression Output/ES"
+family = "test"
+netlists = [
+    { file = "es-formats-default-to-prn.cir", dialect = "xyce" },
+    { file = "es-no-headerfooter.cir", dialect = "xyce" },
+    { file = "es-no-output.cir", dialect = "xyce" },
+    { file = "es-no-pce-coeffs.cir", dialect = "xyce" },
+    { file = "es-proj-pce-dc-prn.cir", dialect = "xyce" },
+    { file = "es-proj-pce-dc-step-prn.cir", dialect = "xyce" },
+    { file = "es-proj-pce-dc-tecplot.cir", dialect = "xyce" },
+    { file = "es-proj-pce-tran-prn.cir", dialect = "xyce" },
+    { file = "es-regr-pce-tran-prn.cir", dialect = "xyce" },
+    { file = "es-specific-print-params-prn.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Output/ES"
+
+[[files]]
+path = "es-formats-default-to-prn.cir"
+sha256 = "8714ac1be9bda8202d3af29eacc152c2091fba207cfdf5f6c2d9b6a947969460"
+
+[[files]]
+path = "es-no-headerfooter.cir"
+sha256 = "7c970507146733906669477decedf5030af7ffb1076143dfecb4a51da10c5622"
+
+[[files]]
+path = "es-no-output.cir"
+sha256 = "371dc7084f96d1d6d3fcd318e00630566afec12eaf1bcbc7381cad7a649d3b56"
+
+[[files]]
+path = "es-no-pce-coeffs.cir"
+sha256 = "4f40a82a8c5b7b6a1896481114391ba240dd72815cdf34bf6e72604610fda7c6"
+
+[[files]]
+path = "es-proj-pce-dc-prn.cir"
+sha256 = "25d5dae673da1cd8e9b95172552dd5606d868408810de90944886200b2258125"
+
+[[files]]
+path = "es-proj-pce-dc-step-prn.cir"
+sha256 = "60bd2d4b1719501fd80008aa36c4e0232f05c19cf4456f1987d53ed7792ff3a7"
+
+[[files]]
+path = "es-proj-pce-dc-tecplot.cir"
+sha256 = "0128662aeaeff815c03a409936a1f749b84d8cc847512cc5a50b2ef33a5e32b3"
+
+[[files]]
+path = "es-proj-pce-tran-prn.cir"
+sha256 = "b9290094026634e4d9e9b34c7bf98d6152de7ef038e8615e22b96ccf91941daa"
+
+[[files]]
+path = "es-regr-pce-tran-prn.cir"
+sha256 = "4ff33454496b7c2cf6a7573b770c1d6847806a9c378302e397c1b3e0d4837af6"
+
+[[files]]
+path = "es-specific-print-params-prn.cir"
+sha256 = "3299b067e0917d728feb9dd7b3c60a1183217db6731d2b3964e04bbbbc689e0b"

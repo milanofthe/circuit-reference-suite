@@ -1,0 +1,45 @@
+id = "xyce_certification_tests_issue_160"
+title = "Xyce_Regression Certification_Tests/ISSUE_160"
+family = "test"
+netlists = [
+    { file = "baseline.cir", dialect = "xyce" },
+    { file = "baseline2.cir", dialect = "xyce" },
+    { file = "baseline3.cir", dialect = "xyce" },
+    { file = "tranExpr.cir", dialect = "xyce" },
+    { file = "tranExpr2.cir", dialect = "xyce" },
+    { file = "tranExpr3.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/ISSUE_160"
+
+[[files]]
+path = "baseline.cir"
+sha256 = "1b25385be2fc7f5b48fd06d83a1bd0148a37cd612900645a097f66d8ac9a9277"
+
+[[files]]
+path = "baseline2.cir"
+sha256 = "387554fab3cc2d6897a975ab2fd9159b519aa8724f97370f7b96eb81f79cee87"
+
+[[files]]
+path = "baseline3.cir"
+sha256 = "c50da7a441a42a36fe5d1dd37c52ae630e2f2ae1b07ec3dc1a278fb1b12ba61f"
+
+[[files]]
+path = "tranExpr.cir"
+sha256 = "7abe0bd709a1cac34aeff6bf145e50d72d25721c73bcd8086b5c3c950f5178fc"
+
+[[files]]
+path = "tranExpr2.cir"
+sha256 = "e3760c13ae142b4c38cfd2fa2f8240079087aa6a3c4a8b441a132223d2c6415e"
+
+[[files]]
+path = "tranExpr3.cir"
+sha256 = "5bb724e36351a29b9b6bdccc664a6e890900ea4f01ee72eaf6207079f754bb2a"

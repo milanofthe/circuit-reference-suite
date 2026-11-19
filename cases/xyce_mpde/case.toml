@@ -1,0 +1,45 @@
+id = "xyce_mpde"
+title = "Xyce_Regression MPDE"
+family = "test"
+netlists = [
+    { file = "converter.cir", dialect = "xyce" },
+    { file = "gilbert_cell_mpde.cir", dialect = "xyce" },
+    { file = "invert1.cir", dialect = "xyce" },
+    { file = "invert1_MPDE.cir", dialect = "xyce" },
+    { file = "sandler24.cir", dialect = "xyce" },
+    { file = "sandler24_MPDE.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MPDE"
+
+[[files]]
+path = "converter.cir"
+sha256 = "84508ed9972bbd254e1637492a8f673960eebe5b44a0e6b18788fefb45097c92"
+
+[[files]]
+path = "gilbert_cell_mpde.cir"
+sha256 = "74d3a23906f61ac066edfdc1841e4d7cad1e5ed0ce7feec15383d49b526f86b5"
+
+[[files]]
+path = "invert1.cir"
+sha256 = "ab40803da5a5694fc8c86f6f478fb443a2760039c0e96f71ea31ddb1ce2419dd"
+
+[[files]]
+path = "invert1_MPDE.cir"
+sha256 = "64b5b0a6e34b6219b739b08e4b96eca2b8455d427b75b4e8a31f4ffa819eb6ad"
+
+[[files]]
+path = "sandler24.cir"
+sha256 = "a39b851a5b2372ab7965b63722691847b9cfa61a3a7791c1880b6c892e7a3ce9"
+
+[[files]]
+path = "sandler24_MPDE.cir"
+sha256 = "94d18b6028cf0ed12c50178b740c766a9687e1fe64805d9977f9bb90ff927d76"

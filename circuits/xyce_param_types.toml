@@ -1,0 +1,15 @@
+title = "Xyce_Regression PARAM_TYPES"
+case = "xyce_param_types"
+source = "par_types.cir"
+outputs = [
+    "v(d)",
+    "v(g)",
+    "i(m1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 1.0, stop = 3.6, step = 1.0 },
+    { source = "vg", start = 1.5, stop = 3.65, step = 1.0 },
+]

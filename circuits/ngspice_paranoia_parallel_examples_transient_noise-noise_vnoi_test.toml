@@ -1,0 +1,14 @@
+title = "ngspice paranoia_parallel/examples/transient-noise"
+case = "ngspice_paranoia_parallel_examples_transient_noise"
+source = "noise_vnoi_test.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+    "v(6)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 2.5e-06 },
+]

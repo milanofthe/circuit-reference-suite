@@ -1,0 +1,14 @@
+title = "Xyce_Regression DTEMP"
+case = "xyce_dtemp"
+source = "cap_dtemp.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+temp = 27.0
+reltol = 1e-06
+vntol = 1e-06

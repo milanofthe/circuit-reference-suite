@@ -1,0 +1,13 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "dummy_devLevelParams_vsin.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-05, uic = true },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-06

@@ -1,0 +1,30 @@
+id = "xyce_certification_tests_bug_524_son"
+title = "Xyce_Regression Certification_Tests/BUG_524_SON"
+family = "test"
+netlists = [
+    { file = "cmod_capmod.cir", dialect = "xyce" },
+    { file = "lmod_indmod.cir", dialect = "xyce" },
+    { file = "rmod_resmod.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_524_SON"
+
+[[files]]
+path = "cmod_capmod.cir"
+sha256 = "5f90c35d92da3981b50ca0dac7e4635906f1f8b481591b9a75b9d9f379509582"
+
+[[files]]
+path = "lmod_indmod.cir"
+sha256 = "641acd4154920bf4d3806cc8ef86592efc858aa5a71995fa37186982f750920d"
+
+[[files]]
+path = "rmod_resmod.cir"
+sha256 = "85bde794b2417a619f31b4a3e7a6f7470457eded571fd7c44be26e6d7b72e2fa"

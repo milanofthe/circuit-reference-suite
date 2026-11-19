@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_629_son"
+title = "Xyce_Regression Certification_Tests/BUG_629_SON"
+family = "test"
+netlists = [
+    { file = "bug_629.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_629_SON"
+
+[[files]]
+path = "bug_629.cir"
+sha256 = "e6bd834349d3fd31b0e5c84f50f5c2bcc1a912fe7b3e7f17ec379a90e457ab68"

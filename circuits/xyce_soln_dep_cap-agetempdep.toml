@@ -1,0 +1,12 @@
+title = "Xyce_Regression SOLN_DEP_CAP"
+case = "xyce_soln_dep_cap"
+source = "ageTempDep.cir"
+outputs = [
+    "v(1a)",
+    "v(2a)",
+    "v(3a)",
+    "v(4a)",
+]
+analysis = [
+    { type = "tran", step = 5e-07, stop = 0.4 },
+]

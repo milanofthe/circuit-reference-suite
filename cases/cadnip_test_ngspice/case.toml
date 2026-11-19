@@ -1,0 +1,21 @@
+id = "cadnip_test_ngspice"
+title = "Cadnip.jl test/ngspice"
+family = "test"
+netlists = [
+    { file = "astable_multivibrator.cir", dialect = "cedarsim" },
+]
+
+[source]
+name = "Cadnip.jl"
+url = "https://github.com/NyanCAD/Cadnip.jl"
+license = "MIT"
+authors = [
+    "Pepijn de Vos",
+    "Cadnip and CedarSim contributors",
+]
+commit = "6748edaec3696b9c6d7fd45e19d7da54aad3f378"
+root = "test/ngspice"
+
+[[files]]
+path = "astable_multivibrator.cir"
+sha256 = "7ebbc5ba5af1391fb93c10d0a3a19e10b2821a356a39b3b719e155ea117d3e7a"

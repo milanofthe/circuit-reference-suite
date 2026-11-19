@@ -1,0 +1,9 @@
+title = "Xyce_Regression DAKOTA"
+case = "xyce_dakota"
+source = "opt_rc.cir"
+outputs = [
+    "v(obj)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]

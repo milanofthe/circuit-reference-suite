@@ -1,0 +1,15 @@
+title = "Xyce_Regression POWER"
+case = "xyce_power"
+source = "power_f_gear.cir"
+outputs = [
+    "v(3)",
+    "i(flin)",
+    "v(5)",
+    "i(fpoly)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]
+
+[options]
+method = "gear"

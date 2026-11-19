@@ -1,0 +1,9 @@
+title = "Xyce_Regression TIA/TRAP"
+case = "xyce_tia_trap"
+source = "teststep1.cir"
+outputs = [
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001, max_step = 1e-09 },
+]

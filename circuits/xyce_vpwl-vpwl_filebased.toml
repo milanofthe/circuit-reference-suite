@@ -1,0 +1,14 @@
+title = "Xyce_Regression VPWL"
+case = "xyce_vpwl"
+source = "vpwl_filebased.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(2a)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 30.0 },
+]

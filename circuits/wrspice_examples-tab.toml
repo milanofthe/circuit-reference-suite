@@ -1,0 +1,6 @@
+title = "WRspice examples"
+case = "wrspice_examples"
+source = "tab.cir"
+analysis = [
+    { type = "tran", step = 1e-12, stop = 1e-09 },
+]

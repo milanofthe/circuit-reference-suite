@@ -1,0 +1,6 @@
+title = "ngspice examples/plot"
+case = "ngspice_examples_plot"
+source = "inv-chain-pyplot.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 1e-06 },
+]

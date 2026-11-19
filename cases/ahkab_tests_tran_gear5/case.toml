@@ -1,0 +1,21 @@
+id = "ahkab_tests_tran_gear5"
+title = "ahkab tests/tran_gear5"
+family = "test"
+netlists = [
+    { file = "tran_gear5.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/tran_gear5"
+
+[[files]]
+path = "tran_gear5.ckt"
+sha256 = "ac0ae49a5c9868c6d783449b84514d69e9dc171354782d53785b1b2300a064a4"

@@ -1,0 +1,9 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "grid.2.ckt"
+outputs = [
+    "v(out)",
+]
+analysis = [
+    { type = "ac", sweep = "oct", points = 1, start = 1.0, stop = 500000.0 },
+]

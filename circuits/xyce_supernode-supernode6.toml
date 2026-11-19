@@ -1,0 +1,9 @@
+title = "Xyce_Regression SUPERNODE"
+case = "xyce_supernode"
+source = "supernode6.cir"
+outputs = [
+    "v(a)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 5e-06 },
+]

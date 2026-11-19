@@ -1,0 +1,46 @@
+id = "vacask_mul"
+title = "Diode voltage multiplier, 4 stages"
+family = "rectifier"
+netlists = [
+    { file = "vacask/runme.sim", dialect = "vacask" },
+    { file = "ngspice/runme.sim", dialect = "ngspice" },
+    { file = "xyce/runme.sim", dialect = "xyce" },
+    { file = "gnucap/runme.sim", dialect = "gnucap" },
+]
+notes = """
+From the VACASK benchmark suite (`benchmark/README.md` there describes the setup).
+The VACASK netlist uses ngspice's models distilled to Verilog-A; ngspice, Xyce and
+Gnucap use their built-in models.
+The step is forced small, about 5e5 time points.
+"""
+
+[source]
+name = "VACASK"
+url = "https://codeberg.org/arpadbuermen/VACASK"
+commit = "29d99ad2df4d8262e64ba883849c2974b3f01cce"
+root = "benchmark/mul"
+license = "AGPL-3.0-or-later"
+authors = [
+    "Arpad Buermen",
+]
+
+[[files]]
+path = "vacask/runme.sim"
+sha256 = "c4d248b2b40aed4987e773e4834954d32a99612d13ce87a1701454bfdb661c3e"
+
+[[files]]
+path = "ngspice/runme.sim"
+sha256 = "263fff6f07f2065223b50a3d5f191815b0e63fbee2945d36cb8ecdba19937416"
+
+[[files]]
+path = "xyce/runme.sim"
+sha256 = "5b115709df18072e2c49ec52614cc8c3d0620237e69f6b4fee57cfbc800ea0a2"
+
+[[files]]
+path = "gnucap/runme.sim"
+sha256 = "12ddd74612d812dab886dd91d8a7dc4a717d80fa62c0a664845b65a52e29b4c2"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/sn/diode.osdi" = "libraries/vacask_spice_va/sn/diode.va"

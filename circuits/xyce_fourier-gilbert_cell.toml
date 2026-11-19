@@ -1,0 +1,11 @@
+title = "Xyce_Regression FOURIER"
+case = "xyce_fourier"
+source = "gilbert_cell.cir"
+outputs = [
+    "v(6,2)",
+    "v(15,10)",
+    "v(5,3)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-06 },
+]

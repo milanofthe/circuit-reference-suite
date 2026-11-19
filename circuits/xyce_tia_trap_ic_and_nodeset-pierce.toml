@@ -1,0 +1,10 @@
+title = "Xyce_Regression TIA/TRAP/IC_AND_NODESET"
+case = "xyce_tia_trap_ic_and_nodeset"
+source = "pierce.cir"
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-06, uic = true },
+]
+
+[options]
+method = "trap"
+reltol = 0.0001

@@ -1,0 +1,9 @@
+title = "Xyce_Regression GLOBALPAR"
+case = "xyce_globalpar"
+source = "gp3.cir"
+outputs = [
+    "i(r)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

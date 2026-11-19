@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_546_SON"
+case = "xyce_certification_tests_bug_546_son"
+source = "tempcap_instance2.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-06

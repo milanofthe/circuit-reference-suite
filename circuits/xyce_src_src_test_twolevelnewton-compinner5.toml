@@ -1,0 +1,14 @@
+title = "Xyce src/test/TwoLevelNewton"
+case = "xyce_src_src_test_twolevelnewton"
+source = "compInner5.cir"
+outputs = [
+    "v(1outer)",
+    "v(2outer)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-08 },
+]

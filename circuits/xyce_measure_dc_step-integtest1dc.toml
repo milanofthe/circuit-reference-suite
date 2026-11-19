@@ -1,0 +1,14 @@
+title = "Xyce_Regression MEASURE_DC/STEP"
+case = "xyce_measure_dc_step"
+source = "IntegTest1DC.cir"
+outputs = [
+    "v(1a)",
+    "v(2a)",
+    "v(1b)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vsrc1", start = 5.0, stop = 1.0, step = -1.0 },
+]

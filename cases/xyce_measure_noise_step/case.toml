@@ -1,0 +1,65 @@
+id = "xyce_measure_noise_step"
+title = "Xyce_Regression MEASURE_NOISE/STEP"
+family = "test"
+netlists = [
+    { file = "AvgTestNoise.cir", dialect = "xyce" },
+    { file = "DerivTestNoise.cir", dialect = "xyce" },
+    { file = "EquationEvalTestNoise.cir", dialect = "xyce" },
+    { file = "ErrorFuncTestNoise.cir", dialect = "xyce" },
+    { file = "ErrorTestNoise.cir", dialect = "xyce" },
+    { file = "FindWhenTestNoise.cir", dialect = "xyce" },
+    { file = "IntegTestNoise.cir", dialect = "xyce" },
+    { file = "MaxMinPPTestNoise.cir", dialect = "xyce" },
+    { file = "RMSTestNoise.cir", dialect = "xyce" },
+    { file = "TrigTargTestNoise.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_NOISE/STEP"
+
+[[files]]
+path = "AvgTestNoise.cir"
+sha256 = "11383033091d750adcaa0fca7347d732f606a3e231ec6b5ae95e7d9c2d57eb20"
+
+[[files]]
+path = "DerivTestNoise.cir"
+sha256 = "c13bf6721351ad4005c88a40a67713c66b284996e9fd9782e84edbc0a8821b3d"
+
+[[files]]
+path = "EquationEvalTestNoise.cir"
+sha256 = "49522a7a231f546b036120ef3afb7c54372b337ca0c509b5263fd4c7853635e1"
+
+[[files]]
+path = "ErrorFuncTestNoise.cir"
+sha256 = "bd602c4dd8f59c90a5dca46d2f1a175bae53278de6a9fcc3e8cccb056d343335"
+
+[[files]]
+path = "ErrorTestNoise.cir"
+sha256 = "a5bb52523fbb64be87cb6e68c00d41a9d297b0c942fec96bd7e1c79e4f72783b"
+
+[[files]]
+path = "FindWhenTestNoise.cir"
+sha256 = "da4c9755753258d8a600ddc035280d69d06161c960050b1f3282113a160b0853"
+
+[[files]]
+path = "IntegTestNoise.cir"
+sha256 = "bf6220989eed939361eb571be590a57034ba7b053966de0437eaa0af38cac8d1"
+
+[[files]]
+path = "MaxMinPPTestNoise.cir"
+sha256 = "e0baf474be6e4bac6e88f71542276789978c3da8aab24329b3399ecadc7809fd"
+
+[[files]]
+path = "RMSTestNoise.cir"
+sha256 = "ce855f2aa1c6dc09a2f742dbdf200f451a20ab755e10f86e4c746ff5e629a0a5"
+
+[[files]]
+path = "TrigTargTestNoise.cir"
+sha256 = "d26c11e58b34ef0fdb2f04401899443cfa090026fd9daac738b59513b9413926"

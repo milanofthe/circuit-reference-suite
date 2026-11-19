@@ -1,0 +1,20 @@
+id = "xyce_pde_1d_tran"
+title = "Xyce_Regression PDE_1D_TRAN"
+family = "test"
+netlists = [
+    { file = "userOneD.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/PDE_1D_TRAN"
+
+[[files]]
+path = "userOneD.cir"
+sha256 = "d812ca181416cfefb46f8d7fcb6e52e85e677c3540f1c1e521cbbf6708f9b4c7"

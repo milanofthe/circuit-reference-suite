@@ -1,0 +1,20 @@
+title = "Xyce_Regression XDM/PSPICE/CONTROLLED_SOURCES"
+case = "xyce_xdm_pspice_controlled_sources"
+source = "g_sources.cir"
+outputs = [
+    "v(n388954)",
+    "v(n388906)",
+    "v(n391734)",
+    "v(n391678)",
+    "v(n392868)",
+    "v(n392673)",
+    "v(n393371)",
+    "v(n393403)",
+    "v($g_clk)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]

@@ -1,0 +1,24 @@
+id = "xyce_circuitsim90_bjt"
+title = "Xyce_Regression CircuitSim90/BJT"
+family = "test"
+netlists = [
+    { file = "vreg.cir", dialect = "xyce" },
+]
+notes = """
+CircuitSim90 benchmark circuits (MCNC, 1990), adapted to Xyce by its developers.
+MCNC's terms for the benchmarks allow copying and distribution free of charge.
+"""
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/CircuitSim90/BJT"
+
+[[files]]
+path = "vreg.cir"
+sha256 = "37e51383099449f21e699332828708241cb233bb59d95721d61cc11d9672bbeb"

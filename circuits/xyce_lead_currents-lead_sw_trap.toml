@@ -1,0 +1,13 @@
+title = "Xyce_Regression LEAD_CURRENTS"
+case = "xyce_lead_currents"
+source = "lead_sw_trap.cir"
+outputs = [
+    "v(1)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 4e-06 },
+]
+
+[options]
+method = "trap"

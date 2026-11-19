@@ -1,0 +1,75 @@
+id = "xyce_xdm_pspice_models"
+title = "Xyce_Regression XDM/PSPICE/MODELS"
+family = "test"
+netlists = [
+    { file = "capacitor_model_statements.cir", dialect = "xyce" },
+    { file = "capacitor_model_statements.cir.pspice", dialect = "pspice" },
+    { file = "inductor_model_statements.cir", dialect = "xyce" },
+    { file = "inductor_model_statements.cir.pspice", dialect = "pspice" },
+    { file = "model_level_translation.cir", dialect = "xyce" },
+    { file = "model_level_translation.cir.pspice", dialect = "pspice" },
+    { file = "multiple_devices_same_model.cir", dialect = "xyce" },
+    { file = "multiple_devices_same_model.cir.pspice", dialect = "pspice" },
+    { file = "resistor_model_statements.cir", dialect = "xyce" },
+    { file = "resistor_model_statements.cir.pspice", dialect = "pspice" },
+    { file = "switch_model_statements.cir", dialect = "xyce" },
+    { file = "switch_model_statements.cir.pspice", dialect = "pspice" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/PSPICE/MODELS"
+
+[[files]]
+path = "capacitor_model_statements.cir"
+sha256 = "91e0701e2fddff31da4ba19372c8eac3150972daa659ca5bf798f3afe057f3ee"
+
+[[files]]
+path = "capacitor_model_statements.cir.pspice"
+sha256 = "f8fece07851c8357686445096734d21998d352cff260a44ff5d33d5dab73cd1d"
+
+[[files]]
+path = "inductor_model_statements.cir"
+sha256 = "431833824e2985d96d38d1131cdfde67336e6c5e0f86bb20069d952c8fd5a9d3"
+
+[[files]]
+path = "inductor_model_statements.cir.pspice"
+sha256 = "ca85bbe47522898fcf9efe228f37fae47f819db517d720be02ef8a88f0bfda3e"
+
+[[files]]
+path = "model_level_translation.cir"
+sha256 = "a296317b81729c55c216c379ff13bdfc2f3dd756f5c4e34948a0098a7f2c8c54"
+
+[[files]]
+path = "model_level_translation.cir.pspice"
+sha256 = "d4747ac955a5f86ade17c4c1cbe187a6eebe0162092648c300d615de150ea6cf"
+
+[[files]]
+path = "multiple_devices_same_model.cir"
+sha256 = "055c54ed5596c4f4451774c45f2d0308115415abebbd4eacbc139ad5d9a33195"
+
+[[files]]
+path = "multiple_devices_same_model.cir.pspice"
+sha256 = "4d704323c088dede26a2ff3439f2c93602fd908adbf8149829b635ccf19be633"
+
+[[files]]
+path = "resistor_model_statements.cir"
+sha256 = "c3472a6301ba6213bff4301223f912ca2e1398a60c573d34ad371a6e85914919"
+
+[[files]]
+path = "resistor_model_statements.cir.pspice"
+sha256 = "7ad559fc7d50c5a65e07a1481752784662d92c8ffc227f0c4859f453647d8e7c"
+
+[[files]]
+path = "switch_model_statements.cir"
+sha256 = "4d6f2c2b6101c4482eeeaedd493591d02e5169186234e130525b31b3ec35cbd7"
+
+[[files]]
+path = "switch_model_statements.cir.pspice"
+sha256 = "89990b1ac2795a1d7c5bffd124f63e4a7f2279beb44865a9fc3037ff4efb43e7"

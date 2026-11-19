@@ -1,0 +1,11 @@
+title = "Xyce_Regression JUNCAP200"
+case = "xyce_juncap200"
+source = "DiodeClipper.cir"
+outputs = [
+    "v(3)",
+    "v(2)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 2e-09, stop = 0.002 },
+]

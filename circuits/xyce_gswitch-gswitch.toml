@@ -1,0 +1,14 @@
+title = "Xyce_Regression GSWITCH"
+case = "xyce_gswitch"
+source = "gswitch.cir"
+outputs = [
+    "i(is)",
+    "i(vmon)",
+    "i(vmon1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 4e-06 },
+]
+
+[options]
+reltol = 1.0

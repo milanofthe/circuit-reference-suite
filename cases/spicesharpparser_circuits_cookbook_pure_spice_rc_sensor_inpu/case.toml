@@ -1,0 +1,20 @@
+id = "spicesharpparser_circuits_cookbook_pure_spice_rc_sensor_inpu"
+title = "SpiceSharpParser circuits/cookbook/pure-spice/rc-sensor-input-filter"
+family = "test"
+netlists = [
+    { file = "rc-sensor-input-filter.cir", dialect = "spicesharp" },
+]
+
+[source]
+name = "SpiceSharpParser"
+url = "https://github.com/SpiceSharp/SpiceSharpParser"
+license = "MIT"
+authors = [
+    "SpiceSharp contributors",
+]
+commit = "8fc01560fe303eeebaeb5cbf5edfe77bf635e1c7"
+root = "circuits/cookbook/pure-spice/rc-sensor-input-filter"
+
+[[files]]
+path = "rc-sensor-input-filter.cir"
+sha256 = "bdb824c83e5d8185847cf8787f4e63dc4e74f0c04a48b05e5ea4a4903f8b42b2"

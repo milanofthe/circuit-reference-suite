@@ -1,0 +1,12 @@
+title = "Xyce_Regression XDM/SPECTRE/OTHER_PARSING"
+case = "xyce_xdm_spectre_other_parsing"
+source = "comment_lines.cir"
+outputs = [
+    "v(v2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+spectre = "comment_lines.cir.spectre"

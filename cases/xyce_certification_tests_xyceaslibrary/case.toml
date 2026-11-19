@@ -1,0 +1,25 @@
+id = "xyce_certification_tests_xyceaslibrary"
+title = "Xyce_Regression Certification_Tests/XyceAsLibrary"
+family = "test"
+netlists = [
+    { file = "ADC_DACRunTest.cir", dialect = "xyce" },
+    { file = "ADC_DACtest.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/XyceAsLibrary"
+
+[[files]]
+path = "ADC_DACRunTest.cir"
+sha256 = "aad956bf41f37583ceb16385f18b6bd5473dc91a7ff15f87267f1ae9b4a2d648"
+
+[[files]]
+path = "ADC_DACtest.cir"
+sha256 = "119d398fd1cfd005f0d6bbf8b91c6d658356ccb7bfbca1e326f0f4e9bea4c00b"

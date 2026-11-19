@@ -1,0 +1,70 @@
+id = "xyce_measure_dc_step"
+title = "Xyce_Regression MEASURE_DC/STEP"
+family = "test"
+netlists = [
+    { file = "AvgTest1DC.cir", dialect = "xyce" },
+    { file = "DerivTest1DC.cir", dialect = "xyce" },
+    { file = "DotData.cir", dialect = "xyce" },
+    { file = "EquationEvalTestDC.cir", dialect = "xyce" },
+    { file = "ErrorFuncTest1DC.cir", dialect = "xyce" },
+    { file = "ErrorTest1DC.cir", dialect = "xyce" },
+    { file = "FindWhenTest1DC.cir", dialect = "xyce" },
+    { file = "IntegTest1DC.cir", dialect = "xyce" },
+    { file = "MaxMinPPTest1DC.cir", dialect = "xyce" },
+    { file = "RMSTest1DC.cir", dialect = "xyce" },
+    { file = "TrigTargTest1DC.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_DC/STEP"
+
+[[files]]
+path = "AvgTest1DC.cir"
+sha256 = "b2a25aad560fb7f62f40c91d0c7917c09a0dc766d3bb7334bfdd849ebe91be08"
+
+[[files]]
+path = "DerivTest1DC.cir"
+sha256 = "4c9261650c0e41da141df858ccbf567fb2e15e5aff2ded417db050eff9383952"
+
+[[files]]
+path = "DotData.cir"
+sha256 = "ef1305b5ee3b05948ee882b2e6a3cf259c834dbc6f5885c10850ffa21ec94bd0"
+
+[[files]]
+path = "EquationEvalTestDC.cir"
+sha256 = "d7fb47ed04dd8f27b589fc47a0b5d16e0b5ee4569f2cff6a87a89f064c8d81bd"
+
+[[files]]
+path = "ErrorFuncTest1DC.cir"
+sha256 = "091f8b37f8051c43096f61cfa3f4c4b9d5a067fc9f8cb619ec930577cee2ffa2"
+
+[[files]]
+path = "ErrorTest1DC.cir"
+sha256 = "8ee89b2e8350191c9d3c34f84ef8d5bea888876f5d7423cdf22632c230eca9c6"
+
+[[files]]
+path = "FindWhenTest1DC.cir"
+sha256 = "19a27689615ac291a33cc9a4e6f061bcba8a5903b4cef2ba9af72926bbe18554"
+
+[[files]]
+path = "IntegTest1DC.cir"
+sha256 = "90877053d8a973740e075a27b3a47ac904cdc9ed1bc2e3ec97b3b9429245f73f"
+
+[[files]]
+path = "MaxMinPPTest1DC.cir"
+sha256 = "45d037b4688ccafe1abef5c9343057ad569dedbdb5043fb7b72e8325e9e04d52"
+
+[[files]]
+path = "RMSTest1DC.cir"
+sha256 = "103d7ccb2b1cda98341c0b8b477f5b032d2fe9edfc31a9d7a7cf483a97dad2da"
+
+[[files]]
+path = "TrigTargTest1DC.cir"
+sha256 = "e7dcca3c234b5ac54c3b2f41f930aca84b043ba701ebcdbab18c1be131ce7461"

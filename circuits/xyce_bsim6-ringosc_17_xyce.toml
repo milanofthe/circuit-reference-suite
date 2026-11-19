@@ -1,0 +1,13 @@
+title = "Xyce_Regression BSIM6"
+case = "xyce_bsim6"
+source = "ringosc_17_xyce.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-05 },
+]
+
+[options]
+method = "gear"
+temp = 25.0

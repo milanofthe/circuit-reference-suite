@@ -1,0 +1,14 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DC_ExVICheck1.cir"
+
+[options]
+method = "gear"
+vntol = 1e-07
+reltol = 1e-06
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v2", start = -1.0, stop = 10.0, step = 1.0 },
+]

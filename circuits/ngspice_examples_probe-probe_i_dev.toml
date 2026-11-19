@@ -1,0 +1,9 @@
+title = "ngspice examples/probe"
+case = "ngspice_examples_probe"
+source = "probe-i-dev.cir"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vbb", start = 0.0, stop = 2.0, step = 0.01 },
+]

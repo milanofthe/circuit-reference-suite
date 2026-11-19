@@ -1,0 +1,55 @@
+id = "xyce_ylin_isc_fd"
+title = "Xyce_Regression YLIN/ISC_FD"
+family = "test"
+netlists = [
+    { file = "Eiger1-1port-nonlinear.cir", dialect = "xyce" },
+    { file = "Eiger2-1port-linear-ma.cir", dialect = "xyce" },
+    { file = "Eiger2-1port-linear-ts1.cir", dialect = "xyce" },
+    { file = "Eiger2-1port-linear.cir", dialect = "xyce" },
+    { file = "Eiger7-2port-nonlinear-ts1.cir", dialect = "xyce" },
+    { file = "Eiger7-2port-nonlinear.cir", dialect = "xyce" },
+    { file = "opAmpWithFDIsc.cir", dialect = "xyce" },
+    { file = "test5.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/YLIN/ISC_FD"
+
+[[files]]
+path = "Eiger1-1port-nonlinear.cir"
+sha256 = "8056e4682b902658c09238991c0af45235357add17277b1a317c03b95db5fddd"
+
+[[files]]
+path = "Eiger2-1port-linear-ma.cir"
+sha256 = "ab24ea5aaab40ddaa4b5b170a3634a9089aff98276b05090f08fe622665d3699"
+
+[[files]]
+path = "Eiger2-1port-linear-ts1.cir"
+sha256 = "0741035caabaf46db36c840b0d07ea58d29d53ad117aa91ab6c827f87c9c7351"
+
+[[files]]
+path = "Eiger2-1port-linear.cir"
+sha256 = "4997e0c3cd08210070833fbdaca6eff096fba0353c348104f514d5cfd395811d"
+
+[[files]]
+path = "Eiger7-2port-nonlinear-ts1.cir"
+sha256 = "7c59c489c1451e81d6629c500110b6f9ed080a7b791a05ada66d733ba9ff7b9d"
+
+[[files]]
+path = "Eiger7-2port-nonlinear.cir"
+sha256 = "b03ef12663c76e4be155c8b34969826d927861d584909f341db42e16f9fdec91"
+
+[[files]]
+path = "opAmpWithFDIsc.cir"
+sha256 = "b89e37fe302226d81eb415a79d068549b137e33cdfac534f19d45d96c466a6a9"
+
+[[files]]
+path = "test5.cir"
+sha256 = "8ef80e8a33d84ab555ce99c9e2175346abdd1df9c3ac22b2038e4ee9bdaa5474"

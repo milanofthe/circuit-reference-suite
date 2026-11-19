@@ -1,0 +1,12 @@
+title = "Xyce_Regression GLOBALPAR"
+case = "xyce_globalpar"
+source = "gp_loca.cir"
+outputs = [
+    "v(vdd)",
+    "v(vss)",
+    "i(vmon_vss)",
+    "i(vmon_vdd)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-07 },
+]

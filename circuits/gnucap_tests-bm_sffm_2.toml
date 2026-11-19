@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "bm_sffm.2.ckt"
+analysis = [
+    { type = "tran", step = 0.002, stop = 0.002 },
+]

@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE_AC/STEP"
+case = "xyce_measure_ac_step"
+source = "FindWhenTestAC.cir"
+outputs = [
+    "v(b)",
+    "v(c)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 1000000.0 },
+]

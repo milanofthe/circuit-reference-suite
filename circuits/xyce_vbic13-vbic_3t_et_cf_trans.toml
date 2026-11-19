@@ -1,0 +1,11 @@
+title = "Xyce_Regression VBIC13"
+case = "xyce_vbic13"
+source = "vbic_3T_et_cf_TRANS.cir"
+outputs = [
+    "v(b)",
+    "i(vib)",
+    "i(vic)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1.0 },
+]

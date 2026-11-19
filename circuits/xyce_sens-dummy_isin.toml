@@ -1,0 +1,9 @@
+title = "Xyce_Regression SENS"
+case = "xyce_sens"
+source = "dummy_isin.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 6e-05, stop = 0.006 },
+]

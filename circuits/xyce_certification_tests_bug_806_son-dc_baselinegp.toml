@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_806_SON"
+case = "xyce_certification_tests_bug_806_son"
+source = "dc_baselineGP.cir"
+outputs = [
+    "v(4)",
+    "v(5)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "r1:r", start = 8.0, stop = 12.0, step = 1.0 },
+    { source = "r2:r", start = 4.0, stop = 6.0, step = 1.0 },
+]

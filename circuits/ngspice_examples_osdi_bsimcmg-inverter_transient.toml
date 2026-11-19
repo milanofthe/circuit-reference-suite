@@ -1,0 +1,10 @@
+title = "ngspice examples/osdi/bsimcmg"
+case = "ngspice_examples_osdi_bsimcmg"
+source = "inverter_transient.sp"
+outputs = [
+    "v(vi)",
+    "v(vo)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 5e-06 },
+]

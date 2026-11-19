@@ -1,0 +1,55 @@
+id = "xyce_rxn"
+title = "Xyce_Regression RXN"
+family = "test"
+netlists = [
+    { file = "brusselator_stable.cir", dialect = "xyce" },
+    { file = "brusselator_unstable.cir", dialect = "xyce" },
+    { file = "issue191.cir", dialect = "xyce" },
+    { file = "lotkaVolterraRxn.cir", dialect = "xyce" },
+    { file = "oregonator.cir", dialect = "xyce" },
+    { file = "verif1.cir", dialect = "xyce" },
+    { file = "verif2.cir", dialect = "xyce" },
+    { file = "verif3.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/RXN"
+
+[[files]]
+path = "brusselator_stable.cir"
+sha256 = "ceadb72eda50eef8e0a07353fc7d7066dde4dd9669eda32cf23af0b615fa4934"
+
+[[files]]
+path = "brusselator_unstable.cir"
+sha256 = "3ea9e9d49ef5e820bd30e00937b275a7f8d7425d1279b59bd756e33cb791609f"
+
+[[files]]
+path = "issue191.cir"
+sha256 = "ea5b3e1223cdea836fb539628e3a52b9ce2419f40b13b3508ef80d0b410e37bc"
+
+[[files]]
+path = "lotkaVolterraRxn.cir"
+sha256 = "699e8c6bf0d9da9fa3bc5f00ed5d6a408cc5c90aa83fbca59e1c13a0dd3dee9d"
+
+[[files]]
+path = "oregonator.cir"
+sha256 = "b965322d70f9e500b9536f116576e2fa2b0b5f5099cf91b8e28b1ce6bcc250e7"
+
+[[files]]
+path = "verif1.cir"
+sha256 = "376a757fe489b2106739aca9c197c4fbcb81e794eb894152b734a3ab8cf2ebf9"
+
+[[files]]
+path = "verif2.cir"
+sha256 = "ce7f7d664d91559487c3fe882c5dfbe0b24f0b428e942eca4664a608b97a1767"
+
+[[files]]
+path = "verif3.cir"
+sha256 = "34679e8de4e2b3e97ae25f0dfec77fa45a01b1282312003a306d12d4a20c84c5"

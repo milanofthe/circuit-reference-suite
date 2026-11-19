@@ -1,0 +1,25 @@
+id = "xyce_xdm_spectre_multiplicity"
+title = "Xyce_Regression XDM/SPECTRE/MULTIPLICITY"
+family = "test"
+netlists = [
+    { file = "rlc.cir", dialect = "xyce" },
+    { file = "rlc.cir.spectre", dialect = "spectre" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/SPECTRE/MULTIPLICITY"
+
+[[files]]
+path = "rlc.cir"
+sha256 = "b5e30af57e7ab8870faa1154405f88a030ee26dd7669bf02c6be4ea1ff082183"
+
+[[files]]
+path = "rlc.cir.spectre"
+sha256 = "ee28e2f8264370666656cac7d87848bab8280be29206f3c6fbd03f60b2da8ab4"

@@ -1,0 +1,6 @@
+title = "Xyce_Regression Certification_Tests/BUG_963_SON"
+case = "xyce_certification_tests_bug_963_son"
+source = "sdtWithFunc.cir"
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]

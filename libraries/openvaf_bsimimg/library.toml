@@ -1,0 +1,44 @@
+id = "openvaf_bsimimg"
+title = "BSIM-IMG independent multi-gate model"
+notes = """
+Verilog-A source as used by OpenVAF-reloaded's integration tests. The license is the
+model's own, stated in the license file or the header of the source.
+"""
+
+[source]
+name = "OpenVAF-reloaded"
+url = "https://github.com/OpenVAF/OpenVAF-Reloaded"
+commit = "5ed9e63afe70ac95129a78af7b3732e7d431b1e5"
+root = "integration_tests/BSIMIMG"
+license = "ECL-2.0"
+authors = [
+    "University of California, Berkeley",
+]
+
+[[files]]
+path = "LICENSE.txt"
+sha256 = "0cb9eba0dbe9cc56a27e173edc5c2e1e5336a02d2d375dd41804726b577ae862"
+
+[[files]]
+path = "NOTICE.txt"
+sha256 = "882147b8610e5e45f5a004e86f9c884321c5e66230ddf858127ee8c190cb5c09"
+
+[[files]]
+path = "bsimimg.va"
+sha256 = "c3fb72166b2e8ff5ed3c20bb3867ccb5cbfed4aea21027d2fe2c470b26efcaee"
+
+[[files]]
+path = "bsimimg_binning.include"
+sha256 = "09f4d8a96b5da403260f40131cbeff453ac583d0acf56a5cdb5b240c0f8c22ee"
+
+[[files]]
+path = "bsimimg_body.include"
+sha256 = "66a7884216f50b4594307bc50a7f9d15c8e8c8450f3daee065cd608b1a1e97c8"
+
+[[files]]
+path = "bsimimg_sp_new.include"
+sha256 = "a2d526781b0f0b1ccbf686672351d707e20f8e721ae27d0104c8a3895e0e3353"
+
+[[files]]
+path = "common_defs.include"
+sha256 = "670ebc908a95aae97d9f544cf962ce317084fc62f27755ea523889164b6b74ad"

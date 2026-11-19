@@ -1,0 +1,12 @@
+title = "Xyce_Regression XDM/PSPICE/LOSSLESS_TRANSLINE"
+case = "xyce_xdm_pspice_lossless_transline"
+source = "lossless_transline.cir"
+outputs = [
+    "v(n14950)",
+    "v(n15037)",
+    "v(n16674)",
+    "v(n16680)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-07 },
+]

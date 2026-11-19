@@ -1,0 +1,14 @@
+title = "ngspice paranoia_parallel/examples/vbic"
+case = "ngspice_paranoia_parallel_examples_vbic"
+source = "npn_gum.sp"
+outputs = [
+    "i(vc)",
+    "i(vb)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vb", start = 0.2, stop = 1.2, step = 0.01 },
+]

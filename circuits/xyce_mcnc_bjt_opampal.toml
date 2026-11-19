@@ -1,0 +1,6 @@
+title = "Xyce_Regression MCNC_BJT_OPAMPAL"
+case = "xyce_mcnc_bjt_opampal"
+source = "opampal.cir"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.001, max_step = 1e-06 },
+]

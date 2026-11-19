@@ -1,0 +1,45 @@
+id = "xyce_certification_tests_bug_1558"
+title = "Xyce_Regression Certification_Tests/BUG_1558"
+family = "test"
+netlists = [
+    { file = "bug_1558_0.cir", dialect = "xyce" },
+    { file = "bug_1558_1.cir", dialect = "xyce" },
+    { file = "bug_1558_2.cir", dialect = "xyce" },
+    { file = "bug_1558_3.cir", dialect = "xyce" },
+    { file = "bug_1558_4.cir", dialect = "xyce" },
+    { file = "bug_1558_error.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1558"
+
+[[files]]
+path = "bug_1558_0.cir"
+sha256 = "41c6074e68f9132812587a43bfcfe282e55ecc7a01750a75743fba238b3a4a04"
+
+[[files]]
+path = "bug_1558_1.cir"
+sha256 = "dbf13f38b5665e72f84c50f6abd916a48e420050f53f27ab5ebc2f4934ac290f"
+
+[[files]]
+path = "bug_1558_2.cir"
+sha256 = "8198ea445a3434e02b9f25666706895909b18e2b32c63fc2a7a64a68568b4258"
+
+[[files]]
+path = "bug_1558_3.cir"
+sha256 = "e6814a40b6d269b57b5f6359739ff9e2f9dd06d7f1fc63f710bb6e955fc479d6"
+
+[[files]]
+path = "bug_1558_4.cir"
+sha256 = "14d0c3a1b5835819beb76490863b38cf5093df7b669653db50bea890da8ae898"
+
+[[files]]
+path = "bug_1558_error.cir"
+sha256 = "3c397065821915c1112b70fe4f6faa373acafba544ccdb30b59a64c263907996"

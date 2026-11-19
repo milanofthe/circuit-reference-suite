@@ -1,0 +1,65 @@
+id = "xyce_measure_ac_step"
+title = "Xyce_Regression MEASURE_AC/STEP"
+family = "test"
+netlists = [
+    { file = "AvgTestAC.cir", dialect = "xyce" },
+    { file = "DerivTestAC.cir", dialect = "xyce" },
+    { file = "EquationEvalTestAC.cir", dialect = "xyce" },
+    { file = "ErrorFuncTestAC.cir", dialect = "xyce" },
+    { file = "ErrorTestAC.cir", dialect = "xyce" },
+    { file = "FindWhenTestAC.cir", dialect = "xyce" },
+    { file = "IntegTestAC.cir", dialect = "xyce" },
+    { file = "MaxMinPPTestAC.cir", dialect = "xyce" },
+    { file = "RMSTestAC.cir", dialect = "xyce" },
+    { file = "TrigTargTestAC.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MEASURE_AC/STEP"
+
+[[files]]
+path = "AvgTestAC.cir"
+sha256 = "d063c3cd48a48b58054c731a4d40e560860112a87accd2df854469a55c623b48"
+
+[[files]]
+path = "DerivTestAC.cir"
+sha256 = "17621479eb5a6d3770160c16a20c8633fabeb864abb1ddd97af9da7445f0c470"
+
+[[files]]
+path = "EquationEvalTestAC.cir"
+sha256 = "4738cb4c8517a44a5e179ef8ebc61c8a566e95e3e989c95a854be829a656a4ff"
+
+[[files]]
+path = "ErrorFuncTestAC.cir"
+sha256 = "9a072970bdf52446e969bde8902940455ee476855b029584cc5a4128b4a65000"
+
+[[files]]
+path = "ErrorTestAC.cir"
+sha256 = "651b5e950f23d3156778817b0667c44fc32b2228668eb2cfff1abddd0a815ba3"
+
+[[files]]
+path = "FindWhenTestAC.cir"
+sha256 = "59a4b596283c8c9de8e55b12fc1e285164e02bf3d56037a8ba365438d0571e8a"
+
+[[files]]
+path = "IntegTestAC.cir"
+sha256 = "301e123e6c5899ea2a6450bb80ca0b5933105e9b5a71dcf7aba3bd020b58dba8"
+
+[[files]]
+path = "MaxMinPPTestAC.cir"
+sha256 = "b541020ca0a120d0fce48800fb64b33f6d8468e5c03a4842eb087a75bcf48039"
+
+[[files]]
+path = "RMSTestAC.cir"
+sha256 = "79740bd998c5179a12749d7f4d1859844d5d6a11a6fa2a34e0e358497877a389"
+
+[[files]]
+path = "TrigTargTestAC.cir"
+sha256 = "12522b593ac43d7c994d39e7911e2b9ee90a1f2734cba61cf457b97920585077"

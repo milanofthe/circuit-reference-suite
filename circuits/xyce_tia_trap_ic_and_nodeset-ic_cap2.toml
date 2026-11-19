@@ -1,0 +1,12 @@
+title = "Xyce_Regression TIA/TRAP/IC_AND_NODESET"
+case = "xyce_tia_trap_ic_and_nodeset"
+source = "ic_cap2.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005 },
+]
+
+[options]
+method = "trap"

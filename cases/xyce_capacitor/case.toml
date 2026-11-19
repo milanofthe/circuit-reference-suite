@@ -1,0 +1,30 @@
+id = "xyce_capacitor"
+title = "Xyce_Regression CAPACITOR"
+family = "test"
+netlists = [
+    { file = "capacitor.cir", dialect = "xyce" },
+    { file = "capacitor3.cir", dialect = "xyce" },
+    { file = "rc_osc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/CAPACITOR"
+
+[[files]]
+path = "capacitor.cir"
+sha256 = "38b0d8271d4cef0f783be9a5ba0bc391c6d164fbe0dba9027e93927f0656e90b"
+
+[[files]]
+path = "capacitor3.cir"
+sha256 = "628f4953ca83a0e8840e100ea4671c778afe47bdcad0f52c09f5053c023c5194"
+
+[[files]]
+path = "rc_osc.cir"
+sha256 = "add8ca9d2654398a4c394bc9232809677b479fe35172c66bbb8e2ad9bf9410a4"

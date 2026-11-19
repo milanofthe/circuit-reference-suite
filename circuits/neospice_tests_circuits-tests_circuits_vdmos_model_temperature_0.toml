@@ -1,0 +1,9 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/vdmos_model_temperature_0.cir"
+analysis = [
+    { type = "op" },
+]
+
+[options]
+temp = 0.0

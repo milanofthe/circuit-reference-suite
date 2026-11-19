@@ -1,0 +1,15 @@
+title = "ngspice tests/resistance"
+case = "ngspice_tests_resistance"
+source = "res_array.cir"
+outputs = [
+    "i(vr1)",
+    "i(vr2)",
+    "i(vr3)",
+    "i(vr4)",
+    "i(vr5)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 1e-08 },
+    { type = "ac", sweep = "dec", points = 100, start = 1000000.0, stop = 100000000.0 },
+]

@@ -1,0 +1,20 @@
+id = "xyce_tia_trap_abm"
+title = "Xyce_Regression TIA/TRAP/ABM"
+family = "test"
+netlists = [
+    { file = "ddt.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/TRAP/ABM"
+
+[[files]]
+path = "ddt.cir"
+sha256 = "8442ff79b7a2be1fff474049e655f796846c2be74eaec4722daeba28de43bea8"

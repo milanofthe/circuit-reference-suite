@@ -1,0 +1,17 @@
+title = "Xyce_Regression XDM/SPECTRE/INDEPENDENT_SOURCES"
+case = "xyce_xdm_spectre_independent_sources"
+source = "pwl_sources.cir"
+outputs = [
+    "i(rr3)",
+    "i(rr2)",
+    "v(net017)",
+    "v(net08)",
+    "v(net4)",
+    "v(net1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.003 },
+]
+
+[variants]
+spectre = "pwl_sources.cir.spectre"

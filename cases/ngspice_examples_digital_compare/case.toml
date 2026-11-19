@@ -1,0 +1,30 @@
+id = "ngspice_examples_digital_compare"
+title = "ngspice examples/digital/compare"
+family = "test"
+netlists = [
+    { file = "adder_Xspice.cir", dialect = "ngspice" },
+    { file = "adder_bip.cir", dialect = "ngspice" },
+    { file = "adder_mos.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/digital/compare"
+
+[[files]]
+path = "adder_Xspice.cir"
+sha256 = "e32df35d96e78ce7ea43208c6a601dba61cf2d6d8bd58d5a8e58ba350a49fc07"
+
+[[files]]
+path = "adder_bip.cir"
+sha256 = "fd53a062fea047adf6b465a754521a1fcd8b2db74a025ff1f93689695495aa42"
+
+[[files]]
+path = "adder_mos.cir"
+sha256 = "187aeb42363d7c3330b130013df8c5195aaafb017068256dbcea3f46d8bb6cba"

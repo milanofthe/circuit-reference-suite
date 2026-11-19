@@ -1,0 +1,10 @@
+title = "ngspice tests/transmission"
+case = "ngspice_tests_transmission"
+source = "cpl_ibm2.cir"
+outputs = [
+    "v(v1)",
+    "v(v3)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 2e-08 },
+]

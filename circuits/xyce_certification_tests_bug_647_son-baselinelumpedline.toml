@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_647_SON"
+case = "xyce_certification_tests_bug_647_son"
+source = "baselineLumpedLine.cir"
+outputs = [
+    "v(1)",
+    "v(1b)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[options]
+method = "gear"

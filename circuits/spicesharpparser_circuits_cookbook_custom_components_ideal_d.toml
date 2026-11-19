@@ -1,0 +1,16 @@
+title = "SpiceSharpParser circuits/cookbook/custom-components/ideal-diode-power-or"
+case = "spicesharpparser_circuits_cookbook_custom_components_ideal_d"
+source = "ideal-diode-power-or.cir"
+outputs = [
+    "v(primary_input)",
+    "v(backup_input)",
+    "v(output)",
+    "i(dprimary)",
+    "i(dbackup)",
+]
+analysis = [
+    { type = "tran", step = 5e-06, stop = 0.012, max_step = 1e-06 },
+]
+
+[options]
+method = "gear"

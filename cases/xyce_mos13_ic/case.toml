@@ -1,0 +1,25 @@
+id = "xyce_mos13_ic"
+title = "Xyce_Regression MOS13_IC"
+family = "test"
+netlists = [
+    { file = "invert42_mos3.cir", dialect = "xyce" },
+    { file = "invert50_mos1.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MOS13_IC"
+
+[[files]]
+path = "invert42_mos3.cir"
+sha256 = "030f8ba6e631357ded80674e653376d338d46b93cc84787d2f193009976367e4"
+
+[[files]]
+path = "invert50_mos1.cir"
+sha256 = "0fcf0679468068146ae72ef6ace3547a8b9cec513913c0323f36d02afc2fb479"

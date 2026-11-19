@@ -1,0 +1,9 @@
+title = "Xyce_Regression IC_AND_NODESET"
+case = "xyce_ic_and_nodeset"
+source = "ring_osc_bsim4_ic.cir"
+analysis = [
+    { type = "tran", step = 1e-10, stop = 8e-09 },
+]
+
+[options]
+reltol = 0.001

@@ -1,0 +1,10 @@
+title = "AnalogGym amplifier Leung_DFCFC1_Pin_3, SKY130"
+case = "analoggym_leung_dfcfc1_pin_3"
+source = "amp_spice_testbench/Leung_DFCFC1_Pin_3_Tran.cir"
+outputs = [
+    "v(visr)",
+    "v(vout3)",
+]
+analysis = [
+    { type = "tran", step = 1e-06, stop = 0.000401 },
+]

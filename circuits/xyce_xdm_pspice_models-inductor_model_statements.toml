@@ -1,0 +1,17 @@
+title = "Xyce_Regression XDM/PSPICE/MODELS"
+case = "xyce_xdm_pspice_models"
+source = "inductor_model_statements.cir"
+outputs = [
+    "i(v_v1)",
+    "i(r_r1)",
+    "i(l_l1)",
+    "i(v_v2)",
+    "i(r_r2)",
+    "i(l_l2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.2 },
+]
+
+[variants]
+pspice = "inductor_model_statements.cir.pspice"

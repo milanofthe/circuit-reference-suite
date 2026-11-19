@@ -1,0 +1,9 @@
+title = "Xyce_Regression RLC_LADDER"
+case = "xyce_rlc_ladder"
+source = "rc_simple_xyce.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 1.0 },
+]

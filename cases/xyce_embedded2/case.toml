@@ -1,0 +1,85 @@
+id = "xyce_embedded2"
+title = "Xyce_Regression EMBEDDED2"
+family = "test"
+netlists = [
+    { file = "embedded_cmosInverter.cir", dialect = "xyce" },
+    { file = "globalParamNormalLHS.cir", dialect = "xyce" },
+    { file = "globalParamNormalMC.cir", dialect = "xyce" },
+    { file = "globalParamNormal_OP_MC.cir", dialect = "xyce" },
+    { file = "globalParamUniformLHS.cir", dialect = "xyce" },
+    { file = "globalParamUniformMC.cir", dialect = "xyce" },
+    { file = "normalParamNormalLHS.cir", dialect = "xyce" },
+    { file = "normalParamNormalMC.cir", dialect = "xyce" },
+    { file = "normalParamNormal_OP_MC.cir", dialect = "xyce" },
+    { file = "normalParamUniformLHS.cir", dialect = "xyce" },
+    { file = "normalParamUniformMC.cir", dialect = "xyce" },
+    { file = "simpleNormal.cir", dialect = "xyce" },
+    { file = "simpleNormalSeed.cir", dialect = "xyce" },
+    { file = "simpleUniform.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/EMBEDDED2"
+
+[[files]]
+path = "embedded_cmosInverter.cir"
+sha256 = "979bab0a54bb82b047a718306b7dc88d671f32730a24f5d5d74cd7e3c77e5296"
+
+[[files]]
+path = "globalParamNormalLHS.cir"
+sha256 = "c7d68b62b60a5d53bce250c6cbb3f728de3ac739a3194e1327e3d4cf3de6ac11"
+
+[[files]]
+path = "globalParamNormalMC.cir"
+sha256 = "a3d1c4e067ed4f87862f4e7a9271de6dc68d4d92e93573fe1ead2486fd868661"
+
+[[files]]
+path = "globalParamNormal_OP_MC.cir"
+sha256 = "f245c910e1133256638a9ab5a1daf1dd6c37fe5f6b27f9707e67250e5b47fe71"
+
+[[files]]
+path = "globalParamUniformLHS.cir"
+sha256 = "60ed6343574c432f2c2c1fbe9664df1b9cb31b9280c7d6294dd4f6353e82f694"
+
+[[files]]
+path = "globalParamUniformMC.cir"
+sha256 = "c8b6d8cd9e084d1d4c0384e3f315e7aa2fbc834bfc9c03ae6fb50a85cc3bb4a0"
+
+[[files]]
+path = "normalParamNormalLHS.cir"
+sha256 = "5c414278e825d3225e6333bc5761ed834aac17567cbf5b9d76e7bc6ff5c9ced6"
+
+[[files]]
+path = "normalParamNormalMC.cir"
+sha256 = "f52bd9894aec0f7e02ca9c5b6f054deb5a0d9303428cef972dcdb0ea4b387cee"
+
+[[files]]
+path = "normalParamNormal_OP_MC.cir"
+sha256 = "056dc2f1553d6608f3ed2877826759432cdad10423dba775a37eb9f218039b4d"
+
+[[files]]
+path = "normalParamUniformLHS.cir"
+sha256 = "16f3d927b1e23b38acb9d5e038ac5cf3908f526f35a9a884c6b7370b32070699"
+
+[[files]]
+path = "normalParamUniformMC.cir"
+sha256 = "56a632ef0ef90233d377cd7057eab226c9190b81e785663e13d9fbf996d3d8f3"
+
+[[files]]
+path = "simpleNormal.cir"
+sha256 = "8f1ae8f707cc582ffebecb3444ab0b25c1f049378f17c633af400abd554cdab9"
+
+[[files]]
+path = "simpleNormalSeed.cir"
+sha256 = "96d862507b91703f477e79b692ca0a1f8943fd7b549c182ff687b66143d6946f"
+
+[[files]]
+path = "simpleUniform.cir"
+sha256 = "d9d860006098cae7701a090719ca4c648dcadb3abcb153beee2e19fff16b759d"

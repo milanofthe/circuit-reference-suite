@@ -1,11 +1,11 @@
 """Cases and model libraries, and the include graph that ties them together.
 
-Both are a directory with a YAML descriptor and the upstream files, committed byte
+Both are a directory with a TOML descriptor and the upstream files, committed byte
 for byte below ``source.root`` so relative includes between them still resolve.
 Every other file is listed with a provenance that says how it was made. A reference
 that leaves the directory (a PDK path, an OSDI binary) is mapped by the descriptor's
 ``resolve`` table onto a file in this repository, or onto ``null`` when nobody may
-redistribute it, which makes the case incomplete.
+redistribute it (``false``), which makes the case incomplete.
 """
 from __future__ import annotations
 
@@ -13,12 +13,13 @@ import hashlib
 import json
 import os
 import posixpath
+import re
+import tomllib
 from collections import Counter
 from dataclasses import dataclass, field
 from functools import cached_property, lru_cache
 from pathlib import Path
 
-import yaml
 
 from . import netlist
 
@@ -59,7 +60,7 @@ class Entry:
     def upstream(self, f: dict) -> str:
         return f.get("upstream") or posixpath.join(self.source.get("root", ""), f["path"])
 
-    def resolve_table(self) -> dict[str, str | None]:
+    def resolve_table(self) -> dict[str, str | bool]:
         return self.raw.get("resolve", {})
 
 
@@ -134,6 +135,9 @@ class Graph:
     files: set[Path] = field(default_factory=set)
     dialect: str = ""
     models: dict[str, str] = field(default_factory=dict)        # every file, libraries too
+    # device type ("cap/2": model type and level) -> device module of a simulator install
+    # ("wrspice:adms/cap"), for types that simulator builds only as a loadable module
+    modules: dict[str, str] = field(default_factory=dict)
     control: bool = False
     veriloga: bool = False
 
@@ -166,15 +170,26 @@ def _listdir(directory: Path) -> frozenset[str]:
     return frozenset(os.listdir(directory))
 
 
+@lru_cache(maxsize=None)
 def is_file(path: Path) -> bool:
     """Like Path.is_file, but case-sensitive on every platform, as on the CI runner."""
     if not path.is_file():
         return False
-    return all(part.name in _listdir(part.parent)
-               for part in [path, *path.parents] if part != ROOT and ROOT in part.parents)
+    part = path
+    while part != ROOT and part.is_relative_to(ROOT):
+        if part.name not in _listdir(part.parent):
+            return False
+        part = part.parent
+    return True
 
 
 def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, bool, str | None]:
+    return _resolve_cached(origin, ref, tuple(sorted(local.items())))
+
+
+@lru_cache(maxsize=None)
+def _resolve_cached(origin: Path, ref: netlist.Ref, local_items: tuple) -> tuple[Path | None, bool, str | None]:
+    local = dict(local_items)
     entry = owner(origin)
     table = entry.resolve_table() if entry else {}
     if isinstance(entry, Case):
@@ -182,7 +197,7 @@ def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, 
     where = f"{origin.relative_to(ROOT).as_posix()}:{ref.line}"
     if ref.target in table:
         mapped = table[ref.target]
-        if mapped is None:
+        if mapped is False:
             return None, True, None
         path = ROOT / mapped
         if not is_file(path):
@@ -200,12 +215,28 @@ def _resolve(origin: Path, ref: netlist.Ref, local: dict) -> tuple[Path | None, 
     return path, False, None
 
 
+def _modules(case: Case, nl: Netlist, models: dict[str, str], levels: dict[str, str]) -> dict[str, str]:
+    """The device modules of a simulator install the deck's models need: a model type,
+    or type and level (``cap/2``), that the resolve table maps onto ``<simulator>:<module>``,
+    as WRspice builds Verilog-A and retired devices only as modules it loads."""
+    table = {**case.resolve_table(), **nl.resolve}
+    out = {}
+    for name, kind in models.items():
+        for key in (f"{kind}/{levels[name]}" if name in levels else None, kind):
+            mapped = table.get(key)
+            if isinstance(mapped, str) and re.fullmatch(r"[a-z]+:[\w.+-]+(/[\w.+-]+)*", mapped):
+                out[key] = mapped
+                break
+    return out
+
+
 def walk(case: Case, nl: Netlist) -> Graph:
     g = Graph(dialect=nl.dialect)
     start = case.directory / nl.file
     queue = [(start, nl.dialect, None, True)]
     seen: set = set()
     models: dict[str, str] = {}
+    levels: dict[str, str] = {}
     osdi_devices: set[str] = set()
     va_types: set[str] = set()
     modules: set[str] = set()
@@ -224,6 +255,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
                 g.libraries.add(entry.id)
             parsed = netlist.parse(path, dialect, deck)
             models |= parsed.models
+            levels |= parsed.levels
             g.veriloga |= dialect == "veriloga"
             osdi_devices |= parsed.osdi_devices
             va_types |= parsed.va_types
@@ -234,6 +266,9 @@ def walk(case: Case, nl: Netlist) -> Graph:
                 refs = parsed.refs
             elif section in parsed.sections:
                 refs = parsed.sections[section]
+                if nl.dialect in netlist.NGSPICE_LIB:      # ngspice opens the includes of
+                    refs = refs + [r for s, rs in parsed.sections.items()   # every section
+                                   if s != section for r in rs if r.kind == "include"]
             else:
                 g.edges.append(Edge(path, netlist.Ref("lib", path.name, section, 0), None, False,
                                     f"{path.relative_to(ROOT).as_posix()}: no section {section!r}"))
@@ -256,6 +291,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
         needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
         g.models = models
+        g.modules = _modules(case, nl, models, levels)
         if not needed:
             undefined = sorted(used - defined) if nl.dialect in netlist.SPICE else []
             if undefined:
@@ -286,40 +322,44 @@ _CACHE: dict[Path, Entry] = {}
 def _load(cls, directory: Path, name: str) -> Entry:
     directory = directory.resolve()
     if directory not in _CACHE:
-        raw = yaml.safe_load((directory / name).read_text(encoding="utf-8"))
+        raw = tomllib.loads((directory / name).read_text(encoding="utf-8"))
         _CACHE[directory] = cls(directory, raw)
     return _CACHE[directory]
 
 
 def load_case(ref: str | Path) -> Case:
-    d = Path(ref) if (Path(ref) / "case.yaml").exists() else CASE_DIR / str(ref)
-    return _load(Case, d, "case.yaml")
+    d = Path(ref) if (Path(ref) / "case.toml").exists() else CASE_DIR / str(ref)
+    return _load(Case, d, "case.toml")
 
 
 def load_library(ref: str | Path) -> Library:
-    d = Path(ref) if (Path(ref) / "library.yaml").exists() else LIB_DIR / str(ref)
-    return _load(Library, d, "library.yaml")
+    d = Path(ref) if (Path(ref) / "library.toml").exists() else LIB_DIR / str(ref)
+    return _load(Library, d, "library.toml")
 
 
 def iter_cases() -> list[Case]:
-    return [load_case(d) for d in sorted(CASE_DIR.iterdir()) if (d / "case.yaml").exists()]
+    return [load_case(d) for d in sorted(CASE_DIR.iterdir()) if (d / "case.toml").exists()]
 
 
 def iter_libraries() -> list[Library]:
-    return [load_library(d) for d in sorted(LIB_DIR.iterdir()) if (d / "library.yaml").exists()]
+    return [load_library(d) for d in sorted(LIB_DIR.iterdir()) if (d / "library.toml").exists()]
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_schema(instance, name: str) -> list[str]:
+@lru_cache(maxsize=None)
+def _validator(name: str):
     import jsonschema
     from referencing import Registry, Resource
     schemas = {p.name: json.loads(p.read_text(encoding="utf-8"))
                for p in SCHEMA_DIR.glob("*.schema.json")}
     registry = Registry().with_resources(
         (k, Resource.from_contents(v)) for k, v in schemas.items())
-    validator = jsonschema.Draft202012Validator(schemas[f"{name}.schema.json"], registry=registry)
+    return jsonschema.Draft202012Validator(schemas[f"{name}.schema.json"], registry=registry)
+
+
+def validate_schema(instance, name: str) -> list[str]:
     return [f"{'/'.join(str(p) for p in e.path) or '<root>'}: {e.message}"
-            for e in validator.iter_errors(instance)]
+            for e in _validator(name).iter_errors(instance)]

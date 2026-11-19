@@ -1,0 +1,88 @@
+id = "xyce_b4soi_450"
+title = "Xyce_Regression B4SOI_450"
+family = "test"
+netlists = [
+    { file = "invert_b4soi_4.5.cir", dialect = "xyce" },
+    { file = "inverter_tr.cir", dialect = "xyce" },
+    { file = "ring_osc.cir", dialect = "xyce" },
+    { file = "shmodtest_nmos.cir", dialect = "xyce" },
+    { file = "test1.cir", dialect = "xyce" },
+    { file = "test1_shmod1.cir", dialect = "xyce" },
+    { file = "test2.cir", dialect = "xyce" },
+    { file = "test3.cir", dialect = "xyce" },
+    { file = "test4.cir", dialect = "xyce" },
+    { file = "test5.cir", dialect = "xyce" },
+    { file = "test6.cir", dialect = "xyce" },
+    { file = "test7.cir", dialect = "xyce" },
+    { file = "test8.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/B4SOI_450"
+
+[[files]]
+path = "invert_b4soi_4.5.cir"
+sha256 = "3078aed87cc984c8ad26d9b2572d741fc2296e7aca701aad42a53cea8b619d4e"
+
+[[files]]
+path = "inverter_tr.cir"
+sha256 = "c4ebff75a62aaea7405e30c12c0fb1608d9c8e3345c999806c6591b45c557330"
+
+[[files]]
+path = "modelcard.bsimsoiVA.nmos_xyce"
+sha256 = "517f4d97ce4c85e567878f5b360d1d0e3062a3d58240e87c0ecfe44c400cd214"
+
+[[files]]
+path = "modelcard.bsimsoiVA.pmos_xyce"
+sha256 = "e8e9a7b10b20e4231c3f33abf2ca664261e96142522bbfba29f2e470b502da41"
+
+[[files]]
+path = "ring_osc.cir"
+sha256 = "24fc302bc62d688d8c2fa1b55099eb37148079c0816646965e5adae0e8c93cca"
+
+[[files]]
+path = "shmodtest_nmos.cir"
+sha256 = "2c285028728915c70f6270bc9bba72b23f8030bb1bebde3bef9b262319ce314c"
+
+[[files]]
+path = "test1.cir"
+sha256 = "6759cf18e63ce7de98dc3a9a4160c25902d7430cac65ca35f9c99df3a385ce97"
+
+[[files]]
+path = "test1_shmod1.cir"
+sha256 = "be36671558bc8b8674367fdac7e44b69002ab1c7206973bdf6e49bbd5624a497"
+
+[[files]]
+path = "test2.cir"
+sha256 = "695268ff256519d83362bb9f643fd0d9fb13172d2583fb20b9372a233bc78167"
+
+[[files]]
+path = "test3.cir"
+sha256 = "b1b1f1d3f11ca6430afcb61cf101a03324a8934fe06d85d3deefee6ca0330592"
+
+[[files]]
+path = "test4.cir"
+sha256 = "ff4fbde405ae6bfba0324fb0ae52f944e533a8c683ddecfea496c6907ec5db97"
+
+[[files]]
+path = "test5.cir"
+sha256 = "f9cedbe6489067fe1eef51681e213664aa248399f5c15bc82a320186ed06d062"
+
+[[files]]
+path = "test6.cir"
+sha256 = "0f38d066ee719321284eb60d20e7e654bd60bfc6ea28ba9f3f8a8bbfb43f4ba5"
+
+[[files]]
+path = "test7.cir"
+sha256 = "39464962503b8c635f4b8f1c663ac08d27a3e04b7b8cd3fb4008de2fa861e6da"
+
+[[files]]
+path = "test8.cir"
+sha256 = "6f548e68b527b0d442efaab90f75fbb9bfb7faa203fd8ef291248029bb537865"

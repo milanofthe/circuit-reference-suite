@@ -1,0 +1,9 @@
+title = "Xyce_Regression ABM_DB"
+case = "xyce_abm_db"
+source = "dbTest.cir"
+outputs = [
+    "v(b)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 1000000.0 },
+]

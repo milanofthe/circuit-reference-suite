@@ -1,0 +1,2604 @@
+id = "gnucap_tests"
+title = "gnucap tests"
+family = "test"
+netlists = [
+    { file = "1lin.ckt", dialect = "gnucap" },
+    { file = "basic.ckt", dialect = "gnucap" },
+    { file = "bm_complex.1.ckt", dialect = "gnucap" },
+    { file = "bm_complex.1a.ckt", dialect = "gnucap" },
+    { file = "bm_complex.2.ckt", dialect = "gnucap" },
+    { file = "bm_complex.3.ckt", dialect = "gnucap" },
+    { file = "bm_complex.4.ckt", dialect = "gnucap" },
+    { file = "bm_cond.1.ckt", dialect = "gnucap" },
+    { file = "bm_cond.2.ckt", dialect = "gnucap" },
+    { file = "bm_cond.3.ckt", dialect = "gnucap" },
+    { file = "bm_exp.1.ckt", dialect = "gnucap" },
+    { file = "bm_exp.1p.ckt", dialect = "gnucap" },
+    { file = "bm_exp.2.ckt", dialect = "gnucap" },
+    { file = "bm_exp.3.ckt", dialect = "gnucap" },
+    { file = "bm_exp.3p.ckt", dialect = "gnucap" },
+    { file = "bm_exp.4p.ckt", dialect = "gnucap" },
+    { file = "bm_exp.5p.ckt", dialect = "gnucap" },
+    { file = "bm_fit.0.1.ckt", dialect = "gnucap" },
+    { file = "bm_fit.1.1.ckt", dialect = "gnucap" },
+    { file = "bm_fit.2.1.ckt", dialect = "gnucap" },
+    { file = "bm_fit.2.2.ckt", dialect = "gnucap" },
+    { file = "bm_fit.2.3.ckt", dialect = "gnucap" },
+    { file = "bm_fit.2.4.ckt", dialect = "gnucap" },
+    { file = "bm_fit.3.1.ckt", dialect = "gnucap" },
+    { file = "bm_fit.3.2.ckt", dialect = "gnucap" },
+    { file = "bm_fit.3.3.ckt", dialect = "gnucap" },
+    { file = "bm_poly.1.ckt", dialect = "gnucap" },
+    { file = "bm_poly.2.ckt", dialect = "gnucap" },
+    { file = "bm_posy.1.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.1.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.1a.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.2.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.2a.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.3.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.3a.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.4.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.4a.ckt", dialect = "gnucap" },
+    { file = "bm_pulse.4b.ckt", dialect = "gnucap" },
+    { file = "bm_pwl.1.ckt", dialect = "gnucap" },
+    { file = "bm_pwl.2.ckt", dialect = "gnucap" },
+    { file = "bm_pwl.3.ckt", dialect = "gnucap" },
+    { file = "bm_pwl.4.ckt", dialect = "gnucap" },
+    { file = "bm_pwl.5.ckt", dialect = "gnucap" },
+    { file = "bm_sffm.1.ckt", dialect = "gnucap" },
+    { file = "bm_sffm.2.ckt", dialect = "gnucap" },
+    { file = "bm_sffm.3.ckt", dialect = "gnucap" },
+    { file = "bm_sffm.4.ckt", dialect = "gnucap" },
+    { file = "bm_sffm.5.ckt", dialect = "gnucap" },
+    { file = "bm_sin.1.ckt", dialect = "gnucap" },
+    { file = "bm_sin.2.ckt", dialect = "gnucap" },
+    { file = "bm_sin.3.ckt", dialect = "gnucap" },
+    { file = "bm_sin.4.ckt", dialect = "gnucap" },
+    { file = "bm_sin.5.ckt", dialect = "gnucap" },
+    { file = "bm_sin.6.ckt", dialect = "gnucap" },
+    { file = "bm_sin.7.ckt", dialect = "gnucap" },
+    { file = "bm_sin.8.ckt", dialect = "gnucap" },
+    { file = "bm_sin.9.ckt", dialect = "gnucap" },
+    { file = "bm_table.1.1.ckt", dialect = "gnucap" },
+    { file = "bm_table.2.1.ckt", dialect = "gnucap" },
+    { file = "bm_table.2.2.ckt", dialect = "gnucap" },
+    { file = "bm_table.2.3.ckt", dialect = "gnucap" },
+    { file = "bm_table.2.4.ckt", dialect = "gnucap" },
+    { file = "bm_table.3.1.ckt", dialect = "gnucap" },
+    { file = "bm_table.3.2.ckt", dialect = "gnucap" },
+    { file = "bm_table.3.3.ckt", dialect = "gnucap" },
+    { file = "bm_table.error1.ckt", dialect = "gnucap" },
+    { file = "bm_tanh.1.ckt", dialect = "gnucap" },
+    { file = "bm_tanh.2.ckt", dialect = "gnucap" },
+    { file = "bmm_cap.1.ckt", dialect = "gnucap" },
+    { file = "bmm_cap.2.ckt", dialect = "gnucap" },
+    { file = "bmm_cap.3.ckt", dialect = "gnucap" },
+    { file = "bmm_cap.4.ckt", dialect = "gnucap" },
+    { file = "bmm_cap.5.ckt", dialect = "gnucap" },
+    { file = "bmm_res.1.ckt", dialect = "gnucap" },
+    { file = "bmm_res.1p.ckt", dialect = "gnucap" },
+    { file = "bmm_res.2.ckt", dialect = "gnucap" },
+    { file = "bmm_res.2p.ckt", dialect = "gnucap" },
+    { file = "bmm_res.3.ckt", dialect = "gnucap" },
+    { file = "bmm_res.3p.ckt", dialect = "gnucap" },
+    { file = "bmm_res.4.ckt", dialect = "gnucap" },
+    { file = "bmm_res.4p.ckt", dialect = "gnucap" },
+    { file = "bmm_res.5.ckt", dialect = "gnucap" },
+    { file = "bmm_res.5p.ckt", dialect = "gnucap" },
+    { file = "c.ckt", dialect = "gnucap" },
+    { file = "c_delete.2.ckt", dialect = "gnucap" },
+    { file = "c_delete.3.ckt", dialect = "gnucap" },
+    { file = "c_delete.4.ckt", dialect = "gnucap" },
+    { file = "c_delete.5.ckt", dialect = "gnucap" },
+    { file = "c_delete.6.ckt", dialect = "gnucap" },
+    { file = "c_delete.7.ckt", dialect = "gnucap" },
+    { file = "c_delete.ckt", dialect = "gnucap" },
+    { file = "c_genrat.1.ckt", dialect = "gnucap" },
+    { file = "c_global.0.ckt", dialect = "gnucap" },
+    { file = "c_global.1.ckt", dialect = "gnucap" },
+    { file = "c_lib.1.ckt", dialect = "gnucap" },
+    { file = "c_measure.1.ckt", dialect = "gnucap" },
+    { file = "c_measure.1s.ckt", dialect = "gnucap" },
+    { file = "c_measure.2.ckt", dialect = "gnucap" },
+    { file = "c_measure.2s.ckt", dialect = "gnucap" },
+    { file = "c_modify.ckt", dialect = "gnucap" },
+    { file = "cc.ckt", dialect = "gnucap" },
+    { file = "charge-cons.ckt", dialect = "gnucap" },
+    { file = "charge-cons2.ckt", dialect = "gnucap" },
+    { file = "charge-cons3.ckt", dialect = "gnucap" },
+    { file = "current.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-ccs.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-cjc.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-dc.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-nocap.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-tf.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-tr.ckt", dialect = "gnucap" },
+    { file = "d_bjt-diffpair-tran.ckt", dialect = "gnucap" },
+    { file = "d_bjt-pnp.ckt", dialect = "gnucap" },
+    { file = "d_bjt-rca3040.ckt", dialect = "gnucap" },
+    { file = "d_bjt-rtlinv.ckt", dialect = "gnucap" },
+    { file = "d_bjt-schmitt-bypass.ckt", dialect = "gnucap" },
+    { file = "d_bjt-schmitt-nobypass.ckt", dialect = "gnucap" },
+    { file = "d_bjt-schmitt-stat.ckt", dialect = "gnucap" },
+    { file = "d_bjt.2.ckt", dialect = "gnucap" },
+    { file = "d_bjt.ckt", dialect = "gnucap" },
+    { file = "d_bjt.error1.ckt", dialect = "gnucap" },
+    { file = "d_cap.1.ckt", dialect = "gnucap" },
+    { file = "d_cap.2.ckt", dialect = "gnucap" },
+    { file = "d_cap.3.ckt", dialect = "gnucap" },
+    { file = "d_cap.3a.ckt", dialect = "gnucap" },
+    { file = "d_cap.4.ckt", dialect = "gnucap" },
+    { file = "d_cap.5.ckt", dialect = "gnucap" },
+    { file = "d_cap.6.ckt", dialect = "gnucap" },
+    { file = "d_cap.ic1.ckt", dialect = "gnucap" },
+    { file = "d_cap.ic2.ckt", dialect = "gnucap" },
+    { file = "d_cap.ic4.ckt", dialect = "gnucap" },
+    { file = "d_cccs.1.ckt", dialect = "gnucap" },
+    { file = "d_cccs.2.ckt", dialect = "gnucap" },
+    { file = "d_cccs.3.ckt", dialect = "gnucap" },
+    { file = "d_cccs.4.ckt", dialect = "gnucap" },
+    { file = "d_cccs.5.ckt", dialect = "gnucap" },
+    { file = "d_cccs.6.ckt", dialect = "gnucap" },
+    { file = "d_ccvs.1.ckt", dialect = "gnucap" },
+    { file = "d_ccvs.2.ckt", dialect = "gnucap" },
+    { file = "d_ccvs.3.ckt", dialect = "gnucap" },
+    { file = "d_coil.1.ckt", dialect = "gnucap" },
+    { file = "d_coil.1a.ckt", dialect = "gnucap" },
+    { file = "d_coil.1b.ckt", dialect = "gnucap" },
+    { file = "d_coil.1c.ckt", dialect = "gnucap" },
+    { file = "d_coil.1d.ckt", dialect = "gnucap" },
+    { file = "d_coil.1e.ckt", dialect = "gnucap" },
+    { file = "d_coil.2.ckt", dialect = "gnucap" },
+    { file = "d_coil.3.ckt", dialect = "gnucap" },
+    { file = "d_coil.4.ckt", dialect = "gnucap" },
+    { file = "d_coil.5.ckt", dialect = "gnucap" },
+    { file = "d_coil.5.spice", dialect = "gnucap" },
+    { file = "d_coil.error1.ckt", dialect = "gnucap" },
+    { file = "d_coil.error2.ckt", dialect = "gnucap" },
+    { file = "d_coil.error3.ckt", dialect = "gnucap" },
+    { file = "d_coil.error4.ckt", dialect = "gnucap" },
+    { file = "d_coil.error5.ckt", dialect = "gnucap" },
+    { file = "d_coil.m3.ckt", dialect = "gnucap" },
+    { file = "d_coil.m3a.ckt", dialect = "gnucap" },
+    { file = "d_coil.m3r.ckt", dialect = "gnucap" },
+    { file = "d_coil.ports0.ckt", dialect = "gnucap" },
+    { file = "d_coil.ports0g.ckt", dialect = "gnucap" },
+    { file = "d_coil.ports1.ckt", dialect = "gnucap" },
+    { file = "d_diode.1.ckt", dialect = "gnucap" },
+    { file = "d_diode.10.ckt", dialect = "gnucap" },
+    { file = "d_diode.10a.ckt", dialect = "gnucap" },
+    { file = "d_diode.11.ckt", dialect = "gnucap" },
+    { file = "d_diode.11a.ckt", dialect = "gnucap" },
+    { file = "d_diode.11b.ckt", dialect = "gnucap" },
+    { file = "d_diode.11c.ckt", dialect = "gnucap" },
+    { file = "d_diode.11d.ckt", dialect = "gnucap" },
+    { file = "d_diode.12.ckt", dialect = "gnucap" },
+    { file = "d_diode.2.ckt", dialect = "gnucap" },
+    { file = "d_diode.3.ckt", dialect = "gnucap" },
+    { file = "d_diode.4.ckt", dialect = "gnucap" },
+    { file = "d_diode.5.ckt", dialect = "gnucap" },
+    { file = "d_diode.6.ckt", dialect = "gnucap" },
+    { file = "d_diode.7.ckt", dialect = "gnucap" },
+    { file = "d_diode.8.ckt", dialect = "gnucap" },
+    { file = "d_diode.9.ckt", dialect = "gnucap" },
+    { file = "d_diode.9m.ckt", dialect = "gnucap" },
+    { file = "d_diode.error1.ckt", dialect = "gnucap" },
+    { file = "d_logic.1.ckt", dialect = "gnucap" },
+    { file = "d_logic.2.ckt", dialect = "gnucap" },
+    { file = "d_logic.3.ckt", dialect = "gnucap" },
+    { file = "d_logic.4.ckt", dialect = "gnucap" },
+    { file = "d_logic.5.ckt", dialect = "gnucap" },
+    { file = "d_logic.6.ckt", dialect = "gnucap" },
+    { file = "d_logic.7.ckt", dialect = "gnucap" },
+    { file = "d_logic.error1.ckt", dialect = "gnucap" },
+    { file = "d_logic_nand-dc.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_ab1.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_ab2.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_an1.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_an2.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_db1.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_db2.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_dn1.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_dn2.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mb1a.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mb1b.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mb2a.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mb2b.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mn1a.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mn1b.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mn2a.ckt", dialect = "gnucap" },
+    { file = "d_logic_tr_mn2b.ckt", dialect = "gnucap" },
+    { file = "d_macro.1.ckt", dialect = "gnucap" },
+    { file = "d_mos.error1.ckt", dialect = "gnucap" },
+    { file = "d_mos.error2.ckt", dialect = "gnucap" },
+    { file = "d_mos.error3.ckt", dialect = "gnucap" },
+    { file = "d_mos.error4.ckt", dialect = "gnucap" },
+    { file = "d_mos.swp0.ckt", dialect = "gnucap" },
+    { file = "d_mos.swp1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.bin1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.bin2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.bin3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.inv.bug.ckt", dialect = "gnucap" },
+    { file = "d_mos1.inv1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.inv2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.inv3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin1.late.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin1.none.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin1.spice", dialect = "gnucap" },
+    { file = "d_mos1.lin2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin4.ckt", dialect = "gnucap" },
+    { file = "d_mos1.lin5.ckt", dialect = "gnucap" },
+    { file = "d_mos1.n+1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.n-1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.n0.ckt", dialect = "gnucap" },
+    { file = "d_mos1.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.nand2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.nand3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.p+1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.p-1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.p0.ckt", dialect = "gnucap" },
+    { file = "d_mos1.plin.ckt", dialect = "gnucap" },
+    { file = "d_mos1.psat1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.psat2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.psat3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat2.spice", dialect = "gnucap" },
+    { file = "d_mos1.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat4.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat5.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat6.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sat7.ckt", dialect = "gnucap" },
+    { file = "d_mos1.sts.ckt", dialect = "gnucap" },
+    { file = "d_mos1.temp0.ckt", dialect = "gnucap" },
+    { file = "d_mos1.temp1.ckt", dialect = "gnucap" },
+    { file = "d_mos1.temp2.ckt", dialect = "gnucap" },
+    { file = "d_mos1.zero.ckt", dialect = "gnucap" },
+    { file = "d_mos2.inv1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin1.late.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin1r.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin1z.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin2.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin3.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin4.ckt", dialect = "gnucap" },
+    { file = "d_mos2.lin5.ckt", dialect = "gnucap" },
+    { file = "d_mos2.n+1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.n-1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.n0.ckt", dialect = "gnucap" },
+    { file = "d_mos2.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.p+1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.p-1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.p0.ckt", dialect = "gnucap" },
+    { file = "d_mos2.plin.ckt", dialect = "gnucap" },
+    { file = "d_mos2.psat1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.psat2.ckt", dialect = "gnucap" },
+    { file = "d_mos2.psat3.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat1.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat4.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat5.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat6.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sat7.ckt", dialect = "gnucap" },
+    { file = "d_mos2.sts.ckt", dialect = "gnucap" },
+    { file = "d_mos2.zero.ckt", dialect = "gnucap" },
+    { file = "d_mos3.inv1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin1r.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin1z.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin2.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin3.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin4.ckt", dialect = "gnucap" },
+    { file = "d_mos3.lin5.ckt", dialect = "gnucap" },
+    { file = "d_mos3.n+1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.n-1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.n0.ckt", dialect = "gnucap" },
+    { file = "d_mos3.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.p+1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.p-1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.p0.ckt", dialect = "gnucap" },
+    { file = "d_mos3.plin.ckt", dialect = "gnucap" },
+    { file = "d_mos3.psat1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.psat2.ckt", dialect = "gnucap" },
+    { file = "d_mos3.psat3.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat000.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat007.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat1.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat4.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat5.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat6.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sat7.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sts.ckt", dialect = "gnucap" },
+    { file = "d_mos3.sts000.ckt", dialect = "gnucap" },
+    { file = "d_mos3.zero.ckt", dialect = "gnucap" },
+    { file = "d_mos4.1.ckt", dialect = "gnucap" },
+    { file = "d_mos4.2.ckt", dialect = "gnucap" },
+    { file = "d_mos4.3.ckt", dialect = "gnucap" },
+    { file = "d_mos49.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos5.1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.inv1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin1.spice", dialect = "gnucap" },
+    { file = "d_mos6.lin1r.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin1r.spice", dialect = "gnucap" },
+    { file = "d_mos6.lin1z.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin1z.spice", dialect = "gnucap" },
+    { file = "d_mos6.lin2.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin2.spice", dialect = "gnucap" },
+    { file = "d_mos6.lin2r.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin2r.spice", dialect = "gnucap" },
+    { file = "d_mos6.lin2z.ckt", dialect = "gnucap" },
+    { file = "d_mos6.lin2z.spice", dialect = "gnucap" },
+    { file = "d_mos6.n+1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.n-1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.n0.ckt", dialect = "gnucap" },
+    { file = "d_mos6.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.p+1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.p-1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.p0.ckt", dialect = "gnucap" },
+    { file = "d_mos6.plin.ckt", dialect = "gnucap" },
+    { file = "d_mos6.psat1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.psat2.ckt", dialect = "gnucap" },
+    { file = "d_mos6.psat3.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat1.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat1.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat1r.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat1r.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat1s.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat1s.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat1v.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat1v.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat2.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat2r.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat2r.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat3.spice", dialect = "gnucap" },
+    { file = "d_mos6.sat3r.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sat3r.spice", dialect = "gnucap" },
+    { file = "d_mos6.sts.ckt", dialect = "gnucap" },
+    { file = "d_mos6.sts000.ckt", dialect = "gnucap" },
+    { file = "d_mos6.zero.ckt", dialect = "gnucap" },
+    { file = "d_mos7.alpha.ckt", dialect = "gnucap" },
+    { file = "d_mos7.inv1.ckt", dialect = "gnucap" },
+    { file = "d_mos7.lin1.ckt", dialect = "gnucap" },
+    { file = "d_mos7.lin2.ckt", dialect = "gnucap" },
+    { file = "d_mos7.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos7.nand1.nobypass.ckt", dialect = "gnucap" },
+    { file = "d_mos7.plin.ckt", dialect = "gnucap" },
+    { file = "d_mos7.psat.ckt", dialect = "gnucap" },
+    { file = "d_mos7.sat1.ckt", dialect = "gnucap" },
+    { file = "d_mos7.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos7.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos7.sts.ckt", dialect = "gnucap" },
+    { file = "d_mos7.zero.ckt", dialect = "gnucap" },
+    { file = "d_mos8.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos8.sat2.ckt", dialect = "gnucap" },
+    { file = "d_mos8.sat3.ckt", dialect = "gnucap" },
+    { file = "d_mos8.sat4.ckt", dialect = "gnucap" },
+    { file = "d_mos8c2.nand1.ckt", dialect = "gnucap" },
+    { file = "d_mos8c2.nand1.nobypass.ckt", dialect = "gnucap" },
+    { file = "d_res.bug.2.ckt", dialect = "gnucap" },
+    { file = "d_res.bug.2fit.ckt", dialect = "gnucap" },
+    { file = "d_res.neg.0.ckt", dialect = "gnucap" },
+    { file = "d_subckt.1.ckt", dialect = "gnucap" },
+    { file = "d_subckt.2.ckt", dialect = "gnucap" },
+    { file = "d_subckt.3.ckt", dialect = "gnucap" },
+    { file = "d_subckt.4.ckt", dialect = "gnucap" },
+    { file = "d_subckt.5.ckt", dialect = "gnucap" },
+    { file = "d_subckt.6.ckt", dialect = "gnucap" },
+    { file = "d_subckt.7.ckt", dialect = "gnucap" },
+    { file = "d_subckt.8.ckt", dialect = "gnucap" },
+    { file = "d_subckt.bin.0.ckt", dialect = "gnucap" },
+    { file = "d_subckt.error3.ckt", dialect = "gnucap" },
+    { file = "d_switch.c0.ckt", dialect = "gnucap" },
+    { file = "d_switch.c1.ckt", dialect = "gnucap" },
+    { file = "d_switch.c1.inc.ckt", dialect = "gnucap" },
+    { file = "d_switch.c1.noinc.ckt", dialect = "gnucap" },
+    { file = "d_switch.c1a.ckt", dialect = "gnucap" },
+    { file = "d_switch.c1r.ckt", dialect = "gnucap" },
+    { file = "d_switch.c2.ckt", dialect = "gnucap" },
+    { file = "d_switch.c2a.ckt", dialect = "gnucap" },
+    { file = "d_switch.c2r.ckt", dialect = "gnucap" },
+    { file = "d_switch.c3.ckt", dialect = "gnucap" },
+    { file = "d_switch.error1.ckt", dialect = "gnucap" },
+    { file = "d_switch.error2.ckt", dialect = "gnucap" },
+    { file = "d_switch.error3.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.1.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.1e.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.1g.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.1gr.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.2.auto.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.2.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.3.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.3h.ckt", dialect = "gnucap" },
+    { file = "d_switch.nro.4.ckt", dialect = "gnucap" },
+    { file = "d_switch.v.ckt", dialect = "gnucap" },
+    { file = "d_switch.vr.ckt", dialect = "gnucap" },
+    { file = "d_tcap.1.ckt", dialect = "gnucap" },
+    { file = "d_tcap.2.ckt", dialect = "gnucap" },
+    { file = "d_tcap.3.ckt", dialect = "gnucap" },
+    { file = "d_tcap.4.ckt", dialect = "gnucap" },
+    { file = "d_tcap.5.ckt", dialect = "gnucap" },
+    { file = "d_trln.ac.ckt", dialect = "gnucap" },
+    { file = "d_trln.acp.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.100.im.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.100.nim.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.300.im.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.300.nim.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.im.ckt", dialect = "gnucap" },
+    { file = "d_trln.tr.nim.ckt", dialect = "gnucap" },
+    { file = "d_vccap.1.ckt", dialect = "gnucap" },
+    { file = "d_vccap.2.ckt", dialect = "gnucap" },
+    { file = "d_vcg.1.ckt", dialect = "gnucap" },
+    { file = "d_vcg.4.ckt", dialect = "gnucap" },
+    { file = "d_vcr.1.ckt", dialect = "gnucap" },
+    { file = "d_vcr.2.ckt", dialect = "gnucap" },
+    { file = "d_vcr.4.ckt", dialect = "gnucap" },
+    { file = "d_vcvs.1.ckt", dialect = "gnucap" },
+    { file = "d_vcvs.2.ckt", dialect = "gnucap" },
+    { file = "dcsweep.ckt", dialect = "gnucap" },
+    { file = "e_ccsrc.1.ckt", dialect = "gnucap" },
+    { file = "e_ccsrc.2.ckt", dialect = "gnucap" },
+    { file = "e_node_change0.ckt", dialect = "gnucap" },
+    { file = "e_node_probes.ckt", dialect = "gnucap" },
+    { file = "e_storag.1.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.fg.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.fg2.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.forward.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.reverse.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.tr-b.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.tr-nb.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.tr-ni.ckt", dialect = "gnucap" },
+    { file = "eq3-1153.trace.ckt", dialect = "gnucap" },
+    { file = "eqb1.ckt", dialect = "gnucap" },
+    { file = "eqboost.ckt", dialect = "gnucap" },
+    { file = "eqflat.ckt", dialect = "gnucap" },
+    { file = "eqmodify.ckt", dialect = "gnucap" },
+    { file = "grid.0.ckt", dialect = "gnucap" },
+    { file = "grid.1.ckt", dialect = "gnucap" },
+    { file = "grid.2.ckt", dialect = "gnucap" },
+    { file = "l.ckt", dialect = "gnucap" },
+    { file = "l2.ckt", dialect = "gnucap" },
+    { file = "ll.ckt", dialect = "gnucap" },
+    { file = "ll1.ckt", dialect = "gnucap" },
+    { file = "lll.ckt", dialect = "gnucap" },
+    { file = "llll.ckt", dialect = "gnucap" },
+    { file = "named_nodes.ckt", dialect = "gnucap" },
+    { file = "nmos100.1.ckt", dialect = "gnucap" },
+    { file = "nmos100.ckt", dialect = "gnucap" },
+    { file = "nmos15.ckt", dialect = "gnucap" },
+    { file = "nmos15a.ckt", dialect = "gnucap" },
+    { file = "nmos1i.ckt", dialect = "gnucap" },
+    { file = "nmp100.ckt", dialect = "gnucap" },
+    { file = "opamp-ol-disto.2.ckt", dialect = "gnucap" },
+    { file = "opamp-ol-disto.ckt", dialect = "gnucap" },
+    { file = "opamp-ol.ckt", dialect = "gnucap" },
+    { file = "opamp-vf.1.ckt", dialect = "gnucap" },
+    { file = "opamp-vf.1d.ckt", dialect = "gnucap" },
+    { file = "opamp-vf.2.ckt", dialect = "gnucap" },
+    { file = "opamp-vf.3.ckt", dialect = "gnucap" },
+    { file = "opamp-vf.ckt", dialect = "gnucap" },
+    { file = "oscillator.1.ckt", dialect = "gnucap" },
+    { file = "oscillator.2.ckt", dialect = "gnucap" },
+    { file = "oscillator.3.ckt", dialect = "gnucap" },
+    { file = "oscillator.4.ckt", dialect = "gnucap" },
+    { file = "oscillator.5.ckt", dialect = "gnucap" },
+    { file = "oscillator.6.ckt", dialect = "gnucap" },
+    { file = "oscillator.7.ckt", dialect = "gnucap" },
+    { file = "param.0.ckt", dialect = "gnucap" },
+    { file = "param.0a.ckt", dialect = "gnucap" },
+    { file = "param.1.ckt", dialect = "gnucap" },
+    { file = "param.11.ckt", dialect = "gnucap" },
+    { file = "param.12.ckt", dialect = "gnucap" },
+    { file = "param.2.ckt", dialect = "gnucap" },
+    { file = "param.2a.ckt", dialect = "gnucap" },
+    { file = "param.2b.ckt", dialect = "gnucap" },
+    { file = "param.3.ckt", dialect = "gnucap" },
+    { file = "param.4.ckt", dialect = "gnucap" },
+    { file = "param.5.ckt", dialect = "gnucap" },
+    { file = "param.6.ckt", dialect = "gnucap" },
+    { file = "param.7.ckt", dialect = "gnucap" },
+    { file = "param.8.ckt", dialect = "gnucap" },
+    { file = "param.9.ckt", dialect = "gnucap" },
+    { file = "pwl.spice", dialect = "gnucap" },
+    { file = "s_dc.bin1.ckt", dialect = "gnucap" },
+    { file = "s_tr.1.ckt", dialect = "gnucap" },
+    { file = "sl.ckt", dialect = "gnucap" },
+    { file = "trcurve.ckt", dialect = "gnucap" },
+    { file = "trcurve2.ckt", dialect = "gnucap" },
+    { file = "trcurves.ckt", dialect = "gnucap" },
+    { file = "trunc-euler.ckt", dialect = "gnucap" },
+    { file = "trunc-gear.ckt", dialect = "gnucap" },
+    { file = "trunc-trap.ckt", dialect = "gnucap" },
+    { file = "vs.spice", dialect = "gnucap" },
+]
+notes = """
+Left out:
+- `d_subckt.delete.0.ckt`: uses subcircuit x1, defined nowhere
+- `d_subckt.error1.ckt`: uses subcircuit foo, defined nowhere
+- `d_subckt.error2.ckt`: uses subcircuit foo, defined nowhere
+- `d_subckt.error4.ckt`: uses subcircuit x1, defined nowhere
+"""
+
+[source]
+name = "gnucap"
+url = "https://git.savannah.gnu.org/cgit/gnucap.git"
+license = "GPL-3.0-or-later"
+authors = [
+    "Albert Davis",
+    "Felix Salfelder",
+    "gnucap contributors",
+]
+commit = "a24393f48094cb475b62738d13efe21ef9805767"
+root = "tests"
+
+[[files]]
+path = "1lin.ckt"
+sha256 = "57cc710938ff2bee2c4987c799b4194b0ae5c357e4922801fa25ad600d16ff08"
+
+[[files]]
+path = "basic.ckt"
+sha256 = "6a5c87c76b8c799cd497ca8ea1bd4dce6a4dac4cc5d8170f8e7eac4ecbbb6373"
+
+[[files]]
+path = "bm_complex.1.ckt"
+sha256 = "005021debbbc0c3b2712fc24bbb8862c765324fb2bae37cb622de88d2f3eaf1f"
+
+[[files]]
+path = "bm_complex.1a.ckt"
+sha256 = "0b1973d13202d0b31be0913a9c9e40bc24973d0cf52f47cce4bcf36aad3c57aa"
+
+[[files]]
+path = "bm_complex.2.ckt"
+sha256 = "4fd8519f3ef930e04b64b4b82ebad650f88f07ef508921ea0d6fe4557d5e7a79"
+
+[[files]]
+path = "bm_complex.3.ckt"
+sha256 = "2b25c884bd45032f539142059ee2f7f319b20570cdc97971742a2f241a1ba4e4"
+
+[[files]]
+path = "bm_complex.4.ckt"
+sha256 = "60a413458d486dbbe0914a1188a4b8c72a0806629549291a2bc461d1e4c978d2"
+
+[[files]]
+path = "bm_cond.1.ckt"
+sha256 = "e9d1ced6e1bab8f1a5e3160a5b95584e57de3f5ce4b560194247c5dbe6184c69"
+
+[[files]]
+path = "bm_cond.2.ckt"
+sha256 = "b5702f75a87a0d16417b6d8e8a5dcc25a98bcfcd587547068d461209957fcfcc"
+
+[[files]]
+path = "bm_cond.3.ckt"
+sha256 = "d531cfd754efae723086bd28cb8176edc6754935bf42e98bcf8755df8593a146"
+
+[[files]]
+path = "bm_exp.1.ckt"
+sha256 = "96f32ce861c417f4ae3c15e005019fcb256c081cc1f1c46d2a6e6e855f719927"
+
+[[files]]
+path = "bm_exp.1p.ckt"
+sha256 = "4b32b0e14dd6b4c7797b4a677e7e6362c5f657c947e94b78976cd66a86ca340b"
+
+[[files]]
+path = "bm_exp.2.ckt"
+sha256 = "8fa763e935c5246c71208562fd4171e60fe464cad0e5c0bf4f164a11f20de202"
+
+[[files]]
+path = "bm_exp.3.ckt"
+sha256 = "4346326ff691e1c0a9e8e6b7c072855686f5fd5f320ae728a3d619dd465134ae"
+
+[[files]]
+path = "bm_exp.3p.ckt"
+sha256 = "77e393f8c92a03d220a9a5347ecb8ccebde79b4693d3c9e4193092ef2cb65efa"
+
+[[files]]
+path = "bm_exp.4p.ckt"
+sha256 = "49b87cfad9d0a56e87b28b4626f0fc124bee714393e4469d1ad54400eb44bbf0"
+
+[[files]]
+path = "bm_exp.5p.ckt"
+sha256 = "b98998d8b0d601cee6fddbead7b02237e06966d5bbaa9a2280f5b17350809a50"
+
+[[files]]
+path = "bm_fit.0.1.ckt"
+sha256 = "3567ce2d0c84e72b6f8091b1b1ca66deb66fb239bedc057038b0443c7db10e21"
+
+[[files]]
+path = "bm_fit.1.1.ckt"
+sha256 = "58ad96fa7686f12ccff867bebcfc80c0cfeb8d379935f9ec0d46e6bf20f70299"
+
+[[files]]
+path = "bm_fit.2.1.ckt"
+sha256 = "cd54e0733e61ae6ad114fd0b3a4875e94aa0968e5a49cb97e7ed54cd00e56a22"
+
+[[files]]
+path = "bm_fit.2.2.ckt"
+sha256 = "3acdd6a0df68a777d9294175cc38a5540f47bf100e7a8d013e77eaf8bc6c912f"
+
+[[files]]
+path = "bm_fit.2.3.ckt"
+sha256 = "9979a8b2f058fdeee0db654534c4412d27bf682905ec63b40e77e38467b1c4b1"
+
+[[files]]
+path = "bm_fit.2.4.ckt"
+sha256 = "9c8b54761815e18a9843299b0049e410d25bb414ee7bf89e4200259d83b7c4bb"
+
+[[files]]
+path = "bm_fit.3.1.ckt"
+sha256 = "821aad53409f062b44ccd01cccea44efb53fcaac52a0b1ec6ec2ff9e38ad510f"
+
+[[files]]
+path = "bm_fit.3.2.ckt"
+sha256 = "493f0f4525c5160b16852ee02b3e1ba3dae1fb9c81a352a3a2f2942d2e79ee7e"
+
+[[files]]
+path = "bm_fit.3.3.ckt"
+sha256 = "bdeefc27386eddbefe4ac40bb92f5813cd85ebe5a438ab0a06c9c3aa46b510d1"
+
+[[files]]
+path = "bm_poly.1.ckt"
+sha256 = "0b0ca66874390f43920a8d218ab558c8a0d0bdcc17a1e98f6422c1b56864759f"
+
+[[files]]
+path = "bm_poly.2.ckt"
+sha256 = "c29cd019dc65223b1ddeb0a2fc705e6c767ce74313227b5ad503c86a2fd43681"
+
+[[files]]
+path = "bm_posy.1.ckt"
+sha256 = "4335c05f49e51e202f05e88bc0d7c7e0306821392a6a309c35ad2dc3b9c36e21"
+
+[[files]]
+path = "bm_pulse.1.ckt"
+sha256 = "50efaaa8c9e30a9c7bb2976bdc24826156d867f3863d48e616235a0516e2268d"
+
+[[files]]
+path = "bm_pulse.1a.ckt"
+sha256 = "80667f56b562813d85f8627efaef2148f8929d254ccb8bb72b16081300edbe7e"
+
+[[files]]
+path = "bm_pulse.2.ckt"
+sha256 = "ff2fafcf89c9b0f02ee635921d83d914cc1ffa81b8020c323a37572653785838"
+
+[[files]]
+path = "bm_pulse.2a.ckt"
+sha256 = "16a3b2be44b7ea7db37d05fb5bee4d4f6eda2f427785cbc2c9afe3b33464941c"
+
+[[files]]
+path = "bm_pulse.3.ckt"
+sha256 = "c0fbbfc82a2190222b723b703db2f97c5aed114b95338f327ec53fa0a06dcf39"
+
+[[files]]
+path = "bm_pulse.3a.ckt"
+sha256 = "40c0248bac2f7ab271fcba133d88db411deaf65fe2c2b8850ccedea62c7559db"
+
+[[files]]
+path = "bm_pulse.4.ckt"
+sha256 = "d92c1bb28080f62b26d7dd0522e6a3bfaccc574a2ba97e81a569276a37f4b269"
+
+[[files]]
+path = "bm_pulse.4a.ckt"
+sha256 = "a99c15a8841b5d4dead992ade230e42a239089fe6b86f534fd8ebe9037d2c1aa"
+
+[[files]]
+path = "bm_pulse.4b.ckt"
+sha256 = "ac5802032a33b40ad3dbae8759a83f69b8410d27ddb70e52990ed4181952067a"
+
+[[files]]
+path = "bm_pwl.1.ckt"
+sha256 = "f71c820e1837d341cad59034d48543642be1a76e78be6d9a8b934c7372fc3dcb"
+
+[[files]]
+path = "bm_pwl.2.ckt"
+sha256 = "aedcf081bdbdb45c89308fb1e067a353223b78a48fc6e2d5aa247f0b86f26d5a"
+
+[[files]]
+path = "bm_pwl.3.ckt"
+sha256 = "57fa38370cb4aaeff4a0f1c80ea76c5d7ae129c5b281c91f52cf8c376a74c89c"
+
+[[files]]
+path = "bm_pwl.4.ckt"
+sha256 = "337a9114a7363ee08af2d7a3db4a5d8c448762a827a91e7788fb8c093726abe9"
+
+[[files]]
+path = "bm_pwl.5.ckt"
+sha256 = "005114688951f47d5754f7fee8d86ca664dcaf3eb4e56ba1ec83d6d7827fdd7a"
+
+[[files]]
+path = "bm_sffm.1.ckt"
+sha256 = "a77783acc3ea1060c8cfc42d529803f0f47e421c000740c9fa14eee5a028f767"
+
+[[files]]
+path = "bm_sffm.2.ckt"
+sha256 = "48c01f952450b755c32db99543edf77f2d99cdb8ec56c51d07c6f5d69dcc7c03"
+
+[[files]]
+path = "bm_sffm.3.ckt"
+sha256 = "a293ea12bec60ae64eb189113548e9e6aba25cb97fb4708f19bac3109c3b5d30"
+
+[[files]]
+path = "bm_sffm.4.ckt"
+sha256 = "407003ce58e1af0bd5afdb95bc7b4d27fda55aa35f58f40fd48e889b63ad4146"
+
+[[files]]
+path = "bm_sffm.5.ckt"
+sha256 = "4393f5050162c4faaffd306458d5d1d0a1cb2e5e784c00f1128d8941e5b86abd"
+
+[[files]]
+path = "bm_sin.1.ckt"
+sha256 = "dd8e563230205bf455b63181b5d73f8fe85698fd21c6d66ede5154540056e396"
+
+[[files]]
+path = "bm_sin.2.ckt"
+sha256 = "385c35c2469f478e33cd8d9365da853731c018021b295d2ce7f1b19f053d34cd"
+
+[[files]]
+path = "bm_sin.3.ckt"
+sha256 = "0a840f539ebec9614981ae4d95d8af0d0b959b34e6c6a701a70670030e083400"
+
+[[files]]
+path = "bm_sin.4.ckt"
+sha256 = "78c0fd863748b1b6515e7c8e325068faf39cd7a84b313eae63bc1643a6604497"
+
+[[files]]
+path = "bm_sin.5.ckt"
+sha256 = "1082f4ceada706cd36e21a407541cbf43888bbdb095b815327f3e102b0222426"
+
+[[files]]
+path = "bm_sin.6.ckt"
+sha256 = "91ad44aa8bc06489f3dba6b2e6b682683ed8ae74156108db3e41c76cd51a718a"
+
+[[files]]
+path = "bm_sin.7.ckt"
+sha256 = "5ae5d813bf9608bd4b0f6e43223380fcba0fe99aa58b3f7eb7d4cc7a9ceb7a04"
+
+[[files]]
+path = "bm_sin.8.ckt"
+sha256 = "3c2e5416ecb4187f5763522da8d110733842f93a8163eca3ef624f16f5cf787e"
+
+[[files]]
+path = "bm_sin.9.ckt"
+sha256 = "6fd4c1a26ec4d17cad4bea21043263876fdd23a467f63aace8b92239c0c4b1e8"
+
+[[files]]
+path = "bm_table.1.1.ckt"
+sha256 = "aa5ab64c5fbf819a517c8e0e552beaf6555dff08f22e4f3d98a0d8d2dd8577e9"
+
+[[files]]
+path = "bm_table.2.1.ckt"
+sha256 = "be77f8698177aac35be4f2e31b630f1f0e62758367c18f05a54816ba7f8fc1df"
+
+[[files]]
+path = "bm_table.2.2.ckt"
+sha256 = "bb8a4b593172ede738e91b47a950d08a2ba0291f7849af34b9cf55454d159cb7"
+
+[[files]]
+path = "bm_table.2.3.ckt"
+sha256 = "4f153243362bdda8e6e6530d85008ec23f86d37bccc344d41b73d37ca74001ef"
+
+[[files]]
+path = "bm_table.2.4.ckt"
+sha256 = "60b44afa300a06e227cb225a3f93d2a528905b66794bf0685f70d57a0dabc4fb"
+
+[[files]]
+path = "bm_table.3.1.ckt"
+sha256 = "6ab15da76a47fd89196356748c1eaf41536c54e76bf8a8a22de63456bb2ffd68"
+
+[[files]]
+path = "bm_table.3.2.ckt"
+sha256 = "ce1f805e56077ec20180e5993547379086da54c5c613aa662032ed2955193e0b"
+
+[[files]]
+path = "bm_table.3.3.ckt"
+sha256 = "ab76fee4fea440fc16382d3f1bbae16ff8aa2cf97957659138e04f29445319b7"
+
+[[files]]
+path = "bm_table.error1.ckt"
+sha256 = "0c572f03beb03c19106637f73613b485eab9077ac3498434c15e4132f2e5d91f"
+
+[[files]]
+path = "bm_tanh.1.ckt"
+sha256 = "1405da6e550bdbfefe35402365745eb9af3c577cbd2537939c0bdb12eabf891c"
+
+[[files]]
+path = "bm_tanh.2.ckt"
+sha256 = "76d3ba7046384e35368a53b7b7f42e0e86abf220c7b33497088d499969eefaa4"
+
+[[files]]
+path = "bmm_cap.1.ckt"
+sha256 = "46f277c4a7097457f134191336078ef7b24f08e03be0339aa6025a6c498f9e73"
+
+[[files]]
+path = "bmm_cap.2.ckt"
+sha256 = "90c6384790e6106e40c9932bc5ba24b6f7d8932168dd4fc3d19fbc49cb5e42a0"
+
+[[files]]
+path = "bmm_cap.3.ckt"
+sha256 = "463173040159722b3d615ebc9fd1d300e924f295a535b94f7907d85bb3f1f0be"
+
+[[files]]
+path = "bmm_cap.4.ckt"
+sha256 = "9b6cf03f79fe7d23c0062ed241f59f02b584366a718c39ae926b1b043d072e50"
+
+[[files]]
+path = "bmm_cap.5.ckt"
+sha256 = "5c71005ac51a969cc7075a9b4357be5b105224d0e675639917470f8c2b1fd163"
+
+[[files]]
+path = "bmm_res.1.ckt"
+sha256 = "70c9b6b05723e0d0db87fe854f797ca70610b06994e9f960db06183b18e31fb4"
+
+[[files]]
+path = "bmm_res.1p.ckt"
+sha256 = "fb3bdf46a3581367ec872354ca10580554c6dfa4aded6c981c3eae000d12ce8a"
+
+[[files]]
+path = "bmm_res.2.ckt"
+sha256 = "020e40d9bde677541199386036f336e9d4f3a961b99df34024af748a49c16011"
+
+[[files]]
+path = "bmm_res.2p.ckt"
+sha256 = "cf7416093d1106cac9f1a607540ee545b043f881bd5422ea02c7bb85b9a4d0a3"
+
+[[files]]
+path = "bmm_res.3.ckt"
+sha256 = "9efd32886c03b1bd9c7a128c9634068739ba2b78b1afb6e6788acd5220e5b7e0"
+
+[[files]]
+path = "bmm_res.3p.ckt"
+sha256 = "36a2dde824553a97f39482428592b376dbf883b5b39fc33d1f7a4a2a9ce055e8"
+
+[[files]]
+path = "bmm_res.4.ckt"
+sha256 = "0ec330618598821fbc1825db573642217a83e7614f46b53ab7f85680409271b7"
+
+[[files]]
+path = "bmm_res.4p.ckt"
+sha256 = "022d1467d2b1c9afad070c9a0afc7685a27262406c0f1b23b92698823d6fabdd"
+
+[[files]]
+path = "bmm_res.5.ckt"
+sha256 = "600a1a5ab6d763fde77a1744e436121bf32a7aeed7194c24cf38f1f39bfd6540"
+
+[[files]]
+path = "bmm_res.5p.ckt"
+sha256 = "a51acb4f4927e578bbb9d71e4bd11ee8460040bb499e901978ba696f68e80987"
+
+[[files]]
+path = "c.ckt"
+sha256 = "4487ffc126262bfea042ee29b91f6eb731eb54f533feaf4faca07040aef6f860"
+
+[[files]]
+path = "c_delete.2.ckt"
+sha256 = "17a9dfa9da92285172970f46003800ab94251db805ea07451811492cfcd12cd0"
+
+[[files]]
+path = "c_delete.3.ckt"
+sha256 = "7e8dca88980099364a13d7d90b8e670067061502225601b5d8c0e999728e126b"
+
+[[files]]
+path = "c_delete.4.ckt"
+sha256 = "0b2c725d1dccee911b4871e8da0a07ab4513ec4f66be0e0f167605a3d207dc60"
+
+[[files]]
+path = "c_delete.5.ckt"
+sha256 = "3ecb4c7b630a0f55def04e10c3864bfee0691a4ac424cf6940c60dd8f507835f"
+
+[[files]]
+path = "c_delete.6.ckt"
+sha256 = "9de2f489090e5eb81ca7179c00148616e611a98c588efecb6b9f2976344807ce"
+
+[[files]]
+path = "c_delete.7.ckt"
+sha256 = "fa2a813191e327874b16f44879732e5da25fb750abc1cd7d91764160c592966f"
+
+[[files]]
+path = "c_delete.ckt"
+sha256 = "2c5bbbf056f2c9b945814fdefdc9a49ced1cf67bbbee0e8a22bcffc1bf8f8a4d"
+
+[[files]]
+path = "c_genrat.1.ckt"
+sha256 = "ca109c4e619282679993267a5823f1d9d963414b5a71c940caab53bc7e6303bc"
+
+[[files]]
+path = "c_global.0.ckt"
+sha256 = "0a2ac61b5ba8d64f0fbd58c89dc868a8d5f8bb26f5969a698f8d070f7e877ad3"
+
+[[files]]
+path = "c_global.1.ckt"
+sha256 = "bad87420057a3ab61e6808c0e75bd9a20bdfd496dd428a50f82fe04e95ac9abe"
+
+[[files]]
+path = "c_lib.1.ckt"
+sha256 = "a5594bf3c791c29855732efd8cf34735b9aec7885ac0856cdfb178a34ee2145f"
+
+[[files]]
+path = "c_measure.1.ckt"
+sha256 = "d190a92afbb13db7ef0b580d1c42cdee600b6c0024b26d9c0d86aade158d22b5"
+
+[[files]]
+path = "c_measure.1s.ckt"
+sha256 = "d3d6baebcab331cb8ca2dab8df6f5baec22d27c9716be0a3f932873f7e925e17"
+
+[[files]]
+path = "c_measure.2.ckt"
+sha256 = "09f867019721aecb549735977522a62594bd823ae327db2fcc47cf406f2c3c13"
+
+[[files]]
+path = "c_measure.2s.ckt"
+sha256 = "aeb077d5fcf65b1211f004cea9cbd899c05527272eaabb17a7b4df71bd98a97a"
+
+[[files]]
+path = "c_modify.ckt"
+sha256 = "c071cf84a6fe3c38282322465063f0e445114196d3cc16981e97354e264b71f9"
+
+[[files]]
+path = "cc.ckt"
+sha256 = "d7e55eb5d7b980a9574600f6c44f3462fc4d316367a1ca8f08305c1f283598a7"
+
+[[files]]
+path = "charge-cons.ckt"
+sha256 = "986a1d466980d252678b0c17fdc3653c4deac1569ec4524b8bfca9dd69ddd31d"
+
+[[files]]
+path = "charge-cons2.ckt"
+sha256 = "db94ddb49e65889192b9e66f351fbd427cf2fb5f40ec3e3e8f55536389dfe7dd"
+
+[[files]]
+path = "charge-cons3.ckt"
+sha256 = "a5070ee7bd603bfc1a1b337dcba02ef49fc9fc4d09b5d10b63ca5e978adf3ea1"
+
+[[files]]
+path = "current.ckt"
+sha256 = "4f506716f9ebcf2b1677a7df78a5ddac73ed1c80bc6373376eb4f6146c9f44e5"
+
+[[files]]
+path = "d_bjt-diffpair-ccs.ckt"
+sha256 = "7060377579bdb6bfef87225ee4710b81744462af1548ccff755adf061f14f37c"
+
+[[files]]
+path = "d_bjt-diffpair-cjc.ckt"
+sha256 = "9477526c7c36e85a29f71349c0f858bb5faaa23127b27d0d7c16741963fb7dc6"
+
+[[files]]
+path = "d_bjt-diffpair-dc.ckt"
+sha256 = "059a78c442042d765ecd1342b1dcacebc3710e9a02b63ee554b68b117bb62894"
+
+[[files]]
+path = "d_bjt-diffpair-nocap.ckt"
+sha256 = "bf5eea1d5445a3accf2efce5f17f641c7ff6a94d4fcc8d6e8e9c9846d418a1a4"
+
+[[files]]
+path = "d_bjt-diffpair-tf.ckt"
+sha256 = "f8cde99b71d9978c5216dffbc9dfc036c8bdf7b37f1c9949fa9835e6eb741213"
+
+[[files]]
+path = "d_bjt-diffpair-tr.ckt"
+sha256 = "e9d51fed706ad57c673ed03c9ce456590fdada2a0468aee99f4d6d282fe110e4"
+
+[[files]]
+path = "d_bjt-diffpair-tran.ckt"
+sha256 = "f142fa0c6378f80666343a83c8582cca065ed7ad5d49dd3d9e5cd88e7474301e"
+
+[[files]]
+path = "d_bjt-pnp.ckt"
+sha256 = "ede336b7adf8a8b4a19b7e03f0630ecaeaf72de4e03ecd700e2ec60dcb31816a"
+
+[[files]]
+path = "d_bjt-rca3040.ckt"
+sha256 = "7984e7edc3b5f8c896cd3daaad5cb898c77c87cd97a6b7677be09d139b5d5492"
+
+[[files]]
+path = "d_bjt-rtlinv.ckt"
+sha256 = "48b7f67014d43f0c9987ebbc9b349cf53908cc51426d784c4be6db3397fd6e2d"
+
+[[files]]
+path = "d_bjt-schmitt-bypass.ckt"
+sha256 = "b59ac6240f1244088ec087d300e5c32adc1961c8dcdd21e0eccfeabe536736c4"
+
+[[files]]
+path = "d_bjt-schmitt-nobypass.ckt"
+sha256 = "ec6efed82593b525b1661173b3a11dbec4880449968389ff86424051d42274b5"
+
+[[files]]
+path = "d_bjt-schmitt-stat.ckt"
+sha256 = "09b5f84159635a3a919d2dd30aae89f5979e261d75be2b81d7068803e1acc280"
+
+[[files]]
+path = "d_bjt.2.ckt"
+sha256 = "54282f406659e4e415b755bc13b0d2bd9b5b08fdb5854feb37bf1a3add3403f7"
+
+[[files]]
+path = "d_bjt.ckt"
+sha256 = "539cbefec69a732485dab6a88a847f3476fc0abecdc25c7b650a12fd7bd3e9f7"
+
+[[files]]
+path = "d_bjt.error1.ckt"
+sha256 = "f90faaa84e5d6d4052c39d94724a9998b8840d128a9cd4c59f50df9d503e1763"
+
+[[files]]
+path = "d_cap.1.ckt"
+sha256 = "2c0864497272439baa44213381271915107ccd9f8c47354df2e4b9c3028a1608"
+
+[[files]]
+path = "d_cap.2.ckt"
+sha256 = "80c0e5da6e55333b26cd84a5c73d191fdf1703a7660411d9652266e30f3da1a5"
+
+[[files]]
+path = "d_cap.3.ckt"
+sha256 = "1814f7235609ff3e189d70b5e4937b6960589af119310f6f911943dd2c3ef416"
+
+[[files]]
+path = "d_cap.3a.ckt"
+sha256 = "f76b94d7f1333aa048534d532580eb21a1fb0d8344568c877d3758e90dbfd6a3"
+
+[[files]]
+path = "d_cap.4.ckt"
+sha256 = "b9abe73e6acf3af4ceefefaa42377c4db57065415b98e7ff475783b1870d5347"
+
+[[files]]
+path = "d_cap.5.ckt"
+sha256 = "f04cf4c14589628cf2dcbfad905fd7ece9b3b06287b668284b73dc4f56db1cff"
+
+[[files]]
+path = "d_cap.6.ckt"
+sha256 = "2e3b871ec43fdca626cd09b6e98f72dbdfe25b1aca33b72c170d60e77f1d7632"
+
+[[files]]
+path = "d_cap.ic1.ckt"
+sha256 = "65199506e3a8b9bd05b3842cc9ef180308d0d02ba2e9857e89f7f1f8c32c3c84"
+
+[[files]]
+path = "d_cap.ic2.ckt"
+sha256 = "149972a17d9852c16ab109334d054a7b6e25c00f8f1218c0cd981a163aa00475"
+
+[[files]]
+path = "d_cap.ic4.ckt"
+sha256 = "ac4836ec0ab87085fbb493ec94ead6f71b7e9dbf8d84e68530fc9db43a1dc7ce"
+
+[[files]]
+path = "d_cccs.1.ckt"
+sha256 = "87e7a7e164e9cdac5891b12fd038c06945043f5455a79fb31d26c97bc0463e05"
+
+[[files]]
+path = "d_cccs.2.ckt"
+sha256 = "276f8ece20dc9cc29c9bb7e42c1369995b555419619906310701c6cf2da412d0"
+
+[[files]]
+path = "d_cccs.3.ckt"
+sha256 = "55f27518e6df425bfcd954a7913db63202c44c79e973d247fd53fb9f6c98f689"
+
+[[files]]
+path = "d_cccs.4.ckt"
+sha256 = "2449dfadc0245dbdfcc509f86c5039bbd8c622467de48fddea585610e6d5cd8a"
+
+[[files]]
+path = "d_cccs.5.ckt"
+sha256 = "d2a739d31b2ca16683851c2fd77d18e3cb8638f0e7e79699a9a13c1f28745c28"
+
+[[files]]
+path = "d_cccs.6.ckt"
+sha256 = "6f96158aee19023d8576b76d3deae36631ae6b677cf4866b49324f9c211c9ffb"
+
+[[files]]
+path = "d_ccvs.1.ckt"
+sha256 = "19a5d8fe9376126c0e14cef11663372ea1a2035f3aa90d026b676b81d9a6466f"
+
+[[files]]
+path = "d_ccvs.2.ckt"
+sha256 = "22f8447c05e88be375d283d73a1401c3a8629878b5f4a3db3b65a3b56ff418f4"
+
+[[files]]
+path = "d_ccvs.3.ckt"
+sha256 = "a1e875bc2ca84a131c091124b5f66d10d744dc66d6f86b774eb8f7faf2f40ab9"
+
+[[files]]
+path = "d_coil.1.ckt"
+sha256 = "45bf5fdc96b7985a744455ff7c3222478665e3db487bbcfedc5c7efa8297fc3c"
+
+[[files]]
+path = "d_coil.1a.ckt"
+sha256 = "545b00a37a45d5bf5158a15305c0f0be0114b405d43f20b20608c670f892a367"
+
+[[files]]
+path = "d_coil.1b.ckt"
+sha256 = "c182041376545fa7a0c5120e83ec819ce8d2273a40b00ab282219c9ae259b9ae"
+
+[[files]]
+path = "d_coil.1c.ckt"
+sha256 = "65865482123d004463a16a7b0d20fec3e5ba1e057f921b7c49260b1c64118106"
+
+[[files]]
+path = "d_coil.1d.ckt"
+sha256 = "6a38bb524b6211fc342c3e80d37bfb91062bc39c5d1330c61ab5920d26c2c7df"
+
+[[files]]
+path = "d_coil.1e.ckt"
+sha256 = "4a62a5d261a8024067188094c031a4247058250cd2b2ee077ac4b766757e336c"
+
+[[files]]
+path = "d_coil.2.ckt"
+sha256 = "ce0bc256f2ce6804f3d3ef86fc0f9f67645f7b31b54eebd32b625c5f51d18cb0"
+
+[[files]]
+path = "d_coil.3.ckt"
+sha256 = "d7ed482c739483343fa84abc217f1039e539e9724cf9ac044b076d2893c41d12"
+
+[[files]]
+path = "d_coil.4.ckt"
+sha256 = "5994120b1ee19b1b9f767899e43c1fb7342845b4b9b25adb5a798c812c07ef7c"
+
+[[files]]
+path = "d_coil.5.ckt"
+sha256 = "214d9753601d41d9e7314b13b5e0a3ced8c4878c78935d8d5a18f4e584fe4796"
+
+[[files]]
+path = "d_coil.5.spice"
+sha256 = "486998c825656627caf397d30268bb90bef0d48647a26f1c6eb4afa199e54abe"
+
+[[files]]
+path = "d_coil.error1.ckt"
+sha256 = "7412f3361fe719f508046cbce525a7ef1c6755e18ba19307398f3b47652abeae"
+
+[[files]]
+path = "d_coil.error2.ckt"
+sha256 = "b25e06703d9f16126f6759d05633f5eaee5a640bc38113cc60b43a20e8cd075c"
+
+[[files]]
+path = "d_coil.error3.ckt"
+sha256 = "4a81005cb09f7020cd2c3cc32b2657c3146217a024f7c3a0845f29476094610d"
+
+[[files]]
+path = "d_coil.error4.ckt"
+sha256 = "458fdbce7bbf5e0e7e6133a57d08767bd2dcb7ccaf91dfb72e7b55880cd90ac9"
+
+[[files]]
+path = "d_coil.error5.ckt"
+sha256 = "0ab49c542d22c8dd4e7aed063f19a7b38a73bc64313a68844dc2b09c988b1771"
+
+[[files]]
+path = "d_coil.m3.ckt"
+sha256 = "7135032f223b0dcacf12308be3e030724922ca2509b4d32c31127925ad03bae2"
+
+[[files]]
+path = "d_coil.m3a.ckt"
+sha256 = "da5295483aa5723adebe6deda3a0415c7518c07a457c1a35b3309b9e1e916ea0"
+
+[[files]]
+path = "d_coil.m3r.ckt"
+sha256 = "e9d7566b4b51aa047540679b54484c8b7f1e2dfd344b4cfb053deaa118ea4e84"
+
+[[files]]
+path = "d_coil.ports0.ckt"
+sha256 = "a4cac2c57ac9f3704ef6bf01f758123a4f960e5e55a91b26efb762d56e4b6174"
+
+[[files]]
+path = "d_coil.ports0g.ckt"
+sha256 = "d5708d6d24c5bdbaa038f03e1f1192ac879beefbd62562b3fe5e5b981a992d4b"
+
+[[files]]
+path = "d_coil.ports1.ckt"
+sha256 = "76664ea3a61a602738fd49e50e0e6a379f15e437ca0b61161fe37db4fa93631d"
+
+[[files]]
+path = "d_diode.1.ckt"
+sha256 = "f84c531a2e0b4ef201f1cef5d85279b360d5fd20d17d3deb91563581a9371055"
+
+[[files]]
+path = "d_diode.10.ckt"
+sha256 = "c039a1ba579589bba9788cd11245b675ec5884dedf17d58a5d3c186c95ec7a65"
+
+[[files]]
+path = "d_diode.10a.ckt"
+sha256 = "30cb2df92977563778724431a89f43bf36c615b2d77ac673e0d7c15f9f6e1be8"
+
+[[files]]
+path = "d_diode.11.ckt"
+sha256 = "cc8754ebba0fe5aaac88d4632a707bab07b387316d35396805d2f46bcb717c01"
+
+[[files]]
+path = "d_diode.11a.ckt"
+sha256 = "4f1404ded453d186244b412f455e42d4941e43580d237fb611970d32311e9768"
+
+[[files]]
+path = "d_diode.11b.ckt"
+sha256 = "b6442c8fdde4b8c817ed5870862620b347c467bc809d084ac9b30e329dda30d9"
+
+[[files]]
+path = "d_diode.11c.ckt"
+sha256 = "c1249a0de6a0d9fca94294fe785cef18e2974a913b01eb72d22adaf0b4a5a749"
+
+[[files]]
+path = "d_diode.11d.ckt"
+sha256 = "3f12ab6fa0bb9734a3d7c8069b455f62a813e34a767ad839096e7949e9a5b88b"
+
+[[files]]
+path = "d_diode.12.ckt"
+sha256 = "2fd493ea5fedd5b1f043f8d0fdaa0e3ceae2ed3e056fb9126aebfb85e9fd80f8"
+
+[[files]]
+path = "d_diode.2.ckt"
+sha256 = "caa292689880cd5247690a6f4ca0b36334606990ceb641a70af6a6d9160a9850"
+
+[[files]]
+path = "d_diode.3.ckt"
+sha256 = "8c152b7c3ff5221f9492c00c96bb8400adbf4b08a5aff2764313dca1decb132a"
+
+[[files]]
+path = "d_diode.4.ckt"
+sha256 = "894c45611e60b2bd0e15fb4e222091e66bce3c3fcdfa6339d43f6d72e4446a7e"
+
+[[files]]
+path = "d_diode.5.ckt"
+sha256 = "d69c1b87f81ea43b7b4a87c8ef018f874422699d3e9fd91809acc0c779815d58"
+
+[[files]]
+path = "d_diode.6.ckt"
+sha256 = "d2d7df0b8050008df98e6a8410433c6ef346d9851371c2032edaeb0c9c43dd48"
+
+[[files]]
+path = "d_diode.7.ckt"
+sha256 = "11980b396c683bf76489731c0708d70b8d66dcc5a0695bb76d87198a597ce941"
+
+[[files]]
+path = "d_diode.8.ckt"
+sha256 = "949ecf2c2218a917ae6bc5ca6df73478383b4e9d36cd902019bbf1a576e3f42b"
+
+[[files]]
+path = "d_diode.9.ckt"
+sha256 = "bb6ae42545bc7e180efaf5aec4b9cf7495a6d2ec2fc492b66189eed5bf9c9063"
+
+[[files]]
+path = "d_diode.9m.ckt"
+sha256 = "27cf72379da68ef6c5229699e8405bb053bcbb43fb78cf60d4234e0dac4a2314"
+
+[[files]]
+path = "d_diode.error1.ckt"
+sha256 = "6710fca43444b6efecc681cb3b22bcfa547822d9e66698c136596f5e78b59ff3"
+
+[[files]]
+path = "d_logic.1.ckt"
+sha256 = "c382162ee6116fc1004b64c83bdaef034924e29a38ce2cfd2165bae5f26ab87a"
+
+[[files]]
+path = "d_logic.2.ckt"
+sha256 = "4da7d1c0a1a37c338dc404b07f4dfaffb727c9b659ac8e8bf40be1aaea369c38"
+
+[[files]]
+path = "d_logic.3.ckt"
+sha256 = "3af6abe8da4b0054b3fa8869efb2c49ce39857cee63395ed65fd38cd3408ba2e"
+
+[[files]]
+path = "d_logic.4.ckt"
+sha256 = "4c1221438b8074e79640007bfa03811987668cc608ddd0e807d50e301285f1d3"
+
+[[files]]
+path = "d_logic.5.ckt"
+sha256 = "cb480c48e2472e15304c42b00f21f336e9014fd439ae35aca4af314626e1a164"
+
+[[files]]
+path = "d_logic.6.ckt"
+sha256 = "60b3ae430c044db95b6b7afd96123f3743007eeecf399fd464cc74447b71ae70"
+
+[[files]]
+path = "d_logic.7.ckt"
+sha256 = "3f07cbfb6272a1509aa7179673ed0137da46c63025c7859dd2d4ab577f7f389c"
+
+[[files]]
+path = "d_logic.error1.ckt"
+sha256 = "f6d57a90e3495379c013ef11bce496f2ee449f86ff4baeeaf550f288cd047fb1"
+
+[[files]]
+path = "d_logic_nand-dc.ckt"
+sha256 = "fdf4451244afa52441fd387e1fcb2c4fa99a2cac2456f88baadba27bc62e5e6d"
+
+[[files]]
+path = "d_logic_tr_ab1.ckt"
+sha256 = "dd03e1887ff12e1a46671f5da8d85cf827838289f7f13fb17a0497205e803b87"
+
+[[files]]
+path = "d_logic_tr_ab2.ckt"
+sha256 = "895947c1a0ea7c892d8e56bb9a24a5df2f3b9e2ccd9573918afe8cd78f0c1368"
+
+[[files]]
+path = "d_logic_tr_an1.ckt"
+sha256 = "8267d4b8a9a0522dcaa9be4a259a372f34500c439c98d995bd4f0461613a3f65"
+
+[[files]]
+path = "d_logic_tr_an2.ckt"
+sha256 = "0b1b8337d76dd8f741d289f01f8ac9d50e603177329fa75c222f4eda3a935504"
+
+[[files]]
+path = "d_logic_tr_db1.ckt"
+sha256 = "134e56c9cc9f1408f113493cad4c08cf36c95109152c0a1473290d2f3f1e58e8"
+
+[[files]]
+path = "d_logic_tr_db2.ckt"
+sha256 = "266651148f15522ee830e92bae62bc9ba0276bc0552db26f607f5a9a03f77616"
+
+[[files]]
+path = "d_logic_tr_dn1.ckt"
+sha256 = "26b1cbc0fe61b9aa75b64d0b0b371939a6277966d2ff2fb4a7053e71aac6b25d"
+
+[[files]]
+path = "d_logic_tr_dn2.ckt"
+sha256 = "cca06604e215e64e237be0c8dcae3d7987a713c1f73470374a085bf241291cd8"
+
+[[files]]
+path = "d_logic_tr_mb1a.ckt"
+sha256 = "b5e9dd49e69339e7cad71b934ea673873db411b3e15790a0e546d8970ce2ff57"
+
+[[files]]
+path = "d_logic_tr_mb1b.ckt"
+sha256 = "3b1a29a4ed52dca11667ccb0a51a53537f1b314b2d0d20cec589564ecbd0e8b9"
+
+[[files]]
+path = "d_logic_tr_mb2a.ckt"
+sha256 = "78e4b4b3ef9d2e38f78f1c67f55cb7d5fb2dc6e510bc1f685fd917ed9767a7fc"
+
+[[files]]
+path = "d_logic_tr_mb2b.ckt"
+sha256 = "1370475e973f2ff252d432c7feefdba42a89a103eaf44022407aee6ce151c46c"
+
+[[files]]
+path = "d_logic_tr_mn1a.ckt"
+sha256 = "1dac224ad2ef2d902f8071a6b36eba7cd3cf9bb7ec7babfe685490cfb99b7d57"
+
+[[files]]
+path = "d_logic_tr_mn1b.ckt"
+sha256 = "1f08e17d32fdde41b5785b09a0574122df8f57b9e93e2de9fd88574d69644731"
+
+[[files]]
+path = "d_logic_tr_mn2a.ckt"
+sha256 = "eb1a81611db00c6fbaf3a5e591ac845b76567efd77ae8a6f7716d3d35aa2bc35"
+
+[[files]]
+path = "d_logic_tr_mn2b.ckt"
+sha256 = "ecda480d2f39a9788793efb195bcf04456f44ca5bc1e8a53bfa51ae5f06f2083"
+
+[[files]]
+path = "d_macro.1.ckt"
+sha256 = "1a8bb459122037e65390da8e60316c5ac438d89561f8654352f0a9433c528833"
+
+[[files]]
+path = "d_mos.error1.ckt"
+sha256 = "6297c8b51fc7e045ab636ed01068f49b2cffad30ae4f0c7fe76c096355d97229"
+
+[[files]]
+path = "d_mos.error2.ckt"
+sha256 = "1efcf0f4ff4df64ecf8ebcc6a36bdb8e8152a65f0d3580deecea6972824f79e7"
+
+[[files]]
+path = "d_mos.error3.ckt"
+sha256 = "d5c7979e0a619647a046770dbc66ad9c6798d19414aed1a0b6f81652bd204930"
+
+[[files]]
+path = "d_mos.error4.ckt"
+sha256 = "4b2fabaaad4c0b87e87702f3a05de09db7cb46c53f815df7643e5726299b8792"
+
+[[files]]
+path = "d_mos.swp0.ckt"
+sha256 = "37e8edcaeaf8d42e2c4840b5ddfb7edfb84e7be328d5601e9a69303146b79a18"
+
+[[files]]
+path = "d_mos.swp1.ckt"
+sha256 = "821f5b286c1c3fbe79e144f9c94bea196675b813efb28d97dc47aa9ebc75ac85"
+
+[[files]]
+path = "d_mos1.bin1.ckt"
+sha256 = "58b2e5efe145878c33f70e77fcf378d3fff5a9b0dd2c421a90de301db6b7ab6b"
+
+[[files]]
+path = "d_mos1.bin2.ckt"
+sha256 = "812bb2cd37e24a3508e7ec64017742318d252dc9ab513133ea534a7de9d0ce4e"
+
+[[files]]
+path = "d_mos1.bin3.ckt"
+sha256 = "aaa7bcdfa0592e7ff6dcc0e59eb95f83cc2a2f4dde7004490331a68ddeb4f6d0"
+
+[[files]]
+path = "d_mos1.inv.bug.ckt"
+sha256 = "563fbe150435e1389d77a809f6df1e9a2c4b8018975bf654fb9ab60b57b4fcd8"
+
+[[files]]
+path = "d_mos1.inv1.ckt"
+sha256 = "e832b2a4c0099a68c035342e81e780256fa8369239fcd61c0fd1ad5a5a249de5"
+
+[[files]]
+path = "d_mos1.inv2.ckt"
+sha256 = "d08023ad3253901859c101badae59fe295fa2a60df63510c031c4e8ab960e1e9"
+
+[[files]]
+path = "d_mos1.inv3.ckt"
+sha256 = "a0f6da0b60fb9a33408e0b2da9d2df21445b86eaaaa3eb4c51dc3daa681d71f3"
+
+[[files]]
+path = "d_mos1.lin1.ckt"
+sha256 = "5099e348da02425e434c7f8a2f2cfea636f2366923cb25a85f870dcaff96aaee"
+
+[[files]]
+path = "d_mos1.lin1.late.ckt"
+sha256 = "f8cbb526e97df4fdc32d84c917611906fd72e109655257a23e2f0ec63d3bfbd2"
+
+[[files]]
+path = "d_mos1.lin1.none.ckt"
+sha256 = "71d4d07b3c98690a6a9acd4446453523acbd69b7bafd25f698b96a9268b6f0d1"
+
+[[files]]
+path = "d_mos1.lin1.spice"
+sha256 = "3e67067987e41ac8e938e4bb3929bbb24554dc6d2d722da37c8b8d842f0ae1f2"
+
+[[files]]
+path = "d_mos1.lin2.ckt"
+sha256 = "3698b242c9e26ea6ee0f07831129aee43937b3cfd87b2881262422323baa2a90"
+
+[[files]]
+path = "d_mos1.lin3.ckt"
+sha256 = "02fce13ccb04ad615a02b1e03eb03b855214ffc95b35cd056709d274520d9801"
+
+[[files]]
+path = "d_mos1.lin4.ckt"
+sha256 = "57b11001c55f5c51eb6c4fbe78eaea694874c567b051a1f73e3f9e78c789c398"
+
+[[files]]
+path = "d_mos1.lin5.ckt"
+sha256 = "4acedecfa70eff24a5aefe66637c6f34368507ec2efa4da51e5cccceaf72a1e7"
+
+[[files]]
+path = "d_mos1.n+1.ckt"
+sha256 = "91d1be28a94c2a5f687280cfae567ec4a75ce751fc67e587523feb28904ccdea"
+
+[[files]]
+path = "d_mos1.n-1.ckt"
+sha256 = "29a4827fdf528d22d98cf6fa14127c3929a3cb029a00c501c9f17a6087945e53"
+
+[[files]]
+path = "d_mos1.n0.ckt"
+sha256 = "10967ca0e62af3622e4209a3b30b761471de5b2ee6d9b27222730906ee0725b1"
+
+[[files]]
+path = "d_mos1.nand1.ckt"
+sha256 = "183f57f24707d2597f83396a777896e336a17a4ec8a13027f89c5029440d8300"
+
+[[files]]
+path = "d_mos1.nand2.ckt"
+sha256 = "b3ec686b6770d88c0959d507a0328af6801973bfb97db3e35cba8f5d073d1cca"
+
+[[files]]
+path = "d_mos1.nand3.ckt"
+sha256 = "c0952469a25325cec6f668ab5874b225997e5257ec0345bb5a45326054ff919f"
+
+[[files]]
+path = "d_mos1.p+1.ckt"
+sha256 = "c83eff746c8ba6e0e72cbbf0c070b65d2a79f4125ea2fb73affea4be164d33f5"
+
+[[files]]
+path = "d_mos1.p-1.ckt"
+sha256 = "c917039030fb44390c68fa792704de2ac313128cb76256da18d0adcedecf3fce"
+
+[[files]]
+path = "d_mos1.p0.ckt"
+sha256 = "ff53f2837e84062f24125b8203e210301fb39041cd34810fcd90af276f54024b"
+
+[[files]]
+path = "d_mos1.plin.ckt"
+sha256 = "4c9e85cd82188a560a2e3ccdebdf2ceedd8ca79a14abc8133d0ff8aecc9febea"
+
+[[files]]
+path = "d_mos1.psat1.ckt"
+sha256 = "9860febb8eb388af553e7c3fca407a691129efd119e921357bc6dc1c3f0b6495"
+
+[[files]]
+path = "d_mos1.psat2.ckt"
+sha256 = "5a7e62b27d8892bd1d6f3758a19c3bf7bf61e4216d080cc16b3c5c717cfd909c"
+
+[[files]]
+path = "d_mos1.psat3.ckt"
+sha256 = "2ff12154b40e54a0b187ca89d79f09ca3d10ee5870e8aba609757773c972e3ff"
+
+[[files]]
+path = "d_mos1.sat1.ckt"
+sha256 = "600e35cf01457de5f898f5fbfa88aa1f79dd85667f2be78012029eba217ffc40"
+
+[[files]]
+path = "d_mos1.sat2.ckt"
+sha256 = "f465c55ee3f30059c5cfe71a2bb90357f0af0cce0565e17e3238b50f2571f15b"
+
+[[files]]
+path = "d_mos1.sat2.spice"
+sha256 = "1c8cdc4392eec034e5f26597caa6139d492b074a9e1379bdb9ace4a8aaabcde8"
+
+[[files]]
+path = "d_mos1.sat3.ckt"
+sha256 = "a79c688a33338b30334dd0266b0239b8efea9b5b107b3425329d8919237c68c5"
+
+[[files]]
+path = "d_mos1.sat4.ckt"
+sha256 = "e68b417fe833a2c5f7c9739e05b33a7c5c63ff1c0bb937257aaa16bbe27cc432"
+
+[[files]]
+path = "d_mos1.sat5.ckt"
+sha256 = "e042098a85062c3ebd4f042369e6c0d33eef16da8ee81d1c15fafbe78c4d23a0"
+
+[[files]]
+path = "d_mos1.sat6.ckt"
+sha256 = "7a2001ec64eb165456b4e5c0cbf54ef710375abd2d2a2241944c93fbaacd99b7"
+
+[[files]]
+path = "d_mos1.sat7.ckt"
+sha256 = "9463a21c22210692b855b1c22ed686a1e1538c5a23b4223bebb581c543b73bac"
+
+[[files]]
+path = "d_mos1.sts.ckt"
+sha256 = "7825a9d39f8a005be8ca054576b71159b984ebc05354099b772f7739f16afe74"
+
+[[files]]
+path = "d_mos1.temp0.ckt"
+sha256 = "1a64ecbfe87cd973de32f3e4e0bfb95d38d67fabdeeb9c59139984b69370c679"
+
+[[files]]
+path = "d_mos1.temp1.ckt"
+sha256 = "76b890620c5a44b873919bc6fdae7ad5dd82b4a9be3f6872d809efe75253ac24"
+
+[[files]]
+path = "d_mos1.temp2.ckt"
+sha256 = "d78cd87db5d8e24c83c8a245717bcdb2d47c71aafe0058bb55311159fd44bafa"
+
+[[files]]
+path = "d_mos1.zero.ckt"
+sha256 = "77008fa8edd1fe93eed230d6e82270deb0ea0579065dc462329b8cad0b9cee6f"
+
+[[files]]
+path = "d_mos2.inv1.ckt"
+sha256 = "7555b2a080af677cfd1391e0d236ef5fe335feb1f38897feab7c8efdf410ddb8"
+
+[[files]]
+path = "d_mos2.lin1.ckt"
+sha256 = "4c65b45625079bce933d3084f11b9587bbdde3853a03bed9ef5ace139010703a"
+
+[[files]]
+path = "d_mos2.lin1.late.ckt"
+sha256 = "4584b75d167b944708163e38b3b851d53b9682db27bf71da96a92f500bb3e871"
+
+[[files]]
+path = "d_mos2.lin1r.ckt"
+sha256 = "0bc9f1730bc272ad15d469b1b8e6ea8f12280fa5e71ae86adfceb5f97f4a50cc"
+
+[[files]]
+path = "d_mos2.lin1z.ckt"
+sha256 = "470c710a8da888e7040048677875b2dd2c4aa2089ec5f2a2e2a12338922b4f06"
+
+[[files]]
+path = "d_mos2.lin2.ckt"
+sha256 = "3175c3aa2879cd41c23a63bdb8fa0aa8ed6bf6098d41fa198f4f572a66cd3cec"
+
+[[files]]
+path = "d_mos2.lin3.ckt"
+sha256 = "0f1fa3288407f9069d376c15a460472ef72b677eba0ffd9bb967630ddec7926e"
+
+[[files]]
+path = "d_mos2.lin4.ckt"
+sha256 = "82e7f9862a7b95c413c22ccdb281886a4aa35fb0c6c8920d126f8e4b6dda1d12"
+
+[[files]]
+path = "d_mos2.lin5.ckt"
+sha256 = "3e6c7e6a628f7c71b60fb3e37def96dca4950fc1917ee82aeaa9653ff16624cc"
+
+[[files]]
+path = "d_mos2.n+1.ckt"
+sha256 = "e0e1bbfb018a48f16580d5e4bd00e80e13cfbfc722fd37f90e607207cae7cc0f"
+
+[[files]]
+path = "d_mos2.n-1.ckt"
+sha256 = "0138ce4a37daeba2d9ddb9f10c7231ef65c7531b84605e73ad940db158a1ac8d"
+
+[[files]]
+path = "d_mos2.n0.ckt"
+sha256 = "eb779a1f9e6a7d83bfc71ad806611d02a5192cf2c7b240f0a01ebc5706f36591"
+
+[[files]]
+path = "d_mos2.nand1.ckt"
+sha256 = "c4c933b9189ef0271a669680237f567cb4fed43af6590fa059473bb9784e6a4c"
+
+[[files]]
+path = "d_mos2.p+1.ckt"
+sha256 = "0e6f21a5609487a21be17f5a3ff306ba2e1a57d87036bb9413e8059c6f023a24"
+
+[[files]]
+path = "d_mos2.p-1.ckt"
+sha256 = "495bb2e31c9680aec8944e6d015642d7e8a56820121a8ee260eafd77e3a01a2b"
+
+[[files]]
+path = "d_mos2.p0.ckt"
+sha256 = "efa9370ade1b608ffd93d2263621ee6baaa1f58928eebd620c5a808b4b3012d3"
+
+[[files]]
+path = "d_mos2.plin.ckt"
+sha256 = "6491ec229b379edcc689294c9b25d6c1e5af9f55374692730704e70943e699a3"
+
+[[files]]
+path = "d_mos2.psat1.ckt"
+sha256 = "022aae79818801f376f48e592e4bedb549101c529ce4e254a1925bf5ff039bd7"
+
+[[files]]
+path = "d_mos2.psat2.ckt"
+sha256 = "e3ed50a050adce98f8125e71ccd77933fb0c7d52f729d2ec0a8c24cd13c7859a"
+
+[[files]]
+path = "d_mos2.psat3.ckt"
+sha256 = "e45332f40af901c5cc203f56fc6e9e487a8a74e5fa946fc02bbd4bf7ec5bb428"
+
+[[files]]
+path = "d_mos2.sat1.ckt"
+sha256 = "afd69d9a4fffabbc89b582e5f084efed20c1f9648bfb1b148bac83bd019b0a57"
+
+[[files]]
+path = "d_mos2.sat2.ckt"
+sha256 = "14f9e07ce82ce0fb98f25c56da1fb4a918ed2b582a4bbd3fdc5124c133361b25"
+
+[[files]]
+path = "d_mos2.sat3.ckt"
+sha256 = "8290f3c48cb4c0210d880005ceab146651a6d52694f153cc2aaad8875c4dada4"
+
+[[files]]
+path = "d_mos2.sat4.ckt"
+sha256 = "dc986cb781ff1da81f250b249e8a5e07191487dc88f5bcb8d207eba77c32ded6"
+
+[[files]]
+path = "d_mos2.sat5.ckt"
+sha256 = "b0926cbf792e5aae174f7f659c679874db83cd7aba135adcaffd06104c9677e3"
+
+[[files]]
+path = "d_mos2.sat6.ckt"
+sha256 = "e22294dd3d2690d8b3b2380bdad59deef3110685d8f77986f86dbbc4ba86c13b"
+
+[[files]]
+path = "d_mos2.sat7.ckt"
+sha256 = "f0a8f29cbb76cd82817997f86bc8e9187ccdc56e1da14374315c1f1964d8300c"
+
+[[files]]
+path = "d_mos2.sts.ckt"
+sha256 = "738299a7ffb02d3e5b9476bf4ef5b1b0125255b60a81c5820861c56501c5f9bb"
+
+[[files]]
+path = "d_mos2.zero.ckt"
+sha256 = "c7eace79c59c133e057f2329901158d19e93fc2e834c08493e3c6baa606b1827"
+
+[[files]]
+path = "d_mos3.inv1.ckt"
+sha256 = "955eeb6dabce7b91d253a275c2d272a726bec08610aa2a24fe0aff64222f6e66"
+
+[[files]]
+path = "d_mos3.lin1.ckt"
+sha256 = "1d8d973f965a7235996353c53e846aeaf43a7fc397a9bd5ad4e9360c0e865651"
+
+[[files]]
+path = "d_mos3.lin1r.ckt"
+sha256 = "ab96a1df78b694eb1a9484fa9d19fdda229ae5161678c1bd1e19a4d6a1628816"
+
+[[files]]
+path = "d_mos3.lin1z.ckt"
+sha256 = "bc173b32c572f865b2dbd156c682f0cd593da78d9719b8e40429aecbb1b67126"
+
+[[files]]
+path = "d_mos3.lin2.ckt"
+sha256 = "416030c5ffc59329927a6c2a1f9066b96c456d2e6452ad8ea5659900edddea49"
+
+[[files]]
+path = "d_mos3.lin3.ckt"
+sha256 = "39ea1b7a06fc757c9e7b8309f9a85668e09680979f195d93b25f3b2b1cee467c"
+
+[[files]]
+path = "d_mos3.lin4.ckt"
+sha256 = "99ad71f76b6f40d9523422fbfae8a6d33fc9392db276264b7b64e2ef1f9c808c"
+
+[[files]]
+path = "d_mos3.lin5.ckt"
+sha256 = "f00336aa0bcca1d3a7f3d44c3a3e6c1c8a0898403686872b10421bd416adae0e"
+
+[[files]]
+path = "d_mos3.n+1.ckt"
+sha256 = "40e27a79f50b6f3209f293a9ff92031c4f2651509b4370fa0ebd75b3e0eb7f73"
+
+[[files]]
+path = "d_mos3.n-1.ckt"
+sha256 = "559d3a1eed5d898e19d32a610130c3fc90e46b031be5073599c929cd249c410f"
+
+[[files]]
+path = "d_mos3.n0.ckt"
+sha256 = "d6e8212fee1d365803864922dd7d302e87ffb73e8e86825a3ebe87fc961479e0"
+
+[[files]]
+path = "d_mos3.nand1.ckt"
+sha256 = "e17328cf09be1600721f7987f559050008608c9c110d4cd76496c2fd61d83e52"
+
+[[files]]
+path = "d_mos3.p+1.ckt"
+sha256 = "8ce12c65e4205036aa353267d8552ba85c393397f06cc66cd373495dbbdafc96"
+
+[[files]]
+path = "d_mos3.p-1.ckt"
+sha256 = "4747b793f66c2752631bebc6a3554fd5e8b0f61559e14231da9e93bd0535a021"
+
+[[files]]
+path = "d_mos3.p0.ckt"
+sha256 = "65351673a07940570a65fc87e046d87d2c22579ac3eb1ab7b63cbc75c8734d27"
+
+[[files]]
+path = "d_mos3.plin.ckt"
+sha256 = "0b1cdea2941726886b19826aca6963d37490035faa0141ce0a5f2a5317ecde93"
+
+[[files]]
+path = "d_mos3.psat1.ckt"
+sha256 = "6f8b61692a626be424c1d010be7f331b4e1180cc0c6dad759b2fb3b9f0c68b10"
+
+[[files]]
+path = "d_mos3.psat2.ckt"
+sha256 = "77787dae66e3877b45120ac6dbdb5579d2ef044cc1bfbe5f43399db15ad7b6dc"
+
+[[files]]
+path = "d_mos3.psat3.ckt"
+sha256 = "0b5c577ddca5ad0c73c34afc170f0b16903f8a626fb9df2d3991bb73e80865c6"
+
+[[files]]
+path = "d_mos3.sat000.ckt"
+sha256 = "8865e3ff3db38f0ecd91d723dad303a6e9f9913d57f2c87f1b1de5d4730dc421"
+
+[[files]]
+path = "d_mos3.sat007.ckt"
+sha256 = "645696ce50f2d926f4b537dd0e16268a95d7aa00294df1b060892fc57f9fe26c"
+
+[[files]]
+path = "d_mos3.sat1.ckt"
+sha256 = "d876fb4390cc1c1b2fd0fa1ac1d6024a3dab028293cb52f91fe4e9ea85f702f8"
+
+[[files]]
+path = "d_mos3.sat2.ckt"
+sha256 = "21bc8a60bd7cd5f3043a6464002c25e7d53400a1731b7a64c7647aa7c145078d"
+
+[[files]]
+path = "d_mos3.sat3.ckt"
+sha256 = "d62afa654453e01a6989d0a6fde90ac317032f70d808b939e5889261aa0760b9"
+
+[[files]]
+path = "d_mos3.sat4.ckt"
+sha256 = "c3de5ad168e9c0726c475ed27e62813e2ffd601d4303d8a7d242f347d3da8757"
+
+[[files]]
+path = "d_mos3.sat5.ckt"
+sha256 = "3c3dc234f1744b121fc6a6fbcfc941868ab6c4e54a55e0495c5b636a96e7683d"
+
+[[files]]
+path = "d_mos3.sat6.ckt"
+sha256 = "b0ddda1f59a89d979da644ab5465ab1b658c98c1141be13264a083daddf3c942"
+
+[[files]]
+path = "d_mos3.sat7.ckt"
+sha256 = "1b366bf0f76a2d805d5dda1f29a57ece920571a5e8398fe8df5e2d6b20c569d2"
+
+[[files]]
+path = "d_mos3.sts.ckt"
+sha256 = "e6d4a43b3b4a4a1dab4800445b9303fc40bc7c9155ae2d29b27717e74cfa486a"
+
+[[files]]
+path = "d_mos3.sts000.ckt"
+sha256 = "62ca8a833f3f842d86e6320099325ed08d4d439fdbac51dadf17ce84c869e91c"
+
+[[files]]
+path = "d_mos3.zero.ckt"
+sha256 = "25bc72c7f213f59616a274a0d792effe456ebe2e3430bf709f9c1d90ecf89ce7"
+
+[[files]]
+path = "d_mos4.1.ckt"
+sha256 = "6a387ee54ea4d085ad956266f7b6bf1021f77d75b5d73c6e2b55a1a8b5eb741f"
+
+[[files]]
+path = "d_mos4.2.ckt"
+sha256 = "dca6a5201c71ea0e2578f810efc033631d7269da2d480feaa4217c688eb20dc7"
+
+[[files]]
+path = "d_mos4.3.ckt"
+sha256 = "f11d6d36a41d9e72ceb5b6b627231f3144dca5b2144ad7cd0626d9db8a8fdc6d"
+
+[[files]]
+path = "d_mos49.nand1.ckt"
+sha256 = "1b4e288bd1ec6d788d49678cd43e8f849c272b41731b4f6de737fcd7e78bdb1c"
+
+[[files]]
+path = "d_mos5.1.ckt"
+sha256 = "d148497c77db8fcecf3116f14c4dba3a54f4e0abbd554e9941caa6441ba8c4c1"
+
+[[files]]
+path = "d_mos6.inv1.ckt"
+sha256 = "d9616234bac7ac50197aa32d02ad08cb03e75982adee522eb871578c8e091473"
+
+[[files]]
+path = "d_mos6.lin1.ckt"
+sha256 = "cf9788952c7e61613efc20776421156815a378a5abe2494d7be3993d63b153a0"
+
+[[files]]
+path = "d_mos6.lin1.spice"
+sha256 = "6d779338aefa1496d7475c82870b6a47ede861d4253a96e7b0cd34537dc12479"
+
+[[files]]
+path = "d_mos6.lin1r.ckt"
+sha256 = "204be2b9b48ff0e1e580cad4282e12c03856602163534564f14be31eaaa6e37f"
+
+[[files]]
+path = "d_mos6.lin1r.spice"
+sha256 = "246d6f9786341db8c2079cae4c8d7e008d3bef88c371a8c354f9247d9a8b1731"
+
+[[files]]
+path = "d_mos6.lin1z.ckt"
+sha256 = "7c608e5f89b462cbef65d5abbee9f9754e7644fc6584220c8064b80f1f812283"
+
+[[files]]
+path = "d_mos6.lin1z.spice"
+sha256 = "74aa493af45546d304fabe9a47d81fe5e19ea11e49f9c362fc742893fad344ab"
+
+[[files]]
+path = "d_mos6.lin2.ckt"
+sha256 = "3ade56fb39d9a78b4578b50b99022030e451aaec29c5069fa33f717f43df06c6"
+
+[[files]]
+path = "d_mos6.lin2.spice"
+sha256 = "bef56833bd3adc8ebfb2b72394109b826f39211e99dfcb33a1b496138a2f9c50"
+
+[[files]]
+path = "d_mos6.lin2r.ckt"
+sha256 = "3486eaebf37c86ecc7a8efda23499c9f56f8670a309897123759209f056bd568"
+
+[[files]]
+path = "d_mos6.lin2r.spice"
+sha256 = "cb7f8afab045070208415de70f0f40862888afb5efd494eab7d667de53c0447c"
+
+[[files]]
+path = "d_mos6.lin2z.ckt"
+sha256 = "06061e6b46d954e41eb82f0da3c3a7ef5de4b5f471b222578b2db13b95f07961"
+
+[[files]]
+path = "d_mos6.lin2z.spice"
+sha256 = "ec44dd5bcf42ad072ea2ddd4c4e28bf25ccbed9e54ba992affffa2b27011a5a7"
+
+[[files]]
+path = "d_mos6.n+1.ckt"
+sha256 = "682770a12d02b7fcf5ea5950b64d0390ebc555088894fd6227bbde2a09e5c641"
+
+[[files]]
+path = "d_mos6.n-1.ckt"
+sha256 = "173006aa53d7755bcf570cb772d004e74a272df48329543065f5f8800e8ce83c"
+
+[[files]]
+path = "d_mos6.n0.ckt"
+sha256 = "548e354d526b244f227f44d707eb093f2b35efccc1e881fab14a828a01292911"
+
+[[files]]
+path = "d_mos6.nand1.ckt"
+sha256 = "6946c5d9690825d436deba9688d0e2045e7ad2a793eaf1376fd6493be030a7a4"
+
+[[files]]
+path = "d_mos6.p+1.ckt"
+sha256 = "15cf01b7bb11da0b60b91bb9c1d5ad3d3a4d6613be1f0f2d36c92694f2df5487"
+
+[[files]]
+path = "d_mos6.p-1.ckt"
+sha256 = "b2e76baeaaf98c8b523a7bd37648e5e21da9e928474fc23a5fd26643dfab7f1c"
+
+[[files]]
+path = "d_mos6.p0.ckt"
+sha256 = "6232f8bafa3936f39513f3c0f254bac435499ee9dff8926accb32bd38f8d80a3"
+
+[[files]]
+path = "d_mos6.plin.ckt"
+sha256 = "02fd52c406285c443822697b9c1c5a6d6b6098d90fbdca048a2c68e1ca629633"
+
+[[files]]
+path = "d_mos6.psat1.ckt"
+sha256 = "b47ad10f10c2b32f7cac46f9dce5a97f274a3893dd30b9456fe59c3a84c89f30"
+
+[[files]]
+path = "d_mos6.psat2.ckt"
+sha256 = "d50df8978a919d9db9edfdbdd15aff849ac8789c6e7ba113149561bf2dcc595b"
+
+[[files]]
+path = "d_mos6.psat3.ckt"
+sha256 = "29195ed60fea86f23807faf287ac64204529123d107aa2734a239dd9da9de7ae"
+
+[[files]]
+path = "d_mos6.sat1.ckt"
+sha256 = "67cedc2765c08353eb0d0fe211a0893484a51b9ae9f4948a88e1b91e3d8fd1db"
+
+[[files]]
+path = "d_mos6.sat1.spice"
+sha256 = "ccc46519115e174759d190bfa4b6b3806fe204bc6751d1b908f8643e73b69406"
+
+[[files]]
+path = "d_mos6.sat1r.ckt"
+sha256 = "28b0dd151b8a60508643877147107da898be8f8e594368764cd13125a6bd1ee3"
+
+[[files]]
+path = "d_mos6.sat1r.spice"
+sha256 = "513419a2a748cb2a036a2cc4d5663fe9866d8c0f2a53da3efa8ec4555f1993c2"
+
+[[files]]
+path = "d_mos6.sat1s.ckt"
+sha256 = "d15dc2300f4da19bfdc27856608256a235155f73c9c1d4a3dba26de993f23f2c"
+
+[[files]]
+path = "d_mos6.sat1s.spice"
+sha256 = "5af0f776fcc0b707ea3ec72f33ce0ee8b253954b0c689098712160d1ddcfeb9d"
+
+[[files]]
+path = "d_mos6.sat1v.ckt"
+sha256 = "4ba5cb82dc8fc60f84ecd14e7882d0f84dfe55254b9906f1fcd2acb1bd1f2c36"
+
+[[files]]
+path = "d_mos6.sat1v.spice"
+sha256 = "895823904171421678ad1456d5fd561231ffb740d346b9a0eff2e6814b7bb095"
+
+[[files]]
+path = "d_mos6.sat2.ckt"
+sha256 = "fa062a8acbcc83b8c0d7ecea45ca9e19fb92b2518779fef6062e7aecf5eea7db"
+
+[[files]]
+path = "d_mos6.sat2.spice"
+sha256 = "960e22d5df1b8ebcec018ce467c771d1f7b4d95a1a665ed82e74360a030a1201"
+
+[[files]]
+path = "d_mos6.sat2r.ckt"
+sha256 = "47193e80dcecac70472e96112c32e3c20f579baf5575e2a096941c0c3ef34cfa"
+
+[[files]]
+path = "d_mos6.sat2r.spice"
+sha256 = "dc5a5ea9461d4513bd4a04573bda23f362a10aa1f1f77720ba1f577bd140f7e5"
+
+[[files]]
+path = "d_mos6.sat3.ckt"
+sha256 = "8d32d9e840e8cc3f1f079fdb3a555a1122f54871424040b6cbb17a0205cdca5d"
+
+[[files]]
+path = "d_mos6.sat3.spice"
+sha256 = "0bdaec5268d6296f5f89495f8c2846ccc416adfdf5e20da11f9debbc586b82d2"
+
+[[files]]
+path = "d_mos6.sat3r.ckt"
+sha256 = "821ba0bb57c7186fa28e45f7b9603b41285102809298e8d6dd380d06a0e32fef"
+
+[[files]]
+path = "d_mos6.sat3r.spice"
+sha256 = "09e649fbec0c9cfda06e542c754fca7960a5a2ee5c2b8114967854c6e5a8c273"
+
+[[files]]
+path = "d_mos6.sts.ckt"
+sha256 = "15fdaa30582a2248a58b2fbd1c1cca56efa7a07e54f1911798f9c45e634b85e3"
+
+[[files]]
+path = "d_mos6.sts000.ckt"
+sha256 = "858fee8db593f5da380bee01881a5b38b30bbfe1e8367ee2c315c6abad1cc637"
+
+[[files]]
+path = "d_mos6.zero.ckt"
+sha256 = "e30091c7bd4c9248c20f9be9ea3dfdfbeee752bfe427bebf95bde722f1f0aa84"
+
+[[files]]
+path = "d_mos7.alpha.ckt"
+sha256 = "359cf5e9f1228a4c3673e7a1c58419de58afa52959c522450e56af7bdddce093"
+
+[[files]]
+path = "d_mos7.inv1.ckt"
+sha256 = "9ab2e988d19a008ec8de3a4dd6c9f54be1978704896963b3a70ed59b703d93ed"
+
+[[files]]
+path = "d_mos7.lin1.ckt"
+sha256 = "f17e66c237a9c50484c36ffa422eddee237809d83ad2e20dbf8ccecc0ccb5446"
+
+[[files]]
+path = "d_mos7.lin2.ckt"
+sha256 = "5f538db0bbd6a491198fd8cf820cfb2df92ebcef43b386f11d5cccf63feedaa3"
+
+[[files]]
+path = "d_mos7.nand1.ckt"
+sha256 = "d00c3ab48d0339e23d5946bc4637ee84d99392fded5ad6bd6697ee69d7a77249"
+
+[[files]]
+path = "d_mos7.nand1.nobypass.ckt"
+sha256 = "81a387433d50c7d280d2b80d2463f3a9d42fc6ea969ef783333b16eaca046868"
+
+[[files]]
+path = "d_mos7.plin.ckt"
+sha256 = "8f5cc45ba3080566b81903d4e1bc0b086eadcf3800f3a127508f9a25d6b185b6"
+
+[[files]]
+path = "d_mos7.psat.ckt"
+sha256 = "fa18956ec35b9654d751744f89d4050fe76b0d71e656027eb6e0f96c0997708e"
+
+[[files]]
+path = "d_mos7.sat1.ckt"
+sha256 = "e91002e383cac74d1f28e15d58b2d247729d64223153b0808b4040c7a32b4106"
+
+[[files]]
+path = "d_mos7.sat2.ckt"
+sha256 = "2fa7b01aeba74ab926409ec871ee9bb79622cfc2f6458fb7cd67fdb04abae0ba"
+
+[[files]]
+path = "d_mos7.sat3.ckt"
+sha256 = "53abf9f1c33136bebfc64138729696cb01e1df326bb269ae23d8e8d87f31de4f"
+
+[[files]]
+path = "d_mos7.sts.ckt"
+sha256 = "7db2b05e3334d3efb7949c4e9b6eac1ff0a61617971517e5a0954d31f7ea3016"
+
+[[files]]
+path = "d_mos7.zero.ckt"
+sha256 = "ea9f82c10b630950f7e5d8f5a3c33e915febfc81ff83d6d10d4e92e463c05387"
+
+[[files]]
+path = "d_mos8.nand1.ckt"
+sha256 = "4fbac9dd99fd4e69b71a6a9dbe9672aee02f4e7aa95ddbc3e6811e14e7b23f14"
+
+[[files]]
+path = "d_mos8.sat2.ckt"
+sha256 = "e2f94baa215b73bc75286b44d22c6f982699ba36e8b4786db68fe606168bab52"
+
+[[files]]
+path = "d_mos8.sat3.ckt"
+sha256 = "b176739836f06c6c6023ac745790cc1acfb48a19f49551fc928b432f28850543"
+
+[[files]]
+path = "d_mos8.sat4.ckt"
+sha256 = "50c12576d07a56abbbe3f030c7a52f1281c7b4966938d9b7346f044e2117943c"
+
+[[files]]
+path = "d_mos8c2.nand1.ckt"
+sha256 = "037687ded508aeb4147fc4399d3d72db898f944ab0445b32914cce769b69c0eb"
+
+[[files]]
+path = "d_mos8c2.nand1.nobypass.ckt"
+sha256 = "036b5be380515650397662bddb5ba6dd20c8be80577a9a44e43ba35847ad0ac9"
+
+[[files]]
+path = "d_res.bug.2.ckt"
+sha256 = "24db04a97e1a54de59108db9e6c1fffaeeb0b4897658b8401d97982900de9cab"
+
+[[files]]
+path = "d_res.bug.2fit.ckt"
+sha256 = "6262f48d95a3c6d432527c025c3850da6a5b9b9dec188c8517a9152a4e97e43d"
+
+[[files]]
+path = "d_res.neg.0.ckt"
+sha256 = "82ea46e6ca2ee5c999f8dedd3704be2e4bcf132cc14d58234767bce931c90339"
+
+[[files]]
+path = "d_subckt.1.ckt"
+sha256 = "015057588fcbe5385d871aa246aff8b36f9c0af822babc6ad7bc3b1b0725bf2c"
+
+[[files]]
+path = "d_subckt.2.ckt"
+sha256 = "cc22446d337975afaa62891858b058138eb73453e358ba74af2db5aeee8cceb8"
+
+[[files]]
+path = "d_subckt.3.ckt"
+sha256 = "89036d9370aa1dee22483cc081a3042c3e91dd9d519986793fea34426e84b09f"
+
+[[files]]
+path = "d_subckt.4.ckt"
+sha256 = "16a2b5730174d6656a8a83503e762c598d69e1ddf3fa18beaef5ba9d51302673"
+
+[[files]]
+path = "d_subckt.5.ckt"
+sha256 = "8319c711215927dc2c197264e5b38074a0564758db7ad493e63623054a3323f2"
+
+[[files]]
+path = "d_subckt.6.ckt"
+sha256 = "258f2aed0a705d419bc3f597c3cd7ede12379bc972e98d91ae1aa2e337753b67"
+
+[[files]]
+path = "d_subckt.7.ckt"
+sha256 = "618b242a3498ae8b0a711983a19a38136a120ab0b815bc45c17b95a6764ad52e"
+
+[[files]]
+path = "d_subckt.8.ckt"
+sha256 = "b03ceb8089c3926978112f9a997b23a69eb2869d0248f3c2bf1e7ef460902476"
+
+[[files]]
+path = "d_subckt.bin.0.ckt"
+sha256 = "aa660db1a7e74a7c5ad7e17a12532823d61acc7e563b552495bc1a096d6512f1"
+
+[[files]]
+path = "d_subckt.error3.ckt"
+sha256 = "5c8cc6f55645d5d019c5d6b9ce1692f06dd8dbcf019c58ebcc3cce8bc1a0643c"
+
+[[files]]
+path = "d_switch.c0.ckt"
+sha256 = "4c9d28723f664b09b54c2826ba9bdf6c1e3bf58d704b08daa7ff61905416714c"
+
+[[files]]
+path = "d_switch.c1.ckt"
+sha256 = "0dad13a7ea51588f3cdbd27bb1eadc6cf89ad664f85ca3ac51cddaa64a611197"
+
+[[files]]
+path = "d_switch.c1.inc.ckt"
+sha256 = "f2b7e5ac00e96204ca749dd0e614b1112ebababb52b4b5791fd2a2b360dd33c7"
+
+[[files]]
+path = "d_switch.c1.noinc.ckt"
+sha256 = "8e4714dc7ea3da53020bcb18a07fdcdf0e2a7d12791b1990ab7fba926e202e74"
+
+[[files]]
+path = "d_switch.c1a.ckt"
+sha256 = "5a524f72aba982bbe16ab90c9a546b24a3ade2bbf920f12b5f60f511afa77ad8"
+
+[[files]]
+path = "d_switch.c1r.ckt"
+sha256 = "92174a28fa4b1c7a5d5d1b903c7f495f3b69237592b3aae96aa87f524fbf5bd4"
+
+[[files]]
+path = "d_switch.c2.ckt"
+sha256 = "7a1da30b93b8b4667bb2b2dc10f0c55dd70195534d7a5f7d20cb11321e2e33fb"
+
+[[files]]
+path = "d_switch.c2a.ckt"
+sha256 = "e69fe7f591e34b250419478206d6cfdc35229d937476729973640816c31d5b70"
+
+[[files]]
+path = "d_switch.c2r.ckt"
+sha256 = "5dcf0917bf656b42f5913490a00161b8b994303ed1eeea1200da15d43d54dc14"
+
+[[files]]
+path = "d_switch.c3.ckt"
+sha256 = "d2bbd15bdda3505e249fb37771a5a1561aa596b0e63ec0522874745ea2c16180"
+
+[[files]]
+path = "d_switch.error1.ckt"
+sha256 = "f78fd42f7402be6af774f54d43d64a8ca0b21147de6fe5a46cfbf216d0b88a54"
+
+[[files]]
+path = "d_switch.error2.ckt"
+sha256 = "c91c6a08f466505b29458e4d7e2e257ea1a9163c54e06962c93c8e97ca092a69"
+
+[[files]]
+path = "d_switch.error3.ckt"
+sha256 = "85ae6594bae827e6c5fba6f08545ce0dcbb28948a9a428fd2cba9a271bffe2f9"
+
+[[files]]
+path = "d_switch.nro.1.ckt"
+sha256 = "9d3efb1a0f2080a90792aef30f4e69621ce4a98fc9e61e07deda3877c899d80c"
+
+[[files]]
+path = "d_switch.nro.1e.ckt"
+sha256 = "50868c41fbaf8001e5d559c565bc5f1dbaf453802330b810287e47f3c236685d"
+
+[[files]]
+path = "d_switch.nro.1g.ckt"
+sha256 = "e5791d98fe36dc5ed04ccdc8c80760dec79b0489baf051f2b3458ab0286dd93d"
+
+[[files]]
+path = "d_switch.nro.1gr.ckt"
+sha256 = "ac14665b9328c949ffa08b4c8e77dc647d05b853981d11db4eb6fdfac2aebebf"
+
+[[files]]
+path = "d_switch.nro.2.auto.ckt"
+sha256 = "871c23a6f87143789ea471d033f0414d7d3202415d5277552c69c6ed370ba199"
+
+[[files]]
+path = "d_switch.nro.2.ckt"
+sha256 = "d6addb5894ce06c0fa1036bc20060f5687d71c6973e624425d7deaf343ed2550"
+
+[[files]]
+path = "d_switch.nro.3.ckt"
+sha256 = "96c4b06f11934a23f5b68bd43a59634ecaf30191f7caf7141b9080d7970054b1"
+
+[[files]]
+path = "d_switch.nro.3h.ckt"
+sha256 = "7b0c3f87e2ba0ed813331b9df63ea325d2bc5aa6910469f8af950e2cee63b298"
+
+[[files]]
+path = "d_switch.nro.4.ckt"
+sha256 = "fb700a12eac3cd6f6b831f1015e0a0f42a4fe80c8b023915e4fc5fcca5d10f8d"
+
+[[files]]
+path = "d_switch.v.ckt"
+sha256 = "eb92612e638c4921d943aea04ef2bf65f48dbe59ba62598059394c487155f676"
+
+[[files]]
+path = "d_switch.vr.ckt"
+sha256 = "a7c0ac2ede9ce0477ab7fa60c15c066abdb9dc053ea0b6a143f96de5bc60c319"
+
+[[files]]
+path = "d_tcap.1.ckt"
+sha256 = "f97481f1758199fbc7ea33d2f8be15b09bea89be113db75bd5df0aa9b2f6dd23"
+
+[[files]]
+path = "d_tcap.2.ckt"
+sha256 = "748d9521840f2becc0c6e0b7a8586985f81616edf45fbc8aa2e5c3f2050ed893"
+
+[[files]]
+path = "d_tcap.3.ckt"
+sha256 = "fe8e75e4788fecd7bbb02174678e28201db1337243341287254fd2b420740e5c"
+
+[[files]]
+path = "d_tcap.4.ckt"
+sha256 = "067a83d9ba65c62eb3b97dc5847298cae90fbe3859fe5608f60b3a358cedc9df"
+
+[[files]]
+path = "d_tcap.5.ckt"
+sha256 = "06f546c1630253b238369be0fc3cb21174c9011822c799894d531d73eb9a1aed"
+
+[[files]]
+path = "d_trln.ac.ckt"
+sha256 = "99cc373d602fad9ecd4ea0e8f14d9eba9322b0083ae02c7631091dcbece7828b"
+
+[[files]]
+path = "d_trln.acp.ckt"
+sha256 = "865aeab1eda4499e6f4ffa70c64d52c8d4a1861af898df80967201388a33d0cc"
+
+[[files]]
+path = "d_trln.tr.100.im.ckt"
+sha256 = "af0070d368f3cced0270c3c5e602a42f4183e1c35d67ea2005bb4aeb914e56d0"
+
+[[files]]
+path = "d_trln.tr.100.nim.ckt"
+sha256 = "2f07cb275f10181a40c57ca1f73b4c80fdb273f4513de4dbc2099096f218dd50"
+
+[[files]]
+path = "d_trln.tr.300.im.ckt"
+sha256 = "9eaa1116ae5ba17f3ef0364d9500b1facd08c1f0cf6ff0b7bf1e8c3176b97016"
+
+[[files]]
+path = "d_trln.tr.300.nim.ckt"
+sha256 = "d117b4038cc101cacb6269001907bb2e576c2eb6a8989a81630bba7837163fb4"
+
+[[files]]
+path = "d_trln.tr.im.ckt"
+sha256 = "f345ca494b5f69491c9166a6db14325117a9b4ea357b0dfdc99fecc48771e2b5"
+
+[[files]]
+path = "d_trln.tr.nim.ckt"
+sha256 = "c6562402b176ceb0a49bd263a16190066507e054b93e1666d5183e76cf56cbdf"
+
+[[files]]
+path = "d_vccap.1.ckt"
+sha256 = "ad34745d5bc8168efa98e7055e4e53d7123b748f128aab4d3167ebc8551edb86"
+
+[[files]]
+path = "d_vccap.2.ckt"
+sha256 = "32ced1095c8f6d51437218a953e0b2256e94e77362825a2701917bb7b9a795b5"
+
+[[files]]
+path = "d_vcg.1.ckt"
+sha256 = "246620506b85a472bf06e9d680eff0b7b83ec9032d2458dbdd1251b482ece93f"
+
+[[files]]
+path = "d_vcg.4.ckt"
+sha256 = "52682b34c07a9af9eef9a409f85b756ae1c7fdcfcb06ec4b28c8196da6c203b4"
+
+[[files]]
+path = "d_vcr.1.ckt"
+sha256 = "a964ecfccc41e3cae11c2c6c13e92fdc3c909b7217c814e6623cd328b213fdcf"
+
+[[files]]
+path = "d_vcr.2.ckt"
+sha256 = "4f730bf839e678b4e9fe8715a1325bd63758b1b9b4c325b6faee47351082e25e"
+
+[[files]]
+path = "d_vcr.4.ckt"
+sha256 = "137972123ae82278d060d0244242726b299f2b6a9efb7e6bfb876ef8be3f3152"
+
+[[files]]
+path = "d_vcvs.1.ckt"
+sha256 = "cd4c6c8b18a27254b06859424268763a7f5b4a39a648981fc27d6a18b91e2cd1"
+
+[[files]]
+path = "d_vcvs.2.ckt"
+sha256 = "8261804c44e5355f469ed77199cd970fd2536ff50abfcd24a4f7b917ac78c1d8"
+
+[[files]]
+path = "dcsweep.ckt"
+sha256 = "1edf6b4792645d612bd4c3fa716a9e4a819cc611d7b0840b3f1ecebb92c01045"
+
+[[files]]
+path = "e_ccsrc.1.ckt"
+sha256 = "c59590f6887d067ff9c4eb8493c18841fc173c3ba1f86f80ad9d872bd10e4c33"
+
+[[files]]
+path = "e_ccsrc.2.ckt"
+sha256 = "99ad128c3490ae2b7d155180f868e6c2ee702b5196267c11182b20b727725467"
+
+[[files]]
+path = "e_node_change0.ckt"
+sha256 = "cc76dd1aa21f601afd033f9362a7bf25215b1da6415eb1a5256056634297a2f7"
+
+[[files]]
+path = "e_node_probes.ckt"
+sha256 = "7ae6bb9535042b5cc4ecfb1dffa43ec58a7ab699e3cfe42664d4a333da4af106"
+
+[[files]]
+path = "e_storag.1.ckt"
+sha256 = "463eade80567f0784306e070272158d499c2b5cb54fc71e80cde5b52f2362167"
+
+[[files]]
+path = "eq3-1153.ckt"
+sha256 = "9cc0820aafd37295c6564c61af36bfd4b45a65e3e07bb6ca2d8249d276ab3689"
+
+[[files]]
+path = "eq3-1153.fg.ckt"
+sha256 = "b6c1beeca8fe4fd73b9ed195f6d0e49b7819bd540395717fbe2e5f2df91117be"
+
+[[files]]
+path = "eq3-1153.fg2.ckt"
+sha256 = "47da31954fd471342dd331e42a2e91d4e53d7dec568f9fe01f3c3a9f003e017c"
+
+[[files]]
+path = "eq3-1153.forward.ckt"
+sha256 = "8c906543e2942e2f2a811959e57c1710ede24803bf3f83b5a6ae0a7c91fa3a53"
+
+[[files]]
+path = "eq3-1153.reverse.ckt"
+sha256 = "4c8e6db8221af4a62a43c663d28616c338c1479d565d28d35913cf391dad75bb"
+
+[[files]]
+path = "eq3-1153.tr-b.ckt"
+sha256 = "352d1601a1b5897b47ca87cb823459291c0788ab52471760353799295ee83fac"
+
+[[files]]
+path = "eq3-1153.tr-nb.ckt"
+sha256 = "e1c59acd032d017707f31d93b1cfdf9d71c3ea8ea76063ffdce3996686f4be1a"
+
+[[files]]
+path = "eq3-1153.tr-ni.ckt"
+sha256 = "a9f6fe89efdc3d6e715ebb4700db72d8b2e687121910fadeb7272a0d6a02e1f0"
+
+[[files]]
+path = "eq3-1153.trace.ckt"
+sha256 = "97a5f471037cf7a5d781409c65fe7e475904d4974051608bbe0c49e3fc1ed76f"
+
+[[files]]
+path = "eqb1.ckt"
+sha256 = "208180f084269653e92e4b014fcb71d827dcd89691801256f04e2885c02ab7f1"
+
+[[files]]
+path = "eqboost.ckt"
+sha256 = "b593cd3afdffc6a47c2b452cace177efe4b626588d220f8eded2dabbd014f730"
+
+[[files]]
+path = "eqflat.ckt"
+sha256 = "7735c4fd1dc319847c5c0857667bd396b9d7b59c98377a4bdffa99209bc0633f"
+
+[[files]]
+path = "eqmodify.ckt"
+sha256 = "6238107325410cae5d17d5c123265885a89f15fd3ec0332e030b22780ab2ff69"
+
+[[files]]
+path = "grid.0.ckt"
+sha256 = "51b6164adbe403f3854d9a12768232340284d00af380bf92240ee693c5fad8b4"
+
+[[files]]
+path = "grid.1.ckt"
+sha256 = "03f5e4a31bfaba5caf92584b1071ef6f6de6b5e4e1a0c24520b8e148d85fb413"
+
+[[files]]
+path = "grid.2.ckt"
+sha256 = "4fc1a0d060505328055364277f171256dbb6666f8d6829af13d9459ab882e3a0"
+
+[[files]]
+path = "l.ckt"
+sha256 = "a1fd4182e5e917f6a22b629984d159c117ae93d480cfa53fb49d665ca86b5ec1"
+
+[[files]]
+path = "l2.ckt"
+sha256 = "bee8b5cc1c144dafb57c508829b76767193580e4f0eacf111111c91b00b30b98"
+
+[[files]]
+path = "ll.ckt"
+sha256 = "17d029393ac5772f3ce2dcd0d3093fe797f7a7b5592594b5befcbaf0780bdb40"
+
+[[files]]
+path = "ll1.ckt"
+sha256 = "4b532830e04807e4e8b5612e8ac12af9c7dd7265889f347a699f11c57b5195a9"
+
+[[files]]
+path = "lll.ckt"
+sha256 = "1ca782c7d7bbb30fce3fb8fc8a5c63bff42741d4d57b0cfe0e4602b0cd2e7c9a"
+
+[[files]]
+path = "llll.ckt"
+sha256 = "9f4e4ebe612d981e28bd6de4431e06d20d3bf1c0711a885f0ed6f8615a400aa1"
+
+[[files]]
+path = "named_nodes.ckt"
+sha256 = "33b9d0fff18d2ec4e449ba92e90c88ac7a660f8eee4908f23ee0a3a70ee51e8e"
+
+[[files]]
+path = "nmos100.1.ckt"
+sha256 = "cbd83dc0418728761c0b0284df5aacca979e5cba67383c9bc8d4e92c65ef7d87"
+
+[[files]]
+path = "nmos100.ckt"
+sha256 = "4bdc110ad637f895ed5ac623d1e8231671cc0d28a0ee6e02541c36d625d6654b"
+
+[[files]]
+path = "nmos15.ckt"
+sha256 = "8c5dc8f7260d972b2352e0b29199b91af7f331e03de2ae5fd5dd842b37813a70"
+
+[[files]]
+path = "nmos15a.ckt"
+sha256 = "55cc27060ff1aff88cbc181f48fd94852183b1b254ba6f5343b6a00437a65938"
+
+[[files]]
+path = "nmos1i.ckt"
+sha256 = "6067d8ecda66881409c9a0259e4d03a0497c8095e0247c74fe55ae71e5088645"
+
+[[files]]
+path = "nmp100.ckt"
+sha256 = "ca585a18f2538dc1db04ef03557067089b7e51b4a107c4ef836bdc316011d944"
+
+[[files]]
+path = "opamp-ol-disto.2.ckt"
+sha256 = "d39d74d8d6acc17da3d18ca346da20cc3810710738e8fdda6762dce6dfab37af"
+
+[[files]]
+path = "opamp-ol-disto.ckt"
+sha256 = "299c4a06d1030a9a1e9010a27e936e2d6109d4ebb11947e39511b6bc1892db28"
+
+[[files]]
+path = "opamp-ol.ckt"
+sha256 = "92e47652dbecdbd2c971cce3c047fc0b8e4a0406a7d2c953dffce299c60b183c"
+
+[[files]]
+path = "opamp-vf.1.ckt"
+sha256 = "923e0da63d9fbeca5cb94d049af3f85036f5b1a1af38a0701dbed8c258ff1ebd"
+
+[[files]]
+path = "opamp-vf.1d.ckt"
+sha256 = "f7d63cc7bb1ac8f6dcb2731e34b816199d8f37fe04aba55334a67b26d2a36451"
+
+[[files]]
+path = "opamp-vf.2.ckt"
+sha256 = "eac4e88f727de9e571cf7785f84c46841d2009a5d21b8ad665cecd1490234f0c"
+
+[[files]]
+path = "opamp-vf.3.ckt"
+sha256 = "bfc9071838528e8c1f09c0fa48f845a1981fef87f09ad53b92bb33faa584bc25"
+
+[[files]]
+path = "opamp-vf.ckt"
+sha256 = "a5dd7c97b245028648c980f46b48c66d6e957e33ab0857d2fb32104a5353446a"
+
+[[files]]
+path = "oscillator.1.ckt"
+sha256 = "020684099d172ec7cc2a6fe3d57792ef51b3d9162f41f83ed486704062d6d702"
+
+[[files]]
+path = "oscillator.2.ckt"
+sha256 = "66df1d8752388e008c1430d97e83dbf2a40fc9aff3d61222fc36f6cf44a5cdb5"
+
+[[files]]
+path = "oscillator.3.ckt"
+sha256 = "0e78803aad5463fd4f6380a0f8e8c3d7be5989f78b2729d7f480b6b5f13eec17"
+
+[[files]]
+path = "oscillator.4.ckt"
+sha256 = "0af533eb4fcbdfdba2d7ddbadf8f413b41dd3f994e480e0c08ea0dbdc67a00f8"
+
+[[files]]
+path = "oscillator.5.ckt"
+sha256 = "98503f43110037cb076b6380b12b54f51a59ff98ffc72b02f7fff615b36c2550"
+
+[[files]]
+path = "oscillator.6.ckt"
+sha256 = "dd414bf55a5bc6c6b48bdf8c01cc04ad537ed85fb9df07000c11319c2c14de09"
+
+[[files]]
+path = "oscillator.7.ckt"
+sha256 = "f1f6a53ef0bb2d41988b1ec4fb022abea8830cd8a847aa3b693d96fe7e66e36d"
+
+[[files]]
+path = "param.0.ckt"
+sha256 = "0ee7dc4424704462cc5726bdf75f7096a54c79dbf11e8cd39a339784c130d7fc"
+
+[[files]]
+path = "param.0a.ckt"
+sha256 = "5a21e230332d78d062e144bea7207d8815039286c4dfee2b1b02935420fab65a"
+
+[[files]]
+path = "param.1.ckt"
+sha256 = "dacc680592e1b72d6e0769acdba26f21bdc493bcd06c621569d8034e530a4b21"
+
+[[files]]
+path = "param.11.ckt"
+sha256 = "e97b28ea1fa2afb874e95715ecaae3d5516fc8c29a9bde203eb4a52633132b72"
+
+[[files]]
+path = "param.12.ckt"
+sha256 = "83e4824ab017927d8335f7a7cfe5ec7ea0d1bd831c483f3b7237a850be53d255"
+
+[[files]]
+path = "param.2.ckt"
+sha256 = "8a0cf313bef5684a8e8fa717a9f4d02c260e9052f3310a1ad49b09502d9a88a2"
+
+[[files]]
+path = "param.2a.ckt"
+sha256 = "82b8e892ced6e953fb73a5238c861da7b8b2e0ae5add9881481aa4b599b9db0f"
+
+[[files]]
+path = "param.2b.ckt"
+sha256 = "9c86efd0ae121dcd4967736a8cd75e15bbbd7d4ac906273f0a0cb9f1f398506c"
+
+[[files]]
+path = "param.3.ckt"
+sha256 = "8d7fc2e9a8cdabbc9c67565925e25e3ef47fb6bac9a20c58b44fd637409b0d48"
+
+[[files]]
+path = "param.4.ckt"
+sha256 = "576f4e6068f0b1eb78486780fc6831bdbc4a4ed84e33984cbad7a213cd3c3014"
+
+[[files]]
+path = "param.5.ckt"
+sha256 = "ed56b37d60ccdc4fffaaa692f8b08635c78f0ea674859bf11c55b7daa2295953"
+
+[[files]]
+path = "param.6.ckt"
+sha256 = "3948ecdf12d15d335e950f70d50a5358562d02600485627922603ba377fc4ac1"
+
+[[files]]
+path = "param.7.ckt"
+sha256 = "c0e9d2538e9e66b611faaa0d7ea7553644c09d1bf8946982b15351e337ea077c"
+
+[[files]]
+path = "param.8.ckt"
+sha256 = "f4566909d00909bb911e2a8161c5f0264cd9772ee1e38c5e64945a5f24f23e4c"
+
+[[files]]
+path = "param.9.ckt"
+sha256 = "c58b309da430c1b6c0d985176872eb550fa2a85f6f6bb0ed3c14315ffe960f51"
+
+[[files]]
+path = "pwl.spice"
+sha256 = "1e7f4918843e1db6e84a49e8bcc6961348dfc45787c36efbbd51553a5d2a00b7"
+
+[[files]]
+path = "s_dc.bin1.ckt"
+sha256 = "63ab49dc541b4b4bad9e90cdcb7de99ddc075c11894fa5ad54787bd4ad8650b8"
+
+[[files]]
+path = "s_tr.1.ckt"
+sha256 = "4d080a46da82cd3397b9a9db316e1fcd891c4e4e601de4a1ae46bf1bfc51e919"
+
+[[files]]
+path = "sl.ckt"
+sha256 = "10b61348d0347b79be4bed8f252ca160cab4fb6ba1c1b74a29bed4ceb30e9dae"
+
+[[files]]
+path = "trcurve.ckt"
+sha256 = "31db96becff3d26117463477b4b4f923edb23d2b1bfe252db5075a66d768d066"
+
+[[files]]
+path = "trcurve2.ckt"
+sha256 = "96d2fee27134851206be8bfde05946091212a1afe90ed7733626f18fd5904918"
+
+[[files]]
+path = "trcurves.ckt"
+sha256 = "9d6e5bbb6efc3ce3da0e274d3870639a2cf2e75d3884ee948fe67df1aabd2618"
+
+[[files]]
+path = "trunc-euler.ckt"
+sha256 = "da5f83c2c64ac9665fbb3cec6a2f60a150a854b4d3e0ced93677c3a0578fbdcc"
+
+[[files]]
+path = "trunc-gear.ckt"
+sha256 = "8a2f7ffa32f5573f9b90332adacadedaaa7d9189c808da267d589ccba378c4ab"
+
+[[files]]
+path = "trunc-trap.ckt"
+sha256 = "06b1bf4330982f3173f9e7260c03e2574c6bf2fcfd004f1936fcd459c34aa1ae"
+
+[[files]]
+path = "vs.spice"
+sha256 = "7b79c05835d36da7df7a98e783e587898c37a7f8b958ddc81a7597bead7c2bd1"

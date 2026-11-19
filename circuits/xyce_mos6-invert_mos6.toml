@@ -1,0 +1,6 @@
+title = "Xyce_Regression MOS6"
+case = "xyce_mos6"
+source = "invert_mos6.cir"
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]

@@ -1,0 +1,11 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "phase-detector.cir"
+outputs = [
+    "v(reference)",
+    "v(feedback)",
+    "v(error)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 2.5e-05, max_step = 1e-07, uic = true },
+]

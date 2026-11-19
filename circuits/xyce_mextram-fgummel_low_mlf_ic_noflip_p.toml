@@ -1,0 +1,13 @@
+title = "Xyce_Regression MEXTRAM"
+case = "xyce_mextram"
+source = "FGummel_low_MLF_Ic_noFlip_P.cir"
+outputs = [
+    "v(b)",
+    "i(v_c)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_b", start = 0.5, stop = 0.9, step = 0.01 },
+]

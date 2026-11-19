@@ -1,0 +1,40 @@
+id = "xyce_certification_tests_bug_667_son"
+title = "Xyce_Regression Certification_Tests/BUG_667_SON"
+family = "test"
+netlists = [
+    { file = "ic_in_subckt.cir", dialect = "xyce" },
+    { file = "ic_in_subckt_warning.cir", dialect = "xyce" },
+    { file = "ic_not_in_subckt.cir", dialect = "xyce" },
+    { file = "nodeset_in_subckt.cir", dialect = "xyce" },
+    { file = "nodeset_not_in_subckt.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_667_SON"
+
+[[files]]
+path = "ic_in_subckt.cir"
+sha256 = "113c1338c5bff5288e82c0a6b04785191c7ed291e288713d24dea4cd4462b086"
+
+[[files]]
+path = "ic_in_subckt_warning.cir"
+sha256 = "e5534fd350fbfae0a085c5f06758e3876f0986c57d5b0385dee14256f93271b3"
+
+[[files]]
+path = "ic_not_in_subckt.cir"
+sha256 = "eff70f142d1976c72f4b56c16be8cd3b05dfa319f2d0cc5bf48708728cf0f6aa"
+
+[[files]]
+path = "nodeset_in_subckt.cir"
+sha256 = "4eebfecae321f974c6dd231c01c61a8ba0349221f06eca80bd400d4d498661a7"
+
+[[files]]
+path = "nodeset_not_in_subckt.cir"
+sha256 = "66e74ccb83f67183a65ddfc27624b54f8672848740612e1a475f8f6163bab665"

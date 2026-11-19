@@ -1,0 +1,20 @@
+id = "xyce_nmesfet"
+title = "Xyce_Regression NMESFET"
+family = "test"
+netlists = [
+    { file = "nmesfet.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/NMESFET"
+
+[[files]]
+path = "nmesfet.cir"
+sha256 = "bdc5d6e4f0b5ac474e057eb53c41d66d0e49f86b94ec161b0509b31a340a700a"

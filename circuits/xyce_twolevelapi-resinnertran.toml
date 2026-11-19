@@ -1,0 +1,10 @@
+title = "Xyce_Regression TwoLevelAPI"
+case = "xyce_twolevelapi"
+source = "resInnerTran.cir"
+outputs = [
+    "i(vconnect0000)",
+    "i(vconnect0001)",
+]
+analysis = [
+    { type = "tran", step = 0.001, stop = 1.0 },
+]

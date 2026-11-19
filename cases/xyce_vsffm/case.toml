@@ -1,0 +1,20 @@
+id = "xyce_vsffm"
+title = "Xyce_Regression VSFFM"
+family = "test"
+netlists = [
+    { file = "vsffm.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/VSFFM"
+
+[[files]]
+path = "vsffm.cir"
+sha256 = "abe707a6983674c1a7d44375ae08db94a6f57ac82cf507f1676a91413aca733e"

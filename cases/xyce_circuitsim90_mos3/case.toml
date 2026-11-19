@@ -1,0 +1,69 @@
+id = "xyce_circuitsim90_mos3"
+title = "Xyce_Regression CircuitSim90/MOS3"
+family = "test"
+netlists = [
+    { file = "arom.cir", dialect = "xyce" },
+    { file = "gm1.cir", dialect = "xyce" },
+    { file = "gm17.cir", dialect = "xyce" },
+    { file = "gm19.cir", dialect = "xyce" },
+    { file = "gm2.cir", dialect = "xyce" },
+    { file = "gm3.cir", dialect = "xyce" },
+    { file = "jge.cir", dialect = "xyce" },
+    { file = "mike2.cir", dialect = "xyce" },
+    { file = "rich3.cir", dialect = "xyce" },
+    { file = "todd3.cir", dialect = "xyce" },
+]
+notes = """
+CircuitSim90 benchmark circuits (MCNC, 1990), adapted to Xyce by its developers.
+MCNC's terms for the benchmarks allow copying and distribution free of charge.
+"""
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/CircuitSim90/MOS3"
+
+[[files]]
+path = "arom.cir"
+sha256 = "4db593d3133a5929e7efdcb26921d3fce15e6c6c17e8bcef2fa2a08c4f7d062c"
+
+[[files]]
+path = "gm1.cir"
+sha256 = "417d4fe8629398295bb317ad236781f36b34eebb58e74c7b63757263f55c338c"
+
+[[files]]
+path = "gm17.cir"
+sha256 = "43fc842bd3c7bfbbe285a5d83b4eb08fa6acc1a3c8a5da9ae62c605bd32324a9"
+
+[[files]]
+path = "gm19.cir"
+sha256 = "0b94a01a96dd0ae19e93fe78b5fc7397411815d350ee13ee118c49548bb62c08"
+
+[[files]]
+path = "gm2.cir"
+sha256 = "ad4261e8c85a1f0376b24c0bad6f42fa4046a0fa669b84853236ef558fa417fc"
+
+[[files]]
+path = "gm3.cir"
+sha256 = "90ee65bd24818d09d008de93e92f5a398f3422ae2a4a663e5889834e2c1fe071"
+
+[[files]]
+path = "jge.cir"
+sha256 = "c0da4a46792a27496530ea1a57b1253dd980d17380db58ffd6e6434f0156babf"
+
+[[files]]
+path = "mike2.cir"
+sha256 = "99cf3671f37b401548a991f679ceaeb6ab502c97ac7c98de81b5adbddb4df013"
+
+[[files]]
+path = "rich3.cir"
+sha256 = "5cf5ebcafb990907419d4844249ed6c8a53e47be8faf06f8e16fd08a5ef353ae"
+
+[[files]]
+path = "todd3.cir"
+sha256 = "adecd1aec7ea465065ee828bea3db6a4f675a9e8abf0e8931137593bb338b57f"

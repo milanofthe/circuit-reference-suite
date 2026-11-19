@@ -1,0 +1,35 @@
+id = "xyce_globalpar"
+title = "Xyce_Regression GLOBALPAR"
+family = "test"
+netlists = [
+    { file = "gp2.cir", dialect = "xyce" },
+    { file = "gp3.cir", dialect = "xyce" },
+    { file = "gp_func.cir", dialect = "xyce" },
+    { file = "gp_loca.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/GLOBALPAR"
+
+[[files]]
+path = "gp2.cir"
+sha256 = "30d4e46081a8fab94546ea4f8c212367d552b977be453392ac62859238bfa0b7"
+
+[[files]]
+path = "gp3.cir"
+sha256 = "e5d4b0ba2fec9a963f38f2c7714987a474eff80d29f8e0501d6f8591c75074dd"
+
+[[files]]
+path = "gp_func.cir"
+sha256 = "611d2d5ba4770a11b288a1b5c6c90a434b1b87484bef40b2d562a7640d81bb3a"
+
+[[files]]
+path = "gp_loca.cir"
+sha256 = "9ddf6cb069ae49b8021c2b6c8a26dc52c57cece4fc04c1e74ff498e2466a048d"

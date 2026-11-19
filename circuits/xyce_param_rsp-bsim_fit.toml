@@ -1,0 +1,15 @@
+title = "Xyce_Regression PARAM_RSP"
+case = "xyce_param_rsp"
+source = "BSIM_fit.cir"
+outputs = [
+    "v(d)",
+    "v(g)",
+    "i(vs)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vd", start = 0.0, stop = 3.6, step = 0.072 },
+    { source = "vg", start = 1.5, stop = 3.65, step = 0.525 },
+]

@@ -1,0 +1,16 @@
+title = "ngspice paranoia_parallel/examples/TransmissionLines"
+case = "ngspice_paranoia_parallel_examples_transmissionlines"
+source = "ltra1_4_line.sp"
+outputs = [
+    "v(5)",
+    "v(6)",
+    "v(7)",
+    "v(8)",
+    "v(9)",
+    "v(10)",
+    "v(11)",
+    "v(12)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 4.79e-08 },
+]

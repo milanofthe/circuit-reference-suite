@@ -1,0 +1,45 @@
+id = "xyce_certification_tests_bug_668"
+title = "Xyce_Regression Certification_Tests/BUG_668"
+family = "test"
+netlists = [
+    { file = "bug_668.cir", dialect = "xyce" },
+    { file = "bug_668_probe.cir", dialect = "xyce" },
+    { file = "bug_668_raw.cir", dialect = "xyce" },
+    { file = "bug_668_raw_asciiprintline.cir", dialect = "xyce" },
+    { file = "bug_668_raw_printline.cir", dialect = "xyce" },
+    { file = "bug_668_tecplot.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_668"
+
+[[files]]
+path = "bug_668.cir"
+sha256 = "ccd032e9424f3a8cdbb4192a3a189ddcca6c574bbd3f21bebf39f8089d6eeb0e"
+
+[[files]]
+path = "bug_668_probe.cir"
+sha256 = "b0774ef7e2e86a0d2a0ddc23d63963d1ff5460b2b2beffc7622652480d6320e2"
+
+[[files]]
+path = "bug_668_raw.cir"
+sha256 = "a7183a8cfdf8ebb19075257aa615ec971f8ed3a8dd4106966b265aeca74b88c3"
+
+[[files]]
+path = "bug_668_raw_asciiprintline.cir"
+sha256 = "b05c6cd0437760d516ab9485b802f2ec5d2d497ce4a6ee61a2b0c70efe061773"
+
+[[files]]
+path = "bug_668_raw_printline.cir"
+sha256 = "52a9db01ee1b80ea450d5585dea80758fd64d5cb5f2b6c9f6aed42230fae14ed"
+
+[[files]]
+path = "bug_668_tecplot.cir"
+sha256 = "75e91a9c9312c2e88630dccc7a4cd20e9b3e1d6b8ed423fe0a4efd1c711af6bd"

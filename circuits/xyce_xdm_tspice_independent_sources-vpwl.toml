@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/TSPICE/INDEPENDENT_SOURCES"
+case = "xyce_xdm_tspice_independent_sources"
+source = "vpwl.cir"
+outputs = [
+    "v(4)",
+    "v(4a)",
+    "v(5)",
+    "v(5a)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.002 },
+]
+
+[variants]
+tspice = "vpwl.cir.tspice"

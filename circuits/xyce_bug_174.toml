@@ -1,0 +1,12 @@
+title = "Xyce_Regression BUG_174"
+case = "xyce_bug_174"
+source = "nlrcs10.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(vmon)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.01, max_step = 1e-05 },
+]

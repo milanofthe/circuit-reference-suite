@@ -1,0 +1,32 @@
+id = "xyce_certification_tests_bug_846"
+title = "Xyce_Regression Certification_Tests/BUG_846"
+family = "test"
+netlists = [
+    { file = "ring51_loca.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_846"
+
+[[files]]
+path = "lib.h"
+sha256 = "509810a375ef70fe5920087cb402a97bd8ff6f060d5f90ff13092f8c24a51ff6"
+
+[[files]]
+path = "nmos_3_2.mod"
+sha256 = "efb38fd027e4b2841b220cd682ef3297d80174478dead5a2bce915a8d588912d"
+
+[[files]]
+path = "pmos_3_2.mod"
+sha256 = "35559816b8c4bf9e62bf18ce193bacd9cb1c88a90df6fc4db4fbc5126cdf17c2"
+
+[[files]]
+path = "ring51_loca.cir"
+sha256 = "a1f02ccfde8cbba8b77ee8a64a64c18eb5f6a2880ea03a7c95777109c5ab4e3b"

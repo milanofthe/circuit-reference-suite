@@ -1,0 +1,6 @@
+title = "ngspice examples/various"
+case = "ngspice_examples_various"
+source = "roessler-attractor.cir"
+analysis = [
+    { type = "tran", step = 0.001, stop = 300.0, uic = true },
+]

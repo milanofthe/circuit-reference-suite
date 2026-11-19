@@ -1,0 +1,11 @@
+title = "Xyce_Regression GenCoupAPI"
+case = "xyce_gencoupapi"
+source = "netlist_good.txt"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1.0, stop = 12.0 },
+]

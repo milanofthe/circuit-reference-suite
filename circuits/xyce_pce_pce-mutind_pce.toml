@@ -1,0 +1,10 @@
+title = "Xyce_Regression PCE/PCE"
+case = "xyce_pce_pce"
+source = "mutInd_pce.cir"
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[options]
+reltol = 1e-06
+vntol = 1e-06

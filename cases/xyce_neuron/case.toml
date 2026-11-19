@@ -1,0 +1,150 @@
+id = "xyce_neuron"
+title = "Xyce_Regression NEURON"
+family = "test"
+netlists = [
+    { file = "CG_Syn_TEST_1Pre_1Post_01.cir", dialect = "xyce" },
+    { file = "CS_Cable.cir", dialect = "xyce" },
+    { file = "CS_Patch.cir", dialect = "xyce" },
+    { file = "Cable_HH_Membrane.cir", dialect = "xyce" },
+    { file = "Cable_Passive_Membrane.cir", dialect = "xyce" },
+    { file = "Cable_UserDefined.cir", dialect = "xyce" },
+    { file = "Default_Cable.cir", dialect = "xyce" },
+    { file = "HH_Cable.cir", dialect = "xyce" },
+    { file = "HH_Patch.cir", dialect = "xyce" },
+    { file = "HHgating-level1.cir", dialect = "xyce" },
+    { file = "Neuron9.cir", dialect = "xyce" },
+    { file = "PointNeuron.cir", dialect = "xyce" },
+    { file = "Synapse3Test.cir", dialect = "xyce" },
+    { file = "SynapseTest1.cir", dialect = "xyce" },
+    { file = "dlambda.cir", dialect = "xyce" },
+    { file = "passivePatch-level1.cir", dialect = "xyce" },
+    { file = "passivePatch-level6.cir", dialect = "xyce" },
+    { file = "rallpack1-1000level1s.cir", dialect = "xyce" },
+    { file = "rallpack1-ud.cir", dialect = "xyce" },
+    { file = "rallpack1.cir", dialect = "xyce" },
+    { file = "rallpack2-level1neuron.cir", dialect = "xyce" },
+    { file = "rallpack2.cir", dialect = "xyce" },
+    { file = "rallpack3-1000level1s.cir", dialect = "xyce" },
+    { file = "rallpack3.cir", dialect = "xyce" },
+    { file = "synapseDCOP-level4.cir", dialect = "xyce" },
+    { file = "synapticCurrent-level3.cir", dialect = "xyce" },
+    { file = "synapticCurrent-level4.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/NEURON"
+
+[[files]]
+path = "CG_Syn_TEST_1Pre_1Post_01.cir"
+sha256 = "26570a61e87c714ef9df27080225de1bc5b0e7f13cf7f3cf19d255a4110a2aba"
+
+[[files]]
+path = "CS_Cable.cir"
+sha256 = "6efec4c72d3888cece7f4a5455c76f5814c649a09b0b9fb88ac8e8c22bee01e2"
+
+[[files]]
+path = "CS_Patch.cir"
+sha256 = "394e161d6d3db91c861b1764af349a0743cf4260e0e8bdb8ae8dbae2de94bc3c"
+
+[[files]]
+path = "Cable_HH_Membrane.cir"
+sha256 = "bc5442661f5126ae3190a7a8ba7b124a87e86773fc29cec5d10896f087cbb488"
+
+[[files]]
+path = "Cable_Passive_Membrane.cir"
+sha256 = "83dad278cfc34349aa450ceae35408cc6998f297f236375165bb1f63005d7cf3"
+
+[[files]]
+path = "Cable_UserDefined.cir"
+sha256 = "d2b3e19ebae5bceac5ad7fb406de9b691204e1b1f923d9641571e4dbe9aab955"
+
+[[files]]
+path = "Default_Cable.cir"
+sha256 = "f6e2b971b146d610464b78d26deb5320a9a4df8f4f4f40bd52e77b14c842f72f"
+
+[[files]]
+path = "HH_Cable.cir"
+sha256 = "c4bcb6df37f99249dd43c328839b440760d2a5a162e178c4d0e73387e171a025"
+
+[[files]]
+path = "HH_Patch.cir"
+sha256 = "56dbcfd7d934956ee8dbdc5c10305f1100d5e03400b50eb2ee9798f71cacb164"
+
+[[files]]
+path = "HHgating-level1.cir"
+sha256 = "27fae650944d7801ae1a33a13592802a05bbd1842d3e14f0440da03d0151f6ac"
+
+[[files]]
+path = "Neuron9.cir"
+sha256 = "654b4966726eb0deeca1f9566d97c18974b49d7dc5a2147f7336622fa89bccfd"
+
+[[files]]
+path = "PointNeuron.cir"
+sha256 = "88887127162f0c93eff5897282b427eaeb9b4712cf1d169049544174c7277e06"
+
+[[files]]
+path = "Synapse3Test.cir"
+sha256 = "d8329b8d82564ce6d6dc4635698547692c1369e2f8ffcf5ccf136abd95ad4e0a"
+
+[[files]]
+path = "SynapseTest1.cir"
+sha256 = "54b9290631a6837a2ded7cd060c9627655020f931ebcf48626b786dc06f739a6"
+
+[[files]]
+path = "dlambda.cir"
+sha256 = "bd2cf29066a7ff3654ec16888f0069939135bbabbd496677e54d606e1e5f7f86"
+
+[[files]]
+path = "passivePatch-level1.cir"
+sha256 = "895dbb1534223e4f54aa0e8db3d809fadbfd29fa22785f018e75084367802021"
+
+[[files]]
+path = "passivePatch-level6.cir"
+sha256 = "746df0415020a7af72ebdcef1d58b1517cc62e0491cf841e396a2346b979cc45"
+
+[[files]]
+path = "rallpack1-1000level1s.cir"
+sha256 = "8ee56c19b41f549134723cd2151a8156d99a611eaae5941bdaa2b197f8fa4d72"
+
+[[files]]
+path = "rallpack1-ud.cir"
+sha256 = "a6bb2547be0d16ca04b774c394d6509c942d571a380426fdfd3d2b1f6f6b1bf4"
+
+[[files]]
+path = "rallpack1.cir"
+sha256 = "c998513c848db9f6de45776495933e285ccbbe5aa1df8585dbe2e3b1ab126f3a"
+
+[[files]]
+path = "rallpack2-level1neuron.cir"
+sha256 = "38f86eeffd4e6a4b5785fec70691d3a668265c4cb43f8f831b5035d7a8893991"
+
+[[files]]
+path = "rallpack2.cir"
+sha256 = "47a808d8a0ddb27d369074850f58dbc13e609851152b4ef8431c91e14bc54559"
+
+[[files]]
+path = "rallpack3-1000level1s.cir"
+sha256 = "657b948142f86f827fe1be35f93ae1842567af863bd3fe2d369216167ab9cbad"
+
+[[files]]
+path = "rallpack3.cir"
+sha256 = "245376a06cadaaa01c20b5fd805ddca478f7366d60ba2fdfddbbea6b0987f779"
+
+[[files]]
+path = "synapseDCOP-level4.cir"
+sha256 = "34fe5ca4d8082cbbd7db077d9949f7df7b7684ac14c89ab224b4a545312ef225"
+
+[[files]]
+path = "synapticCurrent-level3.cir"
+sha256 = "2289ac6b3af6cb4c037a601f636e4050915afcda096504bc66aeae33f738c8eb"
+
+[[files]]
+path = "synapticCurrent-level4.cir"
+sha256 = "824da901fbf7727070973baca8701be2f49eb0ddc545cc58ed88ad5b4e9466fe"

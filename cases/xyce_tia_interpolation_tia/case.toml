@@ -1,0 +1,25 @@
+id = "xyce_tia_interpolation_tia"
+title = "Xyce_Regression TIA/Interpolation_TIA"
+family = "test"
+netlists = [
+    { file = "interpolation_gear.cir", dialect = "xyce" },
+    { file = "interpolationtrap.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/Interpolation_TIA"
+
+[[files]]
+path = "interpolation_gear.cir"
+sha256 = "1e2bcc4b651ba99e7032612310987c809bdfc3fe3734c2a518dcf503d8d1e161"
+
+[[files]]
+path = "interpolationtrap.cir"
+sha256 = "78eb562f42fe55a966c38cb56a95ca42e10956cd993d73385f0b72be9876d91a"

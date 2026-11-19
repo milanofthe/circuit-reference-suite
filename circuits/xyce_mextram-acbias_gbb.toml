@@ -1,0 +1,15 @@
+title = "Xyce_Regression MEXTRAM"
+case = "xyce_mextram"
+source = "acBias_Gbb.cir"
+outputs = [
+    "i(v_c_b)",
+    "i(v_b_b)",
+    "i(v_e_b)",
+    "i(v_s_b)",
+]
+analysis = [
+    { type = "ac", sweep = "lin", points = 1, start = 1000000000.0, stop = 1000000000.0 },
+]
+
+[options]
+temp = 25.0

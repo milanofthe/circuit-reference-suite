@@ -1,0 +1,65 @@
+id = "xyce_rom"
+title = "Xyce_Regression ROM"
+family = "test"
+netlists = [
+    { file = "RC_ladder100.cir", dialect = "xyce" },
+    { file = "RC_ladder_top10_mask1.cir", dialect = "xyce" },
+    { file = "RC_ladder_top10_twolevel1.cir", dialect = "xyce" },
+    { file = "RC_ladder_top10_xyce.cir", dialect = "xyce" },
+    { file = "RLC_ladder100.cir", dialect = "xyce" },
+    { file = "RLC_ladder_top30_mask1.cir", dialect = "xyce" },
+    { file = "RLC_ladder_top30_twolevel1.cir", dialect = "xyce" },
+    { file = "RLC_ladder_top30_xyce.cir", dialect = "xyce" },
+    { file = "cab_dak_sig_o_simple.cir", dialect = "xyce" },
+    { file = "cab_dak_sig_o_simple_top2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/ROM"
+
+[[files]]
+path = "RC_ladder100.cir"
+sha256 = "0608845b83c78cbe6a6b3fad0a3a113c9885552dffbdc78c71a6be178232ae2e"
+
+[[files]]
+path = "RC_ladder_top10_mask1.cir"
+sha256 = "495cf4912e8e5beae77ac3356b35b1eac0ad33517f8c7f0ec390058799023f72"
+
+[[files]]
+path = "RC_ladder_top10_twolevel1.cir"
+sha256 = "9ec4ea861ce442bdb87503219fa1f16c008e15d28c5442c466f82b89063e7899"
+
+[[files]]
+path = "RC_ladder_top10_xyce.cir"
+sha256 = "18ec74bde0923b2b0fbc85c57bca67d44b7c6db7be0bd25cc6154014124b3817"
+
+[[files]]
+path = "RLC_ladder100.cir"
+sha256 = "ad053280668db5c151b1fbad0c53762a053bde91dc5b13e3d646d5c21ae1d5dc"
+
+[[files]]
+path = "RLC_ladder_top30_mask1.cir"
+sha256 = "1acb29b7100cfdca9256faf47ccd36aa736075fde6a89ccb9b9d2a0b425a500a"
+
+[[files]]
+path = "RLC_ladder_top30_twolevel1.cir"
+sha256 = "7aed011b7b0f5da5c4520e5e91c21ebfb4ce6df420447968fce12c7237df1a34"
+
+[[files]]
+path = "RLC_ladder_top30_xyce.cir"
+sha256 = "a3d000795ad133daa1af55ff2b8ae8b3e97023baed8500347a16cf6e41495158"
+
+[[files]]
+path = "cab_dak_sig_o_simple.cir"
+sha256 = "2e43daf6260ab3827c2397181bcbb30b7a4f8d4a214e083bc83c8ca0d7b5da2f"
+
+[[files]]
+path = "cab_dak_sig_o_simple_top2.cir"
+sha256 = "4629a9544319e440c628727bae930b2b949e3c85f8eb528a5301263e123fb509"

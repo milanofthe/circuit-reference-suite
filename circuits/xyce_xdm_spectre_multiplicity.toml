@@ -1,0 +1,20 @@
+title = "Xyce_Regression XDM/SPECTRE/MULTIPLICITY"
+case = "xyce_xdm_spectre_multiplicity"
+source = "rlc.cir"
+outputs = [
+    "i(rr0)",
+    "i(cc0)",
+    "i(ll0)",
+    "i(rr1)",
+    "i(cc1)",
+    "i(ll1)",
+    "i(xx1:rr1)",
+    "i(xx1:cc1)",
+    "i(ll2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.1 },
+]
+
+[variants]
+spectre = "rlc.cir.spectre"

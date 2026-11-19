@@ -1,0 +1,11 @@
+title = "RC low-pass driven by a pulse train"
+case = "vacask_rc"
+source = "ngspice/runme.sim"
+analysis = [
+    { type = "tran", step = 1e-06, stop = 1.0, max_step = 1e-06 },
+]
+
+[variants]
+xyce = "xyce/runme.sim"
+gnucap = "gnucap/runme.sim"
+vacask = "vacask/runme.sim"

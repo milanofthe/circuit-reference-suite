@@ -1,0 +1,13 @@
+title = "Xyce_Regression PARAM_REFACTOR"
+case = "xyce_param_refactor"
+source = "paramStep1.cir"
+outputs = [
+    "v(2)",
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 1000.0, stop = 1000.0, step = 1.0 },
+]

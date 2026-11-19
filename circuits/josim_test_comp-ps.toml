@@ -1,0 +1,10 @@
+title = "JoSIM test/comp"
+case = "josim_test_comp"
+source = "ps.cir"
+outputs = [
+    "v(4)",
+    "i(ra)",
+]
+analysis = [
+    { type = "tran", step = 2.5e-13, stop = 5e-10, uic = true },
+]

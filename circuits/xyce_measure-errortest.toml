@@ -1,0 +1,10 @@
+title = "Xyce_Regression MEASURE"
+case = "xyce_measure"
+source = "ErrorTest.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

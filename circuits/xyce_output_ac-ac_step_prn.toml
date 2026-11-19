@@ -1,0 +1,10 @@
+title = "Xyce_Regression Output/AC"
+case = "xyce_output_ac"
+source = "ac-step-prn.cir"
+outputs = [
+    "v(1)",
+    "i(vsrc)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1.0, stop = 2000.0 },
+]

@@ -1,0 +1,10 @@
+title = "Xyce_Regression BUG_458"
+case = "xyce_bug_458"
+source = "bug458.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.002 },
+]

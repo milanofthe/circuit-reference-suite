@@ -1,0 +1,20 @@
+id = "xyce_mpde_opamp"
+title = "Xyce_Regression MPDE/OPAMP"
+family = "test"
+netlists = [
+    { file = "ccmop.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/MPDE/OPAMP"
+
+[[files]]
+path = "ccmop.cir"
+sha256 = "4ef3de1a543d2f7616be3dfa14fc4d6557835a9652d0b0bbcf0cc8311491f0d3"

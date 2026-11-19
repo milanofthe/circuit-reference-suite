@@ -1,0 +1,10 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/hfet2_nfet_transient.cir"
+outputs = [
+    "v(drain)",
+    "v(gate)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 4e-09 },
+]

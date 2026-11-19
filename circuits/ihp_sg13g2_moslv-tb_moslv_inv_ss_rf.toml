@@ -1,0 +1,16 @@
+title = "IHP SG13G2 moslv model tests"
+case = "ihp_sg13g2_moslv"
+source = "tb_moslv_inv_ss_rf.sp"
+outputs = [
+    "v(out)",
+    "i(vdd)",
+]
+
+[options]
+reltol = 0.0001
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.0, stop = 1.2, step = 0.02 },
+]

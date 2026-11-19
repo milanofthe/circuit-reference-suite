@@ -1,0 +1,13 @@
+title = "Xyce_Regression XDM/TSPICE/OTHER_PARSING"
+case = "xyce_xdm_tspice_other_parsing"
+source = "subckt.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.001 },
+]
+
+[variants]
+tspice = "subckt.cir.tspice"

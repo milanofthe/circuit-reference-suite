@@ -1,0 +1,12 @@
+title = "Xyce_Regression MODEL_BINNING"
+case = "xyce_model_binning"
+source = "tranInverterBinning.cir"
+outputs = [
+    "v(vdd)",
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-12, stop = 4e-09 },
+]

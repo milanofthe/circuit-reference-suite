@@ -1,0 +1,10 @@
+title = "Xyce_Regression BSIMCMG"
+case = "xyce_bsimcmg"
+source = "inverter_transient.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 5e-06 },
+]
+
+[options]
+method = "trap"
+temp = 25.0

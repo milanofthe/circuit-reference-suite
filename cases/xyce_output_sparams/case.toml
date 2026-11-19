@@ -1,0 +1,125 @@
+id = "xyce_output_sparams"
+title = "Xyce_Regression Output/SPARAMS"
+family = "test"
+netlists = [
+    { file = "InvalidDotLinParams1.cir", dialect = "xyce" },
+    { file = "InvalidDotLinParams2.cir", dialect = "xyce" },
+    { file = "RCladderSP1.cir", dialect = "xyce" },
+    { file = "RCladderSP1_step.cir", dialect = "xyce" },
+    { file = "RCladderSPdc.cir", dialect = "xyce" },
+    { file = "RCladderSPtran.cir", dialect = "xyce" },
+    { file = "ac.cir", dialect = "xyce" },
+    { file = "multi-parameter.cir", dialect = "xyce" },
+    { file = "sparams-phase-in-radians.cir", dialect = "xyce" },
+    { file = "sparams-ts1-1port.cir", dialect = "xyce" },
+    { file = "sparams-ts1-3port.cir", dialect = "xyce" },
+    { file = "sparams-ts1-4port.cir", dialect = "xyce" },
+    { file = "sparams-ts1-5port.cir", dialect = "xyce" },
+    { file = "sparams-ts1-dataFormat.cir", dialect = "xyce" },
+    { file = "sparams-ts2-dataFormat.cir", dialect = "xyce" },
+    { file = "sparams-ts2.cir", dialect = "xyce" },
+    { file = "yparams-ts1-1port.cir", dialect = "xyce" },
+    { file = "yparams-ts1-2port.cir", dialect = "xyce" },
+    { file = "yparams-ts2.cir", dialect = "xyce" },
+    { file = "zparams-ts1-1port.cir", dialect = "xyce" },
+    { file = "zparams-ts1-2port.cir", dialect = "xyce" },
+    { file = "zparams-ts2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Output/SPARAMS"
+
+[[files]]
+path = "InvalidDotLinParams1.cir"
+sha256 = "19e8696c8e1727fbb8536af8800bcd08c9962e08938d68b97815e53e3cdde8a0"
+
+[[files]]
+path = "InvalidDotLinParams2.cir"
+sha256 = "9767e65ae74bcd0866dd9d6301241fc1dc30fbe41aa259fec058e54af204140e"
+
+[[files]]
+path = "RCladderSP1.cir"
+sha256 = "dc4b3d3a264ea7717df6913690b6c61edaf0ec4028c43f4aeb403f61454e95a9"
+
+[[files]]
+path = "RCladderSP1_step.cir"
+sha256 = "5ab51cb4a6302d0fc6ad9b2f8c3da2dff3107f58028d139b93b90aaa0c68259c"
+
+[[files]]
+path = "RCladderSPdc.cir"
+sha256 = "ce48fcf49cb585dfb22114fa45168370af4111846db921f8564dce7e0de11731"
+
+[[files]]
+path = "RCladderSPtran.cir"
+sha256 = "e39782bd780291d4960ee9b8e175369f9aab1834d06ceaab9175a5a0ce6da32f"
+
+[[files]]
+path = "ac.cir"
+sha256 = "d27164f983597323a399a5daba655eb5985cc7a5a3f60c33c94e2f3be88855f6"
+
+[[files]]
+path = "multi-parameter.cir"
+sha256 = "40a748523be5cdaae59d033e6629007d20194c49d46a9227438ac6adb8149ebb"
+
+[[files]]
+path = "sparams-phase-in-radians.cir"
+sha256 = "6d20a6b572e82951a2b7ffc3e7ea4a812168f1382d29f8a24b68f2deef7d4ac7"
+
+[[files]]
+path = "sparams-ts1-1port.cir"
+sha256 = "b0b05acfe235215a5a4e0774d2a755d651c5e868f29283ecddc7a3f39dd98ff5"
+
+[[files]]
+path = "sparams-ts1-3port.cir"
+sha256 = "0676efad0b09fdb096719d76c3d21e0c3bcc0e455446f95b88a55f7496b2950b"
+
+[[files]]
+path = "sparams-ts1-4port.cir"
+sha256 = "f1a9093e96aac5b7372b7f8307788ed8822fc3bd581e2ac60d0e1ad84db6c569"
+
+[[files]]
+path = "sparams-ts1-5port.cir"
+sha256 = "445af5288490a73c35c0b18703e051f7b78886ab2a4150cbdd8e02993c5c81e6"
+
+[[files]]
+path = "sparams-ts1-dataFormat.cir"
+sha256 = "77f811ccbfb5c4662f8694cb3286c4547d5733ca60aff9a1e7fff572cd993ab1"
+
+[[files]]
+path = "sparams-ts2-dataFormat.cir"
+sha256 = "7686c495c833acde0d8bd0d663853265d8ed69b1289ac7a5202f9f0b278f7547"
+
+[[files]]
+path = "sparams-ts2.cir"
+sha256 = "43e8a3bf36960e24a95dd409163d3aa453214051c1eddc792b001a110982f4a7"
+
+[[files]]
+path = "yparams-ts1-1port.cir"
+sha256 = "25548e1d47c99110334b09d813c46bf152ceed0147ecdf743337398db3a0609b"
+
+[[files]]
+path = "yparams-ts1-2port.cir"
+sha256 = "279a620732733c1bea76756a315c218c987c2054b96a88c4fe6c413832d991d9"
+
+[[files]]
+path = "yparams-ts2.cir"
+sha256 = "80a3ff6cf8a9af69039e480f633ffdd78b2ec52da75c40abff3b4cdaddb91dcb"
+
+[[files]]
+path = "zparams-ts1-1port.cir"
+sha256 = "87eef50f0c1ddcbf5a07f42b98265543bfd1a95f1da877b5137f2164832efe37"
+
+[[files]]
+path = "zparams-ts1-2port.cir"
+sha256 = "6b2a912f819c3a1a3bf8a58907a35feb8ee129e18da6eedc06d8a7e021be12ff"
+
+[[files]]
+path = "zparams-ts2.cir"
+sha256 = "13e99fa0a486ac7a28414491d0c5141acc2b5a8b59a503d7baa61e235ec243bb"

@@ -1,0 +1,13 @@
+title = "Xyce_Regression ABM_POW"
+case = "xyce_abm_pow"
+source = "abmpow1.cir"
+outputs = [
+    "v(1)",
+    "v(4)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vs", start = -2.5, stop = 2.5, step = 0.1 },
+]

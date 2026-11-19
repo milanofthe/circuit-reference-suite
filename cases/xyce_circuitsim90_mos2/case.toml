@@ -1,0 +1,109 @@
+id = "xyce_circuitsim90_mos2"
+title = "Xyce_Regression CircuitSim90/MOS2"
+family = "test"
+netlists = [
+    { file = "ab_ac.cir", dialect = "xyce" },
+    { file = "ab_integ.cir", dialect = "xyce" },
+    { file = "ab_opamp.cir", dialect = "xyce" },
+    { file = "cram.cir", dialect = "xyce" },
+    { file = "e1480.cir", dialect = "xyce" },
+    { file = "g1310.cir", dialect = "xyce" },
+    { file = "gm6.cir", dialect = "xyce" },
+    { file = "hussamp.cir", dialect = "xyce" },
+    { file = "mosrect.cir", dialect = "xyce" },
+    { file = "mux8.cir", dialect = "xyce" },
+    { file = "nand.cir", dialect = "xyce" },
+    { file = "pump.cir", dialect = "xyce" },
+    { file = "reg0.cir", dialect = "xyce" },
+    { file = "ring.cir", dialect = "xyce" },
+    { file = "schmitfast.cir", dialect = "xyce" },
+    { file = "schmitslow.cir", dialect = "xyce" },
+    { file = "slowlatch.cir", dialect = "xyce" },
+    { file = "toronto.cir", dialect = "xyce" },
+]
+notes = """
+CircuitSim90 benchmark circuits (MCNC, 1990), adapted to Xyce by its developers.
+MCNC's terms for the benchmarks allow copying and distribution free of charge.
+"""
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/CircuitSim90/MOS2"
+
+[[files]]
+path = "ab_ac.cir"
+sha256 = "4629e860befe1b77ab22ec34ac1d9f04c3b0d763a9d1d5ab3daeefa63998bd4a"
+
+[[files]]
+path = "ab_integ.cir"
+sha256 = "0b26c63471ad65f26d60b29461161589a6a8ffaf7975533fdc912aff17662e32"
+
+[[files]]
+path = "ab_opamp.cir"
+sha256 = "22254a57e4e976712960fd5c21bbbbf2f72e41e28301d567362ac9c95a75352e"
+
+[[files]]
+path = "cram.cir"
+sha256 = "60e91211c78a3becfe8f3765872af9f715e2db5e79bf94268e69729356636d0e"
+
+[[files]]
+path = "e1480.cir"
+sha256 = "ba099fbc45a07ca21e33d5e2be8faabd1e37ade40f6e8e8be912843b3ea80577"
+
+[[files]]
+path = "g1310.cir"
+sha256 = "86a52428bb1c6244b3942ddc2de5eba3254a323109336db8aab26ff8b04c08ba"
+
+[[files]]
+path = "gm6.cir"
+sha256 = "e0a5f86b6d1daebb364f3a156d2d2f411c9383bd61dbaca33bc2fae2692b3e70"
+
+[[files]]
+path = "hussamp.cir"
+sha256 = "262e04cd3954f5d1e87f9a6c7158c8c706cfd0763c6b8def5359c6ec528d4cf4"
+
+[[files]]
+path = "mosrect.cir"
+sha256 = "edad518d693e1771f5a70bedaa4a23ad88e1cca0a21b9bf37f978da7c91ce801"
+
+[[files]]
+path = "mux8.cir"
+sha256 = "68e478bafb2daf900300d319c665e63e9482afa6766573fee913c8a033f1e2bc"
+
+[[files]]
+path = "nand.cir"
+sha256 = "14ae4051e24d8f2077d2b723cc66a326e922d419accb3bdc3065f55839e86791"
+
+[[files]]
+path = "pump.cir"
+sha256 = "142a0df7fc79780e9eb85491b0307224a5e0fa745e15dffb3c27bb6f38bb668f"
+
+[[files]]
+path = "reg0.cir"
+sha256 = "462e2c81437c1cb084882cefa4d78de936a987e9d8d5fa3485c99123804f98b8"
+
+[[files]]
+path = "ring.cir"
+sha256 = "42c2b03804914eeadade29b6bbaea94d9bae575a2eba165e3a8d4a806ae23475"
+
+[[files]]
+path = "schmitfast.cir"
+sha256 = "cc2034ae509345822e9a83835d8d1d7854b112fa86a512a9bfbd887f8c6afd8c"
+
+[[files]]
+path = "schmitslow.cir"
+sha256 = "7ebd52837e56e13a4bfa0718dba5aa3df93a7a4019cd7c5c92cfbf4be8420798"
+
+[[files]]
+path = "slowlatch.cir"
+sha256 = "2ff69abefa7df895e24efadfa4822b39d7ce19cc32c490a6e6bcc58b22eb8a38"
+
+[[files]]
+path = "toronto.cir"
+sha256 = "efa07962b99021c701d850797b8fca0dea204a722b8ef02ea79cfeac0ae86018"

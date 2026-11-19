@@ -1,0 +1,14 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_mos3.sat2.ckt"
+outputs = [
+    "i(m1)",
+    "v(m1)",
+    "v(ddb.m1)",
+    "i(ddb.m1)",
+    "v(dsb.m1)",
+    "i(dsb.m1)",
+]
+analysis = [
+    { type = "op" },
+]

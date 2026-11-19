@@ -1,0 +1,18 @@
+title = "Xyce_Regression CircuitSim90/BJT"
+case = "xyce_circuitsim90_bjt"
+source = "vreg.cir"
+outputs = [
+    "v(7)",
+    "v(2)",
+    "v(18)",
+    "v(19)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vcc", start = 0.0, stop = 15.0, step = 1.0 },
+]

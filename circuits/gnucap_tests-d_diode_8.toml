@@ -1,0 +1,26 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_diode.8.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(v1)",
+    "i(r1)",
+    "i(d1)",
+    "v(d1)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = -10.0, stop = 10.0, step = 2.0 },
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 9.999, stop = 10.001, step = 0.001 },
+]

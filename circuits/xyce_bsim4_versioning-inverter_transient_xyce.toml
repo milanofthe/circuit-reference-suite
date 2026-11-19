@@ -1,0 +1,17 @@
+title = "Xyce_Regression BSIM4_Versioning"
+case = "xyce_bsim4_versioning"
+source = "inverter_transient_xyce.cir"
+outputs = [
+    "v(vi)",
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(vo)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 2e-06 },
+]
+
+[options]
+temp = 25.0

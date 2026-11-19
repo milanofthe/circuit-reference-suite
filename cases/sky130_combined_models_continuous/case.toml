@@ -1,0 +1,24 @@
+id = "sky130_combined_models_continuous"
+title = "SKY130 combined_models/continuous model checks"
+family = "device"
+netlists = [
+    { file = "test.spice", dialect = "ngspice" },
+]
+
+[source]
+name = "sky130_fd_pr"
+url = "https://github.com/fossi-foundation/skywater-pdk-libs-sky130_fd_pr"
+license = "Apache-2.0"
+authors = [
+    "SkyWater Technology Foundry",
+    "Google",
+]
+commit = "16f93a795d87ea2b393fe5c74d32674e111e44a2"
+root = "combined_models/continuous"
+
+[[files]]
+path = "test.spice"
+sha256 = "78e0b4fb605563ef6a77427105ab95b2e517e937a82a373a3939fa48288964b6"
+
+[resolve]
+"sky130.lib.spice" = "libraries/sky130_fd_pr/combined_models/continuous/sky130.lib.spice"

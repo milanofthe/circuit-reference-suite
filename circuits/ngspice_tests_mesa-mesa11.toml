@@ -1,0 +1,13 @@
+title = "ngspice tests/mesa"
+case = "ngspice_tests_mesa"
+source = "mesa11.cir"
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vds", start = 0.0, stop = 2.0, step = 0.05 },
+    { source = "vgs", start = -1.2, stop = 0.0, step = 0.4 },
+]

@@ -1,0 +1,9 @@
+title = "Xyce_Regression Certification_Tests/BUG_1041_SON"
+case = "xyce_certification_tests_bug_1041_son"
+source = "mos1_invert_scale2Ref.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 6e-06 },
+]

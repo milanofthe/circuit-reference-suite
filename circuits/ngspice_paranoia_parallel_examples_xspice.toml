@@ -1,0 +1,6 @@
+title = "ngspice paranoia_parallel/examples/xspice"
+case = "ngspice_paranoia_parallel_examples_xspice"
+source = "xspice_c1.cir"
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.001 },
+]

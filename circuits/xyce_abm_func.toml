@@ -1,0 +1,12 @@
+title = "Xyce_Regression ABM_FUNC"
+case = "xyce_abm_func"
+source = "func.cir"
+outputs = [
+    "v(x)",
+    "v(y)",
+    "v(z)",
+    "v(f)",
+]
+analysis = [
+    { type = "tran", step = 2e-05, stop = 0.002 },
+]

@@ -1,0 +1,10 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "oscillator.7.ckt"
+outputs = [
+    "v(1)",
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 100.0, start = 0.1 },
+]

@@ -1,0 +1,260 @@
+id = "xyce_lead_currents"
+title = "Xyce_Regression LEAD_CURRENTS"
+family = "test"
+netlists = [
+    { file = "lead_bjt_gear.cir", dialect = "xyce" },
+    { file = "lead_bjt_trap.cir", dialect = "xyce" },
+    { file = "lead_bsim3_gear.cir", dialect = "xyce" },
+    { file = "lead_bsim3_trap.cir", dialect = "xyce" },
+    { file = "lead_bsim4_gear.cir", dialect = "xyce" },
+    { file = "lead_bsim4_trap.cir", dialect = "xyce" },
+    { file = "lead_bsrc_ac.cir", dialect = "xyce" },
+    { file = "lead_bsrc_gear.cir", dialect = "xyce" },
+    { file = "lead_bsrc_trap.cir", dialect = "xyce" },
+    { file = "lead_dio1_gear.cir", dialect = "xyce" },
+    { file = "lead_dio1_m2_gear.cir", dialect = "xyce" },
+    { file = "lead_dio1_m2_trap.cir", dialect = "xyce" },
+    { file = "lead_dio1_trap.cir", dialect = "xyce" },
+    { file = "lead_ind_gear.cir", dialect = "xyce" },
+    { file = "lead_ind_noise.cir", dialect = "xyce" },
+    { file = "lead_ind_trap.cir", dialect = "xyce" },
+    { file = "lead_mil_gear.cir", dialect = "xyce" },
+    { file = "lead_mil_trap.cir", dialect = "xyce" },
+    { file = "lead_min2_gear.cir", dialect = "xyce" },
+    { file = "lead_min2_trap.cir", dialect = "xyce" },
+    { file = "lead_min_ac.cir", dialect = "xyce" },
+    { file = "lead_min_gear.cir", dialect = "xyce" },
+    { file = "lead_min_trap.cir", dialect = "xyce" },
+    { file = "lead_njfet_gear.cir", dialect = "xyce" },
+    { file = "lead_njfet_trap.cir", dialect = "xyce" },
+    { file = "lead_nmes_gear.cir", dialect = "xyce" },
+    { file = "lead_nmes_trap.cir", dialect = "xyce" },
+    { file = "lead_nmos1_gear.cir", dialect = "xyce" },
+    { file = "lead_nmos1_trap.cir", dialect = "xyce" },
+    { file = "lead_nmos3_gear.cir", dialect = "xyce" },
+    { file = "lead_nmos3_trap.cir", dialect = "xyce" },
+    { file = "lead_nsoi_gear.cir", dialect = "xyce" },
+    { file = "lead_nsoi_trap.cir", dialect = "xyce" },
+    { file = "lead_pde_2d.cir", dialect = "xyce" },
+    { file = "lead_pde_2d2.cir", dialect = "xyce" },
+    { file = "lead_pde_dio.cir", dialect = "xyce" },
+    { file = "lead_pjfet_tran_gear.cir", dialect = "xyce" },
+    { file = "lead_pjfet_tran_trap.cir", dialect = "xyce" },
+    { file = "lead_pmos1.cir", dialect = "xyce" },
+    { file = "lead_psoi_gear.cir", dialect = "xyce" },
+    { file = "lead_psoi_trap.cir", dialect = "xyce" },
+    { file = "lead_r_c_gear.cir", dialect = "xyce" },
+    { file = "lead_r_c_trap.cir", dialect = "xyce" },
+    { file = "lead_sw_gear.cir", dialect = "xyce" },
+    { file = "lead_sw_trap.cir", dialect = "xyce" },
+    { file = "lead_tra_gear.cir", dialect = "xyce" },
+    { file = "lead_tra_trap.cir", dialect = "xyce" },
+    { file = "lead_vdmos_gear.cir", dialect = "xyce" },
+    { file = "lead_vdmos_trap.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/LEAD_CURRENTS"
+
+[[files]]
+path = "lead_bjt_gear.cir"
+sha256 = "fc898217aaa8308dc2584b6057ec487ba5503bf870ef0e9516e1b78fa3ef3340"
+
+[[files]]
+path = "lead_bjt_trap.cir"
+sha256 = "6a28e3dd4b6a073cc33c9da4baf14a1b0930f575472e77acf726d52dc3da14fe"
+
+[[files]]
+path = "lead_bsim3_gear.cir"
+sha256 = "07afeaa4245998dfac9a1f36be638da3632990facbeff820b5f8492982059a71"
+
+[[files]]
+path = "lead_bsim3_trap.cir"
+sha256 = "5f3ec19dbb564762ae89a23ea7d6bac9fed2c283a192b6dc4e3e8c45af6040bb"
+
+[[files]]
+path = "lead_bsim4_gear.cir"
+sha256 = "005df47eb69d1a018204d6e579d4432ca9d447631aa08542fed7fb8e2970bca1"
+
+[[files]]
+path = "lead_bsim4_trap.cir"
+sha256 = "fe59c17fddcf52d7d3e29a312a89da7f66af4a59d2d39d4c25d9f1569b356f49"
+
+[[files]]
+path = "lead_bsrc_ac.cir"
+sha256 = "077e738120963a20c7414115e04f47ef983630675af50e6f6550a18efa9eed8c"
+
+[[files]]
+path = "lead_bsrc_gear.cir"
+sha256 = "4d43624a8d871f5da7538d4a0cb1fde1542aba0c1362dd6553225587de74db78"
+
+[[files]]
+path = "lead_bsrc_trap.cir"
+sha256 = "74b222bef26fbdb8d51a9073cff337a261d91f4057bf5ac63c5b86e872daf0eb"
+
+[[files]]
+path = "lead_dio1_gear.cir"
+sha256 = "458b401be27d3814628bd85fbb58189771fd49dea9c12d76ad5a59fc9a086ef3"
+
+[[files]]
+path = "lead_dio1_m2_gear.cir"
+sha256 = "1ea8140918160d0611864e01d2c8589a794eed1ed723d92e7303ba9f86c4a162"
+
+[[files]]
+path = "lead_dio1_m2_trap.cir"
+sha256 = "c7460e3f6be04054a8d1b4602e4e8d34ba2b7b3d7bf67993328aa677adf2c37b"
+
+[[files]]
+path = "lead_dio1_trap.cir"
+sha256 = "1ea718c877d702ede9c79bd8e90c7ae59d68053fcd768be001ea7fedaaf35d3a"
+
+[[files]]
+path = "lead_ind_gear.cir"
+sha256 = "7deca1936a7f5875127e13543451aa6421761140a310150a59a9f9231ae0427c"
+
+[[files]]
+path = "lead_ind_noise.cir"
+sha256 = "6f8c9f2274a18c4333d4625064d0155f4c9bdd2372858213e764eb1a1d1b6337"
+
+[[files]]
+path = "lead_ind_trap.cir"
+sha256 = "13a9fdaf5f35fed9b6ccd121ae9b5cbaf6c46e4ab388955fdde5590ed8a7c3bd"
+
+[[files]]
+path = "lead_mil_gear.cir"
+sha256 = "a31c72d43907e12777b2acf69ca9ca2557cfcc88fd2798c70bbadc0e82aedd98"
+
+[[files]]
+path = "lead_mil_trap.cir"
+sha256 = "ed5dd8d33b925b588010f3848929892ae0d12fbcdc8db86527a7f65d7df8f864"
+
+[[files]]
+path = "lead_min2_gear.cir"
+sha256 = "6757287e29e86ac892ac12c4eb347b6659f1b0833d537a0c36588186576635f1"
+
+[[files]]
+path = "lead_min2_trap.cir"
+sha256 = "c03c5a9e45219aa25ef3e6aee6e5f6f3834e6799cfe950a2d6a0e27753d5c4d9"
+
+[[files]]
+path = "lead_min_ac.cir"
+sha256 = "199633033b35e3290fac366dfe9f3a0cf500384b215775ae35dfd15d33c650a8"
+
+[[files]]
+path = "lead_min_gear.cir"
+sha256 = "602af94d98f1c08c8d061346690afdd0b5e0e368b9d79f3d95dc487fdce640f1"
+
+[[files]]
+path = "lead_min_trap.cir"
+sha256 = "934f2f061440babefd15f45852ac0fe2cade41984549bd3e1f99d39c74b4f815"
+
+[[files]]
+path = "lead_njfet_gear.cir"
+sha256 = "bf3d5943e3f7b05f775f6f6538b7cfc1d9da9f8a65bc406892c45958533cc362"
+
+[[files]]
+path = "lead_njfet_trap.cir"
+sha256 = "405d614d3f4db2e57f347fe7ad95a6de36d804fdcd660a80b50911f4f8a9e4ea"
+
+[[files]]
+path = "lead_nmes_gear.cir"
+sha256 = "d974d7e6a7de6d26cdbf8187656bfdafbaea57f95aef51b5f8a45c9a77a755c1"
+
+[[files]]
+path = "lead_nmes_trap.cir"
+sha256 = "73508d05eb257460f6de8c6d63a105fe531638bf51c185413a885ebf7aa31222"
+
+[[files]]
+path = "lead_nmos1_gear.cir"
+sha256 = "9a57f001fc15c4ea880863a672b5db94fbe545bf2d21fbc941e49029ce1ad081"
+
+[[files]]
+path = "lead_nmos1_trap.cir"
+sha256 = "42f51eaf4a20daeddd984b7038348898d5ee9429719a3e6bb656602a9c9b2557"
+
+[[files]]
+path = "lead_nmos3_gear.cir"
+sha256 = "7cf2941f2b8de3db8b50bf5ef9449b63d6c35a6c0758a9429a663b22cd4c104e"
+
+[[files]]
+path = "lead_nmos3_trap.cir"
+sha256 = "256faed91a0526fbbbbc3d01af3c32cc0c40b7f5ee69218b5ea10f314ce1f54c"
+
+[[files]]
+path = "lead_nsoi_gear.cir"
+sha256 = "085ffe3aec2ae5d1e32406521463f5476fd6cbefe802c40e76b6652590fb4cb7"
+
+[[files]]
+path = "lead_nsoi_trap.cir"
+sha256 = "6fd19a1f2fe1ebb9313f3e3d7c12d38a907564e4e769a3b0897acf4c8a959d1a"
+
+[[files]]
+path = "lead_pde_2d.cir"
+sha256 = "15fe39299d7af1770ef0f0b288d40aa501d85a4424c73bdb7c022a0fd4530e4c"
+
+[[files]]
+path = "lead_pde_2d2.cir"
+sha256 = "ef9d8128ad560448f450aef60ff4ddecba73a3d59ffd414f81289b04f8c3d8c6"
+
+[[files]]
+path = "lead_pde_dio.cir"
+sha256 = "4ac4c93ae685975fc39949c9656c94216e590068cedc4edfe76e304567482297"
+
+[[files]]
+path = "lead_pjfet_tran_gear.cir"
+sha256 = "180c15329094b18e0b9d5651f8ece9ef4af7e93d70905057b912f08a9ef676a0"
+
+[[files]]
+path = "lead_pjfet_tran_trap.cir"
+sha256 = "117e5ab4df139da0e376e538e111e59cf36ee7c0e57f74221e7c81e35a0a5eb7"
+
+[[files]]
+path = "lead_pmos1.cir"
+sha256 = "1c2015e5d1ff6c88030d3361f9a050857b8c4470aeaf5dd6c0ef7de28774e971"
+
+[[files]]
+path = "lead_psoi_gear.cir"
+sha256 = "bb95e0c010f7070e7847e537931b57fde230c8753c34e472687a45fb4b3b575d"
+
+[[files]]
+path = "lead_psoi_trap.cir"
+sha256 = "94b3f1e3f552bb111a23f91133af1c2c393f7b039c13e45448cea6ccbc05f88d"
+
+[[files]]
+path = "lead_r_c_gear.cir"
+sha256 = "95d6bebf3a47864702d8e9dbbe8ca1f3d1ed3b707a929d6b8959cfb4a09e53b9"
+
+[[files]]
+path = "lead_r_c_trap.cir"
+sha256 = "abfb4a1f398b3e21dde3befd6f606652b1b05a009e5cdd382f2d6d2a6e789406"
+
+[[files]]
+path = "lead_sw_gear.cir"
+sha256 = "3659d04efa79cbb72af46d6135e2050771e6e35c67db0b6246ecc71afed5dbad"
+
+[[files]]
+path = "lead_sw_trap.cir"
+sha256 = "1e5135927d66d159f8eae1c05867d9f8bd0c87d30ba90b32386bbcca774591d1"
+
+[[files]]
+path = "lead_tra_gear.cir"
+sha256 = "1e1f97f48db0dc3487bed06a43a09bf6d51f349a0513d1ab31c93f876e3ba2e6"
+
+[[files]]
+path = "lead_tra_trap.cir"
+sha256 = "e4a16b9bc409e360292872073d3131cea728d769161f16601eb134f44f038da9"
+
+[[files]]
+path = "lead_vdmos_gear.cir"
+sha256 = "473ce4794cfff2894d3ff3ff46ff2b61e9dea5b4301946dc8cd6abd1b39a4a44"
+
+[[files]]
+path = "lead_vdmos_trap.cir"
+sha256 = "f6bd67d029e7bfd707639b6e3ae501a02505b7d3959a8efe1ecef9312bd6c580"

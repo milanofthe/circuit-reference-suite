@@ -1,0 +1,20 @@
+id = "xyce_wampde_oscillator"
+title = "Xyce_Regression WAMPDE/OSCILLATOR"
+family = "test"
+netlists = [
+    { file = "lcosc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/WAMPDE/OSCILLATOR"
+
+[[files]]
+path = "lcosc.cir"
+sha256 = "e901b6b34a09bbf6dd38735a727ce35423f0e5edcb9065e38da35a4328e3e7fe"

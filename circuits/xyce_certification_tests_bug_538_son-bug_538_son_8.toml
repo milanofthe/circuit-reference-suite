@@ -1,0 +1,16 @@
+title = "Xyce_Regression Certification_Tests/BUG_538_SON"
+case = "xyce_certification_tests_bug_538_son"
+source = "bug_538_son_8.cir"
+outputs = [
+    "v(b)",
+    "i(v_b)",
+]
+
+[options]
+temp = 25.0
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v_b", start = 0.5, stop = 1.2, step = 0.01 },
+]

@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_1041_SON"
+case = "xyce_certification_tests_bug_1041_son"
+source = "b3soi_invert_option_scaleRef.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]
+
+[options]
+reltol = 1e-05

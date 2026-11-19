@@ -1,0 +1,35 @@
+id = "ngspice_examples_osdi_mextram"
+title = "ngspice examples/osdi/mextram"
+family = "test"
+netlists = [
+    { file = "mex_gum.sp", dialect = "ngspice" },
+    { file = "mex_out.sp", dialect = "ngspice" },
+]
+notes = """
+Mextram 504 in Verilog-A has no source here with a clear license (the library openvaf_mextram is 505).
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/osdi/mextram"
+
+[[files]]
+path = "Modelcards/mex_model.lib"
+sha256 = "f140c81b82c471e901aa7b7030f4a06f77a2a55c44379f3c1d13545c1fb61183"
+
+[[files]]
+path = "mex_gum.sp"
+sha256 = "83be8274a65de1e42df6c54f871e282213e6e2b74c6891c79400b39b99f75c08"
+
+[[files]]
+path = "mex_out.sp"
+sha256 = "aab3a000d083eb7b622fd4396ed7b9d4703fada893c80448e1cf323ac805e0c6"
+
+[resolve]
+bjt504tva = false

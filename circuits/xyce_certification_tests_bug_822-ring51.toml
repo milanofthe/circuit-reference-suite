@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_822"
+case = "xyce_certification_tests_bug_822"
+source = "ring51.cir"
+outputs = [
+    "v(dd)",
+    "v(in)",
+    "v(out)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vdd", start = 0.0, stop = 2.0, step = 0.02 },
+]

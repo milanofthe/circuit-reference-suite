@@ -1,0 +1,35 @@
+id = "xyce_certification_tests_bug_39_son"
+title = "Xyce_Regression Certification_Tests/BUG_39_SON"
+family = "test"
+netlists = [
+    { file = "bug39_int.cir", dialect = "xyce" },
+    { file = "bug39_limit.cir", dialect = "xyce" },
+    { file = "bug39_pow.cir", dialect = "xyce" },
+    { file = "bug39_sign.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_39_SON"
+
+[[files]]
+path = "bug39_int.cir"
+sha256 = "ed26197d4f299a496f0c714a08c328cda560c1194c25ae0b415f73ff8bb1898c"
+
+[[files]]
+path = "bug39_limit.cir"
+sha256 = "9b1f3329062d0d7dc1f49b8a94fd88262a796e8dd92ae1c6a2d4fc579f12910f"
+
+[[files]]
+path = "bug39_pow.cir"
+sha256 = "76625ca95d8a4f51f6161ba610e9d569c0c161bd228cff987f6c049cc21c0f78"
+
+[[files]]
+path = "bug39_sign.cir"
+sha256 = "ea2e5d157bf39d575b2c33c3ef179dfbf9f879f21383ba001eed4bfc300e142d"

@@ -2,11 +2,13 @@
 name = "circref"
 version = "0.1.0"
 description = "Tooling for the circuit reference suite: validate the corpus, generate its READMEs"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = "MIT"
 dependencies = [
-    "pyyaml>=6.0",
     "jsonschema>=4.17",
+    "tomli-w>=1.0",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
 ]
 
 [project.scripts]

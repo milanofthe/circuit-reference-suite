@@ -1,0 +1,30 @@
+id = "xyce_tempind"
+title = "Xyce_Regression TEMPIND"
+family = "test"
+netlists = [
+    { file = "tempind.cir", dialect = "xyce" },
+    { file = "tempind_instance.cir", dialect = "xyce" },
+    { file = "tempind_instance2.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TEMPIND"
+
+[[files]]
+path = "tempind.cir"
+sha256 = "937a97f1be722bffbf0248ac3362f24c2009fa0da9203de8db73bcc1a82008e0"
+
+[[files]]
+path = "tempind_instance.cir"
+sha256 = "e8f3ae26e6bb67952142d20b501bd6ae4305b391c4a01aa9d40e469031cf1348"
+
+[[files]]
+path = "tempind_instance2.cir"
+sha256 = "fa0594e5c9b12554d49e48ab7777067f6f8765c9dee73367fa6a8aff9fdd6243"

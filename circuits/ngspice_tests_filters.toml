@@ -1,0 +1,10 @@
+title = "ngspice tests/filters"
+case = "ngspice_tests_filters"
+source = "lowpass.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 10, start = 1000.0, stop = 1000000.0 },
+]

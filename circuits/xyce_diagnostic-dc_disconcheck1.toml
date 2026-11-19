@@ -1,0 +1,14 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "DC_DisconCheck1.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = -1.0, stop = 6.0, step = 1.0 },
+]

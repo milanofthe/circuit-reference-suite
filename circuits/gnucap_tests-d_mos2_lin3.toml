@@ -1,0 +1,20 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "d_mos2.lin3.ckt"
+outputs = [
+    "i(m1)",
+    "v(m1)",
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "i(vds)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vgs", start = -10.0, stop = 10.0, step = 1.0 },
+]

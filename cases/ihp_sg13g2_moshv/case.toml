@@ -1,0 +1,171 @@
+id = "ihp_sg13g2_moshv"
+title = "IHP SG13G2 moshv model tests"
+family = "device"
+netlists = [
+    { file = "tb_moshv_inv_ff.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_ff_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_fs.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_fs_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_sf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_sf_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_ss.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_ss_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_tt.sp", dialect = "ngspice" },
+    { file = "tb_moshv_inv_tt_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng1.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng1_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng2.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng2_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng3.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng3_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng4.sp", dialect = "ngspice" },
+    { file = "tb_moshv_nmos_id_vd_ng4_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng1.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng1_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng2.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng2_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng3.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng3_rf.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng4.sp", dialect = "ngspice" },
+    { file = "tb_moshv_pmos_id_vd_ng4_rf.sp", dialect = "ngspice" },
+]
+notes = """
+IHP's ngspice model tests (`libs.tech/gnucap/tests/ngspice`). Upstream runs them with a
+`.spiceinit` that puts `libs.tech/ngspice/models` on ngspice's `sourcepath` and loads the
+PSP103, R3_CMC, MOSVAR and MOM capacitor models as OSDI; `resolve` does the same here.
+Monte Carlo decks use fixed seeds.
+
+Left out:
+- `tb_moshv_mc_mm_ff.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_ff_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_fs.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_fs_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_sf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_sf_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_ss.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_ss_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_tt.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_mm_tt_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_stat.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+- `tb_moshv_mc_stat_rf.sp`: uses subcircuit sg13_hv_nmos, defined nowhere
+"""
+
+[source]
+name = "IHP-Open-PDK"
+url = "https://github.com/IHP-GmbH/IHP-Open-PDK"
+license = "Apache-2.0"
+authors = [
+    "IHP GmbH",
+]
+commit = "5e6d592e4002946a4616f798c357f0f3c06cf3b6"
+root = "ihp-sg13g2/libs.tech/gnucap/tests/ngspice/moshv"
+
+[[files]]
+path = "tb_moshv_inv_ff.sp"
+sha256 = "ad672f799525dc6097b5a36fd74a731e627a7d30a431b500d6c028a5e8d40d8c"
+
+[[files]]
+path = "tb_moshv_inv_ff_rf.sp"
+sha256 = "7f921f670e13eab9c515df6f3baeb5cda72f997ca8eb6b42712e23c97b945803"
+
+[[files]]
+path = "tb_moshv_inv_fs.sp"
+sha256 = "858bd7d39886e425ee2d97401a6cae4802cb5e52d5e077e0820c20ae07adcd47"
+
+[[files]]
+path = "tb_moshv_inv_fs_rf.sp"
+sha256 = "0986b71d024e09d650575f7fd222c8a19794dfa913e2ee36ab82cadcffd29015"
+
+[[files]]
+path = "tb_moshv_inv_sf.sp"
+sha256 = "9fc23856cb12adbde71d694ca89289620b75113cc6b8637a141d24526da70219"
+
+[[files]]
+path = "tb_moshv_inv_sf_rf.sp"
+sha256 = "d2b9b564a426cb85d7ca7d5f83d9ed9a66724f146816cf022c26f2f44feaadd9"
+
+[[files]]
+path = "tb_moshv_inv_ss.sp"
+sha256 = "68402f71c8e96ffe9e096998cbf53dc9d7cd0396c3c48184d9c71142bd0a4d28"
+
+[[files]]
+path = "tb_moshv_inv_ss_rf.sp"
+sha256 = "be65d47afc97c64ed7c11505eef4dd2bfee81b44776491299d80f1bac36c8c2c"
+
+[[files]]
+path = "tb_moshv_inv_tt.sp"
+sha256 = "91fc1b8a50cf5465c4dfe838fcd643be6c78930719ee6f50b7f47b5c57fcc006"
+
+[[files]]
+path = "tb_moshv_inv_tt_rf.sp"
+sha256 = "4068be6e27ab0f3d45359672b08ec28f8047d65ec2380cf6da407973925117c6"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng1.sp"
+sha256 = "ed739fd06ffcf20c25cb9a9d2d7813690bc92bf6abe9abf9aa5a781d59e0aab5"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng1_rf.sp"
+sha256 = "d3c51c12677510f1228b4110e8b9939966caf12038b1155a44b5acd56f1e7568"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng2.sp"
+sha256 = "3b2f136e443063b70818ce15c1cc25f27c93b4c77ecb66b564718461e3e653e4"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng2_rf.sp"
+sha256 = "5d05588c74e719545d1accc228893168a14f9c184df5183ecf089c37b2943bc5"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng3.sp"
+sha256 = "940241e4e18ea232940f34d4e21508374caa68a7f30fc33fea5474c53d465545"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng3_rf.sp"
+sha256 = "3803c7b6cc34ccb93b20d262a634a9a496ad3a2b91703e983084bf83521c73b1"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng4.sp"
+sha256 = "f57fd85a56599857f34b9e8ca16c48304fa8cb1f5db3788019fb073850146d4a"
+
+[[files]]
+path = "tb_moshv_nmos_id_vd_ng4_rf.sp"
+sha256 = "d15decd152fd847398df1dfa3b1ab725ba36e2386265a45c03f6f53def9fdcfd"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng1.sp"
+sha256 = "bac8dd0485080dde24c9a662ee86de2caddeea521c9d4bc853839ae1b9da87c3"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng1_rf.sp"
+sha256 = "9cd64c1ae61cef4eed55e1fc69f63da4cec9b66d88894e22559912d2ab906415"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng2.sp"
+sha256 = "d211252c6c893559ad55f50a086b1f053323f1c5ed5a967decaced7a1fedfa35"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng2_rf.sp"
+sha256 = "1e61cdff00a08ab8f3038c6ac98333c83412bad9451f15252f654be9d8be90ac"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng3.sp"
+sha256 = "8b00b564859e32c1c87f551c3f7742529b5c9221bba7887db8b8956f29f5db6b"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng3_rf.sp"
+sha256 = "1662bda0d4b5cb109ed6465b11ef4f3db326d067e9930dc2d1f8435504b4c3bf"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng4.sp"
+sha256 = "93aefded572082c7c353e668b04605f9a7cdc4c6572cc915ba7c96d3d4d9bd4a"
+
+[[files]]
+path = "tb_moshv_pmos_id_vd_ng4_rf.sp"
+sha256 = "d6c63d02c670ee8217fe9e59feb2f0141faaa760c727998406afe6c33ccf5bcc"
+
+[resolve]
+"cornerMOShv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib"
+mosvar = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/mosvar/mosvar.va"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"

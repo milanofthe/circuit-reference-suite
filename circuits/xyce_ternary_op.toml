@@ -1,0 +1,12 @@
+title = "Xyce_Regression TERNARY_OP"
+case = "xyce_ternary_op"
+source = "ternary_op.cir"
+outputs = [
+    "v(1)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vs", start = -2.5, stop = 2.5, step = 0.1 },
+]

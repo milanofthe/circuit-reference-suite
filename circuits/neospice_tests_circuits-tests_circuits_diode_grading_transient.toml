@@ -1,0 +1,10 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/diode_grading_transient.cir"
+analysis = [
+    { type = "tran", step = 1e-08, stop = 4e-06 },
+]
+
+[options]
+tnom = 27.0
+temp = 27.0

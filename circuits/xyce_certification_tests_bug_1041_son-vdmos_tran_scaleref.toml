@@ -1,0 +1,14 @@
+title = "Xyce_Regression Certification_Tests/BUG_1041_SON"
+case = "xyce_certification_tests_bug_1041_son"
+source = "vdmos_tran_scaleRef.cir"
+outputs = [
+    "v(3)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 5e-10, stop = 1e-06, max_step = 2e-09 },
+]
+
+[options]
+reltol = 0.01
+vntol = 1e-07

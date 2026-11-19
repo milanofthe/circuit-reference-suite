@@ -1,0 +1,80 @@
+id = "xyce_bsrc"
+title = "Xyce_Regression BSRC"
+family = "test"
+netlists = [
+    { file = "Bsrc_A1.cir", dialect = "xyce" },
+    { file = "Bsrc_A2.cir", dialect = "xyce" },
+    { file = "Bsrc_B1.cir", dialect = "xyce" },
+    { file = "Bsrc_C1.cir", dialect = "xyce" },
+    { file = "Bsrc_D1.cir", dialect = "xyce" },
+    { file = "bsrc1_m.cir", dialect = "xyce" },
+    { file = "bsrc1_m_baseline.cir", dialect = "xyce" },
+    { file = "bsrc2_m.cir", dialect = "xyce" },
+    { file = "bsrc2_m_baseline.cir", dialect = "xyce" },
+    { file = "bsrc3_m.cir", dialect = "xyce" },
+    { file = "bsrc3_m_baseline.cir", dialect = "xyce" },
+    { file = "bsrc4_m.cir", dialect = "xyce" },
+    { file = "bsrc4_m_baseline.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/BSRC"
+
+[[files]]
+path = "Bsrc_A1.cir"
+sha256 = "a3bca0d6905769267ce6639c9822703ebb0991f6b1a254b84483fdd5df79442d"
+
+[[files]]
+path = "Bsrc_A2.cir"
+sha256 = "be24adbd005434c09332b5fdc82b92a3e34b58a2fbffaf43265bdd3b5d2e25de"
+
+[[files]]
+path = "Bsrc_B1.cir"
+sha256 = "e0c3853148c855d558720f1547dc71a98188185b9d7bfc8041276dade14ad12a"
+
+[[files]]
+path = "Bsrc_C1.cir"
+sha256 = "10672adebe80b9ac067694e08710ec71b413ec65b67332de636577b7995e3f79"
+
+[[files]]
+path = "Bsrc_D1.cir"
+sha256 = "1120fe98614ec7c2b92d125beb1ef5581ce14d9ba5503ee7a0507d9451d4c3fe"
+
+[[files]]
+path = "bsrc1_m.cir"
+sha256 = "76daa5b5bf2e92b25c945ac76599d59d1efd1b3ab63a5f7e513fbb441eebd436"
+
+[[files]]
+path = "bsrc1_m_baseline.cir"
+sha256 = "5f9a34b979b2bf8a99e2485b012dc57c190c94ee7ab8f4fa0f9555861beed575"
+
+[[files]]
+path = "bsrc2_m.cir"
+sha256 = "b9160b403f91bdf2f11158019a8f22a1d97d6669f22f0984262d52dc3f7992c0"
+
+[[files]]
+path = "bsrc2_m_baseline.cir"
+sha256 = "3569fd89ee9a767b0efc5b9fc2eb681fef777f41838195176da0466248aa408a"
+
+[[files]]
+path = "bsrc3_m.cir"
+sha256 = "059051767c3189c2ad4b48d6bb9311c83a0e0b23614d5ed83ffe72e2cb8089b9"
+
+[[files]]
+path = "bsrc3_m_baseline.cir"
+sha256 = "0cce74a52b18becbdaf505d7d7cf8f26b7158b4623491c1d62d1e606efe22e0d"
+
+[[files]]
+path = "bsrc4_m.cir"
+sha256 = "86a4556845d26bf561a56165dc6b268aefcacdcae1817f9c2207b348f23e4a9a"
+
+[[files]]
+path = "bsrc4_m_baseline.cir"
+sha256 = "34608015cb64a33ce2d06bf17b49dddf51fb0ab7b8d3733fb18f21d9b6d0b87c"

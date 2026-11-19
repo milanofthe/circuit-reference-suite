@@ -1,0 +1,11 @@
+title = "SpiceSharpParser circuits/a-devices"
+case = "spicesharpparser_circuits_a_devices"
+source = "non-ground-common-latch.cir"
+outputs = [
+    "v(set,common)",
+    "v(reset,common)",
+    "v(q,common)",
+]
+analysis = [
+    { type = "tran", step = 1e-10, stop = 4.5e-08, max_step = 1e-10, uic = true },
+]

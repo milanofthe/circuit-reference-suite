@@ -1,0 +1,125 @@
+id = "xyce_xdm_hspice_models"
+title = "Xyce_Regression XDM/HSPICE/MODELS"
+family = "test"
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/XDM/HSPICE/MODELS"
+
+[[files]]
+path = "capacitor_model_statements.cir"
+sha256 = "a5688ec8b38b1edbbc94faf231262cabdb5d85815241e3ed35b906dd54c20c09"
+
+[[files]]
+path = "capacitor_model_statements.cir.hspice"
+sha256 = "2bb9482e928b2aeed35ec0747f5d129da41465415ef4390dab093d8e611b04f7"
+
+[[files]]
+path = "correct_instance_parameters.cir"
+sha256 = "e77f952b7cf7e839eaedfc88413f3de3e4630a63b98451ba4f4370663d56a854"
+
+[[files]]
+path = "correct_instance_parameters.cir.hspice"
+sha256 = "8ca288f22ca242e87fa6e3aba6ec30258759910e74df0b520acdf65437cca925"
+
+[[files]]
+path = "correct_instance_parameters_translation_inside_subckt.cir"
+sha256 = "bfe6df40a1e72182e97d7009c1d58dc2c8995008bbd0c9b8635ea4f3fed79a7a"
+
+[[files]]
+path = "correct_instance_parameters_translation_inside_subckt.cir.hspice"
+sha256 = "74a6dcdc6b4db958b78395cad9606ef2040f7c782ddf030938d204749a321627"
+
+[[files]]
+path = "inductor_model_statements.cir"
+sha256 = "6e1f1b8c619f00c8080e093bb0106d974eca664435c9ec5dd507724ae62ce316"
+
+[[files]]
+path = "inductor_model_statements.cir.hspice"
+sha256 = "b5421ac0a457a44137d3a909240c800a70c567bd17d26b81bd7b2ea1a6393249"
+
+[[files]]
+path = "model_level_translation.cir"
+sha256 = "41444ec0bf94ecdb3b73463571b961e40b5c6f6870fed178991b3a23ae06cd83"
+
+[[files]]
+path = "model_level_translation.cir.hspice"
+sha256 = "ab27b935186c87543f1a1b230d62c7d33192cd73b150a91e847c64bfbde2fdd7"
+
+[[files]]
+path = "multiple_devices_same_model.cir"
+sha256 = "a34bfe64b6dd80baea27fce08f653d63ac2ce91cfa1dffb78760e4637351aaac"
+
+[[files]]
+path = "multiple_devices_same_model.cir.hspice"
+sha256 = "37cdea7e062b6f1458963bdfbcadc1e0f77befe1c679250fcf41a9c35ab4c581"
+
+[[files]]
+path = "resistor_model_statements.cir"
+sha256 = "310c510500c2d961746fab4b4963990939620b951811082300c4001074764092"
+
+[[files]]
+path = "resistor_model_statements.cir.hspice"
+sha256 = "05837834d7599b2277cb7d1efe9703c0e506ae479746647be11cfa485a3a55df"
+
+[[netlists]]
+file = "capacitor_model_statements.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "capacitor_model_statements.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "correct_instance_parameters.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "correct_instance_parameters.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "correct_instance_parameters_translation_inside_subckt.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "correct_instance_parameters_translation_inside_subckt.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "inductor_model_statements.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "inductor_model_statements.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "model_level_translation.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "model_level_translation.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "multiple_devices_same_model.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "multiple_devices_same_model.cir.hspice"
+dialect = "hspice"
+
+[[netlists]]
+file = "resistor_model_statements.cir"
+dialect = "xyce"
+
+[[netlists]]
+file = "resistor_model_statements.cir.hspice"
+dialect = "hspice"

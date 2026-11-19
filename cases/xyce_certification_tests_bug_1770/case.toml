@@ -1,0 +1,20 @@
+id = "xyce_certification_tests_bug_1770"
+title = "Xyce_Regression Certification_Tests/BUG_1770"
+family = "test"
+netlists = [
+    { file = "HBT_IV_nosweep.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1770"
+
+[[files]]
+path = "HBT_IV_nosweep.cir"
+sha256 = "8aef94ce7e94ab2c30e757392fd6eb5a44ada747e3ee1d76e49771116db2148d"

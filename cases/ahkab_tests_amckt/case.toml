@@ -1,0 +1,21 @@
+id = "ahkab_tests_amckt"
+title = "ahkab tests/amckt"
+family = "test"
+netlists = [
+    { file = "amckt.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/amckt"
+
+[[files]]
+path = "amckt.ckt"
+sha256 = "e5027b8f925e83ac09ef477b77b7219b215dcb74e0e172c8369c3c777a7e5632"

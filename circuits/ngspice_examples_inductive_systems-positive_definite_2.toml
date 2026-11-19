@@ -1,0 +1,6 @@
+title = "ngspice examples/inductive-systems"
+case = "ngspice_examples_inductive_systems"
+source = "positive-definite-2.cir"
+analysis = [
+    { type = "op" },
+]

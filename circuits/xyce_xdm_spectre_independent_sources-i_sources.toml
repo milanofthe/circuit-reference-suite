@@ -1,0 +1,18 @@
+title = "Xyce_Regression XDM/SPECTRE/INDEPENDENT_SOURCES"
+case = "xyce_xdm_spectre_independent_sources"
+source = "i_sources.cir"
+outputs = [
+    "i(rr1)",
+    "i(rr2)",
+    "i(rr3)",
+    "i(rr4)",
+    "i(rr5)",
+    "i(rr6)",
+    "i(rr7)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.001 },
+]
+
+[variants]
+spectre = "i_sources.cir.spectre"

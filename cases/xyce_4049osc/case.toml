@@ -1,0 +1,20 @@
+id = "xyce_4049osc"
+title = "Xyce_Regression 4049OSC"
+family = "test"
+netlists = [
+    { file = "4049osc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/4049OSC"
+
+[[files]]
+path = "4049osc.cir"
+sha256 = "17213048661e53c9922a071ebb1aa9f55f672e77ed91cf696cbc4588be973923"

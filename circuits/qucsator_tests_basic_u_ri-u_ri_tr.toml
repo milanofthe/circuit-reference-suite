@@ -1,0 +1,16 @@
+title = "qucsator tests/basic/u=ri"
+case = "qucsator_tests_basic_u_ri"
+source = "u=ri@tr.net"
+outputs = [
+    "i(current)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 10.0 },
+]
+
+[options]
+temp = 26.85
+reltol = 0.001
+abstol = 1e-12
+vntol = 1e-06
+method = "trap"

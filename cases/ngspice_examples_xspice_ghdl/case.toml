@@ -1,0 +1,25 @@
+id = "ngspice_examples_xspice_ghdl"
+title = "ngspice examples/xspice/ghdl"
+family = "test"
+netlists = [
+    { file = "mc.cir", dialect = "ngspice" },
+    { file = "pwm.cir", dialect = "ngspice" },
+]
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/xspice/ghdl"
+
+[[files]]
+path = "mc.cir"
+sha256 = "d776f473e720e15588c8f5cb42b19446d466786c3bad12c2b07fecdd11660c3c"
+
+[[files]]
+path = "pwm.cir"
+sha256 = "e55e0badeb3f10035f04954c21808759f5787f5932ac095dd5cf57f0ea0d9a1e"

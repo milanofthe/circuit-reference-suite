@@ -1,0 +1,9 @@
+title = "Xyce_Regression ACtests/SANDLER9"
+case = "xyce_actests_sandler9"
+source = "sandler9.cir"
+outputs = [
+    "v(5)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 40, start = 10.0, stop = 10000.0 },
+]

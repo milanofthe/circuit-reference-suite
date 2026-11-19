@@ -1,0 +1,11 @@
+title = "Xyce_Regression ABM_EXPLN"
+case = "xyce_abm_expln"
+source = "exp_ln.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 2e-05, stop = 0.0025 },
+]

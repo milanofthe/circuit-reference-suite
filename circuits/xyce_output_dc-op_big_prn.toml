@@ -1,0 +1,10 @@
+title = "Xyce_Regression Output/DC"
+case = "xyce_output_dc"
+source = "op-big-prn.cir"
+outputs = [
+    "v(2)",
+    "v(10)",
+]
+analysis = [
+    { type = "op" },
+]

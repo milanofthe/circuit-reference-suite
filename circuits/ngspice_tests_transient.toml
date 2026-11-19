@@ -1,0 +1,9 @@
+title = "ngspice tests/transient"
+case = "ngspice_tests_transient"
+source = "fourbitadder.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 6e-09 },
+]

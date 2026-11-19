@@ -1,0 +1,18 @@
+title = "Xyce_Regression XDM/HSPICE/OTHER_PARSING"
+case = "xyce_xdm_hspice_other_parsing"
+source = "macro_statement.cir"
+outputs = [
+    "v(x1.a1)",
+    "v(x2.a1)",
+    "v(x2.b)",
+    "v(4)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.01, uic = true },
+]
+
+[options]
+tnom = 25.0
+
+[variants]
+hspice = "macro_statement.cir.hspice"

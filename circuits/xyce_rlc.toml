@@ -1,0 +1,12 @@
+title = "Xyce_Regression RLC"
+case = "xyce_rlc"
+source = "rlc.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 0.01, stop = 10.0 },
+]
+
+[options]
+reltol = 0.001

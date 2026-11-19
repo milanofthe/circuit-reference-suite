@@ -1,0 +1,10 @@
+title = "Xyce_Regression CCCS"
+case = "xyce_cccs"
+source = "ftest.cir"
+outputs = [
+    "i(vmon)",
+    "i(vmona)",
+]
+analysis = [
+    { type = "tran", step = 0.1, stop = 7.0 },
+]

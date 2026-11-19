@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/ISSUE_160"
+case = "xyce_certification_tests_issue_160"
+source = "baseline2.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+    "v(4)",
+    "v(5)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.005, max_step = 1e-05 },
+]

@@ -1,0 +1,15 @@
+title = "Xyce_Regression XDM/HSPICE/MODELS"
+case = "xyce_xdm_hspice_models"
+source = "resistor_model_statements.cir"
+outputs = [
+    "i(v1)",
+    "i(r1)",
+    "i(r2)",
+    "i(r3)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1e-06 },
+]
+
+[variants]
+hspice = "resistor_model_statements.cir.hspice"

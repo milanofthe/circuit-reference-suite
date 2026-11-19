@@ -1,0 +1,14 @@
+title = "Xyce_Regression MEASURE_CONT/STEP"
+case = "xyce_measure_cont_step"
+source = "FindWhenTest1DC.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "v1", start = 10.0, stop = 1.0, step = -1.0 },
+]

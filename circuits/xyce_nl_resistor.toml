@@ -1,0 +1,14 @@
+title = "Xyce_Regression NL_RESISTOR"
+case = "xyce_nl_resistor"
+source = "nlrcs10.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-05, stop = 0.01 },
+]
+
+[options]
+reltol = 1e-06

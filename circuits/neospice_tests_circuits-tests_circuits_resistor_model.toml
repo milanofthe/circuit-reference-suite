@@ -1,0 +1,9 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/resistor_model.cir"
+analysis = [
+    { type = "op" },
+]
+
+[options]
+temp = 85.0

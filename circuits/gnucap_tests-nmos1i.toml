@@ -1,0 +1,6 @@
+title = "gnucap tests"
+case = "gnucap_tests"
+source = "nmos1i.ckt"
+analysis = [
+    { type = "op" },
+]

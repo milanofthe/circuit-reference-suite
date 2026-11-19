@@ -1,0 +1,9 @@
+title = "Xyce_Regression Output/PCE"
+case = "xyce_output_pce"
+source = "pce-no-output.cir"
+outputs = [
+    "v(1)",
+]
+analysis = [
+    { type = "op" },
+]

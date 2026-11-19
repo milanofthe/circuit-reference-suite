@@ -1,0 +1,9 @@
+title = "ngspice tests/mesa"
+case = "ngspice_tests_mesa"
+source = "mesgout.cir"
+outputs = [
+    "v(3)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 0.001, stop = 1000000.0 },
+]

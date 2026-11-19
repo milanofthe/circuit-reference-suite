@@ -1,0 +1,14 @@
+title = "SpiceSharpParser circuits/cookbook/pure-spice/pwm-dac"
+case = "spicesharpparser_circuits_cookbook_pure_spice_pwm_dac"
+source = "pwm-dac.cir"
+outputs = [
+    "v(pwm)",
+    "v(pole1)",
+    "v(output)",
+]
+analysis = [
+    { type = "tran", step = 5e-06, stop = 0.02, max_step = 5e-07, uic = true },
+]
+
+[options]
+method = "gear"

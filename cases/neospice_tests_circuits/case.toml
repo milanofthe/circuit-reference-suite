@@ -1,0 +1,1003 @@
+id = "neospice_tests_circuits"
+title = "neospice tests/circuits"
+family = "test"
+netlists = [
+    { file = "tests/circuits/am_offsets_phases.cir", dialect = "ngspice" },
+    { file = "tests/circuits/am_source.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_ac_gain.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_ddt.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_hertz.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_idt.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_multi_var.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_pwl.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_square.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_tempco.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_tempco_current.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_temper.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_trig.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_vccs.cir", dialect = "ngspice" },
+    { file = "tests/circuits/asrc_voltage_doubler.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bc547a_test.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bjt_ce_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bjt_off_bias.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3_cmos_inverter.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3_nmos_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3_nmos_iv.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3_pmos_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3v32_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsim3v32_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsimsoi_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsimsoi_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/bsimsoi_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/cccs_poly.cir", dialect = "ngspice" },
+    { file = "tests/circuits/cccs_poly2.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ccvs_poly.cir", dialect = "ngspice" },
+    { file = "tests/circuits/cmos_inverter.cir", dialect = "ngspice" },
+    { file = "tests/circuits/cmos_inverter_resistance.cir", dialect = "ngspice" },
+    { file = "tests/circuits/coupled_inductor_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/coupled_inductor_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/coupled_inductor_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/dc_current_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/dc_nested.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_ac_response.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_dc_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_flicker_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_grading_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_grading_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_iv.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_rectifier.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_temperature_noise_delta.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_temperature_noise_hot.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_temperature_noise_zero.cir", dialect = "ngspice" },
+    { file = "tests/circuits/diode_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/exp_source.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet1_nfet_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet1_nfet_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet2_nfet_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet2_nfet_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet2_nfet_iv_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hfet2_nfet_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisim2_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisim2_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisim2_nmos_iv_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisim2_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisimhv_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisimhv_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisimhv_nmos_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/hisimhv_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/inductor_model.cir", dialect = "ngspice" },
+    { file = "tests/circuits/isrc_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/jfet2_njf_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/jfet2_njf_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/jfet2_njf_tran.cir", dialect = "ngspice" },
+    { file = "tests/circuits/jfet_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_lc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_lc_floating.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_rc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_rg.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_rg_options.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_ac_rlc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_dc_rc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_dc_rg.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_tran_lc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_tran_rc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ltra_tran_rlc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_area.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_area_last.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_flicker.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_hot.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_multiplier.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_pmf.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_scaled_hot.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_state_offset.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_noise_thermal.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mes_parallel.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_0.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_27.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_60.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_direct_0.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_direct_27.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_expression_precedence_direct_60.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_temperature_0.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_temperature_27.cir", dialect = "ngspice" },
+    { file = "tests/circuits/model_temperature_60.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos1_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos1_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos1_nmos_iv_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos1_nmos_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos1_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos2_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos2_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos2_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_diode_temperature_0.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_diode_temperature_27.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_diode_temperature_60.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_nmos_iv_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_nmos_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos3_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos9_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos9_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/mos_model_node_collision.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_cs_amp_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_iv.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_noise_tnoi2.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_nqs_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_rbodymod.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_rdsmod.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_rgatemod.cir", dialect = "ngspice" },
+    { file = "tests/circuits/nmos_single_bias.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_gain_floor_above.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_gain_floor_below.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_gain_floor_boundary.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_gain_floor_zero.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_ltra_lc_matched.cir", dialect = "ngspice" },
+    { file = "tests/circuits/noise_tline_matched.cir", dialect = "ngspice" },
+    { file = "tests/circuits/opa1632_test.cir", dialect = "ngspice" },
+    { file = "tests/circuits/pulse_defaults.cir", dialect = "ngspice" },
+    { file = "tests/circuits/pwl_source.cir", dialect = "ngspice" },
+    { file = "tests/circuits/rc_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/rc_lowpass.cir", dialect = "ngspice" },
+    { file = "tests/circuits/rc_lowpass_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_divider.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_divider_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_m2.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_model.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_noise_hot.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_rac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/resistor_temp.cir", dialect = "ngspice" },
+    { file = "tests/circuits/ring_osc_5stage.cir", dialect = "ngspice" },
+    { file = "tests/circuits/rlc_series.cir", dialect = "ngspice" },
+    { file = "tests/circuits/rlc_underdamped.cir", dialect = "ngspice" },
+    { file = "tests/circuits/sens_divider.cir", dialect = "ngspice" },
+    { file = "tests/circuits/sffm_source.cir", dialect = "ngspice" },
+    { file = "tests/circuits/step_resistor.cir", dialect = "ngspice" },
+    { file = "tests/circuits/switch_hysteresis.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tf_resistive_divider.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tline_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tline_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tline_ic.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tline_ic_no_uic.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tlv3201_open_loop.cir", dialect = "ngspice" },
+    { file = "tests/circuits/tlv3201_switching.cir", dialect = "ngspice" },
+    { file = "tests/circuits/uic_current_integrator.cir", dialect = "ngspice" },
+    { file = "tests/circuits/uic_resistor.cir", dialect = "ngspice" },
+    { file = "tests/circuits/unused_model_name_collisions.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_gear.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_noise_pnp.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_delay_uic.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_gummel.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_model_syntax.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_npn_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_pnp_dc.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vbic_transient.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_internal_nodes.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_model_scope.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_model_temperature_0.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_model_temperature_27.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_model_temperature_60.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_nmos_ac.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_nmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_nmos_iv_sweep.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_nmos_noise.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_pmos_dc_op.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_terminal_forms.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_thermal_isothermal.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_thermal_selfheat.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_thermal_selfheat_subckt.cir", dialect = "ngspice" },
+    { file = "tests/circuits/vdmos_theta.cir", dialect = "ngspice" },
+]
+notes = """
+Left out:
+- `tests/circuits/lm358_ns_test.cir`: needs tests/circuits/lm358_ns.lib, not redistributable
+- `tests/circuits/rff70n06_op.cir.in`: needs @NEOSPICE_RFF70N06_LIBRARY@, not in the source tree
+- `tests/circuits/ths4131_diff_amp.cir`: needs tests/circuits/ths4131.lib, not redistributable
+- `tests/circuits/tlv3201_test.cir`: needs tests/circuits/tlv3201.lib, not redistributable
+"""
+
+[source]
+name = "neospice"
+url = "https://github.com/razorback16/neospice"
+license = "MIT"
+authors = [
+    "neospice contributors",
+]
+commit = "7f81041ea0f03533da18a59b95ff8e708e3206bd"
+
+[[files]]
+path = "examples/tlv3201.txt"
+sha256 = "257da5128fc8f70272a944952892b297ce71c70588e4191e3123ec55ed9d58b1"
+
+[[files]]
+path = "tests/circuits/am_offsets_phases.cir"
+sha256 = "5b0930d808da8658fe790675a64fd348f874eb01b2d285c84c25afde29f2f69a"
+
+[[files]]
+path = "tests/circuits/am_source.cir"
+sha256 = "8813d92ac54ed8c37a7ca7ccdbb039b7443a5b95654aa2311d1706cd3c6ab3cb"
+
+[[files]]
+path = "tests/circuits/asrc_ac_gain.cir"
+sha256 = "03c567f29888fe14b93797c140ab0596789654a4b96676d4b052533545c056d3"
+
+[[files]]
+path = "tests/circuits/asrc_ddt.cir"
+sha256 = "63159e030ad349d78ef8cc96b6478caaa7e4b62a396d4b2355a49fa47e330f95"
+
+[[files]]
+path = "tests/circuits/asrc_hertz.cir"
+sha256 = "54294cc6d5f02706a67fb0ef3c58d522e0cd59abbf05cd7b35bb828f45ec596a"
+
+[[files]]
+path = "tests/circuits/asrc_idt.cir"
+sha256 = "2cda08de03612b4675f8617499089dfa5d3c48f523bbb9ed2e8df73b8323c003"
+
+[[files]]
+path = "tests/circuits/asrc_multi_var.cir"
+sha256 = "49f886744f90b67d6e5fd84bc9c35eba6d2914c577a13ca387e7e3dec6c4fb0b"
+
+[[files]]
+path = "tests/circuits/asrc_pwl.cir"
+sha256 = "b829886efed71e666fb479643f2c9b8167a33d61a9b4e43608668ab15bf3c962"
+
+[[files]]
+path = "tests/circuits/asrc_square.cir"
+sha256 = "5adb7de8b341e8df97d2925c2906237e69ab5a9bd0cb2a462a7b4fb63803aac1"
+
+[[files]]
+path = "tests/circuits/asrc_tempco.cir"
+sha256 = "2aea560d6288835200731f52e66c90bd7febfa22c6c5f330b009af405246d594"
+
+[[files]]
+path = "tests/circuits/asrc_tempco_current.cir"
+sha256 = "964e96dee580f64af2bb25afcd81b05b4b835e9674246a823d57522b2c06e835"
+
+[[files]]
+path = "tests/circuits/asrc_temper.cir"
+sha256 = "a175e227b4a2f199b5fb97cbfe64463ed207edbeb4b3b0c93c5dd1ddb2e138b3"
+
+[[files]]
+path = "tests/circuits/asrc_trig.cir"
+sha256 = "d1599fc617ff760856e03a0fb41c4dd72d95f2e44f50a59b398cb0e3e39b14d3"
+
+[[files]]
+path = "tests/circuits/asrc_vccs.cir"
+sha256 = "ecb6d11a0168f50dc725d99f8ceb224a9130fb65dea7120a731efe9be8daf4b4"
+
+[[files]]
+path = "tests/circuits/asrc_voltage_doubler.cir"
+sha256 = "7cbad8e58aebfb2b5705cb9145765ebcf7a65faef3bc896c982f0a8f1014fe96"
+
+[[files]]
+path = "tests/circuits/bc547a.lib"
+sha256 = "19baf478b2c2c92797a6acc05f4a25285e056ae56efedd77321bb7f16afa951f"
+
+[[files]]
+path = "tests/circuits/bc547a_test.cir"
+sha256 = "075ee698fe867cca6134ce970b97e0ab3367adb20e8d6f5a3d9f714ee7c6f8c6"
+
+[[files]]
+path = "tests/circuits/bjt_ce_noise.cir"
+sha256 = "06387aa657e93cf9b17d8c96f6744d27dae7654857df8e92c859a79810077ab1"
+
+[[files]]
+path = "tests/circuits/bjt_off_bias.cir"
+sha256 = "c36b28e414be0c5eb48479fdd8b27f5393939baf06114eecf24e14db920763c3"
+
+[[files]]
+path = "tests/circuits/bsim3_cmos_inverter.cir"
+sha256 = "58cb35ad54a4e527b1eb4c9ee40327bc607b5935873bc2f25e31ae50c2312f00"
+
+[[files]]
+path = "tests/circuits/bsim3_nmos_ac.cir"
+sha256 = "81b7ae7f07cf4bba09920fa252747284c1d65ca8777ab0422d198c81226c1e7c"
+
+[[files]]
+path = "tests/circuits/bsim3_nmos_dc.cir"
+sha256 = "c243d4daa571e26d31a1c4f6de2618162e8b2c31711fb26964037ce3b1483ecc"
+
+[[files]]
+path = "tests/circuits/bsim3_nmos_iv.cir"
+sha256 = "8a691612fa8b0388771b18658759b0fd5249ef8620f353dcc03e5646fbf620fa"
+
+[[files]]
+path = "tests/circuits/bsim3_pmos_dc.cir"
+sha256 = "93befa3b71172826122b03f684683a6e436bfd639c0c5c9304134f18894e0ec8"
+
+[[files]]
+path = "tests/circuits/bsim3v32_nmos_ac.cir"
+sha256 = "45c0a47b094f185ac522a5e4d1d3d55f286ee540261069696a67fe1dab2cb16e"
+
+[[files]]
+path = "tests/circuits/bsim3v32_nmos_dc_op.cir"
+sha256 = "f7360989d549e78ecb6f7ac193c4eaefc70449e8c5bcdf5e050702755832876c"
+
+[[files]]
+path = "tests/circuits/bsimsoi_nmos_ac.cir"
+sha256 = "d9a508f99f2d5cf19201c7deb26d223d4cda929cca3154b604a98c3ddc07bcd6"
+
+[[files]]
+path = "tests/circuits/bsimsoi_nmos_dc_op.cir"
+sha256 = "011f4e15eb38ba5ee267ae3331bcd16f43a2debcbde9ff7a390e4308d651cf01"
+
+[[files]]
+path = "tests/circuits/bsimsoi_pmos_dc_op.cir"
+sha256 = "1e755d4aedfc3bdcb7b80d978bb6d7b557478eb19c9b68abb4213dd21cf36ecb"
+
+[[files]]
+path = "tests/circuits/cccs_poly.cir"
+sha256 = "707c23c3a3c0fcd2358322ac7593f1435a127883a507ce1ce029328e003aa7f8"
+
+[[files]]
+path = "tests/circuits/cccs_poly2.cir"
+sha256 = "eecc9709244cb105f5d0906500a6cb9ec8b1be5204769e9ae5e883e0394354e2"
+
+[[files]]
+path = "tests/circuits/ccvs_poly.cir"
+sha256 = "3feb9d24f4fb84d5b10022d3a8727e1cee2e3d150db33f4ad42e2f153200d0c0"
+
+[[files]]
+path = "tests/circuits/cmos_inverter.cir"
+sha256 = "e164b95633e54b80816f95f2a291e966196bce7dfb2907b34158f6b37f49d41d"
+
+[[files]]
+path = "tests/circuits/cmos_inverter_resistance.cir"
+sha256 = "0723e85b5fb6be2d413e1a540e61ac54adf68ff205bd81715bc9d251eb99b8fc"
+
+[[files]]
+path = "tests/circuits/coupled_inductor_ac.cir"
+sha256 = "f96e0375ed268bc67e15d1ac6c19ffc0a0633fd7196d662f1e0728a0de7c569e"
+
+[[files]]
+path = "tests/circuits/coupled_inductor_dc.cir"
+sha256 = "36c256b301dcee07436d70f0c72ee5d2ac37ef49b14792aaa81f8166c1b21a0d"
+
+[[files]]
+path = "tests/circuits/coupled_inductor_transient.cir"
+sha256 = "bea6e39a4fb0f72d96663fe6e079ed80d5361fcfe07e4eac66439c27fd6f3655"
+
+[[files]]
+path = "tests/circuits/dc_current_sweep.cir"
+sha256 = "4956f9036c9a29e9cd007acfde6ad513e26048b86cd9b6860fbf0fd47ae24f1d"
+
+[[files]]
+path = "tests/circuits/dc_nested.cir"
+sha256 = "d3c1105b85ed3ec9509a7cafb089c04852a96c0bf766ee73d9e654a6aff1020f"
+
+[[files]]
+path = "tests/circuits/diode_ac_response.cir"
+sha256 = "178c560978a7d67b9fb899fdd393ba1a2068cba90c6392f18e11f22eaad84a62"
+
+[[files]]
+path = "tests/circuits/diode_dc_sweep.cir"
+sha256 = "d53c709dfa28686ac0e2fcf4edea697d0b4a80c419cc64d343c75f0923381811"
+
+[[files]]
+path = "tests/circuits/diode_flicker_noise.cir"
+sha256 = "484b6a7fa9154156f5db3733a4db072104d2696bbd0930d016eb09b5a2d30304"
+
+[[files]]
+path = "tests/circuits/diode_grading_ac.cir"
+sha256 = "07f4b0693807a3fbd85ae79fdf455380052c7929e276f71affb19a260543fd1f"
+
+[[files]]
+path = "tests/circuits/diode_grading_transient.cir"
+sha256 = "deae29dce113a74deebd803229f078b0fa458e9775f9a22d38700ccbf512a385"
+
+[[files]]
+path = "tests/circuits/diode_iv.cir"
+sha256 = "948573ed902c36f7a64f04f0a2eab196e25c4d3ed9c47c0373333c01615a5bb4"
+
+[[files]]
+path = "tests/circuits/diode_noise.cir"
+sha256 = "e2e64cfd43dbce1660f363f9879fe2126a76d24c4c641636f354855010c60d08"
+
+[[files]]
+path = "tests/circuits/diode_rectifier.cir"
+sha256 = "5690842c5a6150e3bcdd9ff5ded7a8506eef034e7eac94dc6fad4c72521d4dfe"
+
+[[files]]
+path = "tests/circuits/diode_temperature_noise_delta.cir"
+sha256 = "1a695cdad744fff69a820a0107b5dc7dbb4330aebf473407bd23634d1bf0da6d"
+
+[[files]]
+path = "tests/circuits/diode_temperature_noise_hot.cir"
+sha256 = "9932ca194b566e3324fbbcb8cb81757b863a0f0ea4ac0fc8c8d3f62c200a1808"
+
+[[files]]
+path = "tests/circuits/diode_temperature_noise_zero.cir"
+sha256 = "2070045e231b611a62de8381f0b2b7ad672bcf015796bdba6b30a295789edb35"
+
+[[files]]
+path = "tests/circuits/diode_transient.cir"
+sha256 = "361cf8d83ff7ef08939317728db3724ccc7988e1201fab18dd3c05b3a7d299bd"
+
+[[files]]
+path = "tests/circuits/exp_source.cir"
+sha256 = "b010aadb58a144e50caa6a6719e20cc1ced19c88f3daac1c9a25176264fb6ab9"
+
+[[files]]
+path = "tests/circuits/hfet1_nfet_ac.cir"
+sha256 = "84675dd3aea183359d297178c69fd4bc4d5329222ccbfab8b55a998a247329d0"
+
+[[files]]
+path = "tests/circuits/hfet1_nfet_dc_op.cir"
+sha256 = "c395c837ee313a868f8483728d467e64d2105490194d1200229cb7320da76b53"
+
+[[files]]
+path = "tests/circuits/hfet2_nfet_ac.cir"
+sha256 = "371d13f6037a22a4f49b7e383eb4fa2cc3746c3f339e705437fbce15ab8f1046"
+
+[[files]]
+path = "tests/circuits/hfet2_nfet_dc_op.cir"
+sha256 = "9f68a03daf47aca923b57a2dfb5ea6f98de2be7607b50fc704c89eca199f96b7"
+
+[[files]]
+path = "tests/circuits/hfet2_nfet_iv_sweep.cir"
+sha256 = "1f1787ef197a65979ecbc86ccf6235ac92a49a39c0c16332ac1ad941dfce9fcf"
+
+[[files]]
+path = "tests/circuits/hfet2_nfet_transient.cir"
+sha256 = "170f387c2679bbaabb5d8c5571ffb4281b1774e6bab45c763ded25a1331f0f7b"
+
+[[files]]
+path = "tests/circuits/hisim2_nmos_ac.cir"
+sha256 = "4b8a83ea08a387e43ba2277132821680833aa46d14608b342f00363369a0c9ac"
+
+[[files]]
+path = "tests/circuits/hisim2_nmos_dc_op.cir"
+sha256 = "446cf7e26aafafacada6057a04b545ae871cd93d428e9e5b139c8518ebbc3142"
+
+[[files]]
+path = "tests/circuits/hisim2_nmos_iv_sweep.cir"
+sha256 = "ab0e2b1f52176501b5ea18ee0b1c0905f1363242b113045dcf6eb151b70f0300"
+
+[[files]]
+path = "tests/circuits/hisim2_pmos_dc_op.cir"
+sha256 = "b8aa6e4af3ba817482384bfdc0e7de4da797840f4d3f972c163a4080d954bc56"
+
+[[files]]
+path = "tests/circuits/hisimhv_nmos_ac.cir"
+sha256 = "a9a9247d62c1e0f25e40d76eed8f9e8cb1d2820fac5a3932b97b2373b164173c"
+
+[[files]]
+path = "tests/circuits/hisimhv_nmos_dc_op.cir"
+sha256 = "be41d0571cfd72dd9bfe31bf2e37bad8cd08d9e5e8c03a1a19fca6b85b9aa74f"
+
+[[files]]
+path = "tests/circuits/hisimhv_nmos_noise.cir"
+sha256 = "16b06c254ed5d09b85bbadb73afb12355389013f87c96d7eb18084969f1e4b31"
+
+[[files]]
+path = "tests/circuits/hisimhv_pmos_dc_op.cir"
+sha256 = "c166a5f8b61f74ef1c5dff4735d5ebd3a20ddaf0c5710f44a79da9184abef23e"
+
+[[files]]
+path = "tests/circuits/inductor_model.cir"
+sha256 = "a6e4be1c862ebdf77fa0c37ce3040b6aedc78a45d8961dee8b46ce4a824cdd1a"
+
+[[files]]
+path = "tests/circuits/isrc_ac.cir"
+sha256 = "21f3ad739c8f580340185f8f3e9699a503c26b345b61053154df510489fa049c"
+
+[[files]]
+path = "tests/circuits/jfet2_njf_ac.cir"
+sha256 = "a0a938160563830857ea9ac84be2d9fbe9dc87aa0b8330b1f075098b38c9650a"
+
+[[files]]
+path = "tests/circuits/jfet2_njf_dc.cir"
+sha256 = "0a687bbed698105c0efb832dcd8f84285d9e5d197d28d83695e6ddd6fb3f30b2"
+
+[[files]]
+path = "tests/circuits/jfet2_njf_tran.cir"
+sha256 = "5406f234c0a681a46ddc294ed3b571fcd5f78c644478302f1b03e1fbb11733cb"
+
+[[files]]
+path = "tests/circuits/jfet_noise.cir"
+sha256 = "943f7dc21500a4455d3feb85ee48671436efaa167fff220ed453023b77fe5900"
+
+[[files]]
+path = "tests/circuits/ltra_ac_lc.cir"
+sha256 = "d59d7814203365ec838b622a3c5561fd4961877f5bb007a5cc002cd215a489f1"
+
+[[files]]
+path = "tests/circuits/ltra_ac_lc_floating.cir"
+sha256 = "b042c961b76568d6e2f8fe3be28c766fe67afcdc6df48f57b3ea458f351114fd"
+
+[[files]]
+path = "tests/circuits/ltra_ac_rc.cir"
+sha256 = "ef070df87bb9ab13c410767b9d93bb5161f6224d2fe79d8e862783e00f6398a0"
+
+[[files]]
+path = "tests/circuits/ltra_ac_rg.cir"
+sha256 = "909169117c44ce69ca40876fc425f9298ec0a38d3fe1804d9a129c6a1eed646e"
+
+[[files]]
+path = "tests/circuits/ltra_ac_rg_options.cir"
+sha256 = "636c4709ad6b656c98f2b06bef6d7ad24dbaaa22724e081933ae14edb51b1b76"
+
+[[files]]
+path = "tests/circuits/ltra_ac_rlc.cir"
+sha256 = "ae8e3b536e7fdca8e7990c5fe7562ea62c71f26869201d387f5650185f25f979"
+
+[[files]]
+path = "tests/circuits/ltra_dc_rc.cir"
+sha256 = "3558dece1ac18128b6c44c3a87bd83664ede1cdc35f778ef9350174221307c35"
+
+[[files]]
+path = "tests/circuits/ltra_dc_rg.cir"
+sha256 = "d2910c7a3c15555085ff670feb673587adb2f66d2ab83f8aedfccc1b6787f481"
+
+[[files]]
+path = "tests/circuits/ltra_tran_lc.cir"
+sha256 = "c4108f15fb97494c8fbf756c0c0ac0a973a988a1b3bd325fefc235c350107094"
+
+[[files]]
+path = "tests/circuits/ltra_tran_rc.cir"
+sha256 = "5b50a4526914fedb34d0ae5c7c4cf7d44274cfd4614e05baaf7ee1d7562fa33e"
+
+[[files]]
+path = "tests/circuits/ltra_tran_rlc.cir"
+sha256 = "c525b3fd8be1dac6d1a2d3723e1895a1043fd1d4a8ac905fe7f6411b60ea4ab4"
+
+[[files]]
+path = "tests/circuits/mes_ac.cir"
+sha256 = "4a9f79f4ac30d7dfc9aef0ceda4a096f1ae99a06476466acd3008ae5dca9365c"
+
+[[files]]
+path = "tests/circuits/mes_dc_op.cir"
+sha256 = "b1e37d3302676323d7529964bcb0f8f4f20bf0777711e910f300f6919e2ee64b"
+
+[[files]]
+path = "tests/circuits/mes_noise_area.cir"
+sha256 = "4eef07dfa56397e0361781b251699f5bc4e5a3ab4005545df81aae0b84edcb4b"
+
+[[files]]
+path = "tests/circuits/mes_noise_area_last.cir"
+sha256 = "df5605ddd1f3c85d75216ff27ab7482a11fbdc8c95768830a9016d85c67589e2"
+
+[[files]]
+path = "tests/circuits/mes_noise_flicker.cir"
+sha256 = "a8626a72e6aec70943dbaa79837b36bd2d321c0a1ff8da562281b9bf9e0edfdf"
+
+[[files]]
+path = "tests/circuits/mes_noise_hot.cir"
+sha256 = "e6ecf092a0a3f0a2b27a66708ad5d1a6603d98bd54c407ec255a63ece759d807"
+
+[[files]]
+path = "tests/circuits/mes_noise_multiplier.cir"
+sha256 = "ce293d576939348a1b257a857112b55fed0f2213aee8b941a1bc0424ce08664a"
+
+[[files]]
+path = "tests/circuits/mes_noise_pmf.cir"
+sha256 = "fa0e4c69490e8b1343bc057967cdf9b3de05c593667c0ecfac895b464f039700"
+
+[[files]]
+path = "tests/circuits/mes_noise_scaled_hot.cir"
+sha256 = "5036ea24f5d5af09cbbae6d2b7d1910c7cb0282cdbf47c63871c16330a835d1f"
+
+[[files]]
+path = "tests/circuits/mes_noise_state_offset.cir"
+sha256 = "e3ea385f22d6786da46a6b6bd348ca3ee12705d72decac004af94f37fd3a77ab"
+
+[[files]]
+path = "tests/circuits/mes_noise_thermal.cir"
+sha256 = "91428e8b9050c732ad6f418ba5e7d12d9308c6ba1721e64309c99abff7db6f3f"
+
+[[files]]
+path = "tests/circuits/mes_parallel.cir"
+sha256 = "1b49299811ee05ebcae260fcbfbd5fa61c368e020d8dc3b25be4d2695b36b4cf"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_0.cir"
+sha256 = "01dde556f3c0ac7c6a1a0daee7f368da5469ec6fd0790f364582453bd38bcdd9"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_27.cir"
+sha256 = "416a29331ba54f79f9ab488f6a34bb94a20f60595eb1fafb8a5f6bb1b997a7fa"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_60.cir"
+sha256 = "9b4453e33b68cf1d6145565a34e336040d5c7beac28dff64c4f55bc314ebaa13"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_direct_0.cir"
+sha256 = "819e517098cbd99935e9dcb7e485c3a8a2ffd697f0d5e7ccc89659c3a463c7b5"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_direct_27.cir"
+sha256 = "30a9abe438051dc1f81c62ec0d7ee93e2dcd3e200b84ef2d48189e0b475024d1"
+
+[[files]]
+path = "tests/circuits/model_expression_precedence_direct_60.cir"
+sha256 = "79136a7ea254630af558c9f59be4a58f6c34bd1632732238ec0baba88da968b4"
+
+[[files]]
+path = "tests/circuits/model_temperature_0.cir"
+sha256 = "e90abb7c44e7874f10843526ce976e3beb441378aa0dc50d963951848a024c8c"
+
+[[files]]
+path = "tests/circuits/model_temperature_27.cir"
+sha256 = "361b9a80ab95214206ccad442f247a2a9db73830acf89c21f0651b3a4880d316"
+
+[[files]]
+path = "tests/circuits/model_temperature_60.cir"
+sha256 = "5b24bb30092a4569df54474325dc41bbf3a7ca3dd413b001c7803fe77608d851"
+
+[[files]]
+path = "tests/circuits/mos1_nmos_ac.cir"
+sha256 = "3df8b31cf77dcea1a1e4a1d21577d406c44b5ba271201c6d4a86926afcf9f8fd"
+
+[[files]]
+path = "tests/circuits/mos1_nmos_dc_op.cir"
+sha256 = "d0d3e7b5d666d8b31b853ceef137d2077e00318ce3ffbd4f33a7685b7e56031f"
+
+[[files]]
+path = "tests/circuits/mos1_nmos_iv_sweep.cir"
+sha256 = "e5d22d7ce6973e19412356ae9aceb21f73e7d36debb21003cbb50aea276ae8f2"
+
+[[files]]
+path = "tests/circuits/mos1_nmos_transient.cir"
+sha256 = "1c6522a38a8a102e6363e7fb2f503f8831e8008dad7fcf818949cc8514223bb5"
+
+[[files]]
+path = "tests/circuits/mos1_pmos_dc_op.cir"
+sha256 = "4b36483d9fb17d5f193939a229502f584eb5d79a6f822b097cdc39cf2d6676ba"
+
+[[files]]
+path = "tests/circuits/mos2_nmos_ac.cir"
+sha256 = "0da6f1545ca3d7efb10d3cfe1e79abb17557fb6730ce00d2e9287fd2eb6086af"
+
+[[files]]
+path = "tests/circuits/mos2_nmos_dc_op.cir"
+sha256 = "dac67aa94f3a65745486f862d76097ce33961cd133facada9f99df829226ddd6"
+
+[[files]]
+path = "tests/circuits/mos2_pmos_dc_op.cir"
+sha256 = "9dee6c937af0e93a31f97d905d21a1c6f59250e99afc0d7c18fa927f1fef8cb5"
+
+[[files]]
+path = "tests/circuits/mos3_diode_temperature_0.cir"
+sha256 = "31f71006a085a5a1b0424eba50a4593128902dc9ac6f6672c6a8c8dbe5a6546b"
+
+[[files]]
+path = "tests/circuits/mos3_diode_temperature_27.cir"
+sha256 = "455a407ec83ceb5a36afaf1e570f0896b1d1f8f769aaa58948ad21a90c9ec392"
+
+[[files]]
+path = "tests/circuits/mos3_diode_temperature_60.cir"
+sha256 = "a40c6b67887d9f6fd72d576ee1642561477055353535e5567ef7196f8453a761"
+
+[[files]]
+path = "tests/circuits/mos3_nmos_ac.cir"
+sha256 = "db897c3b7678c656126d5f17a80c4b5f35c80153a186932b2849054d61726755"
+
+[[files]]
+path = "tests/circuits/mos3_nmos_dc_op.cir"
+sha256 = "6a3bd77af8f40625d5a937855260a6f0fead90a9b597a987d4b0ddd01f5f0a00"
+
+[[files]]
+path = "tests/circuits/mos3_nmos_iv_sweep.cir"
+sha256 = "69091323a9cbfd49b26320eb47db8aa0d314853445521839e35b6516916424c4"
+
+[[files]]
+path = "tests/circuits/mos3_nmos_transient.cir"
+sha256 = "4fe67c64fdb3b05d84db15fc96a0cb4dff13dff059ed87c2594a1fe8cae93664"
+
+[[files]]
+path = "tests/circuits/mos3_pmos_dc_op.cir"
+sha256 = "85a6a433ea4af12860ed4e53655951158d3a013200cf79405110f189d1a28e24"
+
+[[files]]
+path = "tests/circuits/mos9_nmos_ac.cir"
+sha256 = "5d1e99e707a9ec4ba01089b035aabcdb3d0c41d968be2da430e1d268881bb4a4"
+
+[[files]]
+path = "tests/circuits/mos9_nmos_dc_op.cir"
+sha256 = "78e2ac1b635432226bef4dcf7af3983d3ea316f3334bcf9e467b8d55f6b6538d"
+
+[[files]]
+path = "tests/circuits/mos_model_node_collision.cir"
+sha256 = "b4db57984b4139c1c819cb6750ad6fded5757e754414ef545e33510e8865d142"
+
+[[files]]
+path = "tests/circuits/nmos_cs_amp_ac.cir"
+sha256 = "541f1dd2926b7731ee7d2a422fff87d130073d3f7a5dd00ab3d19fe0a2540fc2"
+
+[[files]]
+path = "tests/circuits/nmos_iv.cir"
+sha256 = "ae1d45e8f2a2a69cc3bb1cdf82d6f5e173b783c7ac3d29d4a8da1d67e135e640"
+
+[[files]]
+path = "tests/circuits/nmos_noise.cir"
+sha256 = "b71d3401b02da82da1373389627b155ce7b56a2019046df96cbee2b3e712376b"
+
+[[files]]
+path = "tests/circuits/nmos_noise_tnoi2.cir"
+sha256 = "f3b480efba00353aa7eb0c0701fc73885fe914c27ed9e6b4970305dac5ff7740"
+
+[[files]]
+path = "tests/circuits/nmos_nqs_ac.cir"
+sha256 = "f2f652951aaa55b6f778d3d6371b0831273e9d22cff68391108ec14da18dccd8"
+
+[[files]]
+path = "tests/circuits/nmos_rbodymod.cir"
+sha256 = "3d9f10769c7f2360505a6b3fd042d55029d1f23ed41b0797ade69e90e3129dc9"
+
+[[files]]
+path = "tests/circuits/nmos_rdsmod.cir"
+sha256 = "425bc20ea25ffce639c43095b60f9ad3c7f0573a0874b8da51d467e7077261a4"
+
+[[files]]
+path = "tests/circuits/nmos_rgatemod.cir"
+sha256 = "b6f565344770e95acb0858d41ce8681a67404470e4fcdfbd6392ec1b4ed1f0da"
+
+[[files]]
+path = "tests/circuits/nmos_single_bias.cir"
+sha256 = "1e86c225ad1d7e32085e8e0f1d417f7e59fb285c0f19abe061001b5130fb63e9"
+
+[[files]]
+path = "tests/circuits/noise_gain_floor_above.cir"
+sha256 = "b4b0f57b8d594a04195295d4e99d61625f97a41192c290c320a35176aaa5e436"
+
+[[files]]
+path = "tests/circuits/noise_gain_floor_below.cir"
+sha256 = "253886d2a4de712ea75e1c7b6b69807f800848428a2645d641337d3cc086cfd3"
+
+[[files]]
+path = "tests/circuits/noise_gain_floor_boundary.cir"
+sha256 = "3374cb3e180536587f883b0ac51427999c9248b0a6b12ac3eeb060aca9423fd0"
+
+[[files]]
+path = "tests/circuits/noise_gain_floor_zero.cir"
+sha256 = "d29d0690746de6115265ad437de3f7c1a5d0f567de05c649007895c0adf1d346"
+
+[[files]]
+path = "tests/circuits/noise_ltra_lc_matched.cir"
+sha256 = "ebe0c8d30656711e079f66561fcd05628545ac97ca8e0d80b40e69d46df6a339"
+
+[[files]]
+path = "tests/circuits/noise_tline_matched.cir"
+sha256 = "da86b385de5da146f95c2ba87e3c5104e8de08f0595a2adb0a39b7e370085ff1"
+
+[[files]]
+path = "tests/circuits/opa1632.lib"
+sha256 = "c18d85bd9ac570b2a0b64e0c0eb6376e1a8a93b1e99c3a13181a3d8ba1294255"
+
+[[files]]
+path = "tests/circuits/opa1632_test.cir"
+sha256 = "d4368a3ada9bcbd67afa505b66546a1a6df106d005c26c8b4107bb1b7ee62bfb"
+
+[[files]]
+path = "tests/circuits/pulse_defaults.cir"
+sha256 = "311ab4df7a93672cb1a7304edc0ae25aca44b06c0047642241b11fcda05d14ef"
+
+[[files]]
+path = "tests/circuits/pwl_source.cir"
+sha256 = "86ad40db28ec559ff8d3a33bf1d4e532c5ff93bbe9c61d4f215bb6a5a7a54e43"
+
+[[files]]
+path = "tests/circuits/rc_ac.cir"
+sha256 = "9082a19d2b95ef812b199d22788f431f0a471ba6f6b436e3ce4c52f6b5537e9a"
+
+[[files]]
+path = "tests/circuits/rc_lowpass.cir"
+sha256 = "aab4b08cc2aaa793f4cbf0bee88739f3022def8d7c57bc58ecbbffd261f745a6"
+
+[[files]]
+path = "tests/circuits/rc_lowpass_noise.cir"
+sha256 = "175d808870dbc5d54058604834fd88701c9b78c5c2fcd2cb85fa12e5fe071df7"
+
+[[files]]
+path = "tests/circuits/resistor_divider.cir"
+sha256 = "8d5f98973d913e786bd16e37fc296a12fa9e0c35180a02182e9b1d47b30cb6db"
+
+[[files]]
+path = "tests/circuits/resistor_divider_noise.cir"
+sha256 = "e8ad5c1f39354592c1c79da42173964f268c7565beaf2f9c71f1607512dce957"
+
+[[files]]
+path = "tests/circuits/resistor_m2.cir"
+sha256 = "b86aacd5b689874c8df0250ff90b6b5867ab1a5d0198c7146496477928abf474"
+
+[[files]]
+path = "tests/circuits/resistor_model.cir"
+sha256 = "678172318896575fbea4c33a984c012bbb5edfa292d61cbfe0d7713e64a9cf18"
+
+[[files]]
+path = "tests/circuits/resistor_noise_hot.cir"
+sha256 = "0a79bf4e851ad1e9b1e17de816e2bf9b8cf8fc09c4737a9d2f52bf69582dfd74"
+
+[[files]]
+path = "tests/circuits/resistor_rac.cir"
+sha256 = "cd77168a3ba2073bda7eb7063613baf2572334a5a50e6dd435da99676953c31b"
+
+[[files]]
+path = "tests/circuits/resistor_temp.cir"
+sha256 = "cb32076d2a606f6eddf7df297bbefdf43e778fcfe18ec3462e96a774cf52d0ee"
+
+[[files]]
+path = "tests/circuits/ring_osc_5stage.cir"
+sha256 = "e6da73ee4a790526022b66ea45b06b8165253411002ddff38ce64cf45edb123c"
+
+[[files]]
+path = "tests/circuits/rlc_series.cir"
+sha256 = "12fc886583fab40e503611051fe96df264d3e103a6931a8177584cd3875630b5"
+
+[[files]]
+path = "tests/circuits/rlc_underdamped.cir"
+sha256 = "8f2d4b88d39ff5c1c44521695723b7673973626b1333a8091445dd7630a9d4d0"
+
+[[files]]
+path = "tests/circuits/sens_divider.cir"
+sha256 = "f0fdbe53c9b5747ae0bfbb1fb433a235561971372051bd80331b5c46e1822605"
+
+[[files]]
+path = "tests/circuits/sffm_source.cir"
+sha256 = "17639e0418bcae0c0ef988d6ec82b39bfc811e77257520e9ea075d9ef5a1be62"
+
+[[files]]
+path = "tests/circuits/step_resistor.cir"
+sha256 = "6845945d5bd1ff143f8aef7166501e83356076c50e8e5798cf1ff28b0e10838e"
+
+[[files]]
+path = "tests/circuits/switch_hysteresis.cir"
+sha256 = "70ae89d7ed0543d71f9c4560469007e26c48a9dc92d4ad0449829e525f0524ba"
+
+[[files]]
+path = "tests/circuits/tf_resistive_divider.cir"
+sha256 = "5861c58261703198116f8cfa95b2bccc695d0517fd5a64992405dfb7ce27d0e9"
+
+[[files]]
+path = "tests/circuits/tline_ac.cir"
+sha256 = "ac0330ae46b639f2f75800badb99720ced4a745a2d3efaac7e53e89fe6364d18"
+
+[[files]]
+path = "tests/circuits/tline_dc.cir"
+sha256 = "d392360a8b28805ce160d71186a8c1c5cfff66abd4f6d6986b6b5e614f52ef89"
+
+[[files]]
+path = "tests/circuits/tline_ic.cir"
+sha256 = "6d15c86ba7b0a83b830156601a5bfd7ff97c2cceb68a5b4dc889f0b4ecce1f89"
+
+[[files]]
+path = "tests/circuits/tline_ic_no_uic.cir"
+sha256 = "7f61f2eef88483ee3c01a0a317ae194505d71df41b18fdd334d569a0fdf41bdd"
+
+[[files]]
+path = "tests/circuits/tlv3201_open_loop.cir"
+sha256 = "94e0622f15f7ca16f873c594ff210a6043aed279c53dab298056938d9c3b47a9"
+
+[[files]]
+path = "tests/circuits/tlv3201_switching.cir"
+sha256 = "b8a84616c1f1abfe3401f195f9132aad9c813e8e252ed7e07e0b15c95a12f114"
+
+[[files]]
+path = "tests/circuits/uic_current_integrator.cir"
+sha256 = "1d2404911f9a53d9def4908ee7208b8c2258e5c8d486fe6a1daa2394c0cca7dd"
+
+[[files]]
+path = "tests/circuits/uic_resistor.cir"
+sha256 = "a4576704b5a30117f28fa253ad0b3ba87a3774788c94167adbb8300599247cef"
+
+[[files]]
+path = "tests/circuits/unused_model_name_collisions.cir"
+sha256 = "ee4658202e1cb3f6fc532ec148ff6904afd78c816d1fe3ae90bd52a3109791de"
+
+[[files]]
+path = "tests/circuits/vbic_ac.cir"
+sha256 = "a0cf48e07fb904626240e09d0523768931f2434c400e5ed86b1be5c97e87ec90"
+
+[[files]]
+path = "tests/circuits/vbic_delay_ac.cir"
+sha256 = "d2ec99fc0d6494fa6ab558bacc60a1de8e76d7f210e412467d75349687dd0a0c"
+
+[[files]]
+path = "tests/circuits/vbic_delay_gear.cir"
+sha256 = "af947265efb08a12afcd6323497abb2baeff06fb477972c0b423e5ff9e07c2b0"
+
+[[files]]
+path = "tests/circuits/vbic_delay_noise.cir"
+sha256 = "ad59706484bee2708a4e02ee9b5f1c030ea0d16f776cd6dc9510e375b6e49cee"
+
+[[files]]
+path = "tests/circuits/vbic_delay_noise_pnp.cir"
+sha256 = "4472ddf2d7d912b90beb08baa58febed25873135c10f3f277be337a74136ccab"
+
+[[files]]
+path = "tests/circuits/vbic_delay_transient.cir"
+sha256 = "dd0ee5a3682582d121ec35620a822d9e6453612799ac6b984e5eadcdc96b93a9"
+
+[[files]]
+path = "tests/circuits/vbic_delay_uic.cir"
+sha256 = "7cba03a11d5d970fe1ae36a55204d2d66154f7f32f2524e3effcfaa67f6cfe3e"
+
+[[files]]
+path = "tests/circuits/vbic_gummel.cir"
+sha256 = "d48b507acc63346c21e35869ffe6ab0257e8ae20659afc90b23f180ca8f47af3"
+
+[[files]]
+path = "tests/circuits/vbic_model_syntax.cir"
+sha256 = "e2ea1cd58c558888637b000ffa28dd86858a8154b5d4cd88113c267192c2e03f"
+
+[[files]]
+path = "tests/circuits/vbic_npn_dc.cir"
+sha256 = "e2998f475708b0e1f3a5777d4b7986f4e099c41bcccda8f06791d62634c1d8dd"
+
+[[files]]
+path = "tests/circuits/vbic_pnp_dc.cir"
+sha256 = "6bc6e6889dc1201160346665b57ba2fc6af16c105ac05e4649db11cf8baba40a"
+
+[[files]]
+path = "tests/circuits/vbic_transient.cir"
+sha256 = "1ae4bffa04929c999864c46d195f9b84d873f54ea63ee7d6b18fcdec851f008e"
+
+[[files]]
+path = "tests/circuits/vdmos_internal_nodes.cir"
+sha256 = "0ee22f08c3590c471dca129f62486a8215ab0de9bee1c7ce88f8010e4b9bcdb7"
+
+[[files]]
+path = "tests/circuits/vdmos_model_scope.cir"
+sha256 = "cb0480280a831261283e329e800490c5f981056250200243831f6bf05e47a5af"
+
+[[files]]
+path = "tests/circuits/vdmos_model_temperature_0.cir"
+sha256 = "4f14abddd92f944a9a06bb198ab5433c581f6930742f45e272084819f0663c11"
+
+[[files]]
+path = "tests/circuits/vdmos_model_temperature_27.cir"
+sha256 = "1b147221129dc2faba608ecfe5ab1db59cf8998283b8e117a73ef033886a3df5"
+
+[[files]]
+path = "tests/circuits/vdmos_model_temperature_60.cir"
+sha256 = "3f144b6797136d6ff2957a94a039b91e110ce117ceef3a02c9220ecf9db31c6a"
+
+[[files]]
+path = "tests/circuits/vdmos_nmos_ac.cir"
+sha256 = "ff19e7ab2ed8fb366937681e94e6c0c728de044b80e8e65a33bb3b0c32b9637e"
+
+[[files]]
+path = "tests/circuits/vdmos_nmos_dc_op.cir"
+sha256 = "6a2ce6e53d9f0d4a529a37e16d924fc91d08c4e40ea9900a2c9673cf2401e2a7"
+
+[[files]]
+path = "tests/circuits/vdmos_nmos_iv_sweep.cir"
+sha256 = "ca3267d134a3727ef9d3e69ad3a2c96cd844ece1fcf58b56d913a8cd8f349376"
+
+[[files]]
+path = "tests/circuits/vdmos_nmos_noise.cir"
+sha256 = "b263df5042c0c41dcb78feed312cbd54c73935d3d290856b65b31c0d9c84af9c"
+
+[[files]]
+path = "tests/circuits/vdmos_pmos_dc_op.cir"
+sha256 = "2d15e3dcc1ab3b154c0e7742d3ca2ba5861ed7e508a2d381dcd5c971305e8366"
+
+[[files]]
+path = "tests/circuits/vdmos_terminal_forms.cir"
+sha256 = "60491d48353dd75dc8df0d4d0b9d5c78e526b6b38912127dea66cd5331086d94"
+
+[[files]]
+path = "tests/circuits/vdmos_thermal_isothermal.cir"
+sha256 = "289f724d8b0fc856a5d7713203fb8f525e8fa37d08ed774399d2c3fa98e65449"
+
+[[files]]
+path = "tests/circuits/vdmos_thermal_selfheat.cir"
+sha256 = "298be85b69bbef8370887ba1aa93d2b365bda8fb6c369f188606926404203150"
+
+[[files]]
+path = "tests/circuits/vdmos_thermal_selfheat_subckt.cir"
+sha256 = "5a56620809caa4c49536364402e0d186358542303652ca6a0ba177bc98185a85"
+
+[[files]]
+path = "tests/circuits/vdmos_theta.cir"
+sha256 = "4329b8b06a6176a0010de21841ca3de711d37175be4436fe65bb2cc6bd556fc3"

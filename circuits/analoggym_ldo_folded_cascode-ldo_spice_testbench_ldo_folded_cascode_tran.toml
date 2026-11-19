@@ -1,0 +1,10 @@
+title = "AnalogGym low-dropout regulator ldo_folded_cascode, SKY130"
+case = "analoggym_ldo_folded_cascode"
+source = "ldo_spice_testbench/ldo_folded_cascode_tran.cir"
+outputs = [
+    "v(vreg1)",
+]
+analysis = [
+    { type = "tran", step = 1e-08, stop = 0.0001 },
+    { type = "op" },
+]

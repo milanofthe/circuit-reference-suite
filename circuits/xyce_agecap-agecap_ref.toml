@@ -1,0 +1,13 @@
+title = "Xyce_Regression AGECAP"
+case = "xyce_agecap"
+source = "agecap_ref.cir"
+outputs = [
+    "i(vmon)",
+    "v(3)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 0.0001 },
+]
+
+[options]
+reltol = 0.0001

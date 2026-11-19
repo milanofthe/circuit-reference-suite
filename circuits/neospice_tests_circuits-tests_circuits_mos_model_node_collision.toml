@@ -1,0 +1,6 @@
+title = "neospice tests/circuits"
+case = "neospice_tests_circuits"
+source = "tests/circuits/mos_model_node_collision.cir"
+analysis = [
+    { type = "op" },
+]

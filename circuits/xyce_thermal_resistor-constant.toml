@@ -1,0 +1,10 @@
+title = "Xyce_Regression THERMAL_RESISTOR"
+case = "xyce_thermal_resistor"
+source = "constant.cir"
+outputs = [
+    "i(r1)",
+    "i(r2)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 1.0 },
+]

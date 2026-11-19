@@ -1,0 +1,10 @@
+title = "Xyce_Regression Certification_Tests/BUG_1797"
+case = "xyce_certification_tests_bug_1797"
+source = "one-shot_lev9.cir"
+outputs = [
+    "v(in)",
+    "v(out)",
+]
+analysis = [
+    { type = "tran", step = 1e-09, stop = 1e-08 },
+]

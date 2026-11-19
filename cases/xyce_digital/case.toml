@@ -1,0 +1,155 @@
+id = "xyce_digital"
+title = "Xyce_Regression DIGITAL"
+family = "test"
+netlists = [
+    { file = "IC_test.cir", dialect = "xyce" },
+    { file = "add_unit_test.cir", dialect = "xyce" },
+    { file = "and4_unit_test.cir", dialect = "xyce" },
+    { file = "buf_unit_test.cir", dialect = "xyce" },
+    { file = "dig_count.cir", dialect = "xyce" },
+    { file = "digintstate_default_jkff_tff_test.cir", dialect = "xyce" },
+    { file = "digintstate_default_test.cir", dialect = "xyce" },
+    { file = "digintstate_invalid_test.cir", dialect = "xyce" },
+    { file = "digintstate_one_jkff_tff_test.cir", dialect = "xyce" },
+    { file = "digintstate_one_test.cir", dialect = "xyce" },
+    { file = "digintstate_three_jkff_tff_test.cir", dialect = "xyce" },
+    { file = "digintstate_three_test.cir", dialect = "xyce" },
+    { file = "digintstate_two_jkff_tff_test.cir", dialect = "xyce" },
+    { file = "digintstate_two_test.cir", dialect = "xyce" },
+    { file = "digintstate_zero_jkff_tff_test.cir", dialect = "xyce" },
+    { file = "digintstate_zero_test.cir", dialect = "xyce" },
+    { file = "dltch_dc_test.cir", dialect = "xyce" },
+    { file = "dltch_enable_test.cir", dialect = "xyce" },
+    { file = "dltch_preset_clear_test.cir", dialect = "xyce" },
+    { file = "inv_unit_test.cir", dialect = "xyce" },
+    { file = "jkff_preset_clear_test.cir", dialect = "xyce" },
+    { file = "jkff_unit_test.cir", dialect = "xyce" },
+    { file = "nand4_unit_test.cir", dialect = "xyce" },
+    { file = "nor4_unit_test.cir", dialect = "xyce" },
+    { file = "nxor_unit_test.cir", dialect = "xyce" },
+    { file = "or4_unit_test.cir", dialect = "xyce" },
+    { file = "tff_unit_test.cir", dialect = "xyce" },
+    { file = "xor_unit_test.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/DIGITAL"
+
+[[files]]
+path = "IC_test.cir"
+sha256 = "67118279db67d6837c02d31d6cf9cb186895c611986a88bb59548522326d6128"
+
+[[files]]
+path = "add_unit_test.cir"
+sha256 = "dd0e2fe6b5f512b40ff9c9f36670c552c2a4fa160e989567394f6109ecbccf86"
+
+[[files]]
+path = "and4_unit_test.cir"
+sha256 = "69a6eee217a311bae3c2ec188adfc6158b78861ed72b291546582bc7495d19e8"
+
+[[files]]
+path = "buf_unit_test.cir"
+sha256 = "5ef0ef7c30a99fa975c43b75bb88096f58de821db30a8c9ee4dda791a89c5da6"
+
+[[files]]
+path = "dig_count.cir"
+sha256 = "3cfa23280e2c2dd89ccc349aac212d56e297072dcf0c5bdf72c67a76a54a9f64"
+
+[[files]]
+path = "digintstate_default_jkff_tff_test.cir"
+sha256 = "f78755a20fd6c0c2931796efcac7c733a9e8fa1b5aad966fd1351119a6adf9a0"
+
+[[files]]
+path = "digintstate_default_test.cir"
+sha256 = "7ac5ad763eece89489cdf0cafb51bb4eec0cf36ecfd127747731e08030b5e6f6"
+
+[[files]]
+path = "digintstate_invalid_test.cir"
+sha256 = "73e89518405f8817aa39099d568194267a49548fdf3596f58b94e61f743e7c29"
+
+[[files]]
+path = "digintstate_one_jkff_tff_test.cir"
+sha256 = "286b86b456f1448c524fd964bc684df5f1a1d46f020725360a36fdbdc3194387"
+
+[[files]]
+path = "digintstate_one_test.cir"
+sha256 = "a0df93b59a45c2cf402f00450a4208d2744b13a72c975f7e3c1e3d5e62c504bd"
+
+[[files]]
+path = "digintstate_three_jkff_tff_test.cir"
+sha256 = "5f69997fe9efd655799a8709718749a5b7bcbe5fc8c6b338ee49d33c515206e4"
+
+[[files]]
+path = "digintstate_three_test.cir"
+sha256 = "cb059ecd13d6246fc1734f5f1c0739e5e997fa03cbfc23abc613144326f41b1e"
+
+[[files]]
+path = "digintstate_two_jkff_tff_test.cir"
+sha256 = "af193935b9480ffee4603f1406202a1d3e570f6f55d55124324df0e501a2fad9"
+
+[[files]]
+path = "digintstate_two_test.cir"
+sha256 = "8a5d6192ed22afbf60007b1e4869c039586ba3464dc5b9435b40cf9cf2c577cb"
+
+[[files]]
+path = "digintstate_zero_jkff_tff_test.cir"
+sha256 = "a315b717f0257674e4c290a6065767269d6c5c5e31fdd573b7faaa5b102ba74b"
+
+[[files]]
+path = "digintstate_zero_test.cir"
+sha256 = "73605e60597a10b563dc6f744da1ba787873a56b9ca8dd496f6f85c8a484f555"
+
+[[files]]
+path = "dltch_dc_test.cir"
+sha256 = "068678683b5d3c1700577250e0fe5a74d88966a529480a9e8c5f5d09f44982a8"
+
+[[files]]
+path = "dltch_enable_test.cir"
+sha256 = "1b4a74e212f2c2e49caabdf9976c64f2544cb3c60386303c739649c3de790065"
+
+[[files]]
+path = "dltch_preset_clear_test.cir"
+sha256 = "872384e3fbbd9661fee53fa4ab6fb7debd8e9b2a8c6f3c65033ef1fd0815c57c"
+
+[[files]]
+path = "inv_unit_test.cir"
+sha256 = "0b3e70466cd51365434b9c8ec6f77c1aa25609fb9c9c8d3192d7bb5faaf9554d"
+
+[[files]]
+path = "jkff_preset_clear_test.cir"
+sha256 = "b8311f4338a6770b0cd75919029a23e5011aafdefb6924a15913fa1bf778ea41"
+
+[[files]]
+path = "jkff_unit_test.cir"
+sha256 = "dc2403e447c71209cb93dede20fbc29c275afff2d999627683b9e4e89efc2795"
+
+[[files]]
+path = "nand4_unit_test.cir"
+sha256 = "89ec23752578605a7fbc9765752709831dbbe13bfb1c929ab4a762ad2de86923"
+
+[[files]]
+path = "nor4_unit_test.cir"
+sha256 = "e5fe134c41dec95336a156387e1e860b6aafd8e42dccf7e803dd7d0c3b3f3cc3"
+
+[[files]]
+path = "nxor_unit_test.cir"
+sha256 = "6cc56a2b8db78521f785d419dfc3094839aaaa7ab79b692d82bea9fb958026f2"
+
+[[files]]
+path = "or4_unit_test.cir"
+sha256 = "d281007f87beefd1c195958ddda520953f95ace2fcc9bd8c5a4c7532f91c3daf"
+
+[[files]]
+path = "tff_unit_test.cir"
+sha256 = "01e88bab4828637a45456515cdfe5b2fee5c6ed63851ef8da5e91a452ca0e37f"
+
+[[files]]
+path = "xor_unit_test.cir"
+sha256 = "3dcc63ac956af575bf803cac39e3771965f54bed77e563b204d54d24e129dcc2"

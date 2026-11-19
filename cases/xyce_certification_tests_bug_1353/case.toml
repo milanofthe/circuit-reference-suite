@@ -1,0 +1,34 @@
+id = "xyce_certification_tests_bug_1353"
+title = "Xyce_Regression Certification_Tests/BUG_1353"
+family = "test"
+netlists = [
+    { file = "150nm_nmos.cir", dialect = "xyce" },
+    { file = "150nm_pmos.cir", dialect = "xyce" },
+    { file = "invert_ekv.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/Certification_Tests/BUG_1353"
+
+[[files]]
+path = "150nm.mod"
+sha256 = "b6d0aaaf2bec9d55aa825cc683561cdef9ae4cf5e51afcd80f36412d6865650a"
+
+[[files]]
+path = "150nm_nmos.cir"
+sha256 = "d344dd69099cc15bd5e255c85ec5ab878d21c7f0a3a8aa2988cfc6b9e3e30c8a"
+
+[[files]]
+path = "150nm_pmos.cir"
+sha256 = "ac1f0d17cf7b8052fd4ef79e92136e4d756d4b0f7a55284461317c28cf17568a"
+
+[[files]]
+path = "invert_ekv.cir"
+sha256 = "5a13b30a416e6f47dc933fc3f7db2bf65af82f9c5aeb9c2e4da60409e36300ed"

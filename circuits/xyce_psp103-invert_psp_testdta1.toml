@@ -1,0 +1,15 @@
+title = "Xyce_Regression PSP103"
+case = "xyce_psp103"
+source = "invert_psp_testDTA1.cir"
+outputs = [
+    "v(vout)",
+    "v(in)",
+    "v(1)",
+]
+analysis = [
+    { type = "tran", step = 2e-08, stop = 3e-05 },
+]
+
+[options]
+temp = 27.0
+reltol = 0.0001

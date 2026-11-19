@@ -1,0 +1,21 @@
+id = "ahkab_tests_downscaling_cm"
+title = "ahkab tests/downscaling_cm"
+family = "test"
+netlists = [
+    { file = "downscaling_cm.ckt", dialect = "ahkab" },
+]
+
+[source]
+name = "ahkab"
+url = "https://github.com/ahkab/ahkab"
+license = "GPL-2.0-only"
+authors = [
+    "Giuseppe Venturini",
+    "ahkab contributors",
+]
+commit = "1e8939194b689909b8184ce7eba478b485ff9e3a"
+root = "tests/downscaling_cm"
+
+[[files]]
+path = "downscaling_cm.ckt"
+sha256 = "09fa542dd664647c2deaef15f2d8bf07f7f3e30b40e7e6a9242673b62d28da1f"

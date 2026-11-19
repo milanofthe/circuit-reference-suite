@@ -1,0 +1,9 @@
+title = "Xyce_Regression DIAGNOSTIC"
+case = "xyce_diagnostic"
+source = "RCLadderVICheck.cir"
+outputs = [
+    "v(2)",
+]
+analysis = [
+    { type = "tran", step = 1e-07, stop = 1e-06 },
+]

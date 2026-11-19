@@ -1,0 +1,20 @@
+id = "xyce_tia_trap_4049osc"
+title = "Xyce_Regression TIA/TRAP/4049OSC"
+family = "test"
+netlists = [
+    { file = "4049osc.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/TIA/TRAP/4049OSC"
+
+[[files]]
+path = "4049osc.cir"
+sha256 = "a33bcf373d11de3bbca864ea0f8c0474936cb753d6e501f3964f3d292857c767"

@@ -1,0 +1,59 @@
+id = "ngspice_examples_rf_sp"
+title = "ngspice examples/rf/sp"
+family = "test"
+netlists = [
+    { file = "Tschebyschef-LP.cir", dialect = "ngspice" },
+    { file = "file.cir", dialect = "ngspice" },
+    { file = "filter.sp", dialect = "ngspice" },
+    { file = "sp1.cir", dialect = "ngspice" },
+    { file = "sp2.cir", dialect = "ngspice" },
+    { file = "sp3.cir", dialect = "ngspice" },
+    { file = "sp4.cir", dialect = "ngspice" },
+]
+notes = """
+Left out:
+- `file_nport.cir`: needs 137mhz_bpf.nport, not in the source tree
+- `file_nport_tran.cir`: needs 137mhz_bpf.nport, not in the source tree
+"""
+
+[source]
+name = "ngspice"
+url = "https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/"
+license = "BSD-3-Clause"
+authors = [
+    "The ngspice developers",
+]
+commit = "059066b532f7073fccf4173ef269309eafdc7f0c"
+root = "examples/rf/sp"
+
+[[files]]
+path = "Tschebyschef-LP.cir"
+sha256 = "a485b7bc04857e8a53130579d5b0f3ce7e473ee24121152dffdffb36f9acdcf1"
+
+[[files]]
+path = "file.cir"
+sha256 = "2cc8b6d32c958f320a1f6b3b47995ef654a46559bb224d16de61a7f198779402"
+
+[[files]]
+path = "filter.lib"
+sha256 = "cf76a631449caf8b55fb005964a66eec6331c4db74888b0dd18423ad4da05bb0"
+
+[[files]]
+path = "filter.sp"
+sha256 = "6297a5e41609bc487426488ff1d9bb084c07f2f4ebead5ec05d9ad2aa315c1a3"
+
+[[files]]
+path = "sp1.cir"
+sha256 = "17efce31a1f65c0fc193bc62c3f5f3731818cc8550003b27af60f7b0a72fa4d4"
+
+[[files]]
+path = "sp2.cir"
+sha256 = "8dfd3e09441232db14f8fde726e89292b373c46b1e745f7fa823950a423c7726"
+
+[[files]]
+path = "sp3.cir"
+sha256 = "cc4a70110d543c5853bff90333a3408d0958e23d63b242fd8a53029209a7ef17"
+
+[[files]]
+path = "sp4.cir"
+sha256 = "b09a4dfdafa06cd33769d36f84c09432e55ff8562219e5ef55d3ada4cea991d1"

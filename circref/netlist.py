@@ -21,6 +21,7 @@ SPICE = ("ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "w
 SPECTRE = ("spectre", "vacask")
 QUCS = ("qucsator",)
 VERILOGA = ("veriloga",)
+NGSPICE_LIB = ("ngspice", "spice3")     # a .lib file is read whole, not only its section
 DIALECTS = SPICE + SPECTRE + QUCS + VERILOGA
 VA_SUFFIXES = (".va", ".vams", ".vh", ".vah", ".include", ".inc_va")
 
@@ -62,6 +63,7 @@ class Parsed:
     instances: dict[str, Counter] = field(default_factory=dict)
     sections: dict[str, list[Ref]] = field(default_factory=dict)
     models: dict[str, str] = field(default_factory=dict)        # .model name -> type
+    levels: dict[str, str] = field(default_factory=dict)        # .model name -> level
     osdi_devices: set[str] = field(default_factory=set)         # model names of N instances
     va_types: set[str] = field(default_factory=set)             # Xyce Y<type> plugin devices
     modules: set[str] = field(default_factory=set)              # Verilog-A modules defined
@@ -161,6 +163,9 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
             section = None
         elif head == ".model" and len(tokens) > 2:
             p.models[tokens[1].lower()] = tokens[2].split("(")[0].lower()
+            if m := re.search(r"\blevel\s*=\s*(\d+\.?\d*(?:e[-+]?\d+)?)", line, re.I):
+                level = float(m.group(1))                   # 4.00000E+000: 4
+                p.levels[tokens[1].lower()] = f"{level:g}"
             refs += _data_refs(line, n)
         elif head == ".hdl" and len(tokens) > 1:
             refs.append(Ref("va", _unquote(tokens[1]), None, n))

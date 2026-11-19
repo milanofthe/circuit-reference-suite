@@ -1,0 +1,14 @@
+title = "Xyce_Regression VBIC13"
+case = "xyce_vbic13"
+source = "acXf_3T_m.cir"
+outputs = [
+    "i(v_c_b)",
+    "i(v_b_b)",
+    "i(v_e_b)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 10, start = 1000000.0, stop = 10000000000.0 },
+]
+
+[options]
+temp = 27.0

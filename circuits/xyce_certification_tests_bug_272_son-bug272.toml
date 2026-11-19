@@ -1,0 +1,11 @@
+title = "Xyce_Regression Certification_Tests/BUG_272_SON"
+case = "xyce_certification_tests_bug_272_son"
+source = "bug272.cir"
+outputs = [
+    "v(ve)",
+    "v(out)",
+]
+analysis = [
+    { type = "ac", sweep = "oct", points = 10, start = 0.01, stop = 100000.0 },
+    { type = "op" },
+]

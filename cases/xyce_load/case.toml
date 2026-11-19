@@ -1,0 +1,20 @@
+id = "xyce_load"
+title = "Xyce_Regression LOAD"
+family = "test"
+netlists = [
+    { file = "load.cir", dialect = "xyce" },
+]
+
+[source]
+name = "Xyce_Regression"
+url = "https://github.com/Xyce/Xyce_Regression"
+license = "GPL-3.0-or-later"
+authors = [
+    "Sandia National Laboratories",
+]
+commit = "7bb7e98f0ed3a81a7d1cf1d10b68592107ed40b2"
+root = "Netlists/LOAD"
+
+[[files]]
+path = "load.cir"
+sha256 = "a1bea7fc88fa6974b32d27825a7a03e245fa84c9bb47fe976020b60d7c55c77e"

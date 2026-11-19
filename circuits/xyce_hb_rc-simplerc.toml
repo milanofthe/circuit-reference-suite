@@ -1,0 +1,14 @@
+title = "Xyce_Regression HB/RC"
+case = "xyce_hb_rc"
+source = "simpleRC.cir"
+outputs = [
+    "v(1)",
+    "v(2)",
+    "i(v1)",
+]
+analysis = [
+    { type = "tran", step = 0.0, stop = 0.01 },
+]
+
+[options]
+reltol = 0.001

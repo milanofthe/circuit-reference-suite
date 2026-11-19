@@ -1,0 +1,13 @@
+title = "Xyce_Regression Certification_Tests/BUG_1946"
+case = "xyce_certification_tests_bug_1946"
+source = "bug_1946_nl.cir"
+outputs = [
+    "i(vs)",
+    "i(l1)",
+    "i(l2)",
+    "i(xtxs:l1s)",
+    "i(xtxs:l2s)",
+]
+analysis = [
+    { type = "tran", step = 0.0001, stop = 0.025 },
+]

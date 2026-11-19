@@ -1,0 +1,11 @@
+title = "Xyce_Regression Output/Dasho"
+case = "xyce_output_dasho"
+source = "ac.cir"
+outputs = [
+    "v(a)",
+    "v(b)",
+]
+analysis = [
+    { type = "ac", sweep = "dec", points = 5, start = 100.0, stop = 1000000.0 },
+    { type = "op" },
+]
