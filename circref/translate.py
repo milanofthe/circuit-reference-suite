@@ -580,6 +580,11 @@ SOURCE_KEYWORDS = {"xyce", "spicesharp"}
 # What a pulse with a zero rise or fall time rises in: Xyce zero (Reference Guide table
 # 6-1), ngspice the time step (vsrcload.c), WRspice the time step (inptran.cc), SpiceSharp
 # zero (Pulse.cs: a stated time is taken as stated).
+# What a source with a transient function and no DC value is in an OP or DC analysis:
+# Xyce 0 (Vsrc::loadDAEBVector), ngspice the function at t=0 (vsrcload.c), WRspice too
+# (spSources.hlp, General I and V Sources), SpiceSharp too (VSRC/Biasing.cs).
+_AT_ZERO = "the transient value at t=0"
+FUNCTION_DC = {"xyce": "0", "ngspice": _AT_ZERO, "wrspice": _AT_ZERO, "spicesharp": _AT_ZERO}
 PULSE_ZERO_EDGE = {"xyce": "zero", "ngspice": "the time step", "wrspice": "the time step",
                    "spicesharp": "zero"}
 # Source functions whose arguments the target reads in part only: a test of the arguments
@@ -1797,19 +1802,20 @@ class Translator:
 
     def dc_value(self, st: Statement, at: int) -> None:
         """A source with a transient function and no DC value: in an OP or DC analysis
-        Xyce takes 0 (Vsrc::loadDAEBVector), ngspice the function at t=0 (vsrcload.c);
-        in a transient both start from the function. Exact where the circuit runs OP and
-        DC only and the target is ngspice: DC 0 stated."""
-        if not self.analyses & {"op", "dc"}:
+        the value FUNCTION_DC states; in a transient all start from the function. Exact
+        where the circuit runs OP and DC only and the target takes the function: DC 0
+        stated."""
+        have, want = FUNCTION_DC[self.src], FUNCTION_DC[self.tgt]
+        if have == want or not self.analyses & {"op", "dc"}:
             return
         before = st.words()[3:at]
         if "ac" in before:
             before = before[:before.index("ac")]
         if before:
             return                              # DC, or a value, is given
-        if self.analyses - {"op", "dc"} or self.tgt != "ngspice":
-            raise Untranslatable("source without a DC value in an OP or DC analysis (Xyce "
-                                 "takes 0, ngspice the transient value at t=0)")
+        if self.analyses - {"op", "dc"} or have != "0":
+            raise Untranslatable(f"source without a DC value in an OP or DC analysis ({self.src} "
+                                 f"takes {have}, {self.tgt} {want})")
         st.tokens[at:at] = [Token(" ", "dc"), Token(" ", "0")]
         st.edited = True
 
