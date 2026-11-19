@@ -8,18 +8,19 @@
 # The circuit as stated: what a user of the simulator gets.
 [level.default]
 
-# Two decades below the SPICE defaults (reltol 1e-3, vntol 1e-6, abstol 1e-12).
+# reltol two decades below the SPICE defaults (reltol 1e-3, vntol 1e-6, abstol 1e-12).
 [level.fine]
 reltol = 1e-5
-vntol = 1e-8
-abstol = 1e-14
 
-# Four decades below, on a dense time grid: linear interpolation between 20000 points
-# of a period resolved on 1000 of them is off by (2 pi / 1000)^2 / 8 = 5e-6 of its peak.
+# reltol three decades below, the absolute bounds one decade below, on a dense time grid:
+# linear interpolation between 20000 points of a period resolved on 1000 of them is off
+# by (2 pi / 1000)^2 / 8 = 5e-6 of its peak. Tighter, ngspice 47 and Xyce 7.10 stop with
+# "timestep too small" on diode bridges and gate-level CMOS (abstol 1e-16, vntol 1e-10,
+# reltol 1e-7: vacask_graetz, vacask_mul, the ISCAS circuits of ngspice_examples_klu).
 [level.reference]
-reltol = 1e-7
-vntol = 1e-10
-abstol = 1e-16
+reltol = 1e-6
+vntol = 1e-7
+abstol = 1e-13
 points = 20000
 
 [compare]

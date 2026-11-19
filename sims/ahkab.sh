@@ -34,8 +34,8 @@ chmod +x "$PREFIX/bin/ahkab"
 
 out=$("$PREFIX/bin/ahkab" --version 2>/dev/null || true)
 echo "$out"
-{ echo "ahkab $UPSTREAM ($(head -n 1 <<< "$out")) commit $COMMIT, Python $PYTHON, ${PINS[*]}"
-  echo "source: $GH/commit/$COMMIT"; } > "$PREFIX/version"
+{ echo "ahkab $UPSTREAM commit ${COMMIT:0:12}"
+  echo "source: $GH/commit/$COMMIT, Python $PYTHON, ${PINS[*]}"; } > "$PREFIX/version"
 finish ahkab "$VERSION" "$PREFIX"
 
 export PATH="$PREFIX/bin:$PATH"
