@@ -10,4 +10,4 @@ analysis = [
 ]
 
 [options]
-abstol = 1e-05
+vntol = 1e-05

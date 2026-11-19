@@ -11,5 +11,5 @@ analysis = [
 
 [options]
 gmin = 0.0
-abstol = 1e-13
+vntol = 1e-13
 reltol = 1e-07

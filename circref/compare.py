@@ -1,11 +1,17 @@
-"""Simulators against each other: for every circuit and analysis that two or more
-simulators finished, every signal they share on one axis, each simulator's deviation from
-the median of all, and the times.
+"""Simulators against a reference: for every circuit and analysis the reference its
+converged runs give, and the error of every run against it, with the time it took.
 
-The deviation of a signal is its largest difference to the median over the axis,
-relative to the median's largest magnitude plus a floor (1 uV, 1 pA) that keeps signals
-near zero from dominating. A transient is compared on ``points`` uniform time points,
-DC and AC on the first simulator's sweep points.
+A simulator's run at the reference level is converged when its run at the fine level is
+within ``converged`` of it. The reference of an analysis is the median of the converged
+reference runs of all simulators over the signals they share; while they differ from it
+by more than ``agree``, the one furthest off is set aside (an outlier: a different model
+or circuit, not a numerical error), as long as two remain. Two that disagree give no
+reference. The error the reference carries: the largest convergence and agreement
+deviation it rests on.
+
+The error of a run: over the signals it shares with the reference, the largest difference
+on the run's own points (its time steps, its sweep points) to the reference there,
+relative to the reference signal's peak plus a floor. Bounds in bench.toml.
 """
 from __future__ import annotations
 
@@ -15,55 +21,89 @@ from pathlib import Path
 
 import numpy as np
 
-FLOOR = {"v": 1e-6, "i": 1e-12}
-BANDS = (1e-6, 1e-4, 1e-2)
+from .bench import CONFIG
+
+C = CONFIG["compare"]
+Run = tuple[np.ndarray, dict[str, np.ndarray]]          # axis, signals on it
 
 
-def _load(out: Path, rec: dict) -> dict[str, np.ndarray]:
-    with np.load(out / rec["simulator"] / rec["circuit"] / f"{rec['analysis']}.npz") as d:
-        return {k: d[k] for k in d.files}
+def _load(out: Path, rec: dict) -> Run:
+    with np.load(out / rec["level"] / rec["simulator"] / rec["circuit"] / f"{rec['analysis']}.npz") as d:
+        axis, *names = d.files
+        return np.real(d[axis]), {n: d[n] for n in names
+                                  if n[:2] in ("v(", "i(") and len(d[n]) == len(d[axis])}
 
 
-def deviations(out: Path, recs: list[dict], points: int = 1001) -> dict[str, dict[str, float]]:
-    """simulator -> signal -> relative deviation from the median, for one analysis."""
-    data = {r["simulator"]: _load(out, r) for r in recs}
-    axis_of = {s: next(iter(d)) for s, d in data.items()}
-    shared = set.intersection(*({k for k in d if k != axis_of[s]} for s, d in data.items()))
-    shared = {k for k in shared if k[:2] in ("v(", "i(")}
-    if not shared:
-        return {}
-    kind = recs[0]["type"]
-    first = next(iter(data))
-    if kind == "tran":
-        ends = [(d[axis_of[s]][0].real, d[axis_of[s]][-1].real) for s, d in data.items()]
-        x = np.linspace(max(e[0] for e in ends), min(e[1] for e in ends), points)
-    else:
-        x = np.real(data[first][axis_of[first]])
-    out_: dict[str, dict[str, float]] = defaultdict(dict)
-    for sig in sorted(shared):
-        curves = {}
-        for s, d in data.items():
-            ax, y = np.real(d[axis_of[s]]), d[sig]
-            if len(ax) != len(y):
-                continue
-            if kind == "op" or len(ax) == 1:
-                curves[s] = y[:1]
-            elif kind == "tran" or len(ax) != len(x) or not np.allclose(ax, x, rtol=1e-9):
-                if np.any(np.diff(ax) <= 0):                # nested sweeps: not interpolable
-                    continue
-                curves[s] = np.interp(x, ax, y.real) + (1j * np.interp(x, ax, y.imag)
-                                                        if np.iscomplexobj(y) else 0)
-            else:
-                curves[s] = y
-        # One point against a sweep (a sweep one simulator did not run): not comparable.
-        if len(curves) < 2 or len({len(y) for y in curves.values()}) > 1:
+def _on(ax: np.ndarray, y: np.ndarray, x: np.ndarray) -> np.ndarray | None:
+    """``y`` over ``ax`` at the points ``x``: the values where the axes are one, linear
+    between points on a monotonic axis, none on nested sweeps."""
+    if len(ax) == len(x) and np.allclose(ax, x, rtol=1e-9, atol=0):
+        return y
+    d = np.diff(ax)
+    if len(ax) < 2 or not (np.all(d >= 0) or np.all(d <= 0)):
+        return None
+    o = np.argsort(ax, kind="stable")
+    re_ = np.interp(x, ax[o], y.real[o])
+    return re_ + 1j * np.interp(x, ax[o], y.imag[o]) if np.iscomplexobj(y) else re_
+
+
+def error(run: Run, ref: Run) -> tuple[float, str] | None:
+    """(largest relative difference of ``run`` to ``ref``, the signal it is on)."""
+    (xr, yr), (xf, yf) = run, ref
+    inside = (xr >= xf.min()) & (xr <= xf.max())
+    worst = None
+    for s in sorted(yr.keys() & yf.keys()):
+        at = _on(xf, yf[s], xr[inside])
+        if at is None or not inside.any():
             continue
-        stack = np.array(list(curves.values()))
-        med = np.median(stack.real, 0) + (1j * np.median(stack.imag, 0) if np.iscomplexobj(stack) else 0)
-        scale = np.max(np.abs(med)) + FLOOR[sig[0]]
-        for s, y in curves.items():
-            out_[s][sig] = float(np.max(np.abs(y - med)) / scale)
-    return out_
+        e = float(np.max(np.abs(yr[s][inside] - at)) / (np.max(np.abs(yf[s])) + C["floor"][s[0]]))
+        if worst is None or e > worst[0]:
+            worst = (e, s)
+    return worst
+
+
+def _median(runs: dict[str, Run]) -> Run | None:
+    """The median of runs on the axis of the one with the most points, over their shared signals."""
+    x = max(runs.values(), key=lambda r: len(r[0]))[0]
+    shared = set.intersection(*(set(y) for _, y in runs.values()))
+    med = {}
+    for s in sorted(shared):
+        on = [_on(ax, y[s], x) for ax, y in runs.values()]
+        if any(v is None for v in on):
+            continue
+        st = np.array(on)
+        med[s] = np.median(st.real, 0) + (1j * np.median(st.imag, 0) if np.iscomplexobj(st) else 0)
+    return (x, med) if med else None
+
+
+def reference(runs: dict[tuple[str, str], Run]) -> tuple[dict, Run | None]:
+    """The reference of one analysis from its runs by (simulator, level)."""
+    conv = {}
+    for (s, lv), r in runs.items():
+        if lv == "reference" and (s, "fine") in runs:
+            e = error(runs[(s, "fine")], r)
+            if e is not None and e[0] <= C["converged"]:
+                conv[s] = e[0]
+    if not conv:
+        return {"status": "none"}, None
+    cands = {s: runs[(s, "reference")] for s in conv}
+    outliers: list[str] = []
+    while True:
+        med = cands[next(iter(cands))] if len(cands) == 1 else _median(cands)
+        if med is None:
+            return {"status": "no shared signal", "simulators": sorted(cands)}, None
+        dev = {s: (error(r, med) or (np.inf, None))[0] for s, r in cands.items()}
+        off = max(dev, key=dev.get)
+        if dev[off] <= C["agree"]:
+            break
+        if len(cands) == 2:
+            return {"status": "disagree", "simulators": sorted(cands),
+                    "deviation": dev[off], "outliers": outliers}, None
+        outliers.append(off)
+        del cands[off]
+    info = {"status": "agreed" if len(cands) > 1 else "single", "simulators": sorted(cands),
+            "outliers": outliers, "error": max([conv[s] for s in cands] + list(dev.values()))}
+    return info, med
 
 
 def compare(out: Path) -> dict:
@@ -72,59 +112,96 @@ def compare(out: Path) -> dict:
         r = json.loads(line)
         if r["status"] == "ok":
             by_run[(r["circuit"], r["analysis"])].append(r)
-    rows = []
+    refs, rows = [], []
     for (circuit, k), recs in sorted(by_run.items()):
-        if len({r["simulator"] for r in recs}) < 2:
-            continue
-        dev = deviations(out, recs)
+        runs = {(r["simulator"], r["level"]): _load(out, r) for r in recs}
+        info, ref = reference(runs)
+        refs.append({"circuit": circuit, "analysis": k, "type": recs[0]["type"]} | info)
         for r in recs:
-            sig = dev.get(r["simulator"], {})
-            worst = max(sig.items(), key=lambda kv: kv[1]) if sig else (None, None)
+            e = error(runs[(r["simulator"], r["level"])], ref) if ref else None
             rows.append({"circuit": circuit, "analysis": k, "type": r["type"],
-                         "simulator": r["simulator"], "signals": len(sig),
-                         "worst_signal": worst[0], "deviation": worst[1],
+                         "simulator": r["simulator"], "level": r["level"],
+                         "error": e[0] if e else None, "worst_signal": e[1] if e else None,
+                         "reference_error": info.get("error"),
+                         "outlier": r["simulator"] in info.get("outliers", []),
                          "wall_s": r.get("wall_s"), "sim_s": r.get("sim_s")})
-    return {"rows": rows}
+    return {"references": refs, "rows": rows}
+
+
+def _table(head: list[str], rows: list[list]) -> list[str]:
+    return ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)] + \
+           ["| " + " | ".join(str(c) for c in r) + " |" for r in rows]
 
 
 def summary(out: Path) -> str:
-    """Status per simulator; agreement bands; time against the fastest per analysis."""
-    status: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    """Status per simulator and level; references; accuracy at the default level; the
+    time each simulator takes to reach an accuracy. Writes out/compare.json."""
+    status: dict[tuple, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     versions: dict[str, str] = {}
     for line in (out / "results.jsonl").read_text().splitlines():
         r = json.loads(line)
-        status[r["simulator"]][r["status"]] += 1
+        status[(r["simulator"], r.get("level", ""))][r["status"]] += 1
         versions[r["simulator"]] = r.get("version") or versions.get(r["simulator"], "")
     names = sorted({k for v in status.values() for k in v})
-    lines = ["| simulator | version | " + " | ".join(names) + " |", "|---|---|" + "---|" * len(names)]
-    for s in sorted(status):
-        lines.append(f"| {s} | {versions[s]} | " + " | ".join(str(status[s].get(n, "")) for n in names) + " |")
-    rows = compare(out)["rows"]
-    if rows:
-        lines += ["", "deviation from the median of the simulators, per analysis (worst signal):", "",
-                  "| simulator | analyses | " + " | ".join(f"<= {b:g}" for b in BANDS) + f" | > {BANDS[-1]:g} | no shared signal |",
-                  "|---|---|" + "---|" * (len(BANDS) + 2)]
-        for s in sorted({r["simulator"] for r in rows}):
-            mine = [r for r in rows if r["simulator"] == s]
-            devs = [r["deviation"] for r in mine if r["deviation"] is not None]
-            cells, lo = [], -1.0
-            for b in BANDS:
-                cells.append(sum(lo < d <= b for d in devs))
-                lo = b
-            cells += [sum(d > BANDS[-1] for d in devs), len(mine) - len(devs)]
-            lines.append(f"| {s} | {len(mine)} | " + " | ".join(map(str, cells)) + " |")
-        # time: each simulator's own analysis time, against the fastest on the same analysis
-        best: dict[tuple, float] = {}
-        for r in rows:
-            t = r["sim_s"] or r["wall_s"]
-            key = (r["circuit"], r["analysis"])
-            best[key] = min(best.get(key, t), t)
-        lines += ["", "time against the fastest simulator on the same analysis (geometric mean, own analysis time where reported):", "",
-                  "| simulator | analyses | ratio | total s |", "|---|---|---|---|"]
-        for s in sorted({r["simulator"] for r in rows}):
-            ts = [((r["sim_s"] or r["wall_s"]), best[(r["circuit"], r["analysis"])]) for r in rows
-                  if r["simulator"] == s]
-            ratios = [t / b for t, b in ts if b > 0]
-            gm = float(np.exp(np.mean(np.log(ratios)))) if ratios else float("nan")
-            lines.append(f"| {s} | {len(ts)} | {gm:.2f} | {sum(t for t, _ in ts):.1f} |")
+    lines = _table(["simulator", "version", "level"] + names,
+                   [[s, versions[s], lv] + [status[(s, lv)].get(n, "") for n in names]
+                    for s, lv in sorted(status)])
+    result = compare(out)
+    (out / "compare.json").write_text(json.dumps(result))
+    refs, rows = result["references"], result["rows"]
+
+    kinds = ["agreed", "single", "disagree", "none", "no shared signal"]
+    by_type = defaultdict(lambda: defaultdict(int))
+    for r in refs:
+        by_type[r["type"]][r["status"]] += 1
+    lines += ["", "references per analysis: agreed by several converged simulators, from a single one, "
+              "two converged that disagree, none converged:", ""]
+    lines += _table(["type"] + kinds + ["median error"],
+                    [[t] + [by_type[t].get(k, "") for k in kinds] +
+                     [f"{np.median([r['error'] for r in refs if r['type'] == t and 'error' in r] or [np.nan]):.1e}"]
+                     for t in sorted(by_type)])
+
+    sims = sorted({r["simulator"] for r in rows})
+    bands = C["bands"]
+    lines += ["", "error against the reference at the default level, per analysis (worst signal); "
+              "outlier: its reference run disagrees with the others:", ""]
+    table = []
+    for s in sims:
+        mine = [r for r in rows if r["simulator"] == s and r["level"] == "default" and r["error"] is not None]
+        good = [r for r in mine if not r["outlier"]]
+        cells = [len(mine), sum(r["error"] <= r["reference_error"] for r in good)]
+        lo = -1.0
+        for b in bands:
+            cells.append(sum(lo < r["error"] <= b and r["error"] > r["reference_error"] for r in good))
+            lo = b
+        table.append([s] + cells + [sum(r["error"] > bands[-1] for r in good), len(mine) - len(good)])
+    lines += _table(["simulator", "analyses", "within reference error"] + [f"<= {b:g}" for b in bands] +
+                    [f"> {bands[-1]:g}", "outlier"], table)
+
+    # Work at a precision: per analysis the cheapest level that reaches the error, against
+    # the fastest simulator that reaches it on the same analysis. Wall time of the run.
+    lines += ["", "time to reach an error, against the fastest simulator that reaches it on the same "
+              "analysis (geometric mean of wall time, cheapest level that reaches it):", ""]
+    cheapest: dict[tuple, float] = {}
+    for r in rows:
+        if r["error"] is None or r["outlier"] or not r["wall_s"]:
+            continue
+        for b in bands:
+            if max(r["error"], r["reference_error"]) <= b:
+                key = (r["circuit"], r["analysis"], b, r["simulator"])
+                cheapest[key] = min(cheapest.get(key, np.inf), r["wall_s"])
+    fastest: dict[tuple, list[float]] = defaultdict(list)
+    for (c, k, b, s), t in cheapest.items():
+        fastest[(c, k, b)].append(t)
+    table = []
+    for s in sims:
+        cells = []
+        for b in bands:
+            ratios = [t / min(fastest[(c, k, bb)]) for (c, k, bb, ss), t in cheapest.items()
+                      if ss == s and bb == b and len(fastest[(c, k, bb)]) > 1]
+            reached = sum(1 for (_, _, bb, ss) in cheapest if ss == s and bb == b)
+            gm = f"{np.exp(np.mean(np.log(ratios))):.2f}" if ratios else "-"
+            cells.append(f"{reached} / {gm}")
+        table.append([s] + cells)
+    lines += _table(["simulator"] + [f"<= {b:g}: reached / ratio" for b in bands], table)
     return "\n".join(lines)

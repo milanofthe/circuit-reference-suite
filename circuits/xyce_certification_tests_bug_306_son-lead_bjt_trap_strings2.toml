@@ -6,4 +6,4 @@ analysis = [
 ]
 
 [options]
-method = "trapezoidal"
+method = "trap"

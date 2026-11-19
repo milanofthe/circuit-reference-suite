@@ -8,7 +8,7 @@ outputs = [
 ]
 
 [options]
-abstol = 1e-08
+vntol = 1e-08
 reltol = 0.001
 
 [[analysis]]

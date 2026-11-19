@@ -73,7 +73,7 @@ def body(text: str) -> list[str]:
         if head in OPTION_LINES:
             st = [_MANAGED.sub("", l) for l in st]
             words = " ".join(l.strip().lstrip("+") for l in st if l.strip()[:1] not in "*;").split()[1:]
-            if not [w for w in words if w.lower() not in ("device", "timeint", "nonlin", "parser")
+            if not [w for w in words if w.lower() not in ("device", "timeint", "nonlin", "nonlin-tran", "parser")
                     or "=" in w]:
                 continue
         out += st
@@ -94,7 +94,7 @@ class Adapter:
 
     def version(self) -> str:
         f = Path(os.environ.get("SIMS", "/cache/circsims")) / self.name / "current" / "version"
-        return f.read_text().strip() if f.exists() else ""
+        return f.read_text().splitlines()[0].strip() if f.exists() else ""   # line 2: its source
 
     def analysis(self, a: dict) -> str:
         t = a["type"]
@@ -165,14 +165,19 @@ class Ngspice(Adapter):
 
 
 class Xyce(Adapter):
-    GROUPS = {"temp": "device", "tnom": "device", "gmin": "device", "reltol": "timeint",
-              "abstol": "timeint", "method": "timeint"}
+    """The options in Xyce's groups (circuit.XYCE_OPTIONS reads them back): reltol bounds
+    the integration error and the Newton updates alike, vntol is their absolute bound on
+    the solution. SPICE's abstol, a bound on currents, has no counterpart."""
+    GROUPS = {"temp": ("device",), "tnom": ("device",), "gmin": ("device",),
+              "reltol": ("timeint", "nonlin", "nonlin-tran"), "vntol": ("timeint", "nonlin-tran"),
+              "method": ("timeint",)}
+    NAMES = {"vntol": "abstol"}
 
     def control(self, c: Circuit) -> list[str]:
         groups: dict[str, list[str]] = {}
         for k, v in c.options.items():
-            if k in self.GROUPS:
-                groups.setdefault(self.GROUPS[k], []).append(f"{k}={v if k == 'method' else _num(v)}")
+            for g in self.GROUPS.get(k, ()):
+                groups.setdefault(g, []).append(f"{self.NAMES.get(k, k)}={v if k == 'method' else _num(v)}")
         return [f".options {g} " + " ".join(kv) for g, kv in groups.items()]
 
     def argv(self, deck: str, raw: str) -> list[str]:

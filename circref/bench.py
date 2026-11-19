@@ -1,9 +1,10 @@
 """Run circuits on simulators: every analysis of a circuit on every adapter that can read
-its body, under a time and memory limit, signals and timings kept.
+its body, at every precision level of bench.toml, under a time and memory limit, signals
+and timings kept.
 
-    out/results.jsonl                       one line per circuit, simulator and analysis
-    out/<simulator>/<circuit>/<k>.npz       the signals of analysis k
-    out/<simulator>/<circuit>/<k>.log       what the simulator printed
+    out/results.jsonl                               one line per circuit, simulator, level, analysis
+    out/<level>/<simulator>/<circuit>/<k>.npz       the signals of analysis k
+    out/<level>/<simulator>/<circuit>/<k>.log       what the simulator printed
 
 One line per finished circuit and simulator goes to the log as it happens.
 """
@@ -19,6 +20,7 @@ import shutil
 import signal
 import subprocess
 import time
+import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -26,8 +28,12 @@ import numpy as np
 
 from .adapters import ADAPTERS, Adapter
 from .circuit import Circuit, iter_circuits
+from .entry import ROOT
 from .stage import Compiler, StageError, stage, tail
 from .translate import Untranslatable, translate
+
+CONFIG = tomllib.loads((ROOT / "bench.toml").read_text(encoding="utf-8"))
+LEVELS: dict[str, dict] = CONFIG["level"]
 
 
 def _limits(memory: int):
@@ -39,15 +45,15 @@ def _limits(memory: int):
     return apply
 
 
-def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compiler,
+def run_circuit(c: Circuit, ad: Adapter, level: str, work: Path, out: Path, compiler: Compiler,
                 timeout: float, memory_gb: float, env: dict) -> list[dict]:
-    base = {"circuit": c.name, "simulator": ad.name, "version": ad.version()}
+    base = {"circuit": c.name, "simulator": ad.name, "level": level, "version": ad.version()}
     nl = next((c.variants[d] for d in ad.dialects if d in c.variants), c.source)
     if nl.dialect not in ad.dialects:
         base["translated"] = nl.dialect
-    dest = work / hashlib.sha1(f"{c.name}/{ad.name}".encode()).hexdigest()[:12]
+    dest = work / hashlib.sha1(f"{c.name}/{ad.name}/{level}".encode()).hexdigest()[:12]
     shutil.rmtree(dest, ignore_errors=True)
-    keep = out / ad.name / c.name
+    keep = out / level / ad.name / c.name
     keep.mkdir(parents=True, exist_ok=True)
     records = []
     try:
@@ -65,6 +71,7 @@ def run_circuit(c: Circuit, ad: Adapter, work: Path, out: Path, compiler: Compil
             except Untranslatable as e:
                 return [base | {"status": "untranslated", "message": str(e)}]
         text = netlist.read_bytes().decode("latin-1")
+        c = c.at(LEVELS[level])
         for k, a in enumerate(c.analyses):
             rec = base | {"analysis": k, "type": a["type"]}
             deck = netlist.with_name(f"{netlist.stem}.circref{k}.cir")
@@ -123,13 +130,13 @@ def select(patterns: list[str]) -> list[Circuit]:
             if not patterns or any(fnmatch.fnmatch(c.name, p) for p in patterns)]
 
 
-def run(circuits: list[Circuit], adapters: list[Adapter], out: Path, workers: int,
-        timeout: float, memory_gb: float, threads: int = 1,
+def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
+        workers: int, timeout: float, memory_gb: float, threads: int = 1,
         shard: tuple[int, int] = (0, 1)) -> int:
     """``threads``: what every simulator may use per run (OpenMP, SANE), the same for all."""
     env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "SANE_THREADS",
                                                   "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")}
-    jobs = [(c, a) for c in circuits for a in adapters]
+    jobs = [(c, a, lv) for c in circuits for a in adapters for lv in levels]
     jobs = jobs[shard[0]::shard[1]]
     out.mkdir(parents=True, exist_ok=True)
     (out / "run.json").write_text(json.dumps({"threads": threads, "timeout_s": timeout,
@@ -139,14 +146,14 @@ def run(circuits: list[Circuit], adapters: list[Adapter], out: Path, workers: in
     counts: dict[str, int] = {}
     t0 = time.monotonic()
     with open(out / "results.jsonl", "a") as results, ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(run_circuit, c, a, work, out, compiler, timeout, memory_gb, env): (c, a)
-                   for c, a in jobs}
+        futures = {pool.submit(run_circuit, c, a, lv, work, out, compiler, timeout, memory_gb,
+                               env): (c, a, lv) for c, a, lv in jobs}
         for done, f in enumerate(as_completed(futures), 1):
-            c, a = futures[f]
+            c, a, lv = futures[f]
             try:
                 recs = f.result()
             except Exception as e:                  # a bug in circref, not in the circuit
-                recs = [{"circuit": c.name, "simulator": a.name, "status": "error",
+                recs = [{"circuit": c.name, "simulator": a.name, "level": lv, "status": "error",
                          "message": f"{type(e).__name__}: {e}"}]
             for r in recs:
                 results.write(json.dumps(r) + "\n")
@@ -155,7 +162,7 @@ def run(circuits: list[Circuit], adapters: list[Adapter], out: Path, workers: in
             status = ",".join(r["status"] for r in recs)
             wall = sum(r.get("wall_s", 0) for r in recs)
             msg = next((r["message"] for r in recs if "message" in r), "").replace("\n", " ")[:100]
-            print(f"[{done}/{len(jobs)} {time.monotonic() - t0:6.0f}s] {a.name:8s} {status:14s} "
+            print(f"[{done}/{len(jobs)} {time.monotonic() - t0:6.0f}s] {a.name:10s} {lv:9s} {status:14s} "
                   f"{wall:8.2f}s {c.name}  {msg}", flush=True)
     print(" ".join(f"{k}={v}" for k, v in sorted(counts.items())), flush=True)
     return 0

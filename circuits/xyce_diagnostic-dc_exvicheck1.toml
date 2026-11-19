@@ -4,7 +4,7 @@ source = "DC_ExVICheck1.cir"
 
 [options]
 method = "gear"
-abstol = 1e-07
+vntol = 1e-07
 reltol = 1e-06
 
 [[analysis]]

@@ -44,8 +44,15 @@ SPICE_ORDER = ("ngspice", "spice3", "xyce", "hspice", "pspice", "tspice", "spice
 # The source of a circuit with variants in several dialects: the first of these present.
 SOURCE_PREFERENCE = SPICE_ORDER + ("gnucap", "vacask", "spectre", "qucsator", "ahkab", "josim",
                                    "cedarsim")
-# Options every adapter knows how to state.
+# Options every adapter knows how to state, in SPICE's meaning: reltol relative, vntol a
+# voltage, abstol a current.
 OPTIONS = ("temp", "tnom", "reltol", "abstol", "vntol", "chgtol", "gmin", "method")
+# Xyce states options per group. Its abstol bounds the solution, a voltage: SPICE's vntol.
+# Where groups state one option differently, the first group here holds.
+XYCE_OPTIONS = {"device": {"temp": "temp", "tnom": "tnom", "gmin": "gmin"},
+                "timeint": {"reltol": "reltol", "abstol": "vntol", "method": "method"},
+                "nonlin-tran": {"reltol": "reltol", "abstol": "vntol"},
+                "nonlin": {"reltol": "reltol", "abstol": "vntol"}}
 
 
 @dataclass(frozen=True)
@@ -83,6 +90,21 @@ class Circuit:
     @property
     def options(self) -> dict:
         return self.raw.get("options", {})
+
+    def at(self, level: dict) -> Circuit:
+        """The circuit at a precision level (bench.toml): the level's options in place of
+        its own, a transient's step bounded to (stop - start) / ``points``."""
+        raw = self.raw | {"options": self.options | {k: v for k, v in level.items() if k in OPTIONS}}
+        if "points" in level:
+            def bounded(a: dict) -> dict:
+                if a["type"] != "tran":
+                    return a
+                h = (a["stop"] - a.get("start", 0)) / level["points"]
+                return a | {"max_step": min(a.get("max_step", h), h)}
+            raw["analysis"] = [bounded(a) for a in self.analyses]
+        at = Circuit(self.path, raw)
+        at.__dict__["case"] = self.case                 # the same case, loaded once
+        return at
 
     def errors(self) -> list[str]:
         errors = validate_schema(self.raw, "circuit")
@@ -235,11 +257,12 @@ _SCRIPTED = {"alter", "altermod", "foreach", "repeat", "while", "dowhile", "if",
 BLOCKING = lambda reasons: [r for r in reasons if r not in (".control script", "Verilog-A model")]
 
 
-def _spice_deck(text: str, gnucap: bool) -> tuple[list, list, dict]:
+def _spice_deck(text: str, gnucap: bool, xyce: bool = False) -> tuple[list, list, dict]:
     """Analyses, outputs and options of a SPICE or gnucap deck, from its dot lines or its
     control script."""
     analysis = _gnucap_analysis if gnucap else spice_analysis
     analyses, outputs, options = [], [], {}
+    ranks: dict[str, int] = {}                          # Xyce: the group an option came from
     control = False
     for line in lines(text):
         if line in (".control", ".endc"):
@@ -271,8 +294,15 @@ def _spice_deck(text: str, gnucap: bool) -> tuple[list, list, dict]:
         elif head == "temp" and args:
             options["temp"] = number(args[0])
         elif head in ("option", "options", "opt", "opts"):
+            group = args[0] if xyce and args and "=" not in args[0] else None
+            rank = list(XYCE_OPTIONS).index(group) if group in XYCE_OPTIONS else -1
             for a in args:
                 key, _, value = a.partition("=")
+                if group:
+                    key = XYCE_OPTIONS.get(group, {}).get(key)
+                    if ranks.get(key, rank) < rank:
+                        continue
+                    ranks[key] = rank
                 if key in OPTIONS and value:
                     options[key] = _METHODS.get(value, value) if key == "method" else number(value)
     return analyses, outputs, options
@@ -578,7 +608,7 @@ def from_deck(case: Case, nl: Netlist) -> dict:
     if nl.dialect in _READERS:
         analyses, outputs, options = _READERS[nl.dialect](text)
     elif nl.dialect in SPICE_ORDER + ("gnucap",):
-        analyses, outputs, options = _spice_deck(text, nl.dialect == "gnucap")
+        analyses, outputs, options = _spice_deck(text, nl.dialect == "gnucap", nl.dialect == "xyce")
     else:
         raise Unsupported(f"dialect {nl.dialect}: analysis lines not read yet")
     if not analyses:

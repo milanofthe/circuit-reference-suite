@@ -11,4 +11,4 @@ analysis = [
 
 [options]
 reltol = 0.01
-abstol = 1e-07
+vntol = 1e-07

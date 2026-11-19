@@ -12,4 +12,4 @@ analysis = [
 
 [options]
 reltol = 0.005
-abstol = 0.001
+vntol = 0.001

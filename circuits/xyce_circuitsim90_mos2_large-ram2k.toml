@@ -32,4 +32,4 @@ analysis = [
 
 [options]
 temp = 70.0
-abstol = 1e-05
+vntol = 1e-05

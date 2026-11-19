@@ -8,7 +8,7 @@ outputs = [
 
 [options]
 reltol = 0.01
-abstol = 1e-06
+vntol = 1e-06
 
 [[analysis]]
 type = "dc"

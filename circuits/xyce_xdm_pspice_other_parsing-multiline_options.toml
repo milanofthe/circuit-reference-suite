@@ -8,11 +8,11 @@ analysis = [
     { type = "tran", step = 0.0, stop = 0.001 },
 ]
 
+[variants]
+pspice = "multiline_options.cir.pspice"
+
 [options]
 gmin = 1e-09
 method = "trap"
 reltol = 0.01
-abstol = 0.0001
-
-[variants]
-pspice = "multiline_options.cir.pspice"
+vntol = 0.0001
