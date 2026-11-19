@@ -109,7 +109,7 @@ def cmd_compare(args) -> int:
     from . import compare, plot
     out = Path(args.out)
     compare.write(out)
-    for p in plot.plot(out, args.circuit):
+    for p in plot.plot(out):
         print(p)
     return 0
 
@@ -137,8 +137,6 @@ def main(argv: list[str] | None = None) -> int:
     sp.set_defaults(fn=cmd_run)
     sp = sub.add_parser("compare")
     sp.add_argument("out")
-    sp.add_argument("--circuit", action="append", default=[],
-                    help="circuit name or glob whose analyses get a plot each, repeatable")
     sp.set_defaults(fn=cmd_compare)
     args = ap.parse_args(argv)
     return args.fn(args)

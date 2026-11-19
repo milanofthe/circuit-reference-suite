@@ -5,13 +5,11 @@
     plots/accuracy.png      analyses within an error of the reference, per simulator, a panel per level
     plots/time.png          analyses within a time of the fastest simulator, per simulator
     plots/work.png          error against time of every run, a panel per simulator
-    plots/circuits/<circuit>-<k>.png   one analysis: signal of every simulator, error over the axis
 
 A run's error is never below the error of its reference: there it is plotted at that error.
 """
 from __future__ import annotations
 
-import fnmatch
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -25,7 +23,6 @@ import numpy as np  # noqa: E402
 
 from .adapters import ADAPTERS  # noqa: E402
 from .bench import CONFIG, LEVELS  # noqa: E402
-from .compare import _load, error  # noqa: E402
 
 P = CONFIG["plot"]
 STYLE = {"figure.facecolor": P["surface"], "axes.facecolor": P["surface"], "savefig.facecolor": P["surface"],
@@ -204,60 +201,8 @@ def work(rows: list[dict], path: Path) -> None:
     plt.close(fig)
 
 
-def circuit(out: Path, recs: list[dict], info: dict, ref, path: Path) -> None:
-    """One analysis at the default level: the signal most often worst, of every simulator
-    and the reference; below, each simulator's difference to the reference."""
-    runs = {r["simulator"]: _load(out, r) for r in recs if r["level"] == "default"}
-    if not runs:
-        return
-    worst = Counter(e[1] for s, run in runs.items() if ref and (e := error(run, ref)))
-    shared = set.intersection(*(set(y) for _, y in runs.values()))
-    sig = worst.most_common(1)[0][0] if worst else min(shared, default=None)
-    if sig is None:
-        return
-    fig, axes = plt.subplots(2 if ref else 1, 1, figsize=(9.5, 5 if ref else 3), sharex=True, squeeze=False)
-    top = axes[0][0]
-    a = recs[0]
-    part = np.abs if a["type"] == "ac" else np.real
-    for s in _sims(runs):
-        x, y = runs[s]
-        if sig in y:
-            c, ls = color(s)
-            top.plot(x, part(y[sig]), color=c, ls=ls, lw=1.2, label=s)
-    if ref and sig in ref[1]:
-        top.plot(ref[0], part(ref[1][sig]), color=P["reference"], ls=":", lw=1.2,
-                 label=f"reference ({info['status']}: {', '.join(info['simulators'])})")
-    top.set_ylabel(("|%s|" if a["type"] == "ac" else "%s") % sig)
-    top.set_title(f"{a['circuit']}  analysis {a['analysis']} ({a['type']}), level default")
-    top.legend(loc="upper left", bbox_to_anchor=(1.0, 1.0))
-    if ref and sig in ref[1]:
-        bot = axes[1][0]
-        xf, yf = ref[0], ref[1][sig]
-        scale = np.max(np.abs(yf)) + CONFIG["compare"]["floor"][sig[0]]
-        o = np.argsort(xf, kind="stable")
-        for s in _sims(runs):
-            x, y = runs[s]
-            if sig not in y or len(xf) < 2:
-                continue
-            inside = (x >= xf.min()) & (x <= xf.max())
-            at = np.interp(x[inside], xf[o], yf.real[o]) + (
-                1j * np.interp(x[inside], xf[o], yf.imag[o]) if np.iscomplexobj(yf) else 0)
-            c, ls = color(s)
-            bot.plot(x[inside], np.maximum(np.abs(y[sig][inside] - at) / scale, TINY), color=c, ls=ls, lw=1)
-        bot.set_yscale("log")
-        bot.set_ylabel("difference / peak")
-    axes[-1][0].set_xlabel({"tran": "time (s)", "ac": "frequency (Hz)", "dc": "sweep", "op": ""}[a["type"]])
-    if a["type"] == "ac":
-        for ax in axes[:, 0]:
-            ax.set_xscale("log")
-    fig.tight_layout()
-    fig.savefig(path, dpi=130)
-    plt.close(fig)
-
-
-def plot(out: Path, circuits: list[str] = ()) -> list[Path]:
-    """The plots of the run in ``out``; ``circuits``: names or globs whose analyses get a
-    plot of their own (compare.json from ``compare`` first)."""
+def plot(out: Path) -> list[Path]:
+    """The plots of the run in ``out`` (compare.json from ``compare`` first)."""
     plt.rcParams.update(STYLE)
     results = [json.loads(l) for l in (out / "results.jsonl").read_text().splitlines()]
     data = json.loads((out / "compare.json").read_text())
@@ -268,14 +213,4 @@ def plot(out: Path, circuits: list[str] = ()) -> list[Path]:
     accuracy(data["rows"], d / "accuracy.png")
     time(data["rows"], results, d / "time.png")
     work(data["rows"], d / "work.png")
-    if circuits:
-        from .compare import reference
-        (d / "circuits").mkdir(exist_ok=True)
-        by = defaultdict(list)
-        for r in results:
-            if r["status"] == "ok" and any(fnmatch.fnmatch(r["circuit"], p) for p in circuits):
-                by[(r["circuit"], r["analysis"])].append(r)
-        for (c, k), recs in sorted(by.items()):
-            info, ref = reference({(r["simulator"], r["level"]): _load(out, r) for r in recs})
-            circuit(out, [r | {"analysis": k} for r in recs], info, ref, d / "circuits" / f"{c}-{k}.png")
-    return sorted(d.rglob("*.png"))
+    return sorted(d.glob("*.png"))
