@@ -57,6 +57,13 @@ COMMENT_MARK = {"ngspice": ";", "xyce": ";", "wrspice": " $ ", "spicesharp": " $
 # Comment lines a dialect executes: in WRspice ``*@`` and ``*#`` lines are .exec and
 # .control statements (spInput.hlp, Comments).
 EXECUTED_COMMENTS = {"wrspice": ("*@", "*#")}
+# Dialects that abort reading a deck whose title is not 7-bit ASCII (WRspice: spInput.hlp,
+# Input Format).
+ASCII_TITLE = {"wrspice"}
+# Dialects that read an R, C or L with a model as ``name n1 n2 model value``; ngspice reads
+# ``name n1 n2 value model`` (WRspice: spElements.hlp, Resistors: a value after the model
+# overrides it).
+MODEL_BEFORE_VALUE = {"wrspice"}
 
 # Scale factors that differ between the dialects, by the first letter after a number:
 # ngspice and WRspice read a as atto (measured: 1A is 1e-18 in both; spInput.hlp, Numeric
@@ -714,7 +721,8 @@ class Statement:
     def render(self, target: str) -> str:
         """The statement as the target reads it: unchanged text where nothing differs."""
         if self.title:
-            return self.raw
+            return self.raw if target not in ASCII_TITLE else \
+                "".join(c if ord(c) < 128 else "?" for c in self.raw)
         if not self.tokens:
             return _comment_lines(self.raw, target)
         parts = [(_comments(t.ws, target), t.text) for t in self.tokens]
@@ -1185,6 +1193,11 @@ class Translator:
                 letter = self.ctx.builtin[model]
         if letter in NO_ELEMENT[self.pair]:
             raise Untranslatable(NO_ELEMENT[self.pair][letter])
+        w = st.words()
+        if letter in "rcl" and self.tgt in MODEL_BEFORE_VALUE and len(w) > 4 and \
+                not self.model(w[3]) and self.model(w[4]) and w[4:5] != ["="]:
+            st.tokens[3].text, st.tokens[4].text = st.tokens[4].text, st.tokens[3].text
+            st.edited = True
         self.braces(st)
         no = NO_INSTANCE_PARAMS.get(self.pair, {}).get(letter, {})
         w = st.words()

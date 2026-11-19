@@ -137,11 +137,15 @@ class Ngspice(Adapter):
     # Devices with a branch current, the currents ngspice saves and reads in expressions.
     BRANCH = ("v", "e", "h", "l")
 
-    def analysis(self, a: dict) -> str:
+    @classmethod
+    def stepped(cls, a: dict) -> dict:
         """ngspice needs tstep > 0; without one the bound it uses by itself."""
         if a["type"] == "tran" and not a["step"]:
-            a = a | {"step": (a["stop"] - a.get("start", 0)) / self.STEPS}
-        return super().analysis(a)
+            a = a | {"step": (a["stop"] - a.get("start", 0)) / cls.STEPS}
+        return a
+
+    def analysis(self, a: dict) -> str:
+        return super().analysis(self.stepped(a))
 
     def control(self, c: Circuit) -> list[str]:
         opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
@@ -499,10 +503,10 @@ class Spicesharp(Adapter):
     The options of circuit.OPTIONS SpiceSharpParser has (OptionsControl.cs); another, as
     vntol or chgtol, is an error there."""
     OPTIONS = ("temp", "tnom", "reltol", "abstol", "gmin", "method")
-    # A zero tstep would be the initial step of the transient (TransientControl.cs): the
-    # step ngspice takes without one instead.
-    STEPS = Ngspice.STEPS
-    analysis = Ngspice.analysis
+    def analysis(self, a: dict) -> str:
+        """A zero tstep would be the initial step of the transient (TransientControl.cs):
+        the step ngspice takes without one instead."""
+        return super().analysis(Ngspice.stepped(a))
 
     def control(self, c: Circuit) -> list[str]:
         opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()
