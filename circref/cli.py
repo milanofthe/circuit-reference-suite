@@ -1,6 +1,6 @@
 """python -m circref {validate,build,check,list,circuits,run,compare}
 
-build  writes every generated file (case and library READMEs, the top README tables).
+build  writes every generated file (case and library READMEs).
 check  validates and rebuilds in memory; fails when a committed file is stale.
 run       runs circuits on simulators (circref/bench.py), results into --out.
 compare   each run against the reference of its analysis, into OUT/compare.json, and
@@ -30,7 +30,6 @@ def _generated() -> dict[Path, bytes]:
     cases, libs = iter_cases(), iter_libraries()
     files = {c.directory / "README.md": report.case_readme(c).encode() for c in cases}
     files |= {lib.directory / "README.md": report.library_readme(lib).encode() for lib in libs}
-    files[ROOT / "README.md"] = report.top_readme(cases, libs, load_candidates()).encode()
     return files
 
 

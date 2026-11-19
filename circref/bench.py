@@ -14,6 +14,7 @@ import fnmatch
 import hashlib
 import json
 import os
+import platform
 import re
 import resource
 import shutil
@@ -43,6 +44,14 @@ def _limits(memory: int):
         except (ValueError, OSError):                   # macOS: no address-space limit
             pass
     return apply
+
+
+def _cpu() -> str:
+    """The processor model and the number of cores the run may use."""
+    info = Path("/proc/cpuinfo")
+    model = next((l.split(":", 1)[1].strip() for l in info.read_text().splitlines()
+                  if l.startswith("model name")), "") if info.exists() else platform.processor()
+    return f"{model}, {len(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else os.cpu_count()} cores"
 
 
 def run_circuit(c: Circuit, ad: Adapter, level: str, work: Path, out: Path, compiler: Compiler,
@@ -140,7 +149,8 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
     jobs = jobs[shard[0]::shard[1]]
     out.mkdir(parents=True, exist_ok=True)
     (out / "run.json").write_text(json.dumps({"threads": threads, "timeout_s": timeout,
-                                              "memory_gb": memory_gb, "workers": workers}))
+                                              "memory_gb": memory_gb, "workers": workers,
+                                              "cpu": _cpu()}))
     work = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
     compiler = Compiler(out / "osdi")
     counts: dict[str, int] = {}

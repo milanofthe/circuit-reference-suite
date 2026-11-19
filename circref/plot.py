@@ -1,16 +1,20 @@
-"""Plots of a run, from what run and compare left in its directory:
+"""Plots of a run, from what run and compare left in its directory, each as
+``<name>.png`` and ``<name>-dark.png`` for the two GitHub color schemes, transparent:
 
-    plots/status.png        runs per simulator and status, a panel per level
-    plots/references.png    analyses per type and reference status
-    plots/accuracy.png      analyses within an error of the reference, per simulator, a panel per level
-    plots/time.png          analyses within a time of the fastest simulator, per simulator
-    plots/work.png          error against time of every run, a panel per simulator
+    status        runs per simulator and status, a panel per level
+    references    analyses per type and reference status
+    accuracy      analyses within an error of the reference, per simulator, a panel per level
+    time          analyses within a time of the fastest simulator, per simulator
+    work          error against time of every run, a panel per simulator
 
-A run's error is never below the error of its reference: there it is plotted at that error.
+A run's error is never below the error of its reference: there it is plotted at that
+error. Below every plot the setup of the run: circuits, analyses, simulator versions,
+limits, machine.
 """
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -24,13 +28,46 @@ import numpy as np  # noqa: E402
 from .adapters import ADAPTERS  # noqa: E402
 from .bench import CONFIG, LEVELS  # noqa: E402
 
-P = CONFIG["plot"]
-STYLE = {"figure.facecolor": P["surface"], "axes.facecolor": P["surface"], "savefig.facecolor": P["surface"],
-         "axes.edgecolor": P["muted"], "axes.labelcolor": P["ink"], "text.color": P["ink"],
-         "xtick.color": P["muted"], "ytick.color": P["muted"], "axes.grid": True, "grid.color": P["grid"],
-         "grid.linewidth": 0.6, "axes.spines.top": False, "axes.spines.right": False, "font.size": 9,
-         "legend.frameon": False, "lines.linewidth": 2, "axes.axisbelow": True}
+THEMES = {"": CONFIG["plot"]["light"], "-dark": CONFIG["plot"]["dark"]}   # file suffix -> theme
+P: dict = {}                                            # the theme being drawn, and the shared colors
 TINY = 1e-16                                            # an error of 0 on a log axis
+SETUP = ""                                              # the run's setup, below every plot
+
+
+def _theme(t: dict) -> None:
+    P.clear()
+    P.update(t | {k: CONFIG["plot"][k] for k in ("status", "reference_status")})
+    plt.rcParams.update({
+        "figure.facecolor": "none", "axes.facecolor": "none", "savefig.transparent": True,
+        "axes.edgecolor": P["muted"], "axes.labelcolor": P["ink"], "text.color": P["ink"],
+        "xtick.color": P["muted"], "ytick.color": P["muted"], "axes.grid": True, "grid.color": P["grid"],
+        "grid.linewidth": 0.6, "axes.spines.top": False, "axes.spines.right": False, "font.size": 9,
+        "legend.frameon": False, "lines.linewidth": 2, "axes.axisbelow": True})
+
+
+def _save(fig, path: Path) -> None:
+    fig.text(0.0, -0.01, SETUP, color=P["muted"], fontsize=7, va="top", ha="left", wrap=True)
+    fig.savefig(path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def setup(out: Path, results: list[dict]) -> str:
+    """Circuits, analyses, simulators with their versions, the run's limits and machine."""
+    run = json.loads((out / "run.json").read_text()) if (out / "run.json").exists() else {}
+    versions = {}
+    for r in results:
+        if r["status"] == "ok" and r["simulator"] not in versions:
+            m = re.search(r"\d+(?:\.\d+)*", r.get("version") or "")
+            versions[r["simulator"]] = f"{r['simulator']} {m.group(0) if m else ''}".strip()
+    analyses = {(r["circuit"], r["analysis"]) for r in results if "analysis" in r}
+    parts = [f"{len({r['circuit'] for r in results})} circuits, {len(analyses)} analyses",
+             ", ".join(versions[s] for s in _sims(versions)), "levels and bounds: bench.toml"]
+    if run:
+        parts.append(f"timeout {run['timeout_s']:g} s and {run['memory_gb']:g} GB per run, "
+                     f"{run['threads']} thread(s) per run, {run['workers']} runs at a time")
+    if run.get("cpu"):
+        parts.append(run["cpu"])
+    return "; ".join(parts)
 
 
 def _log(axis) -> None:
@@ -82,8 +119,7 @@ def status(results: list[dict], path: Path) -> None:
     fig.legend([handles[k] for k in P["status"] if k in handles], [k for k in P["status"] if k in handles],
                loc="upper center", ncol=len(handles), bbox_to_anchor=(0.5, 1.0))
     fig.tight_layout(rect=(0, 0, 1, 0.9))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    _save(fig, path)
 
 
 def references(refs: list[dict], path: Path) -> None:
@@ -94,8 +130,7 @@ def references(refs: list[dict], path: Path) -> None:
     ax.set_xlabel("analyses run by at least one simulator")
     ax.legend(loc="upper center", ncol=len(P["reference_status"]), bbox_to_anchor=(0.5, 1.25))
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    _save(fig, path)
 
 
 def _floored(r: dict) -> float:
@@ -124,8 +159,7 @@ def accuracy(rows: list[dict], path: Path) -> None:
     axes[0][0].set_ylabel("analyses with at most this error")
     axes[0][-1].legend(loc="upper left", bbox_to_anchor=(1.0, 1.0))
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    _save(fig, path)
 
 
 def _fastest(rows: list[dict], level: str) -> dict[tuple, float]:
@@ -156,8 +190,7 @@ def time(rows: list[dict], results: list[dict], path: Path) -> None:
     ax.set_ylabel("analyses within this time")
     ax.legend(loc="upper left", bbox_to_anchor=(1.0, 1.0))
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    _save(fig, path)
 
 
 def work(rows: list[dict], path: Path) -> None:
@@ -197,20 +230,22 @@ def work(rows: list[dict], path: Path) -> None:
     fig.legend(handles, [f"level {lv} (large: median error, geometric mean time)" if i == 0 else f"level {lv}"
                          for i, lv in enumerate(LEVELS)], loc="upper center", ncol=len(LEVELS))
     fig.tight_layout(rect=(0, 0, 1, 1 - 0.35 / (3.2 * nrows)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    _save(fig, path)
 
 
 def plot(out: Path) -> list[Path]:
     """The plots of the run in ``out`` (compare.json from ``compare`` first)."""
-    plt.rcParams.update(STYLE)
+    global SETUP
     results = [json.loads(l) for l in (out / "results.jsonl").read_text().splitlines()]
     data = json.loads((out / "compare.json").read_text())
+    SETUP = setup(out, results)
     d = out / "plots"
     d.mkdir(exist_ok=True)
-    status(results, d / "status.png")
-    references(data["references"], d / "references.png")
-    accuracy(data["rows"], d / "accuracy.png")
-    time(data["rows"], results, d / "time.png")
-    work(data["rows"], d / "work.png")
+    for suffix, theme in THEMES.items():
+        _theme(theme)
+        status(results, d / f"status{suffix}.png")
+        references(data["references"], d / f"references{suffix}.png")
+        accuracy(data["rows"], d / f"accuracy{suffix}.png")
+        time(data["rows"], results, d / f"time{suffix}.png")
+        work(data["rows"], d / f"work{suffix}.png")
     return sorted(d.glob("*.png"))
