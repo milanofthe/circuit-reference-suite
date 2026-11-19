@@ -1,0 +1,80 @@
+id = "synthetic_rcring"
+title = "RC ring with chords"
+family = "passive"
+notes = "Linear RC network, a ring with a chord every 50 nodes to the opposite side: loops, long-range coupling. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes."
+netlists = [
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/10000.cir", dialect = "ngspice", size = 10000 },
+    { file = "generated/10000.cir.vacask", dialect = "vacask", size = 10000 },
+    { file = "generated/100000.cir", dialect = "ngspice", size = 100000 },
+    { file = "generated/100000.cir.vacask", dialect = "vacask", size = 100000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "ring"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, ring of size 1000"
+sha256 = "ce9870971b08a3c2ce6cb9784778924eb6ae2d2b2f8c949b1128055e230e7882"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ring of size 1000"
+sha256 = "1bf393ac6abbbcfd276847e96df03edd07a9886eac19a306040863879b59b2e0"
+
+[[files]]
+path = "generated/10000.cir"
+provenance = "generated"
+how = "circref/generate.py, ring of size 10000"
+sha256 = "267c414cfbf1415b3b5c9e10563d5dada6d60fdfe02baf6b2ac7ffba74825378"
+
+[[files]]
+path = "generated/10000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ring of size 10000"
+sha256 = "e75ad2aaae5bec7544f989c0b8b26169f38cece951810e280b03d5ae5704958a"
+
+[[files]]
+path = "generated/100000.cir"
+provenance = "generated"
+how = "circref/generate.py, ring of size 100000"
+sha256 = "61401e5a2caf88d01c35831cd1f60a84cf04bb6dbe931b4d505b596cee8fe61a"
+
+[[files]]
+path = "generated/100000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ring of size 100000"
+sha256 = "d5d3266b81e015999c016142dbab51377818ecff07dee3fa36bfaaaac9cdae95"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

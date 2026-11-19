@@ -1,0 +1,94 @@
+id = "synthetic_rcladder"
+title = "RC ladder"
+family = "passive"
+notes = "Linear RC network, a path: the elimination tree is one chain. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes."
+netlists = [
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/10000.cir", dialect = "ngspice", size = 10000 },
+    { file = "generated/10000.cir.vacask", dialect = "vacask", size = 10000 },
+    { file = "generated/100000.cir", dialect = "ngspice", size = 100000 },
+    { file = "generated/100000.cir.vacask", dialect = "vacask", size = 100000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "ladder"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100"
+sha256 = "0abdb337138fbfe03f767b028dc15095696bacdc0ba9c18e9a836a924247ca83"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100"
+sha256 = "2f0ce9e25197f07f64e261d9ce486480bb4e68425394329c4909bf0f8fc7121f"
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 1000"
+sha256 = "b310ba8dde97646ac2dafbd0ddee81b20bf139c08186b9c61a3e381cc9611f89"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 1000"
+sha256 = "34dc09c45537ebdf37404c262d9940f9a26102e1a9a3c982fa4433ce021cd1ff"
+
+[[files]]
+path = "generated/10000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 10000"
+sha256 = "d189044631911de5350aa1794319a2fea8f900f4804e26e9092f543d01a8aa3b"
+
+[[files]]
+path = "generated/10000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 10000"
+sha256 = "9ac9dc230e4f2bf1b2e125d7f8e656ff8c626638be52616e0fd5d0b346178fe8"
+
+[[files]]
+path = "generated/100000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100000"
+sha256 = "a0194211ec62f29ca855bbc262348cd04dff84a86d4121ffd9a6bc5d249b19d9"
+
+[[files]]
+path = "generated/100000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100000"
+sha256 = "71fab0202903914badece4e8036774dab2a72d243fa0da8499edc9b681f32999"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

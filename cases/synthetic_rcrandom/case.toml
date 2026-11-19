@@ -1,0 +1,80 @@
+id = "synthetic_rcrandom"
+title = "RC random network"
+family = "passive"
+notes = "Linear RC network, a path and two random edges per node, xorshift64 seed 1: little locality, heavy fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes."
+netlists = [
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/10000.cir", dialect = "ngspice", size = 10000 },
+    { file = "generated/10000.cir.vacask", dialect = "vacask", size = 10000 },
+    { file = "generated/100000.cir", dialect = "ngspice", size = 100000 },
+    { file = "generated/100000.cir.vacask", dialect = "vacask", size = 100000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "random"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 1000"
+sha256 = "24a7af0f96129f868380f4d185a4d9830dc21b34ce1b86107d9586310a66b643"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 1000"
+sha256 = "8a2259d35e7beeceb40b5ef2c71a6424eb7b8b0fe614954cbe8e9a8da2aa4df8"
+
+[[files]]
+path = "generated/10000.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 10000"
+sha256 = "c97a2907b9b205ad96fec67dd321dec697934184a5960f96525c4c9bc88108ab"
+
+[[files]]
+path = "generated/10000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 10000"
+sha256 = "571f62285800b83abba30b7dc71061d7cbd7e72f00537916e354f6932d0cf8f6"
+
+[[files]]
+path = "generated/100000.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 100000"
+sha256 = "967daf8b151cd306de90b61764e6defb2cb0420215802922bb5e79ac209c37b5"
+
+[[files]]
+path = "generated/100000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 100000"
+sha256 = "6ca38e52e48e37c5b90f8fe988fd767953f6399678620a938539fe7f8214287f"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

@@ -34,6 +34,7 @@ from pathlib import Path
 
 import numpy as np
 
+from . import generate
 from .adapters import ADAPTERS, Adapter
 from .circuit import Circuit, iter_circuits, load_circuit
 from .entry import ROOT
@@ -43,6 +44,7 @@ from .translate import Untranslatable, translate
 CONFIG = tomllib.loads((ROOT / "bench.toml").read_text(encoding="utf-8"))
 LEVELS: dict[str, dict] = CONFIG["level"]
 WORK = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
+REPEAT_BELOW: float = CONFIG["run"]["repeat_below"]
 
 
 def _limits(memory: int):
@@ -98,7 +100,7 @@ def _output(proc: subprocess.Popen, timeout: float) -> tuple[str, bool]:
 
 
 def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Path, k: int,
-              timeout: float, memory_gb: float, env: dict) -> dict:
+              timeout: float, memory_gb: float, env: dict, repeats: int) -> dict:
     """One analysis on one simulator: the record, the signals in keep/<k>.npz."""
     rawfile = deck.with_suffix(".raw")
     try:
@@ -106,16 +108,26 @@ def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Pat
     except NotImplementedError as e:                    # an analysis the simulator lacks
         return {"status": "unsupported", "message": str(e)}
     rec: dict = {}
-    t0 = time.monotonic()
-    proc = subprocess.Popen(ad.argv(deck.name, rawfile.name), cwd=deck.parent,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            stdin=subprocess.DEVNULL, start_new_session=True, env=env,
-                            preexec_fn=_limits(int(memory_gb * 2**30)))
-    log, timed_out = _output(proc, timeout)
-    rec["wall_s"] = round(time.monotonic() - t0, 4)
+    walls = []
+    while True:                         # repeated while short and ok; timed by the minimum
+        t0 = time.monotonic()
+        proc = subprocess.Popen(ad.argv(deck.name, rawfile.name), cwd=deck.parent,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                stdin=subprocess.DEVNULL, start_new_session=True, env=env,
+                                preexec_fn=_limits(int(memory_gb * 2**30)))
+        log, timed_out = _output(proc, timeout)
+        walls.append(round(time.monotonic() - t0, 4))
+        if len(walls) >= repeats or proc.returncode or timed_out or walls[-1] > REPEAT_BELOW:
+            break
+    rec["wall_s"] = min(walls)
+    if len(walls) > 1:
+        rec["walls"] = walls
     (keep / f"{k}.log").write_text(log)
     if ad.timing and (m := re.search(ad.timing, log)):
         rec["sim_s"] = float(m.group(1))
+    counts = {name: float(m.group(1)) for name, pat in ad.counts.items() if (m := re.search(pat, log))}
+    if counts:
+        rec["counts"] = counts
     rc = proc.returncode
     bad = ad.error and re.search(ad.error, log, re.M)
     if timed_out:
@@ -135,7 +147,8 @@ def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Pat
 
 
 def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: Path,
-                timeout: float, memory_gb: float, env: dict) -> list[dict]:
+                timeout: float, memory_gb: float, env: dict, threads: int,
+                repeats: int) -> list[dict]:
     """Every analysis of a circuit on one simulator at every level: staged and translated
     once, a deck per level and analysis. Runs in a worker process."""
     c, ad = load_circuit(path), ADAPTERS[simulator]
@@ -153,6 +166,7 @@ def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: 
             translated = "translated" in base
             netlist, osdi = stage(c.case, nl, dest, ad.osdi or translated, Compiler(out / "osdi"), ad.name)
             ad.preload(netlist.parent, osdi if ad.osdi or not translated else [])
+            env = env | ad.threads(netlist.parent, threads)
         except (StageError, NotImplementedError) as e:
             return each({"status": "stage-failed", "message": str(e)})
         if translated:
@@ -169,17 +183,19 @@ def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: 
             for k, a in enumerate(at.analyses):
                 deck = netlist.with_name(f"{netlist.stem}.circref-{lv}-{k}.cir")
                 records.append(base | {"level": lv, "analysis": k, "type": a["type"]} |
-                               _simulate(ad, at, text, a, deck, keep, k, timeout, memory_gb, env))
+                               _simulate(ad, at, text, a, deck, keep, k, timeout, memory_gb, env,
+                                         repeats))
         return records
     finally:
         shutil.rmtree(dest, ignore_errors=True)
 
 
 def _job(path: Path, simulator: str, levels: list[str], out: Path, timeout: float,
-         memory_gb: float, env: dict) -> list[dict]:
+         memory_gb: float, env: dict, threads: int, repeats: int) -> list[dict]:
     """run_circuit in a process of its own."""
     p = subprocess.run([sys.executable, "-m", "circref.bench"], capture_output=True, text=True, env=env,
-                       input=json.dumps([str(path), simulator, levels, str(out), timeout, memory_gb]))
+                       input=json.dumps([str(path), simulator, levels, str(out), timeout, memory_gb,
+                                         threads, repeats]))
     if p.returncode:
         raise RuntimeError(f"worker exit {p.returncode}: {tail(p.stderr)}")
     return json.loads(p.stdout.splitlines()[-1])
@@ -192,9 +208,10 @@ def select(patterns: list[str]) -> list[Circuit]:
 
 def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
         workers: int, timeout: float, memory_gb: float, threads: int = 1,
-        shard: tuple[int, int] = (0, 1), redo: tuple[str, ...] = ()) -> int:
+        shard: tuple[int, int] = (0, 1), redo: tuple[str, ...] = (), repeats: int = 1) -> int:
     """A job per circuit and simulator, ``workers`` at a time. ``threads``: what every
-    simulator may use per run (OpenMP), the same for all."""
+    simulator may use per run (OpenMP, an adapter's own setting), the same for all.
+    ``repeats``: runs per analysis shorter than repeat_below."""
     env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
                                                   "MKL_NUM_THREADS")}
     out.mkdir(parents=True, exist_ok=True)
@@ -206,13 +223,15 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
     done = {(r["circuit"], r["simulator"], r["level"]) for r in kept}
     jobs = [(c, a) for c in circuits for a in adapters
             if any((c.name, a.name, lv) not in done for lv in levels)][shard[0]::shard[1]]
-    (out / "run.json").write_text(json.dumps({"threads": threads, "timeout_s": timeout,
+    generate.write(list({c.case.id: c.case for c, _ in jobs}.values()))
+    (out / "run.json").write_text(json.dumps({"threads": threads, "repeats": repeats, "timeout_s": timeout,
                                               "memory_gb": memory_gb, "workers": workers,
                                               "levels": levels, "cpu": _cpu()}))
     counts: Counter = Counter()
     t0 = time.monotonic()
     with open(results, "a") as log, ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(_job, c.path, a.name, levels, out, timeout, memory_gb, env): (c, a)
+        futures = {pool.submit(_job, c.path, a.name, levels, out, timeout, memory_gb, env, threads,
+                               repeats): (c, a)
                    for c, a in jobs}
         for done, f in enumerate(as_completed(futures), 1):
             c, a = futures[f]
@@ -236,6 +255,6 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
 
 
 if __name__ == "__main__":                              # a job of run()
-    path, simulator, levels, out, timeout, memory_gb = json.loads(sys.stdin.read())
+    path, simulator, levels, out, timeout, memory_gb, threads, repeats = json.loads(sys.stdin.read())
     print(json.dumps(run_circuit(Path(path), simulator, levels, WORK, Path(out), timeout, memory_gb,
-                                 dict(os.environ))))
+                                 dict(os.environ), threads, repeats)))

@@ -1,0 +1,80 @@
+id = "synthetic_rctree"
+title = "RC binary tree"
+family = "passive"
+notes = "Linear RC network, a balanced binary tree of the given depth: a balanced elimination tree without fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: depth."
+netlists = [
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/14.cir", dialect = "ngspice", size = 14 },
+    { file = "generated/14.cir.vacask", dialect = "vacask", size = 14 },
+    { file = "generated/17.cir", dialect = "ngspice", size = 17 },
+    { file = "generated/17.cir.vacask", dialect = "vacask", size = 17 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "tree"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 10"
+sha256 = "22d1f6b0b802dc969bd00e65a78bf969ef492cd33fe4c636d8b1953a9a92c278"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 10"
+sha256 = "e0533139ea39216e39abf93029c132d52213c48af2246653854f441476f111e4"
+
+[[files]]
+path = "generated/14.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 14"
+sha256 = "118a44a2f7ef883604894752dad1810f1744a011e9b1ee3358ab0a46dc2a90c2"
+
+[[files]]
+path = "generated/14.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 14"
+sha256 = "4429d8a0d769c48c9221fa1f04db1d2daf6cc396b7dea310657b60d1f6fa1746"
+
+[[files]]
+path = "generated/17.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 17"
+sha256 = "659034b365b1916e4825ac0cdf163d3ffd1c47254df486654f058b0c324a4f29"
+
+[[files]]
+path = "generated/17.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 17"
+sha256 = "2c0f4ce58462d74406c1b18a2d9876e8ddec8dd24e5ce25b81eabefa59e6aab9"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

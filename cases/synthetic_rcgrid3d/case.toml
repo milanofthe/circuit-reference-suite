@@ -1,0 +1,80 @@
+id = "synthetic_rcgrid3d"
+title = "RC grid, 3D"
+family = "passive"
+notes = "Linear RC network, m^3 nodes: separators of m^2 nodes, heavy fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes per side."
+netlists = [
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/22.cir", dialect = "ngspice", size = 22 },
+    { file = "generated/22.cir.vacask", dialect = "vacask", size = 22 },
+    { file = "generated/46.cir", dialect = "ngspice", size = 46 },
+    { file = "generated/46.cir.vacask", dialect = "vacask", size = 46 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "grid3d"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 10"
+sha256 = "cbd0e330edfc4331dfd849636f12f635cbd1e56497f54de2c8956b70cf26fef9"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 10"
+sha256 = "27e7e4ad33bb874484824a663a8bb7b2df353bd71820eb6056954d1d0a63ed09"
+
+[[files]]
+path = "generated/22.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 22"
+sha256 = "e1507fdfb4256c209d1c402835bde3b89acb0a302f5c8cde92133a2ee2876200"
+
+[[files]]
+path = "generated/22.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 22"
+sha256 = "f124f7dc837a33e82b88a2f7ee6d45061d3b45dac41f4103326b9cfd6a9cec34"
+
+[[files]]
+path = "generated/46.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 46"
+sha256 = "6006b56d34c2c02621d184b5ddbc358aa2bb22133d8b602f89649e4254be3f0f"
+
+[[files]]
+path = "generated/46.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 46"
+sha256 = "3fcf66e8c86638bbc6c9ede215b0004212b66d17abbf676d174f0029925bf103"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

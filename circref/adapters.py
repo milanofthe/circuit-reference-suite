@@ -4,13 +4,17 @@ state a circuit's options, one analysis and its outputs in the simulator's diale
 An adapter writes one deck per analysis, so that every simulator runs the same unit and
 every analysis gets a time of its own; the run writes a rawfile the reader in raw.py
 turns into signals.
+
+Adapters of simulators that are not in this repository come from the Python files named
+in ``CIRCREF_ADAPTERS`` (separated by the path separator), each with a list ``ADAPTERS``.
 """
 from __future__ import annotations
 
+import importlib.util
 import math
 import os
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -91,6 +95,7 @@ class Adapter:
     osdi: bool = False                  # loads Verilog-A compiled to OSDI
     timing: str | None = None           # the simulator's own analysis time, seconds
     error: str | None = None            # a line that marks a failed run despite exit 0
+    counts: dict[str, str] = field(default_factory=dict)    # name: the pattern of its value in the log
 
     def version(self) -> str:
         f = Path(os.environ.get("SIMS", "/cache/circsims")) / self.name / "current" / "version"
@@ -119,6 +124,11 @@ class Adapter:
     def preload(self, directory: Path, osdi: list[Path]) -> None:
         if osdi:
             raise NotImplementedError(f"{self.name}: Verilog-A types without a load")
+
+    def threads(self, directory: Path, n: int) -> dict[str, str]:
+        """What a run on ``n`` threads needs beyond OMP_NUM_THREADS: environment variables,
+        returned, or files in the run's directory."""
+        return {}
 
     def argv(self, deck: str, raw: str) -> list[str]:
         raise NotImplementedError
@@ -163,6 +173,12 @@ class Ngspice(Adapter):
             init = directory / ".spiceinit"
             old = init.read_text() if init.exists() else ""
             init.write_text(old + "".join(f"osdi {p}\n" for p in osdi))
+
+    def threads(self, directory: Path, n: int) -> dict[str, str]:
+        """ngspice's device evaluation runs on ``num_threads`` (OpenMP), all cores without it."""
+        init = directory / ".spiceinit"
+        init.write_text((init.read_text() if init.exists() else "") + f"set num_threads={n}\n")
+        return {}
 
     def argv(self, deck: str, raw: str) -> list[str]:
         return ["ngspice", "-b", "-r", raw, deck]
@@ -338,6 +354,8 @@ class Vacask(Adapter):
                 opts.append(f"{k}={_num(v)}")
         if opts:
             control.append("options " + " ".join(opts))
+        if c.outputs and all(o[:2] == "v(" and "," not in o for o in c.outputs):
+            control.append("save " + " ".join(c.outputs))  # currents: everything is saved
         t = a["type"]
         if t == "op":
             control.append("analysis circref op")
@@ -520,13 +538,29 @@ class Spicesharp(Adapter):
 ADAPTERS = {a.name: a for a in (
     Ngspice("ngspice", ("ngspice", "spice3"), osdi=True,
             timing=r"Total analysis time \(seconds\)\s*=\s*([\d.eE+-]+)",
-            error=r"^Error\b.*|^.*Simulation interrupted.*|^.*no simulations run.*"),
+            error=r"^Error\b.*|^.*Simulation interrupted.*|^.*no simulations run.*",
+            counts={"newton": r"Transient iterations\s*=\s*(\d+)", "points": r"Transient timepoints\s*=\s*(\d+)",
+                    "rejected": r"Transient rejected timepoints\s*=\s*(\d+)", "factor_s": r"Transient factor time\s*=\s*([\d.eE+-]+)",
+                    "load_s": r"Transient load time\s*=\s*([\d.eE+-]+)"}),
     Xyce("xyce", ("xyce",), timing=r"Total Simulation Solvers Run Time:\s*([\d.eE+-]+)"),
     Gnucap("gnucap", ("gnucap",), error=r"^\s*\^ ?.*|.*can't find.*|.*bad file.*"),
     Wrspice("wrspice", ("wrspice", "spice3"), error=r"^.*Simulation aborted.*|^Error\b.*"),
     Josim("josim", ("josim",)),
-    Vacask("vacask", ("vacask",), osdi=True),
+    Vacask("vacask", ("vacask",), osdi=True,
+           counts={"newton": r"NR solver iterations:\s*(\d+)", "points": r"Accepted timepoints:\s*(\d+)",
+                   "rejected": r"Rejected timepoints:\s*(\d+)"}),
     Qucsator("qucsator", ("qucsator",)),
     Ahkab("ahkab", ("ahkab",), error=r"^E: .*|^Traceback.*"),
     Spicesharp("spicesharp", ("spicesharp",), timing=r"\* analysis time ([\d.eE+-]+) s"),
 )}
+
+
+def _external() -> None:
+    for path in filter(None, os.environ.get("CIRCREF_ADAPTERS", "").split(os.pathsep)):
+        spec = importlib.util.spec_from_file_location(f"circref_adapters_{Path(path).stem}", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        ADAPTERS.update({a.name: a for a in module.ADAPTERS})
+
+
+_external()
