@@ -495,10 +495,18 @@ class Ahkab(Adapter):
 
 class Spicesharp(Adapter):
     """SpiceSharpParser through sims/spicesharp: every unknown of the analysis into a
-    SPICE rawfile; the runner reads LTspice A-device netlists in the LTspice dialect."""
+    SPICE rawfile; the runner reads LTspice A-device netlists in the LTspice dialect.
+    The options of circuit.OPTIONS SpiceSharpParser has (OptionsControl.cs); another, as
+    vntol or chgtol, is an error there."""
+    OPTIONS = ("temp", "tnom", "reltol", "abstol", "gmin", "method")
+    # A zero tstep would be the initial step of the transient (TransientControl.cs): the
+    # step ngspice takes without one instead.
+    STEPS = Ngspice.STEPS
+    analysis = Ngspice.analysis
 
     def control(self, c: Circuit) -> list[str]:
-        opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()]
+        opts = [f"{k}={v if k == 'method' else _num(v)}" for k, v in c.options.items()
+                if k in self.OPTIONS]
         return [".options " + " ".join(opts)] if opts else []
 
     def argv(self, deck: str, raw: str) -> list[str]:

@@ -219,6 +219,16 @@ class NgspiceToSpicesharp(unittest.TestCase):
         self.assertEqual(out, "V1 1 0 dc 0 ac 1 sin(0 1 1k)\nE1 3 0 value={temp*2}\n"
                               ".model q npn bf=100\nQ1 1 2 0 0 q\nB1 2 0 V={pwrs(v(1), 2)}\n")
 
+    def test_resistor_coefficients_and_comment_lines(self):
+        self.assertEqual(tr("R1 1 0 1k tc1=1m tc2=2u\n.model q npn\n+ bf=100\n* note\n+ is=1e-15\n",
+                            "ngspice", "spicesharp"),
+                         "R1 1 0 1k tc=1m,2u\n.model q npn\n+ bf=100\n+ is=1e-15\n")
+
+    def test_scale_letters(self):
+        """a is atto in ngspice, a unit in Xyce and SpiceSharp; x is mega in SpiceSharp."""
+        self.assertEqual(tr("R1 1 0 5x\nC1 1 0 2a\n", "ngspice", "spicesharp"), "R1 1 0 5.0\nC1 1 0 2e-18\n")
+        self.assertEqual(tr("I1 0 1 PWL(0 0 1 5A)\n", "xyce", "ngspice"), "I1 0 1 PWL(0 0 1 5.0)\n")
+
     def test_names_in_lower_case(self):
         self.assertEqual(tr(".SUBCKT S a b\n.ENDS S\n.LIB 'models.lib' TT\n", "ngspice", "spicesharp"),
                          ".subckt S a b\n.ends\n.lib 'models.lib' tt\n")

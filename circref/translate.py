@@ -58,6 +58,23 @@ COMMENT_MARK = {"ngspice": ";", "xyce": ";", "wrspice": " $ ", "spicesharp": " $
 # .control statements (spInput.hlp, Comments).
 EXECUTED_COMMENTS = {"wrspice": ("*@", "*#")}
 
+# Scale factors that differ between the dialects, by the first letter after a number:
+# ngspice and WRspice read a as atto (measured: 1A is 1e-18 in both; spInput.hlp, Numeric
+# Values), Xyce as a unit (Reference Guide: T G MEG K MIL M U N P F), SpiceSharp x as mega
+# and a as a unit (SpiceHelper.ParseNumber). Every other letter means the same in all.
+SCALE = {"ngspice": {"a": 1e-18}, "wrspice": {"a": 1e-18}, "xyce": {}, "spicesharp": {"x": 1e6}}
+_NUMBER_AT = re.compile(r"((?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)([a-z]\w*)?", re.I)
+
+
+def _rescaled(m: re.Match, source: str, target: str) -> str:
+    """A number as the target reads it with the value it has in the source."""
+    letter = (m.group(2) or " ")[0].lower()
+    have, want = SCALE[source].get(letter), SCALE[target].get(letter)
+    if have == want:
+        return m.group(0)
+    return repr(float(m.group(1)) * (have or 1.0))
+
+
 # Node names that are ground besides 0. ngspice: ``gnd`` (inp_fix_gnd_name). Xyce: GND,
 # GND! and GROUND, but only under ``.preprocess replaceground true``. WRspice: only 0
 # (spInput.hlp, Input Format); SpiceSharp: only 0 (Constants.cs).
@@ -79,6 +96,9 @@ READ_QUOTES = {"ngspice": "{'", "xyce": "{", "wrspice": "'", "spicesharp": "{"}
 # Dialects that read a .param value as one token unless it is quoted (WRspice:
 # spInput.hlp, .param Line).
 ONE_TOKEN_VALUES = {"wrspice"}
+# Dialects that substitute a parameter's value for its name as text, wherever the name
+# stands outside a node field (WRspice: spInput.hlp, .param Line).
+TEXT_PARAMETERS = {"wrspice"}
 
 # Model types with a device family and level; the rest map by name or not at all.
 FAMILY_OF_TYPE = {"nmos": "mos", "pmos": "mos", "npn": "bjt", "pnp": "bjt", "d": "diode",
@@ -198,13 +218,12 @@ FLAGS = {("ngspice", "xyce"): {"ltra": {f: f for f in (
 _NGSPICE_ONLY = {
     "b": {"tc1": "temperature coefficient of a B source",
           "tc2": "temperature coefficient of a B source"},
-    "r": {"ac": "AC-only resistance"}}
+    "r": {"ac": "AC-only resistance"},
+    # A D with a thermal node (ngspice manual, diode self-heating): no D of the others.
+    "d": {"thermal": "self-heating diode"}}
 NO_INSTANCE_PARAMS = {("ngspice", "xyce"): _NGSPICE_ONLY, ("ngspice", "wrspice"): _NGSPICE_ONLY,
-                      # SpiceSharp: Resistors/Inductors/Parameters.cs; a resistor takes
-                      # temperature coefficients as tc=a,b only (RLCKGenerator.cs).
+                      # SpiceSharp: Inductors/Parameters.cs.
                       ("ngspice", "spicesharp"): _NGSPICE_ONLY | {
-                          "r": {"ac": "AC-only resistance", "tc1": "SpiceSharp reads tc=a,b",
-                                "tc2": "SpiceSharp reads tc=a,b"},
                           "l": {p: "temperature dependence of an inductor"
                                 for p in ("temp", "dtemp", "tc1", "tc2")}}}
 
@@ -229,6 +248,10 @@ CALLEE_SCOPE = {"spicesharp"}
 #   a .param inside a subcircuit is read after the X line's parameters and overrides them
 #   (SubCircuitGenerator.CreateSubcircuitContent);
 INNER_PARAMS_WIN = {"spicesharp"}
+#   a resistor takes temperature coefficients as tc=a,b (RLCKGenerator.GenerateRes);
+TC_VECTOR = {"spicesharp"}
+#   a comment line between continuation lines ends the statement (SpiceLexer.cs);
+COMMENTS_END_STATEMENTS = {"spicesharp"}
 #   dot commands, library sections and .ends names are compared case-sensitively;
 CASE_SENSITIVE_NAMES = {"spicesharp"}
 #   a V or I takes one expression in braces (VoltageSourceGenerator.cs .Single);
@@ -555,15 +578,26 @@ PULSE_ZERO_EDGE = {"xyce": "zero", "ngspice": "the time step", "wrspice": "the t
 # Source functions whose arguments the target reads in part only: a test of the arguments
 # inside the parentheses and the words after them. SpiceSharpParser: EXP takes exactly
 # six (ExpGenerator.cs), PULSE seven, SIN six at most (PulseGenerator.cs, SineGenerator.cs),
-# PWL no R or TD (PwlGenerator.cs reads them in the LTspice dialect only).
+# PWL no R or TD (PwlGenerator.cs reads them in the LTspice dialect only); a PULSE period
+# shorter than rise, width and fall is an error (Pulse.Instance.cs), ngspice runs it.
 def _pwl_without_keys(args: list[str], after: list[str]) -> bool:
     keys = {after[k] for k in range(len(after) - 1) if after[k + 1] == "="}
     return "=" not in args and not keys & {"r", "td"}
 
 
+def _pulse_period(args: list[str], after: list[str]) -> bool:
+    if len(args) > 7:
+        return False
+    try:
+        tr, tf, pw, per = (number(a) for a in args[3:7])
+    except (Unsupported, ValueError):
+        return True                             # parameters, or the defaults
+    return per >= tr + tf + pw
+
+
 SOURCE_ARGUMENTS = {"spicesharp": {
     "exp": lambda args, after: len(args) == 6,
-    "pulse": lambda args, after: len(args) <= 7,
+    "pulse": _pulse_period,
     "sin": lambda args, after: len(args) <= 6, "sine": lambda args, after: len(args) <= 6,
     "pwl": _pwl_without_keys,
 }}
@@ -724,12 +758,12 @@ def _comments(ws: str, target: str) -> str:
     for k, line in enumerate(lines):
         s = line.lstrip(" \t")
         if k and s[:1] not in ("", "+"):
-            lines[k] = _as_comment(line, target)
+            lines[k] = None if target in COMMENTS_END_STATEMENTS else _as_comment(line, target)
             continue
         m = re.search(r"\$|//|;", line)
         if m and line[m.start():m.end()] not in COMMENT[target]:
             lines[k] = line[:m.start()] + COMMENT_MARK[target] + line[m.end():]
-    return "\n".join(lines)
+    return "\n".join(line for line in lines if line is not None)
 
 
 def _as_comment(line: str, target: str) -> str:
@@ -998,6 +1032,12 @@ class Translator:
                 out.append("**")
                 i += 1
                 continue
+            if (c.isdigit() or c == "." and text[i + 1:i + 2].isdigit()) and \
+                    (i == 0 or not (text[i - 1].isalnum() or text[i - 1] in "_.")):
+                m = _NUMBER_AT.match(text, i)
+                out.append(_rescaled(m, self.src, self.tgt))
+                i = m.end()
+                continue
             m = _IDENT.match(text, i) if (c.isalpha() or c == "_") and \
                 (i == 0 or not (text[i - 1].isalnum() or text[i - 1] in "_.")) else None
             if not m:
@@ -1147,7 +1187,8 @@ class Translator:
             raise Untranslatable(NO_ELEMENT[self.pair][letter])
         self.braces(st)
         no = NO_INSTANCE_PARAMS.get(self.pair, {}).get(letter, {})
-        bad = [x for i, x in enumerate(st.words()[:-1]) if x in no and st.words()[i + 1] == "="]
+        w = st.words()
+        bad = [x for i, x in enumerate(w) if x in no and i > NODES.get(letter, 0)]  # name= or flag
         if bad:
             raise Untranslatable(f"{letter.upper()} parameter {bad[0]}: {no[bad[0]]}")
         if letter == "k":
@@ -1155,6 +1196,8 @@ class Translator:
         if letter in "rcl" and self.src == "xyce":
             self.passive(st)
             self.tc(st)
+        if letter == "r" and self.tgt in TC_VECTOR:
+            self.tc_vector(st)
         if letter in "vi":
             self.source(st)
         elif letter == "b" or letter in "eg" and any(w in ("value", "vol", "cur") for w in st.words()):
@@ -1377,6 +1420,8 @@ class Translator:
                 st.edited = True
                 start += 1
                 w = st.words()
+            if self.tgt in TEXT_PARAMETERS:
+                self.own_arguments(st, close, start)
             ranges = [(start, len(w))]
         else:
             names = [i for i in range(1, len(w) - 1) if w[i + 1] == "=" and _depth(w[1:i]) == 0]
@@ -1396,6 +1441,19 @@ class Translator:
                 new = self.quoted(new) if braced or quote else new
                 st.tokens[start:end] = [Token(toks[0].ws, new)]
                 st.edited = True
+
+    def own_arguments(self, st: Statement, close: int, start: int) -> None:
+        """Function arguments named like a parameter renamed: WRspice substitutes a
+        parameter's value for its name as text, in a function's argument list too."""
+        for i in range(3, close):
+            name = st.tokens[i].text
+            if name.lower() not in self.ctx.params:
+                continue
+            new = name + "_arg"
+            st.set(i, new)
+            for k in range(start, len(st.tokens)):
+                st.tokens[k].text = re.sub(rf"(?<![\w.]){re.escape(name)}(?![\w.(])", new,
+                                           st.tokens[k].text, flags=re.I)
 
     def quoted(self, text: str) -> str:
         """An expression delimited as the target evaluates it when reading (QUOTE)."""
@@ -1584,9 +1642,16 @@ class Translator:
                 new = self.expression(body, behavioral or bool(re.search(r"\b[vi]\s*\(", body, re.I)))
                 if new != body or t.text[0] not in READ_QUOTES[self.tgt]:
                     st.set(i, self.quoted(new))
+        positions = set(self.value_positions(st)) if st.head[0] != "." else set()
+        for i, t in enumerate(st.tokens):
+            body = t.text.lstrip("+-")
+            m = _NUMBER_AT.fullmatch(body)
+            if m and (i in positions or i > 1 and st.tokens[i - 1].text == "="):
+                new = t.text[:len(t.text) - len(body)] + _rescaled(m, self.src, self.tgt)
+                if new != t.text:
+                    st.set(i, new)
         if self.tgt != "ngspice":
             return
-        positions = set(self.value_positions(st)) if st.head[0] != "." else set()
         for i, t in enumerate(st.tokens):
             if (i in positions or i > 1 and st.tokens[i - 1].text == "=") and \
                     t.text.lower() in self.ctx.params and not is_number(t.text):
@@ -1637,6 +1702,10 @@ class Translator:
         w = st.words()
         if self.tgt in ONE_EXPRESSION and sum(x[:1] == "{" for x in w) > 1:
             raise Untranslatable(f"source with more than one expression ({self.tgt} takes one)")
+        if _depth(w) > 0:                       # Xyce closes a source function at the line end
+            st.tokens += [Token("", ")") for _ in range(_depth(w))]
+            st.edited = True
+            w = st.words()
         for i in range(3, len(w)):
             if w[i] not in SOURCE_FUNCTIONS[self.src] or i + 1 < len(w) and w[i + 1] == "=":
                 continue
@@ -1729,6 +1798,23 @@ class Translator:
             raise Untranslatable("source without a DC value in an OP or DC analysis (Xyce "
                                  "takes 0, ngspice the transient value at t=0)")
         st.tokens[at:at] = [Token(" ", "dc"), Token(" ", "0")]
+        st.edited = True
+
+    def tc_vector(self, st: Statement) -> None:
+        """TC1=a TC2=b on a resistor as TC=a,b, the one form SpiceSharpParser reads, and
+        only without a model (RLCKGenerator.GenerateRes)."""
+        w = st.words()
+        at = {w[i]: i for i in range(3, len(w) - 2) if w[i] in ("tc1", "tc2") and w[i + 1] == "="}
+        if not at:
+            return
+        if len(w) > 3 and self.model(w[3]):
+            raise Untranslatable(f"temperature coefficient on a resistor with a model ({self.tgt} "
+                                 f"takes none there)")
+        values = [st.tokens[at[k] + 2].text if k in at else "0" for k in ("tc1", "tc2")]
+        first = min(at.values())
+        for i in sorted(at.values(), reverse=True):
+            del st.tokens[i:i + 3]
+        st.tokens.insert(first, Token(" ", f"tc={values[0]},{values[1]}"))
         st.edited = True
 
     def tc(self, st: Statement) -> None:
