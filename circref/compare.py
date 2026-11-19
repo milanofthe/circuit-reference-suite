@@ -128,80 +128,8 @@ def compare(out: Path) -> dict:
     return {"references": refs, "rows": rows}
 
 
-def _table(head: list[str], rows: list[list]) -> list[str]:
-    return ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)] + \
-           ["| " + " | ".join(str(c) for c in r) + " |" for r in rows]
-
-
-def summary(out: Path) -> str:
-    """Status per simulator and level; references; accuracy at the default level; the
-    time each simulator takes to reach an accuracy. Writes out/compare.json."""
-    status: dict[tuple, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    versions: dict[str, str] = {}
-    for line in (out / "results.jsonl").read_text().splitlines():
-        r = json.loads(line)
-        status[(r["simulator"], r.get("level", ""))][r["status"]] += 1
-        versions[r["simulator"]] = r.get("version") or versions.get(r["simulator"], "")
-    names = sorted({k for v in status.values() for k in v})
-    lines = _table(["simulator", "version", "level"] + names,
-                   [[s, versions[s], lv] + [status[(s, lv)].get(n, "") for n in names]
-                    for s, lv in sorted(status)])
+def write(out: Path) -> dict:
+    """compare() of the run in ``out``, into out/compare.json."""
     result = compare(out)
     (out / "compare.json").write_text(json.dumps(result))
-    refs, rows = result["references"], result["rows"]
-
-    kinds = ["agreed", "single", "disagree", "none", "no shared signal"]
-    by_type = defaultdict(lambda: defaultdict(int))
-    for r in refs:
-        by_type[r["type"]][r["status"]] += 1
-    lines += ["", "references per analysis: agreed by several converged simulators, from a single one, "
-              "two converged that disagree, none converged:", ""]
-    lines += _table(["type"] + kinds + ["median error"],
-                    [[t] + [by_type[t].get(k, "") for k in kinds] +
-                     [f"{np.median([r['error'] for r in refs if r['type'] == t and 'error' in r] or [np.nan]):.1e}"]
-                     for t in sorted(by_type)])
-
-    sims = sorted({r["simulator"] for r in rows})
-    bands = C["bands"]
-    lines += ["", "error against the reference at the default level, per analysis (worst signal); "
-              "outlier: its reference run disagrees with the others:", ""]
-    table = []
-    for s in sims:
-        mine = [r for r in rows if r["simulator"] == s and r["level"] == "default" and r["error"] is not None]
-        good = [r for r in mine if not r["outlier"]]
-        cells = [len(mine), sum(r["error"] <= r["reference_error"] for r in good)]
-        lo = -1.0
-        for b in bands:
-            cells.append(sum(lo < r["error"] <= b and r["error"] > r["reference_error"] for r in good))
-            lo = b
-        table.append([s] + cells + [sum(r["error"] > bands[-1] for r in good), len(mine) - len(good)])
-    lines += _table(["simulator", "analyses", "within reference error"] + [f"<= {b:g}" for b in bands] +
-                    [f"> {bands[-1]:g}", "outlier"], table)
-
-    # Work at a precision: per analysis the cheapest level that reaches the error, against
-    # the fastest simulator that reaches it on the same analysis. Wall time of the run.
-    lines += ["", "time to reach an error, against the fastest simulator that reaches it on the same "
-              "analysis (geometric mean of wall time, cheapest level that reaches it):", ""]
-    cheapest: dict[tuple, float] = {}
-    for r in rows:
-        if r["error"] is None or r["outlier"] or not r["wall_s"]:
-            continue
-        for b in bands:
-            if max(r["error"], r["reference_error"]) <= b:
-                key = (r["circuit"], r["analysis"], b, r["simulator"])
-                cheapest[key] = min(cheapest.get(key, np.inf), r["wall_s"])
-    fastest: dict[tuple, list[float]] = defaultdict(list)
-    for (c, k, b, s), t in cheapest.items():
-        fastest[(c, k, b)].append(t)
-    table = []
-    for s in sims:
-        cells = []
-        for b in bands:
-            ratios = [t / min(fastest[(c, k, bb)]) for (c, k, bb, ss), t in cheapest.items()
-                      if ss == s and bb == b and len(fastest[(c, k, bb)]) > 1]
-            reached = sum(1 for (_, _, bb, ss) in cheapest if ss == s and bb == b)
-            gm = f"{np.exp(np.mean(np.log(ratios))):.2f}" if ratios else "-"
-            cells.append(f"{reached} / {gm}")
-        table.append([s] + cells)
-    lines += _table(["simulator"] + [f"<= {b:g}: reached / ratio" for b in bands], table)
-    return "\n".join(lines)
+    return result

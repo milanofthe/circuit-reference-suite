@@ -3,7 +3,8 @@
 build  writes every generated file (case and library READMEs, the top README tables).
 check  validates and rebuilds in memory; fails when a committed file is stale.
 run       runs circuits on simulators (circref/bench.py), results into --out.
-compare   simulators against each other on what run left in --out.
+compare   each run against the reference of its analysis, into OUT/compare.json, and
+          the plots of OUT/plots (circref/plot.py).
 circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
 """
 from __future__ import annotations
@@ -105,8 +106,11 @@ def cmd_run(args) -> int:
 
 
 def cmd_compare(args) -> int:
-    from . import compare
-    print(compare.summary(Path(args.out)))      # and out/compare.json, a row per run
+    from . import compare, plot
+    out = Path(args.out)
+    compare.write(out)
+    for p in plot.plot(out, args.circuit):
+        print(p)
     return 0
 
 
@@ -133,6 +137,8 @@ def main(argv: list[str] | None = None) -> int:
     sp.set_defaults(fn=cmd_run)
     sp = sub.add_parser("compare")
     sp.add_argument("out")
+    sp.add_argument("--circuit", action="append", default=[],
+                    help="circuit name or glob whose analyses get a plot each, repeatable")
     sp.set_defaults(fn=cmd_compare)
     args = ap.parse_args(argv)
     return args.fn(args)

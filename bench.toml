@@ -31,3 +31,30 @@ converged = 1e-4
 # The reference of several: their converged reference runs within this of their median.
 agree = 1e-4
 bands = [1e-6, 1e-4, 1e-2]
+
+# Plot style (circref/plot.py): the categorical order, by simulator in the order of
+# circref.adapters.ADAPTERS; a run's status; the chart surface and ink.
+[plot]
+series = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+surface = "#fcfcfb"
+ink = "#0b0b0b"
+muted = "#52514e"
+grid = "#e4e3df"
+reference = "#0b0b0b"
+
+[plot.status]
+ok = "#0ca30c"
+failed = "#d03b3b"
+error = "#7a1f1f"
+timeout = "#ec835a"
+killed = "#fab219"
+stage-failed = "#a3a29c"
+untranslated = "#c9c8c2"
+unsupported = "#e4e3df"
+
+[plot.reference_status]
+agreed = "#2a78d6"
+single = "#86b6ef"
+disagree = "#d03b3b"
+none = "#c9c8c2"
+"no shared signal" = "#e4e3df"
