@@ -8,7 +8,6 @@ import os
 import posixpath
 import shutil
 import subprocess
-import threading
 from pathlib import Path
 
 from . import netlist
@@ -48,30 +47,25 @@ def _load_command(file: Path, line: int) -> bool:
 
 
 class Compiler:
-    """Verilog-A compiled to OSDI once per source, shared by every run that loads it."""
+    """Verilog-A compiled to OSDI once per source, shared by every run that loads it, in
+    any process: each compiles into a file of its own and renames it into place."""
 
     def __init__(self, cache: Path):
         self.cache = cache
-        self.locks: dict[str, threading.Lock] = {}
-        self.guard = threading.Lock()
 
     def osdi(self, va: Path, sources: list[Path]) -> Path:
         h = hashlib.sha256()
         for p in [va, *sorted(set(sources) - {va})]:
             h.update(p.read_bytes())
-        key = h.hexdigest()[:16]
-        out = self.cache / f"{va.stem}-{key}.osdi"
-        with self.guard:
-            lock = self.locks.setdefault(key, threading.Lock())
-        with lock:
-            if not out.exists():
-                out.parent.mkdir(parents=True, exist_ok=True)
-                tmp = out.with_suffix(".tmp")
-                r = subprocess.run(["openvaf", str(va), "-o", str(tmp)], capture_output=True,
-                                   text=True, cwd=va.parent)
-                if r.returncode or not tmp.exists():
-                    raise StageError(f"openvaf {va.relative_to(ROOT)}: {tail(r.stdout + r.stderr)}")
-                tmp.rename(out)
+        out = self.cache / f"{va.stem}-{h.hexdigest()[:16]}.osdi"
+        if not out.exists():
+            out.parent.mkdir(parents=True, exist_ok=True)
+            tmp = out.with_suffix(f".{os.getpid()}.tmp")
+            r = subprocess.run(["openvaf", str(va), "-o", str(tmp)], capture_output=True,
+                               text=True, cwd=va.parent)
+            if r.returncode or not tmp.exists():
+                raise StageError(f"openvaf {va.relative_to(ROOT)}: {tail(r.stdout + r.stderr)}")
+            os.replace(tmp, out)
         return out
 
 
