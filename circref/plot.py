@@ -1,5 +1,5 @@
-"""Plots of a run, from what run and compare left in its directory, each as
-``<name>.png`` and ``<name>-dark.png`` for the two GitHub color schemes, transparent:
+"""Plots of a run, from what run and compare left in its directory, transparent, in one
+gray ink for light and dark pages:
 
     status        runs per simulator and status, a panel per level
     references    analyses per type and reference status
@@ -28,25 +28,18 @@ import numpy as np  # noqa: E402
 from .adapters import ADAPTERS  # noqa: E402
 from .bench import CONFIG, LEVELS  # noqa: E402
 
-THEMES = {"": CONFIG["plot"]["light"], "-dark": CONFIG["plot"]["dark"]}   # file suffix -> theme
-P: dict = {}                                            # the theme being drawn, and the shared colors
+P = CONFIG["plot"]
 TINY = 1e-16                                            # an error of 0 on a log axis
 SETUP = ""                                              # the run's setup, below every plot
-
-
-def _theme(t: dict) -> None:
-    P.clear()
-    P.update(t | {k: CONFIG["plot"][k] for k in ("status", "reference_status")})
-    plt.rcParams.update({
-        "figure.facecolor": "none", "axes.facecolor": "none", "savefig.transparent": True,
-        "axes.edgecolor": P["muted"], "axes.labelcolor": P["ink"], "text.color": P["ink"],
-        "xtick.color": P["muted"], "ytick.color": P["muted"], "axes.grid": True, "grid.color": P["grid"],
-        "grid.linewidth": 0.6, "axes.spines.top": False, "axes.spines.right": False, "font.size": 9,
-        "legend.frameon": False, "lines.linewidth": 2, "axes.axisbelow": True})
+STYLE = {"figure.facecolor": "none", "axes.facecolor": "none", "savefig.transparent": True,
+         "axes.edgecolor": P["ink"], "axes.labelcolor": P["ink"], "text.color": P["ink"],
+         "xtick.color": P["ink"], "ytick.color": P["ink"], "axes.grid": True, "grid.color": P["grid"],
+         "grid.linewidth": 0.6, "axes.spines.top": False, "axes.spines.right": False, "font.size": 9,
+         "legend.frameon": False, "lines.linewidth": 2, "axes.axisbelow": True}
 
 
 def _save(fig, path: Path) -> None:
-    fig.text(0.0, -0.01, SETUP, color=P["muted"], fontsize=7, va="top", ha="left", wrap=True)
+    fig.text(0.0, -0.01, SETUP, color=P["ink"], fontsize=7, va="top", ha="left", wrap=True)
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
@@ -94,7 +87,7 @@ def _bars(ax, rows: list[str], segments: dict[str, dict[str, int]], colors: dict
     for seg, c in colors.items():
         w = np.array([segments[r].get(seg, 0) for r in rows], float)
         if w.any():
-            ax.barh(y, w, left=left, color=c, edgecolor=P["surface"], linewidth=1, label=seg, height=0.7)
+            ax.barh(y, w, left=left, color=c, edgecolor="none", label=seg, height=0.7)
         left += w
     ax.set_yticks(y, rows)
     ax.invert_yaxis()
@@ -215,7 +208,7 @@ def work(rows: list[dict], path: Path) -> None:
             e, t = np.array(pts).T
             ax.scatter(e, t, s=10, color=lc[lv], alpha=0.5, linewidths=0)
             ax.scatter([np.median(e)], [np.exp(np.mean(np.log(t)))], s=70, color=lc[lv],
-                       edgecolors=P["surface"], linewidths=2, label=lv, zorder=3)
+                       edgecolors="none", label=lv, zorder=3)
         ax.set_title(s)
         ax.set_xscale("log")
         ax.set_yscale("log")
@@ -241,11 +234,10 @@ def plot(out: Path) -> list[Path]:
     SETUP = setup(out, results)
     d = out / "plots"
     d.mkdir(exist_ok=True)
-    for suffix, theme in THEMES.items():
-        _theme(theme)
-        status(results, d / f"status{suffix}.png")
-        references(data["references"], d / f"references{suffix}.png")
-        accuracy(data["rows"], d / f"accuracy{suffix}.png")
-        time(data["rows"], results, d / f"time{suffix}.png")
-        work(data["rows"], d / f"work{suffix}.png")
+    plt.rcParams.update(STYLE)
+    status(results, d / "status.png")
+    references(data["references"], d / "references.png")
+    accuracy(data["rows"], d / "accuracy.png")
+    time(data["rows"], results, d / "time.png")
+    work(data["rows"], d / "work.png")
     return sorted(d.glob("*.png"))

@@ -6,30 +6,15 @@ simulators against each other under the same conditions. A circuit
 adapters write it in each simulator's dialect. Upstream files are committed byte
 for byte and hash-checked. License per case and library.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="plots/accuracy-dark.png">
-  <img alt="Analyses within an error of the reference, per simulator and precision level" src="plots/accuracy.png">
-</picture>
+![Analyses within an error of the reference, per simulator and precision level](plots/accuracy.png)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="plots/time-dark.png">
-  <img alt="Analyses within a wall time of the fastest simulator" src="plots/time.png">
-</picture>
+![Analyses within a wall time of the fastest simulator](plots/time.png)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="plots/work-dark.png">
-  <img alt="Error against wall time of every run, per simulator" src="plots/work.png">
-</picture>
+![Error against wall time of every run, per simulator](plots/work.png)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="plots/references-dark.png">
-  <img alt="Analyses per type and reference status" src="plots/references.png">
-</picture>
+![Analyses per type and reference status](plots/references.png)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="plots/status-dark.png">
-  <img alt="Runs per simulator and status" src="plots/status.png">
-</picture>
+![Runs per simulator and status](plots/status.png)
 
 ## Layout
 
