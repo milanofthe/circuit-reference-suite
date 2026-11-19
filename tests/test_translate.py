@@ -164,5 +164,85 @@ class NgspiceToXyce(unittest.TestCase):
             tr(".model n nmos level=8\n", "ngspice", "xyce")    # BSIM3 3.3.0
 
 
+class NgspiceToWrspice(unittest.TestCase):
+    def test_behavioral_source(self):
+        """B is A in WRspice; its device expressions have no ternary operator, min or max."""
+        self.assertEqual(tr("B1 2 0 V=v(1) > 0 ? 2*v(1) : min(v(1), 1)\n", "ngspice", "wrspice"),
+                         "aB1 2 0 V=(((v(1) > 0) != 0)*(2*v(1)) + ((v(1) > 0) == 0)*"
+                         "((((v(1))+(1)-abs((v(1))-(1)))/2)))\n")
+        self.assertEqual(tr("E1 3 0 vol={u(v(2))}\n", "ngspice", "wrspice"),
+                         "E1 3 0 function=(0.5*(sgn(v(2))+1))\n")
+
+    def test_expressions_in_quotes(self):
+        out = tr(".param a={pwr(-2, 3)} b = 2 * a\n.func f(x) {x*2}\nR1 1 0 {a*f(b)}\n",
+                 "ngspice", "wrspice")
+        self.assertEqual(out, ".param a='(abs(-2)^(3))' b = '2 * a'\n.param f(x) = 'x*2'\n"
+                              "R1 1 0 'a*f(b)'\n")
+
+    def test_subcircuit_scope_and_names(self):
+        out = tr(".subckt s n1 n2 params: w=1\nR1 n1 n2 {w}\n.ends\nx1 1 gnd s w=3\n"
+                 ".ic v(x1.x2.n1)=1\n", "ngspice", "wrspice")
+        self.assertEqual(out, ".options parhier=local\n.subckt s n1 n2 w=1\nR1 n1 n2 'w'\n.ends\n"
+                              "x1 1 0 s w=3\n.ic v(n1.x2.x1)=1\n")
+
+    def test_comments(self):
+        self.assertEqual(tr("R1 1 0 1k;load\n*#### note\n", "ngspice", "wrspice"),
+                         "R1 1 0 1k $ load\n* #### note\n")
+
+    def test_bsim4_version_is_a_level(self):
+        self.assertEqual(tr(".model n nmos level=14\n", "ngspice", "wrspice"), ".model n nmos level=18\n")
+        self.assertEqual(tr(".model n nmos level=54 version=4.7\n", "ngspice", "wrspice"),
+                         ".model n nmos level=16 version=4.7\n")
+        with self.assertRaises(Untranslatable):
+            tr(".model n nmos level=14 version=4.5\n", "ngspice", "wrspice")
+
+    def test_source_arguments(self):
+        self.assertEqual(tr("V1 1 0 sin(0, 1, 1k)\nV2 2 0 pwl(0 0 1n 1) r=0 td=1n\n",
+                            "ngspice", "wrspice"),
+                         "V1 1 0 sin(0 1 1k)\nV2 2 0 pwl(0 0 1n 1 r=0 td=1n)\n")
+
+    def test_untranslatable(self):
+        for body, reason in [(".model q npn\nQ1 1 2 0 q m=2\n", "multiplier"),
+                             ("X1 1 2 s m=2\n", "multiplier"),
+                             ("B1 1 0 V=floor(v(2))\n", "floor"),
+                             (".options scale=1u\n", "scale"),
+                             (".model d1 d level=3\n", "diode")]:
+            with self.assertRaises(Untranslatable) as e:
+                tr(body, "ngspice", "wrspice")
+            self.assertIn(reason, str(e.exception))
+
+
+class NgspiceToSpicesharp(unittest.TestCase):
+    def test_element_forms(self):
+        out = tr("V1 1 0 dc=0 ac=1 sin(0 1 1k)\nE1 3 0 vol='temper*2'\n.model q npn level=1 bf=100\n"
+                 "Q1 1 2 0 q\nB1 2 0 V=pwr(v(1), 2)\n", "ngspice", "spicesharp")
+        self.assertEqual(out, "V1 1 0 dc 0 ac 1 sin(0 1 1k)\nE1 3 0 value={temp*2}\n"
+                              ".model q npn bf=100\nQ1 1 2 0 0 q\nB1 2 0 V={pwrs(v(1), 2)}\n")
+
+    def test_names_in_lower_case(self):
+        self.assertEqual(tr(".SUBCKT S a b\n.ENDS S\n.LIB 'models.lib' TT\n", "ngspice", "spicesharp"),
+                         ".subckt S a b\n.ends\n.lib 'models.lib' tt\n")
+
+    def test_untranslatable(self):
+        for body, reason in [(".subckt s a b\nL1 a 0 1u\nL2 b 0 1u\nK1 L1 L2 0.5\n.ends\n", "mutual"),
+                             (".model n nmos level=14\n", "bsim4"),
+                             ("V1 1 0 exp(0 1 1n 1n)\n", "exp"),
+                             ("V1 1 0 pulse(0 1 0 0 0 1u 2u)\n", "zero rise"),
+                             ("V1 1 0 pwl(0 0 1n 1) r=0\n", "pwl"),
+                             (".subckt s a b w=1\n.ends\nX1 1 2 s l={w*2}\n", "names a parameter"),
+                             ("Z1 1 2 0 mz\n", "MESFET")]:
+            with self.assertRaises(Untranslatable) as e:
+                tr(body, "ngspice", "spicesharp")
+            self.assertIn(reason, str(e.exception))
+
+
+class XyceToWrspice(unittest.TestCase):
+    def test_through_ngspice(self):
+        """Xyce to WRspice is Xyce to ngspice, then ngspice to WRspice."""
+        out = tr(".param a={log(4)}\nB1 1 0 V={if(v(2) > 1, 2, 0)}\n", "xyce", "wrspice")
+        self.assertEqual(out, ".param a='log10(4)'\naB1 1 0 V=(((((v(2) > 1)) != 0)*((2)) + "
+                              "(((v(2) > 1)) == 0)*((0))))\n")
+
+
 if __name__ == "__main__":
     unittest.main()

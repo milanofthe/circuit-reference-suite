@@ -40,38 +40,42 @@ class Untranslatable(Exception):
 
 
 # Dialects read with the rules of another: SPICE3 decks are ngspice decks.
-FAMILY = {"ngspice": "ngspice", "spice3": "ngspice", "xyce": "xyce", "wrspice": "wrspice"}
+FAMILY = {"ngspice": "ngspice", "spice3": "ngspice", "xyce": "xyce", "wrspice": "wrspice",
+          "spicesharp": "spicesharp"}
 # The dialect pairs with rules; every other pair goes through the hub.
 HUB = "ngspice"
-PAIRS = {("xyce", "ngspice"), ("ngspice", "xyce"), ("ngspice", "wrspice")}
+PAIRS = {("xyce", "ngspice"), ("ngspice", "xyce"), ("ngspice", "wrspice"), ("ngspice", "spicesharp")}
 
 # Inline comment marks a dialect reads, and the one written in the target. ngspice: ``;``
 # anywhere, ``$`` after a blank or comma, ``//`` (inp_stripcomments_line); Xyce: ``;`` only
 # (SpiceSeparatedFieldTool). WRspice: ``$`` or ``;`` between blanks only (spInput.hlp,
-# Comments); none is recognized here, so that every mark is written isolated.
-COMMENT = {"ngspice": (";", "$", "//"), "xyce": (";",), "wrspice": ()}
-COMMENT_MARK = {"ngspice": ";", "xyce": ";", "wrspice": " $ "}
+# Comments). SpiceSharpParser: ``$`` and ``;`` where a token starts, ``;`` inside a word
+# is part of it, no ``//`` (SpiceLexer.cs). None is recognized for those two here, so that
+# every mark is written isolated.
+COMMENT = {"ngspice": (";", "$", "//"), "xyce": (";",), "wrspice": (), "spicesharp": ()}
+COMMENT_MARK = {"ngspice": ";", "xyce": ";", "wrspice": " $ ", "spicesharp": " $ "}
 # Comment lines a dialect executes: in WRspice ``*@`` and ``*#`` lines are .exec and
 # .control statements (spInput.hlp, Comments).
 EXECUTED_COMMENTS = {"wrspice": ("*@", "*#")}
 
 # Node names that are ground besides 0. ngspice: ``gnd`` (inp_fix_gnd_name). Xyce: GND,
 # GND! and GROUND, but only under ``.preprocess replaceground true``. WRspice: only 0
-# (spInput.hlp, Input Format).
-GROUND = {"ngspice": ("gnd",), "xyce": ("gnd", "gnd!", "ground"), "wrspice": ()}
+# (spInput.hlp, Input Format); SpiceSharp: only 0 (Constants.cs).
+GROUND = {"ngspice": ("gnd",), "xyce": ("gnd", "gnd!", "ground"), "wrspice": (), "spicesharp": ()}
 
 # A node inside a subcircuit: the separator, and whether the name starts at the top
-# instance (Xyce X1:N1, ngspice x1.n1) or at the node (WRspice n1.x1, subexpand.cc and
-# spInput.hlp, Subcircuit Expansion).
-HIER = {"xyce": (":", True), "ngspice": (".", True), "wrspice": (".", False)}
+# instance (Xyce X1:N1, ngspice x1.n1, SpiceSharpParser x1.n1 with its default separator)
+# or at the node (WRspice n1.x1, subexpand.cc and spInput.hlp, Subcircuit Expansion).
+HIER = {"xyce": (":", True), "ngspice": (".", True), "wrspice": (".", False),
+        "spicesharp": (".", True)}
 
 # How an expression is delimited where the target evaluates it when reading: braces in
-# ngspice and Xyce, single quotes in WRspice, which has no braces (spInput.hlp,
-# Single-Quoted Expressions).
-QUOTE = {"ngspice": ("{", "}"), "xyce": ("{", "}"), "wrspice": ("'", "'")}
+# ngspice, Xyce and SpiceSharpParser, single quotes in WRspice, which has no braces
+# (spInput.hlp, Single-Quoted Expressions).
+QUOTE = {"ngspice": ("{", "}"), "xyce": ("{", "}"), "wrspice": ("'", "'"), "spicesharp": ("{", "}")}
 # The delimiters a dialect reads: ngspice takes single quotes as braces (inpcom.c), Xyce
-# braces only.
-READ_QUOTES = {"ngspice": "{'", "xyce": "{", "wrspice": "'"}
+# braces only, SpiceSharpParser single quotes only after = (SpiceLexer.cs).
+READ_QUOTES = {"ngspice": "{'", "xyce": "{", "wrspice": "'", "spicesharp": "{"}
 # Dialects that read a .param value as one token unless it is quoted (WRspice:
 # spInput.hlp, .param Line).
 ONE_TOKEN_VALUES = {"wrspice"}
@@ -138,7 +142,17 @@ LEVELS = {
         ("mesfet", 1): "statz",
         ("r", 1): "resistor",
     },
+    # SpiceSharp 3.2.3: Mosfet1/2/3 (MosfetModelGenerator.cs), and one model each for the
+    # BJT (Gummel-Poon), diode, JFET and resistor, ports of SPICE3's.
+    "spicesharp": {
+        ("mos", 1): "mos1", ("mos", 2): "mos2", ("mos", 3): "mos3",
+        ("bjt", 1): "gummel-poon", ("diode", 1): "diode", ("jfet", 1): "jfet",
+        ("r", 1): "resistor",
+    },
 }
+# Families whose models in the target have no level parameter: one model, and level= on
+# its card is an unknown parameter (SpiceSharp's BJT, diode, JFET and resistor models).
+NO_LEVEL = {"spicesharp": {"bjt", "diode", "jfet", "r"}}
 
 # Models whose version the target selects by level rather than by a version parameter:
 # version -> level; a version takes the level of its major and minor version with the
@@ -159,6 +173,8 @@ TYPES = {
     "ngspice": {"c", "l", "ltra", "sw", "csw", "urc", "txl", "cpl", "vdmos", "vdmosn", "vdmosp",
                 "nsoi", "psoi", "numd", "nbjt", "numos", "nhfet", "phfet"},
     "wrspice": {"c", "l", "ltra", "tra", "sw", "csw", "urc"},
+    # SpiceSharpParser: SpiceObjectMappings.cs, models.
+    "spicesharp": {"c", "sw", "csw", "vswitch", "iswitch"},
 }
 TYPE_NAMES = {("xyce", "ngspice"): {"cap": "c", "ind": "l"}, ("ngspice", "wrspice"): {"res": "r"}}
 
@@ -183,7 +199,14 @@ _NGSPICE_ONLY = {
     "b": {"tc1": "temperature coefficient of a B source",
           "tc2": "temperature coefficient of a B source"},
     "r": {"ac": "AC-only resistance"}}
-NO_INSTANCE_PARAMS = {("ngspice", "xyce"): _NGSPICE_ONLY, ("ngspice", "wrspice"): _NGSPICE_ONLY}
+NO_INSTANCE_PARAMS = {("ngspice", "xyce"): _NGSPICE_ONLY, ("ngspice", "wrspice"): _NGSPICE_ONLY,
+                      # SpiceSharp: Resistors/Inductors/Parameters.cs; a resistor takes
+                      # temperature coefficients as tc=a,b only (RLCKGenerator.cs).
+                      ("ngspice", "spicesharp"): _NGSPICE_ONLY | {
+                          "r": {"ac": "AC-only resistance", "tc1": "SpiceSharp reads tc=a,b",
+                                "tc2": "SpiceSharp reads tc=a,b"},
+                          "l": {p: "temperature dependence of an inductor"
+                                for p in ("temp", "dtemp", "tc1", "tc2")}}}
 
 # Elements keyed by another letter in the target: the letter put in front of the name.
 # WRspice keys SPICE3's B source by A, B is its Josephson junction (spSources.hlp, General
@@ -194,8 +217,27 @@ LETTERS = {("ngspice", "wrspice"): {"b": "a"}}
 # (Reference Guide 2.3); WRspice: the devices with an m parameter in devlib (R, C, L,
 # diode, MOS levels 1-6, BSIM4 from 4.6.5, VBIC), and no subcircuit call: subexpand.cc
 # passes m on as a parameter.
+#   SpiceSharpParser element forms that differ from ngspice's:
+#   a 3-terminal Q ties the substrate to the emitter (BipolarJunctionTransistorGenerator.cs);
+EMITTER_SUBSTRATE = {"spicesharp"}
+#   a C with a model needs l= (RLCKGenerator.GenerateCap);
+CAPACITOR_MODEL_GEOMETRY = {"spicesharp"}
+#   K finds its inductors by the name as written, outside any subcircuit (GenerateMut);
+GLOBAL_COUPLING = {"spicesharp"}
+#   an X line parameter is evaluated in the subcircuit's scope (EvaluationContext.cs);
+CALLEE_SCOPE = {"spicesharp"}
+#   dot commands, library sections and .ends names are compared case-sensitively;
+CASE_SENSITIVE_NAMES = {"spicesharp"}
+#   a V or I takes one expression in braces (VoltageSourceGenerator.cs .Single);
+ONE_EXPRESSION = {"spicesharp"}
+#   a tab inside an expression is an unknown token (Lexers/Expressions/Lexer.cs).
+NO_TABS = {"spicesharp"}
+
 NO_MULTIPLIER = {"xyce": {"d", "q", "j", "z"},
-                 "wrspice": {"x", "j", "z", "gummel-poon", "bsim3", "BSIMSOI 4.4"}}
+                 "wrspice": {"x", "j", "z", "gummel-poon", "bsim3", "BSIMSOI 4.4"},
+                 # SpiceSharpParser: V has none, a linear E, F, G or H with m is dropped
+                 # without an error (VoltageSourceGenerator.cs, CurrentSourceGenerator.cs).
+                 "spicesharp": {"v", "e", "f", "g", "h"}}
 
 # Verilog-A modules (ngspice loads them as OSDI, N instances) that are built into Xyce:
 # module -> (device letter, model types for type=+1/-1, level, version Xyce implements).
@@ -264,6 +306,11 @@ VERSIONS = {
 #   relational operators give 1 or 0 with a zero derivative. Parameter expressions are
 #   vector expressions (parser.cc ft_funcs): no min or max; pow(x, y) truncates y to an
 #   integer, ^ does not, pwr is the signed power, int rounds half to even (cmath1.cc).
+#   SpiceSharp: parameters and behavioral sources share SpiceSharpBehavioral 3.2.0's
+#   functions (RealBuilderHelper.Defaults, found before the parser's own in
+#   CustomRealBuilder.cs): pwr is |x|^y, pwrs the signed power, u, u2, uramp, nint as in
+#   ngspice, limit(x, lo, hi) clamps; int truncates (IntFunction.cs); a condition is
+#   true above 0.5 (RealBuilder.cs).
 def _ternary(c, a, b):
     return f"(({c}) ? ({a}) : ({b}))"
 
@@ -311,6 +358,51 @@ def _selects(text: str) -> str:
             else:
                 return _select(flat[:q].strip(), flat[q + 1:k].strip(), _selects(flat[k + 1:].strip()))
     raise Untranslatable(f"ternary without ':' in {text}")
+
+
+def _operand_start(s: str, i: int) -> int:
+    """Where the operand that ends before ``i`` starts: a group or call, a name or a number."""
+    j = i
+    while j > 0 and s[j - 1] in " \t":
+        j -= 1
+    if j and s[j - 1] == ")":
+        depth = 0
+        for j in range(j - 1, -1, -1):
+            depth += s[j] == ")"
+            depth -= s[j] == "("
+            if depth == 0:
+                break
+    while j and (s[j - 1].isalnum() or s[j - 1] in "_."
+                 or s[j - 1] in "+-" and j > 2 and s[j - 2] in "eE" and s[j - 3].isdigit()):
+        j -= 1
+    return j
+
+
+def _operand_end(s: str, i: int) -> int:
+    """Where the operand that starts at ``i`` ends: a sign, then a group, a call, a name or
+    a number."""
+    j = i
+    while j < len(s) and s[j] in " \t":
+        j += 1
+    if j < len(s) and s[j] in "+-":
+        j += 1
+    while j < len(s) and (s[j].isalnum() or s[j] in "_."
+                          or s[j] in "+-" and s[j - 1] in "eE" and j > 1 and s[j - 2].isdigit()):
+        j += 1
+    if j < len(s) and s[j] == "(":
+        j = _close(s, j)
+    return j
+
+
+def _powers(text: str, rule) -> str:
+    """Every power operator (``^``, ``**``) in ``text`` written by ``rule(base, exponent)``,
+    the rightmost first (right-associative)."""
+    text = text.replace("**", "^")
+    while "^" in text:
+        k = text.rindex("^")
+        a, b = _operand_start(text, k), _operand_end(text, k + 1)
+        text = text[:a] + rule(text[a:k].strip(), text[k + 1:b].strip()).replace("^", "\0") + text[b:]
+    return text.replace("\0", "^")
 
 
 def _min(a, b):
@@ -383,6 +475,15 @@ FUNCTIONS = {
         "arctan": "atan",
         "pwl": None, "pwl_derivative": None, "ddt": None, "vec": None, "var": None,
     },
+    ("ngspice", "spicesharp"): {
+        "pwr": {True: "pwrs", False: "pwr"},
+        "ternary_fcn": lambda c, a, b: _ternary(f"({c}) != 0", a, b),
+        "sqr": lambda x: f"(({x})*({x}))",
+        "eq0": lambda x: f"(({x}) == 0)", "ne0": lambda x: f"(({x}) != 0)",
+        "gt0": lambda x: f"(({x}) > 0)", "lt0": lambda x: f"(({x}) < 0)",
+        "ge0": lambda x: f"(({x}) >= 0)", "le0": lambda x: f"(({x}) <= 0)",
+        "limit": None, "pwl_derivative": None, "ddt": None, "vec": None, "var": None,
+    },
     ("ngspice", "xyce"): {
         "log": "ln",
         "pwr": {True: "pwrs", False: lambda x, y: f"pow(abs({x}), {y})"},
@@ -399,6 +500,16 @@ FUNCTIONS = {
         "pwl": None, "pwl_derivative": None, "limit": None, "vec": None, "var": None,
     },
 }
+# The power operator where its meaning differs, by context (True: behavioral): how the
+# target writes ``base ^ exponent``. ngspice: |x|^y in parameters (xpressn.c, without a
+# compatibility mode), x^y for an integer y in behavioral expressions (PTpower). WRspice:
+# x^y in both (cmath1.cc v_power, inpfuncs.cc PTpower); SpiceSharp: |x|^y in both
+# (RealBuilder.cs, NodeTypes.Pow), pow(x, y) is x^y (HelperFunctions.Pow).
+POWER = {
+    ("ngspice", "wrspice"): {False: lambda a, b: f"(abs({a})^({b}))"},
+    ("ngspice", "spicesharp"): {True: lambda a, b: f"pow({a}, {b})"},
+}
+
 # Expression variables with another name: a string, a tuple for one that exists in
 # behavioral expressions only, "" for none. Xyce: temp is the temperature in C, freq and
 # hertz the AC frequency, pi; ngspice: temper, hertz (inpptree.c, behavioral only), no pi
@@ -409,6 +520,9 @@ VARIABLES = {
     # WRspice device expressions know time, freq and omega (inpptree.c specSigs); what
     # freq is outside an AC analysis is not stated.
     ("ngspice", "wrspice"): {"hertz": ""},
+    # SpiceSharpParser: TEMP in C, TIME, FREQ (a constant 0 in parameters), PI, E
+    # (SpiceEvaluationContext.cs).
+    ("ngspice", "spicesharp"): {"temper": "temp", "hertz": ""},
 }
 # Signal accessors in expressions.
 PROBES = {"v", "i", "vr", "vi", "vm", "vp", "vdb", "ir", "ii", "im", "ip", "idb"}
@@ -420,15 +534,43 @@ SOURCE_FUNCTIONS = {
     "xyce": {"pulse", "sin", "exp", "sffm", "pwl", "pat"},
     "ngspice": {"pulse", "sin", "sine", "exp", "sffm", "pwl", "am", "trnoise", "trrandom"},
     "wrspice": {"pulse", "sin", "exp", "sffm", "pwl"},
+    # SpiceSharpParser: SpiceObjectMappings.cs waveforms, AM and SFFM in ngspice's argument
+    # order (AMGenerator.cs, SFFMGenerator.cs).
+    "spicesharp": {"pulse", "sin", "sine", "exp", "sffm", "pwl", "am"},
 }
 SOURCE_NAMES = {("ngspice", "xyce"): {"sine": "sin"}, ("ngspice", "wrspice"): {"sine": "sin"}}
 BLANK_ARGUMENTS = {"wrspice"}
+# Targets that read DC and AC followed by their values, not as assignments (Xyce;
+# SpiceSharpParser, SourceGenerator.cs).
+SOURCE_KEYWORDS = {"xyce", "spicesharp"}
+# What a pulse with a zero rise or fall time rises in: Xyce zero (Reference Guide table
+# 6-1), ngspice the time step (vsrcload.c), WRspice the time step (inptran.cc), SpiceSharp
+# zero (Pulse.cs: a stated time is taken as stated).
+PULSE_ZERO_EDGE = {"xyce": "zero", "ngspice": "the time step", "wrspice": "the time step",
+                   "spicesharp": "zero"}
+# Source functions whose arguments the target reads in part only: a test of the arguments
+# inside the parentheses and the words after them. SpiceSharpParser: EXP takes exactly
+# six (ExpGenerator.cs), PULSE seven, SIN six at most (PulseGenerator.cs, SineGenerator.cs),
+# PWL no R or TD (PwlGenerator.cs reads them in the LTspice dialect only).
+def _pwl_without_keys(args: list[str], after: list[str]) -> bool:
+    keys = {after[k] for k in range(len(after) - 1) if after[k + 1] == "="}
+    return "=" not in args and not keys & {"r", "td"}
+
+
+SOURCE_ARGUMENTS = {"spicesharp": {
+    "exp": lambda args, after: len(args) == 6,
+    "pulse": lambda args, after: len(args) <= 7,
+    "sin": lambda args, after: len(args) <= 6, "sine": lambda args, after: len(args) <= 6,
+    "pwl": _pwl_without_keys,
+}}
 
 # B and E/G with an expression in the target: the keyword of an E/G expression and
 # whether the expression is braced. Xyce: VALUE={expr} (Reference Guide, E and G);
 # WRspice: ``function expr`` (spSources.hlp, Dependent Sources); its device expressions
 # are parsed until they end (inpptree.cc getTree), bare. ngspice reads every form.
-BEHAVIORAL = {"xyce": ("value", True), "wrspice": ("function", False)}
+BEHAVIORAL = {"xyce": ("value", True), "wrspice": ("function", False),
+              # SpiceSharpParser has no vol= or cur= (VoltageSourceGenerator.cs).
+              "spicesharp": ("value", True)}
 # Targets whose behavioral expressions have no ternary operator (WRspice: inpptree.cc
 # bad_ops).
 NO_TERNARY = {"wrspice"}
@@ -441,6 +583,7 @@ DOTS = {
     ("ngspice", "xyce"): {".incl": ".include", ".params": ".param"},
     # WRspice: a function is a .param with arguments (spInput.hlp, .param Line).
     ("ngspice", "wrspice"): {".incl": ".include", ".params": ".param", ".func": ".param"},
+    ("ngspice", "spicesharp"): {".incl": ".include", ".params": ".param"},
 }
 # Bookkeeping of the source dialect that is not part of the circuit: dropped with its block.
 DROP = {
@@ -463,6 +606,9 @@ OPTION_MAP = {
                           "defw": None, "rshunt": None, "cshunt": None, "rseries": None},
     ("ngspice", "wrspice"): {"scale": None, "defad": "defad", "defas": "defas", "defl": "defl",
                              "defw": "defw", "rshunt": None, "cshunt": None, "rseries": None},
+    # SpiceSharpParser (OptionsControl.cs): none of them, another option is an error.
+    ("ngspice", "spicesharp"): {k: None for k in ("scale", "defad", "defas", "defl", "defw",
+                                                  "rshunt", "cshunt", "rseries")},
 }
 # Subcircuit parameters in WRspice take the value of the outermost scope that defines the
 # name unless parhier is local (subexpand.cc); ngspice's take the innermost.
@@ -489,6 +635,10 @@ NO_ELEMENT = {
     # m, b (Josephson junction).
     ("ngspice", "wrspice"): {"a": "XSPICE code model", "n": "OSDI device",
                              "p": "coupled lines (P)", "y": "lossy line (Y)"},
+    # SpiceSharpParser (SpiceObjectMappings.cs): R L C K B V H E I G F S W Q D M X J T.
+    ("ngspice", "spicesharp"): {"a": "XSPICE code model", "n": "OSDI device",
+                                "p": "coupled lines (P)", "y": "lossy line (Y)",
+                                "u": "RC line (U)", "o": "lossy line (O)", "z": "MESFET (Z)"},
 }
 
 # Whether the target writes PARAMS: before the parameters of a .subckt or X line: Xyce
@@ -760,6 +910,8 @@ class Translator:
         self.modules: dict[str, str] = {}       # Verilog-A module -> version
         self.globals: set[str] = set()          # global nodes the target has to declare
         self.analyses: set[str] = set()         # the analyses the circuit runs
+        self.depth = 0                          # subcircuit definitions around the statement
+        self.in_deck = False                    # the file translated is the deck
 
     # ----------------------------------------------------------------- context
 
@@ -822,7 +974,12 @@ class Translator:
     def expression(self, text: str, behavioral: bool) -> str:
         """A whole expression in the target: its functions, and in a behavioral one of a
         target without the ternary operator (NO_TERNARY) every ``?:`` as a selection."""
+        power = POWER.get(self.pair, {}).get(behavioral)
+        if power and ("^" in text or "**" in text):
+            text = _powers(text, power)             # before the functions, which may write ^
         new = self.expr(text, behavioral)
+        if self.tgt in NO_TABS:
+            new = new.replace("\t", " ")
         return _selects(new) if behavioral and self.tgt in NO_TERNARY else new
 
     def expr(self, text: str, behavioral: bool) -> str:
@@ -942,7 +1099,8 @@ class Translator:
     def statements(self, statements: list[Statement], deck: bool) -> list[Statement]:
         out: list[Statement] = []
         end = None
-        depth = 0
+        self.depth = 0
+        self.in_deck = deck
         for k, st in enumerate(statements):
             if deck and k == 0:
                 out.append(st)
@@ -961,11 +1119,11 @@ class Translator:
                 if head == ".control":
                     end = ".endc"
                 continue
-            depth += head in (".subckt", ".macro")
+            self.depth += head in (".subckt", ".macro")
             if head in (".ends", ".eom"):
-                if not depth:                   # Xyce passes over an .ends without .subckt
+                if not self.depth:              # Xyce passes over an .ends without .subckt
                     continue
-                depth -= 1
+                self.depth -= 1
             out += self.statement(st)
         return out
 
@@ -1001,10 +1159,41 @@ class Translator:
             self.nodes(st)
         if letter == "x":
             self.params_keyword(st)
+            self.call_scope(st)
+        if letter == "q" and self.tgt in EMITTER_SUBSTRATE:
+            self.substrate(st)
+        if letter == "c" and self.tgt in CAPACITOR_MODEL_GEOMETRY and \
+                any(self.model(x) for x in st.words()[3:4]) and "l" not in st.words():
+            raise Untranslatable(f"capacitor model without l ({self.tgt} computes it from the geometry)")
         self.multiplier(st)
         if letter in LETTERS.get(self.pair, {}):
             st.set(0, LETTERS[self.pair][letter] + st.tokens[0].text)
         return [st]
+
+    def substrate(self, st: Statement) -> None:
+        """A Q with three terminals: its substrate is ground in ngspice (bjt.c), stated."""
+        w = st.words()
+        at = next((i for i in range(4, len(w)) if self.model(w[i])), None)
+        if at == 4:
+            st.tokens.insert(4, Token(" ", "0"))
+            st.edited = True
+
+    def call_scope(self, st: Statement) -> None:
+        """SpiceSharpParser evaluates an X line parameter in the subcircuit's scope, unless
+        it is the name itself (EvaluationContext.cs, SubCircuitGenerator.cs); ngspice in
+        the caller's. An expression that names a parameter of the subcircuit differs."""
+        if self.tgt not in CALLEE_SCOPE:
+            return
+        w = st.words()
+        sub, at = _subckt_of(w)
+        inside = self.ctx.declared.get(sub, set()) | self.ctx.inner.get(sub, set())
+        for i in range(at + 1, len(w) - 2):
+            if w[i + 1] != "=" or w[i + 2].strip("{}'") == w[i]:
+                continue
+            names = {m.lower() for m in _IDENT.findall(w[i + 2])}
+            if names & inside:
+                raise Untranslatable(f"X line parameter {w[i]}={st.tokens[i + 2].text} names a "
+                                     f"parameter of the subcircuit")
 
     def multiplier(self, st: Statement) -> None:
         """m on an element whose letter or model the target has no multiplier for."""
@@ -1092,7 +1281,26 @@ class Translator:
             pass
         else:
             raise Untranslatable(f"dot command {head}")
+        if self.tgt in CASE_SENSITIVE_NAMES:
+            self.names_in_case(st)
         return [st]
+
+    def names_in_case(self, st: Statement) -> None:
+        """Dot commands, library sections in lower case, .ends without its name: compared
+        case-sensitively by SpiceSharpParser (LibProcessor.cs, ParseTreeEvaluator.cs). A
+        section in the deck itself it reads as a file to include."""
+        w = st.words()
+        if st.tokens[0].text != w[0]:
+            st.set(0, w[0])
+        if w[0] == ".ends" and len(w) > 1:
+            del st.tokens[1:]
+            st.edited = True
+        elif w[0] in (".lib", ".endl") and len(w) > 1:
+            if w[0] == ".lib" and len(w) == 2 and self.in_deck:
+                raise Untranslatable(f"library section in the deck ({self.tgt} reads it as a file)")
+            last = len(w) - 1
+            if (w[0] == ".endl" or len(w) == 2 or last == 2) and st.tokens[last].text != w[last]:
+                st.set(last, w[last])
 
     def options(self, st: Statement) -> list[Statement]:
         """The options that change the circuit, in the target's form; the rest dropped."""
@@ -1176,7 +1384,7 @@ class Translator:
             text = "".join(t.ws + t.text for t in toks)[len(toks[0].ws):]
             braced = len(toks) == 1 and text[:1] in "{'"
             body = text[1:-1] if braced else text
-            new = self.expr(body, behavioral=False)
+            new = self.expression(body, behavioral=False)
             quote = braced and text[0] not in READ_QUOTES[self.tgt] or \
                 len(toks) > 1 and self.tgt in ONE_TOKEN_VALUES
             if new != body or quote:
@@ -1274,6 +1482,14 @@ class Translator:
         if not target:
             raise Untranslatable(f"{model} ({family} level {lvl}) has no {self.tgt} model")
         by_version = LEVEL_OF_VERSION.get((self.tgt, model))
+        if family in NO_LEVEL.get(self.tgt, ()):
+            if k is not None:
+                ws = st.tokens[k].ws
+                del st.tokens[k:k + 3]
+                if k < len(st.tokens):
+                    st.tokens[k].ws = st.tokens[k].ws or ws
+                st.edited = True
+            return
         if by_version:
             computed = self.computed_version(st, model)
             near = [v for v in by_version if v[:2] == computed[:2]]
@@ -1390,6 +1606,9 @@ class Translator:
     def mutual(self, st: Statement) -> list[Statement]:
         """K couples every pair of the inductors it lists with one coefficient (Xyce);
         ngspice couples two per K line."""
+        if self.depth and self.tgt in GLOBAL_COUPLING:
+            raise Untranslatable(f"mutual inductor inside a subcircuit ({self.tgt} looks the "
+                                 f"inductors up outside it)")
         w = st.words()
         names = [t.text for t in st.tokens[1:] if t.text.lower()[:1] == "l" and
                  not is_number(t.text) and t.text.lower() not in self.ctx.params]
@@ -1411,6 +1630,8 @@ class Translator:
 
     def source(self, st: Statement) -> None:
         w = st.words()
+        if self.tgt in ONE_EXPRESSION and sum(x[:1] == "{" for x in w) > 1:
+            raise Untranslatable(f"source with more than one expression ({self.tgt} takes one)")
         for i in range(3, len(w)):
             if w[i] not in SOURCE_FUNCTIONS[self.src] or i + 1 < len(w) and w[i + 1] == "=":
                 continue
@@ -1421,18 +1642,21 @@ class Translator:
                 st.set(i, new)
             if new == "pwl" and self.tgt == "ngspice":
                 self.pwl(st, i)
+            args, after = _function_args(w, i)
+            edge = PULSE_ZERO_EDGE[self.src], PULSE_ZERO_EDGE[self.tgt]
+            if new == "pulse" and edge[0] != edge[1] and \
+                    any(is_number(a) and number(a) == 0 for a in args[3:5]):
+                raise Untranslatable(f"pulse with zero rise or fall time ({edge[0]} in "
+                                     f"{self.src}, {edge[1]} in {self.tgt})")
+            check = SOURCE_ARGUMENTS.get(self.tgt, {}).get(new)
+            if check and not check(args, after):
+                raise Untranslatable(f"{new} source with arguments {self.tgt} does not read")
             if self.tgt in BLANK_ARGUMENTS:
                 self.blank_arguments(st, i)
-            if new == "pulse" and self.src == "xyce":
-                # A zero rise or fall time is zero in Xyce, the time step in ngspice
-                # (Xyce Reference Guide table 6-1, ngspice vsrcload.c).
-                args = [x for x in w[i + 1:] if x not in ("(", ")", ",")]
-                if any(is_number(a) and number(a) == 0 for a in args[3:5]):
-                    raise Untranslatable("pulse with zero rise or fall time")
             self.dc_value(st, i)
             break
-        if self.tgt == "xyce":
-            # Xyce reads DC and AC followed by their values, not as assignments.
+        w = st.words()
+        if self.tgt in SOURCE_KEYWORDS:
             for i in range(len(w) - 1, 2, -1):
                 if w[i] in ("dc", "ac") and i + 2 < len(w) and w[i + 1] == "=":
                     del st.tokens[i + 1]
@@ -1573,6 +1797,19 @@ class Translator:
                     st.tokens[i + 2:end] = [Token(st.tokens[i + 2].ws, text)]
                     st.edited = True
                 return
+
+
+def _function_args(w: list[str], at: int) -> tuple[list[str], list[str]]:
+    """The arguments of the source function at ``at``, inside its parentheses or up to the
+    end, and the words after its parentheses."""
+    if at + 1 < len(w) and w[at + 1] == "(":
+        depth = 0
+        for k in range(at + 1, len(w)):
+            depth += w[k] == "("
+            depth -= w[k] == ")"
+            if depth == 0:
+                return [x for x in w[at + 2:k] if x != ","], w[k + 1:]
+    return [x for x in w[at + 1:] if x not in ("(", ")", ",")], []
 
 
 def _subckt_of(w: list[str]) -> tuple[str, int]:
