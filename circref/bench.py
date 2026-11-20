@@ -6,7 +6,10 @@ and timings kept.
     out/<level>/<simulator>/<circuit>/<k>.npz       the signals of analysis k
     out/<level>/<simulator>/<circuit>/<k>.log       what the simulator printed
 
-One line per finished circuit and simulator goes to the log as it happens.
+One line per finished circuit and simulator goes to the log as it happens. Every job runs
+in a process of its own, so a worker that dies takes only its own job. A run into an
+``out`` that has records runs only the jobs without one; records of a circref error go
+and their jobs run again.
 """
 from __future__ import annotations
 
@@ -17,13 +20,15 @@ import os
 import platform
 import re
 import resource
+import selectors
 import shutil
 import signal
 import subprocess
+import sys
 import time
 import tomllib
 from collections import Counter
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import numpy as np
@@ -36,6 +41,7 @@ from .translate import Untranslatable, translate
 
 CONFIG = tomllib.loads((ROOT / "bench.toml").read_text(encoding="utf-8"))
 LEVELS: dict[str, dict] = CONFIG["level"]
+WORK = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
 
 
 def _limits(memory: int):
@@ -55,6 +61,38 @@ def _cpu() -> str:
     return f"{model}, {len(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else os.cpu_count()} cores"
 
 
+def _output(proc: subprocess.Popen, timeout: float) -> tuple[str, bool]:
+    """What the simulator prints until it exits or ``timeout`` passes, its first and last
+    half of ``log_bytes`` and never more in memory: (output, timed out)."""
+    half, fd = CONFIG["run"]["log_bytes"] // 2, proc.stdout.fileno()
+    head, end, cut = bytearray(), bytearray(), 0
+    deadline = time.monotonic() + timeout
+    timed_out = False
+    with selectors.DefaultSelector() as sel:
+        sel.register(fd, selectors.EVENT_READ)
+        while (left := deadline - time.monotonic()) > 0:
+            if not sel.select(left):
+                continue
+            chunk = os.read(fd, 1 << 16)
+            if not chunk:
+                break
+            n = min(len(chunk), half - len(head))
+            head += chunk[:n]
+            end += chunk[n:]
+            if len(end) > half:
+                cut += len(end) - half
+                del end[:len(end) - half]
+        try:
+            proc.wait(max(deadline - time.monotonic(), 0))
+        except subprocess.TimeoutExpired:
+            os.killpg(proc.pid, signal.SIGKILL)
+            proc.wait()
+            timed_out = True
+    proc.stdout.close()
+    skipped = f"\n[... {cut} bytes ...]\n".encode() if cut else b""
+    return (bytes(head) + skipped + bytes(end)).decode("latin-1"), timed_out
+
+
 def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Path, k: int,
               timeout: float, memory_gb: float, env: dict) -> dict:
     """One analysis on one simulator: the record, the signals in keep/<k>.npz."""
@@ -69,15 +107,8 @@ def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Pat
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             stdin=subprocess.DEVNULL, start_new_session=True, env=env,
                             preexec_fn=_limits(int(memory_gb * 2**30)))
-    try:
-        output, _ = proc.communicate(timeout=timeout)
-        timed_out = False
-    except subprocess.TimeoutExpired:
-        os.killpg(proc.pid, signal.SIGKILL)
-        output, _ = proc.communicate()
-        timed_out = True
+    log, timed_out = _output(proc, timeout)
     rec["wall_s"] = round(time.monotonic() - t0, 4)
-    log = output.decode("latin-1")
     (keep / f"{k}.log").write_text(log)
     if ad.timing and (m := re.search(ad.timing, log)):
         rec["sim_s"] = float(m.group(1))
@@ -140,6 +171,16 @@ def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: 
         shutil.rmtree(dest, ignore_errors=True)
 
 
+def _job(path: Path, simulator: str, levels: list[str], out: Path, timeout: float,
+         memory_gb: float, env: dict) -> list[dict]:
+    """run_circuit in a process of its own."""
+    p = subprocess.run([sys.executable, "-m", "circref.bench"], capture_output=True, text=True, env=env,
+                       input=json.dumps([str(path), simulator, levels, str(out), timeout, memory_gb]))
+    if p.returncode:
+        raise RuntimeError(f"worker exit {p.returncode}: {tail(p.stderr)}")
+    return json.loads(p.stdout.splitlines()[-1])
+
+
 def select(patterns: list[str]) -> list[Circuit]:
     return [c for c in iter_circuits()
             if not patterns or any(fnmatch.fnmatch(c.name, p) for p in patterns)]
@@ -148,21 +189,26 @@ def select(patterns: list[str]) -> list[Circuit]:
 def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
         workers: int, timeout: float, memory_gb: float, threads: int = 1,
         shard: tuple[int, int] = (0, 1)) -> int:
-    """A worker process per job, a job per circuit and simulator. ``threads``: what every
+    """A job per circuit and simulator, ``workers`` at a time. ``threads``: what every
     simulator may use per run (OpenMP), the same for all."""
     env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
                                                   "MKL_NUM_THREADS")}
-    jobs = [(c, a) for c in circuits for a in adapters][shard[0]::shard[1]]
     out.mkdir(parents=True, exist_ok=True)
+    results = out / "results.jsonl"
+    kept = [r for r in map(json.loads, results.read_text().splitlines() if results.exists() else [])
+            if r["status"] != "error"]
+    results.write_text("".join(json.dumps(r) + "\n" for r in kept))
+    done = {(r["circuit"], r["simulator"], r["level"]) for r in kept}
+    jobs = [(c, a) for c in circuits for a in adapters
+            if any((c.name, a.name, lv) not in done for lv in levels)][shard[0]::shard[1]]
     (out / "run.json").write_text(json.dumps({"threads": threads, "timeout_s": timeout,
                                               "memory_gb": memory_gb, "workers": workers,
                                               "levels": levels, "cpu": _cpu()}))
-    work = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
     counts: Counter = Counter()
     t0 = time.monotonic()
-    with open(out / "results.jsonl", "a") as results, ProcessPoolExecutor(workers) as pool:
-        futures = {pool.submit(run_circuit, c.path, a.name, levels, work, out, timeout, memory_gb,
-                               env): (c, a) for c, a in jobs}
+    with open(results, "a") as log, ThreadPoolExecutor(workers) as pool:
+        futures = {pool.submit(_job, c.path, a.name, levels, out, timeout, memory_gb, env): (c, a)
+                   for c, a in jobs}
         for done, f in enumerate(as_completed(futures), 1):
             c, a = futures[f]
             try:
@@ -171,8 +217,8 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
                 recs = [{"circuit": c.name, "simulator": a.name, "level": lv, "status": "error",
                          "message": f"{type(e).__name__}: {e}"} for lv in levels]
             for r in recs:
-                results.write(json.dumps(r) + "\n")
-            results.flush()
+                log.write(json.dumps(r) + "\n")
+            log.flush()
             mine = Counter(r["status"] for r in recs)
             counts += mine
             wall = sum(r.get("wall_s", 0) for r in recs)
@@ -182,3 +228,9 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
                   flush=True)
     print(" ".join(f"{k}={v}" for k, v in sorted(counts.items())), flush=True)
     return 0
+
+
+if __name__ == "__main__":                              # a job of run()
+    path, simulator, levels, out, timeout, memory_gb = json.loads(sys.stdin.read())
+    print(json.dumps(run_circuit(Path(path), simulator, levels, WORK, Path(out), timeout, memory_gb,
+                                 dict(os.environ))))

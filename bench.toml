@@ -23,6 +23,10 @@ vntol = 1e-7
 abstol = 1e-13
 points = 20000
 
+[run]
+# What is kept of a simulator's output per analysis: its first and last half of this.
+log_bytes = 1_000_000
+
 [compare]
 # Added to a signal's peak before dividing by it, so a signal near zero does not dominate.
 floor = { v = 1e-6, i = 1e-12 }
