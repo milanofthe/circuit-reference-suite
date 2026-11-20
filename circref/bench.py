@@ -45,7 +45,10 @@ WORK = Path(os.environ.get("CIRCREF_WORK", "/scratch/circref"))
 
 
 def _limits(memory: int):
+    """The limits of a simulator's process: its address space, and the size of a file it
+    writes (``output_bytes``; beyond it the kernel stops it with SIGXFSZ)."""
     def apply():
+        resource.setrlimit(resource.RLIMIT_FSIZE, (CONFIG["run"]["output_bytes"],) * 2)
         try:
             resource.setrlimit(resource.RLIMIT_AS, (memory, memory))
         except (ValueError, OSError):                   # macOS: no address-space limit
