@@ -7,8 +7,10 @@ are not committed (.gitignore): build writes them, and validate, check and run w
 ones that are missing.
 
 ``network``: a linear RC network, a capacitor ``c`` from every node to ground and a
-resistor ``r`` per edge of a graph, driven at node 1 through ``source_r`` by a pulse. The
-networks differ only in the graph, and with it in the elimination structure of the matrix:
+resistor ``r`` per edge of a graph, driven at node 1 through ``source_r`` by a source of
+the DC value ``dc`` and a pulse in time. The netlists run the operating point, one linear
+solve of the resistor network, and the transient. The networks differ only in the graph,
+and with it in the elimination structure of the matrix:
 
     ladder  a path of ``size`` nodes: the elimination tree is one chain
     mesh    a ``size`` x ``size`` grid
@@ -104,21 +106,21 @@ def _num(x: float) -> str:
 def _ngspice(g: dict, title: str, n: int, edges, probes) -> list[str]:
     p = g["pulse"]
     lines = [title,
-             f"vin src 0 pulse({_num(p['v1'])} {_num(p['v2'])} {_num(p['delay'])} {_num(p['rise'])} "
+             f"vin src 0 dc {_num(g['dc'])} pulse({_num(p['v1'])} {_num(p['v2'])} {_num(p['delay'])} {_num(p['rise'])} "
              f"{_num(p['fall'])} {_num(p['width'])} {_num(p['period'])})",
              f"rsrc src n1 {_num(g['source_r'])}"]
     lines += [f"c{i} n{i} 0 {_num(g['c'])}" for i in range(1, n + 1)]
     lines += [f"r{k} n{a} n{b} {_num(g['r'])}" for k, (a, b) in enumerate(edges, 1)]
     t = g["tran"]
     return lines + [".options klu", ".save " + " ".join(f"v(n{q})" for q in probes),
-                    f".tran {_num(t['step'])} {_num(t['stop'])}", ".end"]
+                    ".op", f".tran {_num(t['step'])} {_num(t['stop'])}", ".end"]
 
 
 def _vacask(g: dict, title: str, n: int, edges, probes) -> list[str]:
     p = g["pulse"]
     lines = [title, 'load "spice/resistor.osdi"', 'load "spice/capacitor.osdi"',
              "model r sp_resistor", "model c sp_capacitor", "model vsource vsource",
-             f'vin (src 0) vsource dc={_num(p["v1"])} type="pulse" val0={_num(p["v1"])} val1={_num(p["v2"])} '
+             f'vin (src 0) vsource dc={_num(g["dc"])} type="pulse" val0={_num(p["v1"])} val1={_num(p["v2"])} '
              f'delay={_num(p["delay"])} rise={_num(p["rise"])} fall={_num(p["fall"])} '
              f'width={_num(p["width"])} period={_num(p["period"])}',
              f"rsrc (src n1) r r={_num(g['source_r'])}"]
@@ -126,6 +128,7 @@ def _vacask(g: dict, title: str, n: int, edges, probes) -> list[str]:
     lines += [f"r{k} (n{a} n{b}) r r={_num(g['r'])}" for k, (a, b) in enumerate(edges, 1)]
     t = g["tran"]
     return lines + ["control", "  save " + " ".join(f"v(n{q})" for q in probes),
+                    "  analysis op1 op",
                     f"  analysis tran1 tran step={_num(t['step'])} stop={_num(t['stop'])}", "endc"]
 
 

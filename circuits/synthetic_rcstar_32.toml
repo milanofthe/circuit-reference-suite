@@ -1,0 +1,15 @@
+title = "RC star"
+case = "synthetic_rcstar"
+source = "generated/32.cir"
+outputs = [
+    "v(n1)",
+    "v(n11)",
+    "v(n321)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/32.cir.vacask"

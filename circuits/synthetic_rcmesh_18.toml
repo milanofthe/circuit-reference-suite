@@ -1,0 +1,15 @@
+title = "RC mesh, 2D grid"
+case = "synthetic_rcmesh"
+source = "generated/18.cir"
+outputs = [
+    "v(n1)",
+    "v(n153)",
+    "v(n324)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/18.cir.vacask"

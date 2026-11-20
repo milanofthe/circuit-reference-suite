@@ -1,0 +1,15 @@
+title = "RC binary tree"
+case = "synthetic_rctree"
+source = "generated/16.cir"
+outputs = [
+    "v(n1)",
+    "v(n32768)",
+    "v(n65535)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/16.cir.vacask"
