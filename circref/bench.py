@@ -8,8 +8,9 @@ and timings kept.
 
 One line per finished circuit and simulator goes to the log as it happens. Every job runs
 in a process of its own, so a worker that dies takes only its own job. A run into an
-``out`` that has records runs only the jobs without one; records of a circref error go
-and their jobs run again.
+``out`` that has records runs only the jobs without one; a job with a record of a circref
+error, or of a status named to ``run`` (a timeout or a kill of a run whose machine was
+short of memory), goes and runs again.
 """
 from __future__ import annotations
 
@@ -191,15 +192,16 @@ def select(patterns: list[str]) -> list[Circuit]:
 
 def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
         workers: int, timeout: float, memory_gb: float, threads: int = 1,
-        shard: tuple[int, int] = (0, 1)) -> int:
+        shard: tuple[int, int] = (0, 1), redo: tuple[str, ...] = ()) -> int:
     """A job per circuit and simulator, ``workers`` at a time. ``threads``: what every
     simulator may use per run (OpenMP), the same for all."""
     env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
                                                   "MKL_NUM_THREADS")}
     out.mkdir(parents=True, exist_ok=True)
     results = out / "results.jsonl"
-    kept = [r for r in map(json.loads, results.read_text().splitlines() if results.exists() else [])
-            if r["status"] != "error"]
+    kept = [json.loads(l) for l in (results.read_text().splitlines() if results.exists() else [])]
+    again = {(r["circuit"], r["simulator"]) for r in kept if r["status"] in ("error", *redo)}
+    kept = [r for r in kept if (r["circuit"], r["simulator"]) not in again]
     results.write_text("".join(json.dumps(r) + "\n" for r in kept))
     done = {(r["circuit"], r["simulator"], r["level"]) for r in kept}
     jobs = [(c, a) for c in circuits for a in adapters

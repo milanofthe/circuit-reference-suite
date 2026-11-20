@@ -101,7 +101,8 @@ def cmd_run(args) -> int:
     adapters = [ADAPTERS[n] for n in (args.sim or ADAPTERS)]
     shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
     return bench.run(bench.select(args.circuit), adapters, args.level or list(bench.LEVELS),
-                     Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard)
+                     Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard,
+                     tuple(args.redo))
 
 
 def cmd_compare(args) -> int:
@@ -129,6 +130,8 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--jobs", type=int, default=int(os.environ.get("FALLLOW_CORES", os.cpu_count())))
     sp.add_argument("--timeout", type=float, default=600, help="seconds per analysis")
     sp.add_argument("--memory", type=float, default=4, help="GB address space per run")
+    sp.add_argument("--redo", action="append", default=[],
+                    help="status whose jobs in OUT run again, repeatable (errors always do)")
     sp.add_argument("--level", action="append", default=[],
                     help="precision level of bench.toml, repeatable; all when none")
     sp.add_argument("--threads", type=int, default=1, help="threads per simulator run, the same for all")
