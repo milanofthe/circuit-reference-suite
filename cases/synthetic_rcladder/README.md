@@ -12,14 +12,32 @@ passive | ngspice, vacask | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`generated/100.cir`](generated/100.cir) | ngspice | tran | 201 | medium | yes | core | - |
-| [`generated/100.cir.vacask`](generated/100.cir.vacask) | vacask | tran | 201 | medium | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`generated/1000.cir`](generated/1000.cir) | ngspice | tran | 2001 | large | yes | core | - |
-| [`generated/1000.cir.vacask`](generated/1000.cir.vacask) | vacask | tran | 2001 | large | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`generated/10000.cir`](generated/10000.cir) | ngspice | tran | 20001 | xl | yes | core | - |
-| [`generated/10000.cir.vacask`](generated/10000.cir.vacask) | vacask | tran | 20001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`generated/100000.cir`](generated/100000.cir) | ngspice | tran | 200001 | xl | yes | core | - |
-| [`generated/100000.cir.vacask`](generated/100000.cir.vacask) | vacask | tran | 200001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/100.cir`](generated/100.cir) | ngspice | op, tran | 201 | medium | yes | core | - |
+| [`generated/100.cir.vacask`](generated/100.cir.vacask) | vacask | op, tran | 201 | medium | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/180.cir`](generated/180.cir) | ngspice | op, tran | 361 | medium | yes | core | - |
+| [`generated/180.cir.vacask`](generated/180.cir.vacask) | vacask | op, tran | 361 | medium | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/320.cir`](generated/320.cir) | ngspice | op, tran | 641 | medium | yes | core | - |
+| [`generated/320.cir.vacask`](generated/320.cir.vacask) | vacask | op, tran | 641 | medium | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/560.cir`](generated/560.cir) | ngspice | op, tran | 1121 | large | yes | core | - |
+| [`generated/560.cir.vacask`](generated/560.cir.vacask) | vacask | op, tran | 1121 | large | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/1000.cir`](generated/1000.cir) | ngspice | op, tran | 2001 | large | yes | core | - |
+| [`generated/1000.cir.vacask`](generated/1000.cir.vacask) | vacask | op, tran | 2001 | large | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/1800.cir`](generated/1800.cir) | ngspice | op, tran | 3601 | large | yes | core | - |
+| [`generated/1800.cir.vacask`](generated/1800.cir.vacask) | vacask | op, tran | 3601 | large | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/3200.cir`](generated/3200.cir) | ngspice | op, tran | 6401 | large | yes | core | - |
+| [`generated/3200.cir.vacask`](generated/3200.cir.vacask) | vacask | op, tran | 6401 | large | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/5600.cir`](generated/5600.cir) | ngspice | op, tran | 11201 | xl | yes | core | - |
+| [`generated/5600.cir.vacask`](generated/5600.cir.vacask) | vacask | op, tran | 11201 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/10000.cir`](generated/10000.cir) | ngspice | op, tran | 20001 | xl | yes | core | - |
+| [`generated/10000.cir.vacask`](generated/10000.cir.vacask) | vacask | op, tran | 20001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/18000.cir`](generated/18000.cir) | ngspice | op, tran | 36001 | xl | yes | core | - |
+| [`generated/18000.cir.vacask`](generated/18000.cir.vacask) | vacask | op, tran | 36001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/32000.cir`](generated/32000.cir) | ngspice | op, tran | 64001 | xl | yes | core | - |
+| [`generated/32000.cir.vacask`](generated/32000.cir.vacask) | vacask | op, tran | 64001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/56000.cir`](generated/56000.cir) | ngspice | op, tran | 112001 | xl | yes | core | - |
+| [`generated/56000.cir.vacask`](generated/56000.cir.vacask) | vacask | op, tran | 112001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/100000.cir`](generated/100000.cir) | ngspice | op, tran | 200001 | xl | yes | core | - |
+| [`generated/100000.cir.vacask`](generated/100000.cir.vacask) | vacask | op, tran | 200001 | xl | yes | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
 
 Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
@@ -27,8 +45,8 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 | as written | resolves to | netlists |
 |---|---|---|
-| `spice/capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) | 4 |
-| `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 4 |
+| `spice/capacitor.osdi` | [libraries/vacask_spice_va/capacitor.va](../../libraries/vacask_spice_va/capacitor.va) | 13 |
+| `spice/resistor.osdi` | [libraries/vacask_spice_va/resistor.va](../../libraries/vacask_spice_va/resistor.va) | 13 |
 
 ## Notes
 

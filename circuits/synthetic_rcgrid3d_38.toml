@@ -1,0 +1,15 @@
+title = "RC grid, 3D"
+case = "synthetic_rcgrid3d"
+source = "generated/38.cir"
+outputs = [
+    "v(n1)",
+    "v(n26695)",
+    "v(n54872)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/38.cir.vacask"

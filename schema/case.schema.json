@@ -37,13 +37,14 @@
     "generator": {
       "type": "object",
       "description": "A case written by circref/generate.py, with the generator's parameters; netlists state their size.",
-      "required": ["network", "r", "c", "source_r", "pulse", "tran"],
+      "required": ["network", "r", "c", "source_r", "dc", "pulse", "tran"],
       "additionalProperties": false,
       "properties": {
         "network": {"enum": ["ladder", "mesh", "grid3d", "star", "ring", "random", "tree"]},
         "r": {"type": "number", "exclusiveMinimum": 0},
         "c": {"type": "number", "exclusiveMinimum": 0},
         "source_r": {"type": "number", "exclusiveMinimum": 0},
+        "dc": {"type": "number", "description": "The source's DC value: the operating point is solved at it, the transient starts from the pulse."},
         "pulse": {
           "type": "object",
           "required": ["v1", "v2", "delay", "rise", "fall", "width", "period"],

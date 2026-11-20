@@ -1,0 +1,15 @@
+title = "RC ladder"
+case = "synthetic_rcladder"
+source = "generated/18000.cir"
+outputs = [
+    "v(n1)",
+    "v(n1800)",
+    "v(n18000)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/18000.cir.vacask"

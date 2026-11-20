@@ -148,9 +148,10 @@ def _simulate(ad: Adapter, c: Circuit, text: str, a: dict, deck: Path, keep: Pat
 
 def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: Path,
                 timeout: float, memory_gb: float, env: dict, threads: int,
-                repeats: int) -> list[dict]:
-    """Every analysis of a circuit on one simulator at every level: staged and translated
-    once, a deck per level and analysis. Runs in a worker process."""
+                repeats: int, types: list[str]) -> list[dict]:
+    """Every analysis of a circuit on one simulator at every level (of the ``types``, when
+    any are named): staged and translated once, a deck per level and analysis. Runs in a
+    worker process."""
     c, ad = load_circuit(path), ADAPTERS[simulator]
     base = {"circuit": c.name, "simulator": ad.name, "version": ad.version()}
     nl = next((c.variants[d] for d in ad.dialects if d in c.variants), c.source)
@@ -181,6 +182,8 @@ def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: 
             keep = out / lv / ad.name / c.name
             keep.mkdir(parents=True, exist_ok=True)
             for k, a in enumerate(at.analyses):
+                if types and a["type"] not in types:
+                    continue
                 deck = netlist.with_name(f"{netlist.stem}.circref-{lv}-{k}.cir")
                 records.append(base | {"level": lv, "analysis": k, "type": a["type"]} |
                                _simulate(ad, at, text, a, deck, keep, k, timeout, memory_gb, env,
@@ -191,11 +194,11 @@ def run_circuit(path: Path, simulator: str, levels: list[str], work: Path, out: 
 
 
 def _job(path: Path, simulator: str, levels: list[str], out: Path, timeout: float,
-         memory_gb: float, env: dict, threads: int, repeats: int) -> list[dict]:
+         memory_gb: float, env: dict, threads: int, repeats: int, types: list[str]) -> list[dict]:
     """run_circuit in a process of its own."""
     p = subprocess.run([sys.executable, "-m", "circref.bench"], capture_output=True, text=True, env=env,
                        input=json.dumps([str(path), simulator, levels, str(out), timeout, memory_gb,
-                                         threads, repeats]))
+                                         threads, repeats, types]))
     if p.returncode:
         raise RuntimeError(f"worker exit {p.returncode}: {tail(p.stderr)}")
     return json.loads(p.stdout.splitlines()[-1])
@@ -208,10 +211,13 @@ def select(patterns: list[str]) -> list[Circuit]:
 
 def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
         workers: int, timeout: float, memory_gb: float, threads: int = 1,
-        shard: tuple[int, int] = (0, 1), redo: tuple[str, ...] = (), repeats: int = 1) -> int:
+        shard: tuple[int, int] = (0, 1), redo: tuple[str, ...] = (), repeats: int = 1,
+        types: tuple[str, ...] = ()) -> int:
     """A job per circuit and simulator, ``workers`` at a time. ``threads``: what every
     simulator may use per run (OpenMP, an adapter's own setting), the same for all.
-    ``repeats``: runs per analysis shorter than repeat_below."""
+    ``repeats``: runs per analysis shorter than repeat_below. ``types``: the analysis types
+    to run, all when none; ``out`` then holds a job's record without the others, so such a
+    run keeps an ``out`` of its own."""
     env = os.environ | {k: str(threads) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
                                                   "MKL_NUM_THREADS")}
     out.mkdir(parents=True, exist_ok=True)
@@ -231,7 +237,7 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
     t0 = time.monotonic()
     with open(results, "a") as log, ThreadPoolExecutor(workers) as pool:
         futures = {pool.submit(_job, c.path, a.name, levels, out, timeout, memory_gb, env, threads,
-                               repeats): (c, a)
+                               repeats, list(types)): (c, a)
                    for c, a in jobs}
         for done, f in enumerate(as_completed(futures), 1):
             c, a = futures[f]
@@ -255,6 +261,6 @@ def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out
 
 
 if __name__ == "__main__":                              # a job of run()
-    path, simulator, levels, out, timeout, memory_gb, threads, repeats = json.loads(sys.stdin.read())
+    path, simulator, levels, out, timeout, memory_gb, threads, repeats, types = json.loads(sys.stdin.read())
     print(json.dumps(run_circuit(Path(path), simulator, levels, WORK, Path(out), timeout, memory_gb,
-                                 dict(os.environ), threads, repeats)))
+                                 dict(os.environ), threads, repeats, types)))

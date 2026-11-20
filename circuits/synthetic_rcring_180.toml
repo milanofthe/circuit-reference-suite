@@ -1,0 +1,15 @@
+title = "RC ring with chords"
+case = "synthetic_rcring"
+source = "generated/180.cir"
+outputs = [
+    "v(n1)",
+    "v(n45)",
+    "v(n90)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/180.cir.vacask"

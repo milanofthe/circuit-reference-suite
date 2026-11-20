@@ -1,14 +1,15 @@
 title = "RC random network"
 case = "synthetic_rcrandom"
-source = "generated/100000.cir"
+source = "generated/5600.cir"
 outputs = [
     "v(n1)",
-    "v(n50000)",
-    "v(n100000)",
+    "v(n2800)",
+    "v(n5600)",
 ]
 analysis = [
+    { type = "op" },
     { type = "tran", step = 1e-11, stop = 1e-08 },
 ]
 
 [variants]
-vacask = "generated/100000.cir.vacask"
+vacask = "generated/5600.cir.vacask"
