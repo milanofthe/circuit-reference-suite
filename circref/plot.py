@@ -8,7 +8,8 @@ gray ink for light and dark pages:
     work          error against time of every run, a panel per simulator
 
 A run's error is never below the error of its reference: there it is plotted at that
-error. Below every plot the setup of the run: circuits, analyses, simulator versions,
+error. Errors outside ``error_axis`` of bench.toml (an error of 0, a result that is not
+finite) are plotted at its ends. Below every plot the setup of the run: circuits, analyses, simulator versions,
 limits, machine.
 """
 from __future__ import annotations
@@ -29,7 +30,6 @@ from .adapters import ADAPTERS  # noqa: E402
 from .bench import CONFIG, LEVELS  # noqa: E402
 
 P = CONFIG["plot"]
-TINY = 1e-16                                            # an error of 0 on a log axis
 SETUP = ""                                              # the run's setup, below every plot
 STYLE = {"figure.facecolor": "none", "axes.facecolor": "none", "savefig.transparent": True,
          "axes.edgecolor": P["ink"], "axes.labelcolor": P["ink"], "text.color": P["ink"],
@@ -127,7 +127,9 @@ def references(refs: list[dict], path: Path) -> None:
 
 
 def _floored(r: dict) -> float:
-    return max(r["error"], r["reference_error"] or 0, TINY)
+    lo, hi = P["error_axis"]
+    e = max(r["error"], r["reference_error"] or 0)
+    return float(np.clip(e, lo, hi)) if np.isfinite(e) else hi
 
 
 def _cumulative(ax, values: dict[str, list[float]]) -> None:
@@ -146,6 +148,7 @@ def accuracy(rows: list[dict], path: Path) -> None:
         _cumulative(ax, {s: [_floored(r) for r in rows if r["simulator"] == s and r["level"] == lv
                              and r["error"] is not None and not r["outlier"]] for s in sims})
         ax.set_xscale("log")
+        ax.set_xlim(*P["error_axis"])
         _log(ax.xaxis)
         ax.set_title(f"level {lv}")
         ax.set_xlabel("error against the reference (relative to peak)")
@@ -212,6 +215,7 @@ def work(rows: list[dict], path: Path) -> None:
         ax.set_title(s)
         ax.set_xscale("log")
         ax.set_yscale("log")
+        ax.set_xlim(*P["error_axis"])
         _log(ax.xaxis)
     for ax in axes.flat[len(sims):]:
         ax.set_visible(False)
