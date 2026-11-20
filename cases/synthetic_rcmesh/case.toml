@@ -1,0 +1,80 @@
+id = "synthetic_rcmesh"
+title = "RC mesh, 2D grid"
+family = "passive"
+notes = "Linear RC network, m x m nodes. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes per side."
+netlists = [
+    { file = "generated/30.cir", dialect = "ngspice", size = 30 },
+    { file = "generated/30.cir.vacask", dialect = "vacask", size = 30 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/300.cir", dialect = "ngspice", size = 300 },
+    { file = "generated/300.cir.vacask", dialect = "vacask", size = 300 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "mesh"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/30.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 30"
+sha256 = "dc74e4dbc3a205575331433c4433f8eba73a7374d70621a1073b679317054e28"
+
+[[files]]
+path = "generated/30.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 30"
+sha256 = "059f20ef706be8dca47e110f76d1895aa2177b756509336907102c8fbca82bbe"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 100"
+sha256 = "5c2a132f447ad445f7bf05c74b253c8586d1e971df55bd430eab02be5ca30ba4"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 100"
+sha256 = "9dbc860873d35707b88bacc69429c7a7b1076581512a18fee4a87fcd01f9500e"
+
+[[files]]
+path = "generated/300.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 300"
+sha256 = "5ef9679ceb3be6deb206e9444af2c71177ed761c37a172554d03b23cfb651406"
+
+[[files]]
+path = "generated/300.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 300"
+sha256 = "6618851f716af9b14ff01ce7b899fcf3f3a9a8d8561198b843d7f36f6b13c0e0"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

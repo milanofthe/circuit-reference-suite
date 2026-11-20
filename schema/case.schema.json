@@ -28,11 +28,34 @@
           "file": {"type": "string"},
           "dialect": {"enum": ["ngspice", "xyce", "hspice", "pspice", "tspice", "spice3", "gnucap", "wrspice", "josim", "ltspice", "ahkab", "spicesharp", "cedarsim", "spectre", "vacask", "qucsator"]},
           "note": {"type": "string"},
-          "resolve": {"$ref": "common.schema.json#/$defs/resolve"}
+          "resolve": {"$ref": "common.schema.json#/$defs/resolve"},
+          "size": {"type": "integer", "minimum": 1, "description": "The size a generated case writes this netlist at."}
         }
       }
     },
     "resolve": {"$ref": "common.schema.json#/$defs/resolve"},
+    "generator": {
+      "type": "object",
+      "description": "A case written by circref/generate.py, with the generator's parameters; netlists state their size.",
+      "required": ["network", "r", "c", "source_r", "pulse", "tran"],
+      "additionalProperties": false,
+      "properties": {
+        "network": {"enum": ["ladder", "mesh", "grid3d", "star", "ring", "random", "tree"]},
+        "r": {"type": "number", "exclusiveMinimum": 0},
+        "c": {"type": "number", "exclusiveMinimum": 0},
+        "source_r": {"type": "number", "exclusiveMinimum": 0},
+        "pulse": {
+          "type": "object",
+          "required": ["v1", "v2", "delay", "rise", "fall", "width", "period"],
+          "additionalProperties": {"type": "number"}
+        },
+        "tran": {
+          "type": "object",
+          "required": ["step", "stop"],
+          "additionalProperties": {"type": "number"}
+        }
+      }
+    },
     "open_questions": {"type": "array", "items": {"type": "string"}},
     "notes": {"type": "string"}
   }

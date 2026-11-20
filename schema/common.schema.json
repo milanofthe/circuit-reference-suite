@@ -48,7 +48,9 @@
             "properties": {
               "path": {"type": "string"},
               "provenance": {"enum": ["generated", "translated", "modified"]},
-              "how": {"type": "string"}
+              "how": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$",
+                         "description": "Of what the generator writes, for a generated file that is not committed."}
             }
           }
         ]

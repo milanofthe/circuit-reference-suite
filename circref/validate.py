@@ -20,7 +20,8 @@ def check_files(entry: Entry, descriptor: str) -> list[str]:
         if path not in on_disk:
             out.append(f"{path}: listed but not committed")
         elif "sha256" in f and sha256(entry.directory / path) != f["sha256"]:
-            out.append(f"{path}: differs from upstream {entry.upstream(f)}")
+            out.append(f"{path}: differs from what its generator wrote" if "provenance" in f
+                       else f"{path}: differs from upstream {entry.upstream(f)}")
     return out
 
 

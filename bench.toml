@@ -30,6 +30,10 @@ log_bytes = 1_000_000
 # (xyce_hb-gilbert_cell_hbtran on WRspice) is a rawfile of several GB, more than the
 # memory of the process that reads it.
 output_bytes = 1_000_000_000
+# Seconds: a run shorter than this is repeated (circref run --repeats) and timed by its
+# minimum, so that load from other processes and cold caches do not count; a longer one
+# runs once.
+repeat_below = 60
 
 [compare]
 # Added to a signal's peak before dividing by it, so a signal near zero does not dominate.

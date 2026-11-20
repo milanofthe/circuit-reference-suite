@@ -1,0 +1,14 @@
+title = "RC ring with chords"
+case = "synthetic_rcring"
+source = "generated/100000.cir"
+outputs = [
+    "v(n1)",
+    "v(n25000)",
+    "v(n50000)",
+]
+analysis = [
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/100000.cir.vacask"

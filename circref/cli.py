@@ -1,7 +1,9 @@
 """python -m circref {validate,build,check,list,circuits,run,compare}
 
-build  writes every generated file (case and library READMEs).
-check  validates and rebuilds in memory; fails when a committed file is stale.
+build  writes every generated file (case and library READMEs, the netlists of generated
+       cases, circref/generate.py).
+check  validates and rebuilds in memory; fails when a committed file is stale. validate
+       and check write the netlists of generated cases that are missing first.
 run       runs circuits on simulators (circref/bench.py), results into --out.
 compare   each run against the reference of its analysis, into OUT/compare.json, and
           the plots of OUT/plots (circref/plot.py).
@@ -16,7 +18,7 @@ from pathlib import Path
 
 import tomllib
 
-from . import report
+from . import generate, report
 from .circuit import iter_circuits
 from .entry import ROOT, iter_cases, iter_libraries, load_case, validate_schema
 from .validate import check_case, check_library
@@ -42,7 +44,9 @@ def cmd_validate(args) -> int:
         for e in check_library(lib):
             print(f"libraries/{lib.id}: {e}")
             failed = True
-    for c in [load_case(i) for i in args.ids] if args.ids else iter_cases():
+    cases = [load_case(i) for i in args.ids] if args.ids else iter_cases()
+    generate.write(cases)
+    for c in cases:
         errors = check_case(c)
         for e in errors:
             print(f"{c.id}: error: {e}")
@@ -58,6 +62,8 @@ def cmd_validate(args) -> int:
 
 
 def cmd_build(args) -> int:
+    for path in generate.write():
+        print(f"wrote {path.relative_to(ROOT).as_posix()}")
     for path, data in _generated().items():
         if not path.exists() or path.read_bytes() != data:
             path.write_bytes(data)
@@ -102,7 +108,7 @@ def cmd_run(args) -> int:
     shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
     return bench.run(bench.select(args.circuit), adapters, args.level or list(bench.LEVELS),
                      Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard,
-                     tuple(args.redo))
+                     tuple(args.redo), args.repeats)
 
 
 def cmd_compare(args) -> int:
@@ -135,6 +141,7 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--level", action="append", default=[],
                     help="precision level of bench.toml, repeatable; all when none")
     sp.add_argument("--threads", type=int, default=1, help="threads per simulator run, the same for all")
+    sp.add_argument("--repeats", type=int, default=1, help="runs per analysis shorter than run.repeat_below of bench.toml, timed by the minimum")
     sp.add_argument("--out", default="out")
     sp.set_defaults(fn=cmd_run)
     sp = sub.add_parser("compare")
