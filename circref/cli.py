@@ -108,7 +108,7 @@ def cmd_run(args) -> int:
     shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
     return bench.run(bench.select(args.circuit), adapters, args.level or list(bench.LEVELS),
                      Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard,
-                     tuple(args.redo), args.repeats)
+                     tuple(args.redo), args.repeats, tuple(args.type))
 
 
 def cmd_compare(args) -> int:
@@ -142,6 +142,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="precision level of bench.toml, repeatable; all when none")
     sp.add_argument("--threads", type=int, default=1, help="threads per simulator run, the same for all")
     sp.add_argument("--repeats", type=int, default=1, help="runs per analysis shorter than run.repeat_below of bench.toml, timed by the minimum")
+    sp.add_argument("--type", action="append", default=[],
+                    help="analysis type to run (op, dc, ac, tran), repeatable; all when none. Into an OUT of its own")
     sp.add_argument("--out", default="out")
     sp.set_defaults(fn=cmd_run)
     sp = sub.add_parser("compare")
