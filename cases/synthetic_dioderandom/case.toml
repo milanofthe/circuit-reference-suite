@@ -9,8 +9,8 @@ netlists = [
     { file = "generated/320.cir.vacask", dialect = "vacask", size = 320 },
     { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
     { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
-    { file = "generated/3200.cir", dialect = "ngspice", size = 3200 },
-    { file = "generated/3200.cir.vacask", dialect = "vacask", size = 3200 },
+    { file = "generated/1800.cir", dialect = "ngspice", size = 1800 },
+    { file = "generated/1800.cir.vacask", dialect = "vacask", size = 1800 },
 ]
 
 [source]
@@ -84,16 +84,16 @@ how = "circref/generate.py, random of size 1000"
 sha256 = "2799e3d9bfb1ea95911789f1f6563b5334b1a94105ca501d668e52289ab6c970"
 
 [[files]]
-path = "generated/3200.cir"
+path = "generated/1800.cir"
 provenance = "generated"
-how = "circref/generate.py, random of size 3200"
-sha256 = "1af9b356174a4f3253ef3265e21b5668c6209c4de80966388f76a6e0acad18bf"
+how = "circref/generate.py, random of size 1800"
+sha256 = "bbe61eeda1a2bb5ccd2a5dd27a783406ca3a4dda0216c5a3d4c02c818a4a4ad1"
 
 [[files]]
-path = "generated/3200.cir.vacask"
+path = "generated/1800.cir.vacask"
 provenance = "generated"
-how = "circref/generate.py, random of size 3200"
-sha256 = "05f5e02080c32118af4f1869febc791561cc1f0cfee6681c2319d15fc1ce61b4"
+how = "circref/generate.py, random of size 1800"
+sha256 = "ef4a959bd226b759eced4326885493ed87791fbceb416dd90f50520b48cd8524"
 
 [resolve]
 "spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"

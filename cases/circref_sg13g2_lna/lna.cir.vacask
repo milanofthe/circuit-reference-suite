@@ -31,5 +31,5 @@ control
   save v(src) v(g) v(d1) v(out) v(outl)
   analysis op1 op
   analysis ac1 ac from=100000000.0 to=10000000000.0 mode="dec" points=200
-  analysis tran1 tran step=2e-12 stop=5e-08
+  analysis tran1 tran step=2e-12 stop=1.5e-07
 endc

@@ -33,7 +33,7 @@ Devices: instances once the subcircuits defined in this case are expanded; a dev
 
 ## Notes
 
-3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output: a PMOS of 2 mm and an NMOS of 1 mm in fingers of 10 um, driven with dead times of 3 ns and 2 ns, 1 uH with 50 mOhm and 10 nF, 50 pF at the switching node. Start from zero output, 100 switching periods.
+3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output. A PMOS of 2 mm and an NMOS of 1 mm in fingers of 10 um, driven with dead times of 3 ns and 2 ns, 1 uH with 50 mOhm and 10 nF, 50 pF at the switching node. Start from zero output, 300 switching periods.
 The gate signals are ideal pulses; in the dead times the inductor current flows through the junctions of the transistors.
 Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
 

@@ -22,5 +22,5 @@ rl outl 0 1k
 .save v(src) v(g) v(d1) v(out) v(outl)
 .op
 .ac dec 200 1e8 1e10
-.tran 2p 50n
+.tran 2p 150n
 .end

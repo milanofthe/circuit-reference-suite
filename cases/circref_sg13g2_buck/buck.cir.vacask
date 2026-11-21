@@ -1,8 +1,8 @@
 Synchronous buck converter power stage, IHP SG13G2 high-voltage MOS
-// 3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output: a PMOS of
-// 2 mm and an NMOS of 1 mm in fingers
-// of 10 um, driven with dead times of 3 ns and 2 ns, 1 uH with 50 mOhm and 10 nF,
-// 50 pF at the switching node. Start from zero output, 100 switching periods.
+// 3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output. A PMOS of
+// 2 mm and an NMOS of 1 mm in fingers of 10 um, driven with dead times of 3 ns and 2 ns,
+// 1 uH with 50 mOhm and 10 nF, 50 pF at the switching node. Start from zero output,
+// 300 switching periods.
 include "vacask/models/sg13g2_vacask_common.lib"
 include "vacask/models/cornerMOShv.lib" section=mos_tt
 load "spice/resistor.osdi"
@@ -25,5 +25,5 @@ rload (out 0) r r=12.0
 control
   save v(gp) v(gn) v(sw) v(out)
   analysis op1 op
-  analysis tran1 tran step=1e-09 stop=1e-05
+  analysis tran1 tran step=1e-09 stop=3e-05
 endc

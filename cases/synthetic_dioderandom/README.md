@@ -18,8 +18,8 @@ passive | ngspice, vacask | status: **complete**
 | [`generated/320.cir.vacask`](generated/320.cir.vacask) | vacask | op, tran | 1595 | large | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
 | [`generated/1000.cir`](generated/1000.cir) | ngspice | op, tran | 4994 | large | no | core | - |
 | [`generated/1000.cir.vacask`](generated/1000.cir.vacask) | vacask | op, tran | 4994 | large | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
-| [`generated/3200.cir`](generated/3200.cir) | ngspice | op, tran | 15994 | xl | no | core | - |
-| [`generated/3200.cir.vacask`](generated/3200.cir.vacask) | vacask | op, tran | 15994 | xl | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
+| [`generated/1800.cir`](generated/1800.cir) | ngspice | op, tran | 8995 | large | no | core | - |
+| [`generated/1800.cir.vacask`](generated/1800.cir.vacask) | vacask | op, tran | 8995 | large | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
 
 Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
 
