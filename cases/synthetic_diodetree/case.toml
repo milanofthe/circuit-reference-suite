@@ -1,0 +1,143 @@
+id = "synthetic_diodetree"
+title = "RC tree with a diode per node"
+family = "passive"
+notes = "The network of synthetic_rctree (a balanced binary tree) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: depth."
+netlists = [
+    { file = "generated/7.cir", dialect = "ngspice", size = 7 },
+    { file = "generated/7.cir.vacask", dialect = "vacask", size = 7 },
+    { file = "generated/8.cir", dialect = "ngspice", size = 8 },
+    { file = "generated/8.cir.vacask", dialect = "vacask", size = 8 },
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/12.cir", dialect = "ngspice", size = 12 },
+    { file = "generated/12.cir.vacask", dialect = "vacask", size = 12 },
+    { file = "generated/13.cir", dialect = "ngspice", size = 13 },
+    { file = "generated/13.cir.vacask", dialect = "vacask", size = 13 },
+    { file = "generated/15.cir", dialect = "ngspice", size = 15 },
+    { file = "generated/15.cir.vacask", dialect = "vacask", size = 15 },
+    { file = "generated/17.cir", dialect = "ngspice", size = 17 },
+    { file = "generated/17.cir.vacask", dialect = "vacask", size = 17 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "tree"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/7.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 7"
+sha256 = "1458c82360f73a2fd03fd368380b688487bcd7992d559952f8ac4e8328527085"
+
+[[files]]
+path = "generated/7.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 7"
+sha256 = "8bbc78e0be46527368f450929b1e320d47a03a21342a5d3985337e01e4ef6ac9"
+
+[[files]]
+path = "generated/8.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 8"
+sha256 = "2c7c95de3e9d03fdc0f1185fe24df805719f1345aaf5c93c550db6515fc2cc76"
+
+[[files]]
+path = "generated/8.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 8"
+sha256 = "f727d9e5c6c0dea8fa710379a0a5b54bb0f3535680d0c75d74d7c3c3ae217cf8"
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 10"
+sha256 = "bf57bb9379975edb67966b5c74f58baeb4dd5e9d49bdb3ef1ebc4dcb7c921706"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 10"
+sha256 = "9df4e028dddbbfcc5438c9f0e436891314c79ffdd8cccda6cfeccb94525d7571"
+
+[[files]]
+path = "generated/12.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 12"
+sha256 = "9c7f71b4472215f227aaa44b0be49c9038d21c6f9c90ea7ba400a91fabac00cd"
+
+[[files]]
+path = "generated/12.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 12"
+sha256 = "d27d28d431b0dddd37255d79c368fd8dcd79552a2e9068789c00f71259904b21"
+
+[[files]]
+path = "generated/13.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 13"
+sha256 = "d9bd09546cade7d89d36dbd021d6193a87359a5f94ec789febee457533facdfa"
+
+[[files]]
+path = "generated/13.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 13"
+sha256 = "12273b74f78711f77e14ec917ad065cac6f19f3043d9ecf3c387453b232a9604"
+
+[[files]]
+path = "generated/15.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 15"
+sha256 = "029d068501afc6b7237fe3332c1b60375aa6c2279c1635187134b40daf68fdf8"
+
+[[files]]
+path = "generated/15.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 15"
+sha256 = "0a907481696f00737225f7f53e859d80e06e7d59d71493bbebb11c3b119db714"
+
+[[files]]
+path = "generated/17.cir"
+provenance = "generated"
+how = "circref/generate.py, tree of size 17"
+sha256 = "43b871c23a6a7401d3b8901e8ce160b65bdc9611fee2b3f9b6cd49e5962f3c35"
+
+[[files]]
+path = "generated/17.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, tree of size 17"
+sha256 = "6697dcd5f7c0bbb15456d8220f08d6f06313ccc7529e639814b3a6d89ba8df16"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"

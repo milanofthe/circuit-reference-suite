@@ -1,0 +1,143 @@
+id = "synthetic_diodestar"
+title = "RC star with a diode per node"
+family = "passive"
+notes = "The network of synthetic_rcstar (spokes of 10 segments on one hub) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: spokes."
+netlists = [
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/32.cir", dialect = "ngspice", size = 32 },
+    { file = "generated/32.cir.vacask", dialect = "vacask", size = 32 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/320.cir", dialect = "ngspice", size = 320 },
+    { file = "generated/320.cir.vacask", dialect = "vacask", size = 320 },
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/3200.cir", dialect = "ngspice", size = 3200 },
+    { file = "generated/3200.cir.vacask", dialect = "vacask", size = 3200 },
+    { file = "generated/10000.cir", dialect = "ngspice", size = 10000 },
+    { file = "generated/10000.cir.vacask", dialect = "vacask", size = 10000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "star"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 10"
+sha256 = "62a65b012fceaa2e995817355f258340d5156c560455fd48b98b7514f4101e77"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 10"
+sha256 = "f4c4d0a30a10e0d63b98ef0f246af8ed4d1c9f405b53a1f350b7f1f7df5f7b74"
+
+[[files]]
+path = "generated/32.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 32"
+sha256 = "441b4b8b53e2e8e5cfd899c4b3bcf717064896f22009fe89fb08bf78fdbd185b"
+
+[[files]]
+path = "generated/32.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 32"
+sha256 = "6d575fcf7ed9f23498f6807368860a0786a2e1f9ef45daecc399eede94e45cc1"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 100"
+sha256 = "e67ff5e7b84634858c6fd034bb940b9db413730ea4e52abef5d71ae8963c16a2"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 100"
+sha256 = "587153add579e69dc368d9eaebc6eb68de8521d271b23e71f3a1e4ef0593149c"
+
+[[files]]
+path = "generated/320.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 320"
+sha256 = "93ab54c5d977e565ba44f69e8096f2397fb6e516c12a12783fca26b274104c6a"
+
+[[files]]
+path = "generated/320.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 320"
+sha256 = "6c5258fc8ad45783766ce00636c84c4f8fecf4143c3bace74e3d04d1af6c037b"
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 1000"
+sha256 = "97ad1657cc092633befae4234b597fa5ccf91a2bd59ae456e3209996d18c7aec"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 1000"
+sha256 = "deab3ae39b0328bb8303daf6a5f7246a9d609eb55d53d7c2b66f401a5ee61ea2"
+
+[[files]]
+path = "generated/3200.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 3200"
+sha256 = "38e18903652190f97d6bee3d9178d8badd9e9d00e9e5a0a30d89d0aa9a548470"
+
+[[files]]
+path = "generated/3200.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 3200"
+sha256 = "f69b07db00ff1bbd2765652f9ade3cc3e90360287f07ad7a6cb3e150b57cb676"
+
+[[files]]
+path = "generated/10000.cir"
+provenance = "generated"
+how = "circref/generate.py, star of size 10000"
+sha256 = "7482e4c8326cbf3dc48a5d6e98b49f4d5160355b95d09f9c90485a97e15b5f7a"
+
+[[files]]
+path = "generated/10000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, star of size 10000"
+sha256 = "fa277a27dc7daf692489e449fa1d84c7ae5f8f038c02de54582dbf9e969f6938"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"

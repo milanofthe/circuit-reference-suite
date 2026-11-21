@@ -1,0 +1,15 @@
+title = "RC mesh with a diode per node, 2D grid"
+case = "synthetic_diodemesh"
+source = "generated/30.cir"
+outputs = [
+    "v(n1)",
+    "v(n435)",
+    "v(n900)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/30.cir.vacask"

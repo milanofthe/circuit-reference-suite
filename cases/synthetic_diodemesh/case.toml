@@ -1,0 +1,129 @@
+id = "synthetic_diodemesh"
+title = "RC mesh with a diode per node, 2D grid"
+family = "passive"
+notes = "The network of synthetic_rcmesh (m x m nodes) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes per side."
+netlists = [
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/18.cir", dialect = "ngspice", size = 18 },
+    { file = "generated/18.cir.vacask", dialect = "vacask", size = 18 },
+    { file = "generated/30.cir", dialect = "ngspice", size = 30 },
+    { file = "generated/30.cir.vacask", dialect = "vacask", size = 30 },
+    { file = "generated/56.cir", dialect = "ngspice", size = 56 },
+    { file = "generated/56.cir.vacask", dialect = "vacask", size = 56 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/178.cir", dialect = "ngspice", size = 178 },
+    { file = "generated/178.cir.vacask", dialect = "vacask", size = 178 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "mesh"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 10"
+sha256 = "28301dfbed66fc8530720c2583378ad099d769e259a58799518fcbbbac409609"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 10"
+sha256 = "8a85cfda5fb4d1746ae05852e73e7b37e63358e7e89e0a972ec75a6c1408153b"
+
+[[files]]
+path = "generated/18.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 18"
+sha256 = "170cebce55aa7b54b7d3dc08ee956572769967bd71f660a95693c18ead2f40ac"
+
+[[files]]
+path = "generated/18.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 18"
+sha256 = "99ca87fc9e177e0809558898e6c5fbbf78587e338970976f8eb307717b6ed87c"
+
+[[files]]
+path = "generated/30.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 30"
+sha256 = "0b33a0832fae4396d7bb5d7440f107b23d4b063d235b8a714b5bbbdacc7dbf3a"
+
+[[files]]
+path = "generated/30.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 30"
+sha256 = "42fa506af9a53c76b18537873043dc75dc35d8968fb2f187ac514cb1045f99c0"
+
+[[files]]
+path = "generated/56.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 56"
+sha256 = "13b706009c59fb85b150037d5e717662f6b0f745d626ea7fc0c5525b4c1a2849"
+
+[[files]]
+path = "generated/56.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 56"
+sha256 = "abd16f29488c137b449902902651bc9652e808ac1f6eeecee687c49c893dc430"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 100"
+sha256 = "1f785434aa72bd400fc71f4ef5479ce57ba96f42782030f2056216cda33a7240"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 100"
+sha256 = "e141e14b966793332cb7b2cbd5a74466ff3efa056785113c8d85d84a78a1f70c"
+
+[[files]]
+path = "generated/178.cir"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 178"
+sha256 = "315a3e8ea5c592459855f918f793a8c0f36393124d93c3f7cfc2810d36fee90b"
+
+[[files]]
+path = "generated/178.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, mesh of size 178"
+sha256 = "f8d22719e211dd9bfc57577c006ac5e3c0a6be2830efa083a6632184b71722f0"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"

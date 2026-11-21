@@ -1,0 +1,129 @@
+id = "synthetic_diodegrid3d"
+title = "RC grid with a diode per node, 3D"
+family = "passive"
+notes = "The network of synthetic_rcgrid3d (m^3 nodes) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes per side."
+netlists = [
+    { file = "generated/5.cir", dialect = "ngspice", size = 5 },
+    { file = "generated/5.cir.vacask", dialect = "vacask", size = 5 },
+    { file = "generated/7.cir", dialect = "ngspice", size = 7 },
+    { file = "generated/7.cir.vacask", dialect = "vacask", size = 7 },
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/12.cir", dialect = "ngspice", size = 12 },
+    { file = "generated/12.cir.vacask", dialect = "vacask", size = 12 },
+    { file = "generated/15.cir", dialect = "ngspice", size = 15 },
+    { file = "generated/15.cir.vacask", dialect = "vacask", size = 15 },
+    { file = "generated/18.cir", dialect = "ngspice", size = 18 },
+    { file = "generated/18.cir.vacask", dialect = "vacask", size = 18 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "grid3d"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/5.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 5"
+sha256 = "412b38c838f208a1e287ff306d031f46cde487319962fd36178d35bc5ad3ae74"
+
+[[files]]
+path = "generated/5.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 5"
+sha256 = "a4b003775626e17fba4609d6a0beff36dda7e44d024a4ca073a93b48ad95083a"
+
+[[files]]
+path = "generated/7.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 7"
+sha256 = "ee1967d2c5384cf6add0c30b68025c395b147ea9538642e68cd601bdb18a0b01"
+
+[[files]]
+path = "generated/7.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 7"
+sha256 = "7f1428ef8bba3e6f91ab5eff30ece73a8715b2fefb76e8bfc7f9625c351151df"
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 10"
+sha256 = "757fcdfb1290e696559f88fca201597cc1ad4c04602561a442be419b2c116422"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 10"
+sha256 = "e68a9de6e23f7c1ec07d250395bd75b74128390858c94b0541d4c55126914875"
+
+[[files]]
+path = "generated/12.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 12"
+sha256 = "f5e96d58c8947c801a0db228ce66801db15be93b040d41c80b75f8c734e514a7"
+
+[[files]]
+path = "generated/12.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 12"
+sha256 = "00a9ea2a30df75f55ca07bdd00946d2f53ed7d8a9e9744318f7ecd0a0b2bf7d8"
+
+[[files]]
+path = "generated/15.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 15"
+sha256 = "ce6ad4b7335241e63036f16b6e4f834b6710a7b052963927a98a69cb6679f71c"
+
+[[files]]
+path = "generated/15.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 15"
+sha256 = "fce162586e4b74ebbd0e11796e9d634497aa8af3ec593117e94b2e61893c7462"
+
+[[files]]
+path = "generated/18.cir"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 18"
+sha256 = "34218be4010cbb191c4c84f9bf589b4cccf08f772689263d371d9e7f31d5a804"
+
+[[files]]
+path = "generated/18.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, grid3d of size 18"
+sha256 = "98fc136c77a59d5388906c3851caa01c3bb63f1ff4627340bad620f16cdade8b"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"

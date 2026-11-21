@@ -1,0 +1,15 @@
+title = "RC ring with a diode per node"
+case = "synthetic_diodering"
+source = "generated/3200.cir"
+outputs = [
+    "v(n1)",
+    "v(n800)",
+    "v(n1600)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/3200.cir.vacask"

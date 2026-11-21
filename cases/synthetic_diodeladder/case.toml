@@ -1,0 +1,143 @@
+id = "synthetic_diodeladder"
+title = "RC ladder with a diode per node"
+family = "passive"
+notes = "The network of synthetic_rcladder (a path) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes."
+netlists = [
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/320.cir", dialect = "ngspice", size = 320 },
+    { file = "generated/320.cir.vacask", dialect = "vacask", size = 320 },
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/3200.cir", dialect = "ngspice", size = 3200 },
+    { file = "generated/3200.cir.vacask", dialect = "vacask", size = 3200 },
+    { file = "generated/10000.cir", dialect = "ngspice", size = 10000 },
+    { file = "generated/10000.cir.vacask", dialect = "vacask", size = 10000 },
+    { file = "generated/32000.cir", dialect = "ngspice", size = 32000 },
+    { file = "generated/32000.cir.vacask", dialect = "vacask", size = 32000 },
+    { file = "generated/100000.cir", dialect = "ngspice", size = 100000 },
+    { file = "generated/100000.cir.vacask", dialect = "vacask", size = 100000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "ladder"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100"
+sha256 = "4e6c439e7bb79ed958c1b9b6fe96f335f45dcbe6c0c0b4dc931ed12dba7a0b2e"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100"
+sha256 = "49a3395c1db0ed85928d82451bb7c75f2300a3df87e095a8322f4cae058e5ab5"
+
+[[files]]
+path = "generated/320.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 320"
+sha256 = "f9196105359ea90ad38425c3a5b74ec435b1e5a3d709ba0f9391ea3fe66164e3"
+
+[[files]]
+path = "generated/320.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 320"
+sha256 = "9ff4cf37edd9c9405218a61e97989eebf178877e260af0e12623d70cbeed49d2"
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 1000"
+sha256 = "2812d8b12004a607383a3b65f53270a1c43f265611f7dd22a1d24ac7e609d56e"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 1000"
+sha256 = "74f51db87bc30c2031fea3817be3bf2249b52df320f6c6f9ec5127cba89c8656"
+
+[[files]]
+path = "generated/3200.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 3200"
+sha256 = "70fc113290c90fd18ce1e8074e77a166029931f99c1a7be1f450b24e590ad30d"
+
+[[files]]
+path = "generated/3200.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 3200"
+sha256 = "d86d5b53c56ee20e9efc68e8ee397836af13e0aae3ad89d009a0c08c5785c99e"
+
+[[files]]
+path = "generated/10000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 10000"
+sha256 = "4e269acca741f07dd599a1007a0f76cca3973860afef5c5aed2bb4c5f6ea35f0"
+
+[[files]]
+path = "generated/10000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 10000"
+sha256 = "1874f75bd79e426ebd3f72a6e961b9aeccae6decc9e2ac3928ef09c969a575a2"
+
+[[files]]
+path = "generated/32000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 32000"
+sha256 = "69cc9e4443e4d606f0adac0ffb31c228246c214ee831258c657e97ee2c0b0f17"
+
+[[files]]
+path = "generated/32000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 32000"
+sha256 = "39ae5d3ba40c7da7d2f00e70e97ff6acda7a8df9173989d8b813d535b3a38411"
+
+[[files]]
+path = "generated/100000.cir"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100000"
+sha256 = "f80e8875e038565539ed6b4c4568fff03bce2585b7f0562c3f7bbcf04491220b"
+
+[[files]]
+path = "generated/100000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, ladder of size 100000"
+sha256 = "42516d256bd498644fe1c98ce141f1bdb5c992a75d3f4eb4b4b026e6acdd70ec"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"

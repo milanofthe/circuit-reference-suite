@@ -1,0 +1,101 @@
+id = "synthetic_dioderandom"
+title = "Random RC graph with a diode per node"
+family = "passive"
+notes = "The network of synthetic_rcrandom (a path and two random edges per node) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes."
+netlists = [
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/320.cir", dialect = "ngspice", size = 320 },
+    { file = "generated/320.cir.vacask", dialect = "vacask", size = 320 },
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/3200.cir", dialect = "ngspice", size = 3200 },
+    { file = "generated/3200.cir.vacask", dialect = "vacask", size = 3200 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+network = "random"
+r = 1000.0
+c = 1e-15
+source_r = 100.0
+dc = 1.0
+
+[generator.diode]
+is = 1e-14
+n = 1.0
+cjo = 1e-15
+
+[generator.pulse]
+v1 = 1.0
+v2 = 0.0
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1e-09
+period = 2e-09
+
+[generator.tran]
+step = 1e-11
+stop = 1e-08
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 100"
+sha256 = "9a66b242442d787e6578b68318ba651b612dcc75ea557bc3b2b17a896d72def2"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 100"
+sha256 = "3937322e9d8fc3ae178646f731aae67efa72700cf2be0d3a9f3c25852abc82ba"
+
+[[files]]
+path = "generated/320.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 320"
+sha256 = "c534616cb919b2a4c43eee3196e66ad91cc060a17d4cd31f42126d4fa544f70e"
+
+[[files]]
+path = "generated/320.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 320"
+sha256 = "af25c49253ecff1c0257ba95fbd8e53ead5839afd061781d0a9c78592513ceb5"
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 1000"
+sha256 = "b55522bfd92329d8ac2cf77c849197bcbf5a5ec50cb9143520d1a7a90a5f7b5c"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 1000"
+sha256 = "2799e3d9bfb1ea95911789f1f6563b5334b1a94105ca501d668e52289ab6c970"
+
+[[files]]
+path = "generated/3200.cir"
+provenance = "generated"
+how = "circref/generate.py, random of size 3200"
+sha256 = "1af9b356174a4f3253ef3265e21b5668c6209c4de80966388f76a6e0acad18bf"
+
+[[files]]
+path = "generated/3200.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, random of size 3200"
+sha256 = "05f5e02080c32118af4f1869febc791561cc1f0cfee6681c2319d15fc1ce61b4"
+
+[resolve]
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/diode.osdi" = "libraries/vacask_spice_va/diode.va"
