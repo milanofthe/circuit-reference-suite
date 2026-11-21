@@ -5,6 +5,25 @@
   "type": "object",
   "required": ["id", "title", "family", "source", "files", "netlists"],
   "additionalProperties": false,
+  "$defs": {
+    "pulse": {
+      "type": "object",
+      "required": ["v1", "v2", "delay", "rise", "fall", "width", "period"],
+      "additionalProperties": {"type": "number"}
+    },
+    "tran": {
+      "type": "object",
+      "required": ["step", "stop"],
+      "additionalProperties": {"type": "number"}
+    },
+    "device": {
+      "type": "object",
+      "description": "A transistor: the subcircuit of the model library, and its parameters.",
+      "required": ["subckt"],
+      "properties": {"subckt": {"type": "string"}},
+      "additionalProperties": {"type": "number"}
+    }
+  },
   "properties": {
     "id": {"$ref": "common.schema.json#/$defs/id"},
     "title": {"type": "string"},
@@ -14,6 +33,10 @@
                "memory", "converter", "pll", "interconnect", "power_grid", "device",
                "passive", "behavioral", "test"],
       "description": "What the circuit is. device: a single-device characterization deck; test: a regression deck exercising simulator features."
+    },
+    "category": {
+      "enum": ["analog_cell", "switching", "oscillator", "post_layout", "high_voltage", "memory", "rf"],
+      "description": "The class a run-time benchmark sorts the circuit into, by what its cost is made of. analog_cell: amplifiers, references, regulators (set-up and many short analyses); switching: comparators, data converters, switched-capacitor circuits (time steps times device evaluation); oscillator: oscillators and PLL blocks (many cycles); post_layout: transistors inside a large RC network with coupling capacitors (the linear solve); high_voltage: power stages and stiff circuits; memory: arrays (size and repetition); rf: circuits at a carrier (periodic steady state). Left out where none applies: device and regression decks, linear networks."
     },
     "source": {"$ref": "common.schema.json#/$defs/source"},
     "files": {"$ref": "common.schema.json#/$defs/files"},
@@ -37,25 +60,56 @@
     "generator": {
       "type": "object",
       "description": "A case written by circref/generate.py, with the generator's parameters; netlists state their size.",
-      "required": ["network", "r", "c", "source_r", "dc", "pulse", "tran"],
-      "additionalProperties": false,
-      "properties": {
-        "network": {"enum": ["ladder", "mesh", "grid3d", "star", "ring", "random", "tree"]},
-        "r": {"type": "number", "exclusiveMinimum": 0},
-        "c": {"type": "number", "exclusiveMinimum": 0},
-        "source_r": {"type": "number", "exclusiveMinimum": 0},
-        "dc": {"type": "number", "description": "The source's DC value: the operating point is solved at it, the transient starts from the pulse."},
-        "pulse": {
-          "type": "object",
-          "required": ["v1", "v2", "delay", "rise", "fall", "width", "period"],
-          "additionalProperties": {"type": "number"}
+      "oneOf": [
+        {
+          "description": "An RC network on a graph; with diode, a diode from every node to ground. size: what the graph is sized by.",
+          "required": ["network", "r", "c", "source_r", "dc", "pulse", "tran"],
+          "additionalProperties": false,
+          "properties": {
+            "network": {"enum": ["ladder", "mesh", "grid3d", "star", "ring", "random", "tree"]},
+            "r": {"type": "number", "exclusiveMinimum": 0},
+            "c": {"type": "number", "exclusiveMinimum": 0},
+            "source_r": {"type": "number", "exclusiveMinimum": 0},
+            "dc": {"type": "number", "description": "The source's DC value: the operating point is solved at it, the transient starts from the pulse."},
+            "diode": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number"},
+                      "description": "The parameters of the diode model, as SPICE names them."},
+            "pulse": {"$ref": "#/$defs/pulse"},
+            "tran": {"$ref": "#/$defs/tran"}
+          }
         },
-        "tran": {
-          "type": "object",
-          "required": ["step", "stop"],
-          "additionalProperties": {"type": "number"}
+        {
+          "description": "Chains of CMOS inverters; with wire, an RC line per net with coupling to the next chain. size: the number of chains.",
+          "required": ["stages", "vdd", "dc", "nmos", "pmos", "models", "pulse", "tran"],
+          "additionalProperties": false,
+          "properties": {
+            "stages": {"type": "integer", "minimum": 1, "description": "Inverters per chain."},
+            "vdd": {"type": "number", "exclusiveMinimum": 0},
+            "dc": {"type": "number", "description": "The DC value of the input the operating point is solved at; every second chain is driven by its complement."},
+            "nmos": {"$ref": "#/$defs/device"},
+            "pmos": {"$ref": "#/$defs/device"},
+            "models": {
+              "type": "object",
+              "description": "Dialect -> the lines that bring in the model library; the dialects the case is written in.",
+              "propertyNames": {"enum": ["ngspice", "vacask"]},
+              "additionalProperties": {"type": "array", "items": {"type": "string"}}
+            },
+            "wire": {
+              "type": "object",
+              "description": "The net between two inverters as an RC line; r, c and coupling are the totals of a net.",
+              "required": ["ratio", "r", "c", "coupling"],
+              "additionalProperties": false,
+              "properties": {
+                "ratio": {"type": "integer", "minimum": 1, "description": "RC nodes per transistor."},
+                "r": {"type": "number", "exclusiveMinimum": 0},
+                "c": {"type": "number", "exclusiveMinimum": 0},
+                "coupling": {"type": "number", "exclusiveMinimum": 0, "description": "Capacitance to the same net of the next chain."}
+              }
+            },
+            "pulse": {"$ref": "#/$defs/pulse"},
+            "tran": {"$ref": "#/$defs/tran"}
+          }
         }
-      }
+      ]
     },
     "open_questions": {"type": "array", "items": {"type": "string"}},
     "notes": {"type": "string"}

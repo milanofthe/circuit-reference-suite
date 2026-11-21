@@ -6,11 +6,17 @@ sha256 of what the generator writes, so that a change of the generator fails che
 are not committed (.gitignore): build writes them, and validate, check and run write the
 ones that are missing.
 
-``network``: a linear RC network, a capacitor ``c`` from every node to ground and a
-resistor ``r`` per edge of a graph, driven at node 1 through ``source_r`` by a source of
-the DC value ``dc`` and a pulse in time. The netlists run the operating point, one linear
-solve of the resistor network, and the transient. The networks differ only in the graph,
-and with it in the elimination structure of the matrix:
+A generator builds the circuit as a list of elements; one writer per dialect states them.
+Every netlist runs the operating point at the sources' DC values and the transient from
+the pulse.
+
+``network``: an RC network, a capacitor ``c`` from every node to ground and a resistor
+``r`` per edge of a graph, driven at node 1 through ``source_r`` by a source of the DC
+value ``dc`` and a pulse in time. Without ``diode`` it is linear: the operating point is
+one linear solve of the resistor network. With ``diode`` (the parameters of a junction
+diode model) a diode goes from every node to ground: the operating point takes Newton
+iterations, the matrix values change at every one of them, the graph and with it the
+elimination structure stay. The networks differ only in the graph:
 
     ladder  a path of ``size`` nodes: the elimination tree is one chain
     mesh    a ``size`` x ``size`` grid
@@ -20,8 +26,21 @@ and with it in the elimination structure of the matrix:
     random  a path of ``size`` nodes and two random edges per node (xorshift64, seed 1)
     tree    a balanced binary tree of depth ``size``
 
-The netlists save three node voltages: node 1, one inside, one far from the source. The
-ngspice netlist selects KLU (``.options klu``), as the large upstream decks do: ngspice 47
+``stages``: ``size`` chains of ``stages`` CMOS inverters between ``vdd`` and ground, the
+transistors subcircuits of a model library that ``models`` brings in with the lines of
+each dialect. Every chain is driven by the pulse, every second one by its complement, so
+that every chain switches and neighbours switch against each other. Without ``wire`` an
+inverter drives the next one directly: 2 * ``stages`` * ``size`` transistors in
+independent blocks, the device evaluation scaled by their number. With ``wire`` the net
+between two inverters is an RC line as a layout extraction writes it: ``ratio`` RC nodes
+per transistor (2 * ``ratio`` segments per net) that share the net's resistance ``r`` and
+its capacitance to ground ``c``, and a coupling capacitance ``coupling`` to the same net
+of the next chain, split over the segments as well. The coupling ties the chains into one
+matrix, a grid of ``size`` by 2 * ``ratio`` * ``stages`` nodes whose share of the run
+grows with ``ratio``; the totals per net stay, so the waveforms do not depend on it.
+
+The netlists save three node voltages: near the source, inside, far from it. The ngspice
+netlist selects KLU (``.options klu``), as the large upstream decks do: ngspice 47
 factors with Sparse 1.3 without it.
 """
 from __future__ import annotations
@@ -97,37 +116,114 @@ def _tree(depth):
 
 NETWORKS = {"ladder": _ladder, "mesh": _mesh, "grid3d": _grid3d, "star": _star,
             "ring": _ring, "random": _random, "tree": _tree}
+DIODE = "dn"            # the model name of a network's diodes
+
+# An element: (kind, name, nodes, value). ``v``: (DC value, pulse or None); ``r``, ``c``:
+# the value; ``d``: None, the model is DIODE; ``x``: (subcircuit, parameters).
+Element = tuple[str, str, tuple[str, ...], object]
+
+
+def _network(g: dict, size: int) -> tuple[str, list[Element], list[str]]:
+    n, edges, probes = NETWORKS[g["network"]](size)
+    elements: list[Element] = [("v", "vin", ("src", "0"), (g["dc"], g["pulse"])),
+                               ("r", "rsrc", ("src", "n1"), g["source_r"])]
+    elements += [("c", f"c{i}", (f"n{i}", "0"), g["c"]) for i in range(1, n + 1)]
+    elements += [("r", f"r{k}", (f"n{a}", f"n{b}"), g["r"]) for k, (a, b) in enumerate(edges, 1)]
+    if "diode" in g:
+        elements += [("d", f"d{i}", (f"n{i}", "0"), None) for i in range(1, n + 1)]
+    return (f"{n} nodes, {len(edges)} resistors" + (f", {n} diodes" if "diode" in g else ""),
+            elements, [f"n{q}" for q in probes])
+
+
+def _chains(g: dict, size: int) -> tuple[str, list[Element], list[str]]:
+    stages, wire, p = g["stages"], g.get("wire"), g["pulse"]
+    segments = 2 * wire["ratio"] if wire else 0
+    complement = p | {"v1": p["v2"], "v2": p["v1"]}
+    elements: list[Element] = [("v", "vdd", ("vdd", "0"), (g["vdd"], None)),
+                               ("v", "vin", ("in", "0"), (g["dc"], p)),
+                               ("v", "vinb", ("inb", "0"), (g["vdd"] - g["dc"], complement))]
+    node = lambda k, s, j=0: f"k{k}s{s}" + (f"w{j}" if j else "")
+    for k in range(1, size + 1):
+        gate = "inb" if k % 2 == 0 else "in"
+        for s in range(1, stages + 1):
+            out = node(k, s)
+            elements += [("x", f"xp{k}_{s}", (out, gate, "vdd", "vdd"), (g["pmos"]["subckt"], g["pmos"])),
+                         ("x", f"xn{k}_{s}", (out, gate, "0", "0"), (g["nmos"]["subckt"], g["nmos"]))]
+            for j in range(1, segments + 1):
+                at = node(k, s, j)
+                elements += [("r", f"r{k}_{s}_{j}", (node(k, s, j - 1), at), wire["r"] / segments),
+                             ("c", f"c{k}_{s}_{j}", (at, "0"), wire["c"] / segments)]
+                if k < size:
+                    elements.append(("c", f"cc{k}_{s}_{j}", (at, node(k + 1, s, j)),
+                                     wire["coupling"] / segments))
+            gate = node(k, s, segments)
+    mid = (size + 1) // 2
+    probes = [node(1, 1, segments), node(mid, (stages + 1) // 2, segments), node(size, stages, segments)]
+    title = f"{size} chains of {stages} inverters, {2 * stages * size} transistors"
+    if wire:
+        title += f", {segments * stages * size} RC nodes"
+    return title, elements, list(dict.fromkeys(probes))
 
 
 def _num(x: float) -> str:
     return repr(float(x)).replace("e+", "e")
 
 
-def _ngspice(g: dict, title: str, n: int, edges, probes) -> list[str]:
-    p = g["pulse"]
-    lines = [title,
-             f"vin src 0 dc {_num(g['dc'])} pulse({_num(p['v1'])} {_num(p['v2'])} {_num(p['delay'])} {_num(p['rise'])} "
-             f"{_num(p['fall'])} {_num(p['width'])} {_num(p['period'])})",
-             f"rsrc src n1 {_num(g['source_r'])}"]
-    lines += [f"c{i} n{i} 0 {_num(g['c'])}" for i in range(1, n + 1)]
-    lines += [f"r{k} n{a} n{b} {_num(g['r'])}" for k, (a, b) in enumerate(edges, 1)]
+def _params(p: dict) -> str:
+    return " ".join(f"{k}={_num(v)}" for k, v in p.items() if k != "subckt")
+
+
+def _ngspice(g: dict, title: str, elements: list[Element], probes: list[str]) -> list[str]:
+    lines = [title, *g.get("models", {}).get("ngspice", [])]
+    if "diode" in g:
+        lines.append(f".model {DIODE} d {_params(g['diode'])}")
+    for kind, name, nodes, value in elements:
+        at = " ".join(nodes)
+        if kind == "v":
+            dc, p = value
+            pulse = (f" pulse({_num(p['v1'])} {_num(p['v2'])} {_num(p['delay'])} {_num(p['rise'])} "
+                     f"{_num(p['fall'])} {_num(p['width'])} {_num(p['period'])})") if p else ""
+            lines.append(f"{name} {at} dc {_num(dc)}{pulse}")
+        elif kind in "rc":
+            lines.append(f"{name} {at} {_num(value)}")
+        elif kind == "d":
+            lines.append(f"{name} {at} {DIODE}")
+        else:
+            lines.append(f"{name} {at} {value[0]} {_params(value[1])}")
     t = g["tran"]
-    return lines + [".options klu", ".save " + " ".join(f"v(n{q})" for q in probes),
+    return lines + [".options klu", ".save " + " ".join(f"v({q})" for q in probes),
                     ".op", f".tran {_num(t['step'])} {_num(t['stop'])}", ".end"]
 
 
-def _vacask(g: dict, title: str, n: int, edges, probes) -> list[str]:
-    p = g["pulse"]
-    lines = [title, 'load "spice/resistor.osdi"', 'load "spice/capacitor.osdi"',
-             "model r sp_resistor", "model c sp_capacitor", "model vsource vsource",
-             f'vin (src 0) vsource dc={_num(g["dc"])} type="pulse" val0={_num(p["v1"])} val1={_num(p["v2"])} '
-             f'delay={_num(p["delay"])} rise={_num(p["rise"])} fall={_num(p["fall"])} '
-             f'width={_num(p["width"])} period={_num(p["period"])}',
-             f"rsrc (src n1) r r={_num(g['source_r'])}"]
-    lines += [f"c{i} (n{i} 0) c c={_num(g['c'])}" for i in range(1, n + 1)]
-    lines += [f"r{k} (n{a} n{b}) r r={_num(g['r'])}" for k, (a, b) in enumerate(edges, 1)]
+# VACASK: the OSDI file and the module of an element kind, and the model the elements name.
+VACASK_DEVICES = {"r": ("spice/resistor.osdi", "model r sp_resistor"),
+                  "c": ("spice/capacitor.osdi", "model c sp_capacitor"),
+                  "d": ("spice/diode.osdi", f"model {DIODE} sp_diode")}
+
+
+def _vacask(g: dict, title: str, elements: list[Element], probes: list[str]) -> list[str]:
+    kinds = [k for k in VACASK_DEVICES if any(e[0] == k for e in elements)]
+    lines = [title, *g.get("models", {}).get("vacask", [])]
+    lines += [f'load "{VACASK_DEVICES[k][0]}"' for k in kinds]
+    lines += [VACASK_DEVICES[k][1] + (f" {_params(g['diode'])}" if k == "d" else "") for k in kinds if k != "d"]
+    lines.append("model vsource vsource")
+    lines += [VACASK_DEVICES[k][1] + f" {_params(g['diode'])}" for k in kinds if k == "d"]
+    for kind, name, nodes, value in elements:
+        at = f"({' '.join(nodes)})"
+        if kind == "v":
+            dc, p = value
+            pulse = (f' type="pulse" val0={_num(p["v1"])} val1={_num(p["v2"])} '
+                     f'delay={_num(p["delay"])} rise={_num(p["rise"])} fall={_num(p["fall"])} '
+                     f'width={_num(p["width"])} period={_num(p["period"])}') if p else ""
+            lines.append(f"{name} {at} vsource dc={_num(dc)}{pulse}")
+        elif kind in "rc":
+            lines.append(f"{name} {at} {kind} {kind}={_num(value)}")
+        elif kind == "d":
+            lines.append(f"{name} {at} {DIODE}")
+        else:
+            lines.append(f"{name} {at} {value[0]} {_params(value[1])}")
     t = g["tran"]
-    return lines + ["control", "  save " + " ".join(f"v(n{q})" for q in probes),
+    return lines + ["control", "  save " + " ".join(f"v({q})" for q in probes),
                     "  analysis op1 op",
                     f"  analysis tran1 tran step={_num(t['step'])} stop={_num(t['stop'])}", "endc"]
 
@@ -135,13 +231,18 @@ def _vacask(g: dict, title: str, n: int, edges, probes) -> list[str]:
 WRITERS = {"ngspice": _ngspice, "vacask": _vacask}
 
 
+def circuit(case: Case, size: int) -> tuple[str, list[Element], list[str]]:
+    """A generated case at a size: what its title says of it, its elements, the nodes saved."""
+    g = case.raw["generator"]
+    return (_network if "network" in g else _chains)(g, size)
+
+
 def netlist(case: Case, file: str) -> bytes:
     """What the generator writes for a netlist of a generated case."""
-    g = case.raw["generator"]
     nl = next(n for n in case.raw["netlists"] if n["file"] == file)
-    n, edges, probes = NETWORKS[g["network"]](nl["size"])
-    title = f"{case.title}, size {nl['size']}: {n} nodes, {len(edges)} resistors"
-    return ("\n".join(WRITERS[nl["dialect"]](g, title, n, edges, probes)) + "\n").encode()
+    what, elements, probes = circuit(case, nl["size"])
+    title = f"{case.title}, size {nl['size']}: {what}"
+    return ("\n".join(WRITERS[nl["dialect"]](case.raw["generator"], title, elements, probes)) + "\n").encode()
 
 
 def generated(case: Case) -> bool:
