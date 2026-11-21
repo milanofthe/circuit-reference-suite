@@ -8,7 +8,7 @@ outputs = [
 ]
 analysis = [
     { type = "op" },
-    { type = "tran", step = 2e-11, stop = 2.5e-09 },
+    { type = "tran", step = 5e-12, stop = 2.5e-09 },
 ]
 
 [variants]

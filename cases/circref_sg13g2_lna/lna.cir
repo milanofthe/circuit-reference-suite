@@ -1,0 +1,26 @@
+Cascode low-noise amplifier with inductive degeneration, IHP SG13G2 low-voltage MOS
+* Common-source stage with 0.5 nH in the source and 12 nH in the gate, cascode, a load
+* tank of 5 nH and 0.8 pF with 500 Ohm in parallel: tuned to 2.4 GHz. Driven from 50 Ohm
+* with 10 mV at 2.4 GHz.
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+vdd vdd 0 dc 1.2
+vb vb 0 dc 0.5
+vrf src 0 dc 0 ac 1 sin(0 0.01 2.4e9)
+rs src a 50
+cin a g0 10p
+lg g0 g 12n
+rb vb g 10k
+cgs g s 300f
+xm1 d1 g s 0 sg13_lv_nmos w=40u l=0.13u ng=8
+ls s 0 0.5n
+xm2 out vdd d1 0 sg13_lv_nmos w=40u l=0.13u ng=8
+ld vdd out 5n
+rd vdd out 500
+cd out 0 0.8p
+cout out outl 1p
+rl outl 0 1k
+.save v(src) v(g) v(d1) v(out) v(outl)
+.op
+.ac dec 200 1e8 1e10
+.tran 2p 50n
+.end

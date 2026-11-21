@@ -65,68 +65,68 @@ width = 1.5e-09
 period = 4e-09
 
 [generator.tran]
-step = 2e-11
+step = 5e-12
 stop = 3e-09
 
 [[files]]
 path = "generated/1.cir"
 provenance = "generated"
 how = "circref/generate.py, chains of size 1"
-sha256 = "2793dbc6223a207b2de171408fb83a404c0a6e377b6caee3a45bfde73d792647"
+sha256 = "2d833debf46c58b308443a94770c1aea17cf2395a1dc9cc41c4e43bedb7b704c"
 
 [[files]]
 path = "generated/1.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, chains of size 1"
-sha256 = "763532452718aba36df59ed757165074ecfd194c89fd415f063b4f43695fae41"
+sha256 = "940d10309e054d075195803820fc7433ea388f865b0bbfbea81cd640f280cabe"
 
 [[files]]
 path = "generated/3.cir"
 provenance = "generated"
 how = "circref/generate.py, chains of size 3"
-sha256 = "b336d8a3f42dac2c4193243edcbeea4e9070868dff24b2e97feaf8e4e19b23d0"
+sha256 = "96b1cb6e8b446a578352869353d7b9d6f685ff18d00773163a16563697227ae2"
 
 [[files]]
 path = "generated/3.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, chains of size 3"
-sha256 = "5401af917a3d022b902d5b377559aad3694dbf512a5883d75c2ba79f5f5bf5cb"
+sha256 = "59960dfe45b55b1ed43311371585e10a983998ae59435932ee6441ba330c10fc"
 
 [[files]]
 path = "generated/10.cir"
 provenance = "generated"
 how = "circref/generate.py, chains of size 10"
-sha256 = "38c482949f68e1b077d3ec1a67cc75d732a45ba408a800c7d4bdda1976f12f7b"
+sha256 = "5bf19775a8eeec07d15d4beacbebd6fa3e8eb553a6bbfb43a4badafda25ef949"
 
 [[files]]
 path = "generated/10.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, chains of size 10"
-sha256 = "7eefc2cf9bdf606b71f78184ef8a1807e5a99d4767d978a5b0dc3d3ab838479c"
+sha256 = "c190b1ba0db38dfec53c2e330edb12a5cfea34128deabc136748979d17fbd27b"
 
 [[files]]
 path = "generated/30.cir"
 provenance = "generated"
 how = "circref/generate.py, chains of size 30"
-sha256 = "a429103d9201c3bf726f5087a4196685c811a4494733e30d368faea6e42bf144"
+sha256 = "7c1257cc7cd341eee6dbbd5e742dd026e7d6b6797eec32add15de5107fbeb095"
 
 [[files]]
 path = "generated/30.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, chains of size 30"
-sha256 = "be93475ef8d02b97af9e69ffe5775cbf84dc3d31313423274661f920ffa66713"
+sha256 = "a97ca9282e5069ebd1c120d73a3fb0c5e95451c1dd268517b8160ed52dc0d61f"
 
 [[files]]
 path = "generated/100.cir"
 provenance = "generated"
 how = "circref/generate.py, chains of size 100"
-sha256 = "463066c8d5bf996d1282372c3d9469a251f7d566993ac63269257f5814d937df"
+sha256 = "517fd85394b3ace66229c6a6f71fe7b063815a3998788049a5e3e9e679478e8d"
 
 [[files]]
 path = "generated/100.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, chains of size 100"
-sha256 = "507efc707f2e0af0e52c2fe2a1412926efb1b147b581adbd87950ccf625dacf3"
+sha256 = "c35f940d631e00489ab4ac8462adf1a7194091970990504bace950fd1fecfa3f"
 
 [resolve]
 "ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"

@@ -1,0 +1,40 @@
+id = "circref_sg13g2_lna"
+title = "Cascode low-noise amplifier with inductive degeneration, IHP SG13G2"
+family = "amplifier"
+category = "rf"
+notes = """
+Common-source stage with 0.5 nH in the source and 12 nH in the gate, cascode, a load tank of 5 nH and 0.8 pF with 500 Ohm in parallel: tuned to 2.4 GHz. Driven from 50 Ohm with 10 mV at 2.4 GHz.
+Analyses: operating point, AC response from 100 MHz to 10 GHz, 120 periods of the carrier.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "lna.cir", dialect = "ngspice" },
+    { file = "lna.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "lna.cir"
+sha256 = "707bc1a97f64482aa62ac2a9afc25316f1f02bde0dcf2bd31d13cd661a3ab915"
+
+[[files]]
+path = "lna.cir.vacask"
+sha256 = "60023a9db267fd4ce57bf32eed6cef4f38f7e72b2e93c18803a1cf10cc65a6b7"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/inductor.osdi" = "libraries/vacask_spice_va/inductor.va"

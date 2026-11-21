@@ -1,0 +1,20 @@
+Synchronous buck converter power stage, IHP SG13G2 high-voltage MOS
+* 3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output: a PMOS of
+* 2 mm and an NMOS of 1 mm in fingers
+* of 10 um, driven with dead times of 3 ns and 2 ns, 1 uH with 50 mOhm and 10 nF,
+* 50 pF at the switching node. Start from zero output, 100 switching periods.
+.lib "ngspice/models/cornerMOShv.lib" mos_tt
+vin vin 0 dc 3.3
+vgp gp 0 dc 3.3 pulse(3.3 0 2n 1n 1n 34n 100n)
+vgn gn 0 dc 0 pulse(0 3.3 40n 1n 1n 57n 100n)
+xmp sw gp vin vin sg13_hv_pmos w=2000u l=0.45u ng=200
+xmn sw gn 0 0 sg13_hv_nmos w=1000u l=0.45u ng=100
+csw sw 0 50p
+l1 sw lx 1u
+rl lx out 50m
+c1 out 0 10n
+rload out 0 12
+.save v(gp) v(gn) v(sw) v(out)
+.op
+.tran 1n 10u
+.end

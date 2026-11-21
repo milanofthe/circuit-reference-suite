@@ -1,0 +1,30 @@
+Cross-coupled LC oscillator, IHP SG13G2 low-voltage MOS
+// An NMOS pair on two tanks of 2 nH (2 Ohm in series) and 400 fF with a tail current
+// of 0.5 mA, near 5.4 GHz. A current pulse between the outputs starts the oscillation.
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOSlv.lib" section=mos_tt
+load "spice/resistor.osdi"
+load "spice/capacitor.osdi"
+load "spice/inductor.osdi"
+model r sp_resistor
+model c sp_capacitor
+model l sp_inductor
+model vsource vsource
+model isource isource
+vdd (vdd 0) vsource dc=1.2
+l1 (vdd m1) l l=2e-09
+r1 (m1 outp) r r=2.0
+l2 (vdd m2) l l=2e-09
+r2 (m2 outn) r r=2.0
+c1 (outp 0) c c=4e-13
+c2 (outn 0) c c=4e-13
+xm1 (outp outn tail 0) sg13_lv_nmos w=2e-05 l=1.3e-07 ng=4.0
+xm2 (outn outp tail 0) sg13_lv_nmos w=2e-05 l=1.3e-07 ng=4.0
+itail (tail 0) isource dc=0.0005
+ctail (tail 0) c c=1e-13
+ikick (outn outp) isource type="pulse" val0=0.0 val1=0.0002 delay=1e-10 rise=2e-11 fall=2e-11 width=6e-11 period=1.0
+control
+  save v(outp) v(outn) v(tail)
+  analysis op1 op
+  analysis tran1 tran step=2e-12 stop=4e-08
+endc

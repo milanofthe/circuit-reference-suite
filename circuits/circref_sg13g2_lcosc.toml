@@ -1,0 +1,15 @@
+title = "Cross-coupled LC oscillator, IHP SG13G2"
+case = "circref_sg13g2_lcosc"
+source = "lcosc.cir"
+outputs = [
+    "v(outp)",
+    "v(outn)",
+    "v(tail)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 2e-12, stop = 4e-08 },
+]
+
+[variants]
+vacask = "lcosc.cir.vacask"
