@@ -1,0 +1,70 @@
+id = "ihp_sg13g2_vacask"
+title = "IHP SG13G2 MOS models in VACASK's format"
+subset = "the low-voltage and high-voltage MOS models and their corner files"
+notes = """
+Translated from the ngspice model files of `libraries/ihp_sg13g2`
+(`ihp-sg13g2/libs.tech/ngspice/models`) by the netlist converter that ships with VACASK
+0.3.4 (`ng2vclib`), with the configuration of its `sg13g2tovc.py`. The models are PSP103
+(`psp103va`, `pspnqs103va`): a netlist loads both as OSDI, compiled from the Verilog-A
+sources of `libraries/ihp_sg13g2`, and states `parameters swsoa=0`, which the model
+cards read.
+"""
+
+[source]
+name = "IHP-Open-PDK"
+url = "https://github.com/IHP-GmbH/IHP-Open-PDK"
+license = "Apache-2.0"
+authors = [
+    "IHP GmbH",
+]
+commit = "5e6d592e4002946a4616f798c357f0f3c06cf3b6"
+
+[[files]]
+path = "models/cornerMOSlv.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+
+[[files]]
+path = "models/cornerMOShv.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib"
+
+[[files]]
+path = "models/sg13g2_moslv_mod.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_mod.lib"
+
+[[files]]
+path = "models/sg13g2_moslv_mod_mismatch.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_mod_mismatch.lib"
+
+[[files]]
+path = "models/sg13g2_moslv_mismatch.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_mismatch.lib"
+
+[[files]]
+path = "models/sg13g2_moslv_stat.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moslv_stat.lib"
+
+[[files]]
+path = "models/sg13g2_moshv_mod.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_mod.lib"
+
+[[files]]
+path = "models/sg13g2_moshv_mod_mismatch.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_mod_mismatch.lib"
+
+[[files]]
+path = "models/sg13g2_moshv_mismatch.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_mismatch.lib"
+
+[[files]]
+path = "models/sg13g2_moshv_stat.lib"
+provenance = "translated"
+how = "ng2vclib of VACASK 0.3.4, configuration of its sg13g2tovc.py, from ihp-sg13g2/libs.tech/ngspice/models/sg13g2_moshv_stat.lib"
