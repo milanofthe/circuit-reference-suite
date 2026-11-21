@@ -1,0 +1,40 @@
+id = "circref_sg13g2_chargepump"
+title = "Four-stage Dickson charge pump, IHP SG13G2"
+family = "power"
+category = "high_voltage"
+notes = """
+Diode-connected 3.3 V NMOS, 1 pF pump capacitors on two complementary 20 MHz clocks, 10 pF and 2 MOhm at the output: clock edges of 1 ns against a settling time of microseconds.
+200 clock cycles of 50 ns.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "chargepump.cir", dialect = "ngspice" },
+    { file = "chargepump.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "chargepump.cir"
+sha256 = "f03c9d196699b98e5aba4ba075af2d20b73b655c4d7ed90da259323922c8e9f9"
+
+[[files]]
+path = "chargepump.cir.vacask"
+sha256 = "e7fa5922835534a9a3d3110ae4a87a5b842214d60878267975877d609cb038ca"
+
+[resolve]
+"ngspice/models/cornerMOShv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib"
+mosvar = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/mosvar/mosvar.va"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOShv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOShv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

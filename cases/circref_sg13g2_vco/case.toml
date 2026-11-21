@@ -1,0 +1,38 @@
+id = "circref_sg13g2_vco"
+title = "Current-starved ring oscillator with a control voltage step, IHP SG13G2"
+family = "oscillator"
+category = "oscillator"
+notes = """
+Five current-starved inverters and an output inverter. A current pulse into the first stage starts the oscillation; the control voltage steps from 0.7 V to 0.9 V at 40 ns.
+The operating point is the unstable equilibrium of the ring; the current pulse sets the start of the oscillation, so that it does not depend on numerical noise.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "vco.cir", dialect = "ngspice" },
+    { file = "vco.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "vco.cir"
+sha256 = "1b1921af4e7975398829607d2deeef428de3c9f6a3af9a653d0caa6af1bb468d"
+
+[[files]]
+path = "vco.cir.vacask"
+sha256 = "7e5d2779855c342d9b71392136562c0549588ebebfd3e2969c3069ab13d25789"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

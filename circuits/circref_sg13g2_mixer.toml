@@ -1,0 +1,18 @@
+title = "Single-balanced active mixer, IHP SG13G2"
+case = "circref_sg13g2_mixer"
+source = "mixer.cir"
+outputs = [
+    "v(rf)",
+    "v(lop)",
+    "v(lon)",
+    "v(x)",
+    "v(ifp)",
+    "v(ifn)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 5e-12, stop = 1.5e-07 },
+]
+
+[variants]
+vacask = "mixer.cir.vacask"

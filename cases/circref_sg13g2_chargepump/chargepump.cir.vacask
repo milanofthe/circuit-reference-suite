@@ -1,0 +1,30 @@
+Four-stage Dickson charge pump, IHP SG13G2 high-voltage MOS
+// Diode-connected 3.3 V NMOS, 1 pF pump capacitors on two complementary 20 MHz clocks,
+// 10 pF and 2 MOhm at the output: clock edges of 1 ns against a settling time of
+// microseconds.
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOShv.lib" section=mos_tt
+load "spice/resistor.osdi"
+load "spice/capacitor.osdi"
+model r sp_resistor
+model c sp_capacitor
+model vsource vsource
+vdd (vdd 0) vsource dc=3.3
+vclk (clk 0) vsource type="pulse" val0=0.0 val1=3.3 delay=5e-09 rise=1e-09 fall=1e-09 width=2.3e-08 period=5e-08
+vclkb (clkb 0) vsource type="pulse" val0=3.3 val1=0.0 delay=5e-09 rise=1e-09 fall=1e-09 width=2.3e-08 period=5e-08
+xm1 (vdd vdd n1 0) sg13_hv_nmos w=1e-05 l=4.5e-07
+xm2 (n1 n1 n2 0) sg13_hv_nmos w=1e-05 l=4.5e-07
+xm3 (n2 n2 n3 0) sg13_hv_nmos w=1e-05 l=4.5e-07
+xm4 (n3 n3 n4 0) sg13_hv_nmos w=1e-05 l=4.5e-07
+xm5 (n4 n4 out 0) sg13_hv_nmos w=1e-05 l=4.5e-07
+c1 (n1 clk) c c=1e-12
+c2 (n2 clkb) c c=1e-12
+c3 (n3 clk) c c=1e-12
+c4 (n4 clkb) c c=1e-12
+cout (out 0) c c=1e-11
+rload (out 0) r r=2000000.0
+control
+  save v(clk) v(n1) v(n2) v(n4) v(out)
+  analysis op1 op
+  analysis tran1 tran step=5e-10 stop=1e-05
+endc

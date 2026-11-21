@@ -1,0 +1,35 @@
+title = "Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2"
+case = "circref_sg13g2_ota"
+source = "ota.cir"
+outputs = [
+    "v(out)",
+    "v(inp)",
+    "v(d1)",
+    "v(d2)",
+    "v(tail)",
+    "v(nb)",
+]
+
+[[analysis]]
+type = "op"
+
+[[analysis]]
+type = "dc"
+sweep = [
+    { source = "vin", start = 0.4, stop = 1.0, step = 0.001 },
+]
+
+[[analysis]]
+type = "ac"
+sweep = "dec"
+points = 50
+start = 1.0
+stop = 1000000000.0
+
+[[analysis]]
+type = "tran"
+step = 1e-10
+stop = 4e-07
+
+[variants]
+vacask = "ota.cir.vacask"

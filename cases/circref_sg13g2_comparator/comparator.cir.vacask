@@ -1,0 +1,34 @@
+StrongARM latch comparator with output inverters, IHP SG13G2 low-voltage MOS
+// Clocked at 1 GHz. The differential input is a triangle of +-100 mV with a period of
+// 40 clock cycles: q follows the clock while v(inp) > v(inn), qb while it is below.
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOSlv.lib" section=mos_tt
+load "spice/capacitor.osdi"
+model c sp_capacitor
+model vsource vsource
+vdd (vdd 0) vsource dc=1.2
+vclk (clk 0) vsource type="pulse" val0=0.0 val1=1.2 delay=1e-10 rise=5e-11 fall=5e-11 width=4.5e-10 period=1e-09
+vinp (inp 0) vsource type="pulse" val0=0.6 val1=0.7 delay=0.0 rise=1.99e-08 fall=1.99e-08 width=1e-10 period=4e-08
+vinn (inn 0) vsource type="pulse" val0=0.7 val1=0.6 delay=0.0 rise=1.99e-08 fall=1.99e-08 width=1e-10 period=4e-08
+xmt (tail clk 0 0) sg13_lv_nmos w=4e-06 l=1.3e-07
+xm1 (x1 inp tail 0) sg13_lv_nmos w=4e-06 l=1.3e-07
+xm2 (x2 inn tail 0) sg13_lv_nmos w=4e-06 l=1.3e-07
+xm3 (outn outp x1 0) sg13_lv_nmos w=2e-06 l=1.3e-07
+xm4 (outp outn x2 0) sg13_lv_nmos w=2e-06 l=1.3e-07
+xm5 (outn outp vdd vdd) sg13_lv_pmos w=2e-06 l=1.3e-07
+xm6 (outp outn vdd vdd) sg13_lv_pmos w=2e-06 l=1.3e-07
+xm7 (outn clk vdd vdd) sg13_lv_pmos w=1e-06 l=1.3e-07
+xm8 (outp clk vdd vdd) sg13_lv_pmos w=1e-06 l=1.3e-07
+xm9 (x1 clk vdd vdd) sg13_lv_pmos w=1e-06 l=1.3e-07
+xm10 (x2 clk vdd vdd) sg13_lv_pmos w=1e-06 l=1.3e-07
+xp11 (q outn vdd vdd) sg13_lv_pmos w=2e-06 l=1.3e-07
+xn11 (q outn 0 0) sg13_lv_nmos w=1e-06 l=1.3e-07
+xp12 (qb outp vdd vdd) sg13_lv_pmos w=2e-06 l=1.3e-07
+xn12 (qb outp 0 0) sg13_lv_nmos w=1e-06 l=1.3e-07
+cq (q 0) c c=5e-15
+cqb (qb 0) c c=5e-15
+control
+  save v(clk) v(inp) v(inn) v(outp) v(outn) v(q) v(qb)
+  analysis op1 op
+  analysis tran1 tran step=1e-11 stop=8e-08
+endc

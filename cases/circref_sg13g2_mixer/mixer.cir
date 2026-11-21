@@ -1,0 +1,20 @@
+Single-balanced active mixer, IHP SG13G2 low-voltage MOS
+* A transconductor at the RF port under a differential pair switched by the LO, loads of
+* 1 kOhm and 1 pF. RF 2.4 GHz with 50 mV amplitude, LO 2.5 GHz with 300 mV amplitude per
+* side: the intermediate frequency of 100 MHz is v(ifp) - v(ifn).
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+vdd vdd 0 dc 1.2
+vrf rf 0 dc 0.55 ac 1 sin(0.55 0.05 2.4e9)
+vlop lop 0 dc 0.9 sin(0.9 0.3 2.5e9)
+vlon lon 0 dc 0.9 sin(0.9 -0.3 2.5e9)
+xm1 x rf 0 0 sg13_lv_nmos w=20u l=0.13u ng=4
+xm2 ifn lop x 0 sg13_lv_nmos w=10u l=0.13u ng=2
+xm3 ifp lon x 0 sg13_lv_nmos w=10u l=0.13u ng=2
+r1 vdd ifp 1k
+r2 vdd ifn 1k
+c1 ifp 0 1p
+c2 ifn 0 1p
+.save v(rf) v(lop) v(lon) v(x) v(ifp) v(ifn)
+.op
+.tran 5p 150n
+.end

@@ -1,0 +1,27 @@
+Single-balanced active mixer, IHP SG13G2 low-voltage MOS
+// A transconductor at the RF port under a differential pair switched by the LO, loads of
+// 1 kOhm and 1 pF. RF 2.4 GHz with 50 mV amplitude, LO 2.5 GHz with 300 mV amplitude per
+// side: the intermediate frequency of 100 MHz is v(ifp) - v(ifn).
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOSlv.lib" section=mos_tt
+load "spice/resistor.osdi"
+load "spice/capacitor.osdi"
+model r sp_resistor
+model c sp_capacitor
+model vsource vsource
+vdd (vdd 0) vsource dc=1.2
+vrf (rf 0) vsource type="sine" sinedc=0.55 ampl=0.05 freq=2400000000.0 mag=1.0
+vlop (lop 0) vsource type="sine" sinedc=0.9 ampl=0.3 freq=2500000000.0
+vlon (lon 0) vsource type="sine" sinedc=0.9 ampl=-0.3 freq=2500000000.0
+xm1 (x rf 0 0) sg13_lv_nmos w=2e-05 l=1.3e-07 ng=4.0
+xm2 (ifn lop x 0) sg13_lv_nmos w=1e-05 l=1.3e-07 ng=2.0
+xm3 (ifp lon x 0) sg13_lv_nmos w=1e-05 l=1.3e-07 ng=2.0
+r1 (vdd ifp) r r=1000.0
+r2 (vdd ifn) r r=1000.0
+c1 (ifp 0) c c=1e-12
+c2 (ifn 0) c c=1e-12
+control
+  save v(rf) v(lop) v(lon) v(x) v(ifp) v(ifn)
+  analysis op1 op
+  analysis tran1 tran step=5e-12 stop=1.5e-07
+endc

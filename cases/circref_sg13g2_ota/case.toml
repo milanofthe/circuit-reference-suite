@@ -1,0 +1,39 @@
+id = "circref_sg13g2_ota"
+title = "Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2"
+family = "opamp"
+category = "analog_cell"
+notes = """
+NMOS input pair, PMOS mirror load, PMOS common-source second stage, Miller compensation with a nulling resistor. The output is fed back to the inverting input. Every transistor is drawn in fingers of 2 um.
+Sized for 20 uA in each input transistor and 80 uA in the second stage at 1.2 V. Analyses: operating point, DC transfer of the buffer, closed-loop AC response, step response.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "ota.cir", dialect = "ngspice" },
+    { file = "ota.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "ota.cir"
+sha256 = "10e132d7e2adc864eb4db7e6bd278662e6f60338d0904d6c07c0b6c4f0618640"
+
+[[files]]
+path = "ota.cir.vacask"
+sha256 = "d0fe45c19f8703f1870303a02b77f766a3e5a64b5924ac72b07683c53dbc97f1"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

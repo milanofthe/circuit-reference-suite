@@ -1,0 +1,28 @@
+Current-starved ring oscillator with a control voltage step, IHP SG13G2 low-voltage MOS
+* Five current-starved inverters and an output inverter. A current pulse into the first
+* stage starts the oscillation; the control voltage steps from 0.7 V to 0.9 V at 40 ns.
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+.subckt stage in out pb nb vdd
+xmp1 ps pb vdd vdd sg13_lv_pmos w=4u l=0.5u
+xmp2 out in ps vdd sg13_lv_pmos w=2u l=0.13u
+xmn2 out in ns 0 sg13_lv_nmos w=1u l=0.13u
+xmn1 ns nb 0 0 sg13_lv_nmos w=2u l=0.5u
+cl out 0 20f
+.ends
+vdd vdd 0 dc 1.2
+vctrl nb 0 dc 0.7 pulse(0.7 0.9 40n 1n 1n 100n 200n)
+ikick 0 n1 dc 0 pulse(0 100u 0.1n 0.1n 0.1n 0.5n 1)
+xmbn pb nb 0 0 sg13_lv_nmos w=2u l=0.5u
+xmbp pb pb vdd vdd sg13_lv_pmos w=4u l=0.5u
+x1 n1 n2 pb nb vdd stage
+x2 n2 n3 pb nb vdd stage
+x3 n3 n4 pb nb vdd stage
+x4 n4 n5 pb nb vdd stage
+x5 n5 n1 pb nb vdd stage
+xpo out n1 vdd vdd sg13_lv_pmos w=2u l=0.13u
+xno out n1 0 0 sg13_lv_nmos w=1u l=0.13u
+co out 0 10f
+.save v(n1) v(n3) v(out) v(nb) v(pb)
+.op
+.tran 20p 80n
+.end

@@ -1,0 +1,29 @@
+StrongARM latch comparator with output inverters, IHP SG13G2 low-voltage MOS
+* Clocked at 1 GHz. The differential input is a triangle of +-100 mV with a period of
+* 40 clock cycles: q follows the clock while v(inp) > v(inn), qb while it is below.
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+vdd vdd 0 dc 1.2
+vclk clk 0 dc 0 pulse(0 1.2 100p 50p 50p 450p 1n)
+vinp inp 0 dc 0.6 pulse(0.6 0.7 0 19.9n 19.9n 0.1n 40n)
+vinn inn 0 dc 0.7 pulse(0.7 0.6 0 19.9n 19.9n 0.1n 40n)
+xmt tail clk 0 0 sg13_lv_nmos w=4u l=0.13u
+xm1 x1 inp tail 0 sg13_lv_nmos w=4u l=0.13u
+xm2 x2 inn tail 0 sg13_lv_nmos w=4u l=0.13u
+xm3 outn outp x1 0 sg13_lv_nmos w=2u l=0.13u
+xm4 outp outn x2 0 sg13_lv_nmos w=2u l=0.13u
+xm5 outn outp vdd vdd sg13_lv_pmos w=2u l=0.13u
+xm6 outp outn vdd vdd sg13_lv_pmos w=2u l=0.13u
+xm7 outn clk vdd vdd sg13_lv_pmos w=1u l=0.13u
+xm8 outp clk vdd vdd sg13_lv_pmos w=1u l=0.13u
+xm9 x1 clk vdd vdd sg13_lv_pmos w=1u l=0.13u
+xm10 x2 clk vdd vdd sg13_lv_pmos w=1u l=0.13u
+xp11 q outn vdd vdd sg13_lv_pmos w=2u l=0.13u
+xn11 q outn 0 0 sg13_lv_nmos w=1u l=0.13u
+xp12 qb outp vdd vdd sg13_lv_pmos w=2u l=0.13u
+xn12 qb outp 0 0 sg13_lv_nmos w=1u l=0.13u
+cq q 0 5f
+cqb qb 0 5f
+.save v(clk) v(inp) v(inn) v(outp) v(outn) v(q) v(qb)
+.op
+.tran 10p 80n
+.end
