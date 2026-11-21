@@ -205,9 +205,9 @@ def _vacask(g: dict, title: str, elements: list[Element], probes: list[str]) -> 
     kinds = [k for k in VACASK_DEVICES if any(e[0] == k for e in elements)]
     lines = [title, *g.get("models", {}).get("vacask", [])]
     lines += [f'load "{VACASK_DEVICES[k][0]}"' for k in kinds]
-    lines += [VACASK_DEVICES[k][1] + (f" {_params(g['diode'])}" if k == "d" else "") for k in kinds if k != "d"]
-    lines.append("model vsource vsource")
-    lines += [VACASK_DEVICES[k][1] + f" {_params(g['diode'])}" for k in kinds if k == "d"]
+    lines += [VACASK_DEVICES[k][1] for k in kinds if k != "d"] + ["model vsource vsource"]
+    if "d" in kinds:
+        lines.append(f"{VACASK_DEVICES['d'][1]} {_params(g['diode'])}")
     for kind, name, nodes, value in elements:
         at = f"({' '.join(nodes)})"
         if kind == "v":
