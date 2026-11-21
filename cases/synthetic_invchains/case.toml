@@ -1,0 +1,143 @@
+id = "synthetic_invchains"
+title = "CMOS inverter chains"
+family = "logic"
+notes = "Chains of 50 inverters, every chain driven by the pulse or its complement: independent blocks, the device evaluation scaled by the number of transistors. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: chains, 100 transistors each."
+netlists = [
+    { file = "generated/1.cir", dialect = "ngspice", size = 1 },
+    { file = "generated/1.cir.vacask", dialect = "vacask", size = 1 },
+    { file = "generated/3.cir", dialect = "ngspice", size = 3 },
+    { file = "generated/3.cir.vacask", dialect = "vacask", size = 3 },
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/30.cir", dialect = "ngspice", size = 30 },
+    { file = "generated/30.cir.vacask", dialect = "vacask", size = 30 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/300.cir", dialect = "ngspice", size = 300 },
+    { file = "generated/300.cir.vacask", dialect = "vacask", size = 300 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+stages = 50
+vdd = 1.2
+dc = 0.0
+
+[generator.nmos]
+subckt = "sg13_lv_nmos"
+w = 5e-07
+l = 1.3e-07
+
+[generator.pmos]
+subckt = "sg13_lv_pmos"
+w = 1e-06
+l = 1.3e-07
+
+[generator.models]
+ngspice = [
+    ".lib \"ngspice/models/cornerMOSlv.lib\" mos_tt",
+]
+vacask = [
+    "include \"vacask/models/sg13g2_vacask_common.lib\"",
+    "include \"vacask/models/cornerMOSlv.lib\" section=mos_tt",
+]
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.2
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1.5e-09
+period = 4e-09
+
+[generator.tran]
+step = 2e-11
+stop = 3.5e-09
+
+[[files]]
+path = "generated/1.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1"
+sha256 = "697c41a60e839071e70e533be103dd31ca1dc468b01bf6fe190d6c2a8efdd88b"
+
+[[files]]
+path = "generated/1.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1"
+sha256 = "9d7061a271d2a0362c5314c636d4e50376f74abb98c46f529cc15ce84c408680"
+
+[[files]]
+path = "generated/3.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3"
+sha256 = "6a2235f6900bfe550a479ecd49ce5230f8b99db3b9707e6dc2b28e32c5b1c5b6"
+
+[[files]]
+path = "generated/3.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3"
+sha256 = "7c240ea5c8bee61d6b10612dfadab177f44ceab334ec722b70c19aa3bed08474"
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "562b1d03786d28b47a68e82a8e05e70611130921475986650ddd9c4bf4406d0e"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "395e8e43f499eafc99ba725f18222c9fb980b13c2ff9848cc1afa1e04f5cd52f"
+
+[[files]]
+path = "generated/30.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "c9f1e0c1f2cc7bfeeb3dc8ccaa205739d99d7731debdcde5efe949b4c4a398a8"
+
+[[files]]
+path = "generated/30.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "0a34b5e7fe7cad47546978234c9a2231c2e4bbd8b7309de524378e741e09fb6c"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "30a95bfcc8e885910ad4bae13ce0727a7eb0cf5855a797cf9426861e42629ec6"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "b05e41d54e8fd06dc373e5b62533c9d4c37fb84719a0d0711c643f6250f89353"
+
+[[files]]
+path = "generated/300.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 300"
+sha256 = "eec2ae35f2f448b14097ba4d841baccd51490b879c02b3055dc8193aaa35fca3"
+
+[[files]]
+path = "generated/300.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 300"
+sha256 = "5f8d883ca87478a571890f1fc11a2c3bb1390b639f4e49d4cf054aa7100c79e1"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+"psp103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+"pspnqs103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"

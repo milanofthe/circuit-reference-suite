@@ -1,0 +1,15 @@
+title = "CMOS inverter chains"
+case = "synthetic_invchains"
+source = "generated/100.cir"
+outputs = [
+    "v(k1s1)",
+    "v(k50s25)",
+    "v(k100s50)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 2e-11, stop = 3.5e-09 },
+]
+
+[variants]
+vacask = "generated/100.cir.vacask"

@@ -1,0 +1,15 @@
+title = "Array of short CMOS inverter chains with RC nets"
+case = "synthetic_invarray"
+source = "generated/1000.cir"
+outputs = [
+    "v(k1s1w2)",
+    "v(k500s2w2)",
+    "v(k1000s4w2)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 2e-11, stop = 2.5e-09 },
+]
+
+[variants]
+vacask = "generated/1000.cir.vacask"

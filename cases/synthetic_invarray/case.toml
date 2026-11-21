@@ -1,0 +1,152 @@
+id = "synthetic_invarray"
+title = "Array of short CMOS inverter chains with RC nets"
+family = "logic"
+category = "memory"
+notes = "An array of rows of 4 inverters, every net an RC line of 2 segments with coupling capacitors to the same net of the next row: one small cell repeated, 1 RC node per transistor. Not a memory: it stands for the size and repetition of one, without the bistable cell. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: rows, 8 transistors each."
+netlists = [
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/30.cir", dialect = "ngspice", size = 30 },
+    { file = "generated/30.cir.vacask", dialect = "vacask", size = 30 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+    { file = "generated/300.cir", dialect = "ngspice", size = 300 },
+    { file = "generated/300.cir.vacask", dialect = "vacask", size = 300 },
+    { file = "generated/1000.cir", dialect = "ngspice", size = 1000 },
+    { file = "generated/1000.cir.vacask", dialect = "vacask", size = 1000 },
+    { file = "generated/3000.cir", dialect = "ngspice", size = 3000 },
+    { file = "generated/3000.cir.vacask", dialect = "vacask", size = 3000 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+stages = 4
+vdd = 1.2
+dc = 0.0
+
+[generator.nmos]
+subckt = "sg13_lv_nmos"
+w = 5e-07
+l = 1.3e-07
+
+[generator.pmos]
+subckt = "sg13_lv_pmos"
+w = 1e-06
+l = 1.3e-07
+
+[generator.models]
+ngspice = [
+    ".lib \"ngspice/models/cornerMOSlv.lib\" mos_tt",
+]
+vacask = [
+    "include \"vacask/models/sg13g2_vacask_common.lib\"",
+    "include \"vacask/models/cornerMOSlv.lib\" section=mos_tt",
+]
+
+[generator.wire]
+ratio = 1
+r = 200.0
+c = 2e-15
+coupling = 2e-15
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.2
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1.5e-09
+period = 4e-09
+
+[generator.tran]
+step = 2e-11
+stop = 2.5e-09
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "bcebef88b0a4718135233d869e2953b5aed8cd9fdeb11fc6281fbb84124dd439"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "e60581732d2a50d1e63a89342d78e19199e32e4b78d9a86b6f00b5b71b5b9916"
+
+[[files]]
+path = "generated/30.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "afde6bb25490a98461a6508fda66927b0038a9515a3d92ae2de00e84315dd226"
+
+[[files]]
+path = "generated/30.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "5f17bf07690a71018efba9b624152e7089c4a4e4442b562ddacfc66d7cf35ba0"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "93361a9b66eb1b82b6d03fadc418aafa6f7a0c10b12595dd8e55c1be60eb73ab"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "c33279f0fdab28d9e42fbc82df6778eb3c52397921dffae41141249db97a04e3"
+
+[[files]]
+path = "generated/300.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 300"
+sha256 = "c3e478dfeca15c11ac2770b6602d2f9a0a551c9fbee2c837e76bccac4649d622"
+
+[[files]]
+path = "generated/300.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 300"
+sha256 = "99b399b9c0b19e645b57529627d9ed322b439ad5805366409a4c21ed551410aa"
+
+[[files]]
+path = "generated/1000.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1000"
+sha256 = "480b88628d240f502d79f805669b77cc2de392bf0a966a474d30eb062d4cc160"
+
+[[files]]
+path = "generated/1000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1000"
+sha256 = "3926ba1f1b1c721b9809b012c39a372e6a9c74609e7d0d26528d219ba02d7e73"
+
+[[files]]
+path = "generated/3000.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3000"
+sha256 = "556cd866b09bcac773d0f7e644271607b7eb7c94197d4c4f59bbb1720f95fb50"
+
+[[files]]
+path = "generated/3000.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3000"
+sha256 = "2fb1d0d293637ac9f9fb001812625e3f5c3a3a1cbd3ef974b39dcb01edcbc9ba"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+"psp103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+"pspnqs103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
