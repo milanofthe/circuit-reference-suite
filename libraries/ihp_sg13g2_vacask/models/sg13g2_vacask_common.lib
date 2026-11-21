@@ -1,0 +1,17 @@
+// What the IHP SG13G2 models in VACASK's format are instances of: the device modules,
+// and the default models of the passive elements inside the subcircuits.
+
+// Disable SOA checks
+parameters swsoa=0
+
+// OSDI files
+load "psp103.osdi"
+load "psp103_nqs.osdi"
+load "mosvar.osdi"
+load "spice/capacitor.osdi"
+load "spice/diode.osdi"
+load "spice/resistor.osdi"
+
+// Default models
+model sg13g2_default_mod_c sp_capacitor
+model sg13g2_default_mod_r sp_resistor

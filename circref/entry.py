@@ -85,6 +85,11 @@ class Case(Entry):
         return self.raw["family"]
 
     @property
+    def category(self) -> str | None:
+        """The class a run-time benchmark sorts the case into (schema/case.schema.json)."""
+        return self.raw.get("category")
+
+    @property
     def open_questions(self) -> list[str]:
         return self.raw.get("open_questions", [])
 
