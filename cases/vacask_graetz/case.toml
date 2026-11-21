@@ -1,6 +1,7 @@
 id = "vacask_graetz"
 title = "Full-wave bridge rectifier with smoothing capacitor and load"
 family = "rectifier"
+category = "high_voltage"
 netlists = [
     { file = "vacask/runme.sim", dialect = "vacask" },
     { file = "ngspice/runme.sim", dialect = "ngspice" },

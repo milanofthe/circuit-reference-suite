@@ -1,6 +1,7 @@
 id = "vacask_bjtring"
 title = "Bipolar ring oscillator"
 family = "oscillator"
+category = "oscillator"
 notes = """
 From the Verilog-A Distiller benchmarks of VACASK (`benchmark/vadistiller`): the same
 circuit with ngspice's built-in models, with the same models distilled to Verilog-A in

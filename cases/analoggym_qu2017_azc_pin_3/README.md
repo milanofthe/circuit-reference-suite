@@ -1,6 +1,6 @@
 # AnalogGym amplifier Qu2017_AZC_Pin_3, SKY130
 
-opamp | ngspice | status: **adapted**
+opamp | category: analog_cell | ngspice | status: **adapted**
 
 ## Source
 

@@ -1,6 +1,7 @@
 id = "analoggym_song_dacfc_pin_3"
 title = "AnalogGym amplifier Song_DACFC_Pin_3, SKY130"
 family = "opamp"
+category = "analog_cell"
 netlists = [
     { file = "amp_spice_testbench/Song_DACFC_Pin_3_ACDC.cir", dialect = "ngspice" },
     { file = "amp_spice_testbench/Song_DACFC_Pin_3_Tran.cir", dialect = "ngspice" },

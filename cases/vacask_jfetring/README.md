@@ -1,6 +1,6 @@
 # JFET ring oscillator
 
-oscillator | ngspice, vacask | status: **complete**
+oscillator | category: oscillator | ngspice, vacask | status: **complete**
 
 ## Source
 

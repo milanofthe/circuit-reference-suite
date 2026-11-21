@@ -1,6 +1,7 @@
 id = "analoggym_rgnn_rl"
 title = "AnalogGym RGNN_RL testbenches: NMCF amplifier and LDO, SKY130"
 family = "opamp"
+category = "analog_cell"
 netlists = [
     { file = "simulations/AMP_NMCF_ACDC.cir", dialect = "ngspice" },
     { file = "simulations/AMP_NMCF_Tran.cir", dialect = "ngspice" },

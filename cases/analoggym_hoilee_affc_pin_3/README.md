@@ -1,6 +1,6 @@
 # AnalogGym amplifier HoiLee_AFFC_Pin_3, SKY130
 
-opamp | ngspice | status: **complete**
+opamp | category: analog_cell | ngspice | status: **complete**
 
 ## Source
 

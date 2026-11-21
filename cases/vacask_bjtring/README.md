@@ -1,6 +1,6 @@
 # Bipolar ring oscillator
 
-oscillator | ngspice, vacask, xyce | status: **complete**
+oscillator | category: oscillator | ngspice, vacask, xyce | status: **complete**
 
 ## Source
 
