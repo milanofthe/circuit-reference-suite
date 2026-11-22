@@ -46,11 +46,10 @@ network = "mesh"
 r = 1000.0
 c = 1e-15
 source_r = 100.0
-dc = 1.0
 
 [generator.pulse]
-v1 = 0.0
-v2 = 1.0
+v1 = 1.0
+v2 = 0.0
 delay = 1e-10
 rise = 2e-11
 fall = 2e-11
@@ -65,157 +64,157 @@ stop = 1e-08
 path = "generated/10.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 10"
-sha256 = "fed6e7406c28597d3b711f19062bb7c21efbdec2c91c8861b85aed7c59a21b71"
+sha256 = "207bf893c2980f40aba9b6dbfc8ea4220e415eeca4fbd27545a34bd603500cf0"
 
 [[files]]
 path = "generated/10.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 10"
-sha256 = "5a4a9873892b703e10b64d40372916fa24f1f815b9d84b353134419787b4349b"
+sha256 = "cbb3398d148fe69dfa4ffbdcb1b9b9e031793941b4fce096932c2522d64d042a"
 
 [[files]]
 path = "generated/13.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 13"
-sha256 = "f9c8e31a3eaba431418cf2c39794b2a610bdead68eefec2c433d6dd768a30ec2"
+sha256 = "77f354d29befb02bbf5b57fe71010d710dfcb1a1397443da3163f266f12b5837"
 
 [[files]]
 path = "generated/13.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 13"
-sha256 = "c7cab30151a954824e8ee6aed75213acf3101e49d683f673d85e8e3dff072408"
+sha256 = "1cb15f03616210b68ba65615371cc51200274717757bb9747ad0183a488fd4b2"
 
 [[files]]
 path = "generated/18.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 18"
-sha256 = "da074aa9e750f6825e3d971501b5c7714976c549ccce11669eec900891b181f8"
+sha256 = "b99931c6f4294c8e72b1208d16b3cc729a175df796545a659af48afb4bdc322c"
 
 [[files]]
 path = "generated/18.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 18"
-sha256 = "9cd39a367fea19ac61dc0b46aa2f993b75bce24d16bccd0c1cf964362cfdec68"
+sha256 = "d8856036e39df61d04dd949ea8ffdba147843cb609fca3e43f93476d3eefd70e"
 
 [[files]]
 path = "generated/24.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 24"
-sha256 = "45bfa8d8a6b44b7349dfe17f29dd4f7edcfd023b69e55815f148ae697baabd1b"
+sha256 = "a033615c44605e9fce828f4504986fca81324395e276553c6200db1d4ed6eb82"
 
 [[files]]
 path = "generated/24.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 24"
-sha256 = "665e0102d330a4bce8710c3a10aa162ebb00b603958c7deea345636685b55ecd"
+sha256 = "c83881f6847afcf2c8358b30df75edeb811476ead0c94008ecc68d5e5a0ded78"
 
 [[files]]
 path = "generated/30.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 30"
-sha256 = "fe0dfa527a5f35fd85447c405d68a9913400a798cd7bd2b4aba8cd619c4be2ca"
+sha256 = "c6c5121aa8708cac1d77605f786aaca4e9200c9971734e528235aeb35a87c018"
 
 [[files]]
 path = "generated/30.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 30"
-sha256 = "e6810ffc0dc6cf294b8d08978049a7cff7db499021a2e92a81e537742dc4d6bd"
+sha256 = "699b31812204a1fc55c49a903f6d9cec46f171c0c3f5dbc31a04b1df0efd5c76"
 
 [[files]]
 path = "generated/42.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 42"
-sha256 = "4f259645f2e0d45d9a8b78e7597756cde2dc91da0c693f783b321d6795461cf5"
+sha256 = "7f4dfd3812a01e0947b6c225816557cfd2faa30dc7143b478981300d825dd2ce"
 
 [[files]]
 path = "generated/42.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 42"
-sha256 = "deaf1c1ef7c14dcc811e6ffb959a801206f77e621e9c0f3d8df1b41019d8ec8d"
+sha256 = "ad58b6e64c6d300e7548d1bc634212c46c04af2e586b0a9a96afd992fe503fa2"
 
 [[files]]
 path = "generated/56.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 56"
-sha256 = "a33080e2b13a6f3bf07386e374e7ed804d2c70c95ff7aee363e0fc133f369bab"
+sha256 = "33ce4a4a863b0e38c659bb5fec535b70265f82140c407a35328243abfdd50148"
 
 [[files]]
 path = "generated/56.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 56"
-sha256 = "dd0b95b90eda6c791e198ed82084fef2ddb0a5e868fe46acf4ff69b4a173a4d8"
+sha256 = "c2015dabd9410f03a8ca337b05dc3053ca260606115313d929aeef759b5b3df1"
 
 [[files]]
 path = "generated/75.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 75"
-sha256 = "c469ce7a4e1bec9a9c212ed2ab76e98e151d37baaf8a05a9b157960ed5df3235"
+sha256 = "a6449fa3a09441b07ad936b1a5192393450df0bb1013377c41275ff04e70b7d5"
 
 [[files]]
 path = "generated/75.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 75"
-sha256 = "2c24da33a21eed71f13e3b4a524b74fc8d9705419d1792f98c92ef9552efe666"
+sha256 = "3b37878196211dc74f3d78657b1a3656854f9b434ff104b8348c88b27e699e24"
 
 [[files]]
 path = "generated/100.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 100"
-sha256 = "8aac21dbd64216a32247696ee44a21a75079adfa35c2178dc642d15608549ffa"
+sha256 = "a7c931a05582d0ea13ff11293eacefa52d547429d1056dff5100b17f9396ec50"
 
 [[files]]
 path = "generated/100.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 100"
-sha256 = "d08f36c93435df09e7d99a4417b1fef7b7083f42186d09222d8c3c77124f6ffe"
+sha256 = "144c83444a665d25f4ff6fb1df8b032adddf0d4c32b79fee8a3f12bbc65376c3"
 
 [[files]]
 path = "generated/133.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 133"
-sha256 = "7d4fc32430943a87ef0725b7a18c9fbe92b1e2d72871adda585b4dce1a2f9dc7"
+sha256 = "44698f98631f3d01e6ec7fe3470467c239ed3cad9385b46cb73e2628f468d247"
 
 [[files]]
 path = "generated/133.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 133"
-sha256 = "d4599efb6c5dcd4f0ec91175c23fe3a17d0c738cf7712bc66c6684f28f5992f5"
+sha256 = "9c02ab2f0a50e6e8a807babef260a9227f04a91c88b3e1e7efaa5ef3dd5b3890"
 
 [[files]]
 path = "generated/178.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 178"
-sha256 = "84af67a7e2e4b9863337b49bb247dd94dea7b5ba929545d6cd15be4edc188432"
+sha256 = "0f42b7a749111ef17187bb74d85dbb17cae009f8a5d7d99ae1e311f5a87e1829"
 
 [[files]]
 path = "generated/178.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 178"
-sha256 = "b0558832153b19bdfdf04c27ae1fc4fe4e7797cbb2fec7bf70984a514b956075"
+sha256 = "731801a0fafc0e8cb158ca53b598e8015fb55cdb3ea7e81c298a5ae296f98804"
 
 [[files]]
 path = "generated/237.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 237"
-sha256 = "90b5b0080fd917452eded5b6882a622980af99b665c0b066856bb76902f00b40"
+sha256 = "ada3e5f31eb36f7cfee73abcd42daa483a8736b17b966be822259dad69b592e7"
 
 [[files]]
 path = "generated/237.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 237"
-sha256 = "c6bb6c5e11547e8ea401ce9a00ba31f1b623597e6aad5675088ecb89d41684b4"
+sha256 = "32fde8837e918ef9034892da3e4581db890396a784350f5dda1999149d7a5c76"
 
 [[files]]
 path = "generated/300.cir"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 300"
-sha256 = "cca6f14051041855db1f73cee4554e1d81ff36ef1cbea3112dada76eed1a4549"
+sha256 = "e142097a0e3ac2b5ff7830bd4885c38a870639d60a5e3dbf7dac7b26c60a6aa9"
 
 [[files]]
 path = "generated/300.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, mesh of size 300"
-sha256 = "10412182f9055d6f6b6057c2a1f9b37dd7f7c9c5d6ba6b901116dadc13b4ff9e"
+sha256 = "f01acfbf11d1cb00744945e7270ec7259beb63511299a3a712739c2898a8c18d"
 
 [resolve]
 "spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"

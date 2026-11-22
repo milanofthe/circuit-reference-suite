@@ -8,6 +8,7 @@
   "$defs": {
     "pulse": {
       "type": "object",
+      "description": "The source's waveform. v1, its value at t = 0, is also its DC value: the operating point is solved at it.",
       "required": ["v1", "v2", "delay", "rise", "fall", "width", "period"],
       "additionalProperties": {"type": "number"}
     },
@@ -63,14 +64,13 @@
       "oneOf": [
         {
           "description": "An RC network on a graph; with diode, a diode from every node to ground. size: what the graph is sized by.",
-          "required": ["network", "r", "c", "source_r", "dc", "pulse", "tran"],
+          "required": ["network", "r", "c", "source_r", "pulse", "tran"],
           "additionalProperties": false,
           "properties": {
             "network": {"enum": ["ladder", "mesh", "grid3d", "star", "ring", "random", "tree"]},
             "r": {"type": "number", "exclusiveMinimum": 0},
             "c": {"type": "number", "exclusiveMinimum": 0},
             "source_r": {"type": "number", "exclusiveMinimum": 0},
-            "dc": {"type": "number", "description": "The source's DC value: the operating point is solved at it, the transient starts from the pulse."},
             "diode": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number"},
                       "description": "The parameters of the diode model, as SPICE names them."},
             "pulse": {"$ref": "#/$defs/pulse"},
@@ -79,12 +79,11 @@
         },
         {
           "description": "Chains of CMOS inverters; with wire, an RC line per net with coupling to the next chain. size: the number of chains.",
-          "required": ["stages", "vdd", "dc", "nmos", "pmos", "models", "pulse", "tran"],
+          "required": ["stages", "vdd", "nmos", "pmos", "models", "pulse", "tran"],
           "additionalProperties": false,
           "properties": {
             "stages": {"type": "integer", "minimum": 1, "description": "Inverters per chain."},
             "vdd": {"type": "number", "exclusiveMinimum": 0},
-            "dc": {"type": "number", "description": "The DC value of the input the operating point is solved at; every second chain is driven by its complement."},
             "nmos": {"$ref": "#/$defs/device"},
             "pmos": {"$ref": "#/$defs/device"},
             "models": {

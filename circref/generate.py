@@ -7,13 +7,13 @@ are not committed (.gitignore): build writes them, and validate, check and run w
 ones that are missing.
 
 A generator builds the circuit as a list of elements; one writer per dialect states them.
-Every netlist runs the operating point at the sources' DC values and the transient from
-the pulse.
+A pulsed source has the pulse's initial value ``v1`` as its DC value, so that every
+simulator solves the operating point at it, whether it reads the DC value or the waveform
+at t = 0, and the transient starts from that operating point.
 
 ``network``: an RC network, a capacitor ``c`` from every node to ground and a resistor
-``r`` per edge of a graph, driven at node 1 through ``source_r`` by a source of the DC
-value ``dc`` and a pulse in time. Without ``diode`` it is linear: the operating point is
-one linear solve of the resistor network. With ``diode`` (the parameters of a junction
+``r`` per edge of a graph, driven at node 1 through ``source_r`` by a pulse. Without
+``diode`` it is linear: the operating point is one linear solve of the resistor network. With ``diode`` (the parameters of a junction
 diode model) a diode goes from every node to ground: the operating point takes Newton
 iterations, the matrix values change at every one of them, the graph and with it the
 elimination structure stay. The networks differ only in the graph:
@@ -125,7 +125,7 @@ Element = tuple[str, str, tuple[str, ...], object]
 
 def _network(g: dict, size: int) -> tuple[str, list[Element], list[str]]:
     n, edges, probes = NETWORKS[g["network"]](size)
-    elements: list[Element] = [("v", "vin", ("src", "0"), (g["dc"], g["pulse"])),
+    elements: list[Element] = [("v", "vin", ("src", "0"), (g["pulse"]["v1"], g["pulse"])),
                                ("r", "rsrc", ("src", "n1"), g["source_r"])]
     elements += [("c", f"c{i}", (f"n{i}", "0"), g["c"]) for i in range(1, n + 1)]
     elements += [("r", f"r{k}", (f"n{a}", f"n{b}"), g["r"]) for k, (a, b) in enumerate(edges, 1)]
@@ -140,8 +140,8 @@ def _chains(g: dict, size: int) -> tuple[str, list[Element], list[str]]:
     segments = 2 * wire["ratio"] if wire else 0
     complement = p | {"v1": p["v2"], "v2": p["v1"]}
     elements: list[Element] = [("v", "vdd", ("vdd", "0"), (g["vdd"], None)),
-                               ("v", "vin", ("in", "0"), (g["dc"], p)),
-                               ("v", "vinb", ("inb", "0"), (g["vdd"] - g["dc"], complement))]
+                               ("v", "vin", ("in", "0"), (p["v1"], p)),
+                               ("v", "vinb", ("inb", "0"), (complement["v1"], complement))]
     node = lambda k, s, j=0: f"k{k}s{s}" + (f"w{j}" if j else "")
     for k in range(1, size + 1):
         gate = "inb" if k % 2 == 0 else "in"

@@ -8,7 +8,7 @@ from circref.entry import Case
 
 PULSE = {"v1": 0.0, "v2": 1.0, "delay": 1e-10, "rise": 2e-11, "fall": 2e-11, "width": 1e-9, "period": 2e-9}
 TRAN = {"step": 1e-11, "stop": 1e-8}
-CHAINS = {"stages": 3, "vdd": 1.0, "dc": 0.0, "nmos": {"subckt": "n", "w": 1e-6}, "pmos": {"subckt": "p", "w": 2e-6},
+CHAINS = {"stages": 3, "vdd": 1.0, "nmos": {"subckt": "n", "w": 1e-6}, "pmos": {"subckt": "p", "w": 2e-6},
           "models": {"ngspice": [".include models"]}, "pulse": PULSE, "tran": TRAN}
 
 
@@ -40,7 +40,7 @@ class Chains(unittest.TestCase):
 
 class Network(unittest.TestCase):
     def test_a_diode_per_node_on_the_same_graph(self):
-        g = {"network": "mesh", "r": 1e3, "c": 1e-15, "source_r": 100.0, "dc": 1.0, "pulse": PULSE, "tran": TRAN}
+        g = {"network": "mesh", "r": 1e3, "c": 1e-15, "source_r": 100.0, "pulse": PULSE, "tran": TRAN}
         _, linear, _ = generate.circuit(case(g), 5)
         _, diodes, _ = generate.circuit(case(g | {"diode": {"is": 1e-14}}), 5)
         self.assertEqual([e for e in diodes if e[0] != "d"], linear)
