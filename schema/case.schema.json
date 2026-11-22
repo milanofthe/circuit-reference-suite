@@ -34,9 +34,9 @@
                "passive", "behavioral", "test"],
       "description": "What the circuit is. device: a single-device characterization deck; test: a regression deck exercising simulator features."
     },
-    "category": {
-      "enum": ["analog_cell", "switching", "oscillator", "post_layout", "high_voltage", "memory", "rf"],
-      "description": "The class a run-time benchmark sorts the circuit into, by what its cost is made of. analog_cell: amplifiers, references, regulators (set-up and many short analyses); switching: comparators, data converters, switched-capacitor circuits (time steps times device evaluation); oscillator: oscillators and PLL blocks (many cycles); post_layout: transistors inside a large RC network with coupling capacitors (the linear solve); high_voltage: power stages and stiff circuits; memory: arrays (size and repetition); rf: circuits at a carrier (periodic steady state). Left out where none applies: device and regression decks, linear networks."
+    "cost": {
+      "enum": ["setup", "device_evaluation", "linear_solve", "time_points", "convergence", "steady_state"],
+      "description": "The term of the run time the case is chosen or built to weight, after T = set-up + time points x Newton iterations x (device evaluation + linear solve). setup: few devices and short analyses, so that parsing, model set-up and the operating point are the run; device_evaluation: many transistors and few other elements; linear_solve: a large matrix from an RC network, with or without devices in it; time_points: many periods or edges in the transient; convergence: large swings and switching elements, so that Newton iterations, limiting and rejected steps count; steady_state: a carrier far above the signal bandwidth, the transient to a periodic steady state. Left out for device and regression decks. What the circuit is: family. What a run spends where is measured, not read from this field."
     },
     "source": {"$ref": "common.schema.json#/$defs/source"},
     "files": {"$ref": "common.schema.json#/$defs/files"},

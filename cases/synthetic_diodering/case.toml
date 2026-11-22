@@ -1,6 +1,7 @@
 id = "synthetic_diodering"
 title = "RC ring with a diode per node"
 family = "passive"
+cost = "linear_solve"
 notes = "The network of synthetic_rcring (a ring with a chord every 50 nodes) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes."
 netlists = [
     { file = "generated/100.cir", dialect = "ngspice", size = 100 },

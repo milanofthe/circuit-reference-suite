@@ -1,6 +1,6 @@
 # AnalogGym amplifier Peng_TCFC_Pin_3, SKY130
 
-opamp | category: analog_cell | ngspice | status: **adapted**
+opamp | cost: setup | ngspice | status: **adapted**
 
 ## Source
 

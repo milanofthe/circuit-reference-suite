@@ -1,7 +1,7 @@
 id = "circref_sg13g2_chargepump"
 title = "Four-stage Dickson charge pump, IHP SG13G2"
 family = "power"
-category = "high_voltage"
+cost = "convergence"
 notes = """
 Diode-connected 3.3 V NMOS, 1 pF pump capacitors on two complementary 20 MHz clocks, 10 pF and 2 MOhm at the output: clock edges of 1 ns against a settling time of microseconds.
 200 clock cycles of 50 ns.

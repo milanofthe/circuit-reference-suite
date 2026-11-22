@@ -1,6 +1,6 @@
 # Cascode low-noise amplifier with inductive degeneration, IHP SG13G2
 
-amplifier | category: rf | ngspice, vacask | status: **adapted**
+amplifier | cost: steady_state | ngspice, vacask | status: **adapted**
 
 ## Source
 

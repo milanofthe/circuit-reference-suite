@@ -1,6 +1,6 @@
 # AnalogGym low-dropout regulator Basic_LDO, SKY130
 
-ldo | category: analog_cell | ngspice | status: **complete**
+ldo | cost: setup | ngspice | status: **complete**
 
 ## Source
 

@@ -1,7 +1,7 @@
 id = "circref_sg13g2_comparator"
 title = "StrongARM latch comparator with output inverters, IHP SG13G2"
 family = "comparator"
-category = "switching"
+cost = "time_points"
 notes = """
 Clocked at 1 GHz. The differential input is a triangle of +-100 mV with a period of 40 clock cycles: q follows the clock while v(inp) > v(inn), qb while it is below.
 80 clock cycles of 1 ns.

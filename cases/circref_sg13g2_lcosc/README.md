@@ -1,6 +1,6 @@
 # Cross-coupled LC oscillator, IHP SG13G2
 
-oscillator | category: oscillator | ngspice, vacask | status: **adapted**
+oscillator | cost: time_points | ngspice, vacask | status: **adapted**
 
 ## Source
 

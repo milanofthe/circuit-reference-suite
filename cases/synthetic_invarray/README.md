@@ -1,6 +1,6 @@
 # Array of short CMOS inverter chains with RC nets
 
-logic | category: memory | ngspice, vacask | status: **adapted**
+logic | cost: device_evaluation | ngspice, vacask | status: **adapted**
 
 ## Source
 

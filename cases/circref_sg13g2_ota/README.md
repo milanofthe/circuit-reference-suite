@@ -1,6 +1,6 @@
 # Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2
 
-opamp | category: analog_cell | ngspice, vacask | status: **adapted**
+opamp | cost: setup | ngspice, vacask | status: **adapted**
 
 ## Source
 

@@ -1,6 +1,7 @@
 id = "synthetic_invchains"
 title = "CMOS inverter chains"
 family = "logic"
+cost = "device_evaluation"
 notes = "Chains of 50 inverters, every chain driven by the pulse or its complement: independent blocks, the device evaluation scaled by the number of transistors. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: chains, 100 transistors each."
 netlists = [
     { file = "generated/1.cir", dialect = "ngspice", size = 1 },

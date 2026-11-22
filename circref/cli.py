@@ -83,7 +83,7 @@ def cmd_check(args) -> int:
 
 def cmd_list(args) -> int:
     for c in iter_cases():
-        print(f"{c.id:44s} {c.family:16s} {c.category or '-':14s} {report.status_text(c)}")
+        print(f"{c.id:44s} {c.family:16s} {c.cost or '-':18s} {report.status_text(c)}")
     return 0
 
 

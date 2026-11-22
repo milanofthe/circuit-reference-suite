@@ -1,6 +1,6 @@
 # Full-wave bridge rectifier with smoothing capacitor and load
 
-rectifier | category: high_voltage | gnucap, ngspice, vacask, xyce | status: **complete**
+rectifier | cost: convergence | gnucap, ngspice, vacask, xyce | status: **complete**
 
 ## Source
 

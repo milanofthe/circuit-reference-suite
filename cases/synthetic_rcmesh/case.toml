@@ -1,6 +1,7 @@
 id = "synthetic_rcmesh"
 title = "RC mesh, 2D grid"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, m x m nodes. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes per side."
 netlists = [
     { file = "generated/10.cir", dialect = "ngspice", size = 10 },

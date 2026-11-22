@@ -1,6 +1,7 @@
 id = "synthetic_diodegrid3d"
 title = "RC grid with a diode per node, 3D"
 family = "passive"
+cost = "linear_solve"
 notes = "The network of synthetic_rcgrid3d (m^3 nodes) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes per side."
 netlists = [
     { file = "generated/5.cir", dialect = "ngspice", size = 5 },

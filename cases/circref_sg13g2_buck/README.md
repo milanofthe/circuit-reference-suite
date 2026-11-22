@@ -1,6 +1,6 @@
 # Synchronous buck converter power stage, IHP SG13G2
 
-power | category: high_voltage | ngspice, vacask | status: **adapted**
+power | cost: convergence | ngspice, vacask | status: **adapted**
 
 ## Source
 

@@ -49,7 +49,7 @@ def _link(path, base) -> str:
 def case_readme(case: Case) -> str:
     label, reasons = case.status()
     lines = [f"# {case.title}", "",
-             f"{case.family} | {f'category: {case.category} | ' if case.category else ''}"
+             f"{case.family} | {f'cost: {case.cost} | ' if case.cost else ''}"
              f"{', '.join(sorted({n.dialect for n in case.netlists()}))} | "
              f"status: **{label}**", "", "## Source", ""] + _source_lines(case.source)
     lines += ["", "## Netlists", "",

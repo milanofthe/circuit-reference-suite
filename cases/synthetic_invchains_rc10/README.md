@@ -1,6 +1,6 @@
 # CMOS inverter chains in an RC network, 10 RC nodes per transistor
 
-interconnect | category: post_layout | ngspice, vacask | status: **adapted**
+interconnect | cost: linear_solve | ngspice, vacask | status: **adapted**
 
 ## Source
 

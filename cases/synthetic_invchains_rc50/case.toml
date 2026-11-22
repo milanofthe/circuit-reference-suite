@@ -1,7 +1,7 @@
 id = "synthetic_invchains_rc50"
 title = "CMOS inverter chains in an RC network, 50 RC nodes per transistor"
 family = "interconnect"
-category = "post_layout"
+cost = "linear_solve"
 notes = "Chains of 10 inverters whose nets are RC lines of 100 segments with coupling capacitors to the same net of the next chain, as a layout extraction writes them: 50 RC nodes per transistor, the chains tied into one matrix by the coupling. The totals per net (200 Ohm, 2 fF to ground, 2 fF to the next chain) do not depend on the number of segments. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: chains, 20 transistors each."
 netlists = [
     { file = "generated/1.cir", dialect = "ngspice", size = 1 },

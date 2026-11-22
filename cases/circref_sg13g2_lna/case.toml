@@ -1,7 +1,7 @@
 id = "circref_sg13g2_lna"
 title = "Cascode low-noise amplifier with inductive degeneration, IHP SG13G2"
 family = "amplifier"
-category = "rf"
+cost = "steady_state"
 notes = """
 Common-source stage with 0.5 nH in the source and 12 nH in the gate, cascode, a load tank of 5 nH and 0.8 pF with 500 Ohm in parallel: tuned to 2.4 GHz. Driven from 50 Ohm with 10 mV at 2.4 GHz.
 Analyses: operating point, AC response from 100 MHz to 10 GHz, 360 periods of the carrier.

@@ -1,6 +1,6 @@
 # 9-stage CMOS ring oscillator, PSP103
 
-oscillator | category: oscillator | ngspice, vacask, xyce | status: **complete**
+oscillator | cost: time_points | ngspice, vacask, xyce | status: **complete**
 
 ## Source
 

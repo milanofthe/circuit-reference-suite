@@ -1,7 +1,7 @@
 id = "circref_sg13g2_mixer"
 title = "Single-balanced active mixer, IHP SG13G2"
 family = "mixer"
-category = "rf"
+cost = "steady_state"
 notes = """
 A transconductor at the RF port under a differential pair switched by the LO, loads of 1 kOhm and 1 pF. RF 2.4 GHz with 50 mV amplitude, LO 2.5 GHz with 300 mV amplitude per side: the intermediate frequency of 100 MHz is v(ifp) - v(ifn).
 375 LO cycles, 15 periods of the intermediate frequency.

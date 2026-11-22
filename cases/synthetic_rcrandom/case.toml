@@ -1,6 +1,7 @@
 id = "synthetic_rcrandom"
 title = "RC random network"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, a path and two random edges per node, xorshift64 seed 1: little locality, heavy fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes."
 netlists = [
     { file = "generated/100.cir", dialect = "ngspice", size = 100 },

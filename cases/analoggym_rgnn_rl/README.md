@@ -1,6 +1,6 @@
 # AnalogGym RGNN_RL testbenches: NMCF amplifier and LDO, SKY130
 
-opamp | category: analog_cell | ngspice | status: **complete**
+opamp | cost: setup | ngspice | status: **complete**
 
 ## Source
 

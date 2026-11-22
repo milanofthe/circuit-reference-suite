@@ -1,7 +1,7 @@
 id = "circref_sg13g2_ota"
 title = "Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2"
 family = "opamp"
-category = "analog_cell"
+cost = "setup"
 notes = """
 NMOS input pair, PMOS mirror load, PMOS common-source second stage, Miller compensation with a nulling resistor. The output is fed back to the inverting input. Every transistor is drawn in fingers of 2 um.
 Sized for 20 uA in each input transistor and 80 uA in the second stage at 1.2 V. Analyses: operating point, DC transfer of the buffer, closed-loop AC response, step response.

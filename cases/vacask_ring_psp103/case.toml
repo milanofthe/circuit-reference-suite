@@ -1,7 +1,7 @@
 id = "vacask_ring_psp103"
 title = "9-stage CMOS ring oscillator, PSP103"
 family = "oscillator"
-category = "oscillator"
+cost = "time_points"
 netlists = [
     { file = "vacask/runme.sim", dialect = "vacask" },
     { file = "ngspice/runme.sim", dialect = "ngspice" },

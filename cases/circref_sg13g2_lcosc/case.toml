@@ -1,7 +1,7 @@
 id = "circref_sg13g2_lcosc"
 title = "Cross-coupled LC oscillator, IHP SG13G2"
 family = "oscillator"
-category = "oscillator"
+cost = "time_points"
 notes = """
 An NMOS pair on two tanks of 2 nH (2 Ohm in series) and 400 fF with a tail current of 0.5 mA, near 5.4 GHz. A current pulse between the outputs starts the oscillation.
 200 periods.

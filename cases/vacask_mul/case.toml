@@ -1,7 +1,7 @@
 id = "vacask_mul"
 title = "Diode voltage multiplier, 4 stages"
 family = "rectifier"
-category = "high_voltage"
+cost = "convergence"
 netlists = [
     { file = "vacask/runme.sim", dialect = "vacask" },
     { file = "ngspice/runme.sim", dialect = "ngspice" },

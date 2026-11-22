@@ -1,6 +1,7 @@
 id = "synthetic_rcgrid3d"
 title = "RC grid, 3D"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, m^3 nodes: separators of m^2 nodes, heavy fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes per side."
 netlists = [
     { file = "generated/5.cir", dialect = "ngspice", size = 5 },

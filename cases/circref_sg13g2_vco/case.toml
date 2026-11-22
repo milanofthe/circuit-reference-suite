@@ -1,7 +1,7 @@
 id = "circref_sg13g2_vco"
 title = "Current-starved ring oscillator with a control voltage step, IHP SG13G2"
 family = "oscillator"
-category = "oscillator"
+cost = "time_points"
 notes = """
 Five current-starved inverters and an output inverter. A current pulse into the first stage starts the oscillation; the control voltage steps from 0.7 V to 0.9 V at 40 ns.
 The operating point is the unstable equilibrium of the ring; the current pulse sets the start of the oscillation, so that it does not depend on numerical noise.

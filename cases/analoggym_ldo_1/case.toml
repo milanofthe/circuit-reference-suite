@@ -1,7 +1,7 @@
 id = "analoggym_ldo_1"
 title = "AnalogGym low-dropout regulator ldo_1, SKY130"
 family = "ldo"
-category = "analog_cell"
+cost = "setup"
 netlists = [
     { file = "ldo_spice_testbench/ldo_1_acdc.cir", dialect = "ngspice" },
     { file = "ldo_spice_testbench/ldo_1_tran.cir", dialect = "ngspice" },

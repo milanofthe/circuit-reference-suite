@@ -1,6 +1,6 @@
 # StrongARM latch comparator with output inverters, IHP SG13G2
 
-comparator | category: switching | ngspice, vacask | status: **adapted**
+comparator | cost: time_points | ngspice, vacask | status: **adapted**
 
 ## Source
 

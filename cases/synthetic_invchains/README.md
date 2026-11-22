@@ -1,6 +1,6 @@
 # CMOS inverter chains
 
-logic | ngspice, vacask | status: **adapted**
+logic | cost: device_evaluation | ngspice, vacask | status: **adapted**
 
 ## Source
 

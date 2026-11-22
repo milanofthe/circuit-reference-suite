@@ -1,6 +1,6 @@
 # Single-balanced active mixer, IHP SG13G2
 
-mixer | category: rf | ngspice, vacask | status: **adapted**
+mixer | cost: steady_state | ngspice, vacask | status: **adapted**
 
 ## Source
 

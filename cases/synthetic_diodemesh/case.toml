@@ -1,6 +1,7 @@
 id = "synthetic_diodemesh"
 title = "RC mesh with a diode per node, 2D grid"
 family = "passive"
+cost = "linear_solve"
 notes = "The network of synthetic_rcmesh (m x m nodes) with a junction diode from every node to ground: the operating point takes Newton iterations and the matrix values change at every one of them, the elimination structure is that of the linear network. Generated (circref/generate.py); size: nodes per side."
 netlists = [
     { file = "generated/10.cir", dialect = "ngspice", size = 10 },

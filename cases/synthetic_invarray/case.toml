@@ -1,7 +1,7 @@
 id = "synthetic_invarray"
 title = "Array of short CMOS inverter chains with RC nets"
 family = "logic"
-category = "memory"
+cost = "device_evaluation"
 notes = "An array of rows of 4 inverters, every net an RC line of 2 segments with coupling capacitors to the same net of the next row: one small cell repeated, 1 RC node per transistor. Not a memory: it stands for the size and repetition of one, without the bistable cell. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: rows, 8 transistors each."
 netlists = [
     { file = "generated/10.cir", dialect = "ngspice", size = 10 },

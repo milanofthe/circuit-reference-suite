@@ -1,6 +1,6 @@
 # Current-starved ring oscillator with a control voltage step, IHP SG13G2
 
-oscillator | category: oscillator | ngspice, vacask | status: **adapted**
+oscillator | cost: time_points | ngspice, vacask | status: **adapted**
 
 ## Source
 

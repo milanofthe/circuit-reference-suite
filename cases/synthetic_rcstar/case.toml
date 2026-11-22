@@ -1,6 +1,7 @@
 id = "synthetic_rcstar"
 title = "RC star"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, spokes of 10 segments on one hub: one dense row, short independent branches. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: spokes."
 netlists = [
     { file = "generated/10.cir", dialect = "ngspice", size = 10 },

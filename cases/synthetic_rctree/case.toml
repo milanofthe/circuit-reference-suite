@@ -1,6 +1,7 @@
 id = "synthetic_rctree"
 title = "RC binary tree"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, a balanced binary tree of the given depth: a balanced elimination tree without fill. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: depth."
 netlists = [
     { file = "generated/6.cir", dialect = "ngspice", size = 6 },
