@@ -46,11 +46,10 @@ network = "grid3d"
 r = 1000.0
 c = 1e-15
 source_r = 100.0
-dc = 1.0
 
 [generator.pulse]
-v1 = 0.0
-v2 = 1.0
+v1 = 1.0
+v2 = 0.0
 delay = 1e-10
 rise = 2e-11
 fall = 2e-11
@@ -65,157 +64,157 @@ stop = 1e-08
 path = "generated/5.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 5"
-sha256 = "10a72994ddb0ab619bbf11925d633f34e05514b0155e88e291de99cce6473202"
+sha256 = "c26b8ed90e576dc8177cb20a6fb952ac4e929ffa7f9d461dcd7b35c66757e680"
 
 [[files]]
 path = "generated/5.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 5"
-sha256 = "bd840160645fb4b5885c78403c855daf9e1407c7086fd27250e1f03198690335"
+sha256 = "8ce594db1bc81db76a6c0e45a97ce72f2c49d5e2ef0566c32f2ecef35fc067e5"
 
 [[files]]
 path = "generated/6.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 6"
-sha256 = "fdfa5db4491f1c6dedd4789fc12c7e12ce21115607b301475e1d870149f874ee"
+sha256 = "0acfc0c0abcc573bf43af2f7c75a100812c37ee63eeda21ae7e4b0a6a3c11cf8"
 
 [[files]]
 path = "generated/6.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 6"
-sha256 = "202abdd8e080f2628fd2edbe60216d55ccf19b347c08a9ec93584fa006285464"
+sha256 = "dedbb8a96732a870ae9296e2f26e94164f01c239532f5a963a97a83eabfd3d0e"
 
 [[files]]
 path = "generated/7.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 7"
-sha256 = "e0eea3f2b59a459448c4e5d04c867ebe3fbb1b052a122dc2a7a762af26b7a472"
+sha256 = "65cb6ae0bee4afa12f8e578f144a18f95129e549b5d175c8e7195a461ee217ba"
 
 [[files]]
 path = "generated/7.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 7"
-sha256 = "dffbba30a23a125fc641b65ea664a04b30b1230177d0ddffe96ac06fa861726d"
+sha256 = "64dd915d62de19ffcdb2acb71b7446f6b2864623eab3c53d4a7c0f99479d1a02"
 
 [[files]]
 path = "generated/8.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 8"
-sha256 = "a6cc40f1575ef356afb1f8a50e61c969906bcf6601c1d85ca4efcff8db9e63d5"
+sha256 = "9d09a744718fa5cfa4c562380bfc7f92c97953e2f189234b29808d794571bf90"
 
 [[files]]
 path = "generated/8.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 8"
-sha256 = "e91e38a9dd85fbba6cb06548733c717cf5a0de0c5c3899575eca1bb4be5bb92d"
+sha256 = "65f9788f3dcca156c044e504731b423838e4040e6916d911f3f711064ba9425d"
 
 [[files]]
 path = "generated/10.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 10"
-sha256 = "c1a742761f7c6690c96acb72a61d363acb2ec3624f4dc16d5229afff57a3ab45"
+sha256 = "64fdcc68f94358449736cbd467038113926a6d472c5a0dff6629a41218ae806e"
 
 [[files]]
 path = "generated/10.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 10"
-sha256 = "23fb607e74e70bba5fa9d8a9a58e515d4ddc3a912ea88fa3caea3e4c69e69b43"
+sha256 = "95bd8c95b01eb6f58bcd795c6b5678f930e0693706b685f4c7261354c84b2826"
 
 [[files]]
 path = "generated/12.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 12"
-sha256 = "4ed8526aab76609886530769d41bb6268819b95a5614bedd91e544bb5ff45367"
+sha256 = "a994dd3a1db1464c919df4ca7b43f9b3ccafec7e5082714de66f0530ed3d123c"
 
 [[files]]
 path = "generated/12.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 12"
-sha256 = "e202340a298ab9257ce2fab537cc17e39c58ed25e4fbf4e981936ec050487919"
+sha256 = "7f795ad59586176f3955ea01176bec069286c63ef226c67c27e9ba9924bbb8a5"
 
 [[files]]
 path = "generated/15.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 15"
-sha256 = "ba114eec4aa2dee5a0b9a06a31eb016cdb77a6e2b004c5caf7eff281d5fd4544"
+sha256 = "c6a09444337e6f8344c90de6b853d1430d49b7822dc6fa07ce4ce979bca81b19"
 
 [[files]]
 path = "generated/15.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 15"
-sha256 = "021c1b4e6a0e189da284585ee1f9649628736725d7ea1d693399779d8ce19516"
+sha256 = "66f9ed495114530ccc390f694c2c6ed7a5bdf4d4bf9309b272776f0d4f8827cf"
 
 [[files]]
 path = "generated/18.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 18"
-sha256 = "42048045b97663d9d756e68aa5d3df7e2afd18569cdaf24b56707aaf50d1b48c"
+sha256 = "6d3d4fb40eb5d8bfdf661e4327f07d6cbe478c8b2882ce5f135a379282fdb792"
 
 [[files]]
 path = "generated/18.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 18"
-sha256 = "6e782d924bf8abb2586972e8c54a03d064aee7dfd40bd6654b080ca3b4e6b1b8"
+sha256 = "a7ac4456026ad0459a315f4576c31e58ed902e59dfa88beaa3f2372bf969da0a"
 
 [[files]]
 path = "generated/22.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 22"
-sha256 = "1df9329def17ccb45d69cbd968259b998f2291c679ea20f1971478f3703f5364"
+sha256 = "33cf1b0654f40312a39682150eb91760f2572f0a3ca1e8ad7ead522e3896e16f"
 
 [[files]]
 path = "generated/22.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 22"
-sha256 = "f76039652796f8bad703e691f13abf31989f5beed6033e71da11a7bf5a7a6edc"
+sha256 = "83fc7e880d3bb4bcc44d3bd0f1075ce1e960a18a85e5cc90fffda69573d6e4b2"
 
 [[files]]
 path = "generated/26.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 26"
-sha256 = "326c950dacc75b7020bf2f14677772d623f7ded72fb83a7b27391aec5c22ff11"
+sha256 = "e49c9f086f68ca3431f670412f7dfd1e6794b6eff67d4675b7eaf0aa60a93bf9"
 
 [[files]]
 path = "generated/26.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 26"
-sha256 = "65fe36e4d1777b4ddfc4fb93b5f75ef91018fa78384dedb4c3f799f39fbf2680"
+sha256 = "b698066b7d19a6c33f0fc74340064b50ec01de19f2285d4fef3c540dd5c10724"
 
 [[files]]
 path = "generated/32.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 32"
-sha256 = "63b9e74642b00016fcceab0e7c41b05832825d7e9e13502b14b5d8163d7c0446"
+sha256 = "c26252367a6849c8ba4e536e6f159821e952786b55b16e2ecc2ac1a31577c6fa"
 
 [[files]]
 path = "generated/32.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 32"
-sha256 = "10441ac846e80b1a2f956908cfcd6d1e0d3ba4e910023f3969a730ffb0826318"
+sha256 = "3c7bc399c913f2fd775c1c450318fd19eb05bd29e46eef856463e3d7bf794472"
 
 [[files]]
 path = "generated/38.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 38"
-sha256 = "b5dfb0a9e9595286dfcdb08bbaf25a6efaf25386b47e7012c31b3240e8f9bed7"
+sha256 = "4fed41c6af8f382f0aeb1d64519c1cabe9846b67c371fd8a5dfe5192cb6ce131"
 
 [[files]]
 path = "generated/38.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 38"
-sha256 = "cbce5fc659cb32ba63fe05b4245ee7d2eb50160ae4ae296eca946397306c1733"
+sha256 = "e08435c110a65e894775231997066729ad0fc3a4c72d45e5b2f67c027ad908db"
 
 [[files]]
 path = "generated/46.cir"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 46"
-sha256 = "6e31348b5274c07828b93d317ebf08189b104953baa34d89b7ba941662166968"
+sha256 = "67d99c97d81065b0c4c9bc1a308e791a029086be6ecfd7e91fb30dd292a928ce"
 
 [[files]]
 path = "generated/46.cir.vacask"
 provenance = "generated"
 how = "circref/generate.py, grid3d of size 46"
-sha256 = "db5744fe995e4a8e8edd5228fa35e07ac4e0d0583d417379afdb66656d901511"
+sha256 = "e20be5bfd5a41a3b78320f8f41614bbd9cfa25d738582f61bfdbcbfa9feea35e"
 
 [resolve]
 "spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"

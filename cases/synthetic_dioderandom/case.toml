@@ -28,7 +28,6 @@ network = "random"
 r = 1000.0
 c = 1e-15
 source_r = 100.0
-dc = 1.0
 
 [generator.diode]
 is = 1e-14

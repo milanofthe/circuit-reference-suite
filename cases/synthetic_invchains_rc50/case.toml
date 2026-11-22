@@ -28,7 +28,6 @@ authors = [
 [generator]
 stages = 10
 vdd = 1.2
-dc = 0.0
 
 [generator.nmos]
 subckt = "sg13_lv_nmos"
