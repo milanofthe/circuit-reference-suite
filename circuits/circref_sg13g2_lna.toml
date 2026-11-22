@@ -1,0 +1,18 @@
+title = "Cascode low-noise amplifier with inductive degeneration, IHP SG13G2"
+case = "circref_sg13g2_lna"
+source = "lna.cir"
+outputs = [
+    "v(src)",
+    "v(g)",
+    "v(d1)",
+    "v(out)",
+    "v(outl)",
+]
+analysis = [
+    { type = "op" },
+    { type = "ac", sweep = "dec", points = 200, start = 100000000.0, stop = 10000000000.0 },
+    { type = "tran", step = 2e-12, stop = 1.5e-07 },
+]
+
+[variants]
+vacask = "lna.cir.vacask"

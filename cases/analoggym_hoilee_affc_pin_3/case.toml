@@ -1,6 +1,7 @@
 id = "analoggym_hoilee_affc_pin_3"
 title = "AnalogGym amplifier HoiLee_AFFC_Pin_3, SKY130"
 family = "opamp"
+cost = "setup"
 netlists = [
     { file = "amp_spice_testbench/TB_Amplifier_ACDC.cir", dialect = "ngspice" },
     { file = "amp_spice_testbench/TB_Amplifier_Tran.cir", dialect = "ngspice" },

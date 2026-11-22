@@ -1,0 +1,15 @@
+title = "RC grid with a diode per node, 3D"
+case = "synthetic_diodegrid3d"
+source = "generated/5.cir"
+outputs = [
+    "v(n1)",
+    "v(n32)",
+    "v(n125)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/5.cir.vacask"

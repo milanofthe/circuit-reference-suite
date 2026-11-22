@@ -1,0 +1,38 @@
+id = "circref_sg13g2_comparator"
+title = "StrongARM latch comparator with output inverters, IHP SG13G2"
+family = "comparator"
+cost = "time_points"
+notes = """
+Clocked at 1 GHz. The differential input is a triangle of +-100 mV with a period of 40 clock cycles: q follows the clock while v(inp) > v(inn), qb while it is below.
+80 clock cycles of 1 ns.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "comparator.cir", dialect = "ngspice" },
+    { file = "comparator.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "comparator.cir"
+sha256 = "76a5fb709539f71e4a7ec6598466482e3682e74ec037b61a3a34bb8f97e7b69e"
+
+[[files]]
+path = "comparator.cir.vacask"
+sha256 = "f8ddfa2b851613531bbe436186985bfc8368b29fcf4f7fae5ebdebbeac85f50b"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

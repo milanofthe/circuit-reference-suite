@@ -1,0 +1,35 @@
+Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2 low-voltage MOS
+// NMOS input pair, PMOS mirror load, PMOS common-source second stage, Miller
+// compensation with a nulling resistor. The output is fed back to the inverting input.
+// Every transistor is drawn in fingers of 2 um.
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOSlv.lib" section=mos_tt
+load "spice/resistor.osdi"
+load "spice/capacitor.osdi"
+model r sp_resistor
+model c sp_capacitor
+model vsource vsource
+model isource isource
+vdd (vdd 0) vsource dc=1.2
+vin (inb 0) vsource dc=0.65 mag=1.0
+vstep (inp inb) vsource type="pulse" val0=0.0 val1=0.15 delay=2e-08 rise=1e-09 fall=1e-09 width=9.9e-08 period=2e-07
+ib (vdd nb) isource dc=2e-05
+xmb (nb nb 0 0) sg13_lv_nmos w=4e-06 l=1e-06 ng=2.0
+xm5 (tail nb 0 0) sg13_lv_nmos w=8e-06 l=1e-06 ng=4.0
+xm1 (d1 out tail 0) sg13_lv_nmos w=1e-05 l=5e-07 ng=5.0
+xm2 (d2 inp tail 0) sg13_lv_nmos w=1e-05 l=5e-07 ng=5.0
+xm3 (d1 d1 vdd vdd) sg13_lv_pmos w=1.6e-05 l=1e-06 ng=8.0
+xm4 (d2 d1 vdd vdd) sg13_lv_pmos w=1.6e-05 l=1e-06 ng=8.0
+xm6 (out d2 vdd vdd) sg13_lv_pmos w=6.4e-05 l=1e-06 ng=32.0
+xm7 (out nb 0 0) sg13_lv_nmos w=1.6e-05 l=1e-06 ng=8.0
+rz (d2 nz) r r=2000.0
+cc (nz out) c c=1e-12
+cl (out 0) c c=2e-12
+control
+  save v(out) v(inp) v(d1) v(d2) v(tail) v(nb)
+  analysis op1 op
+  sweep s1 instance="vin" parameter="dc" from=0.4 to=1.0 step=0.001
+  analysis dc1 op
+  analysis ac1 ac from=1.0 to=1000000000.0 mode="dec" points=50
+  analysis tran1 tran step=1e-10 stop=4e-07
+endc

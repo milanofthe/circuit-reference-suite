@@ -1,6 +1,6 @@
 # Bipolar ring oscillator
 
-oscillator | ngspice, vacask, xyce | status: **complete**
+oscillator | cost: time_points | ngspice, vacask, xyce | status: **complete**
 
 ## Source
 

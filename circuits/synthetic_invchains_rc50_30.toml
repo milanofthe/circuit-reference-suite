@@ -1,0 +1,15 @@
+title = "CMOS inverter chains in an RC network, 50 RC nodes per transistor"
+case = "synthetic_invchains_rc50"
+source = "generated/30.cir"
+outputs = [
+    "v(k1s1w100)",
+    "v(k15s5w100)",
+    "v(k30s10w100)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 5e-12, stop = 3e-09 },
+]
+
+[variants]
+vacask = "generated/30.cir.vacask"

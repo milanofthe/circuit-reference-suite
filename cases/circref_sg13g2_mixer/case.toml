@@ -1,0 +1,39 @@
+id = "circref_sg13g2_mixer"
+title = "Single-balanced active mixer, IHP SG13G2"
+family = "mixer"
+cost = "steady_state"
+notes = """
+A transconductor at the RF port under a differential pair switched by the LO, loads of 1 kOhm and 1 pF. RF 2.4 GHz with 50 mV amplitude, LO 2.5 GHz with 300 mV amplitude per side: the intermediate frequency of 100 MHz is v(ifp) - v(ifn).
+375 LO cycles, 15 periods of the intermediate frequency.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "mixer.cir", dialect = "ngspice" },
+    { file = "mixer.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "mixer.cir"
+sha256 = "8260fa07a5cc0b84703e3778a523ec9a0350ddca27115a3082bc75d27a8768a1"
+
+[[files]]
+path = "mixer.cir.vacask"
+sha256 = "54c236448aca9b8185618e00eac768a5d7f217848b5c976474de62ea29d83cd3"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

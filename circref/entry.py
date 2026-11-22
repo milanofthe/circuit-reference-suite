@@ -85,6 +85,11 @@ class Case(Entry):
         return self.raw["family"]
 
     @property
+    def cost(self) -> str | None:
+        """The term of the run time the case weights (schema/case.schema.json)."""
+        return self.raw.get("cost")
+
+    @property
     def open_questions(self) -> list[str]:
         return self.raw.get("open_questions", [])
 

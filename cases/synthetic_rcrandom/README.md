@@ -1,6 +1,6 @@
 # RC random network
 
-passive | ngspice, vacask | status: **complete**
+passive | cost: linear_solve | ngspice, vacask | status: **complete**
 
 ## Source
 

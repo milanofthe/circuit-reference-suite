@@ -1,0 +1,138 @@
+id = "synthetic_invchains_rc50"
+title = "CMOS inverter chains in an RC network, 50 RC nodes per transistor"
+family = "interconnect"
+cost = "linear_solve"
+notes = "Chains of 10 inverters whose nets are RC lines of 100 segments with coupling capacitors to the same net of the next chain, as a layout extraction writes them: 50 RC nodes per transistor, the chains tied into one matrix by the coupling. The totals per net (200 Ohm, 2 fF to ground, 2 fF to the next chain) do not depend on the number of segments. Transistors: sg13_lv_nmos and sg13_lv_pmos of IHP SG13G2 (PSP103 through OSDI), typical corner. Generated (circref/generate.py); size: chains, 20 transistors each."
+netlists = [
+    { file = "generated/1.cir", dialect = "ngspice", size = 1 },
+    { file = "generated/1.cir.vacask", dialect = "vacask", size = 1 },
+    { file = "generated/3.cir", dialect = "ngspice", size = 3 },
+    { file = "generated/3.cir.vacask", dialect = "vacask", size = 3 },
+    { file = "generated/10.cir", dialect = "ngspice", size = 10 },
+    { file = "generated/10.cir.vacask", dialect = "vacask", size = 10 },
+    { file = "generated/30.cir", dialect = "ngspice", size = 30 },
+    { file = "generated/30.cir.vacask", dialect = "vacask", size = 30 },
+    { file = "generated/100.cir", dialect = "ngspice", size = 100 },
+    { file = "generated/100.cir.vacask", dialect = "vacask", size = 100 },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "generated"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[generator]
+stages = 10
+vdd = 1.2
+dc = 0.0
+
+[generator.nmos]
+subckt = "sg13_lv_nmos"
+w = 5e-07
+l = 1.3e-07
+
+[generator.pmos]
+subckt = "sg13_lv_pmos"
+w = 1e-06
+l = 1.3e-07
+
+[generator.models]
+ngspice = [
+    ".lib \"ngspice/models/cornerMOSlv.lib\" mos_tt",
+]
+vacask = [
+    "include \"vacask/models/sg13g2_vacask_common.lib\"",
+    "include \"vacask/models/cornerMOSlv.lib\" section=mos_tt",
+]
+
+[generator.wire]
+ratio = 50
+r = 200.0
+c = 2e-15
+coupling = 2e-15
+
+[generator.pulse]
+v1 = 0.0
+v2 = 1.2
+delay = 1e-10
+rise = 2e-11
+fall = 2e-11
+width = 1.5e-09
+period = 4e-09
+
+[generator.tran]
+step = 5e-12
+stop = 3e-09
+
+[[files]]
+path = "generated/1.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1"
+sha256 = "2d833debf46c58b308443a94770c1aea17cf2395a1dc9cc41c4e43bedb7b704c"
+
+[[files]]
+path = "generated/1.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 1"
+sha256 = "940d10309e054d075195803820fc7433ea388f865b0bbfbea81cd640f280cabe"
+
+[[files]]
+path = "generated/3.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3"
+sha256 = "96b1cb6e8b446a578352869353d7b9d6f685ff18d00773163a16563697227ae2"
+
+[[files]]
+path = "generated/3.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 3"
+sha256 = "59960dfe45b55b1ed43311371585e10a983998ae59435932ee6441ba330c10fc"
+
+[[files]]
+path = "generated/10.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "5bf19775a8eeec07d15d4beacbebd6fa3e8eb553a6bbfb43a4badafda25ef949"
+
+[[files]]
+path = "generated/10.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 10"
+sha256 = "c190b1ba0db38dfec53c2e330edb12a5cfea34128deabc136748979d17fbd27b"
+
+[[files]]
+path = "generated/30.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "7c1257cc7cd341eee6dbbd5e742dd026e7d6b6797eec32add15de5107fbeb095"
+
+[[files]]
+path = "generated/30.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 30"
+sha256 = "a97ca9282e5069ebd1c120d73a3fb0c5e95451c1dd268517b8160ed52dc0d61f"
+
+[[files]]
+path = "generated/100.cir"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "517fd85394b3ace66229c6a6f71fe7b063815a3998788049a5e3e9e679478e8d"
+
+[[files]]
+path = "generated/100.cir.vacask"
+provenance = "generated"
+how = "circref/generate.py, chains of size 100"
+sha256 = "c35f940d631e00489ab4ac8462adf1a7194091970990504bace950fd1fecfa3f"
+
+[resolve]
+"ngspice/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib"
+"psp103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+"pspnqs103va" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOSlv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOSlv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"

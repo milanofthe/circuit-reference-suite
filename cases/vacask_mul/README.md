@@ -1,6 +1,6 @@
 # Diode voltage multiplier, 4 stages
 
-rectifier | gnucap, ngspice, vacask, xyce | status: **complete**
+rectifier | cost: convergence | gnucap, ngspice, vacask, xyce | status: **complete**
 
 ## Source
 

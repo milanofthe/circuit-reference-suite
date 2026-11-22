@@ -1,0 +1,16 @@
+title = "Synchronous buck converter power stage, IHP SG13G2"
+case = "circref_sg13g2_buck"
+source = "buck.cir"
+outputs = [
+    "v(gp)",
+    "v(gn)",
+    "v(sw)",
+    "v(out)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-09, stop = 3e-05 },
+]
+
+[variants]
+vacask = "buck.cir.vacask"

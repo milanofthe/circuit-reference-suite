@@ -1,0 +1,19 @@
+title = "StrongARM latch comparator with output inverters, IHP SG13G2"
+case = "circref_sg13g2_comparator"
+source = "comparator.cir"
+outputs = [
+    "v(clk)",
+    "v(inp)",
+    "v(inn)",
+    "v(outp)",
+    "v(outn)",
+    "v(q)",
+    "v(qb)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 8e-08 },
+]
+
+[variants]
+vacask = "comparator.cir.vacask"

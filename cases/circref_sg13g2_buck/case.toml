@@ -1,0 +1,41 @@
+id = "circref_sg13g2_buck"
+title = "Synchronous buck converter power stage, IHP SG13G2"
+family = "power"
+cost = "convergence"
+notes = """
+3.3 V at a duty cycle of 0.35 and 10 MHz into 12 Ohm, 0.96 V at the output. A PMOS of 2 mm and an NMOS of 1 mm in fingers of 10 um, driven with dead times of 3 ns and 2 ns, 1 uH with 50 mOhm and 10 nF, 50 pF at the switching node. Start from zero output, 300 switching periods.
+The gate signals are ideal pulses; in the dead times the inductor current flows through the junctions of the transistors.
+Written for this suite on the IHP SG13G2 open PDK (PSP103 through OSDI, typical corner), in ngspice's and in VACASK's syntax.
+"""
+netlists = [
+    { file = "buck.cir", dialect = "ngspice" },
+    { file = "buck.cir.vacask", dialect = "vacask" },
+]
+
+[source]
+name = "circuit-reference-suite"
+url = "https://github.com/milanofthe/circuit-reference-suite"
+version = "written for the suite"
+license = "MIT"
+authors = [
+    "Milan Rother",
+]
+
+[[files]]
+path = "buck.cir"
+sha256 = "a50961f59e6ada22431da17186a509ec3015cf0874a9a4ab00270d5b77444e2a"
+
+[[files]]
+path = "buck.cir.vacask"
+sha256 = "5785a17a69abe0e3c0fdda21527d1ca8ba6d75a682dc6e320a0c6c3788ce2ac1"
+
+[resolve]
+"ngspice/models/cornerMOShv.lib" = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/ngspice/models/cornerMOShv.lib"
+mosvar = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/mosvar/mosvar.va"
+psp103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103.va"
+pspnqs103va = "libraries/ihp_sg13g2/ihp-sg13g2/libs.tech/verilog-a/psp103/psp103_nqs.va"
+"vacask/models/sg13g2_vacask_common.lib" = "libraries/ihp_sg13g2_vacask/models/sg13g2_vacask_common.lib"
+"vacask/models/cornerMOShv.lib" = "libraries/ihp_sg13g2_vacask/models/cornerMOShv.lib"
+"spice/resistor.osdi" = "libraries/vacask_spice_va/resistor.va"
+"spice/capacitor.osdi" = "libraries/vacask_spice_va/capacitor.va"
+"spice/inductor.osdi" = "libraries/vacask_spice_va/inductor.va"

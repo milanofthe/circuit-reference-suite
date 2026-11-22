@@ -1,6 +1,7 @@
 id = "synthetic_rcladder"
 title = "RC ladder"
 family = "passive"
+cost = "linear_solve"
 notes = "Linear RC network, a path: the elimination tree is one chain. Generated (circref/generate.py), so that the networks differ only in the graph and with it the elimination structure of the matrix; size: nodes."
 netlists = [
     { file = "generated/100.cir", dialect = "ngspice", size = 100 },

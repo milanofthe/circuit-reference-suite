@@ -1,0 +1,17 @@
+title = "Current-starved ring oscillator with a control voltage step, IHP SG13G2"
+case = "circref_sg13g2_vco"
+source = "vco.cir"
+outputs = [
+    "v(n1)",
+    "v(n3)",
+    "v(out)",
+    "v(nb)",
+    "v(pb)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 2e-11, stop = 8e-08 },
+]
+
+[variants]
+vacask = "vco.cir.vacask"

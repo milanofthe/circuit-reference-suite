@@ -221,3 +221,43 @@ license = "Apache-2.0"
 has = "SRAM power grids; the small ssram grids are plain SPICE."
 missing = "Nothing for the small grids; the large ones are 70-224 MB each."
 blocker = "pending"
+
+[[candidate]]
+name = "SKY130 SAR ADC (iic-jku)"
+url = "https://github.com/iic-jku/SKY130_SAR-ADC1"
+license = "Apache-2.0"
+has = "A 12-bit SAR ADC on SKY130 with its netlists in `spice/`: schematic level, C-extracted and RC-extracted (`adc_top.gds.RC.noD.merge.postlayout.spice`, 19 MB), and of the blocks (capacitor array, comparator latch, clock generator, common-mode generator)."
+missing = "A testbench: the repository drives the ADC from xschem schematics and XSPICE models of the digital part. On the models of sky130_fd_pr it runs on ngspice only."
+blocker = "pending"
+
+[[candidate]]
+name = "SKY130 SRAM macros (OpenRAM)"
+url = "https://github.com/VLSIDA/sky130_sram_macros"
+license = "Apache-2.0"
+has = "Transistor-level netlists (`*.lvs.sp`, 1 MB and more) of SRAM macros from 1 to 16 kbyte on SKY130, with a functional stimulus deck (`functional_stim.sp`) per macro."
+missing = "A check that the models committed here cover the bit cell devices, and of the stimulus deck on ngspice 47. On the models of sky130_fd_pr it runs on ngspice only."
+blocker = "pending"
+
+[[candidate]]
+name = "IHP Open Design Library"
+url = "https://github.com/IHP-GmbH/IHP-Open-DesignLib"
+license = "Apache-2.0 at the top level; the designs are submodules with terms of their own"
+has = "The designs of the open tape-outs on SG13G2 since 2023, among them amplifiers, oscillators and data converters."
+missing = "Netlists with testbenches: the designs are xschem schematics and layouts; the license of each submodule is to be checked."
+blocker = "format"
+
+[[candidate]]
+name = "sun_sar9b_sky130nm"
+url = "https://github.com/wulffern/sun_sar9b_sky130nm"
+license = "none stated in a license file"
+has = "A 9-bit SAR ADC on SKY130 with simulation decks (`sim/`)."
+missing = "A license file."
+blocker = "license"
+
+[[candidate]]
+name = "SKY130 PLL (iic-jku)"
+url = "https://github.com/iic-jku/SKY130_PLL1"
+license = "none stated in a license file"
+has = "A PLL on SKY130 with its netlists in `spice/`."
+missing = "A license file."
+blocker = "license"

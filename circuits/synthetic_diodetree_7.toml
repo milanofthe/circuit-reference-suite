@@ -1,0 +1,15 @@
+title = "RC tree with a diode per node"
+case = "synthetic_diodetree"
+source = "generated/7.cir"
+outputs = [
+    "v(n1)",
+    "v(n64)",
+    "v(n127)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/7.cir.vacask"

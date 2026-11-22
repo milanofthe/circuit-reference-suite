@@ -1,6 +1,6 @@
 # AnalogGym amplifier Tan_CLIA_Pin_3, SKY130
 
-opamp | ngspice | status: **adapted**
+opamp | cost: setup | ngspice | status: **adapted**
 
 ## Source
 

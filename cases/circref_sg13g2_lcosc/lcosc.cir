@@ -1,0 +1,20 @@
+Cross-coupled LC oscillator, IHP SG13G2 low-voltage MOS
+* An NMOS pair on two tanks of 2 nH (2 Ohm in series) and 400 fF with a tail current
+* of 0.5 mA, near 5.4 GHz. A current pulse between the outputs starts the oscillation.
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+vdd vdd 0 dc 1.2
+l1 vdd m1 2n
+r1 m1 outp 2
+l2 vdd m2 2n
+r2 m2 outn 2
+c1 outp 0 400f
+c2 outn 0 400f
+xm1 outp outn tail 0 sg13_lv_nmos w=20u l=0.13u ng=4
+xm2 outn outp tail 0 sg13_lv_nmos w=20u l=0.13u ng=4
+itail tail 0 dc 0.5m
+ctail tail 0 100f
+ikick outn outp dc 0 pulse(0 200u 0.1n 20p 20p 60p 1)
+.save v(outp) v(outn) v(tail)
+.op
+.tran 2p 40n
+.end

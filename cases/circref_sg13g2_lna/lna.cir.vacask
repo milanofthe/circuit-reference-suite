@@ -1,0 +1,35 @@
+Cascode low-noise amplifier with inductive degeneration, IHP SG13G2 low-voltage MOS
+// Common-source stage with 0.5 nH in the source and 12 nH in the gate, cascode, a load
+// tank of 5 nH and 0.8 pF with 500 Ohm in parallel: tuned to 2.4 GHz. Driven from 50 Ohm
+// with 10 mV at 2.4 GHz.
+include "vacask/models/sg13g2_vacask_common.lib"
+include "vacask/models/cornerMOSlv.lib" section=mos_tt
+load "spice/resistor.osdi"
+load "spice/capacitor.osdi"
+load "spice/inductor.osdi"
+model r sp_resistor
+model c sp_capacitor
+model l sp_inductor
+model vsource vsource
+vdd (vdd 0) vsource dc=1.2
+vb (vb 0) vsource dc=0.5
+vrf (src 0) vsource type="sine" sinedc=0.0 ampl=0.01 freq=2400000000.0 mag=1.0
+rs (src a) r r=50.0
+cin (a g0) c c=1e-11
+lg (g0 g) l l=1.2e-08
+rb (vb g) r r=10000.0
+cgs (g s) c c=3e-13
+xm1 (d1 g s 0) sg13_lv_nmos w=4e-05 l=1.3e-07 ng=8.0
+ls (s 0) l l=5e-10
+xm2 (out vdd d1 0) sg13_lv_nmos w=4e-05 l=1.3e-07 ng=8.0
+ld (vdd out) l l=5e-09
+rd (vdd out) r r=500.0
+cd (out 0) c c=8e-13
+cout (out outl) c c=1e-12
+rl (outl 0) r r=1000.0
+control
+  save v(src) v(g) v(d1) v(out) v(outl)
+  analysis op1 op
+  analysis ac1 ac from=100000000.0 to=10000000000.0 mode="dec" points=200
+  analysis tran1 tran step=2e-12 stop=1.5e-07
+endc

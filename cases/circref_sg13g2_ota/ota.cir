@@ -1,0 +1,26 @@
+Two-stage Miller OTA as a unity-gain buffer, IHP SG13G2 low-voltage MOS
+* NMOS input pair, PMOS mirror load, PMOS common-source second stage, Miller
+* compensation with a nulling resistor. The output is fed back to the inverting input.
+* Every transistor is drawn in fingers of 2 um.
+.lib "ngspice/models/cornerMOSlv.lib" mos_tt
+vdd vdd 0 dc 1.2
+vin inb 0 dc 0.65 ac 1
+vstep inp inb dc 0 pulse(0 0.15 20n 1n 1n 99n 200n)
+ib vdd nb dc 20u
+xmb nb nb 0 0 sg13_lv_nmos w=4u l=1u ng=2
+xm5 tail nb 0 0 sg13_lv_nmos w=8u l=1u ng=4
+xm1 d1 out tail 0 sg13_lv_nmos w=10u l=0.5u ng=5
+xm2 d2 inp tail 0 sg13_lv_nmos w=10u l=0.5u ng=5
+xm3 d1 d1 vdd vdd sg13_lv_pmos w=16u l=1u ng=8
+xm4 d2 d1 vdd vdd sg13_lv_pmos w=16u l=1u ng=8
+xm6 out d2 vdd vdd sg13_lv_pmos w=64u l=1u ng=32
+xm7 out nb 0 0 sg13_lv_nmos w=16u l=1u ng=8
+rz d2 nz 2k
+cc nz out 1p
+cl out 0 2p
+.save v(out) v(inp) v(d1) v(d2) v(tail) v(nb)
+.op
+.dc vin 0.4 1.0 0.001
+.ac dec 50 1 1e9
+.tran 0.1n 400n
+.end

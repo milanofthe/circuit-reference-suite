@@ -1,0 +1,15 @@
+title = "Random RC graph with a diode per node"
+case = "synthetic_dioderandom"
+source = "generated/1800.cir"
+outputs = [
+    "v(n1)",
+    "v(n900)",
+    "v(n1800)",
+]
+analysis = [
+    { type = "op" },
+    { type = "tran", step = 1e-11, stop = 1e-08 },
+]
+
+[variants]
+vacask = "generated/1800.cir.vacask"
