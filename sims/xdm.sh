@@ -12,7 +12,6 @@
 # translation through Xyce when sims/xyce.sh has installed it.
 
 source "$(dirname "$0")/common.sh"
-ROOT=$(cd "$(dirname "$0")/.." && pwd)
 
 TAG=${RELEASE_TAG:-$(github_latest Xyce/XDM)}
 VERSION=${TAG#Release-}
@@ -43,7 +42,7 @@ REPORTED=$("$PREFIX/bin/xdm_bdl" -h | grep -o 'xdm [0-9][0-9.]*' | sed -n 1p)
 log "reports: $REPORTED"
 SMOKE=$SRC/xdm-smoke
 mkdir -p "$SMOKE"
-cp "$ROOT"/cases/xyce_xdm_hspice_diode_clipper/{diodeClipper.cir.hspice,nom.lib} "$SMOKE/"
+cp "$REPO"/cases/xyce_xdm_hspice_diode_clipper/{diodeClipper.cir.hspice,nom.lib} "$SMOKE/"
 cd "$SMOKE"
 rc=0; "$PREFIX/bin/xdm_bdl" -s hspice -d out --auto diodeClipper.cir.hspice > xdm.log 2>&1 || rc=$?
 tail -n 5 xdm.log; log "xdm_bdl diodeClipper.cir.hspice: exit $rc"; [ "$rc" = 0 ]
