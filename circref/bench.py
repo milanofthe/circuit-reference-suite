@@ -14,7 +14,6 @@ short of memory), goes and runs again.
 """
 from __future__ import annotations
 
-import fnmatch
 import hashlib
 import json
 import os
@@ -34,9 +33,9 @@ from pathlib import Path
 
 import numpy as np
 
-from . import generate
+from . import generate, query
 from .adapters import ADAPTERS, Adapter
-from .circuit import Circuit, iter_circuits, load_circuit
+from .circuit import Circuit, load_circuit
 from .entry import ROOT
 from .stage import Compiler, StageError, stage, tail
 from .translate import Untranslatable, translate
@@ -204,9 +203,9 @@ def _job(path: Path, simulator: str, levels: list[str], out: Path, timeout: floa
     return json.loads(p.stdout.splitlines()[-1])
 
 
-def select(patterns: list[str]) -> list[Circuit]:
-    return [c for c in iter_circuits()
-            if not patterns or any(fnmatch.fnmatch(c.name, p) for p in patterns)]
+def select(expr: str | None) -> list[Circuit]:
+    """The circuits a filter over index.csv matches (circref/query.py), all when none."""
+    return [load_circuit(name) for name in query.select(expr)]
 
 
 def run(circuits: list[Circuit], adapters: list[Adapter], levels: list[str], out: Path,
