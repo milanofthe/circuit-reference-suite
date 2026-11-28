@@ -18,7 +18,7 @@ test | ngspice | status: **complete**
 | [`TLV9002-test.cir`](TLV9002-test.cir) | ngspice | ac | 228 | medium | no | specific (.control script) | - |
 | [`simple-tran.cir`](simple-tran.cir) | ngspice | tran | 3 | tiny | yes | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

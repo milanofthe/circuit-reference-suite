@@ -13,8 +13,8 @@ test | ngspice | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`table-generator-b4-2d.sp`](table-generator-b4-2d.sp) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
-| [`table-generator-b4-3d.sp`](table-generator-b4-3d.sp) | ngspice | dc | 6 | tiny | no | specific (.control script) | - |
+| [`table-generator-b4-2d.sp`](table-generator-b4-2d.sp) | ngspice | dc | 4 | tiny | no | specific (.control script) | - |
+| [`table-generator-b4-3d.sp`](table-generator-b4-3d.sp) | ngspice | dc | 5 | tiny | no | specific (.control script) | - |
 | [`table-generator-q-2d.sp`](table-generator-q-2d.sp) | ngspice | dc, dc | 5 | tiny | no | specific (.control script) | - |
 | [`table-model-man-2d-1.sp`](table-model-man-2d-1.sp) | ngspice | dc | 7 | tiny | no | specific (.control script, XSPICE code model) | - |
 | [`table-model-man-3d-1.sp`](table-model-man-3d-1.sp) | ngspice | dc | 8 | tiny | no | specific (.control script, XSPICE code model) | - |
@@ -26,7 +26,7 @@ test | ngspice | status: **complete**
 | [`table-model-mos-3d-4.sp`](table-model-mos-3d-4.sp) | ngspice | dc | 10 | small | no | specific (.control script, XSPICE code model) | - |
 | [`table-model-mos-3d-5.sp`](table-model-mos-3d-5.sp) | ngspice | tran | 66 | small | no | specific (.control script, XSPICE code model) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

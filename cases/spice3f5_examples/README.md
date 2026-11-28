@@ -32,7 +32,7 @@ test | spice3 | status: **complete**
 | [`schmitt.cir`](schmitt.cir) | spice3 | tran | 15 | small | no | core | - |
 | [`simplepz.cir`](simplepz.cir) | spice3 | pz | 3 | tiny | yes | specific (analysis pz) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

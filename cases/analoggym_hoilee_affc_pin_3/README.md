@@ -16,7 +16,7 @@ opamp | cost: setup | ngspice | status: **complete**
 | [`amp_spice_testbench/TB_Amplifier_ACDC.cir`](amp_spice_testbench/TB_Amplifier_ACDC.cir) | ngspice | dc, ac | 182 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 | [`amp_spice_testbench/TB_Amplifier_Tran.cir`](amp_spice_testbench/TB_Amplifier_Tran.cir) | ngspice | tran | 37 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

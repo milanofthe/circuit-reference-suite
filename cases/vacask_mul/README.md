@@ -18,7 +18,7 @@ rectifier | cost: convergence | gnucap, ngspice, vacask, xyce | status: **comple
 | [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 10 | small | no | core | - |
 | [`gnucap/runme.sim`](gnucap/runme.sim) | gnucap | tran | 10 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

@@ -1,7 +1,7 @@
 """python -m circref {validate,build,check,list,circuits,run,compare}
 
-build  writes every generated file (case and library READMEs, the netlists of generated
-       cases, circref/generate.py).
+build  writes every generated file (case and library READMEs, index.csv, the netlists of
+       generated cases, circref/generate.py).
 check  validates and rebuilds in memory; fails when a committed file is stale. validate
        and check write the netlists of generated cases that are missing first.
 run       runs circuits on simulators (circref/bench.py), results into --out.
@@ -32,6 +32,7 @@ def _generated() -> dict[Path, bytes]:
     cases, libs = iter_cases(), iter_libraries()
     files = {c.directory / "README.md": report.case_readme(c).encode() for c in cases}
     files |= {lib.directory / "README.md": report.library_readme(lib).encode() for lib in libs}
+    files[ROOT / "index.csv"] = report.index_csv(iter_circuits()).encode()
     return files
 
 

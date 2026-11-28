@@ -15,7 +15,7 @@ device | ngspice | status: **complete**
 |---|---|---|---|---|---|---|---|
 | [`sky130_fd_pr__esd_pfet_g5v0d10v5__pfet_vth.spice`](sky130_fd_pr__esd_pfet_g5v0d10v5__pfet_vth.spice) | ngspice | dc, dc | 6 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

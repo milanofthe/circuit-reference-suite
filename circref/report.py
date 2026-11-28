@@ -2,6 +2,8 @@
 them and fail when the committed copy is stale."""
 from __future__ import annotations
 
+import csv
+import io
 import os
 
 from . import classify
@@ -59,16 +61,17 @@ def case_readme(case: Case) -> str:
         g = case.graphs[n.file]
         libs = ", ".join(f"[{lib}]({_link(load_library(lib).directory, case.directory)})"
                          for lib in sorted(g.libraries)) or "-"
-        port, why = classify.portability(g)
-        port += f" ({', '.join(why)})" if why and port == "specific" else ""
+        d = classify.derived(g)
+        port = d["portability"]
+        port += f" ({d['portability_reasons'].replace(';', ',')})" if port == "specific" else ""
         lines.append(f"| [`{n.file}`]({n.file}) | {n.dialect} | {', '.join(g.analyses)} | "
-                     f"{g.devices} | {classify.size(g)} | "
-                     f"{'yes' if classify.linear(g) else 'no'} | {port} | {libs} |")
+                     f"{d['devices']} | {d['size']} | "
+                     f"{'yes' if d['linear'] else 'no'} | {port} | {libs} |")
     if any(n.note for n in case.netlists()):
         lines += [""] + [f"- `{n.file}`: {n.note}" for n in case.netlists() if n.note]
-    lines += ["", "Devices: instances once the subcircuits defined in this case are expanded; "
-              "a device from a library or a compiled model counts once. Size, linear and "
-              "portability: see the top README."]
+    lines += ["", "Devices: instances once every subcircuit is expanded, those of libraries "
+              "too; a compiled model counts once. Size, linear and portability: see the top "
+              "README."]
     external: dict[tuple[str, str], set[str]] = {}
     for name, g in case.graphs.items():
         for e in g.edges:
@@ -110,3 +113,15 @@ def library_readme(lib: Library) -> str:
         lines += ["", "## Notes", "", lib.raw["notes"].strip()]
     lines += ["", FOOTER, ""]
     return "\n".join(lines)
+
+
+def index_csv(circuits) -> str:
+    """index.csv: one row per circuit, the columns of ``classify.properties``."""
+    rows = [classify.properties(c) for c in circuits]
+    out = io.StringIO()
+    w = csv.DictWriter(out, fieldnames=list(rows[0]), lineterminator="\n")
+    w.writeheader()
+    for r in rows:
+        w.writerow({k: "" if v is None else str(v).lower() if isinstance(v, bool) else v
+                    for k, v in r.items()})
+    return out.getvalue()

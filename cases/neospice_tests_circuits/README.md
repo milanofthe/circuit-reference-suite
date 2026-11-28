@@ -207,7 +207,7 @@ test | ngspice | status: **complete**
 | [`tests/circuits/vdmos_thermal_selfheat_subckt.cir`](tests/circuits/vdmos_thermal_selfheat_subckt.cir) | ngspice | op | 3 | tiny | no | core | - |
 | [`tests/circuits/vdmos_theta.cir`](tests/circuits/vdmos_theta.cir) | ngspice | op | 15 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

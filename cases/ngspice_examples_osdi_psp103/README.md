@@ -21,7 +21,7 @@ test | ngspice | status: **complete**
 | [`psp_ro.sp`](psp_ro.sp) | ngspice | tran | 23 | small | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
 | [`psp_transfer.sp`](psp_transfer.sp) | ngspice | dc, dc | 5 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

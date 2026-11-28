@@ -21,7 +21,7 @@ test | ngspice | status: **complete**
 | [`probe-i-dev.cir`](probe-i-dev.cir) | ngspice | dc | 13 | small | no | specific (.control script) | - |
 | [`switches-manual-p92.cir`](switches-manual-p92.cir) | ngspice | tran | 14 | small | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

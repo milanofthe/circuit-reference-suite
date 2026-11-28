@@ -17,7 +17,7 @@ oscillator | cost: time_points | ngspice, vacask, xyce | status: **complete**
 | [`ngspice/runme.sim`](ngspice/runme.sim) | ngspice | tran | 20 | small | no | specific (.control script, Verilog-A model) | [vacask_psp103v4](../../libraries/vacask_psp103v4) |
 | [`xyce/runme.sim`](xyce/runme.sim) | xyce | tran | 20 | small | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

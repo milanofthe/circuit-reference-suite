@@ -27,7 +27,7 @@ passive | cost: linear_solve | ngspice, vacask | status: **complete**
 | [`generated/10000.cir`](generated/10000.cir) | ngspice | op, tran | 300004 | xl | no | core | - |
 | [`generated/10000.cir.vacask`](generated/10000.cir.vacask) | vacask | op, tran | 300004 | xl | no | veriloga | [vacask_spice_va](../../libraries/vacask_spice_va) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

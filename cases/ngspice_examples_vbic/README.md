@@ -19,7 +19,7 @@ test | ngspice | status: **complete**
 | [`vbic99_dc.sp`](vbic99_dc.sp) | ngspice | dc | 9 | tiny | no | specific (.control script) | - |
 | [`vbic99_tran.sp`](vbic99_tran.sp) | ngspice | op, tran | 5 | tiny | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

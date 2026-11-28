@@ -20,7 +20,7 @@ test | ngspice | status: **complete**
 | [`ringosc_17stg.sp`](ringosc_17stg.sp) | ngspice | tran | 35 | small | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
 | [`simple_inverter_dc.sp`](simple_inverter_dc.sp) | ngspice | dc | 4 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimcmg](../../libraries/openvaf_bsimcmg) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

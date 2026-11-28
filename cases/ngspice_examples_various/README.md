@@ -30,9 +30,9 @@ test | ngspice | status: **complete**
 | [`tmp-noise-2.cir`](tmp-noise-2.cir) | ngspice | op, ac | 4 | tiny | no | specific (.control script) | - |
 | [`tmp-noise.cir`](tmp-noise.cir) | ngspice | op, noise, noise, ac | 6 | tiny | yes | specific (analysis noise, .control script) | - |
 | [`transformers1.cir`](transformers1.cir) | ngspice | tran | 25 | small | no | specific (.control script, XSPICE code model) | - |
-| [`v-i-sources-am-ffm.cir`](v-i-sources-am-ffm.cir) | ngspice | tran | 14 | small | no | specific (.control script) | - |
+| [`v-i-sources-am-ffm.cir`](v-i-sources-am-ffm.cir) | ngspice | tran | 11 | small | no | specific (.control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 
