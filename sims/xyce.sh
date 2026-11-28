@@ -14,7 +14,6 @@
 #   Xyce -plugin <outdir>/lib<name>.so netlist.cir
 
 source "$(dirname "$0")/common.sh"
-ROOT=$(cd "$(dirname "$0")/.." && pwd)
 
 TAG=${RELEASE_TAG:-$(github_latest Xyce/Xyce)}
 VERSION=${TAG#Release-}
@@ -127,8 +126,8 @@ log "smoke test"
 "$PREFIX/bin/Xyce" -v
 SMOKE=$SRC/xyce-smoke
 mkdir -p "$SMOKE/plugin"
-cp "$ROOT/cases/xyce_4049osc/4049osc.cir" "$ROOT/cases/xyce_verilogplugin/rlc_series.cir" "$SMOKE/"
-cp "$ROOT/cases/xyce_verilogplugin/toys/rlc2.va" "$SMOKE/plugin/"
+cp "$REPO/cases/xyce_4049osc/4049osc.cir" "$REPO/cases/xyce_verilogplugin/rlc_series.cir" "$SMOKE/"
+cp "$REPO/cases/xyce_verilogplugin/toys/rlc2.va" "$SMOKE/plugin/"
 cd "$SMOKE"
 rc=0; "$PREFIX/bin/Xyce" 4049osc.cir > 4049osc.log 2>&1 || rc=$?
 tail -n 5 4049osc.log; log "4049osc.cir: exit $rc"; [ "$rc" = 0 ]
