@@ -1,10 +1,12 @@
-"""python -m circref {validate,build,check,list,circuits,run,compare}
+"""python -m circref {validate,build,check,list,circuits,select,run,compare}
 
 build  writes every generated file (case and library READMEs, index.csv, the netlists of
        generated cases, circref/generate.py).
 check  validates and rebuilds in memory; fails when a committed file is stale. validate
        and check write the netlists of generated cases that are missing first.
-run       runs circuits on simulators (circref/bench.py), results into --out.
+select    prints the circuits a filter matches (circref/query.py).
+run       runs the circuits a filter matches on simulators (circref/bench.py), results
+          into --out.
 compare   each run against the reference of its analysis, into OUT/compare.json, and
           the plots of OUT/plots (circref/plot.py).
 circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
@@ -18,7 +20,7 @@ from pathlib import Path
 
 import tomllib
 
-from . import generate, report
+from . import generate, query, report
 from .circuit import iter_circuits
 from .entry import ROOT, iter_cases, iter_libraries, load_case, validate_schema
 from .validate import check_case, check_library
@@ -107,9 +109,16 @@ def cmd_run(args) -> int:
     from .adapters import ADAPTERS
     adapters = [ADAPTERS[n] for n in (args.sim or ADAPTERS)]
     shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
-    return bench.run(bench.select(args.circuit), adapters, args.level or list(bench.LEVELS),
+    return bench.run(bench.select(args.filter), adapters, args.level or list(bench.LEVELS),
                      Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard,
                      tuple(args.redo), args.repeats, tuple(args.type))
+
+
+def cmd_select(args) -> int:
+    names = query.select(args.filter)
+    print("\n".join(names))
+    print(f"{len(names)} circuits", file=sys.stderr)
+    return 0
 
 
 def cmd_compare(args) -> int:
@@ -131,8 +140,11 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("build").set_defaults(fn=cmd_build)
     sub.add_parser("list").set_defaults(fn=cmd_list)
     sub.add_parser("circuits").set_defaults(fn=cmd_circuits)
+    sp = sub.add_parser("select")
+    sp.add_argument("filter", nargs="?", help="expression over the columns of index.csv; all when none")
+    sp.set_defaults(fn=cmd_select)
     sp = sub.add_parser("run")
-    sp.add_argument("circuit", nargs="*", help="circuit names or globs; all when none")
+    sp.add_argument("filter", nargs="?", help="expression over the columns of index.csv; all when none")
     sp.add_argument("--sim", action="append", default=[], help="simulator, repeatable; all when none")
     sp.add_argument("--jobs", type=int, default=int(os.environ.get("FALLLOW_CORES", os.cpu_count())))
     sp.add_argument("--timeout", type=float, default=600, help="seconds per analysis")
@@ -151,7 +163,11 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("out")
     sp.set_defaults(fn=cmd_compare)
     args = ap.parse_args(argv)
-    return args.fn(args)
+    try:
+        return args.fn(args)
+    except query.FilterError as e:
+        print(f"filter: {e}", file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":
