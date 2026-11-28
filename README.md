@@ -25,6 +25,7 @@ libraries/<id>/library.toml  model libraries shared by cases (PDK models, Verilo
 sims/<simulator>.sh          builds a simulator, newest release (sims/common.sh)
 bench.toml                   precision levels, comparison bounds, plot style
 index.csv                    one row of properties per circuit (circref/classify.py), generated
+studies/<name>.toml          a filter over index.csv and the parameters of its run
 ```
 
 ## Usage
@@ -34,5 +35,6 @@ pip install -e .
 python -m circref check                  # schema, hashes, references, generated READMEs
 python -m circref select "m >= 1 and devices <= 1000 and 'tran' in analyses"
 python -m circref run --out OUT [filter] [--sim S] [--level L]
+python -m circref run --out OUT --study studies/generated.toml
 python -m circref compare OUT            # OUT/compare.json, OUT/plots/
 ```

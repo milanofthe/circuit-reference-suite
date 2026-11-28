@@ -5,8 +5,8 @@ build  writes every generated file (case and library READMEs, index.csv, the net
 check  validates and rebuilds in memory; fails when a committed file is stale. validate
        and check write the netlists of generated cases that are missing first.
 select    prints the circuits a filter matches (circref/query.py).
-run       runs the circuits a filter matches on simulators (circref/bench.py), results
-          into --out.
+run       runs the circuits a filter or a study (--study) selects on simulators
+          (circref/bench.py), results into --out with the selection in selection.json.
 compare   each run against the reference of its analysis, into OUT/compare.json, and
           the plots of OUT/plots (circref/plot.py).
 circuits  writes a circuits/<name>.toml for every eligible netlist that has none yet.
@@ -14,7 +14,9 @@ circuits  writes a circuits/<name>.toml for every eligible netlist that has none
 from __future__ import annotations
 
 import argparse
+import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -43,6 +45,12 @@ def cmd_validate(args) -> int:
     for e in validate_schema(load_candidates(), "candidates"):
         print(f"candidates.toml: {e}")
         failed = True
+    for path in sorted((ROOT / "studies").glob("*.toml")):
+        try:
+            load_study(path)
+        except query.FilterError as e:
+            print(e)
+            failed = True
     for lib in iter_libraries():
         for e in check_library(lib):
             print(f"libraries/{lib.id}: {e}")
@@ -104,14 +112,41 @@ def cmd_circuits(args) -> int:
     return 0
 
 
+def load_study(path: str | Path) -> dict:
+    """A study (schema/study.schema.json): a filter, and the parameters of its run."""
+    study = tomllib.loads(Path(path).read_text(encoding="utf-8"))
+    errors = validate_schema(study, "study")
+    if errors:
+        raise query.FilterError(f"{path}: " + "; ".join(errors))
+    query.compile_filter(study["select"])
+    return study
+
+
 def cmd_run(args) -> int:
     from . import bench
     from .adapters import ADAPTERS
-    adapters = [ADAPTERS[n] for n in (args.sim or ADAPTERS)]
+    if args.study and args.filter:
+        raise query.FilterError("a study brings its own filter; give one or the other")
+    study = load_study(args.study) if args.study else {}
+    plan = study.get("run", {})
+
+    def given(flag, key, default):          # the command line, the study, the default
+        return flag if flag not in (None, []) else plan.get(key, default)
+
+    expr = args.filter or study.get("select")
+    circuits = bench.select(expr)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    head = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True)
+    (out / "selection.json").write_text(json.dumps(
+        {"study": study or None, "filter": expr, "commit": head.stdout.strip() or None,
+         "circuits": [c.name for c in circuits]}, indent=1) + "\n", encoding="utf-8")
+    adapters = [ADAPTERS[n] for n in given(args.sim, "simulators", list(ADAPTERS))]
     shard = (int(os.environ.get("FALLLOW_SHARD_INDEX", 0)), int(os.environ.get("FALLLOW_SHARD_COUNT", 1)))
-    return bench.run(bench.select(args.filter), adapters, args.level or list(bench.LEVELS),
-                     Path(args.out), args.jobs, args.timeout, args.memory, args.threads, shard,
-                     tuple(args.redo), args.repeats, tuple(args.type))
+    return bench.run(circuits, adapters, given(args.level, "levels", list(bench.LEVELS)), out,
+                     args.jobs, given(args.timeout, "timeout", 600), given(args.memory, "memory", 4),
+                     given(args.threads, "threads", 1), shard, tuple(args.redo),
+                     given(args.repeats, "repeats", 1), tuple(given(args.type, "types", [])))
 
 
 def cmd_select(args) -> int:
@@ -147,14 +182,15 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("filter", nargs="?", help="expression over the columns of index.csv; all when none")
     sp.add_argument("--sim", action="append", default=[], help="simulator, repeatable; all when none")
     sp.add_argument("--jobs", type=int, default=int(os.environ.get("FALLLOW_CORES", os.cpu_count())))
-    sp.add_argument("--timeout", type=float, default=600, help="seconds per analysis")
-    sp.add_argument("--memory", type=float, default=4, help="GB address space per run")
+    sp.add_argument("--study", help="a study file (schema/study.schema.json) in place of a filter")
+    sp.add_argument("--timeout", type=float, help="seconds per analysis (600)")
+    sp.add_argument("--memory", type=float, help="GB address space per run (4)")
     sp.add_argument("--redo", action="append", default=[],
                     help="status whose jobs in OUT run again, repeatable (errors always do)")
     sp.add_argument("--level", action="append", default=[],
                     help="precision level of bench.toml, repeatable; all when none")
-    sp.add_argument("--threads", type=int, default=1, help="threads per simulator run, the same for all")
-    sp.add_argument("--repeats", type=int, default=1, help="runs per analysis shorter than run.repeat_below of bench.toml, timed by the minimum")
+    sp.add_argument("--threads", type=int, help="threads per simulator run, the same for all (1)")
+    sp.add_argument("--repeats", type=int, help="runs per analysis shorter than run.repeat_below of bench.toml, timed by the minimum (1)")
     sp.add_argument("--type", action="append", default=[],
                     help="analysis type to run (op, dc, ac, tran), repeatable; all when none. Into an OUT of its own")
     sp.add_argument("--out", default="out")

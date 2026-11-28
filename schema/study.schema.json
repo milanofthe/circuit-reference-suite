@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "study.schema.json",
+  "title": "Study: circuits selected by a filter, and how they run",
+  "type": "object",
+  "required": ["title", "select"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {"type": "string"},
+    "notes": {"type": "string"},
+    "select": {"type": "string", "description": "Filter over the columns of index.csv (circref/query.py)."},
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What circref run takes on its command line; a flag given there takes precedence.",
+      "properties": {
+        "simulators": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "levels": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "types": {"type": "array", "items": {"enum": ["op", "dc", "ac", "tran"]}},
+        "repeats": {"type": "integer", "minimum": 1},
+        "timeout": {"type": "number", "exclusiveMinimum": 0},
+        "memory": {"type": "number", "exclusiveMinimum": 0},
+        "threads": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

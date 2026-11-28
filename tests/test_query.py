@@ -25,5 +25,27 @@ class Filter(unittest.TestCase):
                 compile_filter(expr)
 
 
+
+class Study(unittest.TestCase):
+    def test_committed_studies_load(self):
+        from circref.cli import load_study
+        from circref.entry import ROOT
+        for path in (ROOT / "studies").glob("*.toml"):
+            self.assertIn("select", load_study(path))
+
+    def test_unknown_key_and_bad_filter(self):
+        import tempfile
+        from pathlib import Path
+        from circref.cli import load_study
+        from circref.query import FilterError
+        for text in ('title = "t"\nselect = "m >= 1"\n[run]\nsimulator = ["x"]\n',
+                     'title = "t"\nselect = "nosuch > 1"\n'):
+            with tempfile.TemporaryDirectory() as d:
+                f = Path(d) / "s.toml"
+                f.write_text(text, encoding="utf-8")
+                with self.assertRaises(FilterError):
+                    load_study(f)
+
+
 if __name__ == "__main__":
     unittest.main()

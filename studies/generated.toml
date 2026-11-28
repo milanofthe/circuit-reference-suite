@@ -1,0 +1,6 @@
+title = "Generated networks in their size series"
+notes = "RC networks, the same graphs with a diode per node, CMOS inverter chains and arrays."
+select = "generated >= 1"
+
+[run]
+repeats = 3
