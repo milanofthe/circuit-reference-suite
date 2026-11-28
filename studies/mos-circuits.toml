@@ -1,0 +1,7 @@
+title = "Transistor circuits that run in any SPICE, transient"
+notes = "Circuits, not device or regression decks, with MOS transistors and a transient."
+select = "m >= 1 and family not in ('test', 'device') and 'tran' in analyses and portability != 'specific'"
+
+[run]
+types = ["tran"]
+repeats = 3
