@@ -17,7 +17,7 @@ test | ngspice | status: **complete**
 | [`bsimbulk_inverter.sp`](bsimbulk_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_bsimbulk](../../libraries/openvaf_bsimbulk) |
 | [`psp_inverter.sp`](psp_inverter.sp) | ngspice | tran, dc | 7 | tiny | no | specific (.control script, Verilog-A model) | [openvaf_psp103](../../libraries/openvaf_psp103) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

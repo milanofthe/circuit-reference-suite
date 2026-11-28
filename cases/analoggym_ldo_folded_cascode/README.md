@@ -13,10 +13,10 @@ ldo | cost: setup | ngspice | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`ldo_spice_testbench/ldo_folded_cascode_acdc.cir`](ldo_spice_testbench/ldo_folded_cascode_acdc.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 56 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`ldo_spice_testbench/ldo_folded_cascode_tran.cir`](ldo_spice_testbench/ldo_folded_cascode_tran.cir) | ngspice | tran, op | 19 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`ldo_spice_testbench/ldo_folded_cascode_acdc.cir`](ldo_spice_testbench/ldo_folded_cascode_acdc.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 77 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`ldo_spice_testbench/ldo_folded_cascode_tran.cir`](ldo_spice_testbench/ldo_folded_cascode_tran.cir) | ngspice | tran, op | 26 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

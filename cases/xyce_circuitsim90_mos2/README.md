@@ -32,7 +32,7 @@ test | xyce | status: **complete**
 | [`slowlatch.cir`](slowlatch.cir) | xyce | tran | 20 | small | no | core | - |
 | [`toronto.cir`](toronto.cir) | xyce | tran | 102 | medium | no | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

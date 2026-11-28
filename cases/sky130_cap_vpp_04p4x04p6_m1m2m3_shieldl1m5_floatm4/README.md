@@ -13,10 +13,10 @@ device | ngspice | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice) | ngspice | ac | 7 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice) | ngspice | ac | 7 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4__cap4termval_test.spice) | ngspice | ac | 22 | small | yes | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice`](sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4_top__cap4termval_test.spice) | ngspice | ac | 70 | small | yes | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

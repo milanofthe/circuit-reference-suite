@@ -15,7 +15,7 @@ oscillator | cost: time_points | ngspice, vacask | status: **adapted**
 | [`lcosc.cir`](lcosc.cir) | ngspice | op, tran | 12 | small | no | veriloga | [ihp_sg13g2](../../libraries/ihp_sg13g2) |
 | [`lcosc.cir.vacask`](lcosc.cir.vacask) | vacask | op, tran | 12 | small | no | veriloga | [ihp_sg13g2](../../libraries/ihp_sg13g2), [ihp_sg13g2_vacask](../../libraries/ihp_sg13g2_vacask), [vacask_spice_va](../../libraries/vacask_spice_va) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

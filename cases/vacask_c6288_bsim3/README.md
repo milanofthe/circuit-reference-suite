@@ -19,7 +19,7 @@ arithmetic | ngspice, vacask | status: **complete**
 
 - `ngspiceva/runme.sim`: ngspice with the Verilog-A models of the VACASK variant, loaded as OSDI.
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

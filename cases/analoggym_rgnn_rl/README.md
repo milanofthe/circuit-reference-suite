@@ -13,12 +13,12 @@ opamp | cost: setup | ngspice | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`simulations/AMP_NMCF_ACDC.cir`](simulations/AMP_NMCF_ACDC.cir) | ngspice | dc, ac, op | 152 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/AMP_NMCF_Tran.cir`](simulations/AMP_NMCF_Tran.cir) | ngspice | tran, op | 31 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/LDO_TB_ACDC.cir`](simulations/LDO_TB_ACDC.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 98 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
-| [`simulations/LDO_TB_Tran.cir`](simulations/LDO_TB_Tran.cir) | ngspice | tran, op | 33 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/AMP_NMCF_ACDC.cir`](simulations/AMP_NMCF_ACDC.cir) | ngspice | dc, ac, op | 172 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/AMP_NMCF_Tran.cir`](simulations/AMP_NMCF_Tran.cir) | ngspice | tran, op | 35 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/LDO_TB_ACDC.cir`](simulations/LDO_TB_ACDC.cir) | ngspice | dc, dc, dc, dc, dc, ac, ac, op | 110 | medium | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
+| [`simulations/LDO_TB_Tran.cir`](simulations/LDO_TB_Tran.cir) | ngspice | tran, op | 37 | small | no | specific (.control script) | [analoggym_sky130](../../libraries/analoggym_sky130) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

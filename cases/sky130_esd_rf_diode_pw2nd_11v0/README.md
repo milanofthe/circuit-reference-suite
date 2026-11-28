@@ -13,14 +13,14 @@ device | ngspice | status: **complete**
 
 | file | dialect | analyses | devices | size | linear | portability | libraries |
 |---|---|---|---|---|---|---|---|
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
-| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 4 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
+| [`sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__parasitic__diode_pw2dn__diode_vth.spice`](sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__parasitic__diode_pw2dn__diode_vth.spice) | ngspice | dc | 5 | tiny | no | specific (.control script) | [sky130_fd_pr](../../libraries/sky130_fd_pr) |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## External references
 

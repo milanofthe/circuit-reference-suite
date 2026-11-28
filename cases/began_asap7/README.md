@@ -22,7 +22,7 @@ power_grid | spice3 | status: **complete**
 | [`jpeg_irreg_grid.sp.gz`](jpeg_irreg_grid.sp.gz) | spice3 | op | 106935 | xl | yes | core | - |
 | [`jpeg_reg_grid.sp.gz`](jpeg_reg_grid.sp.gz) | spice3 | op | 96904 | xl | yes | core | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

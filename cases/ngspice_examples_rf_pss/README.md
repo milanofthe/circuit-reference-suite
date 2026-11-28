@@ -20,7 +20,7 @@ test | ngspice | status: **complete**
 | [`vackar_osc_pss_ctrl.cir`](vackar_osc_pss_ctrl.cir) | ngspice | tran, pss | 9 | tiny | no | specific (analysis pss, .control script) | - |
 | [`vdp_osc_pss_ctrl.cir`](vdp_osc_pss_ctrl.cir) | ngspice | tran, pss | 7 | tiny | no | specific (analysis pss, .control script) | - |
 
-Devices: instances once the subcircuits defined in this case are expanded; a device from a library or a compiled model counts once. Size, linear and portability: see the top README.
+Devices: instances once every subcircuit is expanded, those of libraries too; a compiled model counts once. Size, linear and portability: see the top README.
 
 ## Notes
 

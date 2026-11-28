@@ -75,6 +75,7 @@ class Netlist:
     dialect: str
     note: str | None
     resolve: dict                   # takes precedence over the case's table in this run
+    size: int | None = None         # the size parameter of a generated netlist
 
 
 @dataclass(frozen=True)
@@ -94,7 +95,7 @@ class Case(Entry):
         return self.raw.get("open_questions", [])
 
     def netlists(self) -> list[Netlist]:
-        return [Netlist(n["file"], n["dialect"], n.get("note"), n.get("resolve", {}))
+        return [Netlist(n["file"], n["dialect"], n.get("note"), n.get("resolve", {}), n.get("size"))
                 for n in self.raw["netlists"]]
 
     @cached_property
@@ -135,20 +136,29 @@ class Graph:
     """Everything one netlist pulls in."""
     edges: list[Edge] = field(default_factory=list)
     analyses: list[str] = field(default_factory=list)
-    subckts: dict[str, Counter] = field(default_factory=lambda: {"": Counter()})
+    # instances per subcircuit, "" the top level: the case's own, and those of the
+    # libraries it pulls in (a PDK device is a subcircuit around its transistor)
+    subckts: dict[str, list[netlist.Instance]] = field(default_factory=lambda: {"": []})
+    ports: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    globals: set[str] = field(default_factory=set)
     libraries: set[str] = field(default_factory=set)
     files: set[Path] = field(default_factory=set)
     dialect: str = ""
     models: dict[str, str] = field(default_factory=dict)        # every file, libraries too
+    levels: dict[str, str] = field(default_factory=dict)        # .model name -> level
     # device type ("cap/2": model type and level) -> device module of a simulator install
     # ("wrspice:adms/cap"), for types that simulator builds only as a loadable module
     modules: dict[str, str] = field(default_factory=dict)
     control: bool = False
     veriloga: bool = False
 
+    @cached_property
+    def flat(self) -> netlist.Flat:
+        return netlist.flatten(self.subckts, self.ports, self.globals)
+
     @property
     def kinds(self) -> Counter:
-        return netlist.flat_kinds(self.subckts)
+        return self.flat.kinds
 
     @property
     def devices(self) -> int:
@@ -265,7 +275,8 @@ def walk(case: Case, nl: Netlist) -> Graph:
             osdi_devices |= parsed.osdi_devices
             va_types |= parsed.va_types
             defined |= set(parsed.instances) - {""}
-            used |= {k[2:] for c in parsed.instances.values() for k in c if k.startswith("x:")}
+            used |= {i.kind[2:] for insts in parsed.instances.values() for i in insts
+                     if i.kind.startswith("x:")}
             modules |= parsed.modules
             if section is None:
                 refs = parsed.refs
@@ -281,8 +292,14 @@ def walk(case: Case, nl: Netlist) -> Graph:
             if entry is case:
                 g.control |= parsed.control
                 g.analyses += [a for a in parsed.analyses if a not in g.analyses]
-                for name, counts in parsed.instances.items():
-                    g.subckts.setdefault(name, Counter()).update(counts)
+                for name, insts in parsed.instances.items():
+                    g.subckts.setdefault(name, []).extend(insts)
+            elif isinstance(entry, Library):      # a corner file may define a device again
+                for name, insts in parsed.instances.items():
+                    if name:
+                        g.subckts.setdefault(name, insts)
+            g.ports = parsed.ports | g.ports
+            g.globals |= parsed.globals
             for ref in refs:
                 target, missing, error = _resolve(path, ref, nl.resolve)
                 g.edges.append(Edge(path, ref, target, missing, error))
@@ -296,6 +313,7 @@ def walk(case: Case, nl: Netlist) -> Graph:
         needed = ({models[m] for m in osdi_devices if m in models} | va_types) - modules - asked
         needed -= netlist.NGSPICE_N_BUILTIN
         g.models = models
+        g.levels = levels
         g.modules = _modules(case, nl, models, levels)
         if not needed:
             undefined = sorted(used - defined) if nl.dialect in netlist.SPICE else []

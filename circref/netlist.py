@@ -1,5 +1,6 @@
 """Just enough netlist reading to check a case: what a file includes or loads, which
-analyses it runs, and which instances it places.
+analyses it runs, and which instances it places with their terminals. Of a conditional
+block (``.if``, Spectre ``if``, VACASK ``@if``) only the first branch counts.
 
 Two syntax families. SPICE (ngspice, Xyce, HSPICE, PSpice, gnucap's spice mode, WRspice,
 JoSIM): dot cards, ``+`` continuation. Spectre (Spectre, VACASK): keyword statements,
@@ -55,12 +56,21 @@ class Ref:
     line: int
 
 
+@dataclass(frozen=True)
+class Instance:
+    kind: str                       # SPICE letter ("m"; "e~": nonlinear law) or "x:<master>"
+    nodes: tuple[str, ...] | None   # lower case as written; None where the syntax is not read
+    model: str | None = None        # the .model a semiconductor names
+
+
 @dataclass
 class Parsed:
     refs: list[Ref] = field(default_factory=list)
     analyses: list[str] = field(default_factory=list)
-    # instance masters per subcircuit; "" is the top level
-    instances: dict[str, Counter] = field(default_factory=dict)
+    # instances per subcircuit; "" is the top level
+    instances: dict[str, list[Instance]] = field(default_factory=dict)
+    ports: dict[str, tuple[str, ...]] = field(default_factory=dict)     # subcircuit -> ports
+    globals: set[str] = field(default_factory=set)                      # .global nodes
     sections: dict[str, list[Ref]] = field(default_factory=dict)
     models: dict[str, str] = field(default_factory=dict)        # .model name -> type
     levels: dict[str, str] = field(default_factory=dict)        # .model name -> level
@@ -109,6 +119,46 @@ def _master(tokens: list[str]) -> str | None:
     return _unquote(bare[-1]).lower() if len(bare) >= 2 else None
 
 
+def _bare(tokens: list[str]) -> list[str]:
+    """The tokens after the first up to the first parameter assignment, lower case."""
+    out = []
+    for t in re.sub(r"\s*=\s*", "=", " ".join(tokens)).split()[1:]:
+        if "=" in t or t.lower() in ("params:", "parameters:"):
+            break
+        out.append(_unquote(t.strip("()")).lower())
+    return [t for t in out if t]
+
+
+GROUND = {"0", "gnd", "gnd!"}
+_NUMBER = re.compile(r"[-+]?(\d+\.?\d*|\.\d+)(e[-+]?\d+)?[a-z]*", re.I)
+_FLAGS = {"off", "on"}
+# SPICE elements whose letter fixes the number of terminals.
+_TERMINALS = {"r": 2, "c": 2, "l": 2, "v": 2, "i": 2, "f": 2, "h": 2, "b": 2, "w": 2,
+              "e": 4, "g": 4, "t": 4, "o": 4, "s": 4, "k": 0, "d": 2, "j": 3, "z": 3}
+
+
+def _spice_nodes(tokens: list[str], kind: str, master: str | None
+                 ) -> tuple[tuple[str, ...] | None, str | None]:
+    """Terminals and model of a SPICE instance. Bipolar and MOS transistors have three to
+    seven terminals; their model is the last bare token that is neither a number nor a flag."""
+    bare = _bare(tokens)
+    c = kind[0]
+    if kind.endswith("~"):                          # E, G, F, H with a law: two terminals
+        return tuple(bare[:2]), None
+    if c in "xn":
+        return tuple(bare[:-1] if bare and bare[-1] == master else bare), None
+    if c in "qm":
+        named = [i for i, t in enumerate(bare) if not _NUMBER.fullmatch(t) and t not in _FLAGS]
+        if not named or named[-1] < 3:
+            return None, None
+        return tuple(bare[:named[-1]]), bare[named[-1]]
+    if c in _TERMINALS:
+        n = _TERMINALS[c]
+        model = bare[n] if c in "djz" and len(bare) > n else None
+        return tuple(bare[:n]), model
+    return None, None
+
+
 # ---------------------------------------------------------------- SPICE family
 
 # A controlled source whose law is an expression, polynomial or table: nonlinear.
@@ -134,10 +184,11 @@ def _spice_lines(text: str, deck: bool) -> list[tuple[int, str]]:
 
 def _spice(text: str, deck: bool, dialect: str) -> Parsed:
     bare_commands = dialect == "gnucap"
-    p = Parsed(instances={"": Counter()})
+    p = Parsed(instances={"": []})
     stack = [""]
     section = None
     control = False
+    branches: list[bool] = []       # per open .if: whether its instances count
     for n, line in _spice_lines(text, deck):
         tokens = line.split()
         head = tokens[0].lower()
@@ -150,7 +201,13 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
             elif head in SPICE_ANALYSES:
                 p.analyses.append(head)
             continue
-        if head == ".control":
+        if head == ".if":
+            branches.append(all(branches))
+        elif head in (".elseif", ".else") and branches:
+            branches[-1] = False
+        elif head == ".endif" and branches:
+            branches.pop()
+        elif head == ".control":
             control = p.control = True
         elif head in (".include", ".inc", ".incl"):
             refs.append(Ref("include", _unquote(line.split(None, 1)[1]), None, n))
@@ -171,7 +228,10 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
             refs.append(Ref("va", _unquote(tokens[1]), None, n))
         elif head in (".subckt", ".macro") and len(tokens) > 1:
             stack.append(tokens[1].lower())
-            p.instances.setdefault(stack[-1], Counter())
+            p.instances.setdefault(stack[-1], [])
+            p.ports[stack[-1]] = tuple(_bare(tokens[1:]))
+        elif head == ".global":
+            p.globals |= {t.lower() for t in tokens[1:]}
         elif head in (".ends", ".eom"):
             if len(stack) > 1:
                 stack.pop()
@@ -184,11 +244,14 @@ def _spice(text: str, deck: bool, dialect: str) -> Parsed:
                 p.osdi_devices.add(model)
             if head[0] == "y" and dialect == "xyce" and head[1:] not in XYCE_Y_BUILTIN:
                 p.va_types.add(head[1:])
-            master = _master(tokens) if head[0] == "x" else None
-            key = f"x:{master}" if master else head[0]
+            named = _master(tokens) if head[0] in "xn" else None
+            key = f"x:{named}" if named and head[0] == "x" else head[0]
             if head[0] in "efgh" and _NONLINEAR_LAW.search(line):
                 key += "~"
-            p.instances[stack[-1]][key] += 1
+            nodes, model = _spice_nodes(tokens, key, named)
+            if all(branches):
+                p.instances[stack[-1]].append(
+                    Instance(key, nodes, model or (named if key == "n" else None)))
             refs += _data_refs(line, n)
     return p
 
@@ -238,15 +301,35 @@ def _spectre_lines(text: str, deck: bool) -> list[tuple[int, str]]:
     return out
 
 
+def _spectre_nodes(tokens: list[str]) -> tuple[str, ...]:
+    """``name (a b c) master ...`` or ``name a b c master ...``."""
+    if len(tokens) > 1 and tokens[1] == "(":
+        end = tokens.index(")") if ")" in tokens else len(tokens)
+        return tuple(_unquote(t).lower() for t in tokens[2:end])
+    return tuple(_bare(tokens)[:-1])
+
+
 def _spectre(text: str, deck: bool) -> Parsed:
-    p = Parsed(instances={"": Counter()})
+    p = Parsed(instances={"": []})
     stack = [""]
     section = None
+    branches: list[bool] = []       # per open if: whether its instances count
     for n, line in _spectre_lines(text, deck):
         tokens = line.replace("(", " ( ").replace(")", " ) ").split()
         head = tokens[0].lower()
         refs = p.sections.setdefault(section, []) if section else p.refs
-        if head in ("include", "ahdl_include", "load") and len(tokens) > 1:
+        if head in ("if", "@if"):
+            branches.append(all(branches))
+        elif head in ("@elseif", "@else") and branches:
+            branches[-1] = False
+        elif head == "@end" and branches:
+            branches.pop()
+        elif head.startswith("}"):
+            if branches and "else" in tokens[:2] + [head[1:]]:
+                branches[-1] = False
+            elif branches:
+                branches.pop()
+        elif head in ("include", "ahdl_include", "load") and len(tokens) > 1:
             kind = {"include": "include", "ahdl_include": "va", "load": "osdi"}[head]
             sect = re.search(r"section\s*=\s*(\w+)", line)
             refs.append(Ref("lib" if sect else kind, _unquote(tokens[1]),
@@ -258,7 +341,8 @@ def _spectre(text: str, deck: bool) -> Parsed:
         elif head in ("subckt", "inline") and len(tokens) > 1:
             name = tokens[2] if head == "inline" else tokens[1]
             stack.append(name.lower())
-            p.instances.setdefault(stack[-1], Counter())
+            p.instances.setdefault(stack[-1], [])
+            p.ports[stack[-1]] = _spectre_nodes(tokens[1:] if head == "subckt" else tokens[2:])
         elif head == "ends":
             if len(stack) > 1:
                 stack.pop()
@@ -268,17 +352,23 @@ def _spectre(text: str, deck: bool) -> Parsed:
             if len(tokens) > 2:
                 p.models[tokens[1].lower()] = _unquote(tokens[2]).lower()
             refs += _data_refs(line, n)
+        elif head == "global":
+            p.globals |= {_unquote(t).lower() for t in tokens[1:]}
         elif head in ("control", "endc", "embed") or head in _SPECTRE_SKIP:
             continue
         else:
             bare = [t for t in tokens if t not in ("(", ")")]
-            master = _master(bare)
+            if len(tokens) > 2 and tokens[1] == "(" and ")" in tokens[2:-1]:
+                master = _unquote(tokens[tokens.index(")") + 1]).lower()   # after the nodes
+            else:
+                master = _master(bare)
             if master in SPECTRE_ANALYSES:
                 p.analyses.append(master)
             elif master in _SPECTRE_CONTROL:
                 continue
             elif master:
-                p.instances[stack[-1]][f"x:{master}"] += 1
+                if all(branches):
+                    p.instances[stack[-1]].append(Instance(f"x:{master}", _spectre_nodes(tokens)))
                 refs += _data_refs(line, n)
     return p
 
@@ -290,7 +380,7 @@ _QUCS_ANALYSES = {"dc": "dc", "ac": "ac", "tr": "tran", "sp": "sp", "sw": "sweep
 
 
 def _qucs(text: str) -> Parsed:
-    p = Parsed(instances={"": Counter()})
+    p = Parsed(instances={"": []})
     stack = [""]
     for n, raw in enumerate(text.splitlines(), 1):
         line = raw.strip()
@@ -304,13 +394,15 @@ def _qucs(text: str) -> Parsed:
                     stack.pop()
             else:
                 stack.append(name.lower())
-                p.instances.setdefault(stack[-1], Counter())
+                p.instances.setdefault(stack[-1], [])
+                p.ports[stack[-1]] = tuple(_bare(line.split()))
         elif kind[0] == ".":
             p.analyses.append(_QUCS_ANALYSES.get(kind[1:], kind[1:]))
         elif kind == "sub" and (m := re.search(r'\bType="([^"]+)"', line)):
-            p.instances[stack[-1]][f"x:{m.group(1).lower()}"] += 1
+            p.instances[stack[-1]].append(Instance(f"x:{m.group(1).lower()}",
+                                                   tuple(_bare(line.split()))))
         elif kind != "eqn":
-            p.instances[stack[-1]][kind] += 1
+            p.instances[stack[-1]].append(Instance(kind, tuple(_bare(line.split()))))
         p.refs += _data_refs(line, n)
     return p
 
@@ -318,7 +410,7 @@ def _qucs(text: str) -> Parsed:
 # ------------------------------------------------------------------ Verilog-A
 
 def _veriloga(text: str) -> Parsed:
-    p = Parsed(instances={"": Counter()})
+    p = Parsed(instances={"": []})
     for n, line in enumerate(text.splitlines(), 1):
         if m := re.match(r"\s*module\s+(\w+)", line):
             p.modules.add(m.group(1).lower())
@@ -341,28 +433,47 @@ def parse(path: Path, dialect: str, deck: bool = False) -> Parsed:
     return _veriloga(text)
 
 
-def flat_kinds(subckts: dict[str, Counter]) -> Counter:
-    """Leaf instances by kind once every subcircuit defined in ``subckts`` is expanded. A
-    master defined elsewhere (a PDK device, a compiled model) is one leaf ``x:<master>``."""
-    memo: dict[str, Counter] = {}
+@dataclass(frozen=True)
+class Flat:
+    """A netlist once every subcircuit defined in it is expanded. A master defined
+    elsewhere (a compiled model, a simulator primitive) is one leaf ``x:<master>``."""
+    leaves: Counter             # leaf instances by (kind, the .model it names or None)
+    nodes: int | None           # distinct nodes but ground; None where some terminals are not read
 
-    def expand(name: str, seen: tuple[str, ...]) -> Counter:
+    @property
+    def kinds(self) -> Counter:
+        out: Counter = Counter()
+        for (kind, _), n in self.leaves.items():
+            out[kind] += n
+        return out
+
+
+def flatten(subckts: dict[str, list[Instance]], ports: dict[str, tuple[str, ...]],
+            globals_: set[str]) -> Flat:
+    memo: dict[str, tuple[Counter, int | None]] = {}
+    shared = GROUND | globals_
+
+    def expand(name: str, seen: tuple[str, ...]) -> tuple[Counter, int | None]:
         if name in memo:
             return memo[name]
-        total: Counter = Counter()
-        for key, k in subckts[name].items():
-            master = key[2:] if key.startswith("x:") else None
-            if master in subckts and master not in seen:
-                for kind, m in expand(master, seen + (master,)).items():
-                    total[kind] += k * m
+        leaves, own, inner = Counter(), set(), 0
+        for inst in subckts[name]:
+            if own is not None and inst.nodes is not None:
+                own.update(inst.nodes)
             else:
-                total[key] += k
-        memo[name] = total
-        return total
+                own = None
+            master = inst.kind[2:] if inst.kind.startswith("x:") else None
+            if master in subckts and master not in seen:
+                sub, n = expand(master, seen + (master,))
+                leaves.update(sub)
+                inner = None if n is None or inner is None else inner + n
+            else:
+                leaves[inst.kind, inst.model] += 1
+        nodes = (None if own is None or inner is None
+                 else len(own - shared - set(ports.get(name, ()))) + inner)
+        memo[name] = leaves, nodes
+        return memo[name]
 
-    return expand("", ("",))
-
-
-def flat_count(subckts: dict[str, Counter]) -> int:
-    """Instances once every subcircuit defined in ``subckts`` is expanded."""
-    return sum(flat_kinds(subckts).values())
+    leaves, nodes = expand("", ("",))
+    used = {n for insts in subckts.values() for i in insts if i.nodes for n in i.nodes}
+    return Flat(leaves, None if nodes is None else nodes + len(used & globals_ - GROUND))
